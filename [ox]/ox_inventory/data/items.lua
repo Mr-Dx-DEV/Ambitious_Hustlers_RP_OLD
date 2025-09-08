@@ -131,6 +131,11 @@ return {
         weight = 190,
         stack = false,
     },
+    ['gruppesechstablet'] = {
+        label = 'Gruppe Sechs Tablet',
+        weight = 19,
+        stack = false,
+    },
     
 
     ['mustard'] = {
