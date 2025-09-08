@@ -1,0 +1,105 @@
+{
+	"Logo": {
+		"Enable": true,
+		"Src": "./loadingscreen/images/logo.webp",
+		"Size": {
+			"Width": "160px",
+			"Height": "auto",
+			"Left" : "50%",
+			"Top": "50%"
+		}
+	},
+	"Video": {
+		"Enable": false,
+		"URL": [
+            "./loadingscreen/loading.mp4"
+        ],
+		"Volume": 50,
+		"Muted": true
+	},
+	"YouTube": {
+		"Enable": false,
+		"URL": [
+			"https://www.youtube.com/embed/QdBZY2fkU-0?si=CO231dOBkVK6m8RO"
+		],
+		"Volume": 50,
+		"Muted": true
+	},
+	"Slides": {
+		"Enable": true,
+		"BlurValue": 0,
+		"Images": [
+			{
+				"Src": "./loadingscreen/images/background1.webp",
+				"Zone": 5,
+				"Duration": 5000
+			},
+			{
+				"Src": "./loadingscreen/images/background2.webp",
+				"Zone": 5,
+				"Duration": 5000
+			},
+			{
+				"Src": "./loadingscreen/images/background3.webp",
+				"Zone": 10,
+				"Duration": 5000
+			},
+			{
+				"Src": "./loadingscreen/images/background4.webp",
+				"Zone": 10,
+				"Duration": 5000
+			},
+			{
+				"Src": "./loadingscreen/images/background5.webp",
+				"Zone": 10,
+				"Duration": 5000
+			}
+		]
+	},
+	"Music": {
+		"Enable": true,
+		"Songs": [
+			{
+				"Title": "Look at that",
+				"Artist": "Captain Joz",
+				"ImageUrl": "./loadingscreen/songs/look_at_that.jpg",
+				"SongUrl": "./loadingscreen/songs/look_at_that.mp3"
+			},
+
+			{
+				"Title": "Hot for a Min",
+				"Artist": "Captain Qubz",
+				"ImageUrl": "./loadingscreen/songs/hot_for_a_min.jpg",
+				"SongUrl": "./loadingscreen/songs/hot_for_a_min.mp3"
+			},
+			{
+				"Title": "Fun Fun Fun",
+				"Artist": "Dimitrix, Raquel Castro",
+				"ImageUrl": "./loadingscreen/songs/fun_fun_fun.jpg",
+				"SongUrl": "./loadingscreen/songs/fun_fun_fun.mp3"
+			},
+			{
+				"Title": "Pilot",
+				"Artist": "Supermans Feinde",
+				"ImageUrl": "./loadingscreen/songs/Pilot.jpg",
+				"SongUrl": "./loadingscreen/songs/Pilot.mp3"
+			},
+
+			{
+				"Title": "OMG",
+				"Artist": "Vic Sage",
+				"ImageUrl": "./loadingscreen/songs/OMG.jpg",
+				"SongUrl": "./loadingscreen/songs/OMG.mp3"
+			}
+		]
+	},
+	"Locale": {
+		"MainTitle": "Loading",
+		"MainSubtitle": "Screen",
+		"CardTitle": "Information!",
+		"CardDescription": "This is default configuration of loading screen. It's impossible to make loadingscreen config on lua side - that's why it's config is at /web/loadingscreen/config.json. You can play youtube video in background, change music, translate etc.. Also don't forget that you can change colors in /web/colors.css",
+		"LoadingProgress": "Loading... %s",
+		"PauseMusic": "Press space to pause music",
+		"PlayMusic": "Press space to play music"
+	}
+}
