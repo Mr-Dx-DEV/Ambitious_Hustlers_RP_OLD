@@ -109,38 +109,67 @@ return {
 		groups = shared.police,
 		blip = {
 			id = 110, colour = 84, scale = 0.8
-		}, inventory = {
-			{ name = 'tablet', price = 5, },
-			{ name = 'ammo-9', price = 5, },
-			{ name = 'ammo-rifle', price = 5, },
-			{ name = 'WEAPON_FLASHLIGHT', price = 200 },
-			{ name = 'WEAPON_NIGHTSTICK', price = 100 },
-			{ name = 'WEAPON_PISTOL', price = 500, metadata = { registered = true, serial = 'POL' }, license = 'weapon' },
-			{ name = 'WEAPON_CARBINERIFLE', price = 1000, metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 3 },
-			{ name = 'WEAPON_STUNGUN', price = 500, metadata = { registered = true, serial = 'POL'} }
-		}, locations = {
-			vec3(451.51, -979.44, 30.68)
-		}, targets = {
-			{ loc = vec3(453.21, -980.03, 30.68), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
-		}
-	},
-
-	Medicine = {
-		name = 'Medicine Cabinet',
-		groups = {
-			['ambulance'] = 0
 		},
-		blip = {
-			id = 403, colour = 69, scale = 0.8
-		}, inventory = {
-			{ name = 'medikit', price = 26 },
-			{ name = 'bandage', price = 5 }
-		}, locations = {
-			vec3(306.3687, -601.5139, 43.28406)
-		}, targets = {
+		inventory = {
+			{ name = 'handcuffs',              price = 5, },
+			{ name = 'tracking_bracelet',              price = 5, },
 
+
+
+			{ name = 'tablet',              price = 5, },
+			{ name = 'ammo-9',              price = 5, },
+			{ name = 'ammo-rifle',          price = 5, },
+			{ name = 'WEAPON_FLASHLIGHT',   price = 200 },
+			{ name = 'WEAPON_NIGHTSTICK',   price = 100 },
+			{ name = 'WEAPON_PISTOL',       price = 500,  metadata = { registered = true, serial = 'POL' }, license = 'weapon' },
+			{ name = 'WEAPON_CARBINERIFLE', price = 1000, metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 3 },
+			{ name = 'WEAPON_STUNGUN',      price = 500,  metadata = { registered = true, serial = 'POL' } },
+
+
+			{ name = 'WEAPON_PDBATON',      price = 0,    metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 0 },
+			{ name = 'WEAPON_BTASER',       price = 0,    metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 0 },
+			{ name = 'WEAPON_YTASER',       price = 0,    metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 0 },
+			{ name = 'WEAPON_PDT19',        price = 0,    metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 0 },
+			{ name = 'WEAPON_PDPT870',      price = 0,    metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 0 },
+			{ name = 'WEAPON_PDPT700',      price = 0,    metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 0 },
+			{ name = 'WEAPON_MK417',        price = 0,    metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 0 },
+			{ name = 'WEAPON_PDDT607',      price = 0,    metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 0 },
+			{ name = 'WEAPON_PDDT7',        price = 0,    metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 0 },
+			{ name = 'WEAPON_PDT22',        price = 0,    metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 0 },
+			{ name = 'WEAPON_PDBR5',        price = 0,    metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 0 },
+			{ name = 'WEAPON_PDFC66',       price = 0,    metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 0 },
+			{ name = 'WEAPON_PDMK45',       price = 0,    metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 0 },
+			{ name = 'WEAPON_PDMK33',       price = 0,    metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 0 },
+			{ name = 'WEAPON_PDMKUSP',      price = 0,    metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 0 }
+
+
+
+
+		},
+		locations = {
+		vec3(454.492, -999.752, 30.726)
+		},
+		targets = {
+			{ loc = vec3(454.492, -999.752, 30.726), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
 		}
 	},
+
+	-- Medicine = {
+	-- 	name = 'Medicine Cabinet',
+	-- 	groups = {
+	-- 		['ambulance'] = 0
+	-- 	},
+	-- 	blip = {
+	-- 		id = 403, colour = 69, scale = 0.8
+	-- 	}, inventory = {
+	-- 		{ name = 'medikit', price = 26 },
+	-- 		{ name = 'bandage', price = 5 }
+	-- 	}, locations = {
+	-- 		vec3(306.3687, -601.5139, 43.28406)
+	-- 	}, targets = {
+
+	-- 	}
+	-- },
 
 	BlackMarketArms = {
 		name = 'Black Market (Arms)',
