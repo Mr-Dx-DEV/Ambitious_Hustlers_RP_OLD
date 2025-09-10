@@ -1,0 +1,2 @@
+bobby_pin = { name = 'bobby_pin', label = 'Bobby Pin', weight = 2500, type = 'item', image = 'bobby_pin.png', unique = false, useable = true, shouldClose = true, combinable = true, description = 'Can be used as a makeshift tool for picking locks' },
+tracking_bracelet  = { name = 'tracking_bracelet', label = 'Tracking Bracelet', weight = 2500, type = 'item', image = 'tracking_bracelet.png', unique = false, useable = true, shouldClose = true, combinable = true, description = 'Can be used for tracking a suspect' },

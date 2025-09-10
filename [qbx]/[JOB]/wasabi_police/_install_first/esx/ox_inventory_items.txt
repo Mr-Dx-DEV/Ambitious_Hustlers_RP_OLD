@@ -1,0 +1,21 @@
+	['handcuffs'] = {
+			label = 'Hand Cuffs',
+			weight = 2,
+			stack = true,
+			close = true,
+		},
+
+	['bobby_pin'] = {
+			label = 'Bobby Pin',
+			weight = 2,
+			stack = true,
+			close = true,
+		},
+
+	['tracking_bracelet '] = {
+			label = 'Tracking Bracelet',
+			weight = 2,
+			stack = true,
+			close = true,
+		},
+	
