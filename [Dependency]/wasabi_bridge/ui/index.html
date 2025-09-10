@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasabi Bridge UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="menu-container">
+            <div class="header">
+                <div class="title">EMS Menu</div>
+            </div>
+            <div class="menu-contents"></div>
+        </div>
+
+        <div class="context-menu-container">
+            <div class="header">
+                <div class="title">EMS Menu</div>
+                <div class="x">
+                    <div class="icon">
+                        <i class="fas fa-x"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-contents"></div>
+        </div>
+
+        <div class="input-dialog-container">
+
+            <div class="header">Test</div>
+
+            <div class="seperator"></div>
+
+            <div class="input-dialog-contents">
+            </div>
+
+            <div class="nav-button-container">
+                <div class="cancel-button">Cancel</div>
+                <div class="confirm-button">Confirm</div>
+            </div>
+
+        </div>
+
+        <div class="alert-dialog-container">
+            <div class="header">Alert Dialog</div>
+            <div class="seperator"></div>
+            <div class="alert-dialog-contents"></div>
+            <div class="nav-button-container">
+                <div class="cancel-button">Cancel</div>
+                <div class="confirm-button">Confirm</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="notify-container">
+        <div class="notify">
+            <div class="icon"><i class="fa-solid fa-circle-info"></i></div>
+            <div class="content-wrapper">
+                <div class="notify-heading" id="notify-heading">
+                    <h2 class="notify-h2" id="notify-heading">Heading</h2>
+                </div>
+                <div class="content">This is the notify</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="textui">
+        <div class="icon"><i class="fas fa-e"></i></div>
+        <div class="text">[E] - Access Garage</div>
+    </div>
+
+    <div class="progress-bar-container">
+        <div class="progress-text">
+            <div class="progress-text-label">Diagnosing Patient. . .</div>
+            <div class="progress-text-percent">50%</div>
+        </div>
+        <div class="progress-bar-alone">
+            <div class="progress-fill" style="width: 50%;"></div>
+        </div>
+    </div>
+
+    <div class="progress-circle-container">
+        <div class="progress-circle-holder">
+            <svg class="progress-circle" viewBox="0 0 36 36">
+                <path class="circle-bg" d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <path class="circle" id="circle" d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dasharray="0, 100" stroke="var(--custom-color)" />
+            </svg>
+            <div class="progress-percentage" id="progress-percentage">50%</div>
+        </div>
+        <div class="progress-label" id="progress-label">Diagnosing Patient. . .</div>
+    </div>
+
+    <div class="skill-container">
+        <div class="skill-shadow"></div>
+        <div class="skill-circle-container">
+            <div id="skill-circle"></div>
+            <div class="skill-line">
+                <div class="skill-indicator"></div>
+            </div>
+            <div class="skill-key">E</div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.0/progressbar.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
