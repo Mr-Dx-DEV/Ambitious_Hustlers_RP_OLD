@@ -1,0 +1,214 @@
+@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+.color-0{color: #ffffff;}
+.color-1{color: #ff4444;}
+.color-2{color: #99cc00;}
+.color-3{color: #ffbb33;}
+.color-4{color: #0099cc;}
+.color-5{color: #33b5e5;}
+.color-6{color: #aa66cc;}
+.color-8{color: #cc0000;}
+.color-9{color: #cc0068;}
+
+:root { 
+  --color-1: #7700ff85; /*Color for the lines used in chat box and input box */
+  --color-2: #00000085; /*Color for the background of chat box*/
+  --color-3: #ff00006c; /*Color for the line and text of a warning message*/
+  --color-4: #ff0000;   /*Color for the line of a error message*/
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.no-grow {
+  flex-grow: 0;
+}
+
+em {
+  font-style: normal;
+}
+
+#app {
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  background-color: transparent;
+}
+
+.chat-window {
+  position: absolute;
+  left: 15px;
+  width: 32vw;
+  height: 20vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 5vh;
+  -webkit-animation-duration: 2s;
+}
+
+.chat-messages {
+  max-height: 100%;
+  font-size: 12px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.prefix {
+  font-size: 1.8vh;
+  position: absolute;
+  margin-top: 0.8%;
+  margin-left: 1.5%;
+  left: 0.208%;
+}
+
+.chat-input {
+  font-size: 0.9rem;
+  position: absolute;
+  top: 27vh;
+  left: 15px;
+  width: 28vw;
+  box-sizing: border-box;
+}
+
+textarea {
+  font-family: 'Roboto', sans-serif!important;
+  font-size: 14px;
+  display: block;
+  box-sizing: border-box;
+  padding: 0.60vw;
+  padding-left: 1.90vw;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 65%;
+  min-height: 3.8vh;
+  max-height: 3.8vh;
+  border-bottom: 2.0px solid var(--color-1);
+  border-top: rgba(0, 0, 0, 0.5);
+  border-left: rgba(0, 0, 0, 0.5);
+  border-right: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  resize: none;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+.msg {
+  margin-bottom: 5px;
+}
+
+.suggestions {
+  list-style-type: none;
+  padding: 5px;
+  padding-left: 27px;
+  padding-top: 5px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 80%;
+  border-radius: 5px;
+}
+
+.help {
+  margin-top: -10px;
+  color: #ffffffe7;
+}
+
+.disabled {
+  margin-top: -10px;
+  color: #ffffff93;
+}
+
+.suggestion {
+  margin-bottom: 5px;
+  color: #ffffffec;
+}
+
+.chat-message {
+  display: inline-block !important;
+  padding: 0.65vw;
+  margin: 0.1vw;
+  border-radius: 5px;
+  background-color: var(--color-2);
+  border: 2.0px solid var(--color-1);
+  width: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.chat-message-body {
+ /* margin-top: 10px;*/
+}
+
+.chat-message.advert {
+  background-color: rgba(47, 92, 115, 0.8);
+  border-radius:2em;
+}
+
+.warning {
+  display: inline-block !important;
+  padding: 0.65vw;
+  margin: 0.1vw;
+  border-radius: 5px;
+  background-color: var(--color-2);
+  border: 2.0px solid var(--color-3);
+  width: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.normal {
+  display: inline-block !important;
+  padding: 0.65vw;
+  margin: 0.1vw;
+  border-radius: 5px;
+  background-color: rgba(247, 126, 253, 0.663);
+  width: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.error {
+  display: inline-block !important;
+  padding: 0.65vw;
+  margin: 0.1vw;
+  border-radius: 5px;
+  background-color: var(--color-2);
+  border: 2.0px solid var(--color-4);
+  width: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.chat-message.system {
+  background-color: rgb(67, 57, 111);
+  border-radius:2em;
+}
+
+.chat-message.emergency {
+  background-color: rgba(255, 144, 144, 0.628);
+  border-radius:2em;
+}
+
+.chat-message.nonemergency {
+  background-color: rgba(112, 25, 25, 0.8);
+  border-radius:2em;
+}
+
+.chat-message.report {
+  background-color: rgba(86, 173, 10, 0.8);
+  border-radius:2em;
+}
