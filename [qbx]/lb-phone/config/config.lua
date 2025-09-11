@@ -171,6 +171,82 @@ Config.Companies.Services = {
         -- end
     },
     {
+        job = "sahp",
+        name = "SAHP",
+        icon = "https://cdn-icons-png.flaticon.com/512/7211/7211100.png",
+        canCall = true, -- if true, players can call the company
+        canMessage = true, -- if true, players can message the company
+        bossRanks = { "boss" }, -- ranks that can manage the company
+        location = {
+            name = "SAHP",
+            coords = {
+                x = 2808.18,
+                y = 4730.40,
+            }
+        }
+        -- customIcon = "IoShield", -- if you want to use a custom icon for the company, set it here: https://react-icons.github.io/react-icons/icons?name=io5
+        -- onCustomIconClick = function()
+        --    print("Clicked")
+        -- end
+    },
+    {
+        job = "sahp",
+        name = "SAHP",
+        icon = "https://cdn-icons-png.flaticon.com/512/7211/7211100.png",
+        canCall = true, -- if true, players can call the company
+        canMessage = true, -- if true, players can message the company
+        bossRanks = { "boss" }, -- ranks that can manage the company
+        location = {
+            name = "SAHP",
+            coords = {
+                x = -3160.23,
+                y = 1375.05,
+            }
+        }
+        -- customIcon = "IoShield", -- if you want to use a custom icon for the company, set it here: https://react-icons.github.io/react-icons/icons?name=io5
+        -- onCustomIconClick = function()
+        --    print("Clicked")
+        -- end
+    },
+    {
+        job = "rangers",
+        name = "RANGERS",
+        icon = "https://cdn-icons-png.flaticon.com/512/7211/7211100.png",
+        canCall = true, -- if true, players can call the company
+        canMessage = true, -- if true, players can message the company
+        bossRanks = { "boss" }, -- ranks that can manage the company
+        location = {
+            name = "RANGERS",
+            coords = {
+                x = -821.75,
+                y = 5399.90,
+            }
+        }
+        -- customIcon = "IoShield", -- if you want to use a custom icon for the company, set it here: https://react-icons.github.io/react-icons/icons?name=io5
+        -- onCustomIconClick = function()
+        --    print("Clicked")
+        -- end
+    },
+    {
+        job = "bcso",
+        name = "BCSO",
+        icon = "https://cdn-icons-png.flaticon.com/512/7211/7211100.png",
+        canCall = true, -- if true, players can call the company
+        canMessage = true, -- if true, players can message the company
+        bossRanks = { "boss" }, -- ranks that can manage the company
+        location = {
+            name = "BCSO",
+            coords = {
+                x = 1833.73,
+                y = 3696.84,
+            }
+        }
+        -- customIcon = "IoShield", -- if you want to use a custom icon for the company, set it here: https://react-icons.github.io/react-icons/icons?name=io5
+        -- onCustomIconClick = function()
+        --    print("Clicked")
+        -- end
+    },
+    {
         job = "ambulance",
         name = "Ambulance",
         icon = "https://cdn-icons-png.flaticon.com/128/1032/1032989.png",
