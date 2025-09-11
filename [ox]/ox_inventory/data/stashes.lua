@@ -36,6 +36,60 @@ return {
 		groups = shared.police
 	},
 	{
+		coords = vec3(-3148.75, 1382.51, 21.17),
+		target = {
+			loc = vec3(-3148.75, 1382.51, 21.17),
+			length = 1.7,
+			width = 5.6,
+			heading = 4.05,
+			minZ = 20.01,
+			maxZ = 21.90,
+			label = 'Open personal locker'
+		},
+		name = 'sahp2locker',
+		label = 'SAHP2 locker',
+		owner = true,
+		slots = 70,
+		weight = 70000,
+		groups = shared.police
+	},
+	{
+		coords = vec3(-824.63, 5391.00, 35.93),
+		target = {
+			loc = vec3(-824.63, 5391.00, 35.93),
+			length = 1.7,
+			width = 5.6,
+			heading = 127.44,
+			minZ = 35.01,
+			maxZ = 36.90,
+			label = 'Open personal locker'
+		},
+		name = 'rangerslocker',
+		label = 'Rangers locker',
+		owner = true,
+		slots = 70,
+		weight = 70000,
+		groups = shared.police
+	},
+	{
+		coords = vec3(1830.85, 3696.80, 35.04),
+		target = {
+			loc = vec3(1830.85, 3696.80, 35.04),
+			length = 1.7,
+			width = 5.6,
+			heading = 8.90,
+			minZ = 34.01,
+			maxZ = 35.90,
+			label = 'Open personal locker'
+		},
+		name = 'bcsolocker',
+		label = 'BCSO locker',
+		owner = true,
+		slots = 70,
+		weight = 70000,
+		groups = shared.police
+	},
+	{
 		coords = vec3(301.3, -600.23, 43.28),
 		target = {
 			loc = vec3(301.82, -600.99, 43.29),
