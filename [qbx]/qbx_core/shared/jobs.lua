@@ -102,8 +102,8 @@ return {
             },
         },
     },
-    ['sasp'] = {
-        label = 'SASP',
+    ['rangers'] = {
+        label = 'Rangers',
         type = 'leo',
         defaultDuty = true,
         offDutyPay = false,
