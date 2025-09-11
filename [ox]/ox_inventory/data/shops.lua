@@ -107,9 +107,9 @@ return {
 	PoliceArmoury = {
 		name = 'Police Armoury',
 		groups = shared.police,
-		blip = {
-			id = 110, colour = 84, scale = 0.8
-		},
+		-- blip = {
+		-- 	id = 110, colour = 84, scale = 0.8
+		-- },
 		inventory = {
 			{ name = 'handcuffs',              price = 5, },
 			{ name = 'tracking_bracelet',              price = 5, },
@@ -150,12 +150,18 @@ return {
 
 		},
 		locations = {
-		vec3(454.492, -999.752, 30.726),
-		vec3(2808.18, 4730.40, 47.98)
+		vec3(454.492, -999.752, 30.726),   -- MRPD
+		vec3(2808.18, 4730.40, 47.98),     -- SAHP 1
+		vec3(-3160.23, 1375.05, 21.04),   --  SAHP 2
+		vec3(-821.75, 5399.90, 36.26),  --- RANGER
+		vec3(1833.73, 3696.84, 34.96)   -- BCSO
 		},
 		targets = {
 			{ loc = vec3(454.492, -999.752, 30.726), length = 1.0, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 },
-			{ loc = vec3(2808.18, 4730.40, 47.98), length = 1.0, width = 3.0, heading = 203.21, minZ = 47.01, maxZ = 48.9, distance = 6 }
+			{ loc = vec3(2808.18, 4730.40, 47.98), length = 1.0, width = 3.0, heading = 203.21, minZ = 47.01, maxZ = 48.9, distance = 6 },
+			{ loc = vec3(-3160.23, 1375.05, 21.04), length = 1.0, width = 3.0, heading = 150.90, minZ = 20.01, maxZ = 21.9, distance = 6 },
+			{ loc = vec3(-821.75, 5399.90, 36.26), length = 1.0, width = 3.0, heading = 168.31, minZ = 35.01, maxZ = 37.9, distance = 6 },
+			{ loc = vec3(1833.73, 3696.84, 34.96), length = 1.0, width = 3.0, heading = 164.02, minZ = 34.01, maxZ = 35.9, distance = 6 }
 		}
 	},
 
