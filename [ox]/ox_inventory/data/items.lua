@@ -14,7 +14,7 @@ return {
         close = true,
     },
 
-    ['tracking_bracelet '] = {
+    ['tracking_bracelet'] = {
         label = 'Tracking Bracelet',
         weight = 2,
         stack = true,

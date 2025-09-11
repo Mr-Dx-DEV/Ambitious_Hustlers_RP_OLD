@@ -1,3 +1,0 @@
-return {
-    bonusChance = 36,
-}

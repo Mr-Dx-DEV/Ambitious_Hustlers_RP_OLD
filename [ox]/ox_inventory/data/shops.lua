@@ -113,12 +113,15 @@ return {
 		inventory = {
 			{ name = 'handcuffs',              price = 5, },
 			{ name = 'tracking_bracelet',              price = 5, },
-
-
-
 			{ name = 'tablet',              price = 5, },
+
 			{ name = 'ammo-9',              price = 5, },
 			{ name = 'ammo-rifle',          price = 5, },
+			{ name = 'ammo-45',          price = 5, },
+			{ name = 'ammo-shotgun',          price = 5, },
+			{ name = 'ammo-sniper',          price = 5, },
+
+
 			{ name = 'WEAPON_FLASHLIGHT',   price = 200 },
 			{ name = 'WEAPON_NIGHTSTICK',   price = 100 },
 			{ name = 'WEAPON_PISTOL',       price = 500,  metadata = { registered = true, serial = 'POL' }, license = 'weapon' },
@@ -147,10 +150,12 @@ return {
 
 		},
 		locations = {
-		vec3(454.492, -999.752, 30.726)
+		vec3(454.492, -999.752, 30.726),
+		vec3(2808.18, 4730.40, 47.98)
 		},
 		targets = {
-			{ loc = vec3(454.492, -999.752, 30.726), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
+			{ loc = vec3(454.492, -999.752, 30.726), length = 1.0, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 },
+			{ loc = vec3(2808.18, 4730.40, 47.98), length = 1.0, width = 3.0, heading = 203.21, minZ = 47.01, maxZ = 48.9, distance = 6 }
 		}
 	},
 

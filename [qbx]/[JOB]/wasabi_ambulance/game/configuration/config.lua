@@ -77,7 +77,7 @@ Config.BagProp = `xm_prop_x17_bag_med_01a`
 Config.UseRadialMenu = false             -- Enable use of radial menu built in to ox_lib? (REQUIRES OX_LIB 3.0 OR HIGHER - Editable)
 Config.EnableAnimReset = false           -- If your death animation does not run correctly, then enable this
 Config.MobileMenu = {                    -- Enabling this will use menu rather than context menu!
-    enabled = true,                     -- Use a mobile menu rather than context? (Use arrow keys to navigate menu rather than mouse)
+    enabled = false,                     -- Use a mobile menu rather than context? (Use arrow keys to navigate menu rather than mouse)
     position =
     'bottom-right'                       -- Choose where menu is positioned. Options : 'top-left' or 'top-right' or 'bottom-left' or 'bottom-right'
 }
@@ -142,7 +142,7 @@ Config.AmbulanceOffsets = {
 }
 
 Config.GPSBlips = {
-    enabled = false,      -- Enabled?
+    enabled = true,      -- Enabled?
     item = false,        -- Item required? Note: You have to use it then
     sprites = {
         none = 443,        -- Blip for when not in a vehicle

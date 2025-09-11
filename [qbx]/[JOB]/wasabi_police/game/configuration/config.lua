@@ -35,7 +35,7 @@ Config.JailUIColor = '#0390fc' -- Can be 'red', 'blue', or a hex '#FF0000'
 Config.jobMenu = 'F6'          -- Default job menu key
 Config.useTarget = true        -- Enable target for police functions (Supports ox_target / qb-target)
 Config.MobileMenu = {          -- THIS WILL USE A REGULAR MENU RATHER THAN A CONTEXT STYLE MENU!
-    enabled = true,           -- Use a mobile menu rather than context? (Use arrow keys to navigate menu rather than mouse)
+    enabled = false,           -- Use a mobile menu rather than context? (Use arrow keys to navigate menu rather than mouse)
     position =
     'bottom-right'             -- Choose where menu is positioned. Options : 'top-left' or 'top-right' or 'bottom-left' or 'bottom-right'
 }
@@ -166,7 +166,7 @@ Config.CCTVCameras = { -- CCTV Cameras
     },
     destoryable = true, -- Can players destroy CCTV Cameras?
     blip = {
-        enabled = true,      -- Enable blips for CCTV Cameras?
+        enabled = false,      -- Enable blips for CCTV Cameras?
         label = 'CCTV Camera', -- Blip label
         sprite = 604,         -- Blip sprite
         color = 5,            -- Blip color
@@ -421,13 +421,13 @@ Config.TrackingBracelet = { -- Tracking Bracelet
 }
 
 Config.policeJobs = { -- Police jobs
-    'police',
+    'police'
     --    'sheriff'
-    'reporter'
+   -- 'reporter'
 }
 
 Config.GPSBlips = {
-    enabled = false,     -- Enabled?
+    enabled = true,     -- Enabled?
     item = false,        -- Item required? Note: You have to use it then
     sprites = {
         none = 443,      -- Blip for when not in a vehicle
@@ -604,7 +604,7 @@ Config.Locations = {
         },
 
         cloakroom = {
-            enabled = true,                        -- WILL NOT SHOW IN QBCORE INSTEAD USE QB-CLOTHING CONFIG! Set to false if you don't want to use (Compatible with esx_skin & wasabi fivem-appearance fork)
+            enabled = false,                        -- WILL NOT SHOW IN QBCORE INSTEAD USE QB-CLOTHING CONFIG! Set to false if you don't want to use (Compatible with esx_skin & wasabi fivem-appearance fork)
             jobLock = 'police',                    -- Allow only one of Config.policeJob listings / Set to false if allow all Config.policeJobs
             coords = vec3(462.36, -999.62, 30.69), -- Coords of cloakroom
             label = '[E] - Change Clothes',        -- String of text ui of cloakroom
@@ -769,7 +769,354 @@ Config.Locations = {
 
 
         vehicles = {                                   -- Vehicle Garage
-            enabled = true,                            -- Enable? False if you have you're own way for medics to obtain vehicles.
+            enabled = false,                            -- Enable? False if you have you're own way for medics to obtain vehicles.
+            jobLock = 'police',                        -- Job lock? or access to all police jobs by using false
+            zone = {
+                coords = vec3(463.69, -1019.72, 28.1), -- Area to prompt vehicle garage
+                range = 5.5,                           -- Range it will prompt from coords above
+                label = '[E] - Access Garage',
+                return_label = '[E] - Return Vehicle'
+            },
+            spawn = {
+                land = {
+                    coords = vec3(449.37, -1025.46, 28.59), -- Coords of where land vehicle spawn/return
+                    heading = 3.68
+                },
+                air = {
+                    coords = vec3(449.29, -981.76, 43.69), -- Coords of where air vehicles spawn/return
+                    heading = 0.01
+                }
+            },
+            options = {
+
+                [0] = {                    -- Job grade as table name
+                    ['police'] = {         -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                        label = 'Police Cruiser',
+                        category = 'land', -- Options are 'land' and 'air'
+                    },
+                    ['police2'] = {        -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                        label = 'Police Cruiser #2',
+                        category = 'land', -- Options are 'land' and 'air'
+                    },
+                    ['polmav'] = {         -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                        label = 'Maverick',
+                        category = 'air',  -- Options are 'land' and 'air'
+                    },
+                },
+
+                [1] = {                    -- Job grade as table name
+                    ['police'] = {         -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                        label = 'Police Cruiser',
+                        category = 'land', -- Options are 'land' and 'air'
+                    },
+                    ['police2'] = {        -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                        label = 'Police Cruiser #2',
+                        category = 'land', -- Options are 'land' and 'air'
+                    },
+                    ['polmav'] = {         -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                        label = 'Maverick',
+                        category = 'air',  -- Options are 'land' and 'air'
+                    },
+                },
+
+                [2] = {                    -- Job grade as table name
+                    ['police'] = {         -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                        label = 'Police Cruiser',
+                        category = 'land', -- Options are 'land' and 'air'
+                    },
+                    ['police2'] = {        -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                        label = 'Police Cruiser #2',
+                        category = 'land', -- Options are 'land' and 'air'
+                    },
+                    ['polmav'] = {         -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                        label = 'Maverick',
+                        category = 'air',  -- Options are 'land' and 'air'
+                    },
+                },
+
+                [3] = {                    -- Job grade as table name
+                    ['police'] = {         -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                        label = 'Police Cruiser',
+                        category = 'land', -- Options are 'land' and 'air'
+                    },
+                    ['police2'] = {        -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                        label = 'Police Cruiser #2',
+                        category = 'land', -- Options are 'land' and 'air'
+                    },
+                    ['polmav'] = {         -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                        label = 'Maverick',
+                        category = 'air',  -- Options are 'land' and 'air'
+                    },
+                },
+            }
+        }
+    },
+    SAHP1 = {
+        blip = {
+            enabled = true,
+            coords = vec3(2806.79, 4740.31, 47.89),
+            sprite = 60,
+            color = 29,
+            scale = 1.0,
+            string = 'SAHP'
+        },
+
+        clockInAndOut = {
+            enabled = true,                        -- Enable clocking in and out at a set location? (If using ESX you must have a off duty job for each e.x. offpolice for police offsheriff for sheriff AND have grades for each pd grade - QBCORE REQUIRES NOTHING)
+            jobLock = 'police',                    -- This must be set to which job will be utilizing (ESX MUST HAVE OFF DUTY JOB / GRADES FOR THIS - ex. offpolice or offsheriff)
+            coords = vec3(2808.88, 4752.83, 48.22), -- Location of where to go on and off duty(If not using target)
+            label = '[E] - Go On/Off Duty',        -- Text to display(If not using target)
+            distance = 3.0,                        -- Distance to display text UI(If not using target)
+            target = {
+                enabled = true,                   -- If enabled, the location and distance above will be obsolete
+                label = 'Go On/Off Duty',
+                coords = vec3(2808.88, 4752.83, 48.22),
+                heading = 99.02,
+                distance = 2.5,
+                width = 2.0,
+                length = 1.0,
+                minZ = 47.02 - 0.9,
+                maxZ = 48.99 + 0.9
+            }
+        },
+
+        bossMenu = {
+            enabled = true,                        -- Enable boss menu?
+            jobLock = 'police',                    -- Lock to specific police job? Set to false if not desired
+            coords = vec3(2824.05, 4724.14, 47.89), -- Location of boss menu (If not using target)
+            label = '[E] - Access Boss Menu',      -- Text UI label string (If not using target)
+            distance = 3.0,                        -- Distance to allow access/prompt with text UI (If not using target)
+            target = {
+                enabled = false,                   -- If enabled, the location and distance above will be obsolete
+                label = 'Access Boss Menu',
+                coords = vec3(460.64, -985.64, 30.73),
+                heading = 269.85,
+                distance = 2.0,
+                width = 2.0,
+                length = 1.0,
+                minZ = 30.73 - 0.9,
+                maxZ = 30.73 + 0.9
+            }
+        },
+
+        armoury = {
+            enabled = false,                                                                              -- Set to false if you don't want to use
+            coords = vec3(480.32, -996.67, 30.69 - 0.9),                                                 -- Coords of armoury
+            heading = 86.95,                                                                             -- Heading of armoury NPC
+            ped = 's_f_y_cop_01',                                                                        -- Ped model or false for no ped
+            label = '[E] - Access Armoury',                                                              -- String of text ui
+            target = {
+                enabled = false,                   -- If enabled, the location and distance above will be obsolete
+                label = 'Access Armoury',
+                coords = vec3(480.32, -996.67, 30.69 - 0.9), 
+                heading = 24.95,
+                distance = 4.0,
+                width = 2.0,
+                length = 1.0,
+                minZ = 30.73 - 0.9,
+                maxZ = 30.73 + 0.9
+            },
+            jobLock = 'police',                                                                          -- Allow only one of Config.policeJob listings / Set to false if allow all Config.policeJobs
+            weapons = {
+                [0] = {                                                                                  -- Grade number will be the name of each table(this would be grade 0)
+                    { name = 'WEAPON_PISTOL',     label = 'Pistol',      multiple = false, price = 75 }, -- Set price to false if undesired
+                    { name = 'WEAPON_NIGHTSTICK', label = 'Night Stick', multiple = false, price = 50 },
+                    --  { name = 'ammo-9' , label = '9mm Ammo', multiple = true, price = 10 }, -- Set multiple to true if you want ability to purchase more than one at a time
+                    --  { name = 'armour', label = 'Bulletproof Vest', multiple = false, price = 100 }, -- Example
+
+                },
+                [1] = { -- This would be grade 1
+                    { name = 'WEAPON_COMBATPISTOL', label = 'Combat Pistol', multiple = false, price = 150 },
+                    { name = 'WEAPON_NIGHTSTICK',   label = 'Night Stick',   multiple = false, price = 50 },
+                    --  { name = 'ammo-9', label = '9mm Ammo', multiple = true, price = 10 }, -- Example
+                    --  { name = 'armour', label = 'Bulletproof Vest', multiple = false, price = 100 }, -- Example
+                },
+                [2] = { -- This would be grade 2
+                    { name = 'WEAPON_COMBATPISTOL', label = 'Combat Pistol', multiple = false, price = 150 },
+                    { name = 'WEAPON_NIGHTSTICK',   label = 'Night Stick',   multiple = false, price = 50 },
+                    { name = 'WEAPON_ASSAULTRIFLE', label = 'Assault Rifle', multiple = false, price = 1100 },
+                    --  { name = 'ammo-9', label = '9mm Ammo', multiple = true, price = 10 }, -- Set multiple to true if you want ability to purchase more than one at a time
+                    --  { name = ammo-rifle, label = '5.56 Ammo', multiple = true, price = 20 }, -- Example
+                    --  { name = 'armour', label = 'Bulletproof Vest', multiple = false, price = 100 }, -- Example
+                },
+                [3] = { -- This would be grade 3
+                    { name = 'WEAPON_COMBATPISTOL', label = 'Combat Pistol', multiple = false, price = 150 },
+                    { name = 'WEAPON_NIGHTSTICK',   label = 'Night Stick',   multiple = false, price = 50 },
+                    { name = 'WEAPON_ASSAULTRIFLE', label = 'Assault Rifle', multiple = false, price = 1100 },
+                    --  { name = 'ammo-9', label = '9mm Ammo', multiple = true, price = 10 }, -- Set multiple to true if you want ability to purchase more than one at a time
+                    --  { name = ammo-rifle, label = '5.56 Ammo', multiple = true, price = 20 }, -- Example
+                    --  { name = 'armour', label = 'Bulletproof Vest', multiple = false, price = 100 }, -- Example
+                },
+            }
+        },
+
+        cloakroom = {
+            enabled = false,                        -- WILL NOT SHOW IN QBCORE INSTEAD USE QB-CLOTHING CONFIG! Set to false if you don't want to use (Compatible with esx_skin & wasabi fivem-appearance fork)
+            jobLock = 'police',                    -- Allow only one of Config.policeJob listings / Set to false if allow all Config.policeJobs
+            coords = vec3(462.36, -999.62, 30.69), -- Coords of cloakroom
+            label = '[E] - Change Clothes',        -- String of text ui of cloakroom
+            range = 2.0,                           -- Range away from coords you can use.
+            uniforms = {                           -- Uniform choices
+                [1] = {                            -- Order it will display
+                    label = 'Patrol',              -- Name of outfit that will display in menu
+                    minGrade = 0,                  -- Min grade level that can access? Set to 0 or false for everyone to use
+                    male = {                       -- Male variation
+                        clothing = {
+                            -- Components / 0: Face 1: Mask 2: Hair 3: Torso 4: Leg 5: Parachute / bag 6: Shoes 7: Accessory 8: Undershirt 9: Kevlar 10: Badge 11: Torso 2
+                            -- https://docs.fivem.net/natives/?_0xD4F7B05C
+                            { component = 11, drawable = 5,  texture = 2 }, -- Torso
+                            { component = 8,  drawable = 15, texture = 0 }, -- Shirt
+                            { component = 4,  drawable = 6,  texture = 1 }, -- Pants
+                            { component = 6,  drawable = 16, texture = 7 }, -- Shoes
+                            { component = 3,  drawable = 5,  texture = 0 }, -- Arms
+                        },
+                        props = {
+                            -- Components / 0: Hats 1: Glasses 2: Ears 6: Watches 7: Bracelets
+                            -- https://docs.fivem.net/natives/?_0x93376B65A266EB5F
+
+                            --    { component = 0, drawable = 0, texture = 0 }, -- Hats
+                        }
+                    },
+                    female = {
+                        clothing = {
+                            -- Components / 0: Face 1: Mask 2: Hair 3: Torso 4: Leg 5: Parachute / bag 6: Shoes 7: Accessory 8: Undershirt 9: Kevlar 10: Badge 11: Torso 2
+                            -- https://docs.fivem.net/natives/?_0xD4F7B05C
+                            { component = 11, drawable = 4,  texture = 0 }, -- Torso
+                            { component = 8,  drawable = 15, texture = 0 }, -- Shirt
+                            { component = 4,  drawable = 25, texture = 0 }, -- Pants
+                            { component = 6,  drawable = 16, texture = 4 }, -- Shoes
+                            { component = 3,  drawable = 4,  texture = 0 }, -- Arms
+                        },
+                        props = {
+                            -- Components / 0: Hats 1: Glasses 2: Ears 6: Watches 7: Bracelets
+                            -- https://docs.fivem.net/natives/?_0x93376B65A266EB5F
+
+                            --    { component = 0, drawable = 0, texture = 0 }, -- Hats
+                        }
+                    }
+                },
+                [2] = {              -- Order it will display
+                    label = 'Chief', -- Name of outfit that will display in menu
+                    minGrade = 0,    -- Min grade level that can access? Set to 0 or false for everyone to use
+                    male = {         -- Male variation
+                        clothing = {
+                            -- Components / 0: Face 1: Mask 2: Hair 3: Torso 4: Leg 5: Parachute / bag 6: Shoes 7: Accessory 8: Undershirt 9: Kevlar 10: Badge 11: Torso 2
+                            -- https://docs.fivem.net/natives/?_0xD4F7B05C
+                            { component = 11, drawable = 15, texture = 0 }, -- Torso
+                            { component = 8,  drawable = 58, texture = 0 }, -- Shirt
+                            { component = 4,  drawable = 35, texture = 0 }, -- Pants
+                            { component = 6,  drawable = 24, texture = 0 }, -- Shoes
+                            { component = 3,  drawable = 15, texture = 0 }, -- Arms
+                        },
+                        props = {
+                            -- Components / 0: Hats 1: Glasses 2: Ears 6: Watches 7: Bracelets
+                            -- https://docs.fivem.net/natives/?_0x93376B65A266EB5F
+
+                            --    { component = 0, drawable = 0, texture = 0 }, -- Hats
+                        }
+                    },
+                    female = {
+                        clothing = {
+                            -- Components / 0: Face 1: Mask 2: Hair 3: Torso 4: Leg 5: Parachute / bag 6: Shoes 7: Accessory 8: Undershirt 9: Kevlar 10: Badge 11: Torso 2
+                            -- https://docs.fivem.net/natives/?_0xD4F7B05C
+                            { component = 11, drawable = 4,  texture = 0 }, -- Torso
+                            { component = 8,  drawable = 15, texture = 0 }, -- Shirt
+                            { component = 4,  drawable = 25, texture = 0 }, -- Pants
+                            { component = 6,  drawable = 16, texture = 4 }, -- Shoes
+                            { component = 3,  drawable = 4,  texture = 0 }, -- Arms
+                        },
+                        props = {
+                            -- Components / 0: Hats 1: Glasses 2: Ears 6: Watches 7: Bracelets
+                            -- https://docs.fivem.net/natives/?_0x93376B65A266EB5F
+
+                            --    { component = 0, drawable = 0, texture = 0 }, -- Hats
+                        }
+                    }
+                },
+                [3] = {              -- Order it will display
+                    label = 'Chief', -- Name of outfit that will display in menu
+                    minGrade = 0,    -- Min grade level that can access? Set to 0 or false for everyone to use
+                    male = {         -- Male variation
+                        clothing = {
+                            -- Components / 0: Face 1: Mask 2: Hair 3: Torso 4: Leg 5: Parachute / bag 6: Shoes 7: Accessory 8: Undershirt 9: Kevlar 10: Badge 11: Torso 2
+                            -- https://docs.fivem.net/natives/?_0xD4F7B05C
+                            { component = 11, drawable = 15, texture = 0 }, -- Torso
+                            { component = 8,  drawable = 58, texture = 0 }, -- Shirt
+                            { component = 4,  drawable = 35, texture = 0 }, -- Pants
+                            { component = 6,  drawable = 24, texture = 0 }, -- Shoes
+                            { component = 3,  drawable = 15, texture = 0 }, -- Arms
+                        },
+                        props = {
+                            -- Components / 0: Hats 1: Glasses 2: Ears 6: Watches 7: Bracelets
+                            -- https://docs.fivem.net/natives/?_0x93376B65A266EB5F
+
+                            --    { component = 0, drawable = 0, texture = 0 }, -- Hats
+                        }
+                    },
+                    female = {
+                        clothing = {
+                            -- Components / 0: Face 1: Mask 2: Hair 3: Torso 4: Leg 5: Parachute / bag 6: Shoes 7: Accessory 8: Undershirt 9: Kevlar 10: Badge 11: Torso 2
+                            -- https://docs.fivem.net/natives/?_0xD4F7B05C
+                            { component = 11, drawable = 4,  texture = 0 }, -- Torso
+                            { component = 8,  drawable = 15, texture = 0 }, -- Shirt
+                            { component = 4,  drawable = 25, texture = 0 }, -- Pants
+                            { component = 6,  drawable = 16, texture = 4 }, -- Shoes
+                            { component = 3,  drawable = 4,  texture = 0 }, -- Arms
+                        },
+                        props = {
+                            -- Components / 0: Hats 1: Glasses 2: Ears 6: Watches 7: Bracelets
+                            -- https://docs.fivem.net/natives/?_0x93376B65A266EB5F
+
+                            --    { component = 0, drawable = 0, texture = 0 }, -- Hats
+                        }
+                    }
+                },
+            }
+        },
+
+        -- Personal Locker. Supports inventories: ox_inventory, qb-inventory, and qs-inventory
+        --        Custom inventories can easily be added in wasabi_bridge/inventories/
+        personalLocker = {
+            enabled = false,                       -- Enable personal locker for this station?
+            jobLock = 'police',                    -- Job lock?
+            coords = vec3(462.64, -995.88, 30.69), -- Area to prompt personal locker
+            range = 2.0,                           -- Range it will prompt from coords above
+            label = '[E] - Access Personal Locker',
+            target = {
+                enabled = false, -- If enabled, the location above will be obsolete
+                label = 'Access Personal Locker',
+                coords = vec3(462.64, -995.88, 30.69),
+                heading = 354.94,
+                distance = 2.5,
+                width = 2.0,
+                length = 1.0,
+                minZ = 30.69 - 0.9,
+                maxZ = 30.69 + 0.9
+            }
+        },
+
+        evidenceLocker = {
+            enabled = false,                      -- Enable evidence locker for this station?
+            jobLock = 'police',                   -- Job lock?
+            coords = vec3(472.5, -991.21, 26.27), -- Area to prompt personal locker
+            range = 2.0,                          -- Range it will prompt from coords above
+            label = '[E] - Access Evidence Locker',
+            target = {
+                enabled = false, -- If enabled, the location above will be obsolete
+                label = 'Access Evidence Locker',
+                coords = vec3(472.5, -991.21, 26.27),
+                heading = 266.23,
+                distance = 2.5,
+                width = 2.0,
+                length = 1.0,
+                minZ = 26.27 - 0.9,
+                maxZ = 26.27 + 0.9
+            }
+        },
+
+
+        vehicles = {                                   -- Vehicle Garage
+            enabled = false,                            -- Enable? False if you have you're own way for medics to obtain vehicles.
             jobLock = 'police',                        -- Job lock? or access to all police jobs by using false
             zone = {
                 coords = vec3(463.69, -1019.72, 28.1), -- Area to prompt vehicle garage
