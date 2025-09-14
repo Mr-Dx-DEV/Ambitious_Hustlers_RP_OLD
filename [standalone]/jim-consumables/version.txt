@@ -1,0 +1,6 @@
+2.0.05
+
+- Fix ESX Hunger events
+- Fix minor progressBar option issues
+
+https://github.com/jimathy/jim-consumables
