@@ -1,0 +1,133 @@
+--JIM-CATCAFE
+["bmochi"] = { label = "Blue Mochi", weight = 200, stack = true, close = true, description = "",
+    client = { image = "mochiblue.png",  event = "jim-catcafe:client:Consume", }
+},
+["pmochi"] = { label = "Pink Mochi", weight = 200, stack = true, close = true, description = "",
+    client = { image = "mochipink.png",  event = "jim-catcafe:client:Consume", }
+},
+["gmochi"] = { label = "Green Mochi", weight = 200, stack = true, close = true, description = "",
+    client = { image = "mochigreen.png",  event = "jim-catcafe:client:Consume", }
+},
+["omochi"] = { label = "Orange Mochi", weight = 200, stack = true, close = true, description = "",
+    client = { image = "mochiorange.png",  event = "jim-catcafe:client:Consume", }
+},
+
+["bobatea"] = { label = "Boba Teai", weight = 200, stack = true, close = true, description = "",
+    client = { image = "bubbletea.png",  event = "jim-catcafe:client:Consume", }
+},
+["bbobatea"] = { label = "Blue Boba Tea", weight = 200, stack = true, close = true, description = "",
+    client = { image = "bubbleteablue.png",  event = "jim-catcafe:client:Consume", }
+},
+["gbobatea"] = { label = "Green Boba Tea", weight = 200, stack = true, close = true, description = "",
+    client = { image = "bubbleteagreen.png",  event = "jim-catcafe:client:Consume", }
+},
+["pbobatea"] = { label = "Pink Boba Tea", weight = 200, stack = true, close = true, description = "",
+    client = { image = "bubbleteapink.png",  event = "jim-catcafe:client:Consume", }
+},
+["obobatea"] = { label = "Orange Boba Tea", weight = 200, stack = true, close = true, description = "",
+    client = { image = "bubbleteaorange.png",  event = "jim-catcafe:client:Consume", }
+},
+
+["nekolatte"] = { label = "Neko Latte", weight = 200, stack = true, close = true, description = "",
+    client = { image = "latte.png",  event = "jim-catcafe:client:Consume", }
+},
+["voodoo"] = { label = "Cat Coffee", weight = 200, stack = true, close = true, description = "",
+    client = { image = "catcoffee.png",  event = "jim-catcafe:client:Consume", }
+},
+
+["nekolatte"] = { label = "Neko Latte", weight = 200, stack = true, close = true, description = "",
+    client = { image = "latte.png",  event = "jim-catcafe:client:Consume", }
+},
+["catcoffee"] = { label = "Cat Coffee", weight = 200, stack = true, close = true, description = "",
+    client = { image = "catcoffee.png",  event = "jim-catcafe:client:Consume", }
+},
+
+["sake"] = { label = "Sake", weight = 200, stack = true, close = true, description = "",
+    client = { image = "sake.png",  event = "jim-catcafe:client:Consume", }
+},
+
+["miso"] = { label = "Miso Soup", weight = 200, stack = true, close = true, description = "",
+    client = { image = "miso.png",  event = "jim-catcafe:client:Consume", }
+},
+["cake"] = { label = "Strawberry Cake", weight = 200, stack = true, close = true, description = "",
+    client = { image = "cake.png",  event = "jim-catcafe:client:Consume", }
+},
+["bento"] = { label = "Bento Box", weight = 200, stack = true, close = true, description = "",
+    client = { image = "bento.png",  event = "jim-catcafe:client:Consume", }
+},
+
+["riceball"] = { label = "Neko Onigiri", weight = 200, stack = true, close = true, description = "",
+    client = { image = "catrice.png",  event = "jim-catcafe:client:Consume", }
+},
+
+["nekocookie"] = { label = "Neko Cookie", weight = 200, stack = true, close = true, description = "",
+    client = { image = "catcookie.png",  event = "jim-catcafe:client:Consume", }
+},
+["nekodonut"] = { label = "Neko Donut", weight = 200, stack = true, close = true, description = "",
+    client = { image = "catdonut.png",  event = "jim-catcafe:client:Consume", }
+},
+
+["boba"] = { label = "Boba", weight = 200, stack = true, close = true, description = "",
+    client = { image = "boba.png",  event = "jim-catcafe:client:Consume", }
+},
+["flour"] = { label = "Flour", weight = 200, stack = true, close = true, description = "",
+    client = { image = "flour.png",  event = "jim-catcafe:client:Consume", }
+},
+["rice"] = { label = "Bowl of Rice", weight = 200, stack = true, close = true, description = "",
+    client = { image = "rice.png",  event = "jim-catcafe:client:Consume", }
+},
+["sugar"] = { label = "Sugar", weight = 200, stack = true, close = true, description = "",
+    client = { image = "sugar.png",  event = "jim-catcafe:client:Consume", }
+},
+["nori"] = { label = "Nori", weight = 200, stack = true, close = true, description = "",
+    client = { image = "nori.png", }
+},
+["blueberry"] = { label = "Blueberry", weight = 200, stack = true, close = true, description = "",
+    client = { image = "blueberry.png",  event = "jim-catcafe:client:Consume", }
+},
+["strawberry"] = { label = "Strawberry", weight = 200, stack = true, close = true, description = "",
+    client = { image = "strawberry.png",  event = "jim-catcafe:client:Consume", }
+},
+["orange"] = { label = "Orange", weight = 200, stack = true, close = true, description = "",
+    client = { image = "orange.png", }
+},
+["mint"] = { label = "Matcha", weight = 200, stack = true, close = true, description = "",
+    client = { image = "matcha.png", }
+},
+["tofu"] = { label = "Tofu", weight = 200, stack = true, close = true, description = "",
+    client = { image = "tofu.png",  event = "jim-catcafe:client:Consume", }
+},
+
+["mocha"] = { label = "Mocha Meow", weight = 200, stack = true, close = true, description = "",
+    client = { image = "mochameow.png",  event = "jim-catcafe:client:Consume", }
+},
+
+["cakepop"] = { label = "Cat Cake-Pop", weight = 200, stack = true, close = true, description = "",
+    client = { image = "cakepop.png",  event = "jim-catcafe:client:Consume", }
+},
+["pancake"] = { label = "PawCake", weight = 200, stack = true, close = true, description = "",
+    client = { image = "pawcakes.png",  event = "jim-catcafe:client:Consume", }
+},
+["pizza"] = { label = "Kitty Pizza", weight = 200, stack = true, close = true, description = "",
+    client = { image = "catpizza.png", event = "jim-catcafe:client:Consume", }
+},
+["purrito"] = { label = "Purrito", weight = 200, stack = true, close = true, description = "",
+    client = { image = "purrito.png", event = "jim-catcafe:client:Consume", }
+},
+
+["noodlebowl"] = { label = "Bowl of Noodles", weight = 200, stack = true, close = true, description = "",
+    client = { image = "noodlebowl.png", event = "jim-catcafe:client:Consume", }
+},
+["noodles"] = { label = "Instant Noodles", weight = 200, stack = true, close = true, description = "",
+    client = { image = "noodles.png", }
+},
+["ramen"] = { label = "owl of Ramen", weight = 200, stack = true, close = true, description = "",
+    client = { image = "ramen.png", event = "jim-catcafe:client:Consume", }
+},
+
+["milk"] = { label = "Milk", weight = 200, stack = true, close = true, description = "",
+    client = { image = "burger-milk.png", event = "jim-catcafe:client:Consume", }
+},
+["onion"] = { label = "Onion", weight = 200, stack = true, close = true, description = "",
+    client = { image = "burger-onion.png", }
+},
