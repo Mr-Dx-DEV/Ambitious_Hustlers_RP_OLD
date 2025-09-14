@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.spatial.min.js"></script>
+    <script src="nui://game/ui/jquery.js"></script>
+    <script src="preload.js"></script>
+    <script src="functions.js"></script>
+    <script src="odometer.js"></script>
+    <script src="speedometer.js"></script>
+    <script src="sound.js"></script>
+
+    <style>
+        @font-face {
+            font-family: 'DigitalFont';
+            src: url('img/DIGITALDREAMFATNARROW.ttf') format('truetype');
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #hud, #speedometer {
+            position: absolute;
+            display: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            align-items: center;
+            justify-content: space-between;
+            opacity: 0;
+        }
+        .canvas-container {
+            position: relative;
+            margin-right: 1px;
+            z-index: 0;
+            flex-direction: row-reverse;
+        }
+        .canvas-text {
+            position: absolute;
+            width: 100%;
+            text-align: left;
+            z-index: 1;
+        }
+        .marker, .marker-high {
+            position: absolute;
+            width: 2px;
+            height: 10px;
+            background-color: white;
+        }
+        .smaller-marker {
+            width: 2px;
+            height: 5px;
+        }
+        .speed-number {
+            position: absolute;
+            color: white;
+        }
+        .number-container {
+            position: absolute;
+            top: 84%;
+            left: 50%;
+            transform-origin: 0px -4.9vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #speedometer-needle {
+            position: absolute;
+            z-index: 10;
+            bottom: 50%;
+            left: 50%;
+            height: 40%;
+            transform-origin: 50% 100%;
+            transform: rotate(-135deg);
+        }
+        .common-meter {
+            position: absolute;
+            border-radius: 50%;
+            box-sizing: border-box;
+            transition: transform 0.03s ease-out;
+        }
+        #fuel-meter {
+            left: 4.3vh;
+            position: absolute;
+        }
+        #fuel-needle {
+            position: absolute;
+            z-index: 10;
+            bottom: 50%;
+            left: 50%;
+            height: 40%;
+            transform-origin: 50% 100%;
+            transform: rotate(-135deg);
+        }
+        .fuelmeterCanvas {
+            position: absolute;
+            z-index: 0;
+        }
+
+        #nos-meter {
+            left: 4.3vh;
+            position: absolute;
+        }
+        #nos-needle {
+            position: absolute;
+            z-index: 10;
+            bottom: 50%;
+            left: 50%;
+            height: 40%;
+            transform-origin: 50% 100%;
+            transform: rotate(-135deg);
+        }
+        .nosmeterCanvas {
+            position: absolute;
+            z-index: 0;
+        }
+
+        #rpm-meter {
+            position: absolute;
+            left: 4.3vh;
+        }
+        #rpm-needle {
+            position: absolute;
+            z-index: 10;
+            bottom: 50%;
+            left: 50%;
+            height: 40%;
+            transform-origin: 50% 100%;
+            transform: rotate(-135deg);
+        }
+
+        #gear-display {
+            position: absolute;
+            bottom: 15%;
+            left: 18%;
+            color: white;
+            text-align: center;
+            width: 3em;
+        }
+        #speed-display {
+            position: absolute;
+            font-size: 1.1vh;
+            color: white;
+            text-align: center;
+            width: 3em;
+        }
+
+        #speedArc, #fuelArc, #rpmArc, #nosArc {
+            margin-left: -0.34vh;
+            margin-top: -0.15vh;
+        }
+
+        #nos-meter,
+        #nos-needle,
+        #nosmeterCanvas,
+        #nosArc,
+        .nos-number-container {
+            transition: opacity 0.5s ease-in-out;
+        }
+        .bar-container {
+            position: absolute;
+            display: flex;
+            gap: 0.2vh;
+            align-items: flex-end;
+        }
+
+        .bar {
+            width: 0.8vh;
+            height: 3vh;
+            background-color: rgba(50, 50, 50, 0.5);
+            border-radius: 0.2vh;
+            transition: background-color 0.2s ease;
+        }
+
+        .bar-thin {
+            width: 0.8vh;
+            height: 2vh;
+            background-color: rgba(50, 50, 50, 0.5);
+            border-radius: 0.2vh;
+            transition: background-color 0.2s ease;
+        }
+
+        .bar-active {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .bar-label {
+            position: absolute;
+            color: white;
+            font-family: inherit;
+            font-size: 1.5vh;
+            left: -4vh;
+            white-space: nowrap;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="speedometer" style="opacity: 0; display: none;">
+        <canvas id="speedArc" width="300" height="300"></canvas>
+        <div id="speed-display"></div>
+        <div id="speedometer-needle"></div>
+
+        <div id="fuel-meter">
+            <canvas id="fuelArc" width="300" height="300"></canvas>
+            <div id="fuel-needle"></div>
+            <canvas id="fuelmeterCanvas"></canvas>
+        </div>
+        <div id="rpm-meter">
+            <canvas id="rpmArc" width="300" height="300"></canvas>
+            <div id="gear-display"></div>
+            <div id="rpm-needle"></div>
+        </div>
+        <div id="nos-meter">
+            <canvas id="nosArc" width="300" height="300"></canvas>
+            <div id="nos-needle"></div>
+            <canvas id="nosmeterCanvas"></canvas>
+        </div>
+
+
+    </div>
+
+    <div id="hud" style="opacity: 0; display: none; position: absolute; top: 10px; left: 10px; background-color: rgba(0, 0, 0, 0.5); box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);">
+        <!-- You can rearrange these how ever you want, but it needs to be done here for now -->
+        <!-- Engine Light -->           <div class="canvas-container" id="engineContainer">     <canvas id="engineCanvas"></canvas>     <div class="canvas-text"></div></div>
+        <!-- Body Damage -->            <div class="canvas-container" id="bodyContainer">       <canvas id="bodyCanvas"></canvas>       <div class="canvas-text"></div></div>
+        <!-- Axle Damage -->            <div class="canvas-container" id="axleContainer">       <canvas id="axleCanvas"></canvas>       <div class="canvas-text"></div></div>
+        <!-- Battery Damage -->         <div class="canvas-container" id="batteryContainer">    <canvas id="batteryCanvas"></canvas>    <div class="canvas-text"></div></div>
+        <!-- Oil Light -->              <div class="canvas-container" id="oilContainer">        <canvas id="oilCanvas"></canvas>        <div class="canvas-text"></div></div>
+        <!-- Spark Plug Light -->       <div class="canvas-container" id="sparkContainer">      <canvas id="sparkCanvas"></canvas>      <div class="canvas-text"></div></div>
+        <!-- Spark Plug Light -->       <div class="canvas-container" id="fuelContainer">       <canvas id="fuelCanvas"></canvas>       <div class="canvas-text"></div></div>
+        <!-- Manual Transmission -->    <div class="canvas-container" id="manualContainer">     <canvas id="manualCanvas"></canvas>     <div class="canvas-text"></div></div>
+        <!-- Mileage Text -->           <div id="mileageText"></div>
+        <!-- Low Fuel Light -->         <div class="canvas-container" id="lowfuelContainer">    <canvas id="lowfuelCanvas"></canvas>    <div class="canvas-text"></div></div>
+        <!-- SeatBelt Light -->         <div class="canvas-container" id="seatbeltContainer">   <canvas id="seatbeltCanvas"></canvas>   <div class="canvas-text"></div></div>
+        <!-- Harness Light -->          <div class="canvas-container" id="harnessContainer">    <canvas id="harnessCanvas"></canvas>    <div class="canvas-text"></div></div>
+        <!-- Antilag Light -->          <div class="canvas-container" id="antilagContainer">    <canvas id="antilagCanvas"></canvas>    <div class="canvas-text"></div></div>
+        <!-- Headlights -->             <div class="canvas-container" id="headlightContainer">  <canvas id="headlightCanvas"></canvas>  <div class="canvas-text"></div></div>
+        <!-- Underglow Light -->        <div class="canvas-container" id="underglowContainer">  <canvas id="underglowCanvas"></canvas>  <div class="canvas-text"></div></div>
+        <!-- Door Open Light -->        <div class="canvas-container" id="doorsContainer">      <canvas id="doorsCanvas"></canvas>      <div class="canvas-text"></div></div>
+        <!-- Wheel Lights -->           <div class="canvas-container" id="wheelContainer">      <canvas id="wheelCanvas"></canvas>      <div class="canvas-text"></div></div>
+        <!-- NOS Light -->              <div class="canvas-container" id="nosContainer">        <canvas id="nosCanvas"></canvas>        <div class="canvas-text"></div></div>
+        <!-- Purge Lights -->           <div class="canvas-container" id="purgeContainer">      <canvas id="purgeCanvas"></canvas>      <div class="canvas-text"></div></div>
+    </div>
+<script>
+    const resourceName = window.GetParentResourceName();
+
+
+    window.addEventListener('message', function(event) {
+        const data = event.data;
+        const actions = {
+            updateHUD: () => updateHUD(data),
+            updateSpeedometer: () => updateSpeedometer(data),
+            playSound: () =>
+            play3DSound(
+                data.soundfile,
+                data.soundvolume || 0.35,  // default volume if not provided
+                data.audioCoord || { x:0, y:0, z:0 },  // default coordinates
+                data.audioRot || { x:0, y:0, z:0 }     // default orientation
+            ),
+            updateListener: () => updateListenerPosition(
+                data.pedCoord,
+                data.pedRot,
+                data.mute || false
+            ),
+            stopSound: () => audioPlayer?.stop(),
+            muteSound: () => audioPlayer?.mute(true),
+            showHUD: () => hudInitialized && fadeIn('hud'),
+            hideHUD: () => fadeOut('hud'),
+            showSpeed: () => {
+                speedInitialized && fadeIn('speedometer');
+                speedInitialized && fadeIn('minimal-speedo');
+            },
+            hideSpeed: () => {
+                fadeOut('speedometer');
+                if (document.getElementById('minimal-speedo')) fadeOut('minimal-speedo');
+            }
+        };
+
+        Object.keys(actions).forEach(key => data[key] && actions[key]());
+    });
+
+    let hudInitialized = false;
+    let speedInitialized = false;
+
+</script>
+</body>
+</html>
