@@ -257,7 +257,7 @@ local function AddCheckpoint()
 
         SetBlipSprite(checkpointData.blip, 1)
         SetBlipDisplay(checkpointData.blip, 4)
-        SetBlipScale(checkpointData.blip, 0.8)
+        SetBlipScale(checkpointData.blip, 0.5)
         SetBlipAsShortRange(checkpointData.blip, true)
         SetBlipColour(checkpointData.blip, 26)
         ShowNumberOnBlip(checkpointData.blip, id)
