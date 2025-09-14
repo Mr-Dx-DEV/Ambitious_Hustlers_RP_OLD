@@ -1,0 +1,210 @@
+Locations = Locations or {}
+
+Locations["bs_gnmodsmirror"] = {
+    enable = false,
+    job = "burgershot",
+    label = "Burger Shot (Mirror Park)",
+    autoClock = { enter = false, exit = true, },
+    logo = "https://static.wikia.nocookie.net/gtawiki/images/b/bf/BurgerShot-HDLogo.svg",
+	zones = {
+        vec2(1222.93, -369.51),
+        vec2(1225.09, -326.21),
+        vec2(1269.28, -332.18),
+        vec2(1283.12, -365.41),
+        vec2(1263.98, -389.72),
+        vec2(1248.82, -379.71)
+	},
+    Blip = {
+        coords = vec3(1243.58, -359.92, 69.21),
+        blipcolor = 5,
+        blipsprite = 106,
+        blipscale = 0.7,
+        blipdisp = 6,
+        blipcat = nil,
+    },
+    Garage = { -- https://github.com/jimathy/jim-jobgarage
+        spawn = vec4(1235.45, -337.55, 68.89, 89.71),
+        out = vec4(1233.54, -333.55, 69.21, 181.12),
+        list = { "stalion2", "burrito3", }
+    },
+    --StashCraft = "BS_GNmodsMirror_fridge1",
+    Stash = {
+        {   coords = vec4(1248.35, -354.0, 68.21, 75.0), minZ = 68.21, maxZ = 70.01, width = 3.0, depth= 1.0,
+            label = locale("targetinfo", "food"),
+            icon = "fas fa-box-open",
+            stashName = "BS_GNmodsMirror_shelf1", stashLabel = "Prepared Food",
+            slots = 40, maxWeight = 600000,
+        },
+        {   coords = vec4(1254.09, -346.85, 68.21, 75.0), minZ = 68.21, maxZ = 70.41, width = 2.9, depth= 0.7,
+            label = locale("targetinfo", "open_food_fridge"),
+            icon = "fas fa-box-open",
+            stashName = "BS_GNmodsMirror_fridge1", stashLabel = "Fridge Storage",
+            slots = 40, maxWeight = 600000,
+        },
+    },
+    PublicStash = {
+        -- Counters
+        {   coords = vec4(1248.07, -356.25, 69.21, 75.0), minZ = 69.21, maxZ = 70.01, width = 0.6, depth = 0.7,
+            label = locale("targetinfo", "open_counter"),
+            icon = "fas fa-hamburger",
+            stashName = "BS_GNmodsMirror_Counter1", stashLabel = "Burgershot Counter",
+        },
+        {   coords = vec4(1246.12, -355.72, 69.21, 75.0), minZ = 69.21, maxZ = 70.01, width = 0.6, depth = 0.7,
+            label = locale("targetinfo", "open_counter"),
+            icon = "fas fa-hamburger",
+            stashName = "BS_GNmodsMirror_Counter2", stashLabel = "Burgershot Counter 2",
+        },
+        {   coords = vec4(1244.31, -355.22, 69.21, 75.0), minZ = 69.21, maxZ = 70.01, width = 0.6, depth = 0.7,
+            label = locale("targetinfo", "open_counter"),
+            icon = "fas fa-hamburger",
+            stashName = "BS_GNmodsMirror_Counter3", stashLabel = "Burgershot Counter 3",
+            slots = 10, maxWeight = 200000,
+        },
+
+    },
+    Shop = {
+        {   coords = vec4(1255.54, -348.84, 68.21, 345.0), minZ = 68.21, maxZ = 70.41, width = 2.9, depth= 0.7,
+            label = locale("targetinfo", "open_food_fridge"),
+            icon = "fas fa-box-open",
+            shopName = "BS_GNmodsMirror_fridge",
+            items = Shops.BurgerShotItems,
+        },
+    },
+    Crafting = {
+        {   coords = vec4(1248.1, -351.95, 68.21, 75.0), width = 0.6, depth = 2.9, minZ = 68.41, maxZ = 70.01,
+            label = locale("targetinfo", "prepare_food"),
+            icon = "fas fa-hamburger",
+            craftable = Crafting.BurgerShotPrepare,
+        },
+        {   coords = vec4(1249.57, -352.28, 68.21, 75.0), width = 0.6, depth = 1.8, minZ = 68.41, maxZ = 70.01,
+            label = locale("targetinfo", "use_chopping_board"),
+            icon = "fas fa-utensils",
+            craftable = Crafting.BurgerShotChopBoard,
+        },
+        {   coords = vec4(1253.42, -355.18, 68.21, 345.0), width = 1.6, depth= 0.6, minZ = 68.41, maxZ = 70.01,
+            label = locale("targetinfo", "use_grill"),
+            icon = "fas fa-fire",
+            craftable = Crafting.BurgerShotGrill,
+        },
+        {   coords = vec4(1254.32, -352.18, 68.21, 345.0), width = 1.6, depth = 0.6, minZ = 68.21, maxZ = 69.41,
+            label = locale("targetinfo", "use_deepfryer"),
+            icon = "fas fa-temperature-high",
+            craftable = Crafting.BurgerShotFryer,
+        },
+        {   coords = vec4(1244.77, -353.21, 69.21, 345.0), width = 0.6, depth = 0.9, minZ = 69.21, maxZ = 70.01,
+            label = locale("targetinfo", "prepare_drinks"),
+            icon = "fas fa-mug-hot",
+            craftable = Crafting.BurgerShotDrink,
+        },
+        {   coords = vec4(1245.5, -353.42, 69.21, 345.0), width = 0.8, depth = 0.6, minZ = 69.21, maxZ = 70.01,
+            label = locale("targetinfo", "open_cabinet"),
+            icon = "fas fa-dot-circle",
+            craftable = Crafting.BurgerShotDonut,
+        },
+    },
+    Payments = {
+        {   coords = vec4(1248.83, -356.41, 69.21, 345.0), width = 0.6, depth= 0.6, minZ = 69.26, maxZ = 70.01,
+            label = locale("targetinfo", "charge"),
+            icon = "fas fa-credit-card",
+        },
+        {   coords = vec4(1246.82, -355.88, 69.21, 345.0), width = 0.6, depth= 0.6, minZ = 69.26, maxZ = 70.01,
+            label = locale("targetinfo", "charge"),
+            icon = "fas fa-credit-card",
+        },
+        {   coords = vec4(1245.08, -355.42, 69.21, 345.0), width = 0.6, depth= 0.6, minZ = 69.26, maxZ = 70.01,
+            label = locale("targetinfo", "charge"),
+            icon = "fas fa-credit-card",
+        },
+    },
+    WashHands = {
+        {   coords = vec4(1239.16, -353.85, 68.2, 345.0), width = 0.7, depth = 0.7, minZ = 68.2, maxZ = 69.41,
+            label = locale("targetinfo", "wash_hands"),
+            icon = "fas fa-hand-holding-droplet",
+        },
+        {   coords = vec4(1245.36, -352.29, 68.2, 75.0), width = 1.0, depth = 0.7, minZ = 68.2, maxZ = 69.41,
+            label = locale("targetinfo", "wash_hands"),
+            icon = "fas fa-hand-holding-droplet",
+        },
+    },
+    Box = {
+        {   coords = vec4(1251.9, -358.86, 69.01, 36.0), width = 1.0, depth = 0.5, minZ = 69.01, maxZ = 70.01,
+            label = "Grab MurgerBag",
+            prog = "Grabbing MurgerBag..",
+            icon = "fas fa-bag-shopping",
+            item = "murderbag",
+        },
+    },
+    Toilets = {
+        --
+    },
+    PropAdd = {
+        --
+    },
+    PropHide = {
+        --
+    },
+    Chairs = {
+        --RIGHT--
+        --Booth 1--
+        { coords = vec4(1251.52, -359.99, 69.2, 165.93), stand = vec3(1250.83, -359.88, 69.2) },
+        { coords = vec4(1252.26, -360.18, 69.2, 165.93), stand = vec3(1250.83, -359.88, 69.2) },
+        { coords = vec4(1251.15, -361.40, 69.2, 345.93), stand = vec3(1250.49, -361.15, 69.2) },
+        { coords = vec4(1251.84, -361.61, 69.2, 345.93), stand = vec3(1250.49, -361.15, 69.2) },
+        --Booth 2--
+        { coords = vec4(1250.96, -362.08, 69.2, 165.93), stand = vec3(1250.11, -361.9, 69.2) },
+        { coords = vec4(1251.70, -362.26, 69.2, 165.93), stand = vec3(1250.11, -361.9, 69.2) },
+        { coords = vec4(1250.58, -363.50, 69.2, 345.93), stand = vec3(1249.89, -363.23, 69.2) },
+        { coords = vec4(1251.36, -363.69, 69.2, 345.93), stand = vec3(1249.89, -363.23, 69.2) },
+        --Booth 3--
+        { coords = vec4(1250.40, -364.14, 69.2, 165.93), stand = vec3(1249.73, -363.97, 69.2) },
+        { coords = vec4(1251.17, -364.35, 69.2, 165.93), stand = vec3(1249.73, -363.97, 69.2) },
+        { coords = vec4(1250.01, -365.59, 69.2, 345.93), stand = vec3(1249.43, -365.32, 69.2) },
+        { coords = vec4(1250.74, -365.78, 69.2, 345.93), stand = vec3(1249.43, -365.32, 69.2) },
+        --Booth 4--
+        { coords = vec4(1246.96, -360.99, 69.2, 165.93), stand = vec3(1247.56, -361.19, 69.2) },
+        { coords = vec4(1246.19, -360.78, 69.2, 165.93), stand = vec3(1247.56, -361.19, 69.2) },
+        { coords = vec4(1246.54, -362.41, 69.2, 345.93), stand = vec3(1247.27, -362.62, 69.2) },
+        { coords = vec4(1245.83, -362.21, 69.2, 345.93), stand = vec3(1247.27, -362.62, 69.2) },
+        --Booth 5--
+        { coords = vec4(1246.40, -363.07, 69.2, 165.93), stand = vec3(1247.16, -363.41, 69.2) },
+        { coords = vec4(1245.66, -362.87, 69.2, 165.93), stand = vec3(1247.16, -363.41, 69.2) },
+        { coords = vec4(1245.99, -364.50, 69.2, 345.93), stand = vec3(1246.78, -364.73, 69.2) },
+        { coords = vec4(1245.27, -364.33, 69.2, 345.93), stand = vec3(1246.78, -364.73, 69.2) },
+
+        --LEFT--,
+        --Booth 1--
+        { coords = vec4(1239.77, -359.06, 69.2, 165.93), stand = vec3(1239.08, -358.88, 69.2) },
+        { coords = vec4(1240.51, -359.27, 69.2, 165.93), stand = vec3(1239.08, -358.88, 69.2) },
+        { coords = vec4(1239.40, -360.49, 69.2, 345.93), stand = vec3(1238.79, -360.28, 69.2) },
+        { coords = vec4(1240.10, -360.68, 69.2, 345.93), stand = vec3(1238.79, -360.28, 69.2) },
+        --Booth 2--,
+        { coords = vec4(1239.2, -361.14, 69.2, 165.93), stand = vec3(1238.5, -361.07, 69.2) },
+        { coords = vec4(1239.94, -361.34, 69.2, 165.93), stand = vec3(1238.5, -361.07, 69.2) },
+        { coords = vec4(1238.84, -362.60, 69.2, 345.93), stand = vec3(1238.18, -362.37, 69.2) },
+        { coords = vec4(1239.56, -362.81, 69.2, 345.93), stand = vec3(1238.18, -362.37, 69.2) },
+
+        --Booth 2--
+        { coords = vec4(1235.94, -357.54, 69.2, 165.93), stand = vec3(1236.53, -357.71, 69.2) },
+        { coords = vec4(1235.18, -357.33, 69.2, 165.93), stand = vec3(1236.53, -357.71, 69.2) },
+        { coords = vec4(1235.58, -358.96, 69.2, 345.93), stand = vec3(1236.26, -359.11, 69.2) },
+        { coords = vec4(1234.81, -358.76, 69.2, 345.93), stand = vec3(1236.26, -359.11, 69.2) },
+        --Booth 3--
+        { coords = vec4(1235.38, -359.62, 69.2, 165.93), stand = vec3(1236.01, -359.87, 69.2) },
+        { coords = vec4(1234.64, -359.41, 69.2, 165.93), stand = vec3(1236.01, -359.87, 69.2) },
+        { coords = vec4(1234.98, -361.06, 69.2, 345.93), stand = vec3(1235.64, -361.35, 69.2) },
+        { coords = vec4(1234.24, -360.86, 69.2, 345.93), stand = vec3(1235.64, -361.35, 69.2) },
+
+        --Corner--
+        { coords = vec4(1234.89, -363.91, 69.2, 345.93), stand = vec3(1235.32, -363.16, 69.2) },
+        { coords = vec4(1234.14, -363.71, 69.2, 345.93), stand = vec3(1235.32, -363.16, 69.2) },
+
+        { coords = vec4(1233.65, -362.83, 69.2, 255.93), stand = vec3(1234.72, -362.17, 69.2) },
+        { coords = vec4(1233.85, -362.10, 69.2, 255.93), stand = vec3(1234.72, -362.17, 69.2) },
+
+        --STOOLS-
+        { coords = vec4(1249.59, -367.46, 69.5, 165.93), stand = vec3(1249.71, -367.10, 69.20) },
+        { coords = vec4(1248.15, -367.06, 69.5, 165.93), stand = vec3(1248.23, -366.55, 69.20) },
+        { coords = vec4(1246.74, -366.70, 69.5, 165.93), stand = vec3(1246.87, -366.25, 69.20) },
+        { coords = vec4(1245.32, -366.32, 69.5, 165.93), stand = vec3(1245.4, -365.91, 69.21) },
+    },
+}

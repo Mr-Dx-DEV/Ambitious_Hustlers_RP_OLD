@@ -1,0 +1,93 @@
+-- JIM-BURGERSHOT --
+potato = { label = 'Potatoes', weight = 500, stack = true, close = false, description = 'Bag of potatoes.',
+    client = { image = 'potatoes.png', event = "jim-burgershot:client:Consume", }
+},
+onion = { label = 'Onion', weight = 500, stack = true, close = false, description = 'A whole raw onion.',
+    client = { image = 'burger-onion.png', event = "jim-burgershot:client:Consume", }
+},
+lettuce = { label = 'Lettuce', weight = 100, stack = true, close = false, description = 'Fresh leafy lettuce.',
+    client = { image = 'lettuce.png', event = "jim-burgershot:client:Consume", }
+},
+milk = { label = 'Milk', weight = 500, stack = true, close = true, description = 'Carton of fresh milk.',
+    client = { image = 'burger-milk.png', event = "jim-burgershot:client:Consume", }
+},
+-- Prepared Ingredients
+slicedpotato = { label = 'Sliced Potatoes', weight = 500, stack = true, close = false, description = 'Sliced fresh potatoes.',
+    client = { image = 'burger-slicedpotato.png', event = "jim-burgershot:client:Consume", }
+},
+slicedonion = { label = 'Sliced Onions', weight = 500, stack = true, close = false, description = 'Crispy onion slices.',
+    client = { image = 'burger-slicedonion.png', event = "jim-burgershot:client:Consume", }
+},
+cheddar = { label = 'Cheddar Slice', weight = 500, stack = true, close = false, description = 'A single slice of cheddar cheese.',
+    client = { image = 'cheddar.png', event = "jim-burgershot:client:Consume", }
+},
+burgerbun = { label = 'Burger Bun', weight = 100, stack = true, close = false, description = 'Soft bun for burgers.',
+    client = { image = 'burgerbun.png', event = "jim-burgershot:client:Consume", }
+},
+burgerpatty = { label = 'Burger Patty', weight = 500, stack = true, close = false, description = 'Raw beef patty for grilling.',
+    client = { image = 'burgerpatty.png', event = "jim-burgershot:client:Consume", }
+},
+burgermeat = { label = 'Burger Meat', weight = 500, stack = true, close = false, description = 'Cooked burger meat patty.',
+    client = { image = 'burgermeat.png', event = "jim-burgershot:client:Consume", }
+},
+frozennugget = { label = 'Frozen Nuggets', weight = 500, stack = true, close = false, description = 'Bag of frozen chicken nuggets.',
+    client = { image = 'burger-frozennugget.png', event = "jim-burgershot:client:Consume", }
+},
+-- Menu: Burgers
+heartstopper = { label = 'HeartStopper', weight = 200, stack = true, close = true, description = 'Massive heart-stopping burger.',
+    client = { image = 'burger-heartstopper.png', event = "jim-burgershot:client:Consume", }
+},
+moneyshot = { label = 'Money Shot', weight = 200, stack = true, close = true, description = 'BurgerShot’s signature burger.',
+    client = { image = 'burger-moneyshot.png', event = "jim-burgershot:client:Consume", }
+},
+meatfree = { label = 'Meat Free', weight = 200, stack = true, close = true, description = 'Plant-based burger option.',
+    client = { image = 'burger-meatfree.png', event = "jim-burgershot:client:Consume", }
+},
+bleeder = { label = 'The Bleeder', weight = 200, stack = true, close = true, description = 'Spicy burger with a kick.',
+    client = { image = 'burger-bleeder.png', event = "jim-burgershot:client:Consume", }
+},
+torpedo = { label = 'Torpedo', weight = 200, stack = true, close = true, description = 'Long sub-style burger.',
+    client = { image = 'burger-torpedo.png', event = "jim-burgershot:client:Consume", }
+},
+-- Sides
+shotnuggets = { label = 'Shot Nuggets', weight = 200, stack = true, close = true, description = 'BurgerShot chicken nuggets.',
+    client = { image = 'burger-shotnuggets.png', event = "jim-burgershot:client:Consume", }
+},
+shotrings = { label = 'Ring Shots', weight = 200, stack = true, close = true, description = 'BurgerShot onion rings.',
+    client = { image = 'burger-shotrings.png', event = "jim-burgershot:client:Consume", }
+},
+shotfries = { label = 'Shot Fries', weight = 200, stack = true, close = true, description = 'Golden BurgerShot fries.',
+    client = { image = 'burger-fries.png', event = "jim-burgershot:client:Consume", }
+},
+-- Wraps
+cheesewrap = { label = 'BS Cheese Wrap', weight = 150, stack = true, close = true, description = 'Cheesy chicken wrap.',
+    client = { image = 'burger-chickenwrap.png', event = "jim-burgershot:client:Consume", }
+},
+chickenwrap = { label = 'BS Goat Cheese Wrap', weight = 150, stack = true, close = true, description = 'Wrap filled with goat cheese.',
+    client = { image = 'burger-goatwrap.png', event = "jim-burgershot:client:Consume", }
+},
+-- Drinks
+bscoffee = { label = 'BurgerShot Coffee', weight = 200, stack = true, close = true, description = 'Hot BurgerShot coffee.',
+    client = { image = 'burger-coffee.png', event = "jim-burgershot:client:Consume", }
+},
+bscoke = { label = 'BurgerShot Coke', weight = 200, stack = true, close = true, description = 'Chilled cola beverage.',
+    client = { image = 'burger-softdrink.png', event = "jim-burgershot:client:Consume", }
+},
+milkshake = { label = 'Milkshake', weight = 500, stack = true, close = true, description = 'Thick and sweet milkshake.',
+    client = { image = 'burger-milkshake.png', event = "jim-burgershot:client:Consume", }
+},
+-- Desserts
+rimjob = { label = 'Rim Job', weight = 200, stack = true, close = true, description = 'BurgerShot donut treat.',
+    client = { image = 'burger-rimjob.png', event = "jim-burgershot:client:Consume", }
+},
+creampie = { label = 'Creampie', weight = 200, stack = true, close = true, description = 'Classic apple pie dessert.',
+    client = { image = 'burger-creampie.png', event = "jim-burgershot:client:Consume", }
+},
+icecream = { label = 'Ice Cream', weight = 500, stack = true, close = false, description = 'Chilled and creamy dessert.',
+    client = { image = 'burger-icecream.png', event = "jim-burgershot:client:Consume", }
+},
+
+-- Specials
+murderbag = { label = 'Murder Bag', weight = 0, stack = false, close = true, description = 'A surprise bag full of burgers.',
+    client = { image = 'burgerbag.png', }
+},
