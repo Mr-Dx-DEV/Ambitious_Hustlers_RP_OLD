@@ -1,0 +1,17 @@
+name: Discord Commit Notifier
+
+on:
+  push:
+    branches:
+      - '*'  # triggers on all branches
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send commit payload to Discord Bot
+        run: |
+          curl -X POST http://${{ secrets.DISCORDBOT }}:3000/github-commits \
+            -H "Content-Type: application/json" \
+            -d '${{ toJson(github.event) }}'

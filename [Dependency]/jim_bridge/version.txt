@@ -1,0 +1,15 @@
+2.0.22
+
+- Support for qs-interface
+- Fix polyzone minZ + maxZ handling
+- Fix ox_target zone location to match qb-target
+- Fix "Waiting for script start" loop bug
+- Add condition for fading in entities
+- Fix typo breaking scripts on gta skillbar fail
+- Fix typo for gksphone invoice event
+- Fix latio_ui TextUI placement
+- Remove registerShop debug message
+- Fix typo in print when removing codem stash item
+- Fix function typo from origen inv documenation
+
+https://github.com/jimathy/jim_bridge
