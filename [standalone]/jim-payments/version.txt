@@ -1,0 +1,6 @@
+3.0.05
+
+- Add extra check for if playerData exists when getting player list
+- Add new lookAtCharge option to allow players to target who to charge
+
+https://github.com/jimathy/jim-payments
