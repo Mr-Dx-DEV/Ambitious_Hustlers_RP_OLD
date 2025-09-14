@@ -65,4 +65,9 @@ setContainerProperties('pizzabox', {
 	whitelist = { 'pizza' }
 })
 
+setContainerProperties('murderbag', {
+	slots = 5,
+	maxWeight = 1000,
+})
+
 return containers
