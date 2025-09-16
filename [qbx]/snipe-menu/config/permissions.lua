@@ -27,9 +27,11 @@ Config.GodRoles = {
 
 -- Original Permissions table for information on all possible available options
 Config.Permissions = {
-    ["discord:811436286006657025"] = "god",
-    ["discord:677439579585773589"] = "god",  
-    ["discord:835917888069435423"] = "god",  
+    ["discord:811436286006657025"] = "god",     -- dx
+    ["discord:677439579585773589"] = "god",     -- demon
+    ["discord:835917888069435423"] = "god",       -- mrs demon
+    ["discord:694971494001934337"] = "god",      -- toxic
+    ["discord:368376078894628866"] = "god",      -- toxic
 
 
 

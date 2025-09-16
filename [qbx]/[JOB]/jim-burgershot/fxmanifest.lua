@@ -1,6 +1,6 @@
 name "Jim-BurgerShot"
 author "Jimathy"
-version "3.0.08"
+version "5.0.08"
 description "BurgerShot Job Script"
 fx_version "cerulean"
 game "gta5"

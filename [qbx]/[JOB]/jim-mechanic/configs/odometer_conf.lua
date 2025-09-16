@@ -1,7 +1,7 @@
 Config = Config or {}
 
 Config.Odometer = {
-    ShowOdo = true, 					-- Wether the distance is showed in car by default
+    ShowOdo = false, 					-- Wether the distance is showed in car by default
                                         -- This can be toggled by players on the fly by players with /showodo
 
     ShowToAll = false,					-- If enabled, the odometer, like the milage will be shown to passengers aswell as the driver
@@ -17,7 +17,7 @@ Config.Odometer = {
     HarnessHideWhenBuckled = true, 		-- If true, hide Harness icon when buckled
                                         -- If false, the icon changes to red to green when buckled
 
-    showSpeedometer = true,             -- If you wish to use the built in speedometer, enable this
+    showSpeedometer = false,             -- If you wish to use the built in speedometer, enable this
 
     OdoIconsToShow = {
         -- Simply if these are true, they will show on the odometer hud

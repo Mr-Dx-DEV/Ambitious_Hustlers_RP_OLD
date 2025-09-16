@@ -22,9 +22,9 @@ lib.addCommand('tp', {
         end
     else
         if args[locale('command.tp.params.x.name')] and args[locale('command.tp.params.y.name')] and args[locale('command.tp.params.z.name')] then
-            local x = tonumber((args[locale('command.tp.params.x.name')]:gsub(',', ''))) + .0
-            local y = tonumber((args[locale('command.tp.params.y.name')]:gsub(',', ''))) + .0
-            local z = tonumber((args[locale('command.tp.params.z.name')]:gsub(',', ''))) + .0
+            local x = tonumber((args[locale('command.tp.params.x.name')]:gsub(',',''))) + .0
+            local y = tonumber((args[locale('command.tp.params.y.name')]:gsub(',',''))) + .0
+            local z = tonumber((args[locale('command.tp.params.z.name')]:gsub(',',''))) + .0
             if x ~= 0 and y ~= 0 and z ~= 0 then
                 TriggerClientEvent('QBCore:Command:TeleportToCoords', source, x, y, z)
             else
@@ -40,23 +40,13 @@ lib.addCommand('tpm', {
     help = locale('command.tpm.help'),
     restricted = 'group.admin'
 }, function(source)
-    if not IsOptin(source) then
-        Notify(source, locale('error.not_optin'), 'error')
-        return
-    end
-
     TriggerClientEvent('QBCore:Command:GoToMarker', source)
 end)
 
 lib.addCommand('togglepvp', {
     help = locale('command.togglepvp.help'),
     restricted = 'group.admin'
-}, function(source)
-    if not IsOptin(source) then
-        Notify(source, locale('error.not_optin'), 'error')
-        return
-    end
-
+}, function()
     config.server.pvp = not config.server.pvp
     GlobalState.PVPEnabled = config.server.pvp
 end)
@@ -64,7 +54,7 @@ end)
 lib.addCommand('addpermission', {
     help = locale('command.addpermission.help'),
     params = {
-        { name = locale('command.addpermission.params.id.name'),         help = locale('command.addpermission.params.id.help'),         type = 'playerId' },
+        { name = locale('command.addpermission.params.id.name'), help = locale('command.addpermission.params.id.help'), type = 'playerId' },
         { name = locale('command.addpermission.params.permission.name'), help = locale('command.addpermission.params.permission.help'), type = 'string' }
     },
     restricted = 'group.admin'
@@ -83,7 +73,7 @@ end)
 lib.addCommand('removepermission', {
     help = locale('command.removepermission.help'),
     params = {
-        { name = locale('command.removepermission.params.id.name'),         help = locale('command.removepermission.params.id.help'),         type = 'playerId' },
+        { name = locale('command.removepermission.params.id.name'), help = locale('command.removepermission.params.id.help'), type = 'playerId' },
         { name = locale('command.removepermission.params.permission.name'), help = locale('command.removepermission.params.permission.help'), type = 'string' }
     },
     restricted = 'group.admin'
@@ -147,7 +137,7 @@ end)
 lib.addCommand('car', {
     help = locale('command.car.help'),
     params = {
-        { name = locale('command.car.params.model.name'),              help = locale('command.car.params.model.help') },
+        { name = locale('command.car.params.model.name'), help = locale('command.car.params.model.help') },
         { name = locale('command.car.params.keepCurrentVehicle.name'), help = locale('command.car.params.keepCurrentVehicle.help'), optional = true },
     },
     restricted = 'group.admin'
@@ -181,7 +171,7 @@ lib.addCommand('dv', {
     restricted = 'group.admin'
 }, function(source, args)
     local ped = GetPlayerPed(source)
-    local pedCars = { GetVehiclePedIsIn(ped, false) }
+    local pedCars = {GetVehiclePedIsIn(ped, false)}
     local radius = args[locale('command.dv.params.radius.name')]
 
     if pedCars[1] == 0 or radius then -- Only execute when player is not in a vehicle or radius is explicitly defined
@@ -194,8 +184,6 @@ lib.addCommand('dv', {
         for i = 1, #pedCars do
             local pedCar = NetworkGetEntityFromNetworkId(pedCars[i])
             if pedCar and DoesEntityExist(pedCar) then
-                local plate = GetVehicleNumberPlateText(pedCar)
-                exports.MrNewbVehicleKeys:RemoveKeysByPlate(source, plate)
                 DeleteVehicle(pedCar)
             end
         end
@@ -232,9 +220,9 @@ end)
 lib.addCommand('givemoney', {
     help = locale('command.givemoney.help'),
     params = {
-        { name = locale('command.givemoney.params.id.name'),        help = locale('command.givemoney.params.id.help'),        type = 'playerId' },
+        { name = locale('command.givemoney.params.id.name'), help = locale('command.givemoney.params.id.help'), type = 'playerId' },
         { name = locale('command.givemoney.params.moneytype.name'), help = locale('command.givemoney.params.moneytype.help'), type = 'string' },
-        { name = locale('command.givemoney.params.amount.name'),    help = locale('command.givemoney.params.amount.help'),    type = 'number' }
+        { name = locale('command.givemoney.params.amount.name'), help = locale('command.givemoney.params.amount.help'), type = 'number' }
     },
     restricted = 'group.admin'
 }, function(source, args)
@@ -244,16 +232,15 @@ lib.addCommand('givemoney', {
         return
     end
 
-    player.Functions.AddMoney(args[locale('command.givemoney.params.moneytype.name')],
-        args[locale('command.givemoney.params.amount.name')])
+    player.Functions.AddMoney(args[locale('command.givemoney.params.moneytype.name')], args[locale('command.givemoney.params.amount.name')])
 end)
 
 lib.addCommand('setmoney', {
     help = locale('command.setmoney.help'),
     params = {
-        { name = locale('command.setmoney.params.id.name'),        help = locale('command.setmoney.params.id.help'),        type = 'playerId' },
+        { name = locale('command.setmoney.params.id.name'), help = locale('command.setmoney.params.id.help'), type = 'playerId' },
         { name = locale('command.setmoney.params.moneytype.name'), help = locale('command.setmoney.params.moneytype.help'), type = 'string' },
-        { name = locale('command.setmoney.params.amount.name'),    help = locale('command.setmoney.params.amount.help'),    type = 'number' }
+        { name = locale('command.setmoney.params.amount.name'), help = locale('command.setmoney.params.amount.help'), type = 'number' }
     },
     restricted = 'group.admin'
 }, function(source, args)
@@ -263,8 +250,7 @@ lib.addCommand('setmoney', {
         return
     end
 
-    player.Functions.SetMoney(args[locale('command.setmoney.params.moneytype.name')],
-        args[locale('command.setmoney.params.amount.name')])
+    player.Functions.SetMoney(args[locale('command.setmoney.params.moneytype.name')], args[locale('command.setmoney.params.amount.name')])
 end)
 
 lib.addCommand('job', {
@@ -277,9 +263,9 @@ end)
 lib.addCommand('setjob', {
     help = locale('command.setjob.help'),
     params = {
-        { name = locale('command.setjob.params.id.name'),    help = locale('command.setjob.params.id.help'),    type = 'playerId' },
-        { name = locale('command.setjob.params.job.name'),   help = locale('command.setjob.params.job.help'),   type = 'string' },
-        { name = locale('command.setjob.params.grade.name'), help = locale('command.setjob.params.grade.help'), type = 'number',  optional = true }
+        { name = locale('command.setjob.params.id.name'), help = locale('command.setjob.params.id.help'), type = 'playerId' },
+        { name = locale('command.setjob.params.job.name'), help = locale('command.setjob.params.job.help'), type = 'string' },
+        { name = locale('command.setjob.params.grade.name'), help = locale('command.setjob.params.grade.help'), type = 'number', optional = true }
     },
     restricted = 'group.admin'
 }, function(source, args)
@@ -289,15 +275,14 @@ lib.addCommand('setjob', {
         return
     end
 
-    local success, errorResult = player.Functions.SetJob(args[locale('command.setjob.params.job.name')],
-        args[locale('command.setjob.params.grade.name')] or 0)
+    local success, errorResult = player.Functions.SetJob(args[locale('command.setjob.params.job.name')], args[locale('command.setjob.params.grade.name')] or 0)
     assert(success, json.encode(errorResult))
 end)
 
 lib.addCommand('changejob', {
     help = locale('command.changejob.help'),
     params = {
-        { name = locale('command.changejob.params.id.name'),  help = locale('command.changejob.params.id.help'),  type = 'playerId' },
+        { name = locale('command.changejob.params.id.name'), help = locale('command.changejob.params.id.help'), type = 'playerId' },
         { name = locale('command.changejob.params.job.name'), help = locale('command.changejob.params.job.help'), type = 'string' },
     },
     restricted = 'group.admin'
@@ -308,17 +293,16 @@ lib.addCommand('changejob', {
         return
     end
 
-    local success, errorResult = SetPlayerPrimaryJob(player.PlayerData.citizenid,
-        args[locale('command.changejob.params.job.name')])
+    local success, errorResult = SetPlayerPrimaryJob(player.PlayerData.citizenid, args[locale('command.changejob.params.job.name')])
     assert(success, json.encode(errorResult))
 end)
 
 lib.addCommand('addjob', {
     help = locale('command.addjob.help'),
     params = {
-        { name = locale('command.addjob.params.id.name'),    help = locale('command.addjob.params.id.help'),    type = 'playerId' },
-        { name = locale('command.addjob.params.job.name'),   help = locale('command.addjob.params.job.help'),   type = 'string' },
-        { name = locale('command.addjob.params.grade.name'), help = locale('command.addjob.params.grade.help'), type = 'number',  optional = true }
+        { name = locale('command.addjob.params.id.name'), help = locale('command.addjob.params.id.help'), type = 'playerId' },
+        { name = locale('command.addjob.params.job.name'), help = locale('command.addjob.params.job.help'), type = 'string' },
+        { name = locale('command.addjob.params.grade.name'), help = locale('command.addjob.params.grade.help'), type = 'number', optional = true}
     },
     restricted = 'group.admin'
 }, function(source, args)
@@ -328,15 +312,14 @@ lib.addCommand('addjob', {
         return
     end
 
-    local success, errorResult = AddPlayerToJob(player.PlayerData.citizenid,
-        args[locale('command.addjob.params.job.name')], args[locale('command.addjob.params.grade.name')] or 0)
+    local success, errorResult = AddPlayerToJob(player.PlayerData.citizenid, args[locale('command.addjob.params.job.name')], args[locale('command.addjob.params.grade.name')] or 0)
     assert(success, json.encode(errorResult))
 end)
 
 lib.addCommand('removejob', {
     help = locale('command.removejob.help'),
     params = {
-        { name = locale('command.removejob.params.id.name'),  help = locale('command.removejob.params.id.help'),  type = 'playerId' },
+        { name = locale('command.removejob.params.id.name'), help = locale('command.removejob.params.id.help'), type = 'playerId' },
         { name = locale('command.removejob.params.job.name'), help = locale('command.removejob.params.job.help'), type = 'string' }
     },
     restricted = 'group.admin'
@@ -347,8 +330,7 @@ lib.addCommand('removejob', {
         return
     end
 
-    local success, errorResult = RemovePlayerFromJob(player.PlayerData.citizenid,
-        args[locale('command.removejob.params.job.name')])
+    local success, errorResult = RemovePlayerFromJob(player.PlayerData.citizenid, args[locale('command.removejob.params.job.name')])
     assert(success, json.encode(errorResult))
 end)
 
@@ -362,9 +344,9 @@ end)
 lib.addCommand('setgang', {
     help = locale('command.setgang.help'),
     params = {
-        { name = locale('command.setgang.params.id.name'),    help = locale('command.setgang.params.id.help'),    type = 'playerId' },
-        { name = locale('command.setgang.params.gang.name'),  help = locale('command.setgang.params.gang.help'),  type = 'string' },
-        { name = locale('command.setgang.params.grade.name'), help = locale('command.setgang.params.grade.help'), type = 'number',  optional = true }
+        { name = locale('command.setgang.params.id.name'), help = locale('command.setgang.params.id.help'), type = 'playerId' },
+        { name = locale('command.setgang.params.gang.name'), help = locale('command.setgang.params.gang.help'), type = 'string' },
+        { name = locale('command.setgang.params.grade.name'), help = locale('command.setgang.params.grade.help'), type = 'number', optional = true }
     },
     restricted = 'group.admin'
 }, function(source, args)
@@ -374,8 +356,7 @@ lib.addCommand('setgang', {
         return
     end
 
-    local success, errorResult = player.Functions.SetGang(args[locale('command.setgang.params.gang.name')],
-        args[locale('command.setgang.params.grade.name')] or 0)
+    local success, errorResult = player.Functions.SetGang(args[locale('command.setgang.params.gang.name')], args[locale('command.setgang.params.grade.name')] or 0)
     assert(success, json.encode(errorResult))
 end)
 
@@ -391,31 +372,30 @@ lib.addCommand('ooc', {
     for _, v in pairs(players) do
         if v == source then
             exports.chat:addMessage(v --[[@as Source]], {
-                color = { 0, 0, 255 },
+                color = { 0, 0, 255},
                 multiline = true,
-                args = { ('OOC | %s'):format(GetPlayerName(source)), message }
+                args = {('OOC | %s'):format(GetPlayerName(source)), message}
             })
         elseif #(playerCoords - GetEntityCoords(GetPlayerPed(v))) < 20.0 then
             exports.chat:addMessage(v --[[@as Source]], {
-                color = { 0, 0, 255 },
+                color = { 0, 0, 255},
                 multiline = true,
-                args = { ('OOC | %s'):format(GetPlayerName(source)), message }
+                args = {('OOC | %s'):format(GetPlayerName(source)), message}
             })
         elseif IsPlayerAceAllowed(v --[[@as string]], 'admin') then
             if IsOptin(v --[[@as Source]]) then
-                exports.chat:addMessage(v --[[@as Source]], {
-                    color = { 0, 0, 255 },
+                exports.chat:addMessage(v--[[@as Source]], {
+                    color = { 0, 0, 255},
                     multiline = true,
-                    args = { ('Proximity OOC | %s'):format(GetPlayerName(source)), message }
+                    args = {('Proximity OOC | %s'):format(GetPlayerName(source)), message}
                 })
                 logger.log({
-                    source  = 'qbx_core',
-                    webhook = 'ooc',
-                    event   = 'OOC',
-                    color   = 'white',
-                    tags    = config.logging.role,
-                    message = ('**%s** (CitizenID: %s | ID: %s) **Message:** %s'):format(GetPlayerName(source),
-                        player.PlayerData.citizenid, source, message)
+                    source = 'qbx_core',
+                    webhook  = 'ooc',
+                    event = 'OOC',
+                    color = 'white',
+                    tags = config.logging.role,
+                    message = ('**%s** (CitizenID: %s | ID: %s) **Message:** %s'):format(GetPlayerName(source), player.PlayerData.citizenid, source, message)
                 })
             end
         end
@@ -430,10 +410,7 @@ lib.addCommand('me', {
 }, function(source, args)
     args[1] = args[locale('command.me.params.message.name')]
     args[locale('command.me.params.message.name')] = nil
-    if #args < 1 then
-        Notify(source, locale('error.missing_args2'), 'error')
-        return
-    end
+    if #args < 1 then Notify(source, locale('error.missing_args2'), 'error') return end
     local msg = table.concat(args, ' '):gsub('[~<].-[>~]', '')
     local playerState = Player(source).state
     playerState:set('me', msg, true)
@@ -442,7 +419,7 @@ lib.addCommand('me', {
     playerState:set('me', nil, true)
 end)
 
-lib.addCommand('id', { help = locale('info.check_id') }, function(source)
+lib.addCommand('id', {help = locale('info.check_id')}, function(source)
     Notify(source, 'ID: ' .. source)
 end)
 
