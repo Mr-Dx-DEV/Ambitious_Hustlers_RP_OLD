@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="styles.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/> <!-- 'nano' theme -->
+	<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+
+	<script src="scripts/utility.js"defer></script>
+	<script src="scripts/script.js" defer></script>
+	<script src="scripts/settings.js" defer></script>
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="ui__main">
+			<!-- <div id="top">
+				<button class="main">
+					MAIN
+				</button>
+				<button class="lighting">
+					NEON
+				</button>
+			</div> -->
+		<div class="resizer">
+			<div class="resizer__handle resizer__handle--tl"></div>
+			<div class="resizer__handle resizer__handle--tr"></div>
+			<div class="resizer__handle resizer__handle--bl"></div>
+			<div class="resizer__handle resizer__handle--br"></div>
+		</div>
+
+
+			<div class="panel__group panel__group-windows-seats-doors">
+				<div class="panel panel--windows">
+					<div class="panel__header">
+						<p>WINDOWS</p>
+					</div>
+					<div class="panel__buttons panel__buttons--vertical panel__buttons--active">
+						<!-- future window buttons here -->
+						<div class="panel__open-close-all">
+							<button class="panel__close-all label">
+								<p>CLOSE ALL</p>
+							</button>
+							<button class="panel__open-all label">
+								<p>OPEN ALL</p>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel--seats">
+					<div class="panel__header">
+						<p>SEATS</p>
+					</div>
+					<div class="panel__buttons panel__buttons--vertical panel__buttons--active">
+						<!-- future seat buttons here -->
+					</div>
+				</div>
+				<div class="panel panel--doors">
+					<div class="panel__header">
+						<p>DOORS</p>
+					</div>
+					<div class="panel__buttons panel__buttons--vertical panel__buttons--active">
+						<!-- future door buttons here -->
+						<div class="panel__open-close-all">
+							<button class="panel__close-all">
+								<p>CLOSE ALL</p>
+							</button>
+							<button class="panel__open-all">
+								<p>OPEN ALL</p>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel--auxillary">
+				<button class="panel__open-settings">
+					<img src="icons/edit.svg">
+				</button>
+				<div class="panel__buttons panel__buttons--active">
+					<button class="panel__button panel__button--wide panel__button--toggle panel__button--power">
+						<img src="icons/power.svg" >
+						<p>POWER</p>
+					</button>
+					<div class="panel__spacer"></div>
+						<button class="panel__button panel__button--toggle panel__button--indicator panel__button--indicate-left">
+							<img src="icons/larrow.svg">
+						</button>
+						<button class="panel__button panel__button--toggle panel__button--indicator panel__button--indicate-hazard">
+							<img src="icons/hazard.png">
+						</button>
+						<button class="panel__button panel__button--toggle panel__button--indicator panel__button--flipped panel__button--indicate-right">
+							<img src="icons/larrow.svg">
+						</button>
+											<div class="panel__spacer"></div>
+
+					<button class="panel__button panel__button--wide panel__button--toggle panel__button--lock">
+						<img src="icons/key.svg" >	
+						<p>UNLOCKED</p>
+					</button>
+				</div>
+				<div class="vehicle-stats">
+					<div class="vehicle-stats__stat vehicle-stats__stat--fuel">
+						<div class="vehicle-stats__label label"><p>FUEL</p></div>
+						<div class="gauge">
+							<div class="gauge__fill"></div>
+						</div>
+					</div>
+
+					<div class="vehicle-stats__stat vehicle-stats__stat--engine">
+						<div class="vehicle-stats__label label"><p>ENGINE</p></div>
+						<div class="gauge">
+							<div class="gauge__fill"></div>
+						</div>
+					</div>
+
+					<div class="vehicle-stats__stat vehicle-stats__stat--body">
+						<div class="vehicle-stats__label label"><p>BODY</p></div>
+						<div class="gauge">
+							<div class="gauge__fill"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="settings-panel">
+					<div class="settings-panel__header panel__header"><p>EDIT MODE</p></div>
+					<div class="settings-panel__buttons">
+						<button class='settings-panel__button settings-panel__button--reset'><img src="icons/reset.svg">RESET UI</button>
+						<button class='settings-panel__button settings-panel__button--cancel'>CANCEL</button>
+						<button class='settings-panel__button settings-panel__button--save'><img src="icons/check.svg">SAVE</button>
+					</div>
+				</div>
+			</div>	
+			<div class="panel__group panel__group--lighting-bike" >
+				<div class="panel panel--lighting">
+					<div class="panel__header"><p>LIGHTING</p></div>
+					<div class="panel__buttons panel__buttons--active">
+						<div class="panel__section panel__section--interior">
+							<div class="label">
+								<p>INTERIOR</p>
+							</div>
+							<button class="panel__button panel__button--toggle panel__button--dome">
+								<img src="icons/dome-light-on.png">
+							</button>
+						</div>
+						<div class="panel__section panel__section--headlights">
+							<div class="label">
+								<p >HEADLIGHTS</p>
+							</div>
+							<button class="panel__button panel__button--toggle panel__button--headlights">
+								<img src="icons/headlight-off.png">
+							</button>
+							<button class="panel__button panel__button--colour panel__button--headlights-colour">
+								<img src="icons/colour.svg">
+							</button>
+						</div>
+						<div class="panel__section panel__section--neons">
+							<div class="label">
+								<p>NEONS</p>
+							</div>
+							<button class="panel__button panel__button--toggle panel__button--neon panel__button--neon-front">
+								<img src="icons/neon.svg">
+								<p>F</p>
+							</button>
+							<button class="panel__button panel__button--toggle panel__button--neon panel__button--neon-right">
+								<img src="icons/neon.svg">
+								<p>R</p>
+							</button>
+							<button class="panel__button panel__button--toggle panel__button--neon panel__button--neon-back">
+								<img src="icons/neon.svg">
+								<p>B</p>
+							</button>
+							<button class="panel__button panel__button--toggle panel__button--neon panel__button--neon-left">
+								<img src="icons/neon.svg">
+								<p>L</p>
+							</button>
+							<button class="panel__button panel__button--colour panel__button--neon-colour">
+								<img src="icons/colour.svg">
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel--bike-seats">
+					<div class="panel__header"><p>SEATS</p></div>
+					<div class="panel__buttons panel__buttons--vertical panel__buttons--active">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+			<div class="edit-grid">
+		<div class="edit-grid__line edit-grid__line--h"></div>
+		<div class="edit-grid__line edit-grid__line--v"></div>
+	</div>
+	</div>
+
+</body>
+
+</html>

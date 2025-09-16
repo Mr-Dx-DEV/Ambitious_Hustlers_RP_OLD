@@ -1,0 +1,820 @@
+@font-face {
+    font-family: 'GilroyBold';
+    src: url('fonts/Gilroy-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'GilroyRegular';
+    src: url('fonts/Gilroy-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'GilroyMedium';
+    src: url('fonts/Gilroy-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'CabinMedium';
+    src: url('fonts/Cabin-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'CabinSemiBold';
+    src: url('fonts/Cabin-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'CabinBold';
+    src: url('fonts/Cabin-Bold.ttf');
+}
+
+
+
+
+
+* {
+    user-select: none;
+    -webkit-user-drag: none;
+        box-sizing: border-box;
+}
+
+:root {
+    --section-bg: radial-gradient(rgba(35, 35, 35, 1) 0%, rgb(25, 25, 25,1) 100%);
+
+    --button-bg: rgb(42, 42, 42);
+    --button-active-bg: radial-gradient(rgba(115, 115, 115, 1), rgba(90, 90, 90, 1));
+    --button-text-colour: rgb(255, 255, 255);
+
+    --header-bg: rgb(15, 15, 15, 0.8);
+    --header-text-colour: rgb(255, 255, 255);
+
+    --label-bg: rgb(20, 20, 20, 0.5);
+    --label-text-colour: rgb(119, 119, 119);
+
+    --stat-bar-bg:rgb(30, 30, 30);
+    --stat-bar-progress: rgb(180, 180, 180);
+
+    --accent: rgb(250, 100, 15);
+
+    --outline: 3px solid black;
+    
+    --section-spacing: 4.5px;
+    --section-x-padding: 31.5px;
+    --section-y-padding: 18px;
+
+    --button-height: 36px;
+}
+
+p, h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-image: url('images/bg.png');
+}
+
+.ui__main {
+    position: absolute;
+    width: 580px;
+    height: 520px;
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    bottom: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--section-spacing);
+    resize:horizontal;
+    justify-content: flex-end;
+    opacity: 0;
+    z-index: 1  ;   
+    transition: opacity 0.2s ease;
+}
+
+.ui__main.ui__main--reverse {
+    flex-direction: column-reverse;
+}
+
+.ui__main.ui__main--bike .panel__group-windows-seats-doors {
+    display: none;
+}
+
+.ui__main.ui__main--active {
+    opacity: 1;
+}
+
+.ui__main .panel {
+    background-color: rgb(0, 0, 0, 0.25);
+    border: var(--outline);
+    background: var(--section-bg);
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 0 25px 6px rgb(0, 0, 0, 0.4);
+}
+
+.ui__main .panel::after {
+    content: '';
+    background-image: url('https://tse3.mm.bing.net/th/id/OIP.YgN6jcaKaiVNek2udjH03AAAAA?r=0&cb=thfvnext&w=352&h=626&rs=1&pid=ImgDetMain&o=7&rm=3');
+    opacity: 0.0145;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+button {
+    width: 100%;
+    height: var(--button-height);
+    border-radius: 0;
+    border: none;
+    background-color: var(--button-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    outline: var(--outline) ;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.label {
+    align-self: center;
+    background-color: var(--label-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    outline: var(--outline);
+    margin-top: -1px;
+}
+
+.label p {
+        text-align: center;
+        font-family: CabinMedium;
+        color: var(--label-text-colour);
+        font-size: 9px;
+}
+
+.panel__button--trunk, .panel__button--hood {
+    grid-column: span 2;
+}
+.panel__button--hood img {
+    transform: rotate(-90deg);
+}
+
+.panel__button--dome img {
+    width: 30px !important;
+}
+
+.panel__button--toggle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--button-active-bg);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.panel__button--toggle:hover::before {
+  opacity: 0.4;
+}
+
+.panel__button--toggle.panel__button--active::before {
+  opacity: 1;
+}
+
+.panel__button--toggle.panel__button--active img {
+        filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
+}
+
+.panel__button--toggle.panel__button--indicator.panel__button--active::before {
+    animation: blink 1s step-start infinite;
+}
+
+
+@keyframes blink {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.panel__open-close-all {
+    grid-column: span 2;
+    display: flex;
+    outline: var(--outline);
+    height: 18px;
+}
+
+.panel__open-close-all button {
+    padding: 0;
+    flex: 1 1 0;
+    outline: none;
+    cursor: pointer;
+    margin: 0;
+}
+
+.panel__close-all {
+    border-right: 1px solid rgba(54, 54, 54, 0.493);
+}
+
+.panel__open-all {
+    border-left: 1px solid rgba(54, 54, 54, 0.493);
+}
+
+.panel__open-close-all.panel__open-close-all--disabled {
+    filter: brightness(0.45);
+    pointer-events: none; 
+}
+
+
+.panel__open-settings {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 3px;
+    right: 3px;
+    z-index: 4;
+    background: transparent !important;
+    outline: none;
+    opacity: 0.5;
+}
+
+.panel__open-settings    img {
+        position: absolute;
+        width: 13.5px;
+        height: 13.5px;
+        top: 50%;
+        transform: translateY(-50%);
+}
+
+
+.panel--auxillary {
+    gap: 9px;
+    padding: calc(var(--section-y-padding) * 1.25)  var(--section-x-padding);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.panel--auxillary .panel__buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 9px 1fr 1fr 1fr 9px 1fr 1fr;
+    grid-template-rows: repeat(1, 1fr);
+    width: 100%;
+}
+
+.panel--auxillary .panel__button img {
+    width: 22.25px;
+    z-index: 2;
+}
+
+.panel__spacer {
+    opacity: 0;
+}
+ 
+.panel__button--wide {
+    border-radius: 0;
+    grid-column: span 2;
+    display: flex;
+}
+
+.panel__button--wide p {
+    font-family: CabinBold;
+    color: var(--button-text-colour);
+    font-size: 13.5px;
+    z-index: 2;
+}
+.panel__button--power {
+    gap: 2px;
+}
+
+.panel__button--lock img {
+    transform: rotate(45deg);
+    height: 18px;
+    margin-left: -3px;
+}
+
+.vehicle-stats {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   gap: 9px;
+   grid-template-rows: 13px;
+   width: 100%;
+}
+
+.vehicle-stats__stat {
+    outline: var(--outline);
+    display: flex;
+}
+
+.vehicle-stats__label {
+    font-size: 9px;
+    width: 56px;
+    outline: none;
+    border-radius: var(--outline);
+}
+
+.vehicle-stats__stat .gauge {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--stat-bar-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.vehicle-stats__stat .gauge__fill {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background-color: var( --stat-bar-progress);
+}
+
+.settings-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--section-bg);
+    z-index: 3;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-panel.settings-panel--active {
+    display: flex;
+}
+
+.settings-panel__buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 var(--section-x-padding);
+    gap: 9px;
+    flex-grow: 1;
+}
+
+.settings-panel__button {
+    font-family: CabinBold;
+    color: white ;
+    transition: all 0.3s ease;
+    margin-top: -3px;
+}
+
+.settings-panel__button:hover {
+   filter: brightness(1.1);
+}
+
+.settings-panel__button img {
+    width: 13.5px;
+}
+
+.settings-panel__button--reset img {
+    margin-right: 2px;
+}
+
+.settings-panel__button--cancel {
+    background-color: #78232d;
+}
+
+.settings-panel__button--save {
+    background-color: #085c39;
+}
+
+.settings-panel__button--save img {
+    width: 18px;
+}
+
+
+.panel__header {
+    text-align: center;
+    width: 100%;
+    height: 25px;
+    background-color: var(--header-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: CabinBold;
+    color: var(--header-text-colour);
+    cursor: pointer;
+    position: relative;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.106);
+    padding: 14.4px 0px;
+}
+
+
+.panel__group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--section-spacing);
+}
+
+.ui__main.ui__main--reverse .panel__group-windows-seats-doors .panel {
+    align-self: start;
+}
+
+.panel__group-windows-seats-doors .panel {
+    display: flex;
+    flex-direction: column;
+    align-self: end;
+}
+
+.panel__group-windows-seats-doors .panel__buttons--active { 
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 9px;
+    padding: var(--section-y-padding) var(--section-x-padding);
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.panel__group-windows-seats-doors .panel__buttons--active {
+    display: grid;
+}
+
+.panel__button--broken {
+    outline-color: rgba(150, 0, 0);
+    background-color: rgba(125, 0, 0);
+    filter: brightness(0.2);
+    pointer-events: none; 
+}
+
+.panel__button--disabled {
+    filter: brightness(0.15);
+    pointer-events: none; 
+}
+
+.panel__group-windows-seats-doors img, .panel--lighting img, .panel--bike-seats img {
+    width: 20.25px;
+    opacity: 0.7;
+    z-index: 2;
+    transition: all 0.25s ease;
+}
+
+.panel--windows button img {
+    width: 27px !important;
+}
+
+.panel__button--flipped img{
+   transform: scaleX(-1)
+}
+
+.panel--bike-seats button {
+    height: 54px;
+}
+
+.ui__main .panel--bike-seats {
+    display: none;
+}
+
+.ui__main.ui__main--bike .panel--bike-seats {
+    display: block;
+}
+
+.panel__group--lighting-bike {
+    grid-template-columns: 1fr;
+}
+
+.ui__main.ui__main--bike .panel__group--lighting-bike {
+    display: flex;
+    gap: var(--section-spacing);
+    grid-template-columns: 1fr 1fr;
+}
+
+.ui__main.ui__main--bike .panel__section--interior, .ui__main.ui__main--bike .panel__section--neons {
+    display: none;
+}
+
+.ui__main.ui__main--bike .panel__group--lighting-bike #headlights-section {
+    grid-column: span 8;
+}
+
+.ui__main.ui__main--bike .panel__group--lighting-bike .panel {
+    width: 50%;
+}
+
+.panel__group--lighting-bike .panel__header {
+    width: 100%;
+}
+
+.panel--lighting .panel__buttons {
+    padding: var(--section-y-padding) var(--section-x-padding) calc(var(--section-y-padding) + 1px) var(--section-x-padding);
+    display: none;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 54px;
+    width: 100%;
+}
+
+.panel--lighting .panel__section {
+    display: grid;
+    grid-template-rows: 18px 1fr;
+}
+
+.panel--lighting .panel__section--headlights {
+    grid-column: span 2;
+    grid-template-columns: 1fr 1fr;
+}
+
+.panel--lighting .panel__section--interior {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+}
+
+.panel--lighting .panel__section--neons {
+    grid-column: span 5;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+#lighting.no-headlight-colour #headlight-toggle {
+    grid-column: span 2;
+}
+
+#lighting.no-neon-colour #neons-section {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.panel--lighting--no-neon .panel__section--interior  {
+    grid-column: span 2;
+}
+
+.panel--lighting--no-neon .panel__section--headlights  {
+    grid-column: span 6;
+}
+
+.panel--lighting--no-neon.panel--lighting--no-headlight-colour.panel--lighting--no-neon-colour .panel__section--interior, .panel--lighting--no-neon.panel--lighting--no-headlight-colour.panel--lighting--no-neon-colour .panel__section--headlights {
+    grid-column: span 4;
+}
+
+.panel--lighting .panel__buttons--active {
+    display: grid;
+}
+
+.panel--lighting .panel__button p {
+    margin-left: -5.4px;
+    margin-bottom: 5.4px;  
+    font-family: CabinSemiBold;
+    color: white;
+    z-index: 3;
+    font-size: 12px;
+}
+
+
+.panel__section--headlights .label{
+    grid-column: span 2;
+}
+
+.panel__section--neons .label {
+    grid-column: span 5;
+}
+
+.panel__button--colour {
+    flex-direction: column;
+    font-family: CabinMedium;
+    font-size: 8px;  
+}
+
+.panel__button--colour p {
+    margin: -4.5px 0 0 0;
+}
+
+.panel__button--colour img {
+    margin-bottom: 3.6px;
+}
+
+.panel__button--colour::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--after-bg, green);
+}
+
+.pcr-app {
+    padding: 18px !important;
+    border-radius: 5px !important;
+    background: linear-gradient(155deg, rgb(20, 20, 20) 0%, rgb(35, 35, 35,1) 100%) !important;
+    outline: 2px solid rgb(40, 40, 40);
+    box-shadow: 0 0 30px 8px rgb(0, 0, 0, 0.55) !important;
+    width: 270px !important;
+}
+
+.pcr-app input {
+        font-family: GilroyMedium !important;
+        text-transform: uppercase;
+        border: 2px solid rgb(40, 40, 40);
+        box-sizing: border-box !important;
+        background-color: rgb(15, 15, 15) !important;
+        border-radius: 5px !important;
+}
+
+.pcr-swatches  {
+    display: none !important;
+}
+
+.pcr-selection {
+    gap: 0 !important;
+    border-radius: 5px !important;
+}
+
+.pcr-palette {
+    border-radius: 5px 5px 0 0!important;
+}
+
+.pcr-palette::before {
+    background: none !important;
+}
+
+.pcr-color-chooser, .pcr-color-opacity {
+    grid-column: span 2 !important;
+    margin: 0 !important;
+    height: 25px !important;
+}
+
+.pcr-color-chooser {
+    border-radius: 0 0 5px 5px !important;
+}
+
+.pcr-slider {
+    border-radius: 0 !important;
+    background-size: 100%,  1em !important;
+    border-radius: 0 0 5px 5px !important;
+}
+
+.pcr-picker {
+    border: 2px solid rgb(255, 255, 255, 1) !important;
+    width: 30px !important;
+    height: 30px !important;
+    z-index: 10 !important;
+}
+
+.pcr-interaction {
+    padding: 0 !important;
+}
+
+.pcr-result {
+    padding: 7.2px 9px !important;
+    font-size: 13.5px !important;
+    border-radius: 5px !important;
+    margin: 13.5px 2.25px 0 2.25px  !important;
+}
+
+.pcr-result:hover {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 2px solid rgb(80, 80, 80);
+}
+
+.pcr-result:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 2px solid rgb(150, 150, 150);
+}
+
+
+
+.pcr-app.headlight {
+    top: unset !important;
+    right: unset !important;
+    left: 67.5px !important;
+    bottom: 63px !important;
+}
+
+.pcr-app.neon {
+    top: unset !important;
+    left: unset !important;
+    right: -36px !important;
+    bottom: 63px !important;
+}
+
+
+*::-webkit-scrollbar {
+  width: 0px;
+  height: 1px; /* for horizontal scrollbar */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.edit-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2d428085;
+    background-image:
+        linear-gradient(to right, #394a7dbd 1px, transparent 1px),
+        linear-gradient(to bottom, #394a7dbd  1px, transparent 1px);
+    background-size: 10px 10px; /* size of each cell */
+
+    opacity: 0;
+}
+
+.edit-grid.edit-grid--active {
+    opacity: 1;
+}
+
+.edit-grid__line {
+    position: absolute;
+    background-color: #3683eec0;
+}
+
+.edit-grid__line--h {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 1px;
+}
+
+.edit-grid__line--v {
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 1px;
+}
+
+.edit-grid__line.edit-grid__line--highlighted {
+    z-index: 5;
+    background-color: #8f36ee;
+}
+
+.edit-grid__line.edit-grid__line--dimmed {
+    opacity: 0.5;
+}
+
+
+.resizer {
+    opacity: 0;
+}
+
+.ui__main--editing {
+    outline: 1px solid #3682EE;    
+    background-color: #394a7dbd;
+}
+
+.ui__main--editing .resizer {
+    opacity: 1;
+}
+
+.resizer__handle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #3682EE;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.resizer__handle--tl {
+    top: -5px; 
+    left: -5px; 
+    cursor: nwse-resize;
+}
+
+.resizer__handle--tr {
+    top: -5px; 
+    right: -5px; 
+    cursor: nesw-resize;
+}
+
+.resizer__handle--bl {
+    bottom: -5px; 
+    left: -5px; 
+    cursor: nesw-resize;
+}
+
+.resizer__handle--br {
+    bottom: -5px; 
+    right: -5px; 
+    cursor: nwse-resize;
+}
+
+
