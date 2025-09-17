@@ -1,0 +1,1146 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@font-face {
+  font-family: "Charlie Brown M54";
+  src: url(./font/CharlieBrownM54.ttf);
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Coolvetica;
+  src: url(./font/coolveticarg.ttf);
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@keyframes start {
+  0% {
+    opacity: 0;
+    height: 0%;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes effect2 {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes effect {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+}
+.General {
+  z-index: 3;
+  position: relative;
+  overflow: hidden;
+  gap: 0.8333vw;
+  padding: 1.9792vw;
+  padding-top: 0vw !important;
+  flex-direction: column;
+  display: flex;
+  width: 51.9792vw;
+  border-radius: 1.0608vw;
+  outline: 0.6483vw solid rgba(0, 0, 0, 0.27);
+  background: radial-gradient(
+      11.83% 12.14% at 100% 0%,
+      rgba(255, 56, 56, 0.2) 0%,
+      rgba(255, 56, 56, 0) 100%
+    ),
+    radial-gradient(
+      51.83% 28.48% at 8.77% -2.9%,
+      rgba(60, 149, 255, 0.33) 0%,
+      rgba(60, 149, 255, 0) 100%
+    ),
+    radial-gradient(
+      150.56% 107.29% at 2.75% 2.56%,
+      rgba(60, 149, 255, 0.16) 0%,
+      rgba(60, 149, 255, 0) 100%
+    ),
+    rgba(26, 30, 33, 0.96);
+  height: 65.4%;
+  animation: start 1s ease-in-out;
+}
+
+.topSide {
+  z-index: 4;
+  padding-right: 1.9271vw;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  animation: effect2 1.2s ease-in-out;
+}
+
+.titleBox {
+  display: flex;
+  align-items: center;
+  gap: 0.9375vw;
+}
+
+.titleBg {
+  display: flex;
+  padding-top: 0.7vw;
+  flex-direction: column;
+  align-items: center;
+  width: 4.3229vw;
+  height: 6.0938vw;
+  background-size: cover;
+  background-image: url(./img/titleBG.png);
+}
+
+.logo {
+  display: flex;
+  width: 2.8125vw;
+  height: 2.8125vw;
+  object-fit: cover;
+}
+
+.titleTextBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2083vw;
+}
+
+.titleText {
+  font-family: "Charlie Brown M54";
+  font-size: 1.8621vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%;
+  background: linear-gradient(90deg, #89f087 0%, #4f80ff 0.01%, #88a9ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.titleSubText {
+  font-family: Coolvetica;
+  font-size: 1.184vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%; /* 20.46px */
+  letter-spacing: 0.02vw;
+  background: linear-gradient(90deg, #fff 0%, #fff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.profileBox {
+  flex-direction: row-reverse;
+  padding: 0vw 1.4583vw;
+  height: 4.4271vw;
+  display: flex;
+  gap: 0.8333vw;
+  align-items: center;
+  border-radius: 0px 0px 0.5729vw 0.5729vw;
+  background: linear-gradient(
+    180deg,
+    rgba(70, 144, 255, 0.22) 0%,
+    rgba(70, 144, 255, 0) 100%
+  );
+}
+
+.profileImg {
+  position: relative;
+  width: 1.9699vw;
+  height: 1.9699vw;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.profileImg::before {
+  content: "";
+  position: absolute;
+  display: flex;
+  top: -0.2526vw;
+  left: -0.2526vw;
+  right: -0.2526vw;
+  bottom: -0.2526vw;
+  border-radius: 50%;
+  border: 0.0505vw solid #fff;
+}
+
+.profileTextBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2604vw;
+}
+
+.profileName {
+  color: #fff;
+  text-align: right;
+  font-family: Barlow;
+  font-size: 0.8857vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90%; /* 15.306px */
+}
+
+.profileSubName {
+  color: #4fff95;
+  text-align: right;
+  font-family: Barlow;
+  font-size: 0.877vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90%; /* 15.156px */
+}
+
+.bottomSide {
+  z-index: 5;
+  overflow: hidden;
+  flex: 1;
+  gap: 0.6771vw;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  animation: effect 1s ease-in-out;
+}
+
+.vehicleSide {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-width: 12.6042vw;
+  flex: 1;
+  gap: 0.5208vw;
+}
+
+.searchBox {
+  display: flex;
+  gap: 0.26vw;
+}
+
+.searchInput {
+  padding: 0vw 0.33vw;
+  width: 100%;
+  height: 100%;
+  padding-right: 1.5vw;
+  border-radius: 0.1563vw;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: Barlow;
+  font-size: 0.75vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90%; /* 12.4px */
+  transition: 200ms ease-in-out;
+}
+
+.searchInput:focus {
+  background: rgba(255, 255, 255, 0.15);
+}
+.searchInputBox {
+  align-items: center;
+  display: flex;
+  position: relative;
+  width: 10.0521vw;
+  height: 1.4583vw;
+}
+
+.searchInputBox svg {
+  right: 0.3vw;
+  position: absolute;
+}
+
+.filterBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4583vw;
+  height: 1.4583vw;
+  border-radius: 0.1563vw;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.vehicleList {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4167vw;
+  flex: 1;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+.vehicleBox {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0.5729vw;
+  width: 11.7188vw;
+  min-height: 7.3958vw;
+  border-radius: 0.2083vw;
+  border: 0.0521vw solid rgba(255, 255, 255, 0.06);
+  background: radial-gradient(
+    170.08% 152.41% at 69.21% -25.2%,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: 200ms ease-in-out;
+  overflow: hidden;
+}
+
+.selectVehicle {
+  width: 100%;
+  background: radial-gradient(
+    170.08% 152.41% at 69.21% -25.2%,
+    rgba(255, 255, 255, 0.36) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.selectVehicle .vehiclePrice {
+  background: rgba(114, 255, 153, 0.2);
+}
+
+.vehicleBox:hover {
+  cursor: pointer;
+  width: 100%;
+}
+.vehicleNameBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1563vw;
+}
+.vehicleName {
+  color: #fff;
+  font-family: Barlow;
+  font-size: 0.7292vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90%; /* 12.6px */
+}
+
+.vehicleSubName {
+  color: rgba(255, 255, 255, 0.55);
+  font-family: Barlow;
+  font-size: 0.5208vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%; /* 9px */
+}
+
+.vehicleImg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  object-position: center;
+  transform: translate(-50%, -50%);
+  width: 13.5417vw;
+  height: 12.4896vw;
+  object-fit: contain;
+}
+
+.vehiclePrice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 0px 0px 0.2083vw 0.2083vw;
+  background: rgba(114, 255, 153, 0.06);
+  height: 1.3021vw;
+  width: 100%;
+  color: #72ff99;
+  font-family: Barlow;
+  font-size: 0.7292vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90%;
+}
+
+.infoSide {
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.infoTitleBox {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.infoVehicleName {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3333vw;
+}
+
+.infoVehicleText {
+  color: #fff;
+  font-family: Barlow;
+  font-size: 1.3417vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 90%;
+}
+
+.infoVehicleSubText {
+  color: rgba(255, 255, 255, 0.55);
+  font-family: Barlow;
+  font-size: 0.9583vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%;
+}
+
+.vehicleIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6042vw;
+  height: 2.6042vw;
+  border-radius: 0.1563vw;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.buttonSide {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.rentalTimeBox {
+  gap: 0.5729vw;
+  padding: 0vw 0.5729vw;
+  display: flex;
+  align-items: center;
+  width: 14.375vw;
+  height: 3.3333vw;
+  border-radius: 0.3125vw;
+  border: 0.0521vw solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(
+    180deg,
+    rgba(61, 138, 255, 0.56) 0%,
+    rgba(65, 114, 188, 0.28) 131.62%
+  );
+}
+
+.timeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1875vw;
+  height: 2.1875vw;
+  border-radius: 0.2303vw;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.rentalTimeSide {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3104vw;
+}
+
+.rentalTimeTitle {
+  color: #b0d5ff;
+  font-family: Barlow;
+  font-size: 0.7292vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90%; /* 12.6px */
+}
+
+.rentalTimeInput {
+  display: flex;
+  gap: 0.3125vw;
+  align-items: center;
+}
+
+.rentalTimeArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1905vw;
+  height: 1.1905vw;
+  border-radius: 0.1429vw;
+  border: 0.0476vw solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.13);
+  transition: 200ms ease-in-out;
+}
+
+.rentalTimeArrow:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 1);
+}
+
+.rentalTimeArrow svg {
+  width: 0.9896vw;
+  height: 0.9896vw;
+  fill: white;
+  transition: 200ms ease-in-out;
+}
+
+.rentalTimeArrow:hover svg {
+  fill: black;
+}
+
+.rentalTimeSay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5938vw;
+  height: 1.1905vw;
+  border-radius: 0.1429vw;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-family: Barlow;
+  font-size: 0.74vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90%; /* 10.777px */
+}
+
+.buttonBox {
+  width: 19.8958vw;
+  height: 3.3333vw;
+  padding: 0.7292vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.3125vw;
+  border: 0.0521vw solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(
+    180deg,
+    rgba(61, 138, 255, 0.56) 0%,
+    rgba(65, 114, 188, 0.28) 131.62%
+  );
+}
+
+.testButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2vw;
+  width: 6.3021vw;
+  height: 100%;
+  border-radius: 0.1563vw;
+  border: 0.0521vw solid rgba(102, 182, 255, 0.42);
+  background: rgba(102, 182, 255, 0.2);
+  color: #bfe1ff;
+  font-family: Barlow;
+  font-size: 0.7292vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90%; /* 12.6px */
+  transition: 250ms ease-in-out;
+}
+
+.testButton svg {
+  width: 0.95vw;
+  height: 0.95vw;
+  fill: #bfe1ff;
+  transition: 250ms ease-in-out;
+}
+
+.testButton:hover {
+  cursor: pointer;
+  background: #66b6ff;
+  color: black;
+}
+
+.testButton:hover svg {
+  fill: black;
+}
+
+.rentButton {
+  height: 100%;
+  display: flex;
+  gap: 0.3125vw;
+  align-items: center;
+  justify-content: center;
+  width: 11.7188vw;
+  border-radius: 0.1563vw;
+  border: 0.0521vw solid rgba(255, 255, 255, 0.28);
+  background: linear-gradient(90deg, #63a1ff 0%, #8fa7e3 100%);
+  color: rgba(0, 0, 0, 0.71);
+  font-family: Barlow;
+  font-size: 0.7292vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 90%; /* 12.6px */
+  transition: 200ms ease-in-out;
+}
+
+.rentButton svg {
+  width: 0.9375vw;
+  height: 0.9375vw;
+  fill: black;
+  fill-opacity: 0.71;
+  transition: 200ms ease-in-out;
+}
+
+.rentButton:hover {
+  cursor: pointer;
+  color: black;
+  box-shadow: 0px 0.0521vw 1.2vw 0px #70a2f883;
+}
+
+.rentButton:hover svg {
+  fill-opacity: 1;
+}
+
+.infoVehicleImg {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  width: 34.0625vw;
+  height: 20.2292vw;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.carBg {
+  position: absolute;
+  width: 21.7708vw;
+  height: 25.0521vw;
+  bottom: 0;
+  z-index: 1;
+  right: 8vw;
+  object-fit: cover;
+}
+
+.exitBox {
+  width: 1.1979vw;
+  height: 1.1979vw;
+  top: 0.8854vw;
+  right: 0.8854vw;
+  border-radius: 0.1917vw;
+  background: linear-gradient(171deg, #ff5454 6.9%, #d12929 95.31%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  transition: 200ms ease-in-out;
+}
+
+.exitBox:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 1.6406vw 0px #fb5050;
+}
+
+/* @keyframes viewStart {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+} */
+.viewSide {
+  z-index: 2;
+  /* animation: viewStart 4s ease-in; */
+  align-items: flex-end;
+  padding: 3.9583vw;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, #1a1e21 0%, rgba(26, 30, 33, 0) 50%),
+    linear-gradient(270deg, #1a1e21 0%, rgba(26, 30, 33, 0) 41.04%);
+}
+
+.exitSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding-left: 0.6771vw;
+  gap: 0.6771vw;
+  height: 1.3021vw;
+  border-radius: 0.1042vw;
+  border: 0.0521vw solid #403e43;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: Barlow;
+  font-size: 0.5707vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 90%; /* 9.862px */
+  animation: viewStart 5s ease-in;
+}
+
+.exitKey {
+  padding: 0vw 0.4688vw;
+  height: 100%;
+  width: fit-content;
+  border-radius: 0.1042vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #403e43;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  font-family: Barlow;
+  font-size: 0.625vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90%; /* 10.8px */
+}
+
+.timeLeftBox {
+  display: flex;
+  gap: 0.5729vw;
+  align-items: center;
+  padding: 0vw 0.5729vw;
+  width: fit-content;
+  height: 2.1354vw;
+  border-radius: 0.1563vw;
+  background: rgba(255, 92, 92, 0.13);
+  color: #ff5c5c;
+  font-family: Barlow;
+  font-size: 1vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90%; /* 18.327px */
+  animation: viewStart 5.6s ease-in;
+}
+
+.carInfoSide {
+  display: flex;
+  flex-direction: column;
+  gap: 2.9688vw;
+  align-items: flex-end;
+}
+
+.carInfoName {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.9375vw;
+  animation: viewStart 5.2s ease-in;
+}
+
+.carInfoNameTextBox {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  gap: 0.3906vw;
+}
+
+.carInfoNameText {
+  color: #fff;
+  font-family: Barlow;
+  font-size: 1.6179vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 90%; /* 27.957px */
+}
+
+.carInfoNameSubText {
+  color: rgba(255, 255, 255, 0.55);
+  font-family: Barlow;
+  font-size: 1.1556vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%; /* 19.969px */
+}
+
+.carInfoNamePrice {
+  display: flex;
+  width: 7.6042vw;
+  height: 1.8229vw;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.1563vw;
+  background: rgba(98, 255, 132, 0.24);
+  color: #72ff99;
+  font-family: Barlow;
+  font-size: 0.875vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90%;
+}
+
+.carInfoList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4167vw;
+  animation: viewStart 5.6s ease-in;
+}
+
+.carInfo {
+  padding: 0vw 0.6771vw;
+  width: 18.5417vw;
+  justify-content: center;
+  height: 3.3333vw;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.2604vw;
+  background: rgba(255, 255, 255, 0.08);
+  gap: 0.5729vw;
+}
+
+.carInfoBarTextSide {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.carInfoBarTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.3125vw;
+  color: #fff;
+  font-family: Barlow;
+  font-size: 0.7292vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90%; /* 12.6px */
+}
+
+.carInfoBarTitle svg {
+  width: 1.0417vw;
+  height: 1.0417vw;
+  fill: white;
+}
+
+.carInfoBarTitleSay {
+  color: rgba(255, 255, 255, 0.58);
+  text-align: right;
+  font-family: Barlow;
+  font-size: 0.7292vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90%; /* 12.6px */
+}
+
+.carInfoBarBox {
+  display: flex;
+  width: 100%;
+  height: 0.2083vw;
+  border-radius: 1.7708vw;
+  background: rgba(255, 255, 255, 0.19);
+}
+
+.carInfoBar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+  border-radius: 1.7708vw;
+  background: #4c89d0;
+}
+
+.carInfoBar::before {
+  content: "";
+  position: absolute;
+  width: 0.4167vw;
+  height: 0.4167vw;
+  border-radius: 50%;
+  right: 0;
+  background: #fff;
+}
+
+.timeSwitchBox {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.1563vw;
+  overflow: hidden;
+}
+
+.timeSwitch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2292vw;
+  height: 1.0938vw;
+  background: rgba(255, 255, 255, 0.13);
+  color: rgba(255, 255, 255, 0.37);
+  font-family: Barlow;
+  font-size: 0.5729vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 90%; 
+  transition: 150ms ease-in-out;
+  cursor: pointer;
+}
+
+.timeSwitch:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.selectSwitch {
+  color: #000 !important;
+  font-family: Barlow;
+  font-size: 0.5729vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 90%; 
+  background: #fff !important;
+}
+
+.redTheme {
+  background: radial-gradient(
+      11.83% 12.14% at 100% 0%,
+      rgba(255, 56, 56, 0.2) 0%,
+      rgba(255, 56, 56, 0) 100%
+    ),
+    radial-gradient(
+      51.83% 28.48% at 8.77% -2.9%,
+      rgba(255, 60, 60, 0.33) 0%,
+      rgba(255, 60, 60, 0) 100%
+    ),
+    radial-gradient(
+      150.56% 107.29% at 2.75% 2.56%,
+      rgba(255, 60, 60, 0.16) 0%,
+      rgba(255, 60, 60, 0) 100%
+    ),
+    rgba(33, 26, 26, 0.96) !important;
+}
+
+.whiteTheme {
+  background: radial-gradient(
+      11.83% 12.14% at 100% 0%,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      51.83% 28.48% at 8.77% -2.9%,
+      rgba(255, 255, 255, 0.33) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      150.56% 107.29% at 2.75% 2.56%,
+      rgba(255, 255, 255, 0.16) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    rgba(33, 33, 33, 0.96) !important;
+}
+
+.blueTheme {
+  background: radial-gradient(
+      11.83% 12.14% at 100% 0%,
+      rgba(255, 56, 56, 0.2) 0%,
+      rgba(255, 56, 56, 0) 100%
+    ),
+    radial-gradient(
+      51.83% 28.48% at 8.77% -2.9%,
+      rgba(60, 149, 255, 0.33) 0%,
+      rgba(60, 149, 255, 0) 100%
+    ),
+    radial-gradient(
+      150.56% 107.29% at 2.75% 2.56%,
+      rgba(60, 149, 255, 0.16) 0%,
+      rgba(60, 149, 255, 0) 100%
+    ),
+    rgba(26, 30, 33, 0.96) !important;
+}
+
+.greenTheme {
+  background: radial-gradient(
+      11.83% 12.14% at 100% 0%,
+      rgba(255, 56, 56, 0.2) 0%,
+      rgba(255, 56, 56, 0) 100%
+    ),
+    radial-gradient(
+      51.83% 28.48% at 8.77% -2.9%,
+      rgba(134, 255, 132, 0.33) 0%,
+      rgba(134, 255, 132, 0) 100%
+    ),
+    radial-gradient(
+      150.56% 107.29% at 2.75% 2.56%,
+      rgba(134, 255, 132, 0.16) 0%,
+      rgba(134, 255, 132, 0) 100%
+    ),
+    rgba(22, 31, 22, 0.96) !important;
+}
+
+.redTheme .topSide .titleBox .titleBg {
+  background-image: url(./img/titleBG-red.png) !important;
+}
+
+.blueTheme .topSide .titleBox .titleBg {
+  background-image: url(./img/titleBG-blue.png) !important;
+}
+
+.whiteTheme .topSide .titleBox .titleBg {
+  background-image: url(./img/titleBG-white.png) !important;
+}
+
+.greenTheme .topSide .titleBox .titleBg {
+  background-image: url(./img/titleBG-green.png) !important;
+}
+
+.redTheme .topSide .titleBox .titleTextBox .titleText {
+  background: linear-gradient(90deg, #ff4f4f 0.01%, #f88 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.blueTheme .topSide .titleBox .titleTextBox .titleText {
+  background: linear-gradient(90deg, #4f80ff 0.01%, #88a9ff 100%) !important;
+  background-clip: text !important ;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.whiteTheme .topSide .titleBox .titleTextBox .titleText {
+  background: linear-gradient(90deg, #fff 0.01%, #fff 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.greenTheme .topSide .titleBox .titleTextBox .titleText {
+  background: linear-gradient(90deg, #89f087 0%, #aaffa8 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.redTheme .topSide .profileBox {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 70, 70, 0.22) 0%,
+    rgba(255, 70, 70, 0) 100%
+  ) !important;
+}
+
+.blueTheme .topSide .profileBox {
+  background: linear-gradient(
+    180deg,
+    rgba(70, 144, 255, 0.22) 0%,
+    rgba(70, 144, 255, 0) 100%
+  ) !important;
+}
+
+.whiteTheme .topSide .profileBox {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(255, 255, 255, 0) 100%
+  ) !important;
+}
+
+.greenTheme .topSide .profileBox {
+  background: linear-gradient(
+    180deg,
+    rgba(137, 255, 135, 0.22) 0%,
+    rgba(79, 138, 78, 0) 100%
+  ) !important;
+}
+
+.redTheme .bottomSide .infoSide .buttonSide .rentalTimeBox,
+.redTheme .bottomSide .infoSide .buttonSide .buttonBox {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 61, 61, 0.56) 0%,
+    rgba(188, 65, 65, 0.28) 131.62%
+  );
+}
+
+.blueTheme .bottomSide .infoSide .buttonSide .rentalTimeBox,
+.blueTheme .bottomSide .infoSide .buttonSide .buttonBox {
+  background: linear-gradient(
+    180deg,
+    rgba(61, 138, 255, 0.56) 0%,
+    rgba(65, 114, 188, 0.28) 131.62%
+  ) !important;
+}
+
+.whiteTheme .bottomSide .infoSide .buttonSide .rentalTimeBox,
+.whiteTheme .bottomSide .infoSide .buttonSide .buttonBox {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.56) 0%,
+    rgba(255, 255, 255, 0.28) 131.62%
+  ) !important;
+}
+
+.greenTheme .bottomSide .infoSide .buttonSide .rentalTimeBox,
+.greenTheme .bottomSide .infoSide .buttonSide .buttonBox {
+  background: linear-gradient(
+    135deg,
+    rgba(137, 240, 135, 0.56) 19.83%,
+    rgba(61, 163, 59, 0) 163.51%
+  ) !important;
+}
+
+.redTheme .bottomSide .infoSide .buttonSide .buttonBox .rentButton {
+  background: linear-gradient(90deg, #ff6363 0%, #e38f8f 100%) !important;
+}
+
+.blueTheme .bottomSide .infoSide .buttonSide .buttonBox .rentButton {
+  background: linear-gradient(90deg, #63a1ff 0%, #8fa7e3 100%) !important;
+}
+.whiteTheme .bottomSide .infoSide .buttonSide .buttonBox .rentButton {
+  background: linear-gradient(90deg, #fff 0%, #fff 100%) !important;
+}
+.greenTheme .bottomSide .infoSide .buttonSide .buttonBox .rentButton {
+  background: linear-gradient(90deg, #66ff63 0%, #91e38f 100%) !important;
+}
+
+.redTheme .bottomSide .infoSide .buttonSide .buttonBox .rentButton:hover {
+  box-shadow: 0px 0.0521vw 1.2vw 0px #f8707083;
+}
+
+.blueTheme .bottomSide .infoSide .buttonSide .buttonBox .rentButton:hover {
+  box-shadow: 0px 0.0521vw 1.2vw 0px #70a2f883;
+}
+.whiteTheme .bottomSide .infoSide .buttonSide .buttonBox .rentButton:hover {
+  box-shadow: 0px 0.0521vw 1.2vw 0px #ffffff83;
+}
+.greenTheme .bottomSide .infoSide .buttonSide .buttonBox .rentButton:hover {
+  box-shadow: 0px 0.0521vw 1.2vw 0px #70f88e83;
+}
