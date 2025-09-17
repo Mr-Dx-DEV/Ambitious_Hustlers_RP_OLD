@@ -39,7 +39,7 @@ Config.DefaultIdentifier = "12345" -- set the identifier for the player to whom 
 
 Config.Options = "target" -- target || drawtext || 3dtext (if draw text, it will show draw text ui using lib or if you select target, it will be target based. 3d text is 3d text Code is open in client/open/cl_locations.lua)
 
-Config.Interact = false -- if you want to use the interact (https://github.com/darktrovx/interact) Only works with the Config.Options is "target"
+Config.Interact = true -- if you want to use the interact (https://github.com/darktrovx/interact) Only works with the Config.Options is "target"
 
 Config.BankConfig = "default" -- gabz || default (If you use some other banks, make sure to create a file in locations folder and put the file name here!!)
 
