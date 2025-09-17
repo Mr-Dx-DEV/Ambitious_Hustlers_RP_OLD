@@ -195,6 +195,8 @@ Config.market_locations = {
 		['sell_blip_coords'] = {
 			{-3242.9636230469,1001.3184204102,12.830706596375},
 			{-3246.5126953125,1005.4541015625,12.830707550049},
+			{-2967.77, 392.12, 15.04},
+			
 		},
 		['deliveryman_coord'] = {-3240.6967773438,1007.2897338867,12.830706596375},
 		['type'] = '247store',
@@ -509,6 +511,87 @@ Config.market_locations = {
 			['store'] = 'bank',
 		}
 	},
+	["market_19"] = {
+		['buy_price'] = 70000,
+		['sell_price'] = 35000,
+		['coord'] = {1743.934, 3613.234, 34.888},
+		['garage_coord'] = {146.9,6634.98,31.61,175.81},
+		['truck_parking_location'] = {164.0575,6625.502, 32.0364,225.7734},
+		['map_blip_coord'] = {1743.934, 3613.234, 34.888},
+		['sell_blip_coords'] = {
+			{1744.8, 3613.48, 34.89},
+			
+		},
+		['deliveryman_coord'] = {157.05537414551,6641.224609375,31.605260848999},
+		['type'] = '247store',
+		['account'] = {
+			['item'] = {
+				[1] = {
+					['icon'] = 'img/credit_card.png',
+					['account'] = 'bank'
+				},
+				[2] = {
+					['icon'] = 'img/cash.png',
+					['account'] = 'cash'
+				}
+			},
+			['store'] = 'bank',
+		}
+	},
+	--[[ ["market_19"] = {
+		['buy_price'] = 70000,
+		['sell_price'] = 35000,
+		['coord'] = {157.84, -234.75, 54.42},
+		['garage_coord'] = {151.33, -212.34, 54.3, 35.45},
+		['truck_parking_location'] = {151.33, -212.34, 54.3, 35.45},
+		['map_blip_coord'] = {149.118, -234.618, 54.424},
+		['sell_blip_coords'] = {
+			{149.118, -234.618, 54.424},
+			
+		},
+		['deliveryman_coord'] = {157.05537414551,6641.224609375,31.605260848999},
+		['type'] = 'applestore',
+		['account'] = {
+			['item'] = {
+				[1] = {
+					['icon'] = 'img/credit_card.png',
+					['account'] = 'bank'
+				},
+				[2] = {
+					['icon'] = 'img/cash.png',
+					['account'] = 'cash'
+				}
+			},
+			['store'] = 'bank',
+		}
+	}, ]]
+	["market_20"] = {
+		['buy_price'] = 70000,
+		['sell_price'] = 35000,
+		['coord'] = {-90.49, 24.19, 0.37},
+		['garage_coord'] = {151.33, -212.34, 54.3, 35.45},
+		['truck_parking_location'] = {151.33, -212.34, 54.3, 35.45},
+		['map_blip_coord'] = {-88.8, 30.32, 71.95},
+		['sell_blip_coords'] = {
+			{-88.8, 30.32, 71.95},
+			
+		},
+		['deliveryman_coord'] = {-89.8, 27.41, 76.37},
+		['type'] = 'electronics',
+		['account'] = {
+			['item'] = {
+				[1] = {
+					['icon'] = 'img/credit_card.png',
+					['account'] = 'bank'
+				},
+				[2] = {
+					['icon'] = 'img/cash.png',
+					['account'] = 'cash'
+				}
+			},
+			['store'] = 'bank',
+		}
+	},
 	["ammunation_1"] = {
 		['buy_price'] = 2000000,
 		['sell_price'] = 500000,
@@ -588,12 +671,12 @@ Config.market_types = {
 			[4] = 'pounder',
 			[5] = 'pounder2'
 		},
-		['max_purchasable_categories'] = 4,		-- The max amount of categories that can be purchased
+		['max_purchasable_categories'] = 8,		-- The max amount of categories that can be purchased
 		['categories'] = {						-- Here you configure the categories available to purchase in your store
-			"food_market", "drink_market", "alcohol_market", "electronics_market", "utilities_market"
+			"food_market", "drink_market", "alcohol_market", "utilities_market", "medicel_market", "backpack_market"
 		},
 		['default_categories'] = {				-- Here you can configure the categories available when the store has no owner
-			"food_market", "drink_market", "alcohol_market", "electronics_market", "utilities_market"
+			"food_market", "drink_market", "alcohol_market", "utilities_market", "medicel_market","backpack_market"
 		},
 		['blips'] = {							-- Create the blips on map
 			['id'] = 52,						-- Blip ID [Set this value 0 to dont have blip]
@@ -602,11 +685,133 @@ Config.market_types = {
 			['scale'] = 0.6,					-- Blip Scale
 		}
 	},
-
+	['electronics'] = {							-- Market type ID
+		['stock_capacity'] = 150,				-- Max stock capacity
+		['max_employees'] = 5,					-- Max employees
+		['required_job'] = {},					-- Required job do purchase goods in this store (set to {} to dont require any job here, or put the job name there like this: ['required_job'] = {'cop', 'gang', 'job_name'},)
+		['upgrades'] = {						-- Definition of each upgrade
+			['stock'] = {						-- Stock capacity
+				['price'] = 8000,				-- Price to upgrade
+				['level_reward'] = {			-- Reward of each level (max level: 5)
+					[0] = 0,
+					[1] = 50,
+					[2] = 100,
+					[3] = 150,
+					[4] = 200,
+					[5] = 300,
+				}
+			},
+			['truck'] = {						-- Truck capacity
+				['price'] = 12000,
+				['level_reward'] = {
+					[0] = 0,
+					[1] = 25,
+					[2] = 50,
+					[3] = 100,
+					[4] = 200,
+					[5] = 300,
+				}
+			},
+			['relationship'] = {				-- Relationship
+				['price'] = 11000,
+				['level_reward'] = {
+					[0] = 0,
+					[1] = 5,
+					[2] = 10,
+					[3] = 15,
+					[4] = 25,
+					[5] = 40,
+				}
+			},
+		},
+		['trucks'] = {							-- Trucks for each level when upgrade the truck cargo
+			[0] = 'speedo',
+			[1] = 'gburrito',
+			[2] = 'mule',
+			[3] = 'mule3',
+			[4] = 'pounder',
+			[5] = 'pounder2'
+		},
+		['max_purchasable_categories'] = 4,		-- The max amount of categories that can be purchased
+		['categories'] = {						-- Here you configure the categories available to purchase in your store
+			"electronics_market", "phones_market"
+		},
+		['default_categories'] = {				-- Here you can configure the categories available when the store has no owner
+			"electronics_market", "phones_market"
+		},
+		['blips'] = {							-- Create the blips on map
+			['id'] = 816,						-- Blip ID [Set this value 0 to dont have blip]
+			['name'] = "Electronics Market",				-- Blip Name [Will be replaced when the owner rename the store]
+			['color'] = 26,						-- Blip Color
+			['scale'] = 0.6,					-- Blip Scale
+		}
+	},
+--[[ 	['applestore'] = {							-- Market type ID
+		['stock_capacity'] = 150,				-- Max stock capacity
+		['max_employees'] = 5,					-- Max employees
+		['required_job'] = {},					-- Required job do purchase goods in this store (set to {} to dont require any job here, or put the job name there like this: ['required_job'] = {'cop', 'gang', 'job_name'},)
+		['upgrades'] = {						-- Definition of each upgrade
+			['stock'] = {						-- Stock capacity
+				['price'] = 8000,				-- Price to upgrade
+				['level_reward'] = {			-- Reward of each level (max level: 5)
+					[0] = 0,
+					[1] = 50,
+					[2] = 100,
+					[3] = 150,
+					[4] = 200,
+					[5] = 300,
+				}
+			},
+			['truck'] = {						-- Truck capacity
+				['price'] = 12000,
+				['level_reward'] = {
+					[0] = 0,
+					[1] = 25,
+					[2] = 50,
+					[3] = 100,
+					[4] = 200,
+					[5] = 300,
+				}
+			},
+			['relationship'] = {				-- Relationship
+				['price'] = 11000,
+				['level_reward'] = {
+					[0] = 0,
+					[1] = 5,
+					[2] = 10,
+					[3] = 15,
+					[4] = 25,
+					[5] = 40,
+				}
+			},
+		},
+		['trucks'] = {							-- Trucks for each level when upgrade the truck cargo
+			[0] = 'speedo',
+			[1] = 'gburrito',
+			[2] = 'mule',
+			[3] = 'mule3',
+			[4] = 'pounder',
+			[5] = 'pounder2'
+		},
+		['max_purchasable_categories'] = 4,		-- The max amount of categories that can be purchased
+		['categories'] = {						-- Here you configure the categories available to purchase in your store
+			"phones_market"
+		},
+		['default_categories'] = {				-- Here you can configure the categories available when the store has no owner
+			"phones_market"
+		},
+		['blips'] = {							-- Create the blips on map
+			['id'] = 267,						-- Blip ID [Set this value 0 to dont have blip]
+			['name'] = "Phone Market",				-- Blip Name [Will be replaced when the owner rename the store]
+			['color'] = 5,						-- Blip Color
+			['scale'] = 0.6,					-- Blip Scale
+		}
+	},
+ ]]
 	['ammunation'] = {
 		['stock_capacity'] = 50,
 		['max_employees'] = 5,
-		['required_job'] = {'police', 'example'},
+		['required_job'] = {},
 		['upgrades'] = {
 			['stock'] = {
 				['price'] = 16000,
@@ -650,7 +855,7 @@ Config.market_types = {
 			[4] = 'pounder',
 			[5] = 'pounder2'
 		},
-		['max_purchasable_categories'] = 4,
+		['max_purchasable_categories'] = 10,
 		['categories'] = {
 			"melee_weapons", "pistol_weapons", "rifle_weapons", "shotgun_weapons", "smg_weapons", "throwable_weapons", "ammo_weapons", "others_weapons"
 		},
@@ -674,14 +879,14 @@ Config.market_categories = {
 		['page_icon'] = '<img src="img/categories/alcohol-icon.png" style="padding:15px">', -- Its the icon that will appear in the page tab. "padding:12px" means that the image will be 15px smaller, use it to resize the image if needed. Tip: You can get nice images here: https://icon-icons.com/search/icons/
 		-- ['page_icon'] = '<i class="fa-solid fa-burger"></i>', -- As an alternative to the page icon, you can use icons from here (https://fontawesome.com/search?m=free&s=solid)
 		['page_img'] = 'img/categories/alcohol.png',	-- This is the category image in the page to buy categories
-		['category_buy_price'] = 2500, 			-- Price to buy the category
-		['category_sell_price'] = 1250, 		-- Price to sell the category
+		['category_buy_price'] = 750000, 			-- Price to buy the category
+		['category_sell_price'] = 500000, 		-- Price to sell the category
 		['items'] = {
 			['beer'] = {						-- The item ID
 				['name'] = "Beer",				-- The item display name
-				['price_to_customer'] = 7,		-- Price the customer will pay when buy the product in store
+				['price_to_customer'] = 15,		-- Price the customer will pay when buy the product in store
 				['price_to_customer_min'] = 3,	-- Min price that the owner will be able to set on this product
-				['price_to_customer_max'] = 14,	-- Max price that the owner will be able to set on this product
+				['price_to_customer_max'] = 20,	-- Max price that the owner will be able to set on this product
 				['price_to_export'] = 6,		-- Price the owner will receive when exporting the item
 				['price_to_owner'] = 5,			-- Price the store owner must pay when importing goods to your store
 				['amount_to_owner'] = 35,		-- Amount of goods the owner will get when importing to store (This value can be increased if he upgraded his truck capacity)
@@ -691,9 +896,9 @@ Config.market_categories = {
 			},
 			['whiskey'] = {
 				['name'] = "Whiskey",
-				['price_to_customer'] = 10,
+				['price_to_customer'] = 25,
 				['price_to_customer_min'] = 5,
-				['price_to_customer_max'] = 20,
+				['price_to_customer_max'] = 30,
 				['price_to_export'] = 100,
 				['price_to_owner'] = 7,
 				['amount_to_owner'] = 35,
@@ -702,9 +907,9 @@ Config.market_categories = {
 			},
 			['vodka'] = {
 				['name'] = "Vodka",
-				['price_to_customer'] = 12,
+				['price_to_customer'] = 25,
 				['price_to_customer_min'] = 6,
-				['price_to_customer_max'] = 24,
+				['price_to_customer_max'] = 30,
 				['price_to_export'] = 11,
 				['price_to_owner'] = 9,
 				['amount_to_owner'] = 35,
@@ -722,6 +927,74 @@ Config.market_categories = {
 				['amount_to_delivery'] = 35,
 				['img'] = 'wine.png',
 			},
+			['redw'] = {
+				['name'] = "Redwood Pack",
+				['price_to_customer'] = 15,
+				['price_to_customer_min'] = 7,
+				['price_to_customer_max'] = 30,
+				['price_to_export'] = 14,
+				['price_to_owner'] = 10,
+				['amount_to_owner'] = 35,
+				['amount_to_delivery'] = 35,
+				['img'] = 'redw.png',
+			},
+			['marlboro'] = {
+				['name'] = "Marlboro Pack",
+				['price_to_customer'] = 20,
+				['price_to_customer_min'] = 7,
+				['price_to_customer_max'] = 30,
+				['price_to_export'] = 14,
+				['price_to_owner'] = 10,
+				['amount_to_owner'] = 35,
+				['amount_to_delivery'] = 35,
+				['img'] = 'marlboro.png',
+			},
+			
+			['vape'] = {
+				['name'] = "vape",
+				['price_to_customer'] = 15,
+				['price_to_customer_min'] = 7,
+				['price_to_customer_max'] = 30,
+				['price_to_export'] = 14,
+				['price_to_owner'] = 10,
+				['amount_to_owner'] = 35,
+				['amount_to_delivery'] = 35,
+				['img'] = 'vape.png',
+			},
+			['liquid'] = {
+				['name'] = "liquid",
+				['price_to_customer'] = 25,
+				['price_to_customer_min'] = 7,
+				['price_to_customer_max'] = 30,
+				['price_to_export'] = 14,
+				['price_to_owner'] = 10,
+				['amount_to_owner'] = 35,
+				['amount_to_delivery'] = 35,
+				['img'] = 'liquid.png',
+			},
+			['lighter'] = {
+				['name'] = "lighter",
+				['price_to_customer'] = 20,
+				['price_to_customer_min'] = 7,
+				['price_to_customer_max'] = 30,
+				['price_to_export'] = 14,
+				['price_to_owner'] = 10,
+				['amount_to_owner'] = 35,
+				['amount_to_delivery'] = 35,
+				['img'] = 'lighter.png',
+			},
+			['davidoffcigar'] = {
+				['name'] = "Davidoff Cigar",
+				['price_to_customer'] = 50,
+				['price_to_customer_min'] = 7,
+				['price_to_customer_max'] = 70,
+				['price_to_export'] = 14,
+				['price_to_owner'] = 10,
+				['amount_to_owner'] = 35,
+				['amount_to_delivery'] = 35,
+				['img'] = 'davidoffcigar.png',
+			},
+
 		}
 	},
 
@@ -730,8 +1003,8 @@ Config.market_categories = {
 		['page_desc'] = "Quench your thirst and elevate your beverage game with our diverse range of refreshing drinks, from classic favorites to innovative flavors, all waiting for you to discover at our supermarket",
 		['page_icon'] = '<img src="img/categories/drinks-icon.png" style="padding:15px">',
 		['page_img'] = 'img/categories/drinks.png',
-		['category_buy_price'] = 5000,
-		['category_sell_price'] = 2500,
+		['category_buy_price'] = 750000,
+		['category_sell_price'] = 500000,
 		['items'] = {
 			['grapejuice'] = {
 				['name'] = "Grape Juice",
@@ -746,9 +1019,9 @@ Config.market_categories = {
 			},
 			['water_bottle'] = {
 				['name'] = "Bottle of Water",
-				['price_to_customer'] = 4,
+				['price_to_customer'] = 8,
 				['price_to_customer_min'] = 2,
-				['price_to_customer_max'] = 8,
+				['price_to_customer_max'] = 18,
 				['price_to_export'] = 3,
 				['price_to_owner'] = 3,
 				['amount_to_owner'] = 35,
@@ -757,9 +1030,9 @@ Config.market_categories = {
 			},
 			['coffee'] = {
 				['name'] = "Coffee",
-				['price_to_customer'] = 4,
+				['price_to_customer'] = 10,
 				['price_to_customer_min'] = 2,
-				['price_to_customer_max'] = 8,
+				['price_to_customer_max'] = 20,
 				['price_to_export'] = 3,
 				['price_to_owner'] = 3,
 				['amount_to_owner'] = 35,
@@ -768,7 +1041,7 @@ Config.market_categories = {
 			},
 			['kurkakola'] = {
 				['name'] = "Cola",
-				['price_to_customer'] = 4,
+				['price_to_customer'] = 8,
 				['price_to_customer_min'] = 2,
 				['price_to_customer_max'] = 8,
 				['price_to_export'] = 3,
@@ -785,12 +1058,12 @@ Config.market_categories = {
 		['page_desc'] = "Explore a delicious selection of fresh and high-quality food options that will tantalize your taste buds and satisfy your cravings, all conveniently available at our supermarket",
 		['page_icon'] = '<img src="img/categories/food-icon.png" style="padding:15px">',
 		['page_img'] = 'img/categories/food.png',
-		['category_buy_price'] = 5000,
-		['category_sell_price'] = 2500,
+		['category_buy_price'] = 750000,
+		['category_sell_price'] = 500000,
 		['items'] = {
 			['tosti'] = {
 				['name'] = "Grilled Sandwich",
-				['price_to_customer'] = 4,
+				['price_to_customer'] = 10,
 				['price_to_customer_min'] = 1,
 				['price_to_customer_max'] = 6,
 				['price_to_export'] = 4,
@@ -801,7 +1074,7 @@ Config.market_categories = {
 			},
 			['twerks_candy'] = {
 				['name'] = "Twerks",
-				['price_to_customer'] = 3,
+				['price_to_customer'] = 6,
 				['price_to_customer_min'] = 1,
 				['price_to_customer_max'] = 6,
 				['price_to_export'] = 4,
@@ -812,7 +1085,7 @@ Config.market_categories = {
 			},
 			['snikkel_candy'] = {
 				['name'] = "Snikkel",
-				['price_to_customer'] = 3,
+				['price_to_customer'] = 6,
 				['price_to_customer_min'] = 1,
 				['price_to_customer_max'] = 6,
 				['price_to_export'] = 4,
@@ -823,7 +1096,7 @@ Config.market_categories = {
 			},
 			['sandwich'] = {
 				['name'] = "Sandwich",
-				['price_to_customer'] = 3,
+				['price_to_customer'] = 8,
 				['price_to_customer_min'] = 1,
 				['price_to_customer_max'] = 6,
 				['price_to_export'] = 4,
@@ -840,43 +1113,379 @@ Config.market_categories = {
 		['page_desc'] = "Experience the latest in technology with our wide range of cutting-edge electronics, from smartphones to home entertainment systems, available at our supermarket",
 		['page_icon'] = '<img src="img/categories/electronics-icon.png" style="padding:15px">',
 		['page_img'] = 'img/categories/electronics.png',
-		['category_buy_price'] = 5000,
-		['category_sell_price'] = 2500,
+		['category_buy_price'] = 750000,
+		['category_sell_price'] = 500000,
+		['items'] = {
+			--[[ ['fitbit'] = {
+				['name'] = "Fitbit",
+				['price_to_customer'] = 400,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'fitbit.png',
+			}, ]]
+			['radio'] = {
+				['name'] = "Radio",
+				['price_to_customer'] = 1000,
+				['price_to_customer_min'] = 100,
+				['price_to_customer_max'] = 400,
+				['price_to_export'] = 150,
+				['price_to_owner'] = 100,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'radio.png',
+			},
+			--[[ ['radioscanner'] = {
+				['name'] = "Radio Scanner",
+				['price_to_customer'] = 5000,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'radioscanner.png',
+			}, ]]
+			--[[ 
+			['camera'] = {
+				['name'] = "Camera",
+				['price_to_customer'] = 2500,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'camera.png',
+			},
+			]]
+			['transponder'] = {
+				['name'] = "ransponder",
+				['price_to_customer'] = 10000,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'transponder.png',
+			}, 
+			['boombox'] = {
+				['name'] = "Boombox",
+				['price_to_customer'] = 5000,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'boombox.png',
+			},
+			['laptop'] = {
+				['name'] = "Laptop",
+				['price_to_customer'] = 80000,
+				['price_to_customer_min'] = 75000,
+				['price_to_customer_max'] = 90000,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'laptop.png',
+			},
+			
+			
+			
+		}
+	},
+
+	['phones_market'] = {
+		['page_name'] = "Phones",
+		['page_desc'] = "Experience the latest in technology with our wide range of cutting-edge electronics, from smartphones to home entertainment systems, available at our supermarket",
+		['page_icon'] = '<img src="img/categories/electronics-icon.png" style="padding:15px">',
+		['page_img'] = 'img/categories/electronics.png',
+		['category_buy_price'] = 750000,
+		['category_sell_price'] = 500000,
 		['items'] = {
 			['phone'] = {
 				['name'] = "Phone",
-				['price_to_customer'] = 850,
-				['price_to_customer_min'] = 425,
-				['price_to_customer_max'] = 1700,
-				['price_to_export'] = 637,
-				['price_to_owner'] = 425,
+				['price_to_customer'] = 1500,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
 				['amount_to_owner'] = 2,
 				['amount_to_delivery'] = 2,
 				['img'] = 'phone.png',
 			},
-			['iphone'] = {
-				['name'] = "iPhone",
+			--[[ ['classic_phone'] = {
+				['name'] = "Classic Phone",
 				['price_to_customer'] = 1000,
-				['price_to_customer_min'] = 500,
-				['price_to_customer_max'] = 2000,
-				['price_to_export'] = 850,
-				['price_to_owner'] = 500,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
 				['amount_to_owner'] = 2,
 				['amount_to_delivery'] = 2,
-				['img'] = 'iphone.png',
+				['img'] = 'classic_phone.png',
 			},
-			['samsungphone'] = {
-				['name'] = "Samsung S10",
-				['price_to_customer'] = 950,
-				['price_to_customer_min'] = 475,
-				['price_to_customer_max'] = 1900,
-				['price_to_export'] = 665,
-				['price_to_owner'] = 475,
+			
+			['black_phone'] = {
+				['name'] = "Black Phone",
+				['price_to_customer'] = 1300,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
 				['amount_to_owner'] = 2,
 				['amount_to_delivery'] = 2,
-				['img'] = 'samsungphone.png',
+				['img'] = 'black_phone.png',
 			},
-			['radio'] = {
+			
+			['blue_phone'] = {
+				['name'] = "Blue Phone",
+				['price_to_customer'] = 1300,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'blue_phone.png',
+			},
+			
+			['gold_phone'] = {
+				['name'] = "Gold Phone",
+				['price_to_customer'] = 1300,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'gold_phone.png',
+			},
+			
+			['red_phone'] = {
+				['name'] = "Red Phone",
+				['price_to_customer'] = 1300,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'red_phone.png',
+			},
+			
+			['green_phone'] = {
+				['name'] = "Green Phone",
+				['price_to_customer'] = 1300,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'green_phone.png',
+			},
+			
+			['greenlight_phone'] = {
+				['name'] = "Green Light Phone",
+				['price_to_customer'] = 1300,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'greenlight_phone.png',
+			},
+			
+			['pink_phone'] = {
+				['name'] = "Pink Phone",
+				['price_to_customer'] = 1300,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'pink_phone.png',
+			},
+			
+			['white_phone'] = {
+				['name'] = "White Phone",
+				['price_to_customer'] = 1300,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'white_phone.png',
+			}, ]]
+			--[[  
+			['wet_phone'] = {
+				['name'] = "Wet Phone",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'wet_classic_phone.png',
+			},
+			
+			['wet_classic_phone'] = {
+				['name'] = "Wet Classic Phone",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'wet_classic_phone.png',
+			},
+			
+			['wet_black_phone'] = {
+				['name'] = "Wet Black Phone",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'wet_black_phone.png',
+			},
+			
+			['wet_blue_phone'] = {
+				['name'] = "Wet Blue Phone",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'wet_blue_phone.png',
+			},
+			
+			['wet_gold_phone'] = {
+				['name'] = "Wet Gold Phone",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'wet_gold_phone.png',
+			},
+			
+			['wet_red_phone'] = {
+				['name'] = "Wet Red Phone",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'wet_red_phone.png',
+			},
+			
+			['wet_green_phone'] = {
+				['name'] = "Wet Green Phone",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'wet_green_phone.png',
+			},
+			
+			['wet_greenlight_phone'] = {
+				['name'] = "Wet Green Light Phone",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'wet_greenlight_phone.png',
+			},
+			
+			['wet_pink_phone'] = {
+				['name'] = "Wet Pink Phone",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'wet_pink_phone.png',
+			},
+			
+			['wet_white_phone'] = {
+				['name'] = "Wet White Phone",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'wet_white_phone.png',
+			},
+			 ]]
+			--[[ ['phone_hack'] = {
+				['name'] = "Phone Hack",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'phone_hack.png',
+			}, ]]
+			--[[ 
+			['phone_module'] = {
+				['name'] = "Phone Module",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'phone_module.png',
+			},
+			 ]]
+			--[[ ['powerbank'] = {
+				['name'] = "Power Bank",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'powerbank.png',
+			}, ]]
+			
+			
+			--[[ ['radio'] = {
 				['name'] = "Radio",
 				['price_to_customer'] = 200,
 				['price_to_customer_min'] = 100,
@@ -886,32 +1495,259 @@ Config.market_categories = {
 				['amount_to_owner'] = 2,
 				['amount_to_delivery'] = 2,
 				['img'] = 'radio.png',
-			},
-			['laptop'] = {
-				['name'] = "Laptop",
-				['price_to_customer'] = 700,
-				['price_to_customer_min'] = 350,
-				['price_to_customer_max'] = 1400,
-				['price_to_export'] = 490,
-				['price_to_owner'] = 350,
-				['amount_to_owner'] = 2,
-				['amount_to_delivery'] = 2,
-				['img'] = 'laptop.png',
-			},
-			['tablet'] = {
-				['name'] = "Tablet",
-				['price_to_customer'] = 600,
-				['price_to_customer_min'] = 300,
-				['price_to_customer_max'] = 1200,
-				['price_to_export'] = 420,
+			}, ]]
+			
+		}
+	},
+	['medicel_market'] = {
+		['page_name'] = "Medicel",
+		['page_desc'] = "Quality tools and equipment for any project, from hand tools to power tools, designed to help you achieve precision and efficiency, available at our supermarket",
+		['page_icon'] = '<img src="img/categories/medicel-icon.png" style="padding:15px">',
+		['page_img'] = 'img/categories/medicel.png',
+		['category_buy_price'] = 3000,
+		['category_sell_price'] = 1500,
+		['items'] = {
+		
+			
+			['bandage'] = {
+				['name'] = "Bandage",
+				['price_to_customer'] = 100,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
 				['price_to_owner'] = 300,
 				['amount_to_owner'] = 2,
 				['amount_to_delivery'] = 2,
-				['img'] = 'tablet.png',
+				['img'] = 'bandage.png',
 			},
+			--[[ ['painkillers'] = {
+				['name'] = "painkillers",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'painkillers.png',
+			}, ]]
+			--[[ ['morphine30'] = {
+				['name'] = "Morphine 30mg",
+				['price_to_customer'] = 300,
+				['price_to_customer_min'] = 100,
+				['price_to_customer_max'] = 300,
+				['price_to_export'] = 270,
+				['price_to_owner'] = 250,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'morphine30.png',
+			},
+			['morphine15'] = {
+				['name'] = "Morphine 15mg",
+				['price_to_customer'] = 200,
+				['price_to_customer_min'] = 100,
+				['price_to_customer_max'] = 200,
+				['price_to_export'] = 180,
+				['price_to_owner'] = 160,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'morphine15.png',
+			},
+			['perc30'] = {
+				['name'] = "Percocet 30mg",
+				['price_to_customer'] = 300,
+				['price_to_customer_min'] = 150,
+				['price_to_customer_max'] = 300,
+				['price_to_export'] = 270,
+				['price_to_owner'] = 250,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'perc30.png',
+			},
+			['perc10'] = {
+				['name'] = "Percocet 10mg",
+				['price_to_customer'] = 150,
+				['price_to_customer_min'] = 100,
+				['price_to_customer_max'] = 150,
+				['price_to_export'] = 135,
+				['price_to_owner'] = 125,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'perc10.png',
+			},
+			['perc5'] = {
+				['name'] = "Percocet 5mg",
+				['price_to_customer'] = 100,
+				['price_to_customer_min'] = 50,
+				['price_to_customer_max'] = 100,
+				['price_to_export'] = 90,
+				['price_to_owner'] = 80,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'perc5.png',
+			},
+			['vic10'] = {
+				['name'] = "Vicodin 10mg",
+				['price_to_customer'] = 250,
+				['price_to_customer_min'] = 125,
+				['price_to_customer_max'] = 250,
+				['price_to_export'] = 225,
+				['price_to_owner'] = 200,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'vic10.png',
+			},
+			['vic5'] = {
+				['name'] = "Vicodin 5mg",
+				['price_to_customer'] = 125,
+				['price_to_customer_min'] = 100,
+				['price_to_customer_max'] = 125,
+				['price_to_export'] = 112,
+				['price_to_owner'] = 100,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'vic5.png',
+			},
+			 ]]
+			['walkstick'] = {
+				['name'] = "Walking Stick",
+				['price_to_customer'] = 1000,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'walkstick.png',
+			},
+			['wheelchair'] = {
+				['name'] = "wheelchair",
+				['price_to_customer'] = 5000,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'wheelchair.png',
+			},
+			
+
+
+			
 		}
 	},
 
+	['backpack_market'] = {
+		['page_name'] = "Backpack",
+		['page_desc'] = "Quality tools and equipment for any project, from hand tools to power tools, designed to help you achieve precision and efficiency, available at our supermarket",
+		['page_icon'] = '<img src="img/categories/backpack1.png" style="padding:15px">',
+		['page_img'] = 'img/categories/backpack1.png',
+		['category_buy_price'] = 3000,
+		['category_sell_price'] = 1500,
+		['items'] = {
+			['backpack1'] = {
+				['name'] = "Backpack 1",
+				['price_to_customer'] = 3000,
+				['price_to_customer_min'] = 250,
+				['price_to_customer_max'] = 1000,
+				['price_to_export'] = 450,
+				['price_to_owner'] = 400,
+				['amount_to_owner'] = 5,
+				['amount_to_delivery'] = 5,
+				['img'] = 'backpack1.png',
+			},
+			
+			['backpack2'] = {
+				['name'] = "Backpack 2",
+				['price_to_customer'] = 6000,
+				['price_to_customer_min'] = 275,
+				['price_to_customer_max'] = 1100,
+				['price_to_export'] = 495,
+				['price_to_owner'] = 440,
+				['amount_to_owner'] = 4,
+				['amount_to_delivery'] = 4,
+				['img'] = 'backpack2.png',
+			},
+			
+			['duffle1'] = {
+				['name'] = "Duffle Bag 1",
+				['price_to_customer'] = 9000,
+				['price_to_customer_min'] = 300,
+				['price_to_customer_max'] = 1200,
+				['price_to_export'] = 540,
+				['price_to_owner'] = 480,
+				['amount_to_owner'] = 3,
+				['amount_to_delivery'] = 3,
+				['img'] = 'duffle1.png',
+			},
+			
+			['briefcase'] = {
+				['name'] = "Briefcase",
+				['price_to_customer'] = 12000,
+				['price_to_customer_min'] = 225,
+				['price_to_customer_max'] = 900,
+				['price_to_export'] = 405,
+				['price_to_owner'] = 360,
+				['amount_to_owner'] = 6,
+				['amount_to_delivery'] = 6,
+				['img'] = 'briefcase.png',
+			},
+			--[[ 
+			['paramedicbag'] = {
+				['name'] = "Paramedic Bag",
+				['price_to_customer'] = 5000,
+				['price_to_customer_min'] = 325,
+				['price_to_customer_max'] = 1300,
+				['price_to_export'] = 585,
+				['price_to_owner'] = 520,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'paramedicbag.png',
+			},
+			 ]]
+			--[[ ['policepouches'] = {
+				['name'] = "Police Pouches",
+				['price_to_customer'] = 4000,
+				['price_to_customer_min'] = 200,
+				['price_to_customer_max'] = 800,
+				['price_to_export'] = 360,
+				['price_to_owner'] = 320,
+				['amount_to_owner'] = 7,
+				['amount_to_delivery'] = 7,
+				['img'] = 'policepouches.png',
+			},
+			
+			['policepouches1'] = {
+				['name'] = "Police Pouches 1",
+				['price_to_customer'] = 200,
+				['price_to_customer_min'] = 210,
+				['price_to_customer_max'] = 840,
+				['price_to_export'] = 378,
+				['price_to_owner'] = 336,
+				['amount_to_owner'] = 7,
+				['amount_to_delivery'] = 7,
+				['img'] = 'policepouches1.png',
+			}, ]]
+			
+			--[[ ['briefcaselockpicker'] = {
+				['name'] = "Briefcase Lockpicker",
+				['price_to_customer'] = 20000,
+				['price_to_customer_min'] = 350,
+				['price_to_customer_max'] = 1400,
+				['price_to_export'] = 630,
+				['price_to_owner'] = 560,
+				['amount_to_owner'] = 1,
+				['amount_to_delivery'] = 1,
+				['img'] = 'evidence_briefcase.png',
+			}, ]]
+			
+		
+			
+
+			
+		}
+	},
 	['utilities_market'] = {
 		['page_name'] = "Utilities",
 		['page_desc'] = "Quality tools and equipment for any project, from hand tools to power tools, designed to help you achieve precision and efficiency, available at our supermarket",
@@ -922,7 +1758,7 @@ Config.market_categories = {
 		['items'] = {
 			['repairkit'] = {
 				['name'] = "Repairkit",
-				['price_to_customer'] = 250,
+				['price_to_customer'] = 1500,
 				['price_to_customer_min'] = 125,
 				['price_to_customer_max'] = 500,
 				['price_to_export'] = 225,
@@ -931,7 +1767,7 @@ Config.market_categories = {
 				['amount_to_delivery'] = 2,
 				['img'] = 'repairkit.png',
 			},
-			['cleaningkit'] = {
+			--[[ ['cleaningkit'] = {
 				['name'] = "Cleaning Kit",
 				['price_to_customer'] = 150,
 				['price_to_customer_min'] = 75,
@@ -941,10 +1777,10 @@ Config.market_categories = {
 				['amount_to_owner'] = 2,
 				['amount_to_delivery'] = 2,
 				['img'] = 'cleaningkit.png',
-			},
+			}, ]]
 			['screwdriverset'] = {
 				['name'] = "Toolkit",
-				['price_to_customer'] = 350,
+				['price_to_customer'] = 800,
 				['price_to_customer_min'] = 175,
 				['price_to_customer_max'] = 700,
 				['price_to_export'] = 315,
@@ -953,6 +1789,349 @@ Config.market_categories = {
 				['amount_to_delivery'] = 2,
 				['img'] = 'screwdriverset.png',
 			},
+
+			['lockpick'] = {
+				['name'] = "Lockpick",
+				['price_to_customer'] = 800,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'lockpick.png',
+			},
+			
+			--[[ ['weapon_wrench'] = {
+				['name'] = "Wrench",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'weapon_wrench.png',
+			}, ]]
+			
+			--[[ ['weapon_hammer'] = {
+				['name'] = "Hammer",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'weapon_hammer.png',
+			}, ]]
+			
+			['binoculars'] = {
+				['name'] = "Binoculars",
+				['price_to_customer'] = 1000,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'binoculars.png',
+			},
+			
+			['firework1'] = {
+				['name'] = "Firework 1",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'firework1.png',
+			},
+			
+			['firework2'] = {
+				['name'] = "Firework 2",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'firework2.png',
+			},
+			
+			['firework3'] = {
+				['name'] = "Firework 3",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'firework3.png',
+			},
+			
+			['firework4'] = {
+				['name'] = "Firework 4",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'firework4.png',
+			},
+			
+			--[[ ['advancedrepairkit'] = {
+				['name'] = "Advanced Repair Kit",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'advancedkit.png',
+			}, ]]
+			--[[ 
+			['razorblade'] = {
+				['name'] = "Razor Blade",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'razorblade.png',
+			}, ]]
+			
+			['plasticjerrycan'] = {
+				['name'] = "Plastic Jerrycan",
+				['price_to_customer'] = 500,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'plasticjerrycan.png',
+			},
+			
+			--[[ ['harness'] = {
+				['name'] = "Harness",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'harness.png',
+			}, ]]
+			--[[ 
+			['acetone'] = {
+				['name'] = "Acetone",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'acetone.png',
+			},
+			 ]]
+			['trowel'] = {
+				['name'] = "Trowel",
+				['price_to_customer'] = 500,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'trowel.png',
+			},
+			
+			['weapon_fireextinguisher'] = {
+				['name'] = "Fire Extinguisher",
+				['price_to_customer'] = 1500,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'weapon_fireextinguisher.png',
+			},
+			
+			--[[ ['sodiumbicarbonate'] = {
+				['name'] = "Sodium Bicarbonate",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'sodiumbicarbonate.png',
+			}, ]]
+
+			--[[ ['painkillers'] = {
+				['name'] = "painkillers",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'painkillers.png',
+			}, ]]
+			
+			--[[ ['wheelchair'] = {
+				['name'] = "wheelchair",
+				['price_to_customer'] = 350,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'wheelchair.png',
+			}, ]]
+			['kq_outfitbag'] = {
+				['name'] = "Outfit bag",
+				['price_to_customer'] = 5000,
+				['price_to_customer_min'] = 175,
+				['price_to_customer_max'] = 700,
+				['price_to_export'] = 315,
+				['price_to_owner'] = 300,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'casino_bag.png',
+			},
+
+			['spanner'] = {
+				['name'] = "Spanner",
+				['price_to_customer'] = 1000,
+				['price_to_customer_min'] = 50,
+				['price_to_customer_max'] = 200,
+				['price_to_export'] = 90,
+				['price_to_owner'] = 85,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'spanner.png',
+			},
+			--[[ ['firelighter'] = {
+				['name'] = "Firelighters",
+				['price_to_customer'] = 75,
+				['price_to_customer_min'] = 38,
+				['price_to_customer_max'] = 150,
+				['price_to_export'] = 68,
+				['price_to_owner'] = 65,
+				['amount_to_owner'] = 1,
+				['amount_to_delivery'] = 1,
+				['img'] = 'firelighter.png',
+			}, ]]
+			['adjustable_spanner'] = {
+				['name'] = "Adjustable Spanner",
+				['price_to_customer'] = 1500,
+				['price_to_customer_min'] = 75,
+				['price_to_customer_max'] = 300,
+				['price_to_export'] = 135,
+				['price_to_owner'] = 125,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'spanner.png',
+			},
+			['drill'] = {
+				['name'] = "Drill",
+				['price_to_customer'] = 1500,
+				['price_to_customer_min'] = 250,
+				['price_to_customer_max'] = 1000,
+				['price_to_export'] = 450,
+				['price_to_owner'] = 400,
+				['amount_to_owner'] = 1,
+				['amount_to_delivery'] = 1,
+				['img'] = 'drill.png',
+			},
+			['buzz_saw'] = {
+				['name'] = "Buzz Saw",
+				['price_to_customer'] = 1500,
+				['price_to_customer_min'] = 375,
+				['price_to_customer_max'] = 1500,
+				['price_to_export'] = 675,
+				['price_to_owner'] = 650,
+				['amount_to_owner'] = 1,
+				['amount_to_delivery'] = 1,
+				['img'] = 'buzz_saw.png',
+			},
+			['impact_driver'] = {
+				['name'] = "Impact Driver",
+				['price_to_customer'] = 1500,
+				['price_to_customer_min'] = 300,
+				['price_to_customer_max'] = 1200,
+				['price_to_export'] = 540,
+				['price_to_owner'] = 500,
+				['amount_to_owner'] = 1,
+				['amount_to_delivery'] = 1,
+				['img'] = 'impact_driver.png',
+			},
+			['pliers'] = {
+				['name'] = "Pliers",
+				['price_to_customer'] = 1500,
+				['price_to_customer_min'] = 62,
+				['price_to_customer_max'] = 250,
+				['price_to_export'] = 112,
+				['price_to_owner'] = 100,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'pliers.png',
+			},
+			['screwdriver'] = {
+				['name'] = "Screwdriver",
+				['price_to_customer'] = 100,
+				['price_to_customer_min'] = 50,
+				['price_to_customer_max'] = 200,
+				['price_to_export'] = 90,
+				['price_to_owner'] = 85,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'screwdriver.png',
+			},
+			['kq_tow_rope'] = {
+				['name'] = "Towing Rope",
+				['price_to_customer'] = 50,
+				['price_to_customer_min'] = 45,
+				['price_to_customer_max'] = 80,
+				['price_to_export'] = 40,
+				['price_to_owner'] = 38,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'kq_tow_rope.png',
+			},
+			['kq_winch'] = {
+				['name'] = "Car Winch",
+				['price_to_customer'] = 50,
+				['price_to_customer_min'] = 45,
+				['price_to_customer_max'] = 90,
+				['price_to_export'] = 42,
+				['price_to_owner'] = 40,
+				['amount_to_owner'] = 1,
+				['amount_to_delivery'] = 1,
+				['img'] = 'kq_winch.png',
+			},
+			
+			
+
+
+			
 		}
 	},
 
@@ -1006,33 +2185,19 @@ Config.market_categories = {
 				['max_amount_to_purchase'] = 1,
 				['img'] = 'weapon_crowbar.png',
 			},
-			['weapon_hammer'] = {
-				['name'] = "Hammer",
-				['price_to_customer'] = 250,
-				['price_to_customer_min'] = 125,
-				['price_to_customer_max'] = 500,
-				['price_to_export'] = 250,
-				['price_to_owner'] = 250,
+			['WEAPON_AXE'] = {
+				['name'] = "AXE",
+				['price_to_customer'] = 1000,
+				['price_to_customer_min'] = 250,
+				['price_to_customer_max'] = 1000,
+				['price_to_export'] = 750,
+				['price_to_owner'] = 375,
 				['amount_to_owner'] = 2,
 				['amount_to_delivery'] = 2,
 				['is_weapon'] = true,
 				['requires_license'] = false,
 				['max_amount_to_purchase'] = 1,
-				['img'] = 'weapon_hammer.png',
-			},
-			['weapon_wrench'] = {
-				['name'] = "Wrench",
-				['price_to_customer'] = 250,
-				['price_to_customer_min'] = 125,
-				['price_to_customer_max'] = 500,
-				['price_to_export'] = 250,
-				['price_to_owner'] = 250,
-				['amount_to_owner'] = 2,
-				['amount_to_delivery'] = 2,
-				['is_weapon'] = true,
-				['requires_license'] = false,
-				['max_amount_to_purchase'] = 1,
-				['img'] = 'weapon_wrench.png',
+				['img'] = 'WEAPON_AXE.png',
 			},
 		}
 	},
@@ -1047,7 +2212,7 @@ Config.market_categories = {
 		['items'] = {
 			['weapon_pistol'] = {
 				['name'] = "Pistol",
-				['price_to_customer'] = 2500,
+				['price_to_customer'] = 1200,
 				['price_to_customer_min'] = 1250,
 				['price_to_customer_max'] = 5000,
 				['price_to_export'] = 2500,
@@ -1073,23 +2238,66 @@ Config.market_categories = {
 				['max_amount_to_purchase'] = 1,
 				['img'] = 'weapon_snspistol.png',
 			},
-			['weapon_vintagepistol'] = {
-				['name'] = "Vintage Pistol",
-				['price_to_customer'] = 4000,
-				['price_to_customer_min'] = 2000,
-				['price_to_customer_max'] = 8000,
-				['price_to_export'] = 3600,
-				['price_to_owner'] = 3000,
+			['weapon_tglock19'] = {
+				['name'] = "Glock 19",
+				['price_to_customer'] = 3000,
+				['price_to_customer_min'] = 1500,
+				['price_to_customer_max'] = 3000,
+				['price_to_export'] = 2700,
+				['price_to_owner'] = 2400,
 				['amount_to_owner'] = 1,
 				['amount_to_delivery'] = 1,
 				['is_weapon'] = true,
 				['requires_license'] = true,
 				['max_amount_to_purchase'] = 1,
-				['img'] = 'weapon_vintagepistol.png',
+				['img'] = 'weapon_tglock19.png',
 			},
+			['weapon_fn57'] = {
+				['name'] = "FN Five-seven",
+				['price_to_customer'] = 2000,
+				['price_to_customer_min'] = 1000,
+				['price_to_customer_max'] = 2000,
+				['price_to_export'] = 1800,
+				['price_to_owner'] = 1600,
+				['amount_to_owner'] = 1,
+				['amount_to_delivery'] = 1,
+				['is_weapon'] = true,
+				['requires_license'] = true,
+				['max_amount_to_purchase'] = 1,
+				['img'] = 'weapon_fn57.png',
+			},
+			['weapon_p210'] = {
+				['name'] = "SIG P210",
+				['price_to_customer'] = 2000,
+				['price_to_customer_min'] = 1000,
+				['price_to_customer_max'] = 2000,
+				['price_to_export'] = 1800,
+				['price_to_owner'] = 1600,
+				['amount_to_owner'] = 1,
+				['amount_to_delivery'] = 1,
+				['is_weapon'] = true,
+				['requires_license'] = true,
+				['max_amount_to_purchase'] = 1,
+				['img'] = 'weapon_p210.png',
+			},
+			['weapon_sr40'] = {
+				['name'] = "SR40",
+				['price_to_customer'] = 2100,
+				['price_to_customer_min'] = 1050,
+				['price_to_customer_max'] = 2100,
+				['price_to_export'] = 1890,
+				['price_to_owner'] = 1680,
+				['amount_to_owner'] = 1,
+				['amount_to_delivery'] = 1,
+				['is_weapon'] = true,
+				['requires_license'] = true,
+				['max_amount_to_purchase'] = 1,
+				['img'] = 'weapon_sr40.png',
+			},
+			
 		}
 	},
-
+--[[ 
 	['rifle_weapons'] = {
 		['page_name'] = "Rifle Weapons",
 		['page_desc'] = "Dominate the battlefield with our high-performance assault rifles, built to provide accuracy, range, and stopping power in any combat situation",
@@ -1126,9 +2334,11 @@ Config.market_categories = {
 				['max_amount_to_purchase'] = 1,
 				['img'] = 'weapon_carbinerifle.png',
 			},
-		}
-	},
+			
 
+		}
+	}, ]]
+--[[ 
 	['shotgun_weapons'] = {
 		['page_name'] = "Shotgun Weapons",
 		['page_desc'] = "Get up close and personal with our devastating assault shotguns, designed for maximum impact and stopping power at close range combat",
@@ -1191,7 +2401,7 @@ Config.market_categories = {
 				['img'] = 'weapon_smg.png',
 			},
 		}
-	},
+	}, ]]
 
 	['throwable_weapons'] = {
 		['page_name'] = "Throwable Weapons",
@@ -1215,20 +2425,7 @@ Config.market_categories = {
 				['max_amount_to_purchase'] = 1,
 				['img'] = 'weapon_molotov.png',
 			},
-			['weapon_flare'] = {
-				['name'] = "Flare",
-				['price_to_customer'] = 700,
-				['price_to_customer_min'] = 350,
-				['price_to_customer_max'] = 1400,
-				['price_to_export'] = 550,
-				['price_to_owner'] = 475,
-				['amount_to_owner'] = 1,
-				['amount_to_delivery'] = 1,
-				['is_weapon'] = true,
-				['requires_license'] = true,
-				['max_amount_to_purchase'] = 1,
-				['img'] = 'weapon_flare.png',
-			},
+			
 		}
 	},
 
@@ -1242,7 +2439,7 @@ Config.market_categories = {
 		['items'] = {
 			['pistol_ammo'] = {
 				['name'] = "Pistol Ammo",
-				['price_to_customer'] = 250,
+				['price_to_customer'] = 25,
 				['price_to_customer_min'] = 125,
 				['price_to_customer_max'] = 500,
 				['price_to_export'] = 200,
@@ -1254,7 +2451,7 @@ Config.market_categories = {
 			},
 			['rifle_ammo'] = {
 				['name'] = "Rifle Ammo",
-				['price_to_customer'] = 350,
+				['price_to_customer'] = 50,
 				['price_to_customer_min'] = 175,
 				['price_to_customer_max'] = 700,
 				['price_to_export'] = 300,
@@ -1266,7 +2463,7 @@ Config.market_categories = {
 			},
 			['smg_ammo'] = {
 				['name'] = "SMG Ammo",
-				['price_to_customer'] = 300,
+				['price_to_customer'] = 50,
 				['price_to_customer_min'] = 150,
 				['price_to_customer_max'] = 600,
 				['price_to_export'] = 250,
@@ -1278,7 +2475,7 @@ Config.market_categories = {
 			},
 			['shotgun_ammo'] = {
 				['name'] = "Shotgun Ammo",
-				['price_to_customer'] = 300,
+				['price_to_customer'] = 75,
 				['price_to_customer_min'] = 150,
 				['price_to_customer_max'] = 600,
 				['price_to_export'] = 250,
@@ -1299,7 +2496,7 @@ Config.market_categories = {
 		['category_buy_price'] = 5000,
 		['category_sell_price'] = 2500,
 		['items'] = {
-			['weapon_flaregun'] = {
+			--[[ ['weapon_flaregun'] = {
 				['name'] = "Flare Gun",
 				['price_to_customer'] = 1000,
 				['price_to_customer_min'] = 500,
@@ -1312,7 +2509,7 @@ Config.market_categories = {
 				['requires_license'] = false,
 				['max_amount_to_purchase'] = 1,
 				['img'] = 'weapon_flaregun.png',
-			},
+			}, ]]
 			['parachute'] = {
 				['name'] = "Parachute",
 				['price_to_customer'] = 2500,
@@ -1334,6 +2531,28 @@ Config.market_categories = {
 				['amount_to_owner'] = 2,
 				['amount_to_delivery'] = 2,
 				['img'] = 'armor.png',
+			},
+			['microfibercloth'] = {
+				['name'] = "Microfiber Cloth",
+				['price_to_customer'] = 100,
+				['price_to_customer_min'] = 50,
+				['price_to_customer_max'] = 200,
+				['price_to_export'] = 100,
+				['price_to_owner'] = 100,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'microfibercloth.png',
+			},
+			['blox'] = {
+				['name'] = "Blox Multisurface",
+				['price_to_customer'] = 100,
+				['price_to_customer_min'] = 50,
+				['price_to_customer_max'] = 200,
+				['price_to_export'] = 100,
+				['price_to_owner'] = 100,
+				['amount_to_owner'] = 2,
+				['amount_to_delivery'] = 2,
+				['img'] = 'blox.png',
 			}
 		}
 	},
