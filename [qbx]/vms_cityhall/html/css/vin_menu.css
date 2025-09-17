@@ -1,0 +1,216 @@
+.vin_menu {
+    display: none;
+    position: absolute;
+    z-index: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.vin_menu>div {
+    display: none;
+    position: relative;
+    width: 30em;
+    height: 20em;
+    background: var(--menu-background);
+    color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0px 0px 4em #0d0d0d8c;
+    animation: scaleIn 0.2s;
+}
+
+.vin_menu>div>.header {
+    position: relative;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    height: 3.5em;
+    padding-inline: 1.0em;
+}
+
+.vin_menu>div>.header .name {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-right: auto;
+}
+
+.vin_menu>div>.header .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: var(--border-radius);
+    background: var(--back-btn-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.vin_menu>div>.header .close:hover {
+    background: var(--back-btn-color-hover);
+}
+
+.vin_menu>div>.menu {
+    position: relative;
+    z-index: 50000;
+    padding: 1em;
+    background: var(--submenu-background);
+    margin: 1em;
+    border-radius: 0.5em;
+    height: 14.5em;
+    overflow: auto;
+}
+
+.vin_menu>div>.menu>#find {
+    display: none;
+    width: fit-content;
+    margin-inline: auto;
+    margin-top: 1em;
+}
+
+.vin_menu>div>.menu>#find>input {
+    width: 100%;
+    border: none;
+    border-radius: 0.2em;
+    font-size: 1.8em;
+    padding: 0.2em;
+    margin-top: 0.5em;
+}
+
+.vin_menu>div>.menu>#find>.search {
+    margin-inline: auto;
+    width: fit-content;
+    margin-top: 2em;
+    color: var(--primary-text-color);
+    background: var(--main-color);
+    padding-inline: 2.5em;
+    padding-block: 0.3em;
+    border-radius: 0.3em;
+}
+
+.vin_menu>div>.menu>#find>.search>p {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.vin_menu>div>.menu>#loading {
+    display: none;
+
+}
+
+.vin_menu>div>.menu>#loading>.loader {
+    margin: auto;
+    margin-top: 4em;
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid var(--main-color);
+    animation: l20-1 0.8s infinite linear alternate, l20-2 1.6s infinite linear;
+}
+
+.vin_menu>div>.menu>#loading>p {
+    margin-top: 1em;
+    text-align: center;
+}
+
+
+.vin_menu>div>.menu>#result {
+    display: none;
+
+}
+
+.vin_menu>div>.menu>#result .title {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.vin_menu>div>.menu>#result .model,
+.vin_menu>div>.menu>#result .owner-name,
+.vin_menu>div>.menu>#result .plate,
+.vin_menu>div>.menu>#result .insurance-start-time,
+.vin_menu>div>.menu>#result .insurance-end-time {
+    font-weight: 600;
+    color: var(--secondary-text-color);
+}
+
+.vin_menu>div>.menu>#result .model > span ,
+.vin_menu>div>.menu>#result .owner-name > span ,
+.vin_menu>div>.menu>#result .plate > span ,
+.vin_menu>div>.menu>#result .insurance-start-time > span ,
+.vin_menu>div>.menu>#result .insurance-end-time > span  {
+    font-weight: 400;
+    color: var(--primary-text-color);
+}
+
+
+.vin_menu #result > .issue-ticket {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    color: var(--primary-text-color);
+    background: var(--main-color);
+    padding-inline: 2.5em;
+    padding-block: 0.3em;
+    border-radius: 0.3em;
+}
+
+.vin_menu #result > .issue-ticket > p {
+    margin: 0;
+}
+
+
+
+@keyframes l20-1 {
+    0% {
+        clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%)
+    }
+
+    12.5% {
+        clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%)
+    }
+
+    25% {
+        clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%)
+    }
+
+    50% {
+        clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%)
+    }
+
+    62.5% {
+        clip-path: polygon(50% 50%, 100% 0, 100% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%)
+    }
+
+    75% {
+        clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 100%, 0% 100%)
+    }
+
+    100% {
+        clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%)
+    }
+}
+
+@keyframes l20-2 {
+    0% {
+        transform: scaleY(1) rotate(0deg)
+    }
+
+    49.99% {
+        transform: scaleY(1) rotate(135deg)
+    }
+
+    50% {
+        transform: scaleY(-1) rotate(0deg)
+    }
+
+    100% {
+        transform: scaleY(-1) rotate(-135deg)
+    }
+}

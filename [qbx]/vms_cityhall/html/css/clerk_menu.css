@@ -1,0 +1,795 @@
+/* .clerk-menu */
+.clerk-menu div[data-type="loading"] {
+    display: none;
+    position: absolute;
+    width: 61em;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+    height: 43.5em;
+    backdrop-filter: blur(3px);
+    z-index: 5000000;
+    border-radius: 0.6em;
+}
+
+.clerk-menu div[data-type="loading"]>.loader {
+    margin: auto;
+    margin-top: 19em;
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid var(--main-color);
+    animation: l20-1 0.8s infinite linear alternate, l20-2 1.6s infinite linear;
+}
+
+.clerk-menu div[data-type="loading"]>p {
+    text-shadow: 5px 3px 4px black;
+    margin-top: 1em;
+    text-align: center;
+}
+
+.clerk-menu div[data-type="business-taxes-period"]>div,
+.clerk-menu div[data-type="business-taxes"]>div {
+    position: absolute;
+    background: var(--submenu-background-selected);
+    padding: 1em;
+    border-radius: 0.3em;
+    overflow: hidden;
+    width: 60em;
+    height: 42.5em;
+}
+
+.clerk-menu div[data-type="business-taxes-period"]>div>.list,
+.clerk-menu div[data-type="business-taxes"]>div>.list {
+    display: grid;
+    grid-template-columns: 18.6em 18.6em 18.6em;
+    grid-template-rows: min-content;
+    gap: 1em;
+    margin-top: 1em;
+    overflow: overlay;
+    max-height: 36em;
+    height: auto;
+}
+
+.clerk-menu div[data-type="business-taxes"]>div>.list>div {
+    position: relative;
+    overflow: hidden;
+    height: 10em;
+    background: var(--submenu-background);
+    border-radius: 0.3em;
+    padding: 0.8em;
+    gap: 1em;
+    line-height: 1.2;
+    z-index: 5000;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.clerk-menu div[data-type="business-taxes-period"]>div>.list>div {
+    position: relative;
+    overflow: hidden;
+    height: 7em;
+    background: var(--submenu-background);
+    border-radius: 0.3em;
+    padding: 0.8em;
+    gap: 1em;
+    line-height: 1.2;
+    z-index: 5000;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.clerk-menu div[data-type="business-taxes-period"]>div>.list>div .title,
+.clerk-menu div[data-type="business-taxes"]>div>.list>div .title {
+    font-weight: 700;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+}
+
+.clerk-menu div[data-type="business-taxes"]>div>.list>div .title>span {
+    font-weight: 700;
+    color: #ffffff9e;
+    background: #0000002e;
+    padding-block: 0.4em;
+    padding-inline: 0.6em;
+    border-radius: 0.4em;
+    font-size: 0.7em;
+    margin-right: 0.5em;
+}
+
+.clerk-menu div[data-type="business-taxes-period"]>div>.list>div .check_out,
+.clerk-menu div[data-type="business-taxes"]>div>.list>div .check_out {
+    background: var(--main-color);
+    position: absolute;
+    bottom: 0.7em;
+    width: 11.5em;
+    text-align: center;
+    padding: 0.45em 0.7em;
+    border-radius: 0.3em;
+    font-weight: 700;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.clerk-menu div[data-type="business-taxes"]>div>.list>div .check_out:hover {
+    background: var(--main-color-hover);
+}
+
+.clerk-menu div[data-type="business-taxes"]>div>.list>div .check_out:active {
+    background: var(--main-color-active);
+}
+
+.clerk-menu .side-boxes>.box {
+    position: absolute;
+    overflow: hidden;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+    padding: 1em;
+}
+
+.clerk-menu div[data-type="business-taxes-company"]>div>.side-boxes>.box[data-type="company"] {
+    width: 36em;
+    height: 7.6em;
+}
+
+.clerk-menu div[data-type="business-taxes-company"]>div>.side-boxes>.box[data-type="amount"] {
+    right: 0;
+    width: 23em;
+    height: 7.6em;
+}
+
+.clerk-menu div[data-type="business-taxes-company"]>div>.side-boxes>.box[data-type="paid_amount"] {
+    right: 0;
+    top: 8.6em;
+    width: 23em;
+    height: 7.6em;
+}
+
+.clerk-menu div[data-type="business-taxes-company"]>div>.side-boxes>.box[data-type="paid_date"] {
+    right: 0;
+    top: 17.2em;
+    width: 23em;
+    height: 7.6em;
+}
+
+.clerk-menu div[data-type="business-taxes-company"]>div>.side-boxes>.box[data-type="delayed_amount"] {
+    right: 0;
+    top: 25.8em;
+    width: 23em;
+    height: 7.6em;
+}
+
+.clerk-menu div[data-type="business-taxes-company"]>div>.side-boxes>.box[data-type="late_fee_applied"] {
+    right: 0;
+    top: 34.4em;
+    width: 23em;
+    height: 8em;
+}
+
+.clerk-menu div[data-type="business-taxes-company"]>div>.side-boxes>.box[data-type="message"] {
+    top: 8.7em;
+    width: 36em;
+    height: 33.7em;
+}
+
+.clerk-menu div[data-type="business-taxes-company"]>div>.side-boxes>.box[data-type="message"] > textarea {
+    width: 100%;
+    height: 24.5em;
+    margin-top: 1em;
+    background: #ffffff08;
+    border: 1px solid #ffffff42;
+    border-radius: 0.3em;
+    resize: none;
+    color: white;
+    padding-inline: 0.5em;
+    padding-block: 0.3em;
+}
+
+.clerk-menu div[data-type="business-taxes-company"]>div>.side-boxes>.box[data-type="message"] > .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: 2em;
+    background: var(--main-color);
+    color: var(--primary-text-color);
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: 0.25s;
+    margin-top: 0.5em;
+}
+
+
+.clerk-menu div[data-type="players-and-vehicles"]>div>.side-boxes>.box[data-type="players"] {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 20.75em;
+}
+
+.clerk-menu div[data-type="players-and-vehicles"]>div>.side-boxes>.box[data-type="vehicles"] {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20.75em;
+}
+
+.clerk-menu div[data-type="players-and-vehicles"]>div>.side-boxes>.box>p {
+    margin: 0;
+    margin-top: 1.5em;
+    color: var(--secondary-text-color);
+    font-weight: 300;
+}
+
+.clerk-menu div[data-type="players-and-vehicles"]>div>.side-boxes>.box input {
+    width: 14em;
+    background: var(--submenu-background-selected);
+    border: 2px solid var(--submenu-background);
+    border-radius: 0.15em;
+    outline: none;
+    margin-top: 0.15em;
+    color: white;
+    font-size: 3em;
+    padding: 0.2em;
+    padding-inline: 0.4em;
+    font-weight: 700;
+}
+
+.clerk-menu div[data-type="players-and-vehicles"]>div>.side-boxes>.box>.btn {
+    position: absolute;
+    width: fit-content;
+    line-height: 1;
+    bottom: 1em;
+    left: 1em;
+    height: 2em;
+    background: var(--main-color);
+    color: var(--primary-text-color);
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.clerk-menu div[data-type="players-and-vehicles"]>div>.side-boxes>.box>.btn:hover {
+    background: var(--main-color-hover);
+}
+
+.clerk-menu div[data-type="players-and-vehicles"]>div>.side-boxes>.box>.btn:active {
+    background: var(--main-color-active);
+}
+
+
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-data"] {
+    width: 39em;
+    height: 20.5em;
+}
+
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-data"] {
+    width: 39em;
+    height: 100%;
+}
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-data"] .rows,
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-data"] .rows {
+    display: grid;
+    grid-template-columns: 10em 10em 16em;
+    gap: 0.5em;
+    height: 17.5em;
+    overflow: overlay;
+}
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-data"] .rows {
+    height: 14.7em;
+}
+
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-data"] .rows {
+    grid-template-columns: 18.25em 18.25em !important;
+}
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-data"] .row-1,
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-data"] .row-2,
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-data"] .row-3,
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-data"] .row-1,
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-data"] .row-2
+{
+    margin-top: 1em;
+}
+
+.clerk-menu .menu div[data-type="players-info"] .box[data-type="player-vehicles"] > .data .label,
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-data"] .row-1 .label,
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-data"] .row-2 .label,
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-data"] .row-3 .label,
+.clerk-menu .menu div[data-type="vehicles-info"] .box[data-type="vehicle-vehicles"] > .data .label,
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-data"] .row-1 .label,
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-data"] .row-2 .label {
+    z-index: 5;
+    font-size: 1em;
+    font-weight: 300;
+    color: var(--secondary-text-color);
+}
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-data"] .row-1 > div,
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-data"] .row-2 > div,
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-data"] .row-3 > div,
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-data"] .row-1 > div,
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-data"] .row-2 > div {
+    line-height: 1.1;
+    margin-top: 0.4em;
+}
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-data"] .row-1 > div > #val,
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-data"] .row-2 > div > #val,
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-data"] .row-3 > div > #val,
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-data"] .row-1 > div > #val,
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-data"] .row-2 > div > #val {
+    display: block;
+    font-weight: 600;
+}
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-tax-history"],
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-owner-history"] {
+    right: 0;
+    width: 20em;
+    height: 100%;
+}
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-tax-history"] > .data,
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-owner-history"] > .data {
+    gap: 1em;
+    display: grid;
+    grid-auto-rows: min-content;
+    width: 100%;
+    height: 36em;
+    background: var(--submenu-background-selected);
+    overflow-y: overlay;
+    margin-top: 1em;
+    padding: 1em;
+    border-radius: 0.3em;
+}
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-tax-history"] > .data > div,
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-owner-history"] > .data > div {
+    position: relative;
+    overflow: hidden;
+    background: var(--submenu-background);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-radius: 0.3em;
+    padding: 0.8em;
+    gap: 1em;
+    line-height: 1.2;
+    height: max-content;
+}
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-tax-history"] > .data .name>.id,
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-owner-history"] > .data .name {
+    font-size: 0.8em;
+    font-weight: 300;
+    color: var(--secondary-text-color);
+}
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-tax-history"] > .data .info,
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-owner-history"] > .data .info {
+    font-size: 0.8em;
+    top: 3em !important;
+}
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-tax-history"] > .data .info>hr,
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-owner-history"] > .data .info>hr {
+    opacity: 0.075 !important;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-tax-history"] > .data .info>div,
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-owner-history"] > .data .info>div {
+    color: var(--secondary-text-color);
+    font-weight: 600;
+}
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-tax-history"] > .data .info>div>span,
+.clerk-menu div[data-type="vehicles-info"]>div>.side-boxes>.box[data-type="vehicle-owner-history"] > .data .info>div>span {
+    color: var(--primary-text-color) !important;
+    font-weight: 400;
+}
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-tax-history"] .data .status {
+    position: absolute;
+    text-align: center;
+    font-weight: 700;
+    right: -1.7em;
+    top: 1.3em;
+    width: 7em;
+    rotate: 45deg;
+    opacity: 0.85;
+}
+
+
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-vehicles"] {
+    width: 39em;
+    height: 21em;
+    bottom: 0;
+}
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-vehicles"] > .data {
+    gap: 1em;
+    display: grid;
+    grid-template-columns: 17em 17em;
+    width: 100%;
+    height: 14.5em;
+    background: var(--submenu-background-selected);
+    overflow-y: overlay;
+    margin-top: 1em;
+    padding: 1em;
+    border-radius: 0.3em;
+}
+
+.clerk-menu div[data-type="players-info"]>div>.side-boxes>.box[data-type="player-vehicles"] > .data > div {
+    position: relative;
+    line-height: 1.2;
+    height: 6em;
+    overflow: hidden;
+    background: var(--submenu-background);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.02);
+    border-image: initial;
+    border-radius: 0.3em;
+    padding: 0.8em;
+    gap: 1em;
+    z-index: 500000;
+}
+
+.clerk-menu .menu div[data-type="players-info"] .box[data-type="player-vehicles"] > .data #val {
+    font-weight: 600;
+}
+
+.clerk-menu .menu div[data-type="players-info"] .box[data-type="player-vehicles"] > .data .vin,
+.clerk-menu .menu div[data-type="players-info"] .box[data-type="player-vehicles"] > .data .plate {
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+}
+
+.clerk-menu .menu div[data-type="players-info"] .box[data-type="player-vehicles"] > .data i {
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.3em;
+    margin-left: 0.2em;
+    opacity: 0.6;
+    transition: 0.2s;
+}
+
+.clerk-menu .menu div[data-type="players-info"] .box[data-type="player-vehicles"] > .data i:hover {
+    opacity: 1.0;
+}
+
+.clerk-menu .menu div[data-type="players-info"] .box[data-type="player-vehicles"] > .data .model {
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+
+
+
+
+.clerk-menu div[data-type="employees"]>div .employees-list {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 43em;
+    height: 100%;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+    padding: 1em;
+    overflow: auto;
+}
+
+.clerk-menu div[data-type="employees"].notAllowEmployeesManage > div .employees-list {
+    width: 100%;
+}
+
+.clerk-menu div[data-type="employees"].notAllowEmployeesManage > div .employees-list > table thead .table-last {
+    display: none;
+}
+
+.clerk-menu .menu div[data-type="employees"]>div .employees-list>table thead .center {
+    text-align: center;
+}
+
+
+.clerk-menu div[data-type="employees"]>div>.box {
+    position: absolute;
+    right: 0px;
+    overflow: hidden;
+    width: 16em;
+    height: 100%;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+    padding: 1em;
+}
+
+.clerk-menu div[data-type="employees"].notAllowEmployeesManage > div > .box {
+    display: none;
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.data {
+    height: 33.3em;
+    margin-top: 0.5em;
+    width: 100%;
+    border-radius: 0.5em;
+    outline: none;
+    background: none;
+    backdrop-filter: blur(10px);
+    background: var(--submenu-background-selected);
+    color: white;
+    position: relative;
+    z-index: 1;
+    padding: 1em;
+    overflow: auto;
+}
+
+
+.clerk-menu div[data-type="employees"]>div>.box>.data>.hire-list>.hire-player {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.data>.hire-list>.hire-player>.hire_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.5em;
+    background: var(--main-color);
+    color: var(--primary-text-color);
+    font-weight: 600;
+
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.25s;
+    padding-inline: 0.5em;
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.data>.hire-list>.hire-player>.hire_btn:hover {
+    background: var(--main-color-hover);
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.data>.hire-list>.hire-player>.hire_btn:active {
+    background: var(--main-color-active);
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.data>.employee-manage>.player .player-name {
+    text-align: center;
+    font-size: 1.45em;
+    font-weight: 700;
+    margin-bottom: 1.2em;
+    margin-top: 0.5em;
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.data>.employee-manage>.player>div {
+    font-size: 0.75em;
+    margin-bottom: 1em;
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.data>.employee-manage>.player input {
+    width: -webkit-fill-available;
+    height: 2.3em;
+    border-radius: 6px 6px 0px 0px;
+    outline: none;
+    border: none;
+    padding-inline: 0.5em;
+    font-weight: 600;
+    color: white;
+    background: #afafaf38;
+    border: 1px solid #ffffff2e;
+    border-bottom: none;
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.data>.employee-manage>.player .bonus-bar {
+    margin-bottom: 2em !important;
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.data>.employee-manage>.player .bonus-bar .bonus {
+    border-radius: 0em 0em 6px 6px !important;
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.data>.employee-manage>.player .bonus-bar .bonus,
+.clerk-menu div[data-type="employees"]>div>.box>.data>.employee-manage>.player .changegrade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.3em;
+    background: var(--main-color);
+    color: var(--primary-text-color);
+    font-weight: 600;
+    
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.25s;
+    padding-inline: 0.5em;
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.data>.employee-manage>.player .bonus-bar .bonus:hover,
+.clerk-menu div[data-type="employees"]>div>.box>.data>.employee-manage>.player .changegrade:hover {
+    background: var(--main-color-hover);
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.data>.employee-manage>.player .bonus-bar .bonus:active,
+.clerk-menu div[data-type="employees"]>div>.box>.data>.employee-manage>.player .changegrade:active {
+    background: var(--main-color-active);
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.data>.employee-manage>.player .fire {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.3em;
+    background: var(--close-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.25s;
+    padding-inline: 0.5em;
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.data>.employee-manage>.player .fire:hover {
+    background: var(--close-color-hover);
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.data>.employee-manage>.player .fire:active {
+    background: var(--close-color-active);
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 5;
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.buttons>.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: 2em;
+    background: var(--main-color);
+    
+    border-radius: 6px;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: 0.25s;
+}
+
+.clerk-menu div[data-type="employees"]>div>.box>.buttons>.btn p {
+    color: var(--primary-text-color);
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+
+
+.clerk-menu div[data-type="boss-management"]>div>.side-boxes>.box[data-type="balance"] {
+    width: 36em;
+    height: 13.5em;
+}
+
+.clerk-menu div[data-type="boss-management"]>div>.side-boxes>.box[data-type="employees-count"] {
+    width: 23em;
+    height: 13.5em;
+    right: 0;
+}
+
+.clerk-menu div[data-type="boss-management"]>div>.side-boxes>.box[data-type="total-earned"] {
+    top: 14.5em;
+    width: 60em;
+    height: 13.5em;
+}
+
+.clerk-menu div[data-type="boss-management"]>div>.side-boxes>.box[data-type="total-delayed-amount"] {
+    top: 29em;
+    width: 60em;
+    height: 13.5em;
+}
+
+.clerk-menu div[data-type="boss-management"]>div>.side-boxes>.box[data-type="balance"] .close-balance.isVisible {
+    display: flex !important;
+}
+
+
+.clerk-menu div[data-type="boss-management"]>div>.side-boxes>.box[data-type="balance"] .close-balance {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: var(--border-radius);
+    background: var(--back-btn-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.clerk-menu div[data-type="boss-management"]>div>.side-boxes>.box[data-type="balance"] .close-balance:hover {
+    background: var(--back-btn-color-hover);
+}
+
+.clerk-menu div[data-type="boss-management"]>div>.side-boxes>.box[data-type="balance"] .close-balance.isAnyVal {
+    background: var(--ok-color);
+}
+
+.clerk-menu div[data-type="boss-management"]>div>.side-boxes>.box[data-type="balance"] .close-balance.isAnyVal:hover {
+    background: var(--ok-color-hover);
+}
+
+.clerk-menu div[data-type="boss-management"]>div>.side-boxes>.box[data-type="balance"] .close-balance.isAnyVal:active {
+    background: var(--ok-color-active);
+}
+
+.clerk-menu div[data-type="boss-management"]>div>.side-boxes>.box>.buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 5;
+}
+
+.clerk-menu div[data-type="boss-management"]>div>.side-boxes>.box>.buttons>.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: 2em;
+    background: var(--main-color);
+    color: var(--primary-text-color);
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: 0.25s;
+}
+
+
+.clerk-menu div[data-type="boss-management"]>div>.side-boxes>.box>.buttons>.btn:hover {
+    background: var(--main-color-hover);
+}
+
+.clerk-menu div[data-type="boss-management"]>div>.side-boxes>.box>.buttons>.btn:active {
+    background: var(--main-color-active);
+}
+
+.clerk-menu div[data-type="boss-management"]>div>.side-boxes>.box>.buttons>.btn p {
+    color: white;
+    margin-bottom: 0;
+}
+
+
+.clerk-menu div[data-type="boss-management"]>div .box input[data-input="deposit"],
+.clerk-menu div[data-type="boss-management"]>div .box input[data-input="withdraw"] {
+    display: none;
+    width: 31em;
+    height: 2em;
+    z-index: 5;
+    padding-inline: 0.5em;
+    border-radius: 0.4em;
+    border: 1px solid rgba(255, 255, 255, 0.70);
+    outline: none;
+    backdrop-filter: blur(12px);
+    background: var(--submenu-background-selected);
+    color: white;
+}

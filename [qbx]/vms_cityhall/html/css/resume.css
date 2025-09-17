@@ -1,0 +1,224 @@
+#resume {
+    display: none;
+    position: absolute;
+    font-family: 'Titillium Web', sans-serif;
+    width: 100%;
+    height: 100%;
+    z-index: 50000;
+    align-items: center;
+    justify-content: center;
+}
+
+#resume>.resume {
+    position: relative;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    background: #f8f8f8;
+    width: 40em;
+    height: 56em;
+    padding: 2em 2em;
+    box-shadow: 3px 3px 8px rgb(0 0 0 / 60%);
+}
+
+#resume>.resume>.resume-title {
+    position: absolute !important;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    font-size: 2.2em;
+    font-weight: 700;
+    top: 0.2em;
+}
+
+#resume>.resume>div {
+    position: relative;
+}
+
+#resume>.resume>.left {
+    top: 2.5em;
+    height: fit-content;
+}
+
+#resume>.resume>.vertical-line {
+    width: 2px;
+    height: 50em;
+    background: black;
+    margin-inline: 2em;
+    opacity: 0.1;
+    top: 2.5em;
+}
+
+#resume>.resume>.right {
+    top: 2.5em;
+    width: 21.5em;
+    height: 48em;
+}
+
+#resume>.resume>.left>img {
+    width: 12em;
+    height: 12em;
+    border-radius: 0.5em;
+}
+
+#resume>.resume>.left #skills>#data,
+#resume>.resume>.left #interests>#data {
+    width: 15em;
+    height: 17.8em;
+    overflow: auto;
+    font-size: 0.8em;
+    margin-left: -0.1em;
+}
+
+#resume>.resume>.left #skills>#data>div,
+#resume>.resume>.left #interests>#data>div {
+    width: fit-content;
+    gap: 1em;
+    display: -webkit-inline-box;
+    padding: 0.1em 0.2em;
+    padding-right: 0.4em;
+    margin: 0.1em;
+    background: #76767647;
+    border-radius: 0.4em;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+#resume>.resume>.left #skills>#data>div.active,
+#resume>.resume>.left #interests>#data>div.active {
+    background: #825db19c;
+}
+
+#resume:not(.isPreview)>.resume>.left #skills>#data>div,
+#resume:not(.isPreview)>.resume>.left #interests>#data>div {
+    cursor: pointer;
+}
+
+#resume:not(.isPreview)>.resume>.left #skills>#data>div:not(.active):hover,
+#resume:not(.isPreview)>.resume>.left #interests>#data>div:not(.active):hover {
+    background: #815db154;
+}
+
+#resume:not(.isPreview)>.resume>.left #skills>#data>div:active,
+#resume:not(.isPreview)>.resume>.left #interests>#data>div:active {
+    background: #825db19c;
+}
+
+#resume>.resume>.right>#player-name {
+    font-weight: 700;
+    font-size: 1.7em;
+}
+
+#resume>.resume>.right>.informations>#email>i,
+#resume>.resume>.right>.informations>#phone-number>i,
+#resume>.resume>.right>.informations>#city>i {
+    opacity: 0.8;
+    margin-right: 0.3em;
+}
+
+#resume>.resume>.right>.informations>#phone-number>input {
+    background: transparent;
+    border: 1px solid #0000002e;
+    line-height: 1.4;
+    padding-inline: 0.2em;
+    border-radius: 0.3em;
+    width: 15em;
+}
+
+#resume.isPreview>.resume>.right>.informations>#phone-number>input {
+    border: none;
+}
+
+#resume>.resume>.left>#skills,
+#resume>.resume>.left>#interests,
+#resume>.resume>.right>#about-me,
+#resume>.resume>.right>#work-experience {
+    margin-top: 2.5em;
+}
+
+#resume>.resume>.left>#skills>.title,
+#resume>.resume>.left>#interests>.title,
+#resume>.resume>.right>#about-me>.title,
+#resume>.resume>.right>#work-experience>.title {
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+#resume>.resume>.right textarea {
+    width: 100%;
+    resize: none;
+    background: transparent;
+    border: 1px solid #0000002e;
+    line-height: 1.4;
+    padding: 0.5em;
+    border-radius: 0.3em;
+}
+
+#resume>.resume>.right>#about-me>textarea {
+    height: 12em;
+}
+
+#resume>.resume>.right>#work-experience>textarea {
+    height: 17em;
+}
+
+#resume>.resume>.right>.action-buttons {
+    display: flex;
+    gap: 0.8em;
+}
+
+#resume>.resume>.right>.action-buttons>div {
+    width: 100%;
+    height: 3em;
+    margin-top: 0.65em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3em;
+    color: var(--primary-text-color);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#resume>.resume>.right>.action-buttons>div#submit {
+    background: var(--main-color);
+}
+
+#resume>.resume>.right>.action-buttons>div#submit:hover {
+    background: var(--main-color-hover);
+}
+
+#resume>.resume>.right>.action-buttons>div#submit:active {
+    background: var(--main-color-active);
+}
+
+#resume>.resume>.right>.action-buttons>div#agree {
+    background: var(--ok-color);
+}
+
+#resume>.resume>.right>.action-buttons>div#agree:hover {
+    background: var(--ok-color-hover);
+}
+
+#resume>.resume>.right>.action-buttons>div#agree:active {
+    background: var(--ok-color-active);
+}
+
+#resume>.resume>.right>.action-buttons>div#decline {
+    background: var(--close-color);
+}
+
+#resume>.resume>.right>.action-buttons>div#decline:hover {
+    background: var(--close-color-hover);
+}
+
+#resume>.resume>.right>.action-buttons>div#decline:active {
+    background: var(--close-color-active);
+}
+
+#resume>.resume>.right>.action-buttons>div>p {
+    font-size: 1.0em;
+    font-weight: 700;
+    margin: 0 !important;
+}

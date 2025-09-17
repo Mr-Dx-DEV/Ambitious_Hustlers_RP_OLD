@@ -1,0 +1,300 @@
+/*
+
+    Receipt
+
+*/
+
+
+#receipt {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 50000;
+}
+
+.receipt {
+    font-family: "Inconsolata", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings: "wdth" 73.8;
+    position: absolute;
+    right: 5em;
+    bottom: -1em;
+}
+
+.receipt .dashed-line {
+    letter-spacing: -0.1em;
+    font-weight: 500;
+}
+
+.receipt-texts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 1em;
+    padding: 1em;
+}
+
+.receipt-texts > .header-label {
+    font-size: 1.9em;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1;
+}
+
+.receipt-texts > .legend {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+}
+
+.receipt-texts > .legend > .quantity {
+    margin-right: 1.5em;
+}
+
+.receipt-texts > .legend > .item {
+    width: 100%;
+}
+
+.receipt-texts > .legend > .amount {
+
+}
+
+.receipt-texts > .list {
+    max-height: 22em;
+    padding-bottom: 0.5em;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.receipt-texts > .list > table .remove-element {
+    position: absolute;
+    left: 0;
+    height: 1.5em;
+    line-height: 1.4;
+    margin-top: 0.25em;
+    width: 1.2em;
+    text-align: center;
+    opacity: 0.4;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.receipt-texts > .list > table tr > div:hover {
+    opacity: 1.0;
+}
+
+
+.receipt-texts > .list > table #quantity > input {
+    font-weight: 550;
+    width: 3em;
+    background: transparent;
+    border: 2px solid #5a5a5aa8;
+}
+
+.receipt-texts > .list > table #item > input {
+    font-weight: 550;
+    background: transparent;
+    border: 2px solid #5a5a5aa8;
+    width: 11em;
+}
+
+.receipt-texts > .list > table #unit_price > input {
+    font-weight: 550;
+    background: transparent;
+    border: 2px solid #5a5a5aa8;
+    width: 3.5em;
+}
+
+.receipt-texts > .list > table #amount > span {
+    display: block;
+    width: 5em;
+    font-weight: 550;
+    background: transparent;
+    text-align: right;
+}
+
+.receipt.preview .receipt-texts > .list > table #item > input {
+    width: 14.4em !important;
+}
+
+.receipt.preview .receipt-texts > .list > table #quantity > input,
+.receipt.preview .receipt-texts > .list > table #item > input,
+.receipt.preview .receipt-texts > .list > table #unit_price > input {
+    border: none !important;
+}
+
+.receipt-texts > .list > .add-new-product {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 900;
+    background: #81818133;
+    border-radius: 0.25em;
+    margin-top: 0.3em;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.receipt-texts > .list > .add-new-product:hover {
+    background: #81818160;
+}
+
+.receipt-texts > .total {
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+.receipt-texts > .sub_total,
+.receipt-texts > .sales_tax,
+.receipt-texts > .paid_by {
+    font-size: 0.85em;
+}
+
+.receipt-texts > .sub_total,
+.receipt-texts > .sales_tax,
+.receipt-texts > .total,
+.receipt-texts > .paid_by {
+    display: flex;
+    justify-content: space-between;
+}
+
+.receipt .sub_total span#currency,
+.receipt .sales_tax span#currency,
+.receipt .total span#currency {
+    margin-right: 0.15em;
+}
+
+.receipt-texts > .buttons {
+    position: absolute;
+    display: flex;
+    margin-top: 0.8em;
+    margin-left: 1em;
+    padding-inline: 1em;
+    margin-inline: auto;
+    width: 100%;
+    left: 0;
+    bottom: 4em;
+}
+
+.receipt-texts > .buttons > .pay_cash {
+    margin-right: 1em;
+}
+
+.receipt-texts > .buttons > .pay_cash,
+.receipt-texts > .buttons > .pay_bank {
+    font-size: 0.85em;
+    padding-block: 0.5em;
+    padding-inline: 1.5em;
+    margin-right: 1em;
+    margin-left: 0;
+    color: white;
+    border: 2px solid transparent;
+    background: rgb(82 112 255 / 77%);
+    border-radius: 0.5em;
+    transition: 0.2s;
+}
+
+.receipt-texts > .buttons > .pay_cash:hover,
+.receipt-texts > .buttons > .pay_bank:hover {
+    scale: 1.05;
+    background: rgb(82 112 255 / 100%);
+}
+
+.receipt-texts > .buttons > .reject {
+    font-size: 0.85em;
+    margin-left: auto;
+    padding-block: 0.5em;
+    padding-inline: 1.5em;
+    margin-right: 0;
+    color: rgb(82 112 255 / 77%);
+    border: 2px solid rgb(82 112 255 / 77%);
+    background: transparent;
+    border-radius: 0.5em;
+    transition: 0.2s;
+}
+
+.receipt-texts > .buttons > .reject:hover {
+    scale: 1.05;
+    color: rgb(82 112 255 / 100%);
+    border: 2px solid rgb(82 112 255 / 100%);
+}
+
+
+.receipt .give {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 4.2em;
+}
+
+.receipt .give > p {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.receipt .give > div {
+    display: flex;
+    justify-content: center;
+    /* position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 4.2em; */
+}
+
+.receipt .give > div > .select2 .select2-selection {
+    height: 2em;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    color: white;
+    font-weight: 700;
+    line-height: 2;
+    width: 10em;
+    padding-inline: 1em;
+    border: 2px solid rgba(82, 112, 255, 0.77);
+    outline: none;
+}
+
+.receipt .give > div > div {
+    height: 2em;
+    padding-inline: 1.3em;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    background: rgb(82 112 255 / 77%);
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    line-height: 2;
+}
+
+
+#receipt div.thank-you-message {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 4em;
+}
+
+#receipt div.thank-you-message > div {
+    text-align: center;
+    width: 10em;
+    font-size: 1.3em;
+    font-weight: 600;
+    line-height: 1;
+    margin-inline: auto;
+}
+
+
+.receipt .receipt-img {
+    width: 25em;
+}
+
+.receipt div.required,
+.receipt input.required,
+.receipt span.required {
+    animation: pulseEffect 2s forwards;
+}

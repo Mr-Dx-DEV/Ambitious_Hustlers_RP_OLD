@@ -1,0 +1,176 @@
+.billings_menu p {margin: 0;}
+
+.billings_menu {
+    color: var(--primary-text-color);
+    display: none;
+    position: absolute;
+    z-index: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.billings_menu > div {
+    display: none;
+    position: relative;
+    width: 57em;
+    height: 41em;
+    background: var(--menu-background);
+    color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0px 0px 4em #0d0d0d8c;
+    animation: scaleIn 0.2s;
+}
+
+
+.billings_menu > div > .header {
+    position: relative;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    height: 3.5em;
+    padding-inline: 1.0em;
+}
+.billings_menu > div > .header > p.name {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-right: auto;
+}
+.billings_menu > div > .header > .search {
+    width: 15em;
+    height: 2em;
+    margin-right: 1rem;
+    border-radius: var(--border-radius);
+    background: var(--back-btn-color);
+    border: none;
+    outline: none;
+    color: #dbdbdbf7;
+    padding-inline: 0.5em;
+    transition: 0.2s;
+}
+.billings_menu > div > .header > .search:focus {
+    background: var(--back-btn-color);
+    filter: brightness(1.2);
+}
+.billings_menu > div > .header > .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: var(--border-radius);
+    background: var(--back-btn-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.billings_menu > div > .header > .close:hover {
+    background: var(--back-btn-color-hover);
+}
+
+
+.billings_menu > div > .menu {
+    padding: 1em;
+}
+
+.billings_menu > div > .menu > table {
+    width: 100%;
+}
+
+.billings_menu > div > .menu > table > thead {
+    height: 2em;
+    background: var(--submenu-background-selected);
+}
+
+.billings_menu > div > .menu > table tbody > tr {
+    height: 3em
+}
+
+.billings_menu > div > .menu > table thead tr th:first-child {
+    padding-left: 1em;
+}
+
+.billings_menu > div > .menu > table thead tr th:last-child {
+    padding-right: 1em;
+}
+
+.billings_menu > div > .menu > table tbody tr td:first-child {
+    padding-left: 1em;
+}
+
+.billings_menu > div > .menu > table tbody tr td:last-child {
+    padding-right: 1em;
+}
+
+.billings_menu > div > .menu > table .status {
+    width: 7em;
+    text-align: center;
+    height: 2em;
+    line-height: 2;
+    border-radius: 0.3em;
+}
+
+.billings_menu > div > .menu > table .status > p {
+    font-weight: 700;
+    opacity: 0.75;
+    letter-spacing: 0.5px;
+}
+
+.billings_menu > div > .menu > table .status.paid {
+    background: #62cb4f57;
+}
+
+.billings_menu > div > .menu > table .status.not_paid {
+    background: #cb4f4f57;
+}
+
+.billings_menu > div > .menu > table .status.canceled {
+    background: #86868657;
+}
+
+.billings_menu > div > .menu > table .view {
+    background: var(--main-color);
+    color: var(--primary-text-color);
+    position: relative;
+    font-weight: 600;
+    padding-inline: 1em;
+    padding-block: 0.1em;
+    width: auto;
+    text-align: center;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 50000;
+}
+
+
+.billings_menu > div > .menu > #pagination {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+}
+.billings_menu > div > .menu > #pagination > #prev-page {
+    width: 2.5em;
+    height: 2.5em;
+    border: none;
+    border-radius: 0.4em;
+}
+.billings_menu > div > .menu > #pagination > #page-info {
+    width: 9em;
+    display: block;
+    text-align: center;
+}
+.billings_menu > div > .menu > #pagination > #next-page {
+    width: 2.5em;
+    height: 2.5em;
+    border: none;
+    border-radius: 0.4em;
+}

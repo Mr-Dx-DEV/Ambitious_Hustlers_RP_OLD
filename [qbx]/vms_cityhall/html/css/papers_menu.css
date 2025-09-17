@@ -1,0 +1,150 @@
+/* 
+    PAPERS MENU
+*/
+.papers-menu {
+    display: none;
+    position: absolute;
+    z-index: 0;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.papers-menu>div {
+    display: none;
+    position: relative;
+    width: 30em;
+    height: 50em;
+    background: var(--menu-background);
+    color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0px 0px 4em #0d0d0d8c;
+    animation: scaleIn 0.2s;
+}
+
+.papers-menu>div::before,
+.papers-menu>div::after {
+    content: "";
+    position: absolute;
+    width: 70rem;
+    height: 50rem;
+    border-radius: 50%;
+    opacity: .1;
+    z-index: 0;
+    background: radial-gradient(var(--main-color) 10%, transparent 70%);
+}
+
+.papers-menu>div::before {
+    transform: translate(-50%, -50%);
+    top: 0rem;
+    left: 10em;
+}
+
+.papers-menu>div::after {
+    transform: translate(50%, 50%);
+    bottom: 0rem;
+    right: 10em;
+}
+
+.papers-menu>div>.header {
+    position: relative;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    height: 3.5em;
+    padding-inline: 1.0em;
+}
+
+.papers-menu>div>.header .name {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-right: auto;
+}
+
+.papers-menu>div>.header .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: var(--border-radius);
+    background: var(--back-btn-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.papers-menu>div>.header .close:hover {
+    background: var(--back-btn-color-hover);
+}
+
+.papers-menu>div>.menu {
+    position: relative;
+    z-index: 50000;
+    padding: 1em;
+    background: var(--submenu-background);
+    margin: 1em;
+    border-radius: 0.5em;
+    height: 44.5em;
+    overflow: auto;
+}
+
+.papers-menu>div>.menu>div {
+    display: flex;
+    align-items: center;
+    background: #c3c3c31f;
+    border-radius: 0.4em;
+    padding: 1em;
+    height: 6em;
+}
+
+.papers-menu>div>.menu>div>.image {
+    width: 4em;
+    height: 4em;
+    min-width: 4em;
+    margin-right: 1em;
+}
+
+.papers-menu>div>.menu>div>.image>img {
+    width: 100%;
+}
+
+.papers-menu>div>.menu>div>.informations {
+    width: 100%;
+    line-height: 1.2;
+}
+
+.papers-menu>div>.menu>div>.informations>.label {
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+.papers-menu>div>.menu>div>.informations>.description {
+    font-weight: 300;
+}
+
+.papers-menu>div>.menu>div>.purchase-btn {
+    width: 6em;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.2em;
+    border-radius: 0.3em;
+    background: var(--main-color);
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 34500;
+}
+
+.papers-menu>div>.menu>div>.purchase-btn:hover {
+    background: var(--main-color-hover);
+}
+    
+.papers-menu>div>.menu>div>.purchase-btn:active {
+    background: var(--main-color-active);
+}

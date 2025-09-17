@@ -1,0 +1,373 @@
+/* .invoice {
+    display: block !important;
+} */
+
+.invoice .canceled_stamp {
+    display: none;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 800;
+    font-size: 9em;
+    position: absolute;
+    rotate: -60deg;
+    top: 2.2em;
+    left: -0.9em;
+    -webkit-mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png');
+    -webkit-mask-position: revert;
+    mix-blend-mode: multiply;
+}
+
+.invoice .canceled_stamp > p {
+    color: #ff000066;
+    margin: 0;
+    height: 1.5em;
+    width: 6em;
+    text-align: center;
+}
+
+.invoice>div>.card {
+    padding: 1em 2em;
+}
+
+.invoice>div>.card>.title {
+    margin: 0;
+    font-size: 3.5em;
+    font-weight: 700;
+    top: 0em;
+}
+
+.invoice>div>.card>.informations {
+    display: grid;
+    grid-template-columns: 10em 11.9em 14em;
+    height: 5em;
+    margin-bottom: 1em;
+}
+
+.invoice>div>.card>.informations>#issuer>.header {
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+.invoice>div>.card>.informations>#issuer>.data {
+    line-height: 1.2;
+}
+
+.invoice>div>.card>.informations>#bill-to>.header {
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+.invoice>div>.card>.informations>#bill-to>span.select2 {
+    width: 10em !important;
+}
+
+.invoice>div>.card>.informations>#infos {
+    width: 14em;
+}
+
+.invoice>div>.card>.informations>#infos>.data>div {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    align-items: center;
+    font-size: 1.1em;
+}
+
+.invoice>div>.card>.informations>#infos>.data span.val {
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+
+.invoice>div>.card>.data>table {
+    width: 100%;
+}
+
+.invoice>div>.card>.data>table>thead {
+    height: 2.5em;
+    width: 2.5em;
+    background: #ebebeb;
+    font-size: 0.8em;
+    border: 2px solid #a7a7a7;
+}
+
+.invoice>div>.card>.data>table>thead>tr>th#add-option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.4em;
+}
+
+.invoice>div>.card>.data>table>thead>tr>th#add-option > i {
+    font-size: 0.7em;
+}
+
+.invoice>div>.card>.data>table>thead>tr>th#qty {
+    width: 4.5em;
+    text-align: center;
+    border: 2px solid #a7a7a7;
+}
+
+.invoice>div>.card>.data>table>thead>tr>th#description {
+    text-align: center;
+    border: 2px solid #a7a7a7;
+}
+
+.invoice>div>.card>.data>table>thead>tr>th#unit_price {
+    text-align: center;
+    width: 7em;
+    border: 2px solid #a7a7a7;
+}
+
+.invoice>div>.card>.data>table>thead>tr>th#amount {
+    text-align: center;
+    min-width: 8.35em;
+    max-height: 8.35em;
+    width: 8.35em;
+    border: 2px solid #a7a7a7;
+}
+
+.invoice>div>.card>.data>table>tbody>tr {
+    height: 2.2em;
+}
+
+.invoice>div>.card>.data>table>tbody>tr>td {
+    border: 2px solid #a7a7a7;
+}
+
+.invoice>div>.card>.data>table>tbody>tr>td#remove-option {
+    text-align: center;
+    font-size: 0.7em;
+}
+
+.invoice>div>.card>.data>table>tbody>tr>td>input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    height: 1.95em;
+    padding-inline: 0.3em;
+}
+
+.invoice>div>.card>.data>table>tbody>tr>td>input.center {
+    text-align: center;
+}
+
+.invoice>div>.card>.data>table>tbody>tr>td>input.right {
+    text-align: right;
+}
+
+.invoice>div>.card>.data>table>tbody>tr>td#amount {
+    text-align: right;
+    padding-inline: 0.3em;
+}
+
+.invoice>div>.card>.data>div {
+    position: absolute;
+    right: 2em;
+    margin-top: -3px;
+}
+
+.invoice>div>.card>.data>div>div#sub-total {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 2.2em;
+    margin-top: -2px;
+}
+
+.invoice>div>.card>.data>div>div#sub-total>p {
+    margin: 0;
+    margin-right: 0.4em;
+    font-weight: 600;
+}
+
+.invoice>div>.card>.data>div>div#sub-total>div {
+    padding-inline: 0.3em;
+    width: 6.8em;
+    border-left: 2px solid #a7a7a7;
+    border-right: 2px solid #a7a7a7;
+    text-align: right;
+    line-height: 1.9;
+}
+
+.invoice>div>.card>.data>div>div#sales-tax {
+    display: flex;
+    align-items: center;
+    height: 2.2em;
+    justify-content: end;
+    margin-top: -6px;
+}
+
+.invoice>div>.card>.data>div>div#sales-tax>p {
+    margin: 0;
+    margin-right: 0.4em;
+    font-weight: 600;
+}
+
+.invoice>div>.card>.data>div>div#sales-tax>div {
+    padding-inline: 0.3em;
+    width: 6.8em;
+    border-left: 2px solid #a7a7a7;
+    border-right: 2px solid #a7a7a7;
+    text-align: right;
+    line-height: 1.9;
+}
+
+.invoice>div>.card>.data>div>div#total {
+    display: flex;
+    align-items: center;
+    height: 2.2em;
+    justify-content: end;
+    margin-top: -2px;
+}
+
+.invoice>div>.card>.data>div>div#total>p {
+    margin: 0;
+    margin-right: 0.4em;
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+.invoice>div>.card>.data>div>div#total>div {
+    padding-inline: 0.3em;
+    width: 6.2em;
+    border: 2px solid #a7a7a7;
+    text-align: right;
+    line-height: 1.9;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+
+.invoice>div>.card>.invoice-data {
+    position: absolute;
+    bottom: 2em;
+}
+
+.invoice>div>.card>.invoice-data>.header {
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.invoice>div>.card>.invoice-data>#payment-due {
+    display: flex;
+    align-items: center;
+}
+
+.invoice>div>.card>.invoice-data>#payment-due>span.text {
+    width: auto;
+    margin-right: 0.35em;
+}
+
+.invoice>div>.card>.invoice-data>#payment-due>span.select2 {
+    width: 8em !important;
+}
+
+.invoice>div>.card>.signature {
+    position: absolute;
+    bottom: 0.7em;
+    right: 2em;
+    width: 17em;
+    height: 6em;
+    text-align: center;
+    font-family: 'Freehand', cursive;
+}
+
+.invoice>div>.card>.signature>div {
+    position: absolute;
+    background: var(--main-color);
+    width: 18em;
+    height: 6em;
+    margin-top: -1.25em;
+    border-radius: 0.5em;
+    opacity: 0.2;
+    z-index: 5000;
+}
+
+.invoice>div>.card>.signature>p {
+    margin: 0;
+    font-size: 2em;
+    font-weight: 600;
+    width: 9em;
+    line-height: 1;
+    rotate: -5deg;
+}
+
+.invoice .confirm,
+.invoice .select-payment,
+.invoice .select-ticket-type,
+.invoice .cancel {
+    position: absolute;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    bottom: 6em;
+    z-index: 60;
+}
+
+.invoice .confirm > div,
+.invoice .select-payment > div,
+.invoice .select-ticket-type > div,
+.invoice .cancel > div {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 700;
+    background: var(--main-color);
+    color: white;
+    letter-spacing: 0.05em;
+    border-radius: 0.4em;
+    padding: 0.3em 1em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.invoice .select-payment > div:hover,
+.invoice .select-ticket-type > div:hover {
+    background: var(--main-color-hover);
+}
+
+.invoice .select-payment > div:active,
+.invoice .select-ticket-type > div:active {
+    background: var(--main-color-active);
+}
+
+.invoice .cancel > div {
+    background: var(--close-color) !important;
+}
+
+.invoice .cancel > div:hover {
+    background: var(--close-color-hover);
+}
+
+.invoice .cancel > div:active {
+    background: var(--close-color-active);
+}
+
+.invoice .confirm > div[data-type="1"] {
+    background: var(--ok-color) !important;
+}
+
+.invoice .confirm > div[data-type="1"]:hover {
+    background: var(--ok-color-hover);
+}
+
+.invoice .confirm > div[data-type="1"]:active {
+    background: var(--ok-color-active);
+}
+
+.invoice .confirm > div[data-type="0"] {
+    background: var(--close-color) !important;
+}
+
+.invoice .confirm > div[data-type="0"]:hover {
+    background: var(--close-color-hover);
+}
+
+.invoice .confirm > div[data-type="0"]:active {
+    background: var(--close-color-active);
+}
+
+.invoice div.required,
+.invoice input.required,
+.invoice span.required {
+    animation: pulseEffect 2s forwards;
+}

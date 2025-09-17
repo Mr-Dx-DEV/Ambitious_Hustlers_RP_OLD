@@ -1,0 +1,362 @@
+/* body {
+    background: rgb(45, 45, 45);
+} */
+
+#ticket {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* backdrop-filter: blur(4px); */
+    z-index: 50000;
+}
+
+.ticket {
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    display: flex;
+    top: 6em;
+    /* margin-left: auto; */
+    margin-left: 4em;
+    margin-right: auto;
+    width: 34em;
+    height: 60em;
+    /* height: 54em; */
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.ticket input.required {
+    animation: pulseEffect 2s forwards;
+}
+
+.ticket span.required {
+    animation: pulseEffect 2s forwards;
+}
+
+.ticket>div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.ticket>div::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../images/paper.jpg);
+    background-repeat: no-repeat;
+    background-size:85em;
+    opacity: 0.13;
+    z-index: 40;
+}
+
+.ticket .canceled_stamp {
+    display: none;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 800;
+    font-size: 9em;
+    position: absolute;
+    rotate: -60deg;
+    top: 2.2em;
+    left: -1.2em;
+    -webkit-mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png');
+    -webkit-mask-position: revert;
+    mix-blend-mode: multiply;
+}
+
+.ticket .canceled_stamp > p {
+    color: #ff000066;
+    margin: 0;
+    height: 1.5em;
+    width: 6em;
+    text-align: center;
+}
+
+.ticket>div>div.header {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+}
+
+.ticket>div>div.header>p {
+    font-size: 1.2em;
+    font-weight: 700;
+    text-align: center;
+}
+
+.ticket>div>div.header>img {
+    width: 11em;
+}
+
+
+.ticket>div>div[data-type="traffic"] {
+    position: relative;
+    z-index: 50;
+    padding: 2em;
+    padding-top: 1em;
+}
+
+.ticket>div>div[data-type="traffic"]>div {
+    display: grid;
+    border: 1px solid black;
+
+}
+
+/* .ticket>div>div[data-type="traffic"]>div>div {
+    border-right: 1px solid black;
+} */
+
+.ticket>div>div[data-type="traffic"]>div>div>p {
+    border-bottom: 1px solid black;
+    padding-left: 0.3em;
+    margin-bottom: 0;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.ticket>div>div[data-type="traffic"]>div>div>input {
+    width: 100%;
+    border: none;
+    background: none;
+    padding: 0.2em;
+    padding-top: 0.3em;
+    letter-spacing: -0.03em;
+    padding-left: 0.3em;
+}
+
+.ticket>div>div[data-type="traffic"]>div>div>textarea {
+    width: 100%;
+    resize: none;
+    height: 7em;
+    border: none;
+    background: none;
+    padding: 0.2em;
+    letter-spacing: -0.04em;
+    padding-left: 0.3em;
+}
+
+.ticket>div>div[data-type="traffic"]>div>div>select {
+    border: none;
+    background: none;
+    width: 100%;
+    padding: 0.2em;
+    height: 2em;
+    letter-spacing: -0.1em;
+    padding-left: 0.3em;
+}
+
+.ticket>div>div[data-type="traffic"]>div>div>div {
+    height: 2em;
+    padding: 0.2em;
+    padding-top: 0.4em;
+    letter-spacing: -0.06em;
+    padding-left: 0.3em;
+}
+
+.ticket>div>div[data-type="traffic"]>span {
+    display: block;
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-top: 2em;
+    margin-bottom: -1em;
+    opacity: 0.9;
+}
+
+.ticket>div>div[data-type="traffic"] .border-right {
+    border-right: 1px solid black;
+}
+
+.ticket>div>div[data-type="traffic"]>.row-1 {
+    grid-template-columns: 10em 10em 10em;
+}
+
+.ticket>div>div[data-type="traffic"]>.row-2 {
+    grid-template-columns: 10em 10em 10em;
+    margin-top: -1px;
+}
+
+.ticket>div>div[data-type="traffic"]>.row-3,
+.ticket>div>div[data-type="traffic"]>.row-4,
+.ticket>div>div[data-type="traffic"]>.row-5,
+.ticket>div>div[data-type="traffic"]>.row-9 {
+    grid-template-columns: 30em;
+    margin-top: -1px;
+}
+
+.ticket>div>div[data-type="traffic"]>.row-7 {
+    grid-template-columns: 8em 12em 10em;
+    margin-top: -1px;
+}
+
+.ticket>div>div[data-type="traffic"]>.row-9>#comments {
+    height: 8.5em;
+}
+
+.ticket>div>div[data-type="traffic"]>.row-6,
+.ticket>div>div[data-type="traffic"]>.row-8 {
+    grid-template-columns: 15.5em 14.5em;
+    margin-top: -1px;
+}
+
+.ticket>div>div[data-type="traffic"]>.row-10 {
+    grid-template-columns: 24em 6em;
+    margin-top: 1em;
+}
+
+.ticket>div>div[data-type="traffic"]>.row-10>#officer>div {
+    font-family: 'Freehand', cursive;
+    font-weight: 600;
+    font-size: 1.7em;
+    /* height: 0; */
+    line-height: 0.6;
+    letter-spacing: 0.02em;
+    height: 1.2em;
+}
+
+.ticket>div>div[data-type="traffic"]>.row-10>#submit {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 700;
+    font-size: 1.3em;
+    background: var(--ok-color);
+    line-height: 2.1em;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.ticket>div>div[data-type="traffic"]>.row-10>#submit:hover {
+    background: var(--ok-color-hover);
+}
+
+.ticket>div>div[data-type="traffic"]>.row-10>#submit:active {
+    background: var(--ok-color-active);
+}
+
+.ticket>div>div[data-type="traffic"]>.row-10>#submit>div{
+    letter-spacing: 0em;
+
+}
+
+.ticket>div>div[data-type="traffic"]>div #license-revocation>div {
+    font-family: cursive;
+    font-size: 1.5em;
+    height: 1em;
+    line-height: 0.3em;
+    height: 1.34em;
+    text-align: center;
+}
+
+.ticket>div>div[data-type="traffic"]>div #license-revocation>div.selected::after {
+    content: "x";
+}
+
+.ticket > div > div[data-type="traffic"] > div #fine-amount > input {
+    padding-left: 1.5em;
+}
+
+.ticket>div>div[data-type="traffic"]>div>#fine-amount::after {
+    position: absolute;
+    content: "$";
+    font-weight: 500;
+    left: 2em;
+    height: 2em;
+    width: 1.5em;
+    line-height: 2.1em;
+    padding-left: 0.5em;
+}
+
+.ticket>div>div[data-type="traffic"]>div #license-points>div {
+    font-family: cursive;
+    font-size: 1.5em;
+    height: 1em;
+    line-height: 0.3em;
+    height: 1.34em;
+    text-align: center;
+}
+
+.ticket>div>div[data-type="traffic"]>div #license-points>div.selected::after {
+    content: "x";
+}
+
+.ticket > div > .confirm,
+.ticket > div > .select-payment,
+.ticket > div > .select-ticket-type,
+.ticket > div > .cancel {
+    position: absolute;
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    bottom: 1em;
+    z-index: 60;
+}
+
+.ticket > div > .confirm > div,
+.ticket > div > .select-payment > div,
+.ticket > div > .select-ticket-type > div,
+.ticket > div > .cancel > div {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 700;
+    background: var(--main-color);
+    color: white;
+    letter-spacing: 0.05em;
+    border-radius: 0.4em;
+    padding: 0.3em 1em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.ticket > div > .select-payment > div:hover,
+.ticket > div > .select-ticket-type > div:hover {
+    background: var(--main-color-hover);
+}
+
+.ticket > div > .select-payment > div:active,
+.ticket > div > .select-ticket-type > div:active {
+    background: var(--main-color-active);
+}
+
+.ticket > div > .cancel > div {
+    background: var(--close-color) !important;
+}
+
+.ticket > div > .cancel > div:hover {
+    background: var(--close-color-hover);
+}
+
+.ticket > div > .cancel > div:active {
+    background: var(--close-color-active);
+}
+
+.ticket > div > .confirm > div[data-type="1"] {
+    background: var(--ok-color) !important;
+}
+
+.ticket > div > .confirm > div[data-type="1"]:hover {
+    background: var(--ok-color-hover);
+}
+
+.ticket > div > .confirm > div[data-type="1"]:active {
+    background: var(--ok-color-active);
+}
+
+.ticket > div > .confirm > div[data-type="0"] {
+    background: var(--close-color) !important;
+}
+
+.ticket > div > .confirm > div[data-type="0"]:hover {
+    background: var(--close-color-hover);
+}
+
+.ticket > div > .confirm > div[data-type="0"]:active {
+    background: var(--close-color-active);
+}

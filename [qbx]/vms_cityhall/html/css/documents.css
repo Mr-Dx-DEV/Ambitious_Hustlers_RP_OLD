@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Freehand&display=swap');
+
+.agreement .select2-container--default .select2-selection--single {
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 0.15em dotted black !important;
+}
+
+.invoice,
+.certificate_no_criminal,
+.agreement {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.invoice > div,
+.certificate_no_criminal > div,
+.agreement>div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.invoice .card,
+.certificate_no_criminal .card,
+.agreement .card {
+    background: #f8f8f8;
+    width: 40em;
+    height: 55em;
+    padding: 5em 2em;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+.invoice .card_second,
+.agreement .card_second {
+    position: absolute;
+    rotate: 4deg;
+    z-index: -5;
+}
+
+.invoice .card .close,
+.certificate_no_criminal .card .close,
+.agreement .card .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 0.4em;
+    background: var(--close-color);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    color: white;
+    transition: 0.2s;
+}
+
+.invoice .card .close:hover,
+.certificate_no_criminal .card .close:hover,
+.agreement .card .close:hover {
+    background: var(--close-color-hover);
+}
+
+.agreement .card .center {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-top: 1em;
+}
+
+.agreement .card .paragraph {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.agreement .card .signatures {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    bottom: 3em;
+    width: -webkit-fill-available;
+    left: 0;
+    margin-inline: 3em;
+}
+
+.agreement .card .signatures .seller {
+    width: 15em;
+}
+
+.agreement .card .signatures .buyer {
+    margin-top: auto;
+    width: 15em;
+}
+
+.agreement .card .signatures .dots {
+    font-size: 2em;
+    text-align: center;
+}
+
+.agreement .card input,
+.agreement .card select {
+    width: 10em;
+    border: 0;
+    border-bottom: 0.15em dotted black;
+    border-radius: 0;
+    background: transparent;
+}
+
+.agreement .card input:focus,
+.agreement .card select:focus {
+    outline: none;
+}
+
+.agreement .card input.required,
+.agreement .card select.required {
+    border-color: red;
+}
+
+.agreement .card .signature {
+    font-family: 'Freehand', cursive;
+    position: absolute;
+    bottom: 0.5em;
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
+    width: inherit;
+    white-space: pre-line;
+    line-height: 1;
+}
+
+.agreement .card .signatures .signature-text {
+    position: absolute;
+    font-size: 1.1em;
+    text-align: center;
+    width: inherit;
+    font-weight: 500;
+    margin-top: 0.3em;
+}
+
+.certificate_no_criminal .card #date,
+.agreement .card #date {
+    width: fit-content;
+    position: absolute;
+    top: 1.8em;
+    scale: 0.85;
+}
+
+.certificate_no_criminal .card #date>div,
+.agreement .card #date>div {
+    font-weight: 600;
+}
+
+.certificate_no_criminal .card #date>p,
+.agreement .card #date>p {
+    font-weight: 300;
+    text-align: center;
+    font-size: 0.8;
+    font-style: italic;
+    opacity: 0.75;
+}
+
+.agreement .card #give_invoice {
+    display: flex;
+    margin-bottom: 2em;
+    background: var(--main-color);
+    color: var(--primary-text-color);
+    font-weight: 600;
+    height: 3.5em;
+    border-radius: 0.3em;
+    align-items: center;
+    padding-inline: 1em;
+    justify-content: center;
+    transition: all 0.2s;
+    opacity: 0.0;
+    z-index: -500;
+    text-align: center;
+}
+
+.agreement .card #give_invoice:hover {
+    background: var(--main-color-hover);
+}
+
+.agreement .card #give_invoice:active {
+    background: var(--main-color-active);
+}
+
+.agreement .card #make_signature_seller {
+    width: 15em;
+    position: absolute;
+    bottom: 0;
+    height: 4em;
+    opacity: 0.1;
+    border-radius: 0.3em;
+    background: var(--main-color);
+}
+
+.agreement .card #make_signature_buyer {
+    width: 15em;
+    position: absolute;
+    bottom: 0;
+    height: 4em;
+    opacity: 0.1;
+    border-radius: 0.3em;
+    background: var(--main-color);
+}

@@ -1,0 +1,153 @@
+.certificate_no_criminal .card .center {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-top: 2em;
+}
+
+.certificate_no_criminal > div > .card > #ssn {
+    line-height: 1.2;
+    position: absolute;
+    right: 2em;
+    top: 13.5em;
+    width: 11em;
+}
+
+.certificate_no_criminal > div > .card > #ssn > p {
+    text-align: center;
+    border-bottom: 1px dotted;
+    font-size: 1.1em;
+    margin-bottom: 0 !important;
+    font-weight: 500;
+}
+
+.certificate_no_criminal > div > .card > #ssn > div {
+    text-align: center;
+    opacity: 0.7;
+}
+
+.certificate_no_criminal > div > .card > #firstName,
+.certificate_no_criminal > div > .card > #dateOfBirth,
+.certificate_no_criminal > div > .card > #nationality,
+.certificate_no_criminal > div > .card > #lastName {
+    font-size: 1.2em;
+    font-weight: 300;
+    padding-bottom: 0.2em;
+}
+
+.certificate_no_criminal > div > .card > #lastName > div,
+.certificate_no_criminal > div > .card > #firstName > div,
+.certificate_no_criminal > div > .card > #dateOfBirth > div,
+.certificate_no_criminal > div > .card > #nationality > div {
+    display: flex;
+}
+
+.certificate_no_criminal > div > .card > #lastName .label,
+.certificate_no_criminal > div > .card > #firstName .label,
+.certificate_no_criminal > div > .card > #dateOfBirth .label,
+.certificate_no_criminal > div > .card > #nationality .label {
+    display: block;
+    margin-right: 5px;
+}
+
+.certificate_no_criminal > div > .card > #lastName #val,
+.certificate_no_criminal > div > .card > #firstName #val,
+.certificate_no_criminal > div > .card > #dateOfBirth #val,
+.certificate_no_criminal > div > .card > #nationality #val {
+    display: block
+}
+
+.certificate_no_criminal > div > .card > #sentences {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.certificate_no_criminal > div > .card > #sentences .label {
+
+}
+
+.certificate_no_criminal > div > .card > #sentences #val {
+
+}
+
+
+.certificate_no_criminal > div > .card > .stamp {
+    position: absolute;
+    -webkit-mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png');
+    mix-blend-mode: multiply;
+}
+
+.certificate_no_criminal > div > .card > .is_listed {
+    line-height: 1;
+    bottom: 6em;
+    left: 1.5em;
+    color: #ff0800ed;
+    transform: rotate(-4deg);
+    -webkit-mask-size: 944px 604px;
+}
+
+.certificate_no_criminal > div > .card > .is_not_listed {
+    line-height: 1;
+    bottom: 6em;
+    left: 1.5em;
+    color: #0044ffed;
+    transform: rotate(-3deg);
+    -webkit-mask-size: 944px 604px;
+}
+
+.certificate_no_criminal > div > .card > .is_listed > .title,
+.certificate_no_criminal > div > .card > .is_not_listed > .title {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 800;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.certificate_no_criminal > div > .card > .is_listed > .description,
+.certificate_no_criminal > div > .card > .is_not_listed > .description {
+    font-size: 0.9em;
+    font-weight: 600;
+    opacity: 0.7;
+    width: 20em;
+    text-align: center;
+}
+
+.certificate_no_criminal > div > .card > img.signature {
+    position: absolute;
+    width: 9em;
+    bottom: 4.6em;
+    right: 5em;
+    transform: rotate(5deg);
+    filter: grayscale(1);
+    opacity: 0.5;
+    -webkit-mask-size: 30em 20em;
+}
+
+.certificate_no_criminal > div > .card > .issuer {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    bottom: 3em;
+    margin-inline: 3em;
+    width: 13em;
+    height: 2em;
+    right: 0em;
+}
+
+.certificate_no_criminal > div > .card > .issuer > .dots {
+    font-size: 2em;
+    text-align: center;
+    width: -webkit-fill-available;
+    border-top: 2px dotted black;
+}
+
+.certificate_no_criminal > div > .card > .issuer > .signature-text {
+    position: absolute;
+    font-size: 0.8em;
+    text-align: center;
+    width: inherit;
+    font-weight: 500;
+    margin-top: 0.3em;
+    opacity: 0.8;
+}
