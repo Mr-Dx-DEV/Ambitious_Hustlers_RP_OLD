@@ -377,6 +377,12 @@ murderbag = { label = 'Murder Bag', weight = 0, stack = false, close = true, des
     },
 
 
+    ['rental_papers'] = {
+        label = 'Rental Papers',
+        weight = 1,
+        stack = true,
+        close = false,
+    },
 
 
 
