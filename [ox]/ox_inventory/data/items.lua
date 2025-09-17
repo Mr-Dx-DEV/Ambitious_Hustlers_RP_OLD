@@ -1,4 +1,101 @@
 return {
+    ['clerk_tablet'] = {
+    label = 'Clerk Tablet',
+    weight = 10,
+    stack = true
+},
+['vehicle_sale_agreement'] = {
+    label = 'Sale Agreement',
+    weight = 4,
+    stack = true
+},
+['signed_vehicle_sale_agreement'] = {
+    label = 'Signed Sale Agreement',
+    weight = 4,
+    stack = false
+},
+['empty_invoice'] = {
+    label = 'Empty Invoice',
+    weight = 3,
+    stack = true
+},
+['invoice'] = {
+    label = 'Invoice',
+    weight = 4,
+    stack = false
+},
+['empty_ticket'] = {
+    label = 'Empty Ticket',
+    weight = 2,
+    stack = true
+},
+['ticket'] = {
+    label = 'Ticket',
+    weight = 3,
+    stack = false
+},
+['payment_terminal'] = {
+    label = 'Payment Terminal',
+    weight = 10,
+    stack = false
+},
+['thermal_paper'] = {
+    label = 'Thermal Paper',
+    weight = 1,
+    stack = false
+},
+['receipt'] = {
+    label = 'Receipt',
+    weight = 1,
+    stack = false
+},
+
+
+    ['id_card'] = {
+    label = 'ID Card',
+    weight = 5,
+    stack = false
+},
+['driving_license'] = {
+    label = 'Driving License',
+    weight = 5,
+    stack = false
+},
+['flying_license'] = {
+    label = 'Flying License',
+    weight = 5,
+    stack = false
+},
+['boat_license'] = {
+    label = 'Boat License',
+    weight = 5,
+    stack = false
+},
+['weapon_license'] = {
+    label = 'Weapon License',
+    weight = 5,
+    stack = false
+},
+['police_badge'] = {
+    label = 'Police Badge',
+    weight = 5,
+    stack = false
+},
+['sheriff_badge'] = {
+    label = 'Sheriff Badge',
+    weight = 5,
+    stack = false
+},
+['fib_badge'] = {
+    label = 'FIB Badge',
+    weight = 5,
+    stack = false
+},
+
+
+
+
+
     --JIM-CATCAFE
 ["bmochi"] = { label = "Blue Mochi", weight = 200, stack = true, close = true, description = "",
     client = { image = "mochiblue.png",  event = "jim-catcafe:client:Consume", }
@@ -230,12 +327,7 @@ murderbag = { label = 'Murder Bag', weight = 0, stack = false, close = true, des
 
 
 
-    ['ticket'] = {
-        label = 'Ticket',
-        weight = 2,
-        stack = true,
-        close = true,
-    },
+   
     ['terminal'] = {
         label = 'Terminal',
         weight = 2,
@@ -574,9 +666,7 @@ murderbag = { label = 'Murder Bag', weight = 0, stack = false, close = true, des
         label = 'Dirty Money',
     },
 
-    ['id_card'] = {
-        label = 'Identification Card',
-    },
+   
 
     ['driver_license'] = {
         label = 'Drivers License',
