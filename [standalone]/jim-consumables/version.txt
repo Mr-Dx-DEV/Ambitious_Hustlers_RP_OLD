@@ -1,5 +1,1 @@
-2.0.06
-
-- Increase Secuirty to prevent potential exploits
-
-https://github.com/jimathy/jim-consumables
+1.5
