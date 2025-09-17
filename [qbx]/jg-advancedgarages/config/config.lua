@@ -14,7 +14,7 @@ Config.Framework = "auto" -- or "QBCore", "Qbox", "ESX"
 Config.FuelSystem = "ox_fuel" -- or "LegacyFuel", "ps-fuel", "lj-fuel", "ox_fuel", "cdn-fuel", "hyon_gas_station", "okokGasStation", "nd_fuel", "myFuel", "ti_fuel", "Renewed-Fuel", "rcore_fuel", "none"
 Config.VehicleKeys = "qb-vehiclekeys" -- or "qb-vehiclekeys", "MrNewbVehicleKeys", "jaksam-vehicles-keys", "qs-vehiclekeys", "mk_vehiclekeys", "wasabi_carlock", "cd_garage", "okokGarage", "t1ger_keys", "Renewed", "tgiann-hotwire" "none"
 Config.Notifications = "auto" -- or "default", "okokNotify", "ox_lib", "ps-ui"
-Config.Banking = "Renewed-Banking" -- or "qb-banking", "qb-management", "esx_addonaccount", "Renewed-Banking", "okokBanking", "fd_banking"
+Config.Banking = "qb-management" -- or "qb-banking", "qb-management", "esx_addonaccount", "Renewed-Banking", "okokBanking", "fd_banking"
 Config.Gangs = "auto" -- "qb-gangs", "rcore_gangs"
 
 -- Draw text UI prompts (key binding control IDs here: https://docs.fivem.net/docs/game-references/controls/)
