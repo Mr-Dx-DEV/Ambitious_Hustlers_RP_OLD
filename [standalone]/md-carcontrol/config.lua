@@ -2,7 +2,7 @@ Config = {}
 
 -- The default keybind used to open/close the vehicle control menu
 -- Set this to nil if you dont want a keybind to be used
-Config.DefaultKeybind = 'lshift'
+Config.DefaultKeybind = 'end'
 
 -- Commands used to open, close and toggle vheicle control UI
 Config.OpenCommand = "openCC"
@@ -24,13 +24,13 @@ Config.DisabledClasses = {
 }
 
 -- If set to false, players will not be able to change their headlights xenon colour. Disable if using md-neoncontroller
-Config.AllowHeadlightColourChange = true
+Config.AllowHeadlightColourChange = false
 
 -- If set to false, players will not be able to change their neon colours. Disable if using md-neoncontroller
-Config.AllowNeonColourChange = true
+Config.AllowNeonColourChange = false
 
 -- If set to false, the whole neon section will be gone. Disable if using md-neoncontroller
-Config.ShowNeonSection = true
+Config.ShowNeonSection = false
 
 -- Keyboard controls that are enabled while the vehicle control UI is open. See https://docs.fivem.net/docs/game-references/controls/ for all keys
 Config.AllowedControls = {
