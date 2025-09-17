@@ -1,0 +1,782 @@
+.documents {
+    display: none;
+    position: absolute;
+    right: 2em;
+    top: 15em;
+    width: 30em;
+    height: 18em;
+}
+
+.documents > #header {
+    position: absolute;
+    height: 3.75em;
+    line-height: 1.3em;
+    margin-top: 1.3em;
+    left: 2em;
+    width: 25.5em;
+    border-bottom: 1px solid #00000047;
+    padding-left: 4.2em;
+}
+
+.documents > .city-logo {
+    position: absolute;
+    width: 3.5em;
+    top: 1em;
+    left: 2em;
+    border-radius: 0.8em;
+    opacity: 0.4;
+    filter: grayscale(1);
+}
+
+.documents > #header > .title {
+    font-size: 1.3em;
+    font-weight: 700;
+    opacity: 0.75;
+}
+
+.documents > #header > .document_name {
+    font-size: 1.3em;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.documents > #data {
+    position: absolute;
+    left: 11.5em;
+    top: 6em;
+    line-height: 1;
+}
+
+.documents > #data > div {
+    margin-bottom: 0.35em;
+}
+
+.documents > #data > div > .label {
+    font-weight: 600;
+    font-size: 0.75em;
+}
+
+.documents > #data > div > .value {
+    height: 1em;
+    font-weight: 600;
+}
+
+.documents > #signature {
+    position: absolute;
+    width: 8em;
+    text-align: center;
+    height: 2em;
+    left: 2em;
+    bottom: 2em;
+    text-shadow: 2px 2px 3px #00000024;
+    opacity: 0.8;
+    line-height: 2;
+}
+
+.documents > #signature > p {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5em;
+}
+
+.documents > #document-photo {
+    border-radius: 1em;
+    width: 8em;
+    position: absolute;
+    top: 6em;
+    left: 2em;
+}
+
+.documents > #document-photo-mini {
+    border-radius: 0.8em;
+    width: 4em;
+    position: absolute;
+    bottom: 1.5em;
+    right: 1.5em;
+    opacity: 0.2;
+    filter: grayscale(1);
+}
+
+.documents > #document-image {
+    border-radius: 1em;
+    width: inherit;
+    height: inherit;
+}
+
+
+.badges {
+    display: none;
+    position: absolute;
+    right: 2em;
+    top: 15em;
+    width: 45em;
+    height: 25em;
+}
+
+.badges > .badge-icon {
+    z-index: 3000;
+    position: absolute;
+    width: 11em;
+    right: 5.5em;
+    top: 9em;
+}
+
+.badges > #header {
+    position: absolute;
+    height: 3em;
+    line-height: 1.1em;
+    margin-top: 6.3em;
+    left: 4.3em;
+    width: 11.7em;
+    border-bottom: 1px solid #00000047;
+    z-index: 3000;
+}
+
+.badges > #header > .title {
+    font-size: 0.75em;
+    font-weight: 700;
+    opacity: 0.75;
+}
+
+.badges > #header > .badge_name {
+    font-size: 1.45em;
+    font-weight: 800;
+    opacity: 0.9;
+}
+
+.badges > #data {
+    position: absolute;
+    left: 4.5em;
+    top: 10.5em;
+    line-height: 1;
+    z-index: 3000;
+    width: 11em;
+}
+
+.badges > #data > div {
+    margin-bottom: 0.35em;
+    text-align: center;
+}
+
+.badges > #data > div > .value {
+    font-weight: 600;
+    font-size: 1.2em;
+    border-bottom: 1px solid #00000012;
+}
+
+.badges > #data > div > .label {
+    font-weight: 600;
+    font-size: 0.75em;
+}
+
+
+.badges > #data2 {
+    position: absolute;
+    left: 10em;
+    top: 17.5em;
+    line-height: 1;
+    z-index: 3000;
+    width: 6em;
+}
+
+.badges > #data2 > div {
+    margin-bottom: 0.35em;
+}
+
+.badges > #data2 > div > .label {
+    font-weight: 600;
+    font-size: 0.75em;
+}
+
+.badges > #data2 > div > .value {
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.badges > #signature {
+    position: absolute;
+    width: 13em;
+    text-align: center;
+    height: 2em;
+    left: 3.5em;
+    bottom: -0.8em;
+    text-shadow: 2px 2px 3px #00000024;
+    opacity: 0.8;
+    line-height: 2;
+    z-index: 3000;
+}
+
+.badges > #signature > p {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.15em;
+}
+
+.badges > #badge-photo {
+    position: absolute;
+    left: 4.5em;
+    bottom: 3.5em;
+    z-index: 5000;
+    width: 5em;
+    border-radius: 0.4em;
+    opacity: 0.9;
+}
+
+.badges > #badge-image {
+    position: absolute;
+    width: 15em;
+    right: 28em;
+    top: 5.5em;
+}
+
+.badges > .leather-badge {
+    position: absolute;
+    width: 45em;
+    right: 0;
+    top: -6em;
+}
+
+.help {
+    display: none;
+    position: absolute;
+    right: 2em;
+    top: 33.5em;
+    color: white;
+    opacity: 0.3;
+    width: 30em;
+    text-align: center;
+}
+
+
+
+.documents-menu {
+    display: none;
+    position: absolute;
+    z-index: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.documents-menu>div {
+    display: none;
+    position: relative;
+    width: 62em;
+    height: 48em;
+    background: var(--menu-background);
+    color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0px 0px 4em #0d0d0d8c;
+    animation: scaleIn 0.2s;
+}
+
+.documents-menu>div::before,
+.documents-menu>div::after {
+    content: "";
+    position: absolute;
+    width: 70rem;
+    height: 50rem;
+    border-radius: 50%;
+    opacity: .1;
+    z-index: 1;
+    background: radial-gradient(var(--main-color) 10%, transparent 70%);
+}
+
+.documents-menu>div::before {
+    transform: translate(-50%, -50%);
+    top: 0rem;
+    left: 10em;
+}
+
+.documents-menu>div::after {
+    transform: translate(50%, 50%);
+    bottom: 0rem;
+    right: 10em;
+}
+
+.documents-menu>div>.header {
+    position: relative;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    height: 3.5em;
+    padding-inline: 1.0em;
+}
+
+.documents-menu>div>.header .name {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-right: auto;
+}
+
+.documents-menu>div>.header .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: var(--border-radius);
+    background: var(--back-btn-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.documents-menu>div>.header .close:hover {
+    background: var(--back-btn-color-hover);
+}
+
+.documents-menu>div>.menu {
+    position: relative;
+    width: 100%;
+    height: 93%;
+    padding: 1em;
+    z-index: 100;
+}
+
+.documents-menu div[data-type="licenses"]>div {
+    position: absolute;
+    overflow: hidden;
+    height: 42.5em;
+    border-radius: 0.5em;
+    width: 100%;
+}
+
+.documents-menu div[data-type="licenses"]>div>i {
+    position: absolute;
+    z-index: 0;
+    font-size: 10em;
+    opacity: 0.2;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 15px #00000040;
+    transform: skew(-25deg, 25deg);
+    top: 0.1em;
+    right: 0.2em;
+}
+
+.documents-menu div[data-type="licenses"] .text {
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+.documents-menu div[data-type="licenses"] .header {
+    z-index: 5;
+    font-size: 1em;
+    font-weight: 300;
+    color: rgb(183, 183, 183);
+}
+
+.documents-menu div[data-type="licenses"] .title {
+    z-index: 5;
+    line-height: 1;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.documents-menu .side-boxes>.box>i {
+    position: absolute;
+    z-index: 0;
+    font-size: 10em;
+    opacity: 0.2;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 15px #00000040;
+    transform: skew(-25deg, 25deg);
+    top: -0.1em;
+    right: 0.2em;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="documents"] {
+    position: absolute;
+    overflow: hidden;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+    height: 42.5em;
+    width: 40em;
+}
+
+.documents-menu div[data-type="licenses"] .licenses-list {
+    position: absolute;
+    left: 1em;
+    top: 5.5em;
+    width: 38em;
+    height: 36em;
+    overflow: overlay;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+    padding: 1em;
+}
+
+.documents-menu div[data-type="licenses"] .licenses-list>div {
+    display: grid;
+    grid-template-columns: 17.5em 17.5em;
+    grid-template-rows: min-content;
+    gap: 1em;
+}
+
+.documents-menu div[data-type="licenses"].vms_documentsv2 .licenses-list>div {
+    grid-template-columns: 49% 49% !important;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="documents"] .licenses-list>div>div {
+    position: relative;
+    height: 7.5em;
+    background: var(--submenu-background);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-radius: 0.3em;
+    padding: 0.8em;
+    gap: 1em;
+    line-height: 1.2;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="documents"] .delivery-time {
+    font-size: 0.8em;
+    font-weight: 300;
+    color: var(--secondary-text-color);
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="documents"] .delivery-time>i {
+    opacity: 0.7;
+    margin-right: 0.2em;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="documents"] .label {
+    margin-top: 0.3em;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="documents"] .status {
+    margin-top: 0.45em;
+    color: var(--secondary-text-color);
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="documents"] .order {
+    position: absolute;
+    bottom: 0.25em;
+    margin-block: 0.5em;
+    background: var(--main-color);
+    width: fit-content;
+    padding: 0.2em 0.7em;
+    border-radius: 0.3em;
+    font-weight: 600;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="documents"] .order:hover {
+    background: var(--main-color-hover);
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="documents"] .order:active {
+    background: var(--main-color-active);
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="photos"] {
+    display: block !important;
+    position: absolute;
+    margin-bottom: 1em;
+    width: 19em;
+    height: 20.5em;
+    overflow: hidden;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+    right: 2em;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="photos"] .photos-list {
+    position: absolute;
+    overflow: auto;
+    left: 1em;
+    top: 5.5em;
+    width: 17em;
+    height: 14em;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+    padding: 1em;
+    overflow: auto;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="photos"] .photos-list #remove-photo {
+    width: fit-content;
+    background: var(--close-color);
+    font-weight: 500;
+    font-size: 0.9em;
+    border-radius: 0.3em;
+    padding: 0.2em 0.6em;
+    margin-top: 0.2em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="photos"] .photos-list #remove-photo:hover {
+    background: var(--close-color-hover);
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="photos"] .photos-list #remove-photo:active {
+    background: var(--close-color-active);
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="photos"] .photos-list #select-photo {
+    display: none;
+    width: fit-content;
+    background: var(--ok-color);
+    font-weight: 500;
+    font-size: 0.9em;
+    border-radius: 0.3em;
+    padding: 0.2em 0.6em;
+    margin-top: 0.2em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="photos"] .photos-list #select-photo:hover {
+    background: var(--ok-color-hover);
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="photos"] .photos-list #select-photo:active {
+    background: var(--ok-color-active);
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="photos"] .photos-list>div {
+    display: grid;
+    gap: 1em;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="photos"] .photos-list>div>div {
+    position: relative;
+    height: 4.5em;
+    line-height: 1.2;
+    background: var(--submenu-background);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.02);
+    border-image: initial;
+    border-radius: 0.3em;
+    padding: 0.8em;
+    gap: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="photos"] .photos-list>div>div>img {
+    width: 3em;
+    border-radius: 0.4em;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="owned-documents"] {
+    display: block !important;
+    position: absolute;
+    width: 19em;
+    height: 21em;
+    overflow: hidden;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+    right: 2em;
+    bottom: 0;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="owned-documents"] .documents-list {
+    overflow: auto;
+    position: absolute;
+    left: 1em;
+    top: 5.5em;
+    width: 17em;
+    height: 14.5em;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+    padding: 1em;
+    overflow: auto;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="owned-documents"] .documents-list>div {
+    display: grid;
+    gap: 1em;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="owned-documents"] .documents-list>div>div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 5em;
+    line-height: 1.1;
+    background: var(--submenu-background);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.02);
+    border-image: initial;
+    border-radius: 0.3em;
+    padding: 0.8em;
+    gap: 1em;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="owned-documents"] .documents-list .info {
+    border-left: 1px solid #ffffff26;
+    padding-left: 0.5em;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="owned-documents"] .documents-list>div>div i {
+    font-size: 1.4em;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="owned-documents"] .documents-list>div>div>div>span {
+    display: block;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="owned-documents"] .documents-list>div>div>div>span>span {
+    font-weight: 200;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="owned-documents"] .documents-list .invalidate {
+    width: fit-content;
+    background: var(--close-color);
+    font-weight: 500;
+    font-size: 0.9em;
+    border-radius: 0.3em;
+    padding: 0.2em 0.6em;
+    margin-top: 0.2em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="owned-documents"] .documents-list .invalidate:hover {
+    background: var(--close-color-hover);
+}
+
+.documents-menu div[data-type="licenses"]>div>.side-boxes>.box[data-type="owned-documents"] .documents-list .invalidate:active {
+    background: var(--close-color-active);
+}
+
+.check_document_menu {
+    display: none;
+    position: absolute;
+    z-index: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.check_document_menu>div {
+    display: none;
+    position: relative;
+    width: 30em;
+    height: 20em;
+    background: var(--menu-background);
+    color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0px 0px 4em #0d0d0d8c;
+    animation: scaleIn 0.2s;
+}
+
+.check_document_menu>div>.header {
+    position: relative;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    height: 3.5em;
+    padding-inline: 1.0em;
+}
+
+.check_document_menu>div>.header .name {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-right: auto;
+}
+
+.check_document_menu>div>.header .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: var(--border-radius);
+    background: var(--back-btn-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.check_document_menu>div>.header .close:hover {
+    background: var(--back-btn-color-hover);
+}
+
+.check_document_menu>div>.menu {
+    position: relative;
+    z-index: 50000;
+    padding: 1em;
+    background: var(--submenu-background);
+    margin: 1em;
+    border-radius: 0.5em;
+    height: 14.5em;
+    overflow: auto;
+}
+
+.check_document_menu>div>.menu>#find {
+    display: none;
+    width: fit-content;
+    margin-inline: auto;
+    margin-top: 1em;
+}
+
+.check_document_menu>div>.menu>#find>input {
+    width: 100%;
+    border: none;
+    border-radius: 0.2em;
+    font-size: 1.8em;
+    padding: 0.2em;
+    margin-top: 0.5em;
+}
+
+.check_document_menu>div>.menu>#find>.search {
+    margin-inline: auto;
+    width: fit-content;
+    margin-top: 2em;
+    color: var(--primary-text-color);
+    background: var(--main-color);
+    padding-inline: 2.5em;
+    padding-block: 0.3em;
+    border-radius: 0.3em;
+}
+
+.check_document_menu>div>.menu>#find>.search>p {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.check_document_menu>div>.menu>#loading {
+    display: none;
+
+}
+
+.check_document_menu>div>.menu>#loading>.loader {
+    margin: auto;
+    margin-top: 4em;
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid var(--main-color);
+    animation: l20-1 0.8s infinite linear alternate, l20-2 1.6s infinite linear;
+}
+
+.check_document_menu>div>.menu>#loading>p {
+    margin-top: 1em;
+    text-align: center;
+}

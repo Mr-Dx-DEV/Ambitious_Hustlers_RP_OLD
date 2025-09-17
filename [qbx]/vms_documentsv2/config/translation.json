@@ -1,0 +1,308 @@
+{
+    "EN": {
+        "currency": "$",
+        "document_title": "United States of America",
+        "hint_close": "Press BACKSPACE to hide the document",
+        "documents_menu": {
+            "menu_title": "Documents",
+            "documents_list": {
+                "header": "Apply for the document...",
+                "title": "DOCUMENTS",
+                "order_for_btn": "Order for",
+                "order_btn": "Order"
+            },
+            "photos_list": {
+                "header": "Your photos taken at the photographer's...",
+                "title": "PHOTOS",
+                "id": "ID",
+                "remove_photo_btn": "Remove Photo",
+                "select_photo_btn": "Select Photo"
+            },
+            "owned_documents_list": {
+                "header": "Your active documents...",
+                "title": "YOUR DOCUMENTS",
+                "document_type": "Type",
+                "serial_number": "Serial Number",
+                "report_btn": "Report a theft"
+            }
+        },
+        "check_document": {
+            "header": "CHECK DOCUMENT",
+            "enter_serial": "Enter the serial number of the document to check its validity:",
+            "searching_for_information": "Searching for information...",
+            "search_btn": "Find"
+        }
+    },
+    "DE": {
+        "currency": "$",
+        "document_title": "Vereinigte Staaten von Amerika",
+        "hint_close": "Drücken Sie die RÜCKTASTE, um das Dokument zu verbergen",
+        "documents_menu": {
+            "menu_title": "Dokumente",
+            "documents_list": {
+                "header": "Beantragen Sie das Dokument...",
+                "title": "DOKUMENTE",
+                "order_for_btn": "Bestellung für",
+                "order_btn": "Bestellen"
+            },
+            "photos_list": {
+                "header": "Ihre Fotos vom Fotografen aufgenommen...",
+                "title": "FOTOS",
+                "id": "ID",
+                "remove_photo_btn": "Foto entfernen",
+                "select_photo_btn": "Foto auswählen"
+            },
+            "owned_documents_list": {
+                "header": "Ihre aktiven Dokumente...",
+                "title": "IHRE DOKUMENTE",
+                "document_type": "Typ",
+                "serial_number": "Seriennummer",
+                "report_btn": "Diebstahl melden"
+            }
+        },
+        "check_document": {
+            "header": "DOKUMENT PRÜFEN",
+            "enter_serial": "Geben Sie die Seriennummer des Dokuments ein, um dessen Gültigkeit zu überprüfen:",
+            "searching_for_information": "Suche nach Informationen...",
+            "search_btn": "Suchen"
+        }
+    },
+    "FR": {
+        "currency": "$",
+        "document_title": "États-Unis d'Amérique",
+        "hint_close": "Appuyez sur RETOUR ARRIÈRE pour masquer le document",
+        "documents_menu": {
+            "menu_title": "Documents",
+            "documents_list": {
+                "header": "Demander le document...",
+                "title": "DOCUMENTS",
+                "order_for_btn": "Commander pour",
+                "order_btn": "Commander"
+            },
+            "photos_list": {
+                "header": "Vos photos prises chez le photographe...",
+                "title": "PHOTOS",
+                "id": "ID",
+                "remove_photo_btn": "Supprimer la photo",
+                "select_photo_btn": "Sélectionner la photo"
+            },
+            "owned_documents_list": {
+                "header": "Vos documents actifs...",
+                "title": "VOS DOCUMENTS",
+                "document_type": "Type",
+                "serial_number": "Numéro de série",
+                "report_btn": "Signaler un vol"
+            }
+        },
+        "check_document": {
+            "header": "VÉRIFIER LE DOCUMENT",
+            "enter_serial": "Entrez le numéro de série du document pour vérifier sa validité :",
+            "searching_for_information": "Recherche d'informations...",
+            "search_btn": "Trouver"
+        }
+    },
+    "ES": {
+        "currency": "$",
+        "document_title": "Estados Unidos de América",
+        "hint_close": "Presiona la tecla BACKSPACE para ocultar el documento",
+        "documents_menu": {
+            "menu_title": "Documentos",
+            "documents_list": {
+                "header": "Solicita el documento...",
+                "title": "DOCUMENTOS",
+                "order_for_btn": "Ordenar para",
+                "order_btn": "Ordenar"
+            },
+            "photos_list": {
+                "header": "Tus fotos tomadas en el fotógrafo...",
+                "title": "FOTOS",
+                "id": "ID",
+                "remove_photo_btn": "Eliminar Foto",
+                "select_photo_btn": "Seleccionar Foto"
+            },
+            "owned_documents_list": {
+                "header": "Tus documentos activos...",
+                "title": "TUS DOCUMENTOS",
+                "document_type": "Tipo",
+                "serial_number": "Número de Serie",
+                "report_btn": "Reportar un robo"
+            }
+        },
+        "check_document": {
+            "header": "VERIFICAR DOCUMENTO",
+            "enter_serial": "Ingresa el número de serie del documento para verificar su validez:",
+            "searching_for_information": "Buscando información...",
+            "search_btn": "Buscar"
+        }
+    },
+    "PT": {
+        "currency": "$",
+        "document_title": "Estados Unidos da América",
+        "hint_close": "Pressione BACKSPACE para esconder o documento",
+        "documents_menu": {
+            "menu_title": "Documentos",
+            "documents_list": {
+                "header": "Solicite o documento...",
+                "title": "DOCUMENTOS",
+                "order_for_btn": "Pedido para",
+                "order_btn": "Pedido"
+            },
+            "photos_list": {
+                "header": "Suas fotos tiradas no fotógrafo...",
+                "title": "FOTOS",
+                "id": "ID",
+                "remove_photo_btn": "Remover Foto",
+                "select_photo_btn": "Selecionar Foto"
+            },
+            "owned_documents_list": {
+                "header": "Seus documentos ativos...",
+                "title": "SEUS DOCUMENTOS",
+                "document_type": "Tipo",
+                "serial_number": "Número de Série",
+                "report_btn": "Relatar um roubo"
+            }
+        },
+        "check_document": {
+            "header": "VERIFICAR DOCUMENTO",
+            "enter_serial": "Digite o número de série do documento para verificar sua validade:",
+            "searching_for_information": "Buscando informações...",
+            "search_btn": "Pesquisar"
+        }
+    },
+    "PL": {
+        "currency": "$",
+        "document_title": "Stany Zjednoczone Ameryki",
+        "hint_close": "Naciśnij BACKSPACE, aby ukryć dokument",
+        "documents_menu": {
+            "menu_title": "Dokumenty",
+            "documents_list": {
+                "header": "Złóż wniosek o dokument...",
+                "title": "DOKUMENTY",
+                "order_for_btn": "Zamów za",
+                "order_btn": "Zamów"
+            },
+            "photos_list": {
+                "header": "Twoje zdjęcia zrobione u fotografa...",
+                "title": "ZDJĘCIA",
+                "id": "ID",
+                "remove_photo_btn": "Usuń zdjęcie",
+                "select_photo_btn": "Wybierz zdjęcie"
+            },
+            "owned_documents_list": {
+                "header": "Twoje aktywne dokumenty...",
+                "title": "TWOJE DOKUMENTY",
+                "document_type": "Typ",
+                "serial_number": "Numer seryjny",
+                "report_btn": "Zgłoś kradzież"
+            }
+        },
+        "check_document": {
+            "header": "SPRAWDŹ DOKUMENT",
+            "enter_serial": "Wprowadź numer seryjny dokumentu, aby sprawdzić jego ważność:",
+            "searching_for_information": "Wyszukiwanie informacji...",
+            "search_btn": "Znajdź"
+        }
+    },
+    "IT": {
+        "currency": "$",
+        "document_title": "Stati Uniti d'America",
+        "hint_close": "Premi BACKSPACE per nascondere il documento",
+        "documents_menu": {
+            "menu_title": "Documenti",
+            "documents_list": {
+                "header": "Richiedi il documento...",
+                "title": "DOCUMENTI",
+                "order_for_btn": "Ordina per",
+                "order_btn": "Ordina"
+            },
+            "photos_list": {
+                "header": "Le tue foto scattate dal fotografo...",
+                "title": "FOTO",
+                "id": "ID",
+                "remove_photo_btn": "Rimuovi Foto",
+                "select_photo_btn": "Seleziona Foto"
+            },
+            "owned_documents_list": {
+                "header": "I tuoi documenti attivi...",
+                "title": "I TUOI DOCUMENTI",
+                "document_type": "Tipo",
+                "serial_number": "Numero Seriale",
+                "report_btn": "Segnala un furto"
+            }
+        },
+        "check_document": {
+            "header": "VERIFICA DOCUMENTO",
+            "enter_serial": "Inserisci il numero seriale del documento per verificarne la validità:",
+            "searching_for_information": "Ricerca delle informazioni...",
+            "search_btn": "Trova"
+        }
+    },
+    "CZ": {
+        "currency": "$",
+        "document_title": "Spojené státy americké",
+        "hint_close": "Stiskněte BACKSPACE pro skrytí dokumentu",
+        "documents_menu": {
+            "menu_title": "Dokumenty",
+            "documents_list": {
+                "header": "Žádost o dokument...",
+                "title": "DOKUMENTY",
+                "order_for_btn": "Objednávka pro",
+                "order_btn": "Objednat"
+            },
+            "photos_list": {
+                "header": "Vaše fotografie pořízené u fotografa...",
+                "title": "FOTOGRAFIE",
+                "id": "ID",
+                "remove_photo_btn": "Odstranit fotku",
+                "select_photo_btn": "Vybrat fotku"
+            },
+            "owned_documents_list": {
+                "header": "Vaše aktivní dokumenty...",
+                "title": "VAŠE DOKUMENTY",
+                "document_type": "Typ",
+                "serial_number": "Sériové číslo",
+                "report_btn": "Nahlásit krádež"
+            }
+        },
+        "check_document": {
+            "header": "ZKONTROLOVAT DOKUMENT",
+            "enter_serial": "Zadejte sériové číslo dokumentu pro zjištění jeho platnosti:",
+            "searching_for_information": "Hledání informací...",
+            "search_btn": "Hledat"
+        }
+    },
+    "SV": {
+        "currency": "$",
+        "document_title": "Förenta staterna",
+        "hint_close": "Tryck på TILLBAKA för att dölja dokumentet",
+        "documents_menu": {
+            "menu_title": "Dokument",
+            "documents_list": {
+                "header": "Ansök om dokumentet...",
+                "title": "DOKUMENT",
+                "order_for_btn": "Beställ för",
+                "order_btn": "Beställ"
+            },
+            "photos_list": {
+                "header": "Dina foton tagna hos fotografen...",
+                "title": "FOTON",
+                "id": "ID",
+                "remove_photo_btn": "Ta bort foto",
+                "select_photo_btn": "Välj foto"
+            },
+            "owned_documents_list": {
+                "header": "Dina aktiva dokument...",
+                "title": "DINA DOKUMENT",
+                "document_type": "Typ",
+                "serial_number": "Serienummer",
+                "report_btn": "Rapportera stöld"
+            }
+        },
+        "check_document": {
+            "header": "KONTROLLERA DOKUMENT",
+            "enter_serial": "Ange serienumret för dokumentet för att kontrollera dess giltighet:",
+            "searching_for_information": "Söker efter information...",
+            "search_btn": "Sök"
+        }
+    }
+}
