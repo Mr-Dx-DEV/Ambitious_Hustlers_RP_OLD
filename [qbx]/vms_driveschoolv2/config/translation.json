@@ -1,0 +1,122 @@
+{
+    "EN": {
+        "exam_practicaly": "PRACTICAL EXAM",
+        "question": "Question",
+        "next_question": "NEXT",
+        "your_score": "Your score:",
+        "good_result_title": "PASSED",
+        "good_result_description": "You made it through. Now you can take the practical exam.",
+        "good_result_close": "CLOSE",
+        "bad_result_title": "FAILED",
+        "bad_result_description": "Unfortunately, you didn't pass the exam, so you better prepare yourself and come back later.",
+        "bad_result_close": "CLOSE"
+    },
+    "DE": {
+        "exam_practicaly": "PRACTICAL EXAM",
+        "question": "Frage",
+        "next_question": "WEITER",
+        "your_score": "Dein Ergebnis:",
+        "good_result_title": "BESTANDEN",
+        "good_result_description": "Du hast es geschafft. Jetzt kannst du die praktische Prüfung machen.",
+        "good_result_close": "SCHLIESSEN",
+        "bad_result_title": "DURCHGEFALLEN",
+        "bad_result_description": "Leider hast du die Prüfung nicht bestanden, also solltest du dich besser vorbereiten und später wiederkommen.",
+        "bad_result_close": "SCHLIESSEN"
+    },
+    "FR": {
+        "exam_practicaly": "EXAMEN PRATIQUE",
+        "question": "Question",
+        "next_question": "SUIVANT",
+        "your_score": "Votre score :",
+        "good_result_title": "RÉUSSI",
+        "good_result_description": "Vous avez réussi. Vous pouvez maintenant passer l'examen pratique.",
+        "good_result_close": "FERMER",
+        "bad_result_title": "ÉCHEC",
+        "bad_result_description": "Malheureusement, vous n'avez pas réussi l'examen, donc vous feriez mieux de vous préparer et de revenir plus tard.",
+        "bad_result_close": "FERMER"
+    },
+    "ES": {
+        "exam_practicaly": "EXAMEN PRÁCTICO",
+        "question": "Pregunta",
+        "next_question": "SIGUIENTE",
+        "your_score": "Tu puntaje:",
+        "good_result_title": "APROBADO",
+        "good_result_description": "Lo lograste. Ahora puedes tomar el examen práctico.",
+        "good_result_close": "CERRAR",
+        "bad_result_title": "FALLIDO",
+        "bad_result_description": "Lamentablemente, no pasaste el examen, así que es mejor que te prepares y vuelvas más tarde.",
+        "bad_result_close": "CERRAR"
+    },
+    "PT": {
+        "exam_practicaly": "EXAME PRÁTICO",
+        "question": "Pergunta",
+        "next_question": "PRÓXIMA",
+        "your_score": "Sua pontuação:",
+        "good_result_title": "APROVADO",
+        "good_result_description": "Você conseguiu. Agora você pode fazer o exame prático.",
+        "good_result_close": "FECHAR",
+        "bad_result_title": "REPROVADO",
+        "bad_result_description": "Infelizmente, você não passou no exame, então é melhor se preparar e voltar mais tarde.",
+        "bad_result_close": "FECHAR"
+    },
+    "NL": {
+        "exam_practicaly": "PRAKTISCH EXAMEN",
+        "question": "Vraag",
+        "next_question": "VOLGENDE",
+        "your_score": "Jouw score:",
+        "good_result_title": "GESLAAGD",
+        "good_result_description": "Je bent geslaagd. Nu kun je het praktisch examen afleggen.",
+        "good_result_close": "SLUITEN",
+        "bad_result_title": "GEZAAKT",
+        "bad_result_description": "Helaas, je bent niet geslaagd voor het examen, dus je kunt je maar beter voorbereiden en later terugkomen.",
+        "bad_result_close": "SLUITEN"
+    },
+    "PL": {
+        "exam_practicaly": "PRAKTYCZNY EGZAMIN",
+        "question": "Pytanie",
+        "next_question": "NASTĘPNE",
+        "your_score": "Twój wynik:",
+        "good_result_title": "ZDAŁEŚ",
+        "good_result_description": "Udało ci się. Teraz możesz przystąpić do egzaminu praktycznego.",
+        "good_result_close": "ZAMKNIJ",
+        "bad_result_title": "NIE ZDAŁEŚ",
+        "bad_result_description": "Niestety, nie udało ci się zdać egzaminu, więc lepiej się przygotuj i wróć później.",
+        "bad_result_close": "ZAMKNIJ"
+    },
+    "IT": {
+        "exam_practicaly": "ESAME PRATICO",
+        "question": "Domanda",
+        "next_question": "AVANTI",
+        "your_score": "Il tuo punteggio:",
+        "good_result_title": "APPROVATO",
+        "good_result_description": "Ce l'hai fatta. Ora puoi svolgere l'esame pratico.",
+        "good_result_close": "CHIUDI",
+        "bad_result_title": "NON APPROVATO",
+        "bad_result_description": "Purtroppo, non hai superato l'esame, quindi è meglio che ti prepari meglio e torni più tardi.",
+        "bad_result_close": "CHIUDI"
+    },
+    "CZ": {
+        "exam_practicaly": "PRAKTICKÝ ZKOUŠKA",
+        "question": "Otázka",
+        "next_question": "DALŠÍ",
+        "your_score": "Vaše skóre:",
+        "good_result_title": "SPLNĚNO",
+        "good_result_description": "Podařilo se vám to. Teď můžete absolvovat praktickou zkoušku.",
+        "good_result_close": "ZAVŘÍT",
+        "bad_result_title": "NEÚSPĚŠNĚ",
+        "bad_result_description": "Bohužel jste zkoušku neprošli, takže se lépe připravte a vraťte se později.",
+        "bad_result_close": "ZAVŘÍT"
+    },
+    "SV": {
+        "exam_practicaly": "PRAKTISKT EXAMEN",
+        "question": "Fråga",
+        "next_question": "NÄSTA",
+        "your_score": "Din poäng:",
+        "good_result_title": "GENOMFÖRT",
+        "good_result_description": "Du klarade det. Nu kan du ta det praktiska provet.",
+        "good_result_close": "STÄNG",
+        "bad_result_title": "MISSLYCKADES",
+        "bad_result_description": "Tyvärr klarade du inte examen, så du bör förbereda dig bättre och komma tillbaka senare.",
+        "bad_result_close": "STÄNG"
+    }
+}
