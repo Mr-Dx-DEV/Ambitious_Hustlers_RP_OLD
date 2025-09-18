@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css" />
+  <script src="./js/vue.global.js"></script>
+  <script src="./js/vuex.global.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+  <script src="./js/omggif.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css" />
+</head>
+
+<body>
+  <div id="app">
+    <Transition name="fade">
+      <div class="newGeneral" v-show="state.mainShow">
+        <div class="newMenu">
+          <div class="newCategoryList">
+            <div class="newCategory" :class="state.currentPage == 'home' ? 'newSelectCategory' : ''"
+              @click="changePage('home')">
+              <img src="./img/Icon/homeIcn.svg" alt="" />
+              {{state.locales['homePage']}}
+            </div>
+            <div class="newCategory" :class="state.currentPage == 'settings' ? 'newSelectCategory' : ''"
+              @click="changePage('settings')">
+              <img src="./img/Icon/settingIcn.svg" alt="" />
+              {{state.locales['settings']}}
+            </div>
+          </div>
+          <div class="newExitBox" @click="closeNUI">
+            <img src="./img/Icon/exitIcn.svg" alt="" />
+          </div>
+          <div class="newTitleBox">
+            <div class="newTitleIcon">
+              <img src="./img/newLogo.png" alt="" class="newLogo" />
+            </div>
+            <div class="newTitleTextBox">
+              <h2 class="newTitleText">{{state.serverName}}</h2>
+              <p class="newTitleSubText">{{state.scriptName}}</p>
+            </div>
+          </div>
+          <div class="newTopSide">
+            <div class="newLevelSide">
+              <div class="newLevelIcon">
+                <h2 class="newLevelSay">{{playerData.playerLevel}}</h2>
+                {{state.locales['LVL']}}
+              </div>
+              <div class="newLevelRightSide">
+                <h2 class="newLevelText">
+                  {{state.locales['Level']}} {{playerData.playerLevel}}
+                </h2>
+                <div class="newLevelProgress">
+                  <div class="newLevelProgressSay" :style="{ width: progressPercentage + '%' }"></div>
+                </div>
+                <div class="newLevelExpSide">
+                  <h2 class="newLevelExp">
+                    {{formatNumber(playerData.playerXp)}}
+                    {{state.locales['Exp']}}
+                  </h2>
+                  <h2 class="newLevelExp">
+                    {{formatNumber(playerData.playerNextXp)}}
+                    {{state.locales['Exp']}}
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="newBottomSide newHomePage" v-show="state.currentPage == 'home'">
+            <div class="newRegionBox">
+              <div class="newRegionBoxTopSide">
+                <div class="newMenuTitleBox">
+                  <img src="./img/Icon/locationIcn.svg" alt="" />
+                  <div class="newMenuTitleTextBox">
+                    <h2 class="newMenuTitleText">
+                      {{state.locales['selectjobregion']}}
+                    </h2>
+                    <p class="newMenuTitleSubText">
+                      {{state.locales['Choose']}}
+                    </p>
+                  </div>
+                </div>
+                <div class="newMenuArrowSide">
+                  <div class="newMenuArrow" :class="{ 'active-arrow': canGoPrev }" @click="prevRegion">
+                    <img src="./img/Icon/arrowIcn.svg" alt="" />
+                  </div>
+                  <div class="newMenuArrow" :class="{ 'active-arrow': canGoNext }" @click="nextRegion">
+                    <img src="./img/Icon/arrowIcn.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="newRegionList">
+                <div class="newRegion" v-for="(region, index) in displayedRegions" :key="index"
+                  @click="selectRegion(region)"
+                  :style="{'opacity': state.selectedRegion && region.regionID === state.selectedRegion.regionID ? 1 : (state.selectedRegion ? 0.5 : 1), 'background': region.illegalMission ? 'linear-gradient(180deg, rgba(255, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%)' : ''}"
+                  :class="{'illegal-mission': region.illegalMission}"
+                  :class="{'newRegionSelect': state.selectedRegion && region.regionID === state.selectedRegion.regionID}">
+                  <div class="newRegionTopSide" v-if="region.regionInfo">
+                    <div class="newRegionNameBox">
+                      <div class="newRegionNameIcon">
+                        <img src="./img/Icon/location2Icon.svg" alt="" />
+                      </div>
+                      <div class="newRegionNameTextBox">
+                        <h2 class="newRegionNameText">
+                          {{state.locales['Region']}} {{region.regionID}}
+                        </h2>
+                        <p class="newRegionNameSubText">
+                          {{region.regionInfo.regionName}}
+                        </p>
+                      </div>
+                    </div>
+                    <div class="newRegionDetailBox" v-if="region.regionInfo">
+                      <div class="newRegionDetail"
+                        :class="playerData.playerLevel >= region.regionInfo.regionMinimumLevel ? '' : 'newRegionLevelDetail'">
+                        {{playerData.playerLevel >=
+                        region.regionInfo.regionMinimumLevel ?
+                        state.locales['NoLevelRequired'] :
+                        state.locales['LevelRequired'] + " " +
+                        region.regionInfo.regionMinimumLevel}}
+                      </div>
+                      <div class="newRegionDetailLine"></div>
+                      <div class="newRegionDetail">
+                        {{state.locales['1-4Players']}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="newRegionBottomSide" v-if="region.regionAwards">
+                    <div class="newRegionAwardBox newRegionExpAward">
+                      {{formatNumber(region.regionAwards.xp)}}
+                      {{state.locales['XP']}}
+                    </div>
+
+                    <div class="newRegionAwardBox newRegionMoneyAward">
+                      {{formatNumber(region.regionAwards.money)}}
+                      {{state.serverMoneyType}}
+                    </div>
+                  </div>
+                  <img v-if="region.regionInfo && region.regionInfo.regionImage"
+                    :src="`./img/${region.regionInfo.regionImage}`" class="newRegionImg" />
+                </div>
+              </div>
+            </div>
+            <div class="newPlayerBox">
+              <div class="newPlayerBoxTopSide">
+                <div class="newMenuTitleBox">
+                  <img src="./img/Icon/playersIcon.svg" alt="" />
+                  <div class="newMenuTitleTextBox">
+                    <h2 class="newMenuTitleText">
+                      {{state.locales['PlayerList']}}
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div class="newPlayerList">
+                <div class="newPlayer" v-if="playerListData" v-for="(player, index) in playerListData" :key="index">
+                  <div class="newPlayerProfileImg" :style="`background-image: url('${player.playerImage}')`"></div>
+                  <div class="newPlayerProfileTextBox">
+                    <h2 class="newPlayerProfileText">
+                      {{player.playerName}}
+                    </h2>
+                    <div class="newPlayerProfileLevel">
+                      {{state.locales['Level']}} {{player.playerLevel}}
+                    </div>
+                  </div>
+                  <div class="newPlayerIcon" v-if="player.playerOwner">
+                    <img src="./img/Icon/crownIcn.svg" alt="" />
+                  </div>
+                  <div class="newPlayerIcon newPlayerKickButton" @click="kickPlayer(player.playerIdentifier)" v-else>
+                    <img src="./img/Icon/closeIcn.svg" alt="" />
+                  </div>
+                </div>
+                <div class="newPlayer newNearbyPlayer" v-for="(player, index) in state.nearbyPlayers" :key="index"
+                  @click="invitePlayer(player.playerSource)">
+                  <div class="newPlayerProfileImg" :style="`background-image: url('${player.playerImage}')`"></div>
+                  <div class="newPlayerProfileTextBox">
+                    <h2 class="newPlayerProfileText">
+                      {{player.playerName}}
+                    </h2>
+                    <div class="newPlayerProfileInvite">
+                      {{state.locales['invitePlayer']}}
+                    </div>
+                  </div>
+                  <div class="newPlayerIcon">
+                    <img src="./img/Icon/addIcn.svg" alt="" />
+                  </div>
+                </div>
+                <div v-for="index in inviteSlots" :key="index">
+                  <div v-if="!state.invitePlayerModal[index]" @click="state.invitePlayerModal[index] = true">
+                    <div class="newPlayer newPlayerAddInvite">
+                      <div class="newPlayerProfileImg">
+                        <img src="./img/Icon/addIcn.svg" alt="" />
+                      </div>
+                      <div class="newPlayerProfileTextBox">
+                        <h2 class="newPlayerProfileText">
+                          {{state.locales['AddInvite']}}
+                        </h2>
+                      </div>
+                      <div class="newPlayerIcon">
+                        <img src="./img/Icon/plusIcn.svg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="newDetailBox" v-if="state.selectedRegion">
+              <div class="newDetailBoxTopSide">
+                <div class="newMenuTitleBox">
+                  <img src="./img/Icon/detailIcn.svg" alt="" />
+                  <div class="newMenuTitleTextBox">
+                    <h2 class="newMenuTitleText">
+                      {{state.locales['jobDetails']}}
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div class="newDetail">
+                <div class="newDetailTextBox">
+                  {{state.locales['jobStep']}}
+                  <p class="newDetailSubText">
+                    {{state.selectedRegion.regionInfo.regionJobTask}}
+                  </p>
+                </div>
+                <div class="newDetailAwardBox">
+                  <div class="newRegionAwardBox newRegionExpAward">
+                    {{formatNumber(state.selectedRegion.regionAwards.xp)}} XP
+                  </div>
+                  <div class="newRegionAwardBox newRegionMoneyAward">
+                    {{formatNumber(state.selectedRegion.regionAwards.newMoney)}}
+                    {{state.serverMoneyType}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="newDetailBox" v-else="">
+              <div class="newDetailBoxTopSide">
+                <div class="newMenuTitleBox">
+                  <img src="./img/Icon/detailIcn.svg" alt="" />
+                  <div class="newMenuTitleTextBox">
+                    <h2 class="newMenuTitleText">
+                      {{state.locales['jobDetails']}}
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div class="newDetail">
+                <div class="newDetailTextBox">
+                  {{state.locales['jobStep']}}
+                  <p class="newDetailSubText">
+                    {{state.locales['JOBNOTSELECTED']}}
+                  </p>
+                </div>
+                <div class="newDetailAwardBox">
+                  <div class="newRegionAwardBox newRegionExpAward">
+                    0 {{state.locales['XP']}}
+                  </div>
+                  <div class="newRegionAwardBox newRegionMoneyAward">
+                    0 {{state.serverMoneyType}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="newStartButton" @click="startJob">
+              {{state.jobIsActive ? state.locales['jobReset'] :
+              state.locales['jobStart']}}
+            </div>
+          </div>
+          <div class="newBottomSide newSettingsPage" v-show="state.currentPage == 'settings'">
+            <div class="newTaskBox">
+              <div class="newTaskBoxTopSide">
+                <div class="newMenuTitleBox">
+                  <img src="./img/Icon/taskIcn.svg" alt="" />
+                  <div class="newMenuTitleTextBox">
+                    <h2 class="newMenuTitleText">
+                      {{state.locales['GeneralTaskList']}}
+                    </h2>
+                  </div>
+                </div>
+                <div class="newMenuArrowSide">
+                  <div class="newMenuArrow" :class="{ 'active-arrow': canGoPrevDailyMission }"
+                    @click="prevDailyMission">
+                    <img src="./img/Icon/arrowIcn.svg" alt="" />
+                  </div>
+                  <div class="newMenuArrow" :class="{ 'active-arrow': canGoNextDailyMission }"
+                    @click="nextDailyMission">
+                    <img src="./img/Icon/arrowIcn.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="newTaskList">
+                <div class="newTask" v-if="displayedDailyMission" v-for="(task, index) in displayedDailyMission"
+                  :key="index">
+                  <div class="newRegionNameBox">
+                    <div class="newRegionNameIcon">
+                      <img src="./img/Icon/taskIcn.svg" alt="" />
+                    </div>
+                    <div class="newRegionNameTextBox">
+                      <h2 class="newRegionNameText">{{task.header}}</h2>
+                      <p class="newRegionNameSubText">{{task.label}}</p>
+                    </div>
+                  </div>
+                  <div class="newTaskProgressBox">
+                    <div class="newTaskProgress" :style="{ width: task.progressbar + '%' }"></div>
+                  </div>
+                  <div class="newTaskAwardBox">
+                    <div class="newRegionAwardBox newRegionExpAward">
+                      {{task.xp}} {{state.locales['Exp']}}
+                    </div>
+                    <div class="newRegionAwardBox newRegionMoneyAward">
+                      {{formatNumber(task.money)}} {{state.serverMoneyType}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="newHistoryBox">
+              <div class="newHistoryBoxTopSide">
+                <div class="newMenuTitleBox">
+                  <img src="./img/Icon/historyIcn.svg" alt="" />
+                  <div class="newMenuTitleTextBox">
+                    <h2 class="newMenuTitleText">
+                      {{state.locales['HistoryList']}}
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div class="newHistoryList">
+                <div class="newHistory" v-for="(history, index) in historyData" :key="index">
+                  <div class="newHistoryRegionInfo">
+                    <div class="newHistoryRegionBox">
+                      <div class="newHistoryRegionIcon">
+                        <img src="./img/Icon/location2Icon.svg" alt="" />
+                      </div>
+                      <div class="newHistoryRegionTextBox">
+                        <h2 class="newHistoryRegionText">
+                          {{state.locales['Region']}}
+                          {{history.historyRegionID}}
+                        </h2>
+                        <p class="newHistoryRegionSubText">
+                          {{history.historyTotalScore}}
+                          {{state.locales['Task']}}
+                        </p>
+                      </div>
+                    </div>
+                    <div class="newHistoryTimeBox">
+                      <img src="./img/Icon/timeIcn.svg" alt="" />
+                      {{history.historyTime}}
+                    </div>
+                  </div>
+                  <div class="newHistoryLine"></div>
+                  <div class="newHistoryPlayerList">
+                    <div class="newHistoryPlayer" v-for="(player, index) in history.historyPlayers" :key="index">
+                      {{player.playerName}}
+                    </div>
+                  </div>
+                  <div class="newHistoryLine"></div>
+                  <div class="newHistoryAwardBox">
+                    <div class="newHistoryAward newRegionExpAward">
+                      {{formatNumber(history.historyRewardXP)}}
+                    </div>
+                    <div class="newHistoryAward newRegionMoneyAward">
+                      {{state.serverMoneyType}}
+                      {{formatNumber(history.historyRewardMoney)}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="newSettingBox">
+              <div class="newSettingBoxTopSide">
+                <div class="newMenuTitleBox">
+                  <img src="./img/Icon/settingIcn.svg" alt="" />
+                  <div class="newMenuTitleTextBox">
+                    <h2 class="newMenuTitleText">
+                      {{state.locales['settings']}}
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div class="newSetting">
+                <div class="newSettingTopSide">
+                  <div class="newSettingCheckBox">
+                    {{state.locales['MenuJobSounds']}}
+                    <div class="checkbox-wrapper-8" v-if="playerData">
+                      <input class="tgl tgl-skewed" id="cb3-8" type="checkbox" v-model="playerData.soundEffect" />
+                      <label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="cb3-8"></label>
+                    </div>
+                  </div>
+                  <div class="newSettingLanguageBox" :class="{ active: isActive }">
+                    <div class="newSettingLanguageSelected" @click.stop="toggleDropdown">
+                      {{ localeValue }}
+                      <span class="arrow">
+                        <img src="./img/Icon/inputIcn.svg" alt="Arrow" />
+                      </span>
+                    </div>
+                    <div class="newSettingLanguageList">
+                      <div v-for="option in state.languageTitle" v-if="state && state.languageTitle" :key="option.value"
+                        :data-value="option.label" @click="selectOption(option)">
+                        {{ option.label }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="newSettingMoveBox">
+                    {{state.locales['UIMove']}}
+                    <div class="newSettinMoveButton" @click="moveUI">
+                      <img src="./img/Icon/moveIcn.svg" alt="" />
+                      {{state.locales['MoveIt']}}
+                    </div>
+                  </div>
+                </div>
+                <div class="newSettingButtonList">
+                  <div class="newSettingSaveButton" @click="saveSettings">
+                    {{state.locales['Save']}}
+                  </div>
+                  <div class="newSettingResetButton" @click="resetSettings">
+                    {{state.locales['Reset']}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Transition>
+    <div class="newInviteSide" v-show="state.requestData.show" v-if="state.requestData"
+      :style="[state.settings.moveUI ?  {'cursor': 'move', 'border': '2px dashed #ff7700'} : {}]">
+      <div class="newInviteTopSide">
+        <div class="newInviteTitle">
+          <img src="./img/Icon/inviteIcn.svg" alt="" />{{state.locales['InviteRequest']}}
+        </div>
+        <div class="newInvitePlayer" v-if="state.defaultLogo">
+          <img :src="state.defaultLogo" alt="" class="newInvitePlayerImg" />
+          {{state.requestData.lobbyOwner}}
+        </div>
+      </div>
+      <p class="newInviteInfoText">{{state.locales['InviteText']}}</p>
+      <div class="newInviteButtonList">
+        <div class="newInviteButton newRejectButton" @click="denyInvite">
+          <div class="newInviteButtonKey">N</div>
+          {{state.locales['Reject']}}
+        </div>
+        <div class="newInviteButton newAcceptButton" @click="acceptInvite">
+          <div class="newInviteButtonKey">Y</div>
+          {{state.locales['Accept']}}
+        </div>
+      </div>
+    </div>
+
+    <div class="newTeamList" v-show="state.teamShow"
+      :style="[state.settings.moveUI ? {'cursor': 'move', 'border': '2px dashed #ff7700'} : {}]">
+      <div class="newTeamBox" v-if="state && state.missionScoreData"
+        v-for="(team, index) in state.missionScoreData.Players" :key="index">
+        <img :src="team.playerImage" alt="" class="newTeamProfileImg" />
+        <div class="newTeamTextBox">
+          <h2 class="newTeamText">{{team.playerName}}</h2>
+          <div class="newTeamLevelBox">
+            {{state.locales['Level']}} {{team.playerLevel}}
+          </div>
+        </div>
+        <div class="newTeamScoreInfo">
+          <img src="./img/teamScoreImg.png" alt="" class="newTeamScoreInfoImg" />
+          {{team.scoreAmount}}
+        </div>
+      </div>
+    </div>
+
+    <div class="allScoreList" v-show="state.teamShow || (state.settings.moveUI)"
+      :style="[state.settings.moveUI ? {'cursor': 'move', 'border': '2px dashed #ff7700'} : {}]">
+      <div class="allScoreBox allScoreShirts" v-if="state && state.missionScoreData">
+        <div class="allScoreTopSide">
+          <div class="allScoreIcon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.8229vw" height="1.8229vw" viewBox="0 0 35 35" fill="none">
+              <path
+                d="M17.75 3.48438C14.978 3.48438 12.2682 4.30638 9.96334 5.84643C7.65848 7.38649 5.86207 9.57543 4.80126 12.1365C3.74045 14.6975 3.46289 17.5155 4.00369 20.2343C4.54448 22.9531 5.87934 25.4504 7.83946 27.4105C9.79958 29.3707 12.2969 30.7055 15.0157 31.2463C17.7345 31.7871 20.5525 31.5096 23.1136 30.4487C25.6746 29.3879 27.8635 27.5915 29.4036 25.2867C30.9436 22.9818 31.7656 20.272 31.7656 17.5C31.7617 13.784 30.2838 10.2214 27.6562 7.59379C25.0286 4.9662 21.466 3.4883 17.75 3.48438ZM17.2109 9.95312C17.5308 9.95312 17.8435 10.048 18.1094 10.2257C18.3753 10.4034 18.5826 10.6559 18.705 10.9514C18.8274 11.2469 18.8595 11.5721 18.7971 11.8858C18.7347 12.1995 18.5806 12.4877 18.3545 12.7138C18.1283 12.94 17.8401 13.094 17.5264 13.1564C17.2127 13.2188 16.8876 13.1868 16.5921 13.0644C16.2966 12.942 16.044 12.7347 15.8663 12.4688C15.6886 12.2028 15.5938 11.8902 15.5938 11.5703C15.5938 11.1414 15.7641 10.7301 16.0674 10.4268C16.3707 10.1235 16.782 9.95313 17.2109 9.95312ZM18.8281 25.0469C18.2563 25.0469 17.7078 24.8197 17.3034 24.4153C16.8991 24.0109 16.6719 23.4625 16.6719 22.8906V17.5C16.3859 17.5 16.1117 17.3864 15.9095 17.1842C15.7073 16.982 15.5938 16.7078 15.5938 16.4219C15.5938 16.1359 15.7073 15.8617 15.9095 15.6595C16.1117 15.4573 16.3859 15.3438 16.6719 15.3438C17.2438 15.3438 17.7922 15.5709 18.1966 15.9753C18.601 16.3797 18.8281 16.9281 18.8281 17.5V22.8906C19.1141 22.8906 19.3883 23.0042 19.5905 23.2064C19.7927 23.4086 19.9063 23.6828 19.9063 23.9688C19.9063 24.2547 19.7927 24.5289 19.5905 24.7311C19.3883 24.9333 19.1141 25.0469 18.8281 25.0469Z" />
+            </svg>
+          </div>
+          <div class="allScoreTextBox">
+            <h2 class="allScoreText">{{state.locales['jobMission']}}</h2>
+          </div>
+        </div>
+
+        <div class="allScoreListShirts">
+          <div class="allScoreShirtBox" v-for="(data, index) in state.missionScoreData.regionJobTask" :key="index">
+            <h2 class="allScoreShirtText">{{ data.jobLabel }}</h2>
+            <div class="allScoreShirtTaskBox">
+              <svg xmlns="http://www.w3.org/2000/svg" width=".625vw" height=".625vw" viewBox="0 0 12 12" fill="none">
+                <path
+                  d="M2.5 10.5C2.35833 10.5 2.23967 10.452 2.144 10.356C2.04833 10.26 2.00033 10.1413 2 10V9.5H1.5V7.5C1.5 7.35833 1.548 7.23967 1.644 7.144C1.74 7.04833 1.85867 7.00033 2 7H2.5V3.5C2.5 2.95 2.69583 2.47917 3.0875 2.0875C3.47917 1.69583 3.95 1.5 4.5 1.5C5.05 1.5 5.52083 1.69583 5.9125 2.0875C6.30417 2.47917 6.5 2.95 6.5 3.5V8.5C6.5 8.775 6.598 9.0105 6.794 9.2065C6.99 9.4025 7.22533 9.50033 7.5 9.5C7.77467 9.49967 8.01017 9.40183 8.2065 9.2065C8.40283 9.01117 8.50067 8.77567 8.5 8.5V5H8C7.85833 5 7.73967 4.952 7.644 4.856C7.54833 4.76 7.50033 4.64133 7.5 4.5V2.5H8V2C8 1.85833 8.048 1.73967 8.144 1.644C8.24 1.54833 8.35867 1.50033 8.5 1.5H9.5C9.64167 1.5 9.7605 1.548 9.8565 1.644C9.9525 1.74 10.0003 1.85867 10 2V2.5H10.5V4.5C10.5 4.64167 10.452 4.7605 10.356 4.8565C10.26 4.9525 10.1413 5.00033 10 5H9.5V8.5C9.5 9.05 9.30417 9.52083 8.9125 9.9125C8.52083 10.3042 8.05 10.5 7.5 10.5C6.95 10.5 6.47917 10.3042 6.0875 9.9125C5.69583 9.52083 5.5 9.05 5.5 8.5V3.5C5.5 3.225 5.40217 2.98967 5.2065 2.794C5.01083 2.59833 4.77533 2.50033 4.5 2.5C4.22467 2.49967 3.98933 2.59767 3.794 2.794C3.59867 2.99033 3.50067 3.22567 3.5 3.5V7H4C4.14167 7 4.2605 7.048 4.3565 7.144C4.4525 7.24 4.50033 7.35867 4.5 7.5V9.5H4V10C4 10.1417 3.952 10.2605 3.856 10.3565C3.76 10.4525 3.64133 10.5003 3.5 10.5H2.5Z"
+                  fill="white" fill-opacity="0.57" />
+              </svg>
+              <h2 class="allScoreTaskText">
+                {{ data.madeAmount || 0 }} / {{ data.jobCount }}
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="allScoreBox allScoreShirts"
+        v-if="state && state.missionScoreData && state.missionScoreData.bonusJobTask && Object.keys(state.missionScoreData.bonusJobTask).length > 0">
+        <div class="allScoreTopSide">
+          <div class="allScoreIcon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.8229vw" height="1.8229vw" viewBox="0 0 35 35" fill="none">
+              <path
+                d="M17.75 3.48438C14.978 3.48438 12.2682 4.30638 9.96334 5.84643C7.65848 7.38649 5.86207 9.57543 4.80126 12.1365C3.74045 14.6975 3.46289 17.5155 4.00369 20.2343C4.54448 22.9531 5.87934 25.4504 7.83946 27.4105C9.79958 29.3707 12.2969 30.7055 15.0157 31.2463C17.7345 31.7871 20.5525 31.5096 23.1136 30.4487C25.6746 29.3879 27.8635 27.5915 29.4036 25.2867C30.9436 22.9818 31.7656 20.272 31.7656 17.5C31.7617 13.784 30.2838 10.2214 27.6562 7.59379C25.0286 4.9662 21.466 3.4883 17.75 3.48438ZM17.2109 9.95312C17.5308 9.95312 17.8435 10.048 18.1094 10.2257C18.3753 10.4034 18.5826 10.6559 18.705 10.9514C18.8274 11.2469 18.8595 11.5721 18.7971 11.8858C18.7347 12.1995 18.5806 12.4877 18.3545 12.7138C18.1283 12.94 17.8401 13.094 17.5264 13.1564C17.2127 13.2188 16.8876 13.1868 16.5921 13.0644C16.2966 12.942 16.044 12.7347 15.8663 12.4688C15.6886 12.2028 15.5938 11.8902 15.5938 11.5703C15.5938 11.1414 15.7641 10.7301 16.0674 10.4268C16.3707 10.1235 16.782 9.95313 17.2109 9.95312ZM18.8281 25.0469C18.2563 25.0469 17.7078 24.8197 17.3034 24.4153C16.8991 24.0109 16.6719 23.4625 16.6719 22.8906V17.5C16.3859 17.5 16.1117 17.3864 15.9095 17.1842C15.7073 16.982 15.5938 16.7078 15.5938 16.4219C15.5938 16.1359 15.7073 15.8617 15.9095 15.6595C16.1117 15.4573 16.3859 15.3438 16.6719 15.3438C17.2438 15.3438 17.7922 15.5709 18.1966 15.9753C18.601 16.3797 18.8281 16.9281 18.8281 17.5V22.8906C19.1141 22.8906 19.3883 23.0042 19.5905 23.2064C19.7927 23.4086 19.9063 23.6828 19.9063 23.9688C19.9063 24.2547 19.7927 24.5289 19.5905 24.7311C19.3883 24.9333 19.1141 25.0469 18.8281 25.0469Z" />
+            </svg>
+          </div>
+          <div class="allScoreTextBox">
+            <h2 class="allScoreText">{{state.locales['BonusMission']}}</h2>
+          </div>
+        </div>
+
+        <div class="allScoreListShirts">
+          <div class="allScoreShirtBox" v-for="(data, index) in state.missionScoreData.bonusJobTask" :key="index">
+            <h2 class="allScoreShirtText">{{ data.jobLabel }}</h2>
+            <div class="allScoreShirtTaskBox">
+              <svg xmlns="http://www.w3.org/2000/svg" width=".625vw" height=".625vw" viewBox="0 0 12 12" fill="none">
+                <path
+                  d="M2.5 10.5C2.35833 10.5 2.23967 10.452 2.144 10.356C2.04833 10.26 2.00033 10.1413 2 10V9.5H1.5V7.5C1.5 7.35833 1.548 7.23967 1.644 7.144C1.74 7.04833 1.85867 7.00033 2 7H2.5V3.5C2.5 2.95 2.69583 2.47917 3.0875 2.0875C3.47917 1.69583 3.95 1.5 4.5 1.5C5.05 1.5 5.52083 1.69583 5.9125 2.0875C6.30417 2.47917 6.5 2.95 6.5 3.5V8.5C6.5 8.775 6.598 9.0105 6.794 9.2065C6.99 9.4025 7.22533 9.50033 7.5 9.5C7.77467 9.49967 8.01017 9.40183 8.2065 9.2065C8.40283 9.01117 8.50067 8.77567 8.5 8.5V5H8C7.85833 5 7.73967 4.952 7.644 4.856C7.54833 4.76 7.50033 4.64133 7.5 4.5V2.5H8V2C8 1.85833 8.048 1.73967 8.144 1.644C8.24 1.54833 8.35867 1.50033 8.5 1.5H9.5C9.64167 1.5 9.7605 1.548 9.8565 1.644C9.9525 1.74 10.0003 1.85867 10 2V2.5H10.5V4.5C10.5 4.64167 10.452 4.7605 10.356 4.8565C10.26 4.9525 10.1413 5.00033 10 5H9.5V8.5C9.5 9.05 9.30417 9.52083 8.9125 9.9125C8.52083 10.3042 8.05 10.5 7.5 10.5C6.95 10.5 6.47917 10.3042 6.0875 9.9125C5.69583 9.52083 5.5 9.05 5.5 8.5V3.5C5.5 3.225 5.40217 2.98967 5.2065 2.794C5.01083 2.59833 4.77533 2.50033 4.5 2.5C4.22467 2.49967 3.98933 2.59767 3.794 2.794C3.59867 2.99033 3.50067 3.22567 3.5 3.5V7H4C4.14167 7 4.2605 7.048 4.3565 7.144C4.4525 7.24 4.50033 7.35867 4.5 7.5V9.5H4V10C4 10.1417 3.952 10.2605 3.856 10.3565C3.76 10.4525 3.64133 10.5003 3.5 10.5H2.5Z"
+                  fill="white" fill-opacity="0.57" />
+              </svg>
+              <h2 class="allScoreTaskText">
+                {{ data.madeAmount || 0 }} / {{ data.jobCount }}
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="newFinishSide" v-show="state.finishShow" v-if="state.finishJobData">
+      <div class="newFinishTitle">
+        <img src="./img/Icon/tickallIcn.svg" alt="" />{{state.locales['MissionCompleted']}}
+      </div>
+      <div class="newFinishScoreList newFinishScoreSide">
+        <h2 class="newFinishMenuTitle">{{state.locales['Score']}};</h2>
+        <div class="newFinishScoreListBox">
+          <div class="newFinishScoreBox">
+            <h2 class="newFinishScoreText">{{state.locales['Score']}}</h2>
+            <p class="newFinishScoreSubText">
+              {{state.finishJobData.historyTotalScore}}
+            </p>
+          </div>
+          <div class="newFinishScoreBox">
+            <h2 class="newFinishScoreText">
+              {{state.locales['BonusScore']}}
+            </h2>
+            <p class="newFinishScoreSubText">
+              {{state.finishJobData.historyBonusScore}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="newFinishScoreList">
+        <h2 class="newFinishMenuTitle">{{state.locales['YourTeam']}};</h2>
+        <div class="newFinishTeamList">
+          <div v-for="index in 4" :key="index">
+            <div class="newTeamBox" v-if="state.finishJobData.historyPlayers[index - 1]">
+              <img :src="state.finishJobData.historyPlayers[index - 1].playerImage" alt="" class="newTeamProfileImg" />
+              <div class="newTeamTextBox">
+                <h2 class="newTeamText">
+                  {{state.finishJobData.historyPlayers[index - 1].playerName}}
+                </h2>
+                <div class="newTeamLevelBox">
+                  {{state.locales['Level']}}
+                  {{state.finishJobData.historyPlayers[index -
+                  1].playerLevel}}
+                </div>
+              </div>
+              <div class="newTeamScoreInfo">
+                <img src="./img/teamScoreImg.png" alt="" class="newTeamScoreInfoImg" />
+                {{state.finishJobData.historyPlayers[index - 1].scoreAmount}}
+              </div>
+            </div>
+
+            <div class="newTeamBox newFinishNoInfo" v-else>
+              <h2>{{state.locales['NoInformation']}}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="newFinishScoreList">
+        <h2 class="newFinishMenuTitle">{{state.locales['YourEarning']}};</h2>
+        <div class="newFinishEarningListSide">
+          <div class="newFinishEarningList">
+            <div class="newFinishEarning newFinishExp">
+              {{formatNumber(state.finishJobData.historyRewardXP)}}EXP
+            </div>
+            <div class="newFinishEarning newFinishMoney">
+              {{formatNumber(state.finishJobData.historyTotalMoney)}}
+              {{state.serverMoneyType}}
+            </div>
+          </div>
+          <div class="newFinishEarning newFinishMoney">
+            +{{formatNumber(state.finishJobData.historyBonusMoney)}}
+            {{state.serverMoneyType}} ({{state.locales['Bonus']}})
+          </div>
+        </div>
+      </div>
+      <div class="newFinishSkipInfoSide">
+        <div class="newFinishSkipInfo">
+          <div class="newFinishSkipInfoIcon">E</div>
+          {{state.locales['SkipInformation']}}
+        </div>
+      </div>
+    </div>
+
+    <div class="notifyList" v-show="notifyShow"
+      :style="[state.settings.moveUI ?  {'cursor': 'move', 'border': '2px dashed #ff7700'} : {}]">
+      <div v-for="(notification, index) in notifications" :key="index" :class="['notifyBox', notification.type]">
+        <div class="notifyLine"></div>
+        <div class="notifyTextBox">
+          <h2 class="notifyText" v-if="notification.type === 'info'">
+            {{state.locales['Info']}}
+          </h2>
+          <h2 class="notifyText" v-if="notification.type === 'error'">
+            {{state.locales['Error']}}
+          </h2>
+          <h2 class="notifyText" v-if="notification.type === 'success'">
+            {{state.locales['Success']}}
+          </h2>
+          <p class="notifySubText">{{ notification.message }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="progressbar > 0" class="loadingBarBox">
+      <div class="loadingTextBox">
+        <div class="loadingTextLine"></div>
+        {{progressbarLabel}}
+      </div>
+      <div class="loadingBar">
+        <div class="loading" :style="{'width' : progressbar + '%'}"></div>
+      </div>
+    </div>
+
+    <div class="tutoMenu" v-show="state.tutoMenuShow">
+      <div class="newTitleBox">
+        <div class="newTitleIcon">
+          <img src="./img/newLogo.png" alt="" class="newLogo" />
+        </div>
+        <div class="newTitleTextBox">
+          <h2 class="newTitleText">{{state.serverName}}</h2>
+          <p class="newTitleSubText">{{state.scriptName}}</p>
+        </div>
+      </div>
+
+      <div class="tutoTitleBox">
+        <h2 class="tutoTitle">{{state.locales['howtomake']}}</h2>
+        <p class="tutoSubTitle">{{state.locales['howtomakeDescription']}}</p>
+      </div>
+
+      <div class="tutoList">
+        <div class="tutoBox" :class="{ openTutoBox: item.isOpen }" v-for="(item, index) in state.tutorialList"
+          :key="item.id || index" @click="toggleBox(index)">
+          <h2 class="tutoBoxName">{{ item.title }}</h2>
+          <p class="tutoBoxDesc" v-if="item.isOpen" v-html="item.description"></p>
+
+          <video v-if="item.isOpen" :src="item.name" alt="" class="tutoGif" autoplay muted loop></video>
+
+          <img src="./img/arrowicn.svg" alt="" class="arrowicn"
+            :style="{ transform: item.isOpen ? 'rotate(90deg)' : 'rotate(0deg)' }" />
+        </div>
+      </div>
+    </div>
+
+    <div class="fixwiring" v-show="wiringShow">
+      <div class="game">
+        <img src="./img/cableTop.png" alt="" class="cableTop top1" />
+        <img src="./img/cableTop.png" alt="" class="cableTop top2" />
+        <img src="./img/cableTop.png" alt="" class="cableTop top3" />
+        <img src="./img/cableTop.png" alt="" class="cableTop top4" />
+        <img src="./img/cableBottom.png" alt="" class="cableBottom bottom1" />
+        <img src="./img/cableBottom.png" alt="" class="cableBottom bottom2" />
+        <img src="./img/cableBottom.png" alt="" class="cableBottom bottom3" />
+        <img src="./img/cableBottom.png" alt="" class="cableBottom bottom4" />
+        <svg width="907" height="907" viewBox="0 0 907 907">
+          <linearGradient id="a" y1="453.5" x2="907" y2="453.5" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#1d1d1b" />
+            <stop offset="0" stop-color="#272726" />
+            <stop offset=".2" stop-color="#262625" stop-opacity=".93" />
+            <stop offset=".35" stop-color="#232322" stop-opacity=".69" />
+            <stop offset=".48" stop-color="#1e1e1c" stop-opacity=".29" />
+            <stop offset=".51" stop-color="#1d1d1b" stop-opacity=".2" />
+            <stop offset="1" stop-color="#1d1d1b" />
+          </linearGradient>
+
+          <g style="isolation: isolate">
+            <path class="m" d="M8.5 167.5h66v33h-66z" />
+            <path class="n" d="M8.5 176.5h66v17h-66z" />
+
+            <path class="o" d="M8.5 357.5h66v33h-66z" />
+            <path class="p" d="M8.5 366.5h66v17h-66z" />
+
+            <path class="q" d="M8.5 542.5h66v33h-66z" />
+            <path class="r" d="M8.5 551.5h66v17h-66z" />
+
+            <path class="s" d="M8.5 728.5h66v33h-66z" />
+            <path class="t" d="M8.5 737.5h66v17h-66z" />
+            <path class="k" d="M845.5 142.5h56v63h-56z" />
+            <path class="o" d="M794.5 169.5h108v33h-108z" />
+            <path class="p" d="M794.5 178.5h108v17h-108z" />
+
+            <path class="k" d="M845.5 514.5h56v63h-56z" />
+            <path class="k" d="M845.5 699.5h56v63h-56z" />
+            <path class="k" d="M845.5 330.5h56v63h-56z" />
+            <path class="s" d="M793.5 726.5h108v33h-108z" />
+            <path class="t" d="M793.5 735.5h108v17h-108z" />
+            <path class="q" d="M791.5 541.5h110v33h-110z" />
+            <path class="r" d="M791.5 550.5h110v17h-110z" />
+            <path class="m" d="M791.5 357.5h111v33h-111z" />
+            <path class="n" d="M791.5 366.5h111v17h-111z" />
+            <path class="m" d="M8.5 167.5h66v33h-66z" />
+            <path class="n" d="M8.5 176.5h66v17h-66z" />
+          </g>
+          <rect x="60" y="165" width="3.125vw" height="2.0833vw" class="drag drag-1" />
+          <rect x="60" y="355" width="3.125vw" height="2.0833vw" class="drag drag-2" />
+          <rect x="60" y="540" width="3.125vw" height="2.0833vw" class="drag drag-3" />
+          <rect x="60" y="725" width="3.125vw" height="2.0833vw" class="drag drag-4" />
+
+          <!-- DRAG LINES -->
+          <line x1="45" y1="185" x2="70" y2="185" class="line line-back line-1" />
+          <line x1="70" y1="185" x2="70" y2="185" class="line line-1" />
+          <line x1="65" y1="375" x2="65" y2="375" class="line line-back line-2" />
+          <line x1="65" y1="375" x2="65" y2="375" class="line line-2" />
+          <line x1="65" y1="560" x2="65" y2="560" class="line line-back line-3" />
+          <line x1="65" y1="560" x2="65" y2="560" class="line line-3" />
+          <line x1="65" y1="745" x2="65" y2="745" class="line line-back line-4" />
+          <line x1="65" y1="745" x2="65" y2="745" class="line line-4" />
+          <!-- DRAG LINES -->
+        </svg>
+      </div>
+      <div class="bg"></div>
+    </div>
+
+    <div class="forminigame" ondragstart="return false;" ondrop="return false;" v-show="foringShow">
+      <div id="app-minigame">
+        <div id="am-hinge">
+          <div class="left">
+            <div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+            </div>
+          </div>
+          <div class="right">
+            <div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+        <div id="am-latch"></div>
+        <div id="am-overlay"></div>
+        <div id="am-screen">
+          <div id="ams-nodes">
+            <div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+        <div id="am-timer">00:00</div>
+      </div>
+      <div id="ams-welding"></div>
+    </div>
+
+    <div class="panoSide" v-show="switchShow">
+      <div class="panoLineBox">
+        <div class="panoLine"></div>
+        <div class="panoLine"></div>
+        <div class="panoLine2"></div>
+      </div>
+      <div class="panoTitle">
+        <h2 class="panoTitleText">{{state.locales['PANO']}}</h2>
+        <p class="panoTitleSubText">LOS SANTOS</p>
+      </div>
+
+      <div class="panoList">
+        <div v-for="pano in panos" :key="pano.id" :id="pano.id" class="panoBox"
+          @mousedown="handleMouseDown($event, pano.id)" @mouseup="handleMouseUp(pano.id)"
+          @click="handlePanoClick(pano.id)">
+          <div class="screwBox screw1" @click.stop="handleScrewClick(pano.id, 1)"></div>
+          <div class="screwBox screw2" @click.stop="handleScrewClick(pano.id, 2)"></div>
+          <div class="screwBox screw3" @click.stop="handleScrewClick(pano.id, 3)"></div>
+          <div class="screwBox screw4" @click.stop="handleScrewClick(pano.id, 4)"></div>
+          <img src="./img/panoo.png" alt="" class="panoo" @click.stop="handleSwitchCoverClick(pano.id)" />
+        </div>
+      </div>
+
+      <img src="./img/cables.png" alt="" class="cablePng" />
+    </div>
+
+    <div class="voltBox" v-show="voltShow">
+      <div class="meterBox">
+        <h2 class="meterText">{{state.locales['ELECTVOLT']}}</h2>
+        <div class="meterSay">
+          <h2 class="meterSayText">{{voltVolumeModal}}</h2>
+          <p class="meterSaySubText">V</p>
+          <img src="./img/voltstokepng.png" alt="" class="meterSayBg" />
+        </div>
+        <div class="meterInfo">
+          <svg xmlns="http://www.w3.org/2000/svg" width=".7292vw" height="1.3542vw" viewBox="0 0 14 26" fill="none">
+            <rect x="5" width="4" height="26" fill="white" />
+            <rect width="14" height="2" fill="white" />
+          </svg>
+        </div>
+        <div class="meterLine"></div>
+      </div>
+      <div class="meterLightBox">
+        <div class="meterLightRed"></div>
+        <div class="meterLightGreen"></div>
+      </div>
+      <div class="meterSwitch"></div>
+      <div class="meterGreenCable">
+        <div class="meterGreen"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.7708vw" height="8.8542vw" viewBox="0 0 34 170" fill="none">
+          <g filter="url(#filter0_i_406_611)">
+            <path d="M24.5002 1C42.5406 114.221 -24.9998 35.5 24.5001 291" stroke="#2DFF42" stroke-width="11" />
+          </g>
+          <defs>
+            <filter id="filter0_i_406_611" x="0.500488" y="0.134521" width="32.6494" height="291.912"
+              filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha" />
+              <feOffset />
+              <feGaussianBlur stdDeviation="2.85" />
+              <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" />
+              <feBlend mode="normal" in2="shape" result="effect1_innerShadow_406_611" />
+            </filter>
+          </defs>
+        </svg>
+      </div>
+      <div class="meterRedCable">
+        <div class="meterRed"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.3542vw" height="8.8542vw" viewBox="0 0 26 170" fill="none">
+          <g filter="url(#filter0_i_406_610)">
+            <path d="M15.4999 1C33.5403 114.221 -13 198 15.4999 291" stroke="#FF4545" stroke-width="11" />
+          </g>
+          <defs>
+            <filter id="filter0_i_406_610" x="0.511719" y="0.134521" width="24.7744" height="292.477"
+              filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha" />
+              <feOffset />
+              <feGaussianBlur stdDeviation="2.85" />
+              <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" />
+              <feBlend mode="normal" in2="shape" result="effect1_innerShadow_406_610" />
+            </filter>
+          </defs>
+        </svg>
+      </div>
+      <div class="meterYellowCable">
+        <div class="meterYellow"></div>
+        <div class="meterYellowLine"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="2.6042vw" height="8.5417vw" viewBox="0 0 50 164" fill="none">
+          <g filter="url(#filter0_i_406_617)">
+            <path d="M7.48834 0.999998C-4.99994 113.5 95 98.5 7.48833 291" stroke="#FFCF24" stroke-width="11" />
+          </g>
+          <defs>
+            <filter id="filter0_i_406_617" x="0.904785" y="0.393066" width="48.3481" height="292.883"
+              filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha" />
+              <feOffset />
+              <feGaussianBlur stdDeviation="2.85" />
+              <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" />
+              <feBlend mode="normal" in2="shape" result="effect1_innerShadow_406_617" />
+            </filter>
+          </defs>
+        </svg>
+      </div>
+    </div>
+
+    <div class="lineMeter" id="lineMeter" v-if="lineMeterShow"></div>
+
+    <div class="liftInfoList" v-show="liftInfoShow">
+      <div class="liftInfo">
+        <div class="liftInfoIcon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="0.9375vw" height="0.9375vw" viewBox="0 0 18 18" fill="none">
+            <path
+              d="M2.24994 14.25H15.7499C15.8866 14.2495 16.0206 14.2118 16.1374 14.1409C16.2543 14.07 16.3496 13.9686 16.4131 13.8475C16.4766 13.7265 16.5059 13.5904 16.4978 13.454C16.4897 13.3176 16.4445 13.1859 16.3672 13.0732L9.61719 3.32321C9.33744 2.91896 8.66394 2.91896 8.38344 3.32321L1.63344 13.0732C1.55531 13.1857 1.50949 13.3174 1.50097 13.4541C1.49244 13.5907 1.52153 13.7271 1.58508 13.8484C1.64863 13.9697 1.7442 14.0713 1.86142 14.1421C1.97863 14.2129 2.11301 14.2502 2.24994 14.25Z"
+              fill="white" fill-opacity="0.46" />
+          </svg>
+        </div>
+        <h2 class="liftInfoText">{{state.locales['liftup']}}</h2>
+      </div>
+      <div class="liftInfo">
+        <div class="liftInfoIcon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="0.9375vw" height="0.9375vw" viewBox="0 0 18 18" fill="none">
+            <path
+              d="M15.7501 3.75004L2.25006 3.75004C2.11338 3.75047 1.9794 3.78817 1.86255 3.85908C1.7457 3.92999 1.6504 4.03142 1.58691 4.15246C1.52342 4.2735 1.49414 4.40956 1.50223 4.54601C1.51032 4.68245 1.55546 4.8141 1.63281 4.92679L8.38281 14.6768C8.66256 15.081 9.33606 15.081 9.61656 14.6768L16.3666 4.92679C16.4447 4.81434 16.4905 4.68262 16.499 4.54595C16.5076 4.40928 16.4785 4.27288 16.4149 4.15159C16.3514 4.03029 16.2558 3.92873 16.1386 3.85794C16.0214 3.78714 15.887 3.74983 15.7501 3.75004Z"
+              fill="white" fill-opacity="0.46" />
+          </svg>
+        </div>
+        <h2 class="liftInfoText">{{state.locales['liftdown']}}</h2>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://unpkg.com/swiper@5.3.8/js/swiper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./js/app.js" type="module"></script>
+</body>
+
+</html>
