@@ -3,7 +3,7 @@ Config = {
     Locale = "en", -- en
 
     -- Map
-    MapType = 5,
+    MapType = 2,
     -- 1: UncleJust Casino / DlcIplLoader
     -- 2: Gabz Casino
     -- 3: NoPixel Casino
@@ -37,8 +37,8 @@ Config = {
     Xmas = false,
 
     -- Target
-    UseTarget = false, -- whether to use target zones or not
-    TargetZoneType = 1, -- 1: q_target, 2: bt_target, 3: qb-target, 4: ox_target
+    UseTarget = true, -- whether to use target zones or not
+    TargetZoneType = 4, -- 1: q_target, 2: bt_target, 3: qb-target, 4: ox_target
 
     -- Chips, Inventory Settings
     UseVirtualChips = true, -- false: use inventory for chips, true: use virtual chips which are saved in the casino_players table
