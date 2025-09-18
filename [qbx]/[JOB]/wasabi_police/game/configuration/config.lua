@@ -69,11 +69,11 @@ Config.OldQBManagement = false -- If you use older qb-management(Unrelated to ES
 Config.AdvancedParking = false -- Delete vehicles with their exports(Script named advanced parking)
 
 Config.Jail = {
-    enabled = true,                          -- Enable jail feature?
+    enabled = false,                          -- Enable jail feature?
     input = true,                            -- Enable input? Some needs it
-    jail = '',                               -- Current options: 'qb' (For qb-prison) / 'r_prison' (For r_scripts prison: https://r-scripts.tebex.io/) / 'rcore' (For rcore-prison) / 'tk_jail' (For tk_jail) / 'hd_jail' (For hd_jail) / 'myPrison' (For myPrison) / 'qalle-jail' (For qalle-jail) / 'plouffe ' (For Plouffe Jail) / 'mx' (For mxJail) / 'custom' (For custom)
+    jail = 'rcore',                               -- Current options: 'qb' (For qb-prison) / 'r_prison' (For r_scripts prison: https://r-scripts.tebex.io/) / 'rcore' (For rcore-prison) / 'tk_jail' (For tk_jail) / 'hd_jail' (For hd_jail) / 'myPrison' (For myPrison) / 'qalle-jail' (For qalle-jail) / 'plouffe ' (For Plouffe Jail) / 'mx' (For mxJail) / 'custom' (For custom)
     BuiltInPrison = {
-        enabled = true,                      -- Enable built-in prison system?
+        enabled = false,                      -- Enable built-in prison system?
         persistentJail = true,               -- Persistent jail? (If false, jail will be reset on reload)
         coords = vec3(1845.0, 2585.0, 45.0), -- Coords of prison
         spawn = {
@@ -126,7 +126,7 @@ Config.Jail = {
 -- NOTE: If using qb-prison, you must make one small change to qb-prison.
 -- SEE https://docs.wasabiscripts.com/scripts/wasabi_police/customizations#qb-prison-integration
 
-Config.searchPlayers = false     -- Allow police jobs to search players for items (Must have inventory in bridge or one already supported in cl_customize.lua - or add your own!)
+Config.searchPlayers = true     -- Allow police jobs to search players for items (Must have inventory in bridge or one already supported in cl_customize.lua - or add your own!)
 Config.weaponsAsItems = true     -- (If you're unsure leave as true!)This is typically for older ESX and inventories that still use weapons as weapons and not items
 
 Config.spikeStripsEnabled = true -- Enable functionality of spike strips (Disable if you use difference script for spike strips)
