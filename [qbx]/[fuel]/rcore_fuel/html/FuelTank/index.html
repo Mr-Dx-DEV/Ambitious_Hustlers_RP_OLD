@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link href="https://fonts.cdnfonts.com/css/panton" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+
+		<script src="../scripts/gsap.min.js"></script>
+		<script src="../scripts/jquery.min.js"></script>
+
+		<script src="../scripts/vue.min.js" type="text/javascript"></script>
+	</head>
+	<body style="background: transparent !important; overflow: hidden;" >
+		<div id = "body" style="display: none;">
+			<div class="box">
+				<div class = "part_one">
+					<img src="./barrel.png">
+				</div>
+				<div class = "part_two">
+					<p class="fuel-text">Fuel:</p>
+
+					<p class="percetange-text">{{animatedFuel}}%</p>
+				</div>
+				<div class = "part_three">
+					<p style="font-size: 69px;">Capacity:</p>
+					<div class = "progress">
+						<div class="white-box" v-for="index in CountPercentageBoxes(newFuelAmount)"></div>
+						<div class="gray-box" v-for="index in (10 - CountPercentageBoxes(newFuelAmount))"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class = "container">
+				<div class = "itembox" v-for="item in stockList" v-bind:style=" stockList.length == 1 ? 'width: 100%;' : 'width: 49%;' ">{{item.name}}: {{item.value.toFixed(1)}}%</div>
+			</div>
+		</div>
+	</body>
+
+	<script src="./scripts/listener.js" type="text/javascript"></script>
+</html>

@@ -1,0 +1,68 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.cdnfonts.com/css/panton" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <script src="../scripts/gsap.min.js"></script>
+    <script src="../scripts/jquery.min.js"></script>
+
+    <script src="../scripts/vue.min.js" type="text/javascript"></script>
+</head>
+<body style="background: transparent !important; overflow: hidden;" >
+<div id = "body" style="display:none;" v-if="visible">
+    <div v-if="!open">
+        <div class="box">
+            <div class = "bigtext">{{notOpenMessage}}</div>
+        </div>
+    </div>
+
+    <div v-if="open">
+        <div class="box tanking" style="display:none;position: absolute; top: 20%;">
+            <div class = "part_one">
+                <img class = "tanking" src="./fuel.png">
+            </div>
+            <div class = "part_two">
+                <p class="fuel-text">Fuel:</p>
+                <p class="percetange-text">{{animatedFuel}}%</p>
+            </div>
+            <div class = "part_three">
+                <p style="font-size: 69px;">Progress:</p>
+                <div class = "progress">
+                    <div class="white-box" v-for="index in CountPercentageBoxes(fuelAmount)"></div>
+                    <div class="gray-box" v-for="index in (10 - CountPercentageBoxes(fuelAmount))"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="box-holder" :class="{ 'compact-layout': fuelList.length > 3 }">
+            <div class="box info" v-for="item in fuelList">
+                <div v-if="item.inStock">
+                    <div class="part_one" :style="{ width: fuelList.length > 3 ? '29.5%' : '18.5%' }">
+                        <img class="info" src="./fuel.png">
+                    </div>
+                    <div class="part_two" :style="{ width: fuelList.length > 3 ? '66%' : '80%' }">
+                        <p class="info-text" :class="{ active: item.active }">{{ item.name }}
+                            <span style="color: green!important; text-shadow: 0 0 black !important;">{{ item.price }}$</span>
+                        </p>
+                    </div>
+                </div>
+                <div v-else>
+                    <div class="bigtext">{{ outOfStockMessage }} {{ item.name }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="price-box tanking" style="display:none; background: rgba(0, 0, 0, 0.73);">
+            <div class="price-text">${{numberWithCommas(animatedMoney)}}</div>
+        </div>
+
+        <div class="price-box tanking opposite-gradient" style="display:none; top: 75%;">
+            <div class="price-text">{{animatedLiters}} {{labelForUnit}}</div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="./scripts/listener.js" type="text/javascript"></script>
+</html>

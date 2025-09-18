@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Press%20Start%202P:normal');
+
+* {
+	user-select: none;
+}
+
+body{
+	overflow: hidden;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.cash-container{
+    background: #ECF0F1;
+    border-radius: 32px;
+    color: #2C3E50;
+    font-size: 24px;
+    padding: 20px;
+    z-index: 100;
+    transition-duration: 1s;
+}
+
+.cash-container:hover{
+    transition-duration: 1s;
+    box-shadow: -10px -10px 30px #ffffff, 10px 10px 30px rgb(0 0 0 / 0.62);
+}
+
+.input-group-prepend {
+    display: flex;
+    flex: 1;
+}
+
+.input-group-prepend .input-group-text {
+    flex: 1;
+}
+
+#shopSettings input{
+    width: 53% !important;
+}
+
+.paymentType{
+    display: initial;
+    margin: auto;
+    height: 150px;
+    padding: 3px;
+}
+
+.payment-container {
+    background-color: #34495E;
+    border-radius: 10px;
+    padding: 20px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.payment-container:hover {
+    background-color: #1A5276;
+}
+
+.payment-container h5 {
+    margin-bottom: 10px;
+    color: #ECF0F1;
+}
+
+.payment-text {
+    color: #ECF0F1;
+    margin: 0;
+    padding-bottom: 5px;
+}

@@ -1,0 +1,222 @@
+@import url('https://fonts.cdnfonts.com/css/signpainter');
+
+.container_menu {
+    min-width: 23.7vw;
+    max-width: 371px;
+
+    width: auto;
+    height: auto;
+
+    background: rgb(0 0 0 / 50%);
+    max-width: 23.7vw !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.line{
+    width: auto;
+    height: 2px;
+    background: white;
+}
+
+.description{
+    color: white;
+    text-align: center;
+    font-family: Montserrat;
+
+    position: absolute;
+    min-width: 23.7vw;
+    max-width: 371px;
+
+    background: rgb(0 0 0 / 50%);
+
+    font-size: 0.9vw;
+}
+
+.container_menu.top{
+	position: absolute;
+    top: 1.5vw;
+}
+
+.container_menu.bottom{
+	position: absolute;
+    bottom: 1.5vw;
+}
+
+.container_menu.bottom.right{
+    position: absolute;
+    bottom: 1.5vw;
+    right: 1.8vw;
+}
+
+.container_menu.bottom.left{
+    position: absolute;
+    bottom: 1.5vw;
+    left: 1.8vw;
+}
+
+.container_menu.top.right{
+    position: absolute;
+    top: 1.5vw;
+    right: 1.8vw;
+}
+
+.container_menu.top.left{
+    position: absolute;
+    top: 1.5vw;
+    left: 1.8vw;
+}
+
+.container_menu.middle.right{
+    position: absolute;
+    bottom: 40%;
+    right: 1.8vw;
+}
+
+.container_menu.center.center{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.container_menu.middle.left{
+    position: absolute;
+	bottom: 40%;
+    left: 1.8vw;
+}
+
+.rounded {
+    border-radius: 1.5vw 1.5vw 0px 0px;
+}
+
+.title {
+    width: 100%;
+    padding: 1px 0px;
+    text-align: center;
+    background: #ff8410;
+    height: 6vw;
+    overflow: hidden;
+}
+
+.title p {
+    font-family: 'SignPainter', sans-serif;
+    color: black;
+    font-size: 3vw;
+    position: relative;
+    padding: 0.35vw;
+    top: 0.7vw;
+}
+
+.menu {
+    width: 100%;
+    padding: 0.37vw 0px;
+}
+
+.menu p {
+	padding: 0;
+	margin: 0;
+    font-family: Montserrat, Calibri, Arial;
+    font-size: 1vw;
+	color: #fff;
+    text-align: left;
+    padding-left: 0.5vw;
+    min-height: 1.2vw;
+}
+
+.menu.active {
+	width: 100%;
+    background: #ffffff;
+}
+.menu.active p {
+    font-family: Montserrat, Calibri, Arial;
+    color: #000;
+    text-align: left;
+    padding-left: 0.5vw;
+}
+
+.button:hover{
+    background: #000000a6;
+    transition: background-color 200ms linear;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    bottom: 0.5vw;
+    height: auto;
+}
+
+.button {
+    font-family: Montserrat, Calibri, Arial;
+    background: #000000;
+    border: none;
+    transition: background-color 200ms linear;
+    border-radius: 0.4vw;
+    font-size: 0.9vw;
+    padding: 0.5vw;
+    margin: 0.3vw;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+}
+
+
+#inputdiv {
+    max-width: 93%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -6%);
+}
+
+#scrolldiv{
+    max-height: 14vw;
+    overflow: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+}
+
+textarea:focus, input:focus{
+    outline: none !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#inputak{
+    outline: none;
+    border: none;
+    border-radius: 0px;
+    text-align: center;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src='./scripts/jquery.min.js'></script>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+
+<script>
+    function getQueryParams() {
+        var qs = window.location.search;
+        qs = qs.split('+').join(' ');
+
+        var params = {},
+            tokens,
+            re = /[?&]?([^=]+)=([^&]*)/g;
+
+        while (tokens = re.exec(qs)) {
+            params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+        }
+        return params;
+    }
+
+    var result = getQueryParams();
+
+    $.post('http://rcore_fuel/duiHasLoaded', JSON.stringify({
+        identifier: result.identifier,
+        url: window.location.search.split('&link=')[1],
+    }));
+</script>
+
+</html>

@@ -1,0 +1,102 @@
+@import url('https://fonts.cdnfonts.com/css/panton');
+*{
+	color: white;
+	font-family: 'Panton Narrow', sans-serif;
+	font-weight: 500;
+	word-wrap: break-word
+}
+
+.container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 51%;
+    left: 0;
+}
+
+.itembox {
+    background: linear-gradient(180deg, black 0%, rgba(0, 0, 0, 0.73) 100%);
+    color: white;
+    float: left;
+    font-size: 88px;
+    margin: 8px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.box{
+    position: absolute;
+    top: 20%;
+    width: 1899px;
+    height: 389px;
+    background: linear-gradient(180deg, black 0%, rgba(0, 0, 0, 0.73) 100%);
+}
+
+.part_one{
+    height: 100%;
+    width: 21%;
+    float: left;
+}
+
+.part_two{
+    height: 100%;
+    width: 26%;
+    float: left;
+}
+
+.part_three{
+    height: 100%;
+    width: 48%;
+    float: left;
+}
+
+.progress{
+    height: 36%;
+    position: relative;
+    bottom: 9%;
+}
+
+.white-box{
+    background: #DBDBDB;
+    box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.25);
+    width: 79px;
+    height: 90px;
+    border-radius: 10px;
+    float: left;
+    margin: 6px;
+    position: relative;
+    top: 21px;
+}
+
+.gray-box{
+	background: rgba(218.88, 218.88, 218.88, 0.12);
+    width: 79px;
+    height: 90px;
+    border-radius: 10px;
+    float: left;
+    margin: 6px;
+    position: relative;
+    top: 21px;
+}
+
+.fuel-text{
+	font-size: 69px;
+	position: absolute;
+	top: 1%;
+	left: 22%;
+}
+
+.percetange-text{
+	font-weight: 500;
+	font-size: 180px;
+	position: absolute;
+	top: -10%;
+}
+
+img{
+    height: 416px;
+    position: absolute;
+    top: -4%;
+    left: 0%;
+}
