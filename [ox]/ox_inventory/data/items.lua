@@ -1,4 +1,119 @@
 return {
+	['fishingrod1'] = { label = 'Fishingrod Level 1', weight = 1000, stack = true, allowArmed = false },
+['fishingrod2'] = { label = 'Fishingrod Level 2', weight = 1000, stack = true, allowArmed = false },
+['fishingrod3'] = { label = 'Fishingrod Level 3', weight = 1000, stack = true, allowArmed = false },
+['fishingrod4'] = { label = 'Fishingrod Level 4', weight = 1000, stack = true, allowArmed = false },
+['fishingrod5'] = { label = 'Fishingrod Level 5', weight = 1000, stack = true, allowArmed = false },
+
+['fishnet1'] = { label = 'Fishing net Nivel 1', weight = 1000, stack = true, allowArmed = false },
+['fishnet2'] = { label = 'Fishing net Nivel 2', weight = 1000, stack = true, allowArmed = false },
+['fishnet3'] = { label = 'Fishing net Nivel 3', weight = 1000, stack = true, allowArmed = false },
+['fishnet4'] = { label = 'Fishing net Nivel 4', weight = 1000, stack = true, allowArmed = false },
+['fishnet5'] = { label = 'Fishing net Nivel 5', weight = 1000, stack = true, allowArmed = false },
+
+['mackerel'] = { label = 'Mackerel', weight = 25, stack = true, allowArmed = false },
+['cod'] = { label = 'Cod', weight = 25, stack = true, allowArmed = false },
+['seabass'] = { label = 'Sea Bass', weight = 25, stack = true, allowArmed = false },
+['sole'] = { label = 'Sole', weight = 25, stack = true, allowArmed = false },
+['stingray'] = { label = 'Stingray', weight = 25, stack = true, allowArmed = false },
+['salmon'] = { label = 'Salmon', weight = 25, stack = true, allowArmed = false },
+['tunafish'] = { label = 'Tuna fish', weight = 25, stack = true, allowArmed = false },
+['sardine'] = { label = 'Sardine', weight = 25, stack = true, allowArmed = false },
+['catfish'] = { label = 'Catfish', weight = 25, stack = true, allowArmed = false },
+['monkfish'] = { label = 'Monkfish', weight = 25, stack = true, allowArmed = false },
+
+['fishingtin'] = { label = 'Fishing Tin', weight = 2500, stack = true, allowArmed = false },
+['fishingboot'] = { label = 'Fishing Boot', weight = 2500, stack = true, allowArmed = false },
+
+['dolphin'] = { label = 'Dolphin', weight = 15000, stack = true, allowArmed = false },
+['tigershark'] = { label = 'Tiger shark', weight = 5000, stack = true, allowArmed = false },
+['hammershark'] = { label = 'Hammer shark', weight = 5000, stack = true, allowArmed = false },
+['whale'] = { label = 'Whale', weight = 5000, stack = true, allowArmed = false },
+
+['fishbait'] = { label = 'Fish Bait', weight = 400, stack = true, allowArmed = false },
+['illegalfishbait'] = { label = 'Illegal Fish Bait', weight = 400, stack = true, allowArmed = false },
+['anchor'] = { label = 'Boat Anchor', weight = 2500, stack = true, allowArmed = false },
+['diving_gear'] = { label = 'Diving Gear', weight = 30000, stack = true, allowArmed = false },
+['diving_fill'] = { label = 'Diving Tube', weight = 3000, stack = true, allowArmed = false },
+
+['treasurechest'] = { label = 'Treasure Chest', weight = 2500, stack = true, allowArmed = false },
+['fishingkey'] = { label = 'Corroded Key', weight = 100, stack = true, allowArmed = false },
+
+['bonfire'] = { label = 'Campfire', weight = 20, stack = true, allowArmed = false },
+['cookedcod'] = { label = 'Cooked Cod', weight = 20, stack = true, allowArmed = false },
+['cookedmackerel'] = { label = 'Cooked Mackerel', weight = 20, stack = true, allowArmed = false },
+
+['conch'] = { label = 'Conch', weight = 500, stack = true, allowArmed = false },
+['sea_snail'] = { label = 'Sea Snail', weight = 500, stack = true, allowArmed = false },
+['shell'] = { label = 'Shell', weight = 500, stack = true, allowArmed = false },
+['conch_shell'] = { label = 'Shell', weight = 500, stack = true, allowArmed = false },
+['starfish'] = { label = 'Starfish', weight = 500, stack = true, allowArmed = false },
+['knife'] = { label = 'Knife', weight = 500, stack = true, allowArmed = false },
+
+['red_coral'] = { label = 'Red Coral', weight = 500, stack = true, allowArmed = false },
+['yellow_coral'] = { label = 'Yellow Coral', weight = 500, stack = true, allowArmed = false },
+['blue_coral'] = { label = 'Blue Coral', weight = 500, stack = true, allowArmed = false },
+['pink_coral'] = { label = 'Pink Coral', weight = 500, stack = true, allowArmed = false },
+['white_coral'] = { label = 'White Coral', weight = 500, stack = true, allowArmed = false },
+['green_coral'] = { label = 'Green Coral', weight = 500, stack = true, allowArmed = false },
+['babyblue_coral'] = { label = 'Baby Blue Coral', weight = 500, stack = true, allowArmed = false },
+
+
+
+	["car_insurance"] = {
+    label = "Car Insurance",
+    weight = 25,
+    stack = false,
+    close = true,
+    description = "Document that proves you have insurance for your vehicle",
+    client = {
+        image = "car_insurance.png",
+    }
+},
+
+["car_registration"] = {
+    label = "Car Registration",
+    weight = 25,
+    stack = false,
+    close = true,
+    description = "Document that proves you are the owner of the vehicle",
+    client = {
+        image = "car_registration.png",
+    }
+},
+
+["health_insurance"] = {
+    label = "Health Insurance",
+    weight = 25,
+    stack = false,
+    close = true,
+    description = "Document that proves you have health insurance",
+    client = {
+        image = "health_insurance.png",
+    }
+},
+
+["home_insurance"] = {
+    label = "Home Insurance",
+    weight = 25,
+    stack = false,
+    close = true,
+    description = "Document that proves you have home insurance",
+    client = {
+        image = "home_insurance.png",
+    }
+},
+["car_camera"] = {
+    label = "Car Camera",
+    weight = 25,
+    stack = false,
+    close = true,
+    description = "Camera for your vehicle",
+    client = {
+	image = "car_camera.png",
+    }
+},
+
 	['clerk_tablet'] = {
 		label = 'Clerk Tablet',
 		weight = 10,
