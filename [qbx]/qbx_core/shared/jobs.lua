@@ -355,6 +355,29 @@ return {
             },
         },
     },
+    ['insurance'] = {
+	label = 'Insurance',
+	defaultDuty = true,
+	offDutyPay = false,
+	grades = {
+		[0] = {
+			name = 'Employee',
+			payment = 50
+		},
+	},
+},
+
+['home_insurance'] = {
+	label = 'Insurance',
+	defaultDuty = true,
+	offDutyPay = false,
+	grades = {
+		[0] = {
+			name = 'Employee',
+			payment = 50
+		},
+	},
+},
     ['judge'] = {
         label = 'Honorary',
         defaultDuty = true,

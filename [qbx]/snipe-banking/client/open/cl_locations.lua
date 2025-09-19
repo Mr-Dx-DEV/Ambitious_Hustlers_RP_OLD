@@ -128,136 +128,123 @@ if Config.Options == "drawtext" or Config.Options == "3dtext" then
         end
     end)
 elseif Config.Options == "target" then
+    -- ox_target variant (works great alongside ox_inventory)
+    -- Requirements: ox_lib (you already use `lib`), ox_target
+
     local spawnedEntity = {}
+
     local function SpawnPed(v)
         RequestModel(v.model)
         while not HasModelLoaded(v.model) do
             Wait(0)
         end
-        local entity = CreatePed(0, GetHashKey(v.model), v.ped.x, v.ped.y, v.ped.z - 1.0, v.ped.w,  false, false)
+
+        local entity = CreatePed(
+            0,
+            GetHashKey(v.model),
+            v.ped.x, v.ped.y, v.ped.z - 1.0,
+            v.ped.w,
+            false, false
+        )
+
         FreezeEntityPosition(entity, true)
         SetEntityInvincible(entity, true)
         SetBlockingOfNonTemporaryEvents(entity, true)
-        if Config.Interact and GetResourceState("interact") == "started" then
-            exports.interact:AddLocalEntityInteraction({
-                entity = entity,
-                offset = vector3(0.0, 0.0, 0.2),
-                label = "Banking",
-                distance  = 6.0,
-                interactDst = 2.0, -- optional
-                ignoreLos = true, -- optional
-                options = {
-                    label = Locales["target_label_open_bank"],
-                    action = function(entity)
-                        DoProgress(true)
-                    end,
-                }
-            })
-        else
-            local TargetName = "qb-target"
-            if Config.Framework == "esx" then
-                TargetName = "qtarget"
-            end
-            exports[TargetName]:AddTargetEntity(entity, { 
-                options = { 
-                    { 
-                        type = "client", 
-                        icon = 'fas fa-building-columns',
-                        label = Locales["target_label_open_bank"],
-                        action = function(entity)
-                            DoProgress(true)
-                        end,
-                    }
-                },
-                distance = 2.5, 
-            })
-        end
+
+        -- addLocalEntity: attach a target option directly to the spawned ped
+        exports.ox_target:addLocalEntity(entity, {
+            {
+                name   = 'snipe_bank_open_' .. tostring(v.ped.x) .. '_' .. tostring(v.ped.y),
+                icon   = 'fa-solid fa-building-columns',
+                label  = Locales["target_label_open_bank"],
+                distance = 2.5,
+                canInteract = function(ent, distance, coords, name)
+                    return not bankOpen and distance <= 2.5
+                end,
+                onSelect = function(data)
+                    DoProgress(true)
+                end
+            }
+        })
+
         return entity
     end
-    
-    Citizen.CreateThread(function()
+
+    -- Smart ped spawn / despawn by proximity (same idea as your original)
+    CreateThread(function()
         while true do
-            Citizen.Wait(1000)
+            Wait(1000)
             local pos = GetEntityCoords(PlayerPedId())
+
             for k, v in pairs(Locations) do
-                if #(pos - vector3(v.ped.x, v.ped.y, v.ped.z)) < 50.0 then
+                local here = #(pos - vector3(v.ped.x, v.ped.y, v.ped.z)) < 50.0
+                if here then
                     if spawnedEntity[k] == nil or not DoesEntityExist(spawnedEntity[k]) then
                         spawnedEntity[k] = SpawnPed(v)
                     end
                 else
                     if spawnedEntity[k] ~= nil and DoesEntityExist(spawnedEntity[k]) then
                         DeleteEntity(spawnedEntity[k])
+                        spawnedEntity[k] = nil
                     end
                 end
             end
         end
     end)
 
-    if Config.Interact and GetResourceState("interact") == "started" then
-        for k, v in pairs(Config.ATMModels) do
-            exports.interact:AddModelInteraction({
-                model = k,
-                offset = v,
-                distance = 4.0, -- optional
-                interactDst = 1.0, -- optional
-                ignoreLos = true, -- optional
-                options = {
-                    {
-                        label = 'ATM',
-                        action = function(entity)
-                            DoProgress(false, GetEntityCoords(entity))
-                        end,
-                    },
-                }
-            })
+    -- Target on ATM models (uses addModel)
+    do
+        local atmmodels = {}
+        for k, _ in pairs(Config.ATMModels) do
+            -- Accept both string names and hashes
+            if type(k) == 'string' then
+                table.insert(atmmodels, joaat(k))          -- normalize for safety
+                table.insert(atmmodels, k)                 -- and also the plain name (ox_target supports both)
+            else
+                table.insert(atmmodels, k)
+            end
         end
-    else
-        local atmmodels = {} 
-        for k, v in pairs(Config.ATMModels) do
-            table.insert(atmmodels, k)
-        end
-        local TargetName = "qb-target"
-        if Config.Framework == "esx" then
-            TargetName = "qtarget"
-        end
-        exports[TargetName]:AddTargetModel(atmmodels, {
+
+        exports.ox_target:addModel(atmmodels, {
+            {
+                name   = 'snipe_bank_use_atm',
+                icon   = 'fa-solid fa-money-bill',
+                label  = Locales["target_label_open_atm"],
+                distance = 1.5,
+                canInteract = function(entity, distance, coords, name)
+                    return not ATMOpen and distance <= 1.5
+                end,
+                onSelect = function(data)
+                    local ent = data and data.entity or 0
+                    local c = ent ~= 0 and GetEntityCoords(ent) or GetEntityCoords(PlayerPedId())
+                    DoProgress(false, c)
+                end
+            }
+        })
+    end
+
+    -- Target on fixed ATM coords (zones) if you also have ATMLocations
+    for k, v in pairs(ATMLocations) do
+        -- Small sphere zone over the ATM point
+        exports.ox_target:addSphereZone({
+            coords = vec3(v.x, v.y, v.z),
+            radius = 0.75,
+            debug  = false,
             options = {
                 {
-                    type = "client",
-                    icon = "fas fa-money-bill",
-                    label = Locales["target_label_open_atm"],
-                    action = function(entity)
-                        DoProgress(false, GetEntityCoords(entity))
+                    name   = 'snipe_bank_atm_zone_' .. k,
+                    icon   = 'fa-solid fa-money-bill',
+                    label  = Locales["target_label_open_atm"],
+                    distance = 1.5,
+                    canInteract = function(entity, distance, coords, name)
+                        return not ATMOpen and distance <= 1.5
                     end,
+                    onSelect = function(data)
+                        DoProgress(false, vec3(v.x, v.y, v.z))
+                    end
                 }
-            },
-            distance = 1.5
+            }
         })
-    
-        for k, v in pairs(ATMLocations) do
-            local TargetName = "qb-target"
-            if Config.Framework == "esx" then
-                TargetName = "qtarget"
-            end
-            exports[TargetName]:AddBoxZone("snipe_bank_atm_" .. k, v, 1, 1, {
-                name = "snipe_bank_atm_" .. k,
-                debugPoly = false,
-                heading = -20,
-                minZ = v.z - 2,
-                maxZ = v.z + 2,
-            }, {
-                options = {
-                    {
-                        type = "client",
-                        icon = "fas fa-money-bill",
-                        label = Locales["target_label_open_atm"],
-                        action = function(entity)
-                            DoProgress(false, v)
-                        end,
-                    }
-                },
-                distance = 1.5
-            })
-        end
     end
 end
+

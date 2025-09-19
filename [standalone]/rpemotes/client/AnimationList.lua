@@ -5053,6 +5053,41 @@ RP.Exits = {
 
 RP.Emotes = {
 
+    -- Path: rpemotes/Client/AnimationList.lua
+-- This code below is inside the RP.Emotes = {
+["health_insurance"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Card", AnimationOptions =
+{
+    Prop = "m-insurance_prop_card_health",
+    PropBone = 18905,
+    PropPlacement = {0.17, 0.03, 0.04, 1.0, 184.0, 0.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["car_insurance"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Card", AnimationOptions =
+{
+    Prop = "m-insurance_prop_card_vehicle",
+    PropBone = 18905,
+    PropPlacement = {0.17, 0.03, 0.04, 1.0, 184.0, 0.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["car_registration"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Card", AnimationOptions =
+{
+    Prop = "m-insurance_prop_card_registration",
+    PropBone = 18905,
+    PropPlacement = {0.17, 0.03, 0.04, 1.0, 184.0, 0.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["home_insurance"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Card", AnimationOptions =
+{
+    Prop = "m-insurance_prop_card_house",
+    PropBone = 18905,
+    PropPlacement = {0.17, 0.03, 0.04, 1.0, 184.0, 0.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+
     -----------------------------------------------------------------------------------------------------------
     ------ The male and female 'interaction menu' emotes from GTA Online can be found under the following animation directories:
     ------

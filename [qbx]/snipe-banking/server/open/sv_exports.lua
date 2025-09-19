@@ -1,5 +1,4 @@
 local function GetAccountBalance(account)
-    local account = GetGroupNameBasedOnJob(account)
     if not jobGangAccounts[account] then
         return false
     end
@@ -7,7 +6,6 @@ local function GetAccountBalance(account)
 end
 
 local function AddMoneyToAccount(account, amount)
-    local account = GetGroupNameBasedOnJob(account)
     if not amount then
         return false
     end
@@ -19,7 +17,6 @@ local function AddMoneyToAccount(account, amount)
 end
 
 local function RemoveMoneyFromAccount(account, amount)
-    local account = GetGroupNameBasedOnJob(account)
     if not amount then
         return false
     end
@@ -35,7 +32,6 @@ local function RemoveMoneyFromAccount(account, amount)
 end
 
 local function SetAccountMoney(account, amount)
-    local account = GetGroupNameBasedOnJob(account)
     if not amount then
         return false
     end
@@ -53,24 +49,6 @@ local function GetJobGangAccounts()
     return jobGangAccounts
 end
 
-local function CreateJobGangAccount(name, label, amount, isJob)
-    if not jobGangAccounts[name]  then
-        MySQL.Async.execute("INSERT IGNORE INTO banking_accounts (account, amount, label) VALUES (@account, @balance, @label)", {
-            ["@account"] = name,
-            ["@balance"] = amount,
-            ["@label"] = label,
-        })
-        jobGangAccounts[name] = 0
-    end
-    CheckAndUpdateUsers(name, true)
-    if isJob then
-        jobs[name] = label
-    else
-        gangs[name] = label
-    end
-end
-
-exports("CreateJobGangAccount", CreateJobGangAccount)
 exports("GetAccountBalance", GetAccountBalance)
 exports("AddMoneyToAccount", AddMoneyToAccount)
 exports("RemoveMoneyFromAccount", RemoveMoneyFromAccount)

@@ -8,9 +8,9 @@ Config = {
 		Debug = false,
 		EventDebug = false,
 
-		Menu = "qb",  			-- "qb", "ox", "gta"
-		Notify = "gta",			-- "qb", "ox", "gta", "esx"
-		ProgressBar = "gta", 	-- "qb", "ox", "gta", "esx"
+		Menu = "ox",  			-- "qb", "ox", "gta"
+		Notify = "ox",			-- "qb", "ox", "gta", "esx"
+		ProgressBar = "ox", 	-- "qb", "ox", "gta", "esx"
 
 		DontUseTarget = false,	-- uses drawtext targets instead of alt targets
 	},
@@ -23,7 +23,7 @@ Config = {
 	},
 
 	General = {
-		ApGov = false, 			-- Toggle support for AP-Goverment Tax
+		ApGov = true, 			-- Toggle support for AP-Goverment Tax
 
 		lookAtCharge = false,	-- "true" to use the "look at charge" feature
 		List = true, 			-- "true" to use nearby player list feature in the cash registers, "false" for manual id entry
@@ -38,7 +38,7 @@ Config = {
 								-- This doesn't affect Cash payments as they by default use a confirmation window
 								-- This is helpful for phones that don't support invoices well
 
-		Peds = true, 			-- "true" to enable peds spawning in banks
+		Peds = false, 			-- "true" to enable peds spawning in banks
 		PedPool = { 			-- If Peds is true, use this pool of ped models to pick from
 			"IG_Bankman",
 			"U_M_M_BankMan",
@@ -69,16 +69,16 @@ Config = {
 	},
 
 	ATMs = {
-		enable = true,			-- Enable this if wanting to use jim-payments atm systems
-		showBlips = true,
+		enable = false,			-- Enable this if wanting to use jim-payments atm systems
+		showBlips = false,
 
 		ATMModels = { `prop_atm_01`, `prop_atm_02`, `prop_atm_03`, `prop_fleeca_atm`, `gabz_sm_pb_atmframe` },
 
 	},
 
 	Banks = {
-		enable = true,			-- Enable this if wanting to use jim-payments banking systems
-		showBlips = true,
+		enable = false,			-- Enable this if wanting to use jim-payments banking systems
+		showBlips = false,
 
 	},
 

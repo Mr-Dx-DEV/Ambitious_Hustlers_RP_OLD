@@ -55,6 +55,14 @@ Locations = {
         name = "Paleto Bank", -- only shows if you set unique_blips to true
         blip_color = 2 -- only shows if you set unique_blips to true
     },
+   --[[ [8] = {
+        coords = vector3(1734.319, 3631.484, 35.454),
+        ped = vector4(1734.319, 3631.484, 35.454, 304.497),
+        model = "a_f_m_business_02",
+        blips = true, -- to show blip for the location
+        name = "Bank", -- only shows if you set unique_blips to true
+        blip_color = 2 -- only shows if you set unique_blips to true
+    },]]
 }
 
 -- some wall atms wont work with target, so need to add coords for them

@@ -21,17 +21,7 @@ Config.FrameworkTriggers = {
 Config.Notify = "ox" -- qb || ox || esx || okok
 
 -- ONLY FOR ESX, THIS IS BY DEFAULT SET TO TRU IF YOU ARE USING QBCore
-Config.JobAccounts = false -- If you want to use job accounts inside my banking, set this to true
-
--- Only for QBCore, this is by default set to false for using ESX
-Config.GangAccount = true -- If you want to use gang accounts inside my banking, set this to true
-
-Config.EnableATMLimits = true -- if you want to enable ATM limits, set this to true. If you want to disable ATM limits, set this to false.
-Config.AtmLimits = {
-    ["deposit"] = 5000,
-    ["withdraw"] = 5000,
-    ["transfer"] = 5000,
-}
+Config.JobAccounts = true -- If you want to use job accounts inside my banking, set this to true
 
 -- char id for ESX and citizenid for QBCore
 Config.DefaultIdentifier = "12345" -- set the identifier for the player to whom the loans should be transferred when a player who has given out loans deletes their character
@@ -48,7 +38,7 @@ Config.OnlyOnePersonToAccessOneATMAtOneTime = false
 
 Blips = {
     unique_blips = false, -- this will create each blip which will show individually in the side bar. If you see flashing side bar due to the high number of blips, set this to false.
-    blip_scale = 0.8,
+    blip_scale = 0.5,
     blip_sprite = 108,
     generic_blip_label = "Bank", -- only shows if you set unique_blips to false
     generic_blip_color = 2 -- only shows if you set unique_blips to false
@@ -91,31 +81,11 @@ Config.WhitelistJobsThatStartWithOff = {
     ["office"] = true 
 }
 
--- if you want to create a group job account. You can add the unique group name and the label for it which will be shown in the UI.
--- jobs added in the group jobs will be only to access this account and not their individual job accounts.
--- for example, if you add police and ambulance in the group job account, then the police and ambulance will be able to access this account and not their individual job accounts.
--- This will create a group job account for police and ambulance and the label will be shown as Police/Ambulance in the UI.
--- if you want, you can use an existing job name as the group job name, but make sure to add the job name in the Config.GroupJobs table.
-Config.GroupJobs = {
-    -- ["police"] = {
-    --     label = "Police/Ambulance",
-    --     jobs = {"police", "ambulance"}
-    -- },
-    -- ["policegroup"] = {
-    --     label = "Police/Ambulance",
-    --     jobs = {"police", "ambulance"}
-    -- },
-}
-
-
 -- DO NOT TOUCH THIS!!!!
 
 for k, v in pairs(Config.FrameworkTriggers) do
     if GetResourceState(v.ResourceName) == "started" then
         Config.Framework = k
-        if Config.Framework == "esx" then
-            Config.GangAccount = false
-        end
         break
     end
 end

@@ -5,7 +5,6 @@ local function exportHandler(exportName, func)
 end
 
 exportHandler("GetAccount", function(account)
-    local account = GetGroupNameBasedOnJob(account)
     if not jobGangAccounts[account] then
         return false
     end
@@ -13,7 +12,6 @@ exportHandler("GetAccount", function(account)
 end)
 
 exportHandler("AddMoney", function(account, amount)
-    local account = GetGroupNameBasedOnJob(account)
     if not amount then
         return false
     end
@@ -25,7 +23,6 @@ exportHandler("AddMoney", function(account, amount)
 end)
 
 exportHandler("RemoveMoney", function(account, amount)
-    local account = GetGroupNameBasedOnJob(account)
     if not amount then
         return false
     end

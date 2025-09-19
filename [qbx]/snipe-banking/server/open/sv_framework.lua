@@ -102,10 +102,3 @@ end
 lib.callback.register("snipe-banking:server:getCharacterName", function(source)
     return GetPlayerFrameWorkName(source)
 end)
-
-AddEventHandler('txAdmin:events:scheduledRestart', function(eventData)
-    if eventData.secondsRemaining == 60 then
-        GlobalState.disablebank = true
-        TriggerClientEvent("snipe-banking:client:restartWarning", -1)
-    end
-end)

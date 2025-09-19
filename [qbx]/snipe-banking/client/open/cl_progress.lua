@@ -1,18 +1,4 @@
-isUsingAtm = false
-
-RegisterNetEvent("snipe-banking:client:restartWarning", function()
-    Wait(1000)
-    SendNUIMessage({
-        action = "closeBank",
-    })
-end)
-
 function DoProgress(isBank, coords)
-    if GlobalState.disablebank then
-        ShowNotification("Bank is disabled", "error")
-        return
-    end
-    isUsingAtm = not isBank
     if not isBank and Config.OnlyOnePersonToAccessOneATMAtOneTime then
         if not AtmInUse[coords] then
             TriggerServerEvent("snipe-banking:server:atmInUse", coords, true)
@@ -93,7 +79,6 @@ function DoCloseProgress()
 			ClearPedTasksImmediately(PlayerPedId())
 		end
     end
-    isUsingAtm = false
 end
 
 exports('DoProgress', DoProgress)

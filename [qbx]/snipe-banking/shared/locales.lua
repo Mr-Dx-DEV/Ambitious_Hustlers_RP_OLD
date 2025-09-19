@@ -39,7 +39,5 @@ Locales = {
     -- Added after 6/1
     ['account_already_flagged_or_frozen'] = "Account already flagged or frozen",
 
-    ["atm_in_use"] = "ATM currently in use",
-
-    ["atm_limit_reached"] = "ATM Limit Reached"
+    ["atm_in_use"] = "ATM currently in use"
 }
