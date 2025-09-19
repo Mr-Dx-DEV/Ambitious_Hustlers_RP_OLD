@@ -269,7 +269,7 @@ Config.EnviMedic = {
     --            If you use Envi Medic:             --
     -- https://envi-scripts.tebex.io/package/5969648 --
     ---------------------------------------------------
-    enabled = false -- Enable to make Envi-Medic to work with wasabi_ambulance
+    enabled = true -- Enable to make Envi-Medic to work with wasabi_ambulance
 }
 
 Config.NassPaintball = {
