@@ -1,0 +1,259 @@
+['blue_metaldetector'] = {
+	label = 'Beginner\'s Beacon',
+	weight = 475
+},
+
+['green_metaldetector'] = {
+	label = 'Lustrous Locator',
+	weight = 475
+},
+
+['red_metaldetector'] = {
+	label = 'Treasure Trove Tracker',
+	weight = 475
+},
+
+['orange_metaldetector'] = {
+	label = 'Goldseeker\'s Grail',
+	weight = 475
+},
+
+['black_metaldetector'] = {
+	label = 'Archaeo Ace',
+	weight = 475
+},
+
+['md_shovel'] = {
+	label = 'Shovel',
+	weight = 55
+},
+
+['md_bottlecap'] = {
+	label = 'Bottle Cap',
+	weight = 25
+},
+
+['md_brokenjunk'] = {
+	label = 'Broken Junk',
+	weight = 25
+},
+
+['md_crushedcan'] = {
+	label = 'Crushed Can',
+	weight = 25
+},
+
+['md_lighter'] = {
+	label = 'Lighter',
+	weight = 25
+},
+
+['md_metalcan'] = {
+	label = 'Metal Can',
+	weight = 25
+},
+
+['md_nails'] = {
+	label = 'Nails',
+	weight = 25
+},
+
+['md_needle'] = {
+	label = 'Needle',
+	weight = 25
+},
+
+['md_nickle'] = {
+	label = 'Nickle',
+	weight = 25
+},
+
+['md_nut'] = {
+	label = 'Nut',
+	weight = 25
+},
+
+['md_oldshotgunshell'] = {
+	label = 'Old Shotgun Shell',
+	weight = 25
+},
+
+['md_paperclip'] = {
+	label = 'Paper Clip',
+	weight = 25
+},
+
+['md_pulltab'] = {
+	label = 'Pull Tab',
+	weight = 25
+},
+
+['md_quarter'] = {
+	label = 'Quarter',
+	weight = 25
+},
+
+['md_rustyball'] = {
+	label = 'Rusty Ball',
+	weight = 25
+},
+
+['md_rustyironball'] = {
+	label = 'Rusty Iron Ball',
+	weight = 25
+},
+
+['md_rustyjunk'] = {
+	label = 'Rusty Junk',
+	weight = 25
+},
+
+['md_rustynails'] = {
+	label = 'Rusty Nails',
+	weight = 25
+},
+
+['md_rustypliers'] = {
+	label = 'Rusty Pliers',
+	weight = 25
+},
+
+['md_rustyring'] = {
+	label = 'Rusty Ring',
+	weight = 25
+},
+
+['md_rustyscissors'] = {
+	label = 'Rusty Scissors',
+	weight = 25
+},
+
+['md_rustyscrewdriver'] = {
+	label = 'Rusty Screwdriver',
+	weight = 25
+},
+
+['md_rustyspring'] = {
+	label = 'Rusty Spring',
+	weight = 25
+},
+
+['md_screw'] = {
+	label = 'Screw',
+	weight = 25
+},
+
+['md_wheatpenny'] = {
+	label = 'Wheat Penny',
+	weight = 25
+},
+
+['md_ancientcoin'] = {
+	label = 'Ancient Coin',
+	weight = 25
+},
+
+['md_blackwatch'] = {
+	label = 'Watch',
+	weight = 25
+},
+
+['md_coppernugget'] = {
+	label = 'Copper Nugget',
+	weight = 25
+},
+
+['md_diamondearings'] = {
+	label = 'Diamond Earings',
+	weight = 25
+},
+
+['md_diamondnecklace'] = {
+	label = 'Diamond Necklace',
+	weight = 25
+},
+
+['md_diamondring'] = {
+	label = 'Diamond Ring',
+	weight = 25
+},
+
+['md_earpod'] = {
+	label = 'Ear Pod',
+	weight = 25
+},
+
+['md_golddollar'] = {
+	label = 'Gold Dollar',
+	weight = 25
+},
+
+['md_goldearings'] = {
+	label = 'Gold Earings',
+	weight = 25
+},
+
+['md_goldnecklace'] = {
+	label = 'Gold Necklace',
+	weight = 25
+},
+
+['md_goldnugget'] = {
+	label = 'Gold Nugget',
+	weight = 25
+},
+
+['md_goldounce'] = {
+	label = '1oz Gold Bar',
+	weight = 25
+},
+
+['md_goldring'] = {
+	label = 'Gold Ring',
+	weight = 25
+},
+
+['md_halfdollar'] = {
+	label = 'Half Dollar',
+	weight = 25
+},
+
+['md_ironnugget'] = {
+	label = 'Iron Nugget',
+	weight = 25
+},
+
+['md_platinumnugget'] = {
+	label = 'Platinum Nugget',
+	weight = 25
+},
+
+['md_presidentialwatch'] = {
+	label = 'Presidential Watch',
+	weight = 25
+},
+
+['md_relicrevolver'] = {
+	label = 'Relic Revolver',
+	weight = 25
+},
+
+['md_silverdime'] = {
+	label = 'Silver Dime',
+	weight = 25
+},
+
+['md_silverearings'] = {
+	label = 'Silver Earings',
+	weight = 25
+},
+
+['md_silverounce'] = {
+	label = '1oz Silver Bar',
+	weight = 25
+},
+
+['md_silverring'] = {
+	label = 'Silver Ring',
+	weight = 25
+},

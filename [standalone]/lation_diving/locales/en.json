@@ -1,0 +1,136 @@
+{
+    "notify": {
+        "no-money": "You do not have enough money",
+        "no-items": "You do not have enough to pawn",
+        "not-experienced": "I don't think I'm experienced enough to do this",
+        "cant-carry": "You cannot carry this much",
+        "no-durability": "Your oxygen tank is empty!",
+        "no-scuba-gear": "You do not have any scuba gear to transfer oxygen too",
+        "scuba-gear-full": "Your scuba gear is already full",
+        "refill-success": "You successfully added more oxygen to your scuba gear",
+        "release-anchor": "Boat anchor released",
+        "set-anchor": "Boat anchor set",
+        "invalid-player": "Target is unavailable or invalid",
+        "already-in-group": "You are already in a group",
+        "target-already-in-group": "Target is already in a group",
+        "target-owns-a-group": "Target already owns a group",
+        "owner-left-group": "Your group was disbanded",
+        "member-left-group": "You left the group",
+        "owner-added-member": "You added %s to the group",
+        "member-added": "%s added you to their diving group",
+        "owner-removed-member": "You removed %s from the group",
+        "member-removed": "%s removed you from their diving group"
+    },
+    "target": {
+        "start-diving": "Talk",
+        "toggle-anchor": "Toggle anchor",
+        "pickup-crate": "Pickup"
+    },
+    "textui": {
+        "underwater": "Oxygen Remaining: %s%%  \n Current Depth: %s%s  \n Record Depth: %s%s  \n Crates Found: %s/%s"
+    },
+    "inputs": {
+        "quantity": {
+            "label": "Quantity",
+            "desc": "How many?"
+        },
+        "player": {
+            "label": "Player",
+            "desc": "Enter the player's ID"
+        }
+    },
+    "alerts": {
+        "continue-diving": {
+            "header": "Continue Diving?",
+            "content": "Great job! All crates have been collected by your group. Would you like to continue diving?",
+            "labels": {
+                "confirm": "Continue",
+                "cancel": "Stop"
+            }
+        }
+    },
+    "emails": {
+        "searching": "Hey! It's me. Give me some time to try and locate some info on hotspots you might find some crates. When I get something - I'll let you know!",
+        "found-something": "Hey! I got some info on a hotspot! Head over to the area marked on your GPS and see if you can find anything. Good luck!"
+    },
+    "player-data": {
+        "level-title": "Scuba Diving | Level %s/%s",
+        "level-desc": "You currently have %sXP",
+        "stats-title": "Statistics",
+        "stats-desc": "View your lifetime diving statistics",
+        "meta-next-level": "Next Level",
+        "meta-remainder": "Remainder",
+        "meta-maxed-level": "Maxed Level Reached"
+    },
+    "stats-menu": {
+        "main-title": "Statistics",
+        "crates-title": "Crates",
+        "crates-desc": "You've collected a total of %s crates",
+        "depth-title": "Depth",
+        "depth-desc": "Your deepest recorded dive is %s%s",
+        "swam-title": "Swam",
+        "swam-desc": "You've swam a total of %s%s underwater"
+    },
+    "diving-menu": {
+        "main-title": "Scuba Diving",
+        "leaderboards-title": "The Leaderboards",
+        "leaderboards-desc": "View the top 10 divers",
+        "shop-title": "The Dive Shop",
+        "shop-desc": "Buy diving equipment",
+        "pawn-title": "The Pawn Shop",
+        "pawn-desc": "Sell your loot for cash",
+        "rental-title": "Rent a Boat",
+        "rental-desc": "Don't have a boat? No problem!",
+        "create-group-title": "Create Group",
+        "create-group-desc": "Diving solo or with friends, start here!",
+        "manage-group-title": "Manage Group",
+        "manage-group-desc": "Manage your diving group",
+        "rental-return-title": "Return Boat",
+        "rental-return-desc": "Return your rented boat",
+        "start-title": "Start Diving",
+        "start-desc": "Got your gear? A boat? Lets go!",
+        "stop-title": "Stop Diving",
+        "stop-desc": "Spent enough time underwater? Lets take a break!"
+    },
+    "shop-menu": {
+        "gear": {
+            "main-title": "The Gear Shop",
+            "tank-title": "%s | Level %s",
+            "item-desc": "Purchase %s for $%s"
+        },
+        "pawn": {
+            "main-title": "The Pawn Shop",
+            "item-desc": "Sell %s for $%s"
+        }
+    },
+    "manage-group-menu": {
+        "main-title": "Manage Group",
+        "add-member-title": "Add Member",
+        "add-member-desc": "Add a member to your diving group",
+        "remove-member-desc": "Click to remove member from group",
+        "leave-group-title": "Leave Group",
+        "leave-group-desc": "Leave your diving group"
+    },
+    "leaderboard-menu": {
+        "main-title": "Leaderboards",
+        "player-desc": "Level: %s | XP: %s | Total Crates: %s"
+    },
+    "logs": {
+        "crate-found-title": "Crate Found",
+        "crate-found-message": "%s (identifier: %s) has picked up a crate at %s",
+        "crate-opened-title": "Crate Opened",
+        "crate-opened-message": "%s (identifier: %s) has opened a crate and received %s",
+        "item-purchased-title": "Shop Purchase",
+        "item-purchased-message": "%s (identifier: %s) has purchased x%d %s",
+        "item-pawned-title": "Pawn Shop Sale",
+        "item-pawned-message": "%s (identifier: %s) has pawned x%d %s for $%s",
+        "boat-rented-title": "Boat Rental",
+        "boat-rented-message": "%s (identifier: %s) has rented a boat for $%s",
+        "boat-returned-title": "Boat Returned",
+        "boat-returned-message": "%s (identifier: %s) has returned a boat rental and received $%s back"
+    },
+    "measurements": {
+        "meters": "m",
+        "feet": "ft"
+    }
+}

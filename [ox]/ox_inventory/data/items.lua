@@ -39670,4 +39670,1315 @@ return {
 		description = "A nice toolbox with stuff to repair your vehicle",
 		client = { image = "advancedkit.png", event = "jim-mechanic:vehFailure:RepairVehicle", item = "advancedrepairkit", full = true },
 	},
+
+	['ls_coke_table'] = {
+    label = 'Coke Table',
+    weight = 1000,
+},
+
+['ls_coca_seed'] = {
+    label = 'Coca Seed',
+    weight = 5,
+},
+
+['ls_coca_leaf'] = {
+    label = 'Coca Leaf',
+    weight = 5,
+},
+
+['ls_coca_ground'] = {
+    label = 'Ground Coca',
+    weight = 20,
+},
+
+['ls_coca_base_unf'] = {
+    label = 'Coca Base (unfinished)',
+    weight = 40,
+},
+
+['ls_coca_base'] = {
+    label = 'Coca Base',
+    weight = 50,
+},
+
+['ls_cocaine_brick'] = {
+    label = 'Cocaine Brick',
+    weight = 100,
+},
+
+['ls_crack_brick'] = {
+    label = 'Crack Brick',
+    weight = 100,
+},
+
+['ls_baking_soda'] = {
+    label = 'Baking Soda',
+    weight = 25,
+},
+
+['ls_gasoline'] = {
+    label = 'Gasoline',
+    weight = 1000,
+    stack = false,
+},
+
+['ls_shears'] = {
+    label = 'Shears',
+    weight = 10,
+},
+
+['ls_watering_can'] = {
+    label = 'Watering Can',
+    weight = 3250,
+    stack = false,
+},
+
+['ls_fertilizer'] = {
+    label = 'Fertilizer',
+    weight = 1750,
+    stack = false,
+},
+
+['ls_plant_pot'] = {
+    label = 'Plant Pot',
+    weight = 25,
+},
+
+['ls_cement'] = {
+    label = 'Cement',
+    weight = 2000,
+    stack = true,
+},
+
+['ls_empty_baggy'] = {
+    label = 'Empty Baggy',
+    weight = 5,
+},
+
+['ls_cocaine_bag'] = {
+    label = 'Cocaine',
+    weight = 10,
+},
+
+['ls_crack_bag'] = {
+    label = 'Crack',
+    weight = 10,
+},
+
+['warehouse_key'] = {
+	label = 'Warehouse Key',
+	weight = 25,
+},
+
+['uncounted_money'] = {
+	label = 'Uncounted Money',
+},
+
+['ls_meth_table'] = {
+	label = 'Meth Table',
+	weight = 1000,
+	stack = false
+},
+
+['ls_gas_mask'] = {
+	label = 'Gas Mask',
+	weight = 150,
+	stack = false
+},
+
+['ls_pseudoephedrine'] = {
+	label = 'Pseudoephedrine Pills',
+	weight = 50
+},
+
+['ls_crushed_pseudoephedrine'] = {
+	label = 'Crushed Pseudoephedrine',
+	weight = 25
+},
+
+['ls_ammonia'] = {
+	label = 'Ammonia',
+	weight = 250,
+	stack = true
+},
+
+['ls_iodine'] = {
+	label = 'Iodine',
+	weight = 250,
+	stack = true
+},
+
+['ls_acetone'] = {
+	label = 'Acetone',
+	weight = 250,
+	stack = true
+},
+
+['ls_liquid_meth'] = {
+	label = 'Liquid Meth',
+	weight = 225
+},
+
+['ls_hydrochloric_acid'] = {
+	label = 'Hydrochloric Acid',
+	weight = 250
+},
+
+['ls_meth'] = {
+	label = 'Meth',
+	weight = 50
+},
+
+['ls_supply_crate'] = {
+	label = 'Supplies',
+	weight = 1000
+},
+
+['ls_meth_tray'] = {
+	label = 'Meth Tray',
+	weight = 50
+},
+
+['ls_meth_box'] = {
+	label = 'Meth Box',
+	weight = 50
+},
+
+['ls_plain_jane_seed'] = {
+    label = 'Plain Jane Seed',
+    weight = 5,
+},
+
+['ls_plain_jane_bud'] = {
+    label = 'Plain Jane Bud',
+    weight = 5,
+},
+
+['ls_plain_jane_bag'] = {
+    label = 'Plain Jane Bag',
+    weight = 10,
+},
+
+['ls_plain_jane_joint'] = {
+    label = 'Plain Jane Joint',
+    weight = 10,
+},
+
+['ls_banana_kush_seed'] = {
+    label = 'Banana Kush Seed',
+    weight = 5,
+},
+
+['ls_banana_kush_bud'] = {
+    label = 'Banana Kush Bud',
+    weight = 5,
+},
+
+['ls_banana_kush_bag'] = {
+    label = 'Banana Kush Bag',
+    weight = 10,
+},
+
+['ls_banana_kush_joint'] = {
+    label = 'Banana Kush Joint',
+    weight = 10,
+},
+
+['ls_blue_dream_seed'] = {
+    label = 'Blue Dream Seed',
+    weight = 5,
+},
+
+['ls_blue_dream_bud'] = {
+    label = 'Blue Dream Bud',
+    weight = 5,
+},
+
+['ls_blue_dream_bag'] = {
+    label = 'Blue Dream Bag',
+    weight = 10,
+},
+
+['ls_blue_dream_joint'] = {
+    label = 'Blue Dream Joint',
+    weight = 10,
+},
+
+['ls_purple_haze_seed'] = {
+    label = 'Purple Haze Seed',
+    weight = 5,
+},
+
+['ls_purple_haze_bud'] = {
+    label = 'Purple Haze Bud',
+    weight = 5,
+},
+
+['ls_purple_haze_bag'] = {
+    label = 'Purple Haze Bag',
+    weight = 10,
+},
+
+['ls_purple_haze_joint'] = {
+    label = 'Purple Haze Joint',
+    weight = 10,
+},
+
+['ls_orange_crush_seed'] = {
+    label = 'Orange Crush Seed',
+    weight = 5,
+},
+
+['ls_orange_crush_bud'] = {
+    label = 'Orange Crush Bud',
+    weight = 5,
+},
+
+['ls_orange_crush_bag'] = {
+    label = 'Orange Crush Bag',
+    weight = 10,
+},
+
+['ls_orange_crush_joint'] = {
+    label = 'Orange Crush Joint',
+    weight = 10,
+},
+
+['ls_cosmic_kush_seed'] = {
+    label = 'Cosmic Kush Seed',
+    weight = 5,
+},
+
+['ls_cosmic_kush_bud'] = {
+    label = 'Cosmic Kush Bud',
+    weight = 5,
+},
+
+['ls_cosmic_kush_bag'] = {
+    label = 'Cosmic Kush Bag',
+    weight = 10,
+},
+
+['ls_cosmic_kush_joint'] = {
+    label = 'Cosmic Kush Joint',
+    weight = 10,
+},
+
+['ls_rolling_paper'] = {
+    label = 'Rolling Paper',
+    weight = 5,
+},
+
+['ls_empty_baggy'] = {
+    label = 'Empty Baggy',
+    weight = 5,
+},
+
+['ls_access_card'] = {
+    label = 'Access Card',
+    weight = 15,
+},
+
+['ls_watering_can'] = {
+    label = 'Watering Can',
+    weight = 3250,
+    stack = false,
+},
+
+['ls_fertilizer'] = {
+    label = 'Fertilizer',
+    weight = 1750,
+    stack = false,
+},
+
+['ls_plant_pot'] = {
+    label = 'Plant Pot',
+    weight = 25,
+},
+
+['ls_shovel'] = {
+    label = 'Shovel',
+    weight = 75,
+},
+
+['ls_shears'] = {
+    label = 'Shears',
+    weight = 10,
+},
+
+['ls_weed_table'] = {
+	label = 'Weed Table',
+	weight = 1000,
+	stack = false
+},
+
+['blue_metaldetector'] = {
+	label = 'Beginner\'s Beacon',
+	weight = 475
+},
+
+['green_metaldetector'] = {
+	label = 'Lustrous Locator',
+	weight = 475
+},
+
+['red_metaldetector'] = {
+	label = 'Treasure Trove Tracker',
+	weight = 475
+},
+
+['orange_metaldetector'] = {
+	label = 'Goldseeker\'s Grail',
+	weight = 475
+},
+
+['black_metaldetector'] = {
+	label = 'Archaeo Ace',
+	weight = 475
+},
+
+['md_shovel'] = {
+	label = 'Shovel',
+	weight = 55
+},
+
+['md_bottlecap'] = {
+	label = 'Bottle Cap',
+	weight = 25
+},
+
+['md_brokenjunk'] = {
+	label = 'Broken Junk',
+	weight = 25
+},
+
+['md_crushedcan'] = {
+	label = 'Crushed Can',
+	weight = 25
+},
+
+['md_lighter'] = {
+	label = 'Lighter',
+	weight = 25
+},
+
+['md_metalcan'] = {
+	label = 'Metal Can',
+	weight = 25
+},
+
+['md_nails'] = {
+	label = 'Nails',
+	weight = 25
+},
+
+['md_needle'] = {
+	label = 'Needle',
+	weight = 25
+},
+
+['md_nickle'] = {
+	label = 'Nickle',
+	weight = 25
+},
+
+['md_nut'] = {
+	label = 'Nut',
+	weight = 25
+},
+
+['md_oldshotgunshell'] = {
+	label = 'Old Shotgun Shell',
+	weight = 25
+},
+
+['md_paperclip'] = {
+	label = 'Paper Clip',
+	weight = 25
+},
+
+['md_pulltab'] = {
+	label = 'Pull Tab',
+	weight = 25
+},
+
+['md_quarter'] = {
+	label = 'Quarter',
+	weight = 25
+},
+
+['md_rustyball'] = {
+	label = 'Rusty Ball',
+	weight = 25
+},
+
+['md_rustyironball'] = {
+	label = 'Rusty Iron Ball',
+	weight = 25
+},
+
+['md_rustyjunk'] = {
+	label = 'Rusty Junk',
+	weight = 25
+},
+
+['md_rustynails'] = {
+	label = 'Rusty Nails',
+	weight = 25
+},
+
+['md_rustypliers'] = {
+	label = 'Rusty Pliers',
+	weight = 25
+},
+
+['md_rustyring'] = {
+	label = 'Rusty Ring',
+	weight = 25
+},
+
+['md_rustyscissors'] = {
+	label = 'Rusty Scissors',
+	weight = 25
+},
+
+['md_rustyscrewdriver'] = {
+	label = 'Rusty Screwdriver',
+	weight = 25
+},
+
+['md_rustyspring'] = {
+	label = 'Rusty Spring',
+	weight = 25
+},
+
+['md_screw'] = {
+	label = 'Screw',
+	weight = 25
+},
+
+['md_wheatpenny'] = {
+	label = 'Wheat Penny',
+	weight = 25
+},
+
+['md_ancientcoin'] = {
+	label = 'Ancient Coin',
+	weight = 25
+},
+
+['md_blackwatch'] = {
+	label = 'Watch',
+	weight = 25
+},
+
+['md_coppernugget'] = {
+	label = 'Copper Nugget',
+	weight = 25
+},
+
+['md_diamondearings'] = {
+	label = 'Diamond Earings',
+	weight = 25
+},
+
+['md_diamondnecklace'] = {
+	label = 'Diamond Necklace',
+	weight = 25
+},
+
+['md_diamondring'] = {
+	label = 'Diamond Ring',
+	weight = 25
+},
+
+['md_earpod'] = {
+	label = 'Ear Pod',
+	weight = 25
+},
+
+['md_golddollar'] = {
+	label = 'Gold Dollar',
+	weight = 25
+},
+
+['md_goldearings'] = {
+	label = 'Gold Earings',
+	weight = 25
+},
+
+['md_goldnecklace'] = {
+	label = 'Gold Necklace',
+	weight = 25
+},
+
+['md_goldnugget'] = {
+	label = 'Gold Nugget',
+	weight = 25
+},
+
+['md_goldounce'] = {
+	label = '1oz Gold Bar',
+	weight = 25
+},
+
+['md_goldring'] = {
+	label = 'Gold Ring',
+	weight = 25
+},
+
+['md_halfdollar'] = {
+	label = 'Half Dollar',
+	weight = 25
+},
+
+['md_ironnugget'] = {
+	label = 'Iron Nugget',
+	weight = 25
+},
+
+['md_platinumnugget'] = {
+	label = 'Platinum Nugget',
+	weight = 25
+},
+
+['md_presidentialwatch'] = {
+	label = 'Presidential Watch',
+	weight = 25
+},
+
+['md_relicrevolver'] = {
+	label = 'Relic Revolver',
+	weight = 25
+},
+
+['md_silverdime'] = {
+	label = 'Silver Dime',
+	weight = 25
+},
+
+['md_silverearings'] = {
+	label = 'Silver Earings',
+	weight = 25
+},
+
+['md_silverounce'] = {
+	label = '1oz Silver Bar',
+	weight = 25
+},
+
+['md_silverring'] = {
+	label = 'Silver Ring',
+	weight = 25
+},
+
+['ls_scuba_gear_1'] = {
+	label = 'Scuba Gear',
+	weight = 4000,
+	stack = false,
+	close = true
+},
+
+['ls_scuba_gear_2'] = {
+	label = 'Scuba Gear',
+	weight = 4000,
+	stack = false,
+	close = true
+},
+
+['ls_scuba_gear_3'] = {
+	label = 'Scuba Gear',
+	weight = 4000,
+	stack = false,
+	close = true
+},
+
+['ls_scuba_gear_4'] = {
+	label = 'Scuba Gear',
+	weight = 4000,
+	stack = false,
+	close = true
+},
+
+['ls_scuba_gear_5'] = {
+	label = 'Scuba Gear',
+	weight = 4000,
+	stack = false,
+	close = true
+},
+
+['ls_oxygen_tank'] = {
+	label = 'Oxygen Tank',
+	weight = 2000,
+	stack = false,
+	close = true
+},
+
+['ls_diving_crate'] = {
+	label = 'Crate',
+	weight = 1000
+},
+
+['ls_old_boot'] = {
+    label = 'Old Boot',
+    weight = 25
+},
+
+['ls_wood_plank'] = {
+    label = 'Wood Plank',
+    weight = 25
+},
+
+['ls_rusted_padlock'] = {
+    label = 'Rusted Padlock',
+    weight = 25
+},
+
+['ls_rusted_key'] = {
+    label = 'Rusted Key',
+    weight = 25
+},
+
+['ls_rusted_gear'] = {
+    label = 'Rusted Gear',
+    weight = 25
+},
+
+['ls_seashell'] = {
+    label = 'Seashell',
+    weight = 25
+},
+
+['ls_seaweed'] = {
+    label = 'Seaweed',
+    weight = 25
+},
+
+['ls_rusted_muffler'] = {
+    label = 'Rusted Muffler',
+    weight = 25
+},
+
+['ls_broken_cd'] = {
+    label = 'Broken CD',
+    weight = 25
+},
+
+['ls_diving_goggles'] = {
+    label = 'Diving Goggles',
+    weight = 25
+},
+
+['ls_fishing_net'] = {
+    label = 'Fishing Net',
+    weight = 25
+},
+
+['ls_old_camera'] = {
+    label = 'Old Camera',
+    weight = 25
+},
+
+['ls_military_helmet'] = {
+    label = 'Military Helmet',
+    weight = 25
+},
+
+['ls_old_compass'] = {
+    label = 'Old Compass',
+    weight = 25
+},
+
+['ls_old_watch'] = {
+    label = 'Old Watch',
+    weight = 25
+},
+
+['ls_conch_shell'] = {
+    label = 'Conch Shell',
+    weight = 25
+},
+
+['ls_bottle_of_rum'] = {
+    label = 'Bottle of Rum',
+    weight = 25
+},
+
+['ls_treasure_map'] = {
+    label = 'Treasure Map',
+    weight = 25
+},
+
+['ls_silver_bracelet'] = {
+    label = 'Silver Bracelet',
+    weight = 25
+},
+
+['ls_ancient_artifact'] = {
+    label = 'Ancient Artifact',
+    weight = 25
+},
+
+    bottle = {
+        name = "bottle",
+        label = "Empty Bottle",
+        weight = 10,
+        client = {
+            image = "bottle.png",
+        }
+    },
+    can = {
+        name = "can",
+        label = "Empty Can",
+        weight = 10,
+        client = {
+            image = "can.png",
+        }
+    },
+
+    -- Jim-mining stuff
+    stone = {
+		label = "Stone",
+		weight = 2000,
+		stack = true,
+		close = false,
+		description = "Stone woo",
+		client = {
+			image = "stone.png",
+		}
+	},
+
+    uncut_emerald = {
+		label = "Uncut Emerald",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "A rough Emerald",
+		client = {
+			image = "uncut_emerald.png",
+		}
+	},
+    uncut_ruby = {
+		label = "Uncut Ruby",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "A rough Ruby",
+		client = {
+			image = "uncut_ruby.png",
+		}
+	},
+    uncut_diamond = {
+		label = "Uncut Diamond",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "A rough Diamond",
+		client = {
+			image = "uncut_diamond.png",
+		}
+	},
+	uncut_sapphire = {
+		label = "Uncut Sapphire",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "A rough Sapphire",
+		client = {
+			image = "uncut_sapphire.png",
+		}
+	},
+
+    emerald = {
+		label = "Emerald",
+		weight = 150,
+		stack = true,
+		close = false,
+		description = "A shiny Emerald gemstone!",
+		client = {
+			image = "emerald.png",
+		}
+	},
+    ruby = {
+		label = "Ruby",
+		weight = 150,
+		stack = true,
+		close = false,
+		description = "A shiny Ruby gemstone!",
+		client = {
+			image = "ruby.png",
+		}
+	},
+    diamond = {
+		label = "Diamond",
+		weight = 150,
+		stack = true,
+		close = false,
+		description = "A shiny Diamond gemstone!",
+		client = {
+			image = "diamond.png",
+		}
+	},
+    sapphire = {
+		label = "Sapphire",
+		weight = 150,
+		stack = true,
+		close = false,
+		description = "A shiny Sapphire gemstone!",
+		client = {
+			image = "sapphire.png",
+		}
+	},
+
+    gold_ring = {
+		label = "Gold Ring",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "gold_ring.png",
+		}
+	},
+    diamond_ring = {
+		label = "Diamond Ring",
+		weight = 136,
+		stack = true,
+		close = true,
+		description = "A diamond ring seems like the jackpot to me!",
+		client = {
+			image = "diamond_ring.png",
+		}
+	},
+    ruby_ring = {
+		label = "Ruby Ring",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "ruby_ring.png",
+		}
+	},
+    sapphire_ring = {
+		label = "Sapphire Ring",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "sapphire_ring.png",
+		}
+	},
+    emerald_ring = {
+		label = "Emerald Ring",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "emerald_ring.png",
+		}
+	},
+
+    silver_ring = {
+		label = "Silver Ring",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "silver_ring.png",
+		}
+	},
+    diamond_ring_silver = {
+		label = "Diamond Ring Silver",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "diamond_ring_silver.png",
+		}
+	},
+    ruby_ring_silver = {
+		label = "Ruby Ring Silver",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "ruby_ring_silver.png",
+		}
+	},
+	sapphire_ring_silver = {
+		label = "Sapphire Ring Silver",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "A sparkling ring of sapphire.",
+		client = {
+			image = "sapphire_ring_silver.png",
+		}
+	},
+	emerald_ring_silver = {
+		label = "Emerald Ring Silver",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "emerald_ring_silver.png",
+		}
+	},
+	goldchain = {
+		label = "Golden Chain",
+		weight = 226,
+		stack = true,
+		close = true,
+		description = "A golden chain seems like the jackpot to me!",
+		client = {
+			image = "goldchain.png",
+		}
+	},
+	diamond_necklace = {
+		label = "Diamond Necklace",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "diamond_necklace.png",
+		}
+	},
+	ruby_necklace = {
+		label = "Ruby Necklace",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "ruby_necklace.png",
+		}
+	},
+	sapphire_necklace = {
+		label = "Sapphire Necklace",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "sapphire_necklace.png",
+		}
+	},
+	emerald_necklace = {
+		label = "Emerald Necklace",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "emerald_necklace.png",
+		}
+	},
+
+
+	silverchain = {
+		label = "Silver Chain",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "silverchain.png",
+		}
+	},
+	diamond_necklace_silver = {
+		label = "Diamond Necklace Silver",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "diamond_necklace_silver.png",
+		}
+	},
+	ruby_necklace_silver = {
+		label = "Ruby Necklace Silver",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "ruby_necklace_silver.png",
+		}
+	},
+	sapphire_necklace_silver = {
+		label = "Sapphire Necklace Silver",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "sapphire_necklace_silver.png",
+		}
+	},
+	emerald_necklace_silver = {
+		label = "Emerald Necklace Silver",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "emerald_necklace_silver.png",
+		}
+	},
+
+	goldearring = {
+		label = "Golden Earrings",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "Golden earrings for your Golden Girl",
+		client = {
+			image = "gold_earring.png",
+		}
+	},
+	diamond_earring = {
+		label = "Diamond Earrings",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "diamond_earring.png",
+		}
+	},
+	ruby_earring = {
+		label = "Ruby Earrings",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "ruby_earring.png",
+		}
+	},
+	sapphire_earring = {
+		label = "Sapphire Earrings",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "sapphire_earring.png",
+		}
+	},
+	emerald_earring = {
+		label = "Emerald Earrings",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "emerald_earring.png",
+		}
+	},
+
+	silverearring = {
+		label = "Silver Earrings",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "silver_earring.png",
+		}
+	},
+	diamond_earring_silver = {
+		label = "Diamond Earrings Silver",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "diamond_earring_silver.png",
+		}
+	},
+	ruby_earring_silver = {
+		label = "Ruby Earrings Silver",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "ruby_earring_silver.png",
+		}
+	},
+	sapphire_earring_silver = {
+		label = "Sapphire Earrings Silver",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "sapphire_earring_silver.png",
+		}
+	},
+	emerald_earring_silver = {
+		label = "Emerald Earrings Silver",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "emerald_earring_silver.png",
+		}
+	},
+    carbon = {
+        label = "Carbon",
+        weight = 1000,
+        stack = true,
+        close = false,
+        description = "Carbon, a base ore.",
+        client = {
+            image = "carbon.png",
+        }
+    },
+    ironore = {
+        label = "Iron Ore",
+        weight = 1000,
+        stack = true,
+        close = false,
+        description = "Iron, a base ore.",
+        client = {
+            image = "ironore.png",
+        }
+    },
+    copperore = {
+        label = "Copper Ore",
+        weight = 1000,
+        stack = true,
+        close = false,
+        description = "Copper, a base ore.",
+        client = {
+            image = "copperore.png",
+        }
+    },
+    goldore = {
+        label = "Gold Ore",
+        weight = 1000,
+        stack = true,
+        close = false,
+        description = "Gold Ore",
+        client = {
+            image = "goldore.png",
+        }
+    },
+    silverore = {
+        label = "Silver Ore",
+        weight = 1000,
+        stack = true,
+        close = false,
+        description = "Silver Ore",
+        client = {
+            image = "silverore.png",
+        }
+    },
+    goldingot = {
+        label = "Gold Ingot",
+        weight = 1000,
+        stack = true,
+        close = false,
+        description = "",
+        client = {
+            image = "goldingot.png",
+        }
+    },
+    silveringot = {
+        label = "Silver Ingot",
+        weight = 1000,
+        stack = true,
+        close = false,
+        description = "",
+        client = {
+            image = "silveringot.png",
+        }
+    },
+	pickaxe = {
+		label = "Pickaxe",
+		weight = 1000,
+		stack = false,
+		close = false,
+		description = "",
+		client = {
+			image = "pickaxe.png",
+		}
+	},
+	miningdrill = {
+		label = "Mining Drill",
+		weight = 1000,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "miningdrill.png",
+		}
+	},
+	mininglaser = {
+		label = "Mining Laser",
+		weight = 900,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "mininglaser.png",
+		}
+	},
+	drillbit = {
+		label = "Drill Bit",
+		weight = 10,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "drillbit.png",
+		}
+	},
+	goldpan = {
+		label = "Gold Panning Tray",
+		weight = 10,
+		stack = true,
+		close = false,
+		description = "Don't worry you'll hit gold eventually!",
+		client = {
+			image = "goldpan.png",
+		}
+	},
+
+	-- Jim-Recycle Items
+    recyclablematerial = {
+        name = "recyclablematerial",
+        label = "Recycle Box",
+        weight = 100,
+        client = {
+          image = "recyclablematerial.png",
+        }
+    },
+    bottle = {
+        name = "bottle",
+        label = "Empty Bottle",
+        weight = 10,
+        client = {
+          image = "bottle.png",
+        }
+    },
+    can = {
+        name = "can",
+        label = "Empty Can",
+        weight = 10,
+        client = {
+          image = "can.png",
+        }
+    },
 }

@@ -1,0 +1,8 @@
+3.0.06
+
+- Add config variable to disable skillChecks
+- Add toggles for outlines and blips when recycling
+- Add distance check for trollyprop
+- SellMenu fix for jim_bridge update
+
+https://github.com/jimathy/jim-recycle/releases/latest

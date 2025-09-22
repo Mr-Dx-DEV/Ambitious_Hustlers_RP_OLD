@@ -61,7 +61,7 @@ Config.Interact = {
 -- █ ▀ █ █▀█ █ █ ▀█   ▄██ █▄▄  █   █  █ █ ▀█ ▀▄█ ▄██
 ---@field AccessOnMarker boolean: Do you want to use access to the exam selection menu as E in marker?
 Config.AccessOnMarker = true
-Config.UseTarget = false
+Config.UseTarget = true
 Config.TargetResource = 'ox_target'
 Config.Target = function()
     exports[Config.TargetResource]:addBoxZone({
@@ -269,7 +269,7 @@ Config.Zones = {
     ["menu"] = {
         menuType = "qb-menu", -- "esx_menu_default" / "esx_context" / "qb-menu" / "ox_lib"
         menuPosition = 'left', -- only for esx_menu_default and esx_context
-        coords = vector3(-893.67, -2402.06, 14.125),
+        coords = vector3(240.87, -1379.16, 33.74),
         marker = {
             id = 36, -- https://docs.fivem.net/docs/game-references/markers/
             color = {115, 255, 115, 120}, -- R(ed), G(reen), B(lue), A(lpha)
@@ -280,7 +280,7 @@ Config.Zones = {
         blip = { -- https://docs.fivem.net/docs/game-references/blips/
             sprite = 778,
             display = 4,
-            scale = 1.0,
+            scale = 0.5,
             color = 43,
             name = "Driving School"
         }

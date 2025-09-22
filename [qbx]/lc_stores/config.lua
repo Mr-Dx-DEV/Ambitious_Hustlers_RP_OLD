@@ -927,74 +927,6 @@ Config.market_categories = {
 				['amount_to_delivery'] = 35,
 				['img'] = 'wine.png',
 			},
-			['redw'] = {
-				['name'] = "Redwood Pack",
-				['price_to_customer'] = 15,
-				['price_to_customer_min'] = 7,
-				['price_to_customer_max'] = 30,
-				['price_to_export'] = 14,
-				['price_to_owner'] = 10,
-				['amount_to_owner'] = 35,
-				['amount_to_delivery'] = 35,
-				['img'] = 'redw.png',
-			},
-			['marlboro'] = {
-				['name'] = "Marlboro Pack",
-				['price_to_customer'] = 20,
-				['price_to_customer_min'] = 7,
-				['price_to_customer_max'] = 30,
-				['price_to_export'] = 14,
-				['price_to_owner'] = 10,
-				['amount_to_owner'] = 35,
-				['amount_to_delivery'] = 35,
-				['img'] = 'marlboro.png',
-			},
-			
-			['vape'] = {
-				['name'] = "vape",
-				['price_to_customer'] = 15,
-				['price_to_customer_min'] = 7,
-				['price_to_customer_max'] = 30,
-				['price_to_export'] = 14,
-				['price_to_owner'] = 10,
-				['amount_to_owner'] = 35,
-				['amount_to_delivery'] = 35,
-				['img'] = 'vape.png',
-			},
-			['liquid'] = {
-				['name'] = "liquid",
-				['price_to_customer'] = 25,
-				['price_to_customer_min'] = 7,
-				['price_to_customer_max'] = 30,
-				['price_to_export'] = 14,
-				['price_to_owner'] = 10,
-				['amount_to_owner'] = 35,
-				['amount_to_delivery'] = 35,
-				['img'] = 'liquid.png',
-			},
-			['lighter'] = {
-				['name'] = "lighter",
-				['price_to_customer'] = 20,
-				['price_to_customer_min'] = 7,
-				['price_to_customer_max'] = 30,
-				['price_to_export'] = 14,
-				['price_to_owner'] = 10,
-				['amount_to_owner'] = 35,
-				['amount_to_delivery'] = 35,
-				['img'] = 'lighter.png',
-			},
-			['davidoffcigar'] = {
-				['name'] = "Davidoff Cigar",
-				['price_to_customer'] = 50,
-				['price_to_customer_min'] = 7,
-				['price_to_customer_max'] = 70,
-				['price_to_export'] = 14,
-				['price_to_owner'] = 10,
-				['amount_to_owner'] = 35,
-				['amount_to_delivery'] = 35,
-				['img'] = 'davidoffcigar.png',
-			},
-
 		}
 	},
 
@@ -1608,7 +1540,7 @@ Config.market_categories = {
 				['amount_to_delivery'] = 2,
 				['img'] = 'vic5.png',
 			},
-			 ]]
+			 
 			['walkstick'] = {
 				['name'] = "Walking Stick",
 				['price_to_customer'] = 1000,
@@ -1631,14 +1563,14 @@ Config.market_categories = {
 				['amount_to_delivery'] = 2,
 				['img'] = 'wheelchair.png',
 			},
-			
+		     ]]
 
 
 			
 		}
 	},
 
-	['backpack_market'] = {
+ 	    ['backpack_market'] = {
 		['page_name'] = "Backpack",
 		['page_desc'] = "Quality tools and equipment for any project, from hand tools to power tools, designed to help you achieve precision and efficiency, available at our supermarket",
 		['page_icon'] = '<img src="img/categories/backpack1.png" style="padding:15px">',
@@ -1646,7 +1578,7 @@ Config.market_categories = {
 		['category_buy_price'] = 3000,
 		['category_sell_price'] = 1500,
 		['items'] = {
-			['backpack1'] = {
+			--[['backpack1'] = {
 				['name'] = "Backpack 1",
 				['price_to_customer'] = 3000,
 				['price_to_customer_min'] = 250,
@@ -1656,9 +1588,9 @@ Config.market_categories = {
 				['amount_to_owner'] = 5,
 				['amount_to_delivery'] = 5,
 				['img'] = 'backpack1.png',
-			},
+			},]]
 			
-			['backpack2'] = {
+			--[['backpack2'] = {
 				['name'] = "Backpack 2",
 				['price_to_customer'] = 6000,
 				['price_to_customer_min'] = 275,
@@ -1668,9 +1600,9 @@ Config.market_categories = {
 				['amount_to_owner'] = 4,
 				['amount_to_delivery'] = 4,
 				['img'] = 'backpack2.png',
-			},
+			},]]
 			
-			['duffle1'] = {
+			--[['duffle1'] = {
 				['name'] = "Duffle Bag 1",
 				['price_to_customer'] = 9000,
 				['price_to_customer_min'] = 300,
@@ -1680,9 +1612,9 @@ Config.market_categories = {
 				['amount_to_owner'] = 3,
 				['amount_to_delivery'] = 3,
 				['img'] = 'duffle1.png',
-			},
+			},]]
 			
-			['briefcase'] = {
+		--[['briefcase'] = {
 				['name'] = "Briefcase",
 				['price_to_customer'] = 12000,
 				['price_to_customer_min'] = 225,
@@ -1692,7 +1624,7 @@ Config.market_categories = {
 				['amount_to_owner'] = 6,
 				['amount_to_delivery'] = 6,
 				['img'] = 'briefcase.png',
-			},
+			}, ]]
 			--[[ 
 			['paramedicbag'] = {
 				['name'] = "Paramedic Bag",

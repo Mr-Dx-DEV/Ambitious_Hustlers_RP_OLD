@@ -1,0 +1,136 @@
+{
+    "notify": {
+        "no-money": "Du hast nicht genug Geld",
+        "no-items": "Du hast nicht genug zum Verpfänden",
+        "not-experienced": "Ich glaube, ich bin nicht erfahren genug, um das zu tun",
+        "cant-carry": "Du kannst nicht so viel tragen",
+        "no-durability": "Dein Sauerstofftank ist leer!",
+        "no-scuba-gear": "Du hast keine Tauchausrüstung, um Sauerstoff zu übertragen",
+        "scuba-gear-full": "Deine Tauchausrüstung ist bereits voll",
+        "refill-success": "Du hast erfolgreich mehr Sauerstoff in deine Tauchausrüstung gefüllt",
+        "release-anchor": "Anker des Bootes gelöst",
+        "set-anchor": "Anker des Bootes gesetzt",
+        "invalid-player": "Zielperson ist nicht verfügbar oder ungültig",
+        "already-in-group": "Du bist bereits in einer Gruppe",
+        "target-already-in-group": "Zielperson ist bereits in einer Gruppe",
+        "target-owns-a-group": "Zielperson besitzt bereits eine Gruppe",
+        "owner-left-group": "Deine Gruppe wurde aufgelöst",
+        "member-left-group": "Du hast die Gruppe verlassen",
+        "owner-added-member": "Du hast %s zur Gruppe hinzugefügt",
+        "member-added": "%s hat dich zu seiner Tauchgruppe hinzugefügt",
+        "owner-removed-member": "Du hast %s aus der Gruppe entfernt",
+        "member-removed": "%s hat dich aus seiner Tauchgruppe entfernt"
+    },
+    "target": {
+        "start-diving": "Sprechen",
+        "toggle-anchor": "Anker umschalten",
+        "pickup-crate": "Aufheben"
+    },
+    "textui": {
+        "underwater": "Verbleibender Sauerstoff: %s%%  \n Aktuelle Tiefe: %s%s  \n Rekordtiefe: %s%s  \n Gefundene Kisten: %s/%s"
+    },
+    "inputs": {
+        "quantity": {
+            "label": "Menge",
+            "desc": "Wie viele?"
+        },
+        "player": {
+            "label": "Spieler",
+            "desc": "Gib die Spieler-ID ein"
+        }
+    },
+    "alerts": {
+        "continue-diving": {
+            "header": "Weiter tauchen?",
+            "content": "Gute Arbeit! Alle Kisten wurden von deiner Gruppe gesammelt. Möchtest du weitertauchen?",
+            "labels": {
+                "confirm": "Weitermachen",
+                "cancel": "Aufhören"
+            }
+        }
+    },
+    "emails": {
+        "searching": "Hey! Ich bin’s. Gib mir etwas Zeit, um Informationen über Hotspots zu finden, an denen du Kisten entdecken könntest. Sobald ich etwas habe – sag ich dir Bescheid!",
+        "found-something": "Hey! Ich habe Informationen über einen Hotspot! Gehe zu dem auf deinem GPS markierten Bereich und schau, ob du etwas findest. Viel Glück!"
+    },
+    "player-data": {
+        "level-title": "Tauchen | Level %s/%s",
+        "level-desc": "Du hast aktuell %sXP",
+        "stats-title": "Statistiken",
+        "stats-desc": "Sieh dir deine lebenslangen Tauchstatistiken an",
+        "meta-next-level": "Nächstes Level",
+        "meta-remainder": "Rest",
+        "meta-maxed-level": "Maximales Level erreicht"
+    },
+    "stats-menu": {
+        "main-title": "Statistiken",
+        "crates-title": "Kisten",
+        "crates-desc": "Du hast insgesamt %s Kisten gesammelt",
+        "depth-title": "Tiefe",
+        "depth-desc": "Dein tiefster Tauchgang war %s%s",
+        "swam-title": "Geschwommen",
+        "swam-desc": "Du bist insgesamt %s%s unter Wasser geschwommen"
+    },
+    "diving-menu": {
+        "main-title": "Tauchen",
+        "leaderboards-title": "Bestenliste",
+        "leaderboards-desc": "Sieh dir die Top 10 Taucher an",
+        "shop-title": "Tauchshop",
+        "shop-desc": "Kaufe Tauchausrüstung",
+        "pawn-title": "Das Pfandhaus",
+        "pawn-desc": "Verkaufe deine Beute für Geld",
+        "rental-title": "Boot mieten",
+        "rental-desc": "Kein Boot? Kein Problem!",
+        "create-group-title": "Gruppe erstellen",
+        "create-group-desc": "Alleine oder mit Freunden tauchen, fang hier an!",
+        "manage-group-title": "Gruppe verwalten",
+        "manage-group-desc": "Verwalte deine Tauchgruppe",
+        "rental-return-title": "Boot zurückgeben",
+        "rental-return-desc": "Gib dein gemietetes Boot zurück",
+        "start-title": "Tauchen starten",
+        "start-desc": "Ausrüstung bereit? Boot bereit? Los geht's!",
+        "stop-title": "Tauchen beenden",
+        "stop-desc": "Genug Zeit unter Wasser verbracht? Zeit für eine Pause!"
+    },
+    "shop-menu": {
+        "gear": {
+            "main-title": "Ausrüstungsshop",
+            "tank-title": "%s | Level %s",
+            "item-desc": "Kaufe %s für $%s"
+        },
+        "pawn": {
+            "main-title": "Das Pfandhaus",
+            "item-desc": "Verkaufe %s für $%s"
+        }
+    },
+    "manage-group-menu": {
+        "main-title": "Gruppe verwalten",
+        "add-member-title": "Mitglied hinzufügen",
+        "add-member-desc": "Füge ein Mitglied zu deiner Tauchgruppe hinzu",
+        "remove-member-desc": "Klicke, um ein Mitglied aus der Gruppe zu entfernen",
+        "leave-group-title": "Gruppe verlassen",
+        "leave-group-desc": "Verlasse deine Tauchgruppe"
+    },
+    "leaderboard-menu": {
+        "main-title": "Bestenliste",
+        "player-desc": "Level: %s | XP: %s | Gesamtkisten: %s"
+    },
+    "logs": {
+        "crate-found-title": "Kiste gefunden",
+        "crate-found-message": "%s (Kennung: %s) hat eine Kiste bei %s gefunden",
+        "crate-opened-title": "Kiste geöffnet",
+        "crate-opened-message": "%s (Kennung: %s) hat eine Kiste geöffnet und %s erhalten",
+        "item-purchased-title": "Einkauf im Shop",
+        "item-purchased-message": "%s (Kennung: %s) hat x%d %s gekauft",
+        "item-pawned-title": "Pfandhaus Verkauf",
+        "item-pawned-message": "%s (Kennung: %s) hat x%d %s für $%s verpfändet",
+        "boat-rented-title": "Boot gemietet",
+        "boat-rented-message": "%s (Kennung: %s) hat ein Boot für $%s gemietet",
+        "boat-returned-title": "Boot zurückgegeben",
+        "boat-returned-message": "%s (Kennung: %s) hat ein gemietetes Boot zurückgegeben und $%s zurückerhalten"
+    },
+    "measurements": {
+        "meters": "m",
+        "feet": "ft"
+    }
+}

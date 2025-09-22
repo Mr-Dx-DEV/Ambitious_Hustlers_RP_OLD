@@ -1,0 +1,136 @@
+{
+    "notify": {
+        "no-money": "Je hebt niet genoeg geld",
+        "no-items": "Je hebt niet genoeg om te verpanden",
+        "not-experienced": "Ik denk niet dat ik genoeg ervaring heb om dit te doen",
+        "cant-carry": "Je kunt dit niet zoveel meenemen",
+        "no-durability": "Je zuurstoftank is leeg!",
+        "no-scuba-gear": "Je hebt geen duikuikfles om zuurstof over te brengen",
+        "scuba-gear-full": "Je duikuikfles is al vol",
+        "refill-success": "Je hebt zuurstof aan je duikuikfles toegevoegd",
+        "release-anchor": "Anker is vast",
+        "set-anchor": "Boot ankerset",
+        "invalid-player": "Doel is niet beschikbaar of ongeldig",
+        "already-in-group": "Je zit al in een groep",
+        "target-already-in-group": "Doelwit zit al in een groep",
+        "target-owns-a-group": "Target bezit al een groep",
+        "owner-left-group": "Je groep is ontbonden",
+        "member-left-group": "Je hebt de groep verlaten",
+        "owner-added-member": "Je hebt %s toegevoegd aan de groep",
+        "member-added": "%s heeft je toegevoegd aan hun duikgroep",
+        "owner-removed-member": "Je bent %s uit de groep verwijderd",
+        "member-removed": "%s heeft je uit hun duikgroep verwijderd"
+    },
+    "target": {
+        "start-diving": "Praten",
+        "toggle-anchor": "Anker wisselen",
+        "pickup-crate": "Ophalen"
+    },
+    "textui": {
+        "underwater": "Resterende zuurstof: %s%%  \n Huidige diepte: %s%s  \n Recorddiepte: %s%s  \n Gevonden kratten: %s/%s"
+    },
+    "inputs": {
+        "quantity": {
+            "label": "Hoeveelheid",
+            "desc": "Hoeveel?"
+        },
+        "player": {
+            "label": "Speler",
+            "desc": "Voer de speler ID in"
+        }
+    },
+    "alerts": {
+        "continue-diving": {
+            "header": "Doorgaan met duiken?",
+            "content": "Goed gedaan! Alle kratten zijn door uw groep opgehaald. Wil je doorgaan met duiken?",
+            "labels": {
+                "confirm": "Doorgaan",
+                "cancel": "Stoppen"
+            }
+        }
+    },
+    "emails": {
+        "searching": "Hey! Ik ben het. Geef me wat tijd om informatie te vinden over hotspots waar je mogelijk kratten kunt vinden. Als ik iets heb - laat ik het je weten!",
+        "found-something": "Hey! Ik heb informatie over een hotspot! Ga naar het gebied dat op je GPS is gemarkeerd en kijk of je iets kunt vinden. Veel succes!"
+    },
+    "player-data": {
+        "level-title": "Duiken | Level %s/%s",
+        "level-desc": "Je hebt momenteel %sXP",
+        "stats-title": "Statistieken",
+        "stats-desc": "Bekijk uw duikstatistieken uit uw levensduur",
+        "meta-next-level": "Volgende niveau",
+        "meta-remainder": "Rest",
+        "meta-maxed-level": "Maximaal niveau bereikt"
+    },
+    "stats-menu": {
+        "main-title": "Statistieken",
+        "crates-title": "Kratten",
+        "crates-desc": "Je hebt in totaal %s kratten verzameld",
+        "depth-title": "Diepte",
+        "depth-desc": "Je diepste geregistreerde duik is %s%s",
+        "swam-title": "Zwom",
+        "swam-desc": "Je hebt in totaal %s%s onder water gezwommen"
+    },
+    "diving-menu": {
+        "main-title": "Duiken",
+        "leaderboards-title": "De ranglijsten",
+        "leaderboards-desc": "Bekijk de top 10 duikers",
+        "shop-title": "De duikwinkel",
+        "shop-desc": "Koop duikuitrusting",
+        "pawn-title": "Het Pandshuis",
+        "pawn-desc": "Verkoop je buit voor geld",
+        "rental-title": "Huur een Boot",
+        "rental-desc": "Heb geen boot? Geen probleem!",
+        "create-group-title": "Groep aanmaken",
+        "create-group-desc": "Duiken alleen of met vrienden, begin hier!",
+        "manage-group-title": "Groep beheren",
+        "manage-group-desc": "Beheer uw duikgroep",
+        "rental-return-title": "Boot Terug",
+        "rental-return-desc": "Lever uw gehuurde boot in",
+        "start-title": "Begin met duiken",
+        "start-desc": "Je hebt je spullen? Een boot? Laten we gaan!",
+        "stop-title": "Stop met duiken",
+        "stop-desc": "Genoeg tijd onder water doorgebracht? Laten we even pauzeren!"
+    },
+    "shop-menu": {
+        "gear": {
+            "main-title": "De Uitrustingswinkel",
+            "tank-title": "%s | Niveau %s",
+            "item-desc": "Koop %s voor €%s"
+        },
+        "pawn": {
+            "main-title": "Het Pandshuis",
+            "item-desc": "Verkoop %s voor €%s"
+        }
+    },
+    "manage-group-menu": {
+        "main-title": "Groep beheren",
+        "add-member-title": "Lid toevoegen",
+        "add-member-desc": "Voeg een lid toe aan uw duikgroep",
+        "remove-member-desc": "Klik om het lid uit de groep te verwijderen",
+        "leave-group-title": "Groep verlaten",
+        "leave-group-desc": "Heeft je duikgroep verlaten"
+    },
+    "leaderboard-menu": {
+        "main-title": "Ranglijsten",
+        "player-desc": "Niveau: %s | XP: %s | Totaal aantal kratten: %s"
+    },
+    "logs": {
+        "crate-found-title": "Krat gevonden",
+        "crate-found-message": "%s (identifier: %s) heeft een krat opgehaald bij %s",
+        "crate-opened-title": "Krat Geopend",
+        "crate-opened-message": "%s (identifier: %s) heeft een krat geopend en ontvangen %s",
+        "item-purchased-title": "Winkel Aankoop",
+        "item-purchased-message": "%s (identifier: %s) heeft gekocht x%d %s",
+        "item-pawned-title": "Pandshuis Verkoop",
+        "item-pawned-message": "%s (identifier: %s) heeft x%d %s verpand voor €%s",
+        "boat-rented-title": "Boot Verhuur",
+        "boat-rented-message": "%s (identifier: %s) heeft een boot gehuurd voor €%s",
+        "boat-returned-title": "Boot Teruggebracht",
+        "boat-returned-message": "%s (identifier: %s) heeft een bootverhuur geretourneerd en €%s teruggekregen"
+    },
+    "measurements": {
+        "meters": "m",
+        "feet": "ft"
+    }
+}

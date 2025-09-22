@@ -1,0 +1,146 @@
+['ls_scuba_gear_1'] = {
+	label = 'Scuba Gear',
+	weight = 4000,
+	stack = false,
+	close = true
+},
+
+['ls_scuba_gear_2'] = {
+	label = 'Scuba Gear',
+	weight = 4000,
+	stack = false,
+	close = true
+},
+
+['ls_scuba_gear_3'] = {
+	label = 'Scuba Gear',
+	weight = 4000,
+	stack = false,
+	close = true
+},
+
+['ls_scuba_gear_4'] = {
+	label = 'Scuba Gear',
+	weight = 4000,
+	stack = false,
+	close = true
+},
+
+['ls_scuba_gear_5'] = {
+	label = 'Scuba Gear',
+	weight = 4000,
+	stack = false,
+	close = true
+},
+
+['ls_oxygen_tank'] = {
+	label = 'Oxygen Tank',
+	weight = 2000,
+	stack = false,
+	close = true
+},
+
+['ls_diving_crate'] = {
+	label = 'Crate',
+	weight = 1000
+},
+
+['ls_old_boot'] = {
+    label = 'Old Boot',
+    weight = 25
+},
+
+['ls_wood_plank'] = {
+    label = 'Wood Plank',
+    weight = 25
+},
+
+['ls_rusted_padlock'] = {
+    label = 'Rusted Padlock',
+    weight = 25
+},
+
+['ls_rusted_key'] = {
+    label = 'Rusted Key',
+    weight = 25
+},
+
+['ls_rusted_gear'] = {
+    label = 'Rusted Gear',
+    weight = 25
+},
+
+['ls_seashell'] = {
+    label = 'Seashell',
+    weight = 25
+},
+
+['ls_seaweed'] = {
+    label = 'Seaweed',
+    weight = 25
+},
+
+['ls_rusted_muffler'] = {
+    label = 'Rusted Muffler',
+    weight = 25
+},
+
+['ls_broken_cd'] = {
+    label = 'Broken CD',
+    weight = 25
+},
+
+['ls_diving_goggles'] = {
+    label = 'Diving Goggles',
+    weight = 25
+},
+
+['ls_fishing_net'] = {
+    label = 'Fishing Net',
+    weight = 25
+},
+
+['ls_old_camera'] = {
+    label = 'Old Camera',
+    weight = 25
+},
+
+['ls_military_helmet'] = {
+    label = 'Military Helmet',
+    weight = 25
+},
+
+['ls_old_compass'] = {
+    label = 'Old Compass',
+    weight = 25
+},
+
+['ls_old_watch'] = {
+    label = 'Old Watch',
+    weight = 25
+},
+
+['ls_conch_shell'] = {
+    label = 'Conch Shell',
+    weight = 25
+},
+
+['ls_bottle_of_rum'] = {
+    label = 'Bottle of Rum',
+    weight = 25
+},
+
+['ls_treasure_map'] = {
+    label = 'Treasure Map',
+    weight = 25
+},
+
+['ls_silver_bracelet'] = {
+    label = 'Silver Bracelet',
+    weight = 25
+},
+
+['ls_ancient_artifact'] = {
+    label = 'Ancient Artifact',
+    weight = 25
+},

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CMapTypes>
+  <extensions/>
+  <archetypes>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="60.00000000"/>
+      <flags value="537001984"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.10927400" y="-0.65445100" z="0.00106030"/>
+      <bbMax x="0.10892900" y="0.26486200" z="1.02634000"/>
+      <bsCentre x="-0.00017255" y="-0.19479500" z="0.51369800"/>
+      <bsRadius value="0.69712600"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>black_metaldetector</name>
+      <textureDictionary>black_metaldetector</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>black_metaldetector</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>black_metaldetector</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="60.00000000"/>
+      <flags value="537001984"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.10927400" y="-0.65445100" z="0.00106030"/>
+      <bbMax x="0.10892900" y="0.26486200" z="1.02634000"/>
+      <bsCentre x="-0.00017255" y="-0.19479500" z="0.51369800"/>
+      <bsRadius value="0.69712600"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>green_metaldetector</name>
+      <textureDictionary>green_metaldetector</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>green_metaldetector</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>green_metaldetector</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="60.00000000"/>
+      <flags value="537001984"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.10927400" y="-0.65445100" z="0.00106030"/>
+      <bbMax x="0.10892900" y="0.26486200" z="1.02634000"/>
+      <bsCentre x="-0.00017255" y="-0.19479500" z="0.51369800"/>
+      <bsRadius value="0.69712600"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>red_metaldetector</name>
+      <textureDictionary>red_metaldetector</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>red_metaldetector</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>red_metaldetector</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="60.00000000"/>
+      <flags value="537001984"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.10927400" y="-0.65445100" z="0.00106030"/>
+      <bbMax x="0.10892900" y="0.26486200" z="1.02634000"/>
+      <bsCentre x="-0.00017255" y="-0.19479500" z="0.51369800"/>
+      <bsRadius value="0.69712600"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>orange_metaldetector</name>
+      <textureDictionary>orange_metaldetector</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>orange_metaldetector</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>orange_metaldetector</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="60.00000000"/>
+      <flags value="537001984"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.10927400" y="-0.65445100" z="0.00106030"/>
+      <bbMax x="0.10892900" y="0.26486200" z="1.02634000"/>
+      <bsCentre x="-0.00017255" y="-0.19479500" z="0.51369800"/>
+      <bsRadius value="0.69712600"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>blue_metaldetector</name>
+      <textureDictionary>blue_metaldetector</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>blue_metaldetector</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>blue_metaldetector</assetName>
+      <extensions/>
+    </Item>
+  </archetypes>
+  <name>lation_detectors</name>
+  <dependencies/>
+  <compositeEntityTypes/>
+</CMapTypes>
