@@ -260,7 +260,7 @@ Config.EnviPrescriptions = {
     --       If you use Envi Prescriptions:          --
     -- https://envi-scripts.tebex.io/package/5604452 --
     ---------------------------------------------------
-    enabled = false, -- Enable to add option for prescriptions to job menu
+    enabled = true, -- Enable to add option for prescriptions to job menu
     minRank = 1      -- Minimum job level/grade to have this option available
 }
 

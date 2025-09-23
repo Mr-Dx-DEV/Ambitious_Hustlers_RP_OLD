@@ -1,0 +1,1401 @@
+:root {
+  --color: #ff66ff;
+}
+
+@import url('https://kit-pro.fontawesome.com/releases/v6.2.0/css/pro.min.css');
+
+@font-face {
+  font-family: BebasNeueBold;
+  src: url(BebasNeueBold.ttf);
+}
+
+*{
+	user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+html {
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body{
+	display: block;
+	color: #a8a8aa;
+}
+
+.gymmanagment-container {
+	width: 60%;
+	height: 70%;
+	background-color: rgba(0, 0, 0, 0.70);
+	border-bottom: 3px solid var(--color);
+	border-radius: 10px;	
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: none;
+}
+
+.headergymmanagment {
+	position: absolute;
+	width:100%;
+	height: 6%;
+	color: #ffffff;
+	display: flex;
+	background-color: rgba(0, 0, 0, 1);
+	border-bottom: 3px solid var(--color);  
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);  
+	top: 3.4%;
+	left: 50%;	
+}
+
+.headergymmanagmenttext {
+	position: absolute;
+	margin: 0;
+	font-size: 30px;
+	color: #ffffff;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+}
+
+.closegymmanagment {
+	position: absolute;
+	margin: 0;
+	top: 50%;
+	left: 97%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+}
+
+.gymentrypricecontainer {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 25%;
+	left: 20%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 30%;
+	height: 20%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+}
+
+.gymentrypricetext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 25%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 35px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.gymentrypricetextdata {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 75%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 35px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.gymentrypriceslider {
+	-webkit-appearance: none;
+	appearance: none;	
+	position: absolute;
+	margin: 0;
+	background-color: rgba(255, 255, 255, 0.0);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 70%;
+	height: 40%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+	outline: none;
+}
+
+.gymentrypriceline {
+	-webkit-appearance: none;
+	appearance: none;	
+	position: absolute;
+	margin: 0;
+	background-color: rgba(255, 255, 255, 1.0);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 70%;
+	height: 2.5%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+	outline: none;
+}
+
+.gymentrypriceslider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; 
+  cursor: pointer;
+  background-color: var(--color);
+}
+
+.gymentrypriceslider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--color);
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+.gymclosedcontainer {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 50%;
+	left: 20%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 30%;
+	height: 20%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+}
+
+.gymclosedtext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 25%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 35px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.gymclosedtextclose {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 65%;
+	left: 15%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 30px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.gymclosedtextopen {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 65%;
+	left: 85%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 30px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+
+input[type=number] {
+    -moz-appearance: textfield;
+	color: #ffffff;
+}
+
+input::placeholder { 
+	color: #ffffff;
+}
+
+.gymclosedinput {
+	display: inline-block;
+	width: 40%;
+	height: 30%;	
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 65%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	text-align:center;
+}
+
+.gymclosedinput input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.gymclosedinputslider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 1);
+  border-bottom: 3px solid var(--color);    
+  border-radius: 5px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.gymclosedinputslider:before {
+	position: absolute;
+	content: "";
+	width: 30%;
+	height: 70%;	
+	top: 50%;
+	left: 25%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);		
+	background-color: #ffffff;
+	border-radius: 5px;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+input:checked + .gymclosedinputslider:before {
+	top: 50%;
+	left: 75%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+}
+
+.gymwithdrawcontainer {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 80%;
+	left: 20%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 30%;
+	height: 30%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+}
+
+.gymwithdrawtext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 20%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 35px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.gymwithdrawmoneytext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 45%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 40px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+
+.gymwithdrawbutton {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 1);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 75%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 60%;
+	border-radius: 5px;
+}
+
+.gymwithdrawbutton:hover {
+	background: var(--color);
+	text-decoration: none;	
+}
+
+.gymstatscontainer {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 45%;
+	left: 70%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 50%;
+	height: 60%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+}
+
+.gymstatstext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 10%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 35px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+
+.gymstatsdata {
+	width: 90%;
+	height: 100%;
+	margin: 0;
+	position: absolute;
+	top: 85%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	z-index: 9999999;
+}
+
+.gymsellcontainer {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 88%;
+	left: 70%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 50%;
+	height: 15%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+}
+
+.gymsellbutton {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 1);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 50%;
+	left: 25%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 35%;
+	border-radius: 5px;
+}
+
+.gymsellbutton:hover {
+	background: var(--color);
+	text-decoration: none;	
+}
+
+.gymtransferbutton {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 1);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 50%;
+	left: 75%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 35%;
+	border-radius: 5px;
+}
+
+.gymtransferbutton:hover {
+	background: var(--color);
+	text-decoration: none;	
+}
+
+.gymentry-container {
+	width: 40%;
+	height: 40%;
+	background-color: rgba(0, 0, 0, 0.70);
+	border-bottom: 3px solid var(--color);
+	border-radius: 10px;	
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: none;
+}
+
+.headergymentry {
+	position: absolute;
+	width:100%;
+	height: 8%;
+	color: #ffffff;
+	display: flex;
+	background-color: rgba(0, 0, 0, 1.0);
+	border-bottom: 3px solid var(--color);  
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);  
+	top: 4.5%;
+	left: 50%;	
+}
+
+
+.headergymentrytext {
+	position: absolute;
+	margin: 0;
+	font-size: 25px;
+	color: #ffffff;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+}
+
+.closegymentry {
+	position: absolute;
+	margin: 0;
+	top: 50%;
+	left: 96%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+}
+
+.gymentrymaingymname {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 8%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 40px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.gymentrymaingympass {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 25%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 40px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.gymentrypasscontainer {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 55%;
+	left: 27%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 40%;
+	height: 80%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+}
+
+.gymentryonecontainer {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 55%;
+	left: 73%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 40%;
+	height: 80%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+}
+
+.gymentrypasstext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 12%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 40px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.gymentrypassdurationtextmain {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 28%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 35px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.gymentrypassdurationtext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 40%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 30px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.gymentrypasspricetextmain {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 55%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 35px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.gymentrypasspricetext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 67%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 30px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.gymentrypassbutton {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 1);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 85%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 60%;
+	border-radius: 5px;
+}
+
+.gymentrypassbutton:hover {
+	background: var(--color);
+	text-decoration: none;	
+}
+
+.gymentryonebutton {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 1);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 85%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 60%;
+	border-radius: 5px;
+}
+
+.gymentryonebutton:hover {
+	background: var(--color);
+	text-decoration: none;	
+}
+
+#recolordata {
+	color: var(--color);
+}
+
+.infonotify-container {
+	width: 17%;
+	background-color: rgba(0, 0, 0, 0.70);
+	border-bottom: 3px solid var(--color);	
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 10px;
+	display: none;
+}
+
+.infonotifytext {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 2px;
+	padding-right: 2px;	
+	vertical-align: middle;
+	text-align: center;
+	font-size: 25px;
+	font-family: BebasNeueBold;
+	color: #ffffff;
+}
+
+#infobindcolor {
+	color: var(--color);
+}
+
+.gymbuy-container {
+	width: 30%;
+	height: 30%;
+	background-color: rgba(0, 0, 0, 0.70);
+	border-bottom: 3px solid var(--color);
+	border-radius: 10px;	
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: none;
+}
+
+.headergymbuy {
+	position: absolute;
+	width:100%;
+	height: 2%;
+	color: #ffffff;
+	display: flex;
+	background-color: rgba(0, 0, 0, 1);
+	border-bottom: 3px solid var(--color);  
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding-bottom:5%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);  
+	top: 6.5%;
+	left: 50%;	
+}
+
+.headergymbuytext {
+	position: absolute;
+	margin: 0;
+	font-size: 25px;
+	color: #ffffff;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+}
+
+.closegymbuy {
+	position: absolute;
+	margin: 0;
+	top: 50%;
+	left: 95%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+}
+
+.gymbuytext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 25%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 40px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.gymbuytextprice {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 60px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+#gymbuypricedata {
+	color: #ffffff;
+}
+
+.buttongymbuy {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 1);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 80%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 45%;
+	border-radius: 8px;
+}
+
+.buttongymbuy:hover {
+	background: var(--color);
+	text-decoration: none;	
+	color: #ffffff;
+}
+
+.gym-container {
+	width: 18%;
+	height: 12%;
+	background-color: rgba(0, 0, 0, 0.70);
+	border-bottom: 3px solid var(--color);	
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 90%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 10px;
+	display: none;
+}
+
+.gymlabeltext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 25%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 35px;
+	color: var(--color);
+	text-align:center;
+}
+
+.gymlabelpress1 {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 55%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 25px;
+	color: #ffffff;
+	text-align:center;
+}
+
+.gymlabelpress2 {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 80%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 25px;
+	color: #ffffff;
+	text-align:center;
+}
+
+#gympresskey {
+	color: var(--color);
+}
+
+.gymstats-container {
+	width: 20%;
+	height: 60%;
+	background-color: rgba(0, 0, 0, 0.70);
+	border-bottom: 3px solid var(--color);	
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 80%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99;
+	border-radius: 5px;
+	display: none;
+}
+
+.statsmaintext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 10%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 50px;
+	font-family: BebasNeueBold;
+	color: #ffffff;
+	text-align:center;
+	z-index: 99999999;
+}
+
+.statstext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 35%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 30px;
+	color: #ffffff;
+	text-align:center;
+}
+
+.statsstrength-container {
+	width: 90%;
+	height: 15%;
+	background-color: rgba(0, 0, 0, 0.0);	
+	margin: 0;
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: block;
+}
+
+.statsstatsstrengthmaincontainer {
+	width: 90%;
+	height: 18%;
+	background-color: rgba(255, 255, 255, 0.70);
+	margin: 0;
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 6px;
+}
+
+.statsstatsstrengthmaincontainerdata {
+	width: 70%;
+	height: 100%;
+	background-color: var(--color);
+	z-index: 9999999;
+}
+
+.statscondition-container {
+	width: 90%;
+	height: 15%;
+	background-color: rgba(0, 0, 0, 0.0);	
+	margin: 0;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: block;
+}
+
+.statsstatsconditionmaincontainer {
+	width: 90%;
+	height: 18%;
+	background-color: rgba(255, 255, 255, 0.70);
+	margin: 0;
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 6px;
+}
+
+.statsstatsconditionmaincontainerdata {
+	width: 70%;
+	height: 100%;
+	background-color: var(--color);
+	z-index: 9999999;
+}
+
+
+.statsswimming-container {
+	width: 90%;
+	height: 15%;
+	background-color: rgba(0, 0, 0, 0.0);	
+	margin: 0;
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: block;
+}
+
+.statsstatsswimmingmaincontainer {
+	width: 90%;
+	height: 18%;
+	background-color: rgba(255, 255, 255, 0.70);
+	margin: 0;
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 6px;
+}
+
+.statsstatsswimmingmaincontainerdata {
+	width: 70%;
+	height: 100%;
+	background-color: var(--color);
+	z-index: 9999999;
+}
+
+.statshygiene-container {
+	width: 90%;
+	height: 15%;
+	background-color: rgba(0, 0, 0, 0.0);	
+	margin: 0;
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: block;
+}
+
+.statsstatshygienemaincontainer {
+	width: 90%;
+	height: 18%;
+	background-color: rgba(255, 255, 255, 0.70);
+	margin: 0;
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 6px;
+}
+
+.statsstatshygienemaincontainerdata {
+	width: 70%;
+	height: 100%;
+	background-color: var(--color);
+	z-index: 9999999;
+}
+
+.statsenergy-container {
+	width: 90%;
+	height: 15%;
+	background-color: rgba(0, 0, 0, 0.0);	
+	margin: 0;
+	position: absolute;
+	top: 85%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: block;
+}
+
+.statsstatsenergymaincontainer {
+	width: 90%;
+	height: 18%;
+	background-color: rgba(255, 255, 255, 0.70);
+	margin: 0;
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 6px;
+}
+
+.statsstatsenergymaincontainerdata {
+	width: 70%;
+	height: 100%;
+	background-color: var(--color);
+	z-index: 9999999;
+}
+
+.progress-container {
+	width: 40%;
+	height: 15%;
+	background-color: rgba(0, 0, 0, 0.70);
+	border-bottom: 3px solid var(--color);	
+	margin: 0;
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 10px;
+	display: none;
+}
+
+.progressbartext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 30%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 40px;
+	color: #ffffff;
+	text-align:center;
+}
+
+.progressbarmaincontainer {
+	width: 90%;
+	height: 25%;
+	background-color: rgba(255, 255, 255, 0.70);
+	margin: 0;
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 5px;
+}
+
+.progressbarmaincontainerdata {
+	width: 0%;
+	height: 100%;
+	background-color: var(--color);
+	z-index: 9999999;
+}
+
+.gymprogress-container {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: none;
+}
+
+.gymprogressbartext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 95%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 30px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+	background-color: rgba(0, 0, 0, 0.70);
+	border-left: 3px solid var(--color);		
+	border-right: 3px solid var(--color);	
+	border-radius: 10px;
+}
+
+.gymprogressbarmaincontainer {
+	width: 3%;
+	height: 50%;
+	background-color: rgba(0, 0, 0, 0.70);
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 95%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 10px;
+}
+
+.gymprogressbarmaincontainerdata {
+	overflow: hidden;
+	outline: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color);
+	z-index: 9999999;
+	bottom: 0;
+}
+
+.gymprogressbarmaincontainerpercentage {
+	position: absolute;
+	width: 100%;
+	height: 10%;
+	border-top: 15px solid #ffffff;	
+	background-color: rgba(0, 0, 0, 0.0);
+	z-index: 9999999;
+	bottom: 0;
+}
+
+#gymreactkey {
+	color: var(--color);
+}
+
+.full-screen {
+  width: 100%;
+  height:100%;
+  display: flex;
+  align-items: center;
+}
+
+*{
+	font-family: BebasNeueBold;
+}

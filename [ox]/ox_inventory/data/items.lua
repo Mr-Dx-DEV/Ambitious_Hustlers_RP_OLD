@@ -1,4 +1,200 @@
 return {
+	["car_door"] = {label = "car door",weight = 100,stack = true,close = false,description = "",client = {	image = "car_door.png",}
+	},
+    ["car_wheel"] = {label = "car wheel",weight = 100,stack = true,close = false,description = " :D",client = {	image = "car_wheel.png",}
+	},
+    ["car_battery"] = {label = "car battery",weight = 100,stack = true,close = false,description = " :D",client = {	image = "car_battery.png",}
+	},
+    ["car_gearbox"] = {label = "car gearbox",weight = 100,stack = true,close = false,description = " :D",client = {	image = "car_gearbox.png",}
+	},
+    ["car_radiator"] = {label = "car radiator",weight = 100,stack = true,close = false,description = " :D",client = {	image = "car_radiator.png",}
+	},
+    ["car_scrap"] = {label = "car scrap",weight = 100,stack = true,close = false,description = " :D",client = {	image = "car_scrap.png",}
+	},
+    ["car_hood"] = {label = "car hood",weight = 100,stack = true,close = false,description = " :D",client = {	image = "car_hood.png",}
+	},
+    ["car_trunk"] = {label = "car trunk",weight = 100,stack = true,close = false,description = " :D",client = {	image = "car_trunk.png",}
+	},
+    ["chop_contract"] = {label = "chop_contract",weight = 100,stack = true,close = false,description = " :D",client = {	image = "chop_contract.png",}
+	},
+	
+['spanner'] = {
+    label = 'Spanner',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = nil
+},
+['firelighter'] = {
+    label = 'Firelighters',
+    weight = 500,
+    stack = false,
+    close = true,
+    description = nil
+},
+['adjustable_spanner'] = {
+    label = 'Spanner',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = nil
+},
+['drill'] = {
+    label = 'Drill',
+    weight = 3000,
+    stack = true,
+    close = true,
+    description = nil
+},
+['buzz_saw'] = {
+    label = 'Buzz Saw',
+    weight = 6000,
+    stack = true,
+    close = true,
+    description = nil
+},
+['impact_driver'] = {
+    label = 'Impact Driver',
+    weight = 4000,
+    stack = true,
+    close = true,
+    description = nil
+},
+['pliers'] = {
+    label = 'Pliers',
+    weight = 1000,
+    stack = true,
+    close = true,
+    description = nil
+},
+['impact_bomb'] = {
+    label = 'Impact Explosive',
+    weight = 3000,
+    stack = true,
+    close = true,
+    description = nil
+},
+['ignition_bomb'] = {
+    label = 'Ignition Explosive',
+    weight = 3000,
+    stack = true,
+    close = true,
+    description = nil
+},
+['remote_bomb'] = {
+    label = 'Remote Explosive',
+    weight = 3000,
+    stack = true,
+    close = true,
+    description = nil
+},
+['phone_bomb'] = {
+    label = 'Detonator Device',
+    weight = 1000,
+    stack = false,
+    close = true,
+    description = nil
+},
+['speed_bomb'] = {
+    label = 'Speed Bomb',
+    weight = 1000,
+    stack = false,
+    close = true,
+    description = nil
+},
+['screwdriver'] = {
+    label = 'Screwdriver',
+    weight = 1000,
+    stack = false,
+    close = true,
+    description = nil
+},
+	['prescription_pad'] = {        
+    label = 'Prescription Pad',        
+    weight = 200,         
+    stack = false,        
+    close = true,        
+    description = 'For use by medical professionals only',    
+},
+['prescription'] = {        
+    label = 'Prescription Receipt',        
+    weight = 20,         
+    stack = false,        
+    close = true,        
+    description = nil,    
+},      
+['adrenaline'] = {        
+    label = 'Adrenaline',        
+    weight = 200,         
+    stack = false,        
+    close = true,        
+    description = 'The Label Has Been Ripped Off',    
+},          
+['oxy'] = {        
+    label = 'Oxy',        
+    weight = 200,         
+    stack = false,        
+    close = true,        
+    description = 'The Label Has Been Ripped Off',    
+},    
+['xanax'] = {        
+    label = 'Xanax',        
+    weight = 200,         
+    stack = false,        
+    close = true,        
+    description = nil,    
+},
+['steroids'] = {        
+    label = 'Steroids',        
+    weight = 200,         
+    stack = false,        
+    close = true,        
+    description = nil,    
+},
+['valium'] = {        
+    label = 'Valium',        
+    weight = 200,         
+    stack = false,        
+    close = true,        
+    description = nil,    
+},
+['cough_syrup'] = {        
+    label = 'Cough Syrup',        
+    weight = 200,         
+    stack = false,        
+    close = true,        
+    description = nil,    
+},
+['lean_cup'] = {        
+    label = 'Styrofoam Cup',        
+    weight = 200,         
+    stack = false,        
+    close = true,        
+    description = nil,    
+},
+['sprunk_bottle'] = {        
+    label = 'Bottle of Sprunk',        
+    weight = 200,         
+    stack = false,        
+    close = true,        
+    description = nil,    
+},
+['lean'] = {        
+    label = 'Cup of Lean',        
+    weight = 200,         
+    stack = false,        
+    close = true,        
+    description = nil,    
+},
+['narkan'] = {        
+    label = 'Narkan',        
+    weight = 200,         
+    stack = false,        
+    close = true,        
+    description = nil,    
+},
+
+
 	['fishingrod1'] = { label = 'Fishingrod Level 1', weight = 1000, stack = true, allowArmed = false },
 ['fishingrod2'] = { label = 'Fishingrod Level 2', weight = 1000, stack = true, allowArmed = false },
 ['fishingrod3'] = { label = 'Fishingrod Level 3', weight = 1000, stack = true, allowArmed = false },

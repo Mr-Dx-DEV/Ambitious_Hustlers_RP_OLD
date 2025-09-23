@@ -1,0 +1,3 @@
+PLAYER_DATA = {
+    job = {}
+}

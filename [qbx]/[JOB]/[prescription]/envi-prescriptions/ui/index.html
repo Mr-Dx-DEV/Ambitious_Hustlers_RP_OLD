@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prescription</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="prescription-container">
+      <div id="prescription" class="hidden">
+        <div class="header">
+          <div class="rx-and-info">
+            <h2 class="rx-logo">Rx</h2>
+            <div class="hospital-info">
+              <h1>Los Santos Medical Center</h1>
+              <p>124 Capital Boulevard, Los Santos</p>
+              <p>Tel: (555) 123-4567</p>
+            </div>
+          </div>
+        </div>
+        <div class="prescription-content">
+          <div class="patient-info">
+            <div class="info-row">
+              <div class="info-item">
+                <label>Patient Name:</label>
+                <span id="patient-name"></span>
+              </div>
+              <div class="info-item">
+                <label>Date:</label>
+                <span id="current-date"></span>
+              </div>
+            </div>
+            <div class="info-row">
+              <div class="info-item">
+                <label>Date of Birth:</label>
+                <span id="patient-dob"></span>
+              </div>
+              <div class="info-item">
+                <label>Prescription #:</label>
+                <span id="prescription-id"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rx-section">
+            <div class="rx-header">
+              <h2>PRESCRIPTION INFORMATION</h2>
+            </div>
+            <div class="medication-details">
+              <p id="medication-name" class="med-name"></p>
+              <p id="medication-details" class="med-details"></p>
+              <p id="medication-warning" class="med-warning"></p>
+              <p id="medication-total" class="med-total"></p>
+            </div>
+          </div>
+
+          <div class="footer">
+            <div class="signature-section">
+              <p id="doctor-signature" class="doctor-signature"></p>
+              <div class="signature-line"></div>
+              <div class="warning-text">
+                <p>This prescription is void if altered.</p>
+                <p class="expires">
+                  Expires: <span id="expiration-date"></span>
+                </p>
+              </div>
+              <div class="signature-info">
+                <p id="doctor-name" class="doctor-printed-name"></p>
+                <p class="doctor-title">Licensed Physician</p>
+              </div>
+              <div class="certification">
+                <p>Los Santos Medical Certification #LSMB-54289</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="prescription-watermark">PRESCRIPTION</div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
