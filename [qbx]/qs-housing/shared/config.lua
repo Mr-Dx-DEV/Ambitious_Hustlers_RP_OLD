@@ -289,7 +289,7 @@ Config.NeedToBeInsidePoints = {
 	['shell'] = true -- Force shell to be inside of the poly points
 }
 
-Config.UseTarget = false -- Set true/false (only qb-target or ox_target)
+Config.UseTarget = true -- Set true/false (only qb-target or ox_target)
 Config.TargetLength = 5.0
 Config.TargetWidth = 5.0
 
@@ -341,7 +341,7 @@ Config.StashNeedsKey = false
 		- crm-banking
 ]]
 
-Config.Society = 'none'       -- Select your society system (above you have the list)
+Config.Society = 'ap-government'       -- Select your society system (above you have the list)
 Config.SocietyCommision = 0.3 -- Percentage of the commission for the company (%30 of house price)
 
 -- Taxes configuration
@@ -353,7 +353,7 @@ Config.UseMathCeilOnFees = true
 
 Config.CreatorJobs = { -- Choose the jobs suitable for creating houses
 	'realestate',
-	'police',
+	--'police',
 	'realestatejob'
 }
 
@@ -434,12 +434,15 @@ Config.DisableBuyableDecorationFromF3 = false -- Disable the purchase of decorat
 
 Config.RequiredCop = 0 -- Number of police required (only for lockpicking)
 Config.PoliceJobs = {  -- Jobs that will be considered police
-	'realestate',
+	--'realestate',
 	'police',
-	'realestatejob'
+	'sahp',
+	'sasp',
+	'bcso'
+	--'realestatejob'
 }
 
-Config.EnableRobbery = true            -- Enable or disable the usable item to initiate robberies
+Config.EnableRobbery = false            -- Enable or disable the usable item to initiate robberies
 Config.EnableRaid = true               -- Enable or disable the usable item to initiate raids
 Config.RobberyItem = 'lockpick'        -- Item to start the robbery of houses
 Config.StomRamItem = 'police_stormram' -- Item to begin the search of a house

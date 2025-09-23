@@ -366,6 +366,62 @@ return {
 		},
 	},
 },
+["burgershot"] = {
+        label = "BurgerShot",
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            ["2"] = {
+                name = "Experienced",
+                payment = 100,
+            },
+            ["1"] = {
+                name = "Novice",
+                payment = 75,
+            },
+            ["4"] = {
+                name = "Manager",
+                payment = 150,
+                isboss = true,
+            },
+            ["3"] = {
+                name = "Advanced",
+                payment = 125,
+            },
+            ["0"] = {
+                name = "Recruit",
+                payment = 50,
+            },
+        }
+    },
+    ["catcafe"] = {
+        label = "Cat Cafe",
+        defaultDuty = true,
+        offDutyPay = nil,
+        grades = {
+            ["2"] = {
+                name = "Experienced",
+                payment = 100,
+            },
+            ["1"] = {
+                name = "Novice",
+                payment = 75,
+            },
+            ["4"] = {
+                name = "Manager",
+                payment = 150,
+                isboss = true,
+            },
+            ["3"] = {
+                name = "Advanced",
+                payment = 125,
+            },
+            ["0"] = {
+                name = "Recruit",
+                payment = 50,
+            },
+        }
+    },
 
 ['home_insurance'] = {
 	label = 'Insurance',

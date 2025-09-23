@@ -88,12 +88,12 @@ Skin.WhitelistedInputValues = { -- Here you can whitelist (overwrite blacklist f
 
 Skin.Presets = { -- This is list of predefined presets. You can create some preset and use them while opening skin menu (must be Skin.Components[i].name)
     ["barber"] = {
-        "hair", "beard", "eyebrows", "chest"
+        "hair", "beard", "eyebrows", "chest", "makeup",
     },
 
     ["clothing"] = {
         "tshirt", "torso", "arms", "bproof", "pants", "shoes", "helmet", "mask", "watches", "ears", "chain", "glasses",
-        "bags", "makeup",
+        "bags",
     },
 
     ["surgeon"] = {

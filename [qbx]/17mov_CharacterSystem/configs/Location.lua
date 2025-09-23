@@ -1,6 +1,6 @@
 Location = {}
 Location.Enable = true
-Location.EnableForNewCharacters = true
+Location.EnableForNewCharacters = false
 Location.EnableForExistingCharacters = true
 
 -- Supported only on QBCore

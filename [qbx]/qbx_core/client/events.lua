@@ -14,10 +14,10 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
         Wait(0)
     end
 
-    local motd = GetConvar('qbx:motd', '')
-    if motd ~= '' then
-        exports.chat:addMessage({ template = motd })
-    end
+    -- local motd = GetConvar('qbx:motd', '')
+    -- if motd ~= '' then
+    --     exports.chat:addMessage({ template = motd })
+    -- end
 end)
 
 ---@param val PlayerData
@@ -55,7 +55,7 @@ end)
 ---@param h number
 RegisterNetEvent('QBCore:Command:TeleportToCoords', function(x, y, z, h)
     if GetInvokingResource() then return end
-    
+
     SetPedCoordsKeepVehicle(cache.ped, x, y, z)
     SetEntityHeading(cache.ped, h or GetEntityHeading(cache.ped))
 end)
