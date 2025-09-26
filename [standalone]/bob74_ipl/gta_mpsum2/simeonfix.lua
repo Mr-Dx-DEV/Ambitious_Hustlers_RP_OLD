@@ -34,8 +34,6 @@ CriminalEnterpriseSmeonFix = {
             for entity, state in pairs(CriminalEnterpriseSmeonFix.Entities) do
                 if type(entity) == 'string' and state then
                     ActivateInteriorEntitySet(CriminalEnterpriseSmeonFix.InteriorId, entity)
-                elseif type(entity) == 'string' and not state then
-                    DeactivateInteriorEntitySet(CriminalEnterpriseSmeonFix.InteriorId, entity)
                 end
             end
         end,
