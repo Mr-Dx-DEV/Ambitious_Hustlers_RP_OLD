@@ -60,6 +60,13 @@
 		"Enable": true,
 		"Songs": [
 			{
+				"Title": "Hustlaz Ambition",
+				"Artist": "Jeezy",
+				"ImageUrl": "./loadingscreen/songs/the_recession.jpg",
+				"SongUrl": "./loadingscreen/songs/Hustlaz_Ambition.mp3"
+			},
+			
+			{
 				"Title": "Look at that",
 				"Artist": "Captain Joz",
 				"ImageUrl": "./loadingscreen/songs/look_at_that.jpg",
@@ -94,10 +101,10 @@
 		]
 	},
 	"Locale": {
-		"MainTitle": "Loading",
-		"MainSubtitle": "Screen",
-		"CardTitle": "Information!",
-		"CardDescription": "This is default configuration of loading screen. It's impossible to make loadingscreen config on lua side - that's why it's config is at /web/loadingscreen/config.json. You can play youtube video in background, change music, translate etc.. Also don't forget that you can change colors in /web/colors.css",
+		"MainTitle": "Weclome To Ambitious Hustlerz",
+		"MainSubtitle": "Roleplay!",
+		"CardTitle": "Owner: SBDemon | Partners TooLitMafia & DemonsAngel | Devoloper: Mr_DX (Lead) & SBDemon",
+		"CardDescription": "Ambitious Hustlerz Is Serious Roleplay Server With A Bit Of  Realistic",
 		"LoadingProgress": "Loading... %s",
 		"PauseMusic": "Press space to pause music",
 		"PlayMusic": "Press space to play music"
