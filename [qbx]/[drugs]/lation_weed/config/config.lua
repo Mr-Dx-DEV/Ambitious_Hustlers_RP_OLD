@@ -474,7 +474,7 @@ Config.Shop = {
         -- Color (https://docs.fivem.net/docs/game-references/blips/#blip-colors)
         color = 2,
         -- Size/scale
-        scale = 0.8,
+        scale = 0.5,
         -- Label
         label = 'Smoke on the Water'
     }

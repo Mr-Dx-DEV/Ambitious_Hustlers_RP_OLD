@@ -55,11 +55,11 @@ Config.Police = {
     jobs = { 'police', 'sheriff' },
     -- "Risk" is a feature you can enable that will increase the price of
     -- Drugs based on the number of police online! Do you want to enable this feature?
-    risk = true,
+    risk = false,
     -- If risk = true, "percent" is how much the price of drugs increase
     -- In percentage for EVERY cop online. If percent = 10 and there are
     -- 3 police online, the price of each drug will increase 30%
-    percent = 5
+    percent = 1
 }
 
 ----------------------------------------------
@@ -264,9 +264,9 @@ Config.Zones = {
             -- If you don't know, then keep it set to true
             metadata = true,
             -- Do you want to require police be online to allow selling here?
-            requirePolice = false,
+            requirePolice = true,
             -- If requirePolice = true, how many must be online?
-            count = 1,
+            count = 0,
             -- Do you want to allow players to get robbed by customers?
             enableRobbery = true,
             -- If enableRobbery = true, what is the percentage chance they get robbed?
@@ -451,8 +451,8 @@ Config.Zones = {
             daytime = false,
             money = 'black_money',
             metadata = true,
-            requirePolice = false,
-            count = 3,
+            requirePolice = true,
+            count = 0,
             enableRobbery = true,
             chance = 25,
             anonymousCalls = true,
@@ -605,12 +605,12 @@ Config.Zones = {
             money = 'black_money',
             metadata = true,
             requirePolice = true,
-            count = 3,
+            count = 0,
             enableRobbery = true,
             chance = 5,
             anonymousCalls = true,
             callChance = 10,
-            cooldown = true,
+            cooldown = false,
             duration = 25000,
             limit = true,
             cap = 50
@@ -757,8 +757,8 @@ Config.Zones = {
             daytime = true,
             money = 'black_money',
             metadata = true,
-            requirePolice = false,
-            count = 3,
+            requirePolice = true,
+            count = 0,
             enableRobbery = true,
             chance = 10,
             anonymousCalls = true,
@@ -911,7 +911,7 @@ Config.Zones = {
             money = 'black_money',
             metadata = true,
             requirePolice = true,
-            count = 3,
+            count = 0,
             enableRobbery = true,
             chance = 5,
             anonymousCalls = true,
@@ -1064,7 +1064,7 @@ Config.Zones = {
             money = 'black_money',
             metadata = true,
             requirePolice = false,
-            count = 3,
+            count = 0,
             enableRobbery = false,
             chance = 5,
             anonymousCalls = true,

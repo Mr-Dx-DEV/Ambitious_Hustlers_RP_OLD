@@ -30,7 +30,7 @@ Config.ReducingStatsWhenNotExercising = false -- enable this if you want decreas
 
 Config.ReduceStatsTime = {condition = {decreasevalue = 1.0, decreasetime = 1}, strenght = {decreasevalue = 1.0, decreasetime = 1}, water = {decreasevalue = 1.0, decreasetime = 1}} -- decrease time in minutes
 
-Config.GymReactionMinigame = true -- Turn this feature on if you want the player to have a reaction minigame while exercising, so it won't be so easy for the player to get stats.
+Config.GymReactionMinigame = false -- Turn this feature on if you want the player to have a reaction minigame while exercising, so it won't be so easy for the player to get stats.
 
 Config.GymReactionMinigameKey = "SPACE" -- key the player must press to react
 
@@ -311,7 +311,7 @@ Config.Gyms = {
 	{
 		gymcoords = vector3(-1207.25, -1571.51, 4.59), -- coords for blip and also coords for gym menu (if gympayed is disables menu will not show)
 		gymname = "Muscle Sands",
-		gymblip = {blip = true, blipiconid = 311, blipdisplay = 4, blipcolor = 3, blipshortrange = true, blipscale = 1.0},
+		gymblip = {blip = true, blipiconid = 311, blipdisplay = 4, blipcolor = 3, blipshortrange = true, blipscale = 0.5},
 		gympayed = true, -- enable this if you want payed gym for player, so players need always pay for use machines in gym)
 		gymprice = 1000, -- the price of entry to the gym
 		gymtime = 10, -- time a player can be in the gym after payment (in minutes)
@@ -415,7 +415,7 @@ Config.Gyms = {
 	{
 		gymcoords = vector3(259.01, -269.51, 52.96), -- coords for blip and also coords for gym menu (if gympayed is disables menu will not show)
 		gymname = "LA Fitness", -- https://www.youtube.com/watch?v=LXm9ix0fF4Y (Map)
-		gymblip = {blip = true, blipiconid = 311, blipdisplay = 4, blipcolor = 3, blipshortrange = true, blipscale = 1.0},
+		gymblip = {blip = true, blipiconid = 311, blipdisplay = 4, blipcolor = 3, blipshortrange = true, blipscale = 0.5},
 		gympayed = true, -- enable this if you want payed gym for player, so players need always pay for use machines in gym)
 		gymprice = 2000, -- the price of entry to the gym
 		gymtime = 60, -- time a player can be in the gym after payment (in minutes)
@@ -561,7 +561,7 @@ Config.Gyms = {
 	{
 		gymcoords = vector3(-1253.9, -354.39, 35.95), -- coords for blip and also coords for gym menu (if gympayed is disables menu will not show)
 		gymname = "Pump & Run", -- https://www.gta5-mods.com/maps/mlo-pump-run-gym-add-on-sp-fivem-ragemp (Map)
-		gymblip = {blip = true, blipiconid = 311, blipdisplay = 4, blipcolor = 3, blipshortrange = true, blipscale = 1.0},
+		gymblip = {blip = false, blipiconid = 311, blipdisplay = 4, blipcolor = 3, blipshortrange = true, blipscale = 1.0},
 		gympayed = true, -- enable this if you want payed gym for player, so players need always pay for use machines in gym)
 		gymprice = 2000, -- the price of entry to the gym
 		gymtime = 60, -- time a player can be in the gym after payment (in minutes)
@@ -665,7 +665,7 @@ Config.Gyms = {
 	{
 		gymcoords = vector3(-53.35, -1289.33, 29.9), -- coords for blip and also coords for gym menu (if gympayed is disables menu will not show)
 		gymname = "Los Santos GYM", -- https://forum.cfx.re/t/release-mlo-los-santos-gym/1051705 (Map)
-		gymblip = {blip = true, blipiconid = 311, blipdisplay = 4, blipcolor = 3, blipshortrange = true, blipscale = 1.0},
+		gymblip = {blip = false, blipiconid = 311, blipdisplay = 4, blipcolor = 3, blipshortrange = true, blipscale = 1.0},
 		gympayed = true, -- enable this if you want payed gym for player, so players need always pay for use machines in gym)
 		gymprice = 2000, -- the price of entry to the gym
 		gymtime = 60, -- time a player can be in the gym after payment (in minutes)
@@ -825,8 +825,9 @@ Config.Showers = {
 
 
 function Notify(text)
-	exports["rtx_notify"]:Notify("Gym", text, 5000, "info") -- if you get error in this line its because you dont use our notify system buy it here https://rtx.tebex.io/package/5402098 or you can use some other notify system just replace this notify line with your notify system
+	--exports["rtx_notify"]:Notify("Gym", text, 5000, "info") -- if you get error in this line its because you dont use our notify system buy it here https://rtx.tebex.io/package/5402098 or you can use some other notify system just replace this notify line with your notify system
 	--exports["mythic_notify"]:SendAlert("inform", text, 5000)
+	TriggerEvent("QBCore:Notify", text, "primary")
 end
 
 function DrawText3D(x, y, z, text)

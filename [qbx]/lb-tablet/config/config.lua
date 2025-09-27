@@ -41,7 +41,7 @@ Config.BillingScript = "auto" --[[
 Config.RegistrationApp = "auto" -- add an app that lets players create their own characters, vehicles etc? useful for standalone servers
 
 Config.HousingScript = "auto"
-Config.JailScript = "auto"
+Config.JailScript = "rcore"
 --[[
     Supported jail scripts:
         * auto: automatically detect the jail script (recommended)

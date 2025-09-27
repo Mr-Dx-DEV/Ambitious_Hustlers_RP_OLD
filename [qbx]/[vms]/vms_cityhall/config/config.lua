@@ -85,7 +85,7 @@ Config.Blips = {
     ['cityhall'] = {
         sprite = 826,
         display = 4,
-        scale = 0.9,
+        scale = 0.5,
         color = 62,
         name = "City Hall"
     },

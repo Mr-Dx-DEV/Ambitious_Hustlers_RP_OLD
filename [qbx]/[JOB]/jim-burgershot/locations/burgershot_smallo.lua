@@ -16,7 +16,7 @@ Locations["bs_smallo"] = {
         coords = vec3(-1186.11, -885.86, 13.97),
         blipcolor = 5,
         blipsprite = 106,
-        blipscale = 0.7,
+        blipscale = 0.5,
         blipdisp = 6,
         blipcat = nil,
     },

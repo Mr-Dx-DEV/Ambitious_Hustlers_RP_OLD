@@ -7,7 +7,7 @@ Config.UseBuiltInNotifications = true   -- Set to false if you want to use ur fr
 Config.RequiredJob = "none"             -- Set to "none" if you dont want using jobs. If you are using target, you have to set "job" parameter inside every export in target.lua
 Config.RequireJobAlsoForFriends = true          -- If it's false, then only host needs to have the job, if it's true then everybody from group needs to have the Config.RequiredJob
 Config.RequireOneFriendMinimum = false  -- Set to true if you want to force players to create teams
-Config.OnePercentWorth = 100            -- Means that 1% progress will reward players with $100
+Config.OnePercentWorth = 2500            -- Means that 1% progress will reward players with $100
 -- ^^ Here you can change payout. Tags for search tool: reward, payout, payment, money, cash, bank
 
 Config.letBossSplitReward = true                    -- If it's true, then boss can manage whole party rewards percent in menu. If you'll set it to false, then everybody will get same amount. Avalible only in modern UI
@@ -53,7 +53,7 @@ Config.Blips = { -- Here you can configure Company blip.
     [1] = {
         Sprite = 801,
         Color = 69,
-        Scale = 0.8,
+        Scale = 0.5,
         Pos = vector3(926.47, -1560.25, 30.74),
         Label = 'Builder Job'
     },

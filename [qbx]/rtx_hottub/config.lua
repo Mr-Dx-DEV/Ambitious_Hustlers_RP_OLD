@@ -34,7 +34,7 @@ Config.HotTubRemoveDuration = 10 -- in seconds
 
 Config.DisableNozzlesSound = false -- it will disable sound but also particle!
 
-Config.Target = true -- enable this if you want use target and 3d texts
+Config.Target = false -- enable this if you want use target and 3d texts
 
 Config.Targettype = "oxtarget" -- types - qtarget, qbtarget, oxtarget
 
@@ -61,11 +61,11 @@ Config.CustomPedsOffsets = { -- offsets for custom ped models
 
 Config.HotTubs = {
     {
-        coords = vector3(-1826.69, -754.6, 8.2),
+        coords = vector3(-1473.486, 165.492, 55.638),
 		rotation = vector3(0.0, 0.0, 50.0),
 		objecthandler = nil,
 		hottubstairs = true,
-		hottubtype = 1,
+		hottubtype = 3,
 		closed = true,
 		manipulating = false,
 		manipulatingplayerid = nil,
@@ -122,10 +122,10 @@ Config.HotTubs = {
     },		
 }
 
-function Notify(text)
+--[[function Notify(text)
 	exports["rtx_notify"]:Notify("HotTub", text, 5000, "info") -- if you get error in this line its because you dont use our notify system buy it here https://rtx.tebex.io/package/5402098 or you can use some other notify system just replace this notify line with your notify system
 	--exports["mythic_notify"]:SendAlert("inform", text, 5000)
-end
+end]]
 
 function DrawText3D(x, y, z, text)
 	local onScreen,_x,_y=World3dToScreen2d(x,y,z)

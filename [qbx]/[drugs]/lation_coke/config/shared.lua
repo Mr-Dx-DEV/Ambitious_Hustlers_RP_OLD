@@ -83,7 +83,7 @@ return {
             -- So if a player finds x3 leaves they'll get 3xp
             xp = { min = 1, max = 1 },
             -- Optional blip settings for this farm
-            blip = { enable = true, sprite = 89, color = 1, scale = 0.7, label = 'Coca Field' },
+            blip = { enable = false, sprite = 89, color = 1, scale = 0.7, label = 'Coca Field' },
             -- The coords of each plant to apply an interaction point
             -- Or, if spawn = true - the coords to spawn each plant
             coca = {
@@ -517,7 +517,7 @@ return {
         },
         -- Manage blip settings if desired
         blip = {
-            enable = true, -- Enable or disable the blip for this shop
+            enable = false, -- Enable or disable the blip for this shop
             sprite = 280, -- Sprite ID (https://docs.fivem.net/docs/game-references/blips/)
             color = 0, -- Color (https://docs.fivem.net/docs/game-references/blips/#blip-colors)
             scale = 0.9, -- Size/scale
@@ -780,7 +780,7 @@ return {
         -- Manage blip settings if desired
         blip = {
              -- Enable or disable the blip for this shop
-            enable = true,
+            enable = false,
             -- Sprite ID (https://docs.fivem.net/docs/game-references/blips/)
             sprite = 280,
             -- Color (https://docs.fivem.net/docs/game-references/blips/#blip-colors)
@@ -826,13 +826,13 @@ return {
                 iconColor = '',
                 -- Required items for this step
                 required = {
-                    { item = 'ls_coca_leaf', quantity = 20, remove = true },
+                    { item = 'ls_coca_leaf', quantity = 5, remove = true },
                     -- Add your own additional items here if desired
                     -- Don't want to require anything? Leave this table empty
                 },
                 -- Items added when this step is completed
                 add = {
-                    { item = 'ls_coca_ground', quantity = 1 },
+                    { item = 'ls_coca_ground', quantity = 3 },
                     -- Add your own additional items here if desired
                 },
                 -- How much XP is given for this step?
@@ -899,7 +899,7 @@ return {
                 iconColor = '',
                 -- How long does this step take to complete?
                 -- This duration is in minutes
-                duration = 60,
+                duration = 1,
                 required = {
                     { item = 'ls_coca_base', quantity = 1, remove = true, metatype = 'purity' }
                 },

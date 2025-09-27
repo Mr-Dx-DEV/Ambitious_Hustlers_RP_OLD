@@ -178,7 +178,7 @@ Config.Blips = {
     ['documents_menu'] = {
         sprite = 826,
         display = 4,
-        scale = 0.9,
+        scale = 0.5,
         color = 62,
         name = "Documents Office"
     },

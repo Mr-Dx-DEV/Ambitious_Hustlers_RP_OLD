@@ -5,14 +5,14 @@ Config.GTAMenu = {
         -- "text" will display only "Server Name" in the top of the menu
         -- "texture" will display the texture in the top of the menu
         -- "both" will display the texture and the text in the top of the menu
-        DisplayMode = "both",
+        DisplayMode = "text",
         texture = {
             TextureDict = "texture_name", -- if UseTexture is set to true, this is the name of the texture inside the ytd
             TextureFile = "file_name", --the ytd file name
             Width = 30,
             Height = 30,
         },
-        text = "Ambitious Hustlers Roleplay", -- if UseTexture is set to false, this is the text that will be displayed in the top of the menu
+        text = "Ambitious Hustlerz Roleplay", -- if UseTexture is set to false, this is the text that will be displayed in the top of the menu
     },
     menu = {
         ChangeColor = true, -- Set to true to change the color of the menu

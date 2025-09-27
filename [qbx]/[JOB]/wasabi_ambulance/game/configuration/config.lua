@@ -454,7 +454,7 @@ Config.Locations = {
             Coords = vec3(-448.384, -340.206, 34.502),
             Sprite = 61,
             Color = 2,
-            Scale = 1.0,
+            Scale = 0.5,
             String = 'Pillbox Hospital'
         },
 

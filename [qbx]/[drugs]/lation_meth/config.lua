@@ -151,7 +151,7 @@ Config.Table = {
         },
         -- Manage blip settings if desired
         blip = {
-            enable = true, -- Enable or disable the blip for this shop
+            enable = false, -- Enable or disable the blip for this shop
             sprite = 280, -- Sprite ID (https://docs.fivem.net/docs/game-references/blips/)
             color = 0, -- Color (https://docs.fivem.net/docs/game-references/blips/#blip-colors)
             scale = 0.8, -- Size/scale
@@ -338,7 +338,7 @@ Config.WarehouseSettings = {
         hours = { min = 1, max = 24 },
         -- Manage blip settings if desired
         blip = {
-            enable = true, -- Enable or disable the blip for this shop
+            enable = false, -- Enable or disable the blip for this shop
             sprite = 280, -- Sprite ID (https://docs.fivem.net/docs/game-references/blips/)
             color = 0, -- Color (https://docs.fivem.net/docs/game-references/blips/#blip-colors)
             scale = 0.8, -- Size/scale
@@ -572,7 +572,7 @@ Config.Supplies = {
         },
         -- Customize blip settings for starting location
         blip = {
-            enable = true, -- Enable or disable the blip for supply runs
+            enable = false, -- Enable or disable the blip for supply runs
             sprite = 303, -- Sprite ID (https://docs.fivem.net/docs/game-references/blips/)
             color = 1, -- Color (https://docs.fivem.net/docs/game-references/blips/#blip-colors)
             scale = 0.8, -- Size/scale

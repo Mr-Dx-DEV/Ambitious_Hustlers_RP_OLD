@@ -38,7 +38,7 @@ Config.InteractKey = 38 -- E
 -- Options: 'qb-phone', 'npwd', 'qs-smartphone', 'qs-smartphonepro', 'lb-phone', 'gksphone', 'yseries', 'custom' or 'none'
 -- If 'custom' you will have to configure your event(s) via client & server functions.lua
 -- If 'none' then it will use a default alert dialog from ox_lib
-Config.Phone = 'none'
+Config.Phone = 'lb-phone'
 
 -- Customize how you want players to begin money laundering
 Config.Start = {
@@ -50,7 +50,7 @@ Config.Start = {
     -- If enabled, the NPC spawned from above will be spawned randomly
     -- At only one of the locations listed. If false, the ped will spawn
     -- Normally at all the locations listed below
-    randomizeSpawn = false,
+    randomizeSpawn = true,
     -- The "require" option below is for requiring a specific item to
     -- Interact with/begin the money laundering process with the starting ped
     -- If you want to require an item, set require to true and set item below
@@ -82,7 +82,7 @@ Config.Police = {
     -- If true, this only applies to ped contracts, not the warehouse
     require = false,
     -- If require = true above, how many must be online?
-    count = 3,
+    count = 0,
     -- Do you want to allow players with the police job access to the 
     -- Warehouse, ignoring all requirements such as level, key, etc?
     warehouseAccess = true,
@@ -119,7 +119,7 @@ Config.QBCore = {
     -- Of all dirty money found in the inventory? If so, set to true
     -- If false, it'll only consider the first dirty money item found
     -- In the inventory and work one bag at a time (not add up total)
-    countTotal = true,
+    countTotal = false,
     -- If you use metadata, do you want to simply clean the entire items
     -- Value? For example, if a player has a markedbills value of $100
     -- Or $10,000, it don't matter, it'll clean whatever the total value is
@@ -134,7 +134,7 @@ Config.QBCore = {
     -- List your items below you want to hard-assign values too
     -- Be sure to follow the format below
     items = {
-        ['markedbills'] = 500,
+        ['black_money'] = 500,
         -- ['cashrolls'] = 250,
         -- Add more items here following the same format above
     }
@@ -223,7 +223,7 @@ Config.Warehouse = {
     account = 'cash',
     -- When a player unlocks use of the warehouse, do you want to create a
     -- Blip showing the location to enter the warehouse?
-    showBlip = true,
+    showBlip = false,
     -- Below is the location at which the players are able to enter the warehouse
     -- This is also the same location the blip will be displayed if enabled
     enterAt = vec4(1142.6859, -986.6674, 45.9059, 96.6889),
@@ -259,7 +259,7 @@ Config.Warehouse = {
             radius = 0.35, -- The size of the radius around the machine (for targeting only)
             offset = vec3(0.6327, 0.0385, -0.8101), -- The offset from the machine where chair spawns & player sits
             heading = 88.88, -- The direction the player is facing when counting money
-            debug = false -- Enable or disable zone debugging (visual display, for TextUI only)
+            debug = false, -- Enable or disable zone debugging (visual display, for TextUI only)
         },
         [2] = {
             coords = vec3(1116.0164, -3196.2717, -40.5917),
@@ -268,7 +268,7 @@ Config.Warehouse = {
             radius = 0.35,
             offset = vec3(0.5997, 0.0329, -0.8074),
             heading = 88.88,
-            debug = false
+            debug = false,
         },
         -- Add more here as needed or desired
         -- Note: this does not spawn the money counter, just makes one that exists interactable
@@ -315,7 +315,7 @@ Config.Warehouse = {
 Config.Levels = {
     [1] = { -- Level 1
         -- The dirty money item used at level 1
-        dirtyMoney = 'markedbills',
+        dirtyMoney = 'black_money',
         -- Tax rate is how much dirty money is lost during the cleaning process
         -- For example, a 25% tax rate means the player will receive $750 clean
         -- Cash for $1,000 dirty
@@ -339,7 +339,7 @@ Config.Levels = {
         rejectChance = 20
     },
     [2] = { -- Level 2
-        dirtyMoney = 'markedbills',
+        dirtyMoney = 'black_money',
         taxRate = 20,
         clean = { min = 750, max = 1500 },
         addXP = 500,
@@ -348,7 +348,7 @@ Config.Levels = {
         rejectChance = 15
     },
     [3] = { -- Level 3
-        dirtyMoney = 'markedbills',
+        dirtyMoney = 'black_money',
         taxRate = 15,
         clean = { min = 1000, max = 2000 },
         addXP = 250,
@@ -357,7 +357,7 @@ Config.Levels = {
         rejectChance = 10
     },
     [4] = { -- Level 4
-        dirtyMoney = 'markedbills',
+        dirtyMoney = 'black_money',
         taxRate = 10,
         clean = { min = 1500, max = 3000 },
         addXP = 125,
@@ -366,7 +366,7 @@ Config.Levels = {
         rejectChance = 5
     },
     [5] = { -- Level 5
-        dirtyMoney = 'markedbills',
+        dirtyMoney = 'black_money',
         taxRate = 5,
         -- (To change warehouse washing limits go to Config.Warehouse.limits.washing)
         clean = { min = 2000, max = 10000 },
@@ -400,7 +400,7 @@ Config.AllowNegotiations = true
 -- Customize how you wants your blips to display
 Config.Blips = {
     start = { -- The ped location(s) to start cleaning money
-        enabled = true, -- Do you want blip(s) showing where to start money laundering?
+        enabled = false, -- Do you want blip(s) showing where to start money laundering?
         sprite = 47, -- Sprite ID: https://docs.fivem.net/docs/game-references/blips/
         color = 0, -- Color: https://docs.fivem.net/docs/game-references/blips/#blip-colors
         scale = 0.8, -- Size of the blip on the map
