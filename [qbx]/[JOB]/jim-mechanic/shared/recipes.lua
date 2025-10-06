@@ -143,6 +143,8 @@ Stores = {
 		items = {
 			{ name = "nos", 			price = 0, amount = 50, info = {}, type = "item", },
 			{ name = "noscolour", 		price = 0, amount = 50, info = {}, type = "item", },
+			{ name = "radiocar", 		price = 0, amount = 50, info = {}, type = "item", },
+			{ name = "radiocar_blue", 		price = 0, amount = 50, info = {}, type = "item", },
 		},
 	},
 	RepairItems = {
