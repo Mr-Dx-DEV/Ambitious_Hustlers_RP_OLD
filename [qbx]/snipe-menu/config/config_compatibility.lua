@@ -17,7 +17,7 @@ Config.NewQBInventory = true -- set to true if you use the new qb inventory syst
 -- use fivem-appearance if you use fivem-appearance
 -- use esx_skin if you use esx_skin
 -- use illenium-appearance if you use illenium-appearance
-Config.Clothing = "illenium-appearance" 
+Config.Clothing = "qb-clothing" 
 
 -- lb is for lb-phone
 -- gks is for gks-phone
