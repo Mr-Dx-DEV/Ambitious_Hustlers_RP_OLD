@@ -151,7 +151,7 @@ function PrepeareVehicle()
     -- Before Vehicle spawn
 end
 
-function DrawText3Ds(x, y, z, text)
+function DrawText3Ds(x, y, z, text, entityId)
     local onScreen, _x, _y=World3dToScreen2d(x, y, z)
     SetTextScale(0.32, 0.32)
     SetTextFont(4)
