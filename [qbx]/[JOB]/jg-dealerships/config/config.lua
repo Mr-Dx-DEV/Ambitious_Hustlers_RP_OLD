@@ -125,7 +125,7 @@ Config.DealershipLocations = {
       color = 2,
       scale = 0.6
     },
-    enableSellVehicle = true, -- Allow players to sell vehicles back to dealer
+    enableSellVehicle = false, -- Allow players to sell vehicles back to dealer
     sellVehiclePercent = 0.6,  -- 60% of current sale price
     enableFinance = true,
     hideMarkers = false,
@@ -160,7 +160,7 @@ Config.DealershipLocations = {
       positions = {5.0, 8.0, 12.0, 8.0}
     },
     categories = {"custom"},
-    enableSellVehicle = true, -- Allow players to sell vehicles back to dealer
+    enableSellVehicle = false, -- Allow players to sell vehicles back to dealer
     sellVehiclePercent = 0.6,  -- 60% of current sale price
     enableTestDrive = true,
     enableFinance = true,
