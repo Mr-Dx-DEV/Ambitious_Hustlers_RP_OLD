@@ -45,8 +45,8 @@ Config = {
     AnimalEmotesEnabled = true,
 
     -- Hands Up
-    HandsupEnabled = true,
-    HandsupKeybind = 'X',
+    HandsupEnabled = false,
+    HandsupKeybind = 'Y',
     HandsupKeybindEnabled = false,
     HandsupInCar = false,
     ReplayEmoteAfterHandsup = true,
@@ -60,14 +60,14 @@ Config = {
     ReplayEmoteAfterPointing = true,
 
     -- Crouching
-    CrouchEnabled = false,
+    CrouchEnabled = true,
     CrouchKeybindEnabled = true,
     CrouchKeybind = 'LCONTROL',
     CrouchOverrideStealthMode = false, -- If true, you won't enter stealth mode even if the crouch key and the 'duck' key are the same.
     FpsMode = false, -- set this to true if you have first-person shooting to disable the ability to crouch and shoot in third-person
 
     -- Crawling
-    CrawlEnabled = false,
+    CrawlEnabled = true,
     CrawlKeybindEnabled = true,
     CrawlKeybind = 'RCONTROL',
 
