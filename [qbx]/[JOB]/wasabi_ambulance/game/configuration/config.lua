@@ -334,10 +334,10 @@ Config.CompleteDeath = { --DOES NOT APPLY TO QBCORE --  When enabled players can
 }
 
 Config.Bandages = {
-    enabled = false,       -- Useable bandages? (Leave false if ox_inventory because they're built in)
+    enabled = true,       -- Useable bandages? (Leave false if ox_inventory because they're built in)
     item = 'bandage',      -- YOU MUST ADD THIS ITEM TO YOUR ITEMS, IT DOES NOT COME IN INSTALLATION(COMES WITH QBCORE BY DEFAULT AS ITEM)
     hpRegen = 30,          -- Percentage of health it replenishes (30% by default)
-    healBleed = false,     -- Heal bleed that is inflicted by injury system? (Requires injury system enabled)
+    healBleed = true,     -- Heal bleed that is inflicted by injury system? (Requires injury system enabled)
     duration = 7 * seconds -- Time to use
 }
 
