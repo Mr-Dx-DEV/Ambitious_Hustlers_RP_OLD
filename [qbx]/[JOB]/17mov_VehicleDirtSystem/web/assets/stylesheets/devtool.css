@@ -1,0 +1,668 @@
+.devtool {
+    transition: opacity 0.3s ease-in-out;
+    width: 100vw;
+    height: 100vh;
+    padding: 3.704vh 2.083vw;
+    left: 0;
+    top: 0;
+    position: relative;
+    overflow: hidden;
+    font-family: Gilroy, sans-serif;
+
+}
+
+.devtool-keys {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 400px;
+    height: auto;
+    background: #121212;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: white;
+    padding: 10px;
+    border-bottom: #FF1A35 solid 3px;
+}
+
+.devtool-keys-header{
+    position: relative;
+    height: 40px;
+    overflow: hidden;
+}
+
+.devtools-keys-header-img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 0.3;
+}
+
+.devtools-keys-item {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+}
+
+.devtool-wrapper {
+    width: 433px;
+    max-height: 100%;
+    height: 500px;
+    background: #0C0E10;
+    border-radius: 0 0 16px 16px;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.devtool-wrapper-line {
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 4px;
+    background: #FF1A35;
+    box-shadow: 0 0 20px rgba(255, 26, 53, 0.5);
+}
+
+.devtool-main,
+.devtool-edit {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    inset: 0;
+    left: 20px;
+    top: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.devtool-main-header,
+.devtool-edit-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.devtool-main-header .devtool-main-header-icon,
+.devtool-edit-header .devtool-edit-header-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #FF1A35;
+    color: #000;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: none;
+}
+
+.devtool-edit-header .devtool-edit-header-icon {
+    cursor: pointer;
+}
+
+.devtool-main-header .devtool-main-header-text,
+.devtool-edit-header .devtool-edit-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 0;
+    margin: 0;
+    flex: 1 1 auto;
+}
+
+.devtool-main-header .devtool-main-header-text .devtool-main-header-text-title,
+.devtool-edit-header .devtool-edit-header-text .devtool-edit-header-text-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 20px;
+}
+
+.devtool-main-header .devtool-main-header-text .devtool-main-header-text-subtitle,
+.devtool-edit-header .devtool-edit-header-text .devtool-edit-header-text-subtitle {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 15px;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.devtool-main-header .devtool-main-header-close,
+.devtool-edit-header .devtool-edit-header-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    color: rgba(255, 255, 255, 0.35);
+    border-radius: 10px;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border: 0 !important;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.devtool-main-header .devtool-main-header-close:hover,
+.devtool-edit-header .devtool-edit-header-close:hover {
+    background: #fff;
+    color: #000;
+}
+
+.devtool-main-layouts {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 100%;
+    gap: 2px;
+    overflow-y: auto;
+    padding: 0;
+    scrollbar-gutter: stable both-edges;
+}
+
+.devtool-main-layouts .devtool-main-layouts-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    margin: 0;
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+}
+
+.devtool-main-layouts .devtool-main-layouts-item .devtool-main-layouts-item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #FF1A35;
+    color: #000;
+    border-radius: 8px;
+}
+
+.devtool-main-layouts .devtool-main-layouts-item .devtool-main-layouts-item-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    flex: 1 1 auto;
+}
+
+.devtool-main-layouts .devtool-main-layouts-item .devtool-main-layouts-item-buttons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.devtool-main-layouts .devtool-main-layouts-item .devtool-main-layouts-item-buttons .devtool-main-layouts-item-buttons-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(255,255,255,0.05);
+    color: rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border: 0 !important;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.devtool-main-layouts .devtool-main-layouts-item .devtool-main-layouts-item-buttons .devtool-main-layouts-item-buttons-button:hover {
+    background: #fff;
+    color: #000;
+}
+
+.devtool-main-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    min-height: 40px;
+    background: #FF1A35;
+    border-radius: 10px;
+    color: #000;
+    border: 0;
+    box-shadow: none;
+    font-size: 13px;
+    font-family: Gilroy, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.devtool-edit-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    scrollbar-gutter: stable both-edges;
+}
+
+.devtool-edit-content .devtool-edit-content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.devtool-edit-content .devtool-edit-content-section .devtools-edit-content-section-title {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.devtool-edit-content .devtool-edit-content-section .devtools-edit-content-section-group {
+    width: 100%;
+    position: relative;
+}
+
+.devtool-edit-content .devtool-edit-content-section .devtools-edit-content-section-group .devtools-edit-content-section-group-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 26, 53, 0.15);
+    color: #ff1a35;
+    border-radius: 10px;
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.devtool-edit-content .devtool-edit-content-section .devtools-edit-content-section-group .devtools-edit-content-section-group-input {
+    width: 100%;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.03);
+    color: #fff;
+    font-size: 12px;
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 16px 12px 50px;
+    outline: none;
+}
+
+.devtool-edit-content .devtool-edit-content-section .devtools-edit-content-section-group .devtools-edit-content-section-group-input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 12px;
+}
+
+.devtool-edit-content .devtool-edit-content-section .devtools-edit-content-section-group .devtools-edit-content-section-group-input:focus {
+    outline: none;
+}
+
+.devtool-edit-items {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.devtool-edit-items .devtool-edit-items-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    margin: 0;
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+}
+
+.devtool-edit-items .devtool-edit-items-item .devtool-edit-items-item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #FF1A35;
+    color: #000;
+    border-radius: 8px;
+}
+
+.devtool-edit-items .devtool-edit-items-item .devtool-edit-items-item-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    flex: 1 1 auto;
+}
+
+.devtool-edit-items .devtool-edit-items-item .devtool-edit-items-item-buttons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: auto;
+}
+
+.devtool-edit-items .devtool-edit-items-item .devtool-edit-items-item-buttons .devtool-edit-items-item-buttons-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(255,255,255,0.05);
+    color: rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border: 0 !important;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.devtool-edit-items .devtool-edit-items-item .devtool-edit-items-item-buttons .devtool-edit-items-item-buttons-button:hover {
+    background: #fff;
+    color: #000;
+}
+
+.devtool-action-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.devtool-action-buttons .devtool-action-buttons-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FF1A35;
+    font-family: Gilroy, sans-serif;
+    color: #000;
+    height: 40px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.devtool-action-buttons .devtool-action-buttons-button:hover {
+    background: rgba(255, 26, 53, 0.15);
+    color: #FF1A35;
+}
+
+.devtool-action-buttons .devtool-action-buttons-button:nth-child(1) {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.devtool-action-buttons .devtool-action-buttons-button:nth-child(1):hover {
+    background: #fff;
+    color: #000;
+}
+
+/* mt-auto w-full flex items-center justify-center h-[62px] bg-[#FF1A35] text-white text-[16px] font-bold rounded-[8px] */
+.devtool-main-newlayout {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 62px;
+    background: #FF1A35;
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Devtool layout item styles converted from Tailwind */
+.devtool-layout-item {
+    width: 100%;
+    height: 61px;
+    padding: 13px;
+    flex-shrink: 0;
+    background: #101010;
+    border-radius: 8px;
+}
+
+.devtool-layout-item-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.devtool-layout-item-left {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 12px;
+}
+
+.devtool-layout-item-name {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.devtool-layout-item-buttons {
+    height: 100%;
+    display: flex;
+    gap: 3px;
+    font-weight: 400;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+.devtool-layout-item-edit-btn {
+    height: 100%;
+    display: flex;
+    border-radius: 2px;
+    align-items: center;
+    color: #FFFFFF;
+    background: #FF1A35;
+    padding: 0 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.devtool-layout-item-delete-btn {
+    height: 100%;
+    color: #FFFFFF;
+    border-radius: 2px;
+    background: #151515;
+    padding: 0 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.devtool-edit-header-input:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* flex flex-col flex-1 w-full gap-[10px] overflow-y-auto scrollbar-space px-[26px] */
+.devtool-edit-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 100%;
+    gap: 10px;
+    overflow-y: auto;
+    padding: 0 26px;
+    scrollbar-gutter: stable both-edges;
+}
+
+/* Universal interface button styles */
+.interface-button {
+    width: 100%;
+    height: 60px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: #101010;
+    border-radius: 8px;
+}
+
+.interface-button-left {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 15px;
+}
+
+.interface-button-title {
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.interface-button-right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 15px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.interface-button-icon {
+    cursor: pointer;
+}
+
+.interface-button-icon.edit-icon {
+    filter: drop-shadow(0 2px 18px rgba(255, 26, 53, 0.45));
+    stroke: #FF1A35;
+}
+
+/* Action buttons container and individual buttons */
+.action-buttons {
+    width: 100%;
+    height: 62px;
+    display: flex;
+    border-radius: 4px;
+    font-size: 16px;
+    overflow: hidden;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+}
+
+.action-button-save {
+    flex: 1;
+    height: 100%;
+    background: rgba(255, 26, 53, 0.9);
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.action-button-save:disabled {
+    filter: brightness(0.5);
+}
+
+.action-button-save:hover:enabled {
+    background: #FF1A35;
+    color: #FFFFFF;
+}
+
+.action-button-cancel {
+    flex: 1;
+    height: 100%;
+    background: #101010;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.action-button-cancel:hover {
+    color: #FFFFFF;
+    background: #181818;
+}
+
+/* Universal form input section styles */
+.form-input-section {
+    width: 100%;
+    height: 93px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: #101010;
+    gap: 10px;
+    border-radius: 8px;
+}
+
+.form-input-content {
+    height: 53px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.form-input-label {
+    color: #5F5F5F;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.form-input-field {
+    background: #151515;
+    height: 35px;
+    color: rgba(255, 255, 255, 0.3);
+    outline: none;
+    font-size: 12px;
+    padding: 0 15px;
+    transition: color 0.3s ease-in-out;
+    border: 1px solid rgba(95, 95, 95, 0.05);
+    border-radius: 5px;
+}
+
+.form-input-field:focus {
+    color: #FFFFFF;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

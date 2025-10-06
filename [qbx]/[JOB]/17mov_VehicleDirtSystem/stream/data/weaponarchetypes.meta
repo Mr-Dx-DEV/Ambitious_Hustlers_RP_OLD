@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CWeaponModelInfo__InitDataList>
+	<InitDatas>
+		<Item>
+			<modelName>17mov_washing_gun</modelName>
+			<txdName>17mov_carwash_txd</txdName>
+			<ptfxAssetName>null</ptfxAssetName>
+			<lodDist value="200"/>
+		</Item>
+	</InitDatas>
+</CWeaponModelInfo__InitDataList>

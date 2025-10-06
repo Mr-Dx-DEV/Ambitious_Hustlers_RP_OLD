@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17mov_VehicleDirtSystem</title>
+
+    <link rel="stylesheet" href="assets/stylesheets/fonts.css" />
+    <link rel="stylesheet" href="assets/stylesheets/style.css" />
+    <link rel="stylesheet" href="assets/stylesheets/devtool.css" />
+    <link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="wrapper" style="display: none; opacity: 0">
+        <div class="heading-wrapper">
+            <h1 class="heading">Detailing shop</h1>
+            <p class="description">Make your car beautiful</p>
+        </div>
+        <section class="section-wrapper" id="products">
+            <div class="title-wrapper">
+                <h1 class="title">Products</h1>
+                <div class="line"></div>
+            </div>
+            <div class="products-wrapper"></div>
+        </section>
+        <section class="section-wrapper" id="basket">
+            <div class="title-wrapper">
+                <h1 class="title">Basket</h1>
+                <div class="line"></div>
+            </div>
+            <div class="basket-wrapper"></div>
+        </section>
+        <div class="checkout">
+            <div class="checkout-total">
+                <img src="assets/images/BasketIcon.svg" alt="" />
+                <h1 class="checkout-total-text">
+                    Total price: <span>$0</span>
+                </h1>
+            </div>
+            <div class="checkout-buttons">
+                <button id="card">Pay With Card</button>
+                <button id="cash">Pay With Cash</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="devtool" style="display:none; opacity: 0">
+        <div class="devtool-keys" style="transform: translateY(-50%) translateX(100%)">
+            <div class="devtool-keys-header"
+                style="display: flex; width: 100%; justify-content: center; align-items: center;">
+                <img class="devtools-keys-header-img" src="assets/images/lines.png" />
+                <h1>INFO</h1>
+            </div>
+
+            <div style="display: flex; gap: 3px; flex-direction: column; width: 100%;">
+                <div class="devtools-keys-item">
+                    <div style="display: flex; gap: 2px;">
+                        <kbd class="kbc-button">W</kbd>
+                        <kbd class="kbc-button">A</kbd>
+                        <kbd class="kbc-button">S</kbd>
+                        <kbd class="kbc-button">D</kbd>
+                    </div>
+                    <span>Camera Movement</span>
+                </div>
+                <div class="devtools-keys-item">
+                    <div style="display: flex; gap: 2px;">
+                        <kbd class="kbc-button">E</kbd>
+                        <kbd class="kbc-button">Q</kbd>
+                    </div>
+                    <span>Camera Up/Down</span>
+                </div>
+                <div class="devtools-keys-item">
+                    <kbd class="kbc-button">LALT</kbd>
+                    <span>Toggle Focus</span>
+                </div>
+                <div class="devtools-keys-item">
+                    <kbd class="kbc-button">INS</kbd>
+                    <span>Back to initial position</span>
+                </div>
+
+                <div class="devtools-keys-item">
+                    <kbd class="kbc-button">R</kbd>
+                    <span>Translate/Rotate mode</span>
+                </div>
+
+                <div class="devtools-keys-item">
+                    <kbd class="kbc-button">BACKSPACE</kbd>
+                    <span>Cancel editing object</span>
+                </div>
+                <div class="devtools-keys-item">
+                    <kbd class="kbc-button"><img src="assets/images/mouseicon.svg" style="width: 25px; height: 25px;"
+                            alt="" /></kbd>
+                    <span>Enter/Leave Cursor Mode (When editing object)</span>
+                </div>
+                <div class="devtools-keys-item">
+                    <kbd class="kbc-button">Y</kbd>
+                    <span>Toggle World/Local Gizmo Mode</span>
+                </div>
+                <div class="devtools-keys-item">
+                    <kbd class="kbc-button">ENTER</kbd>
+                    <span>Save object</span>
+                </div>
+            </div>
+        </div>
+        <div class="devtool-wrapper">
+            <div class="devtool-wrapper-line"></div>
+            <div class="devtool-main" style="transform: translateX(0%);">
+                <div class="devtool-main-header">
+                    <div class="devtool-main-header-icon">
+                        <i data-lucide="bubbles" style="width: 18px; height: 18px;"></i>
+                    </div>
+                    <div class="devtool-main-header-text">
+                        <h2 class="devtool-main-header-text-title">Vehicle Dirt System</h2>
+                        <p class="devtool-main-header-text-subtitle">Layout Configurations</p>
+                    </div>
+                    <button id="closeDevtool" type="button" class="devtool-main-header-close">
+                        <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+                    </button>
+                </div>
+                <div class="devtool-main-layouts"></div>
+                <button id="newLayout" class="devtool-main-button">
+                    Create new layout
+                </button>
+            </div>
+            <div class="devtool-edit" style="transform: translateX(calc(100% + 20px));">
+                <div class="devtool-edit-header">
+                    <button type="button" class="devtool-edit-header-icon" id="buttonCancel">
+                        <i data-lucide="chevron-left" style="width: 18px; height: 18px;"></i>
+                    </button>
+                    <div class="devtool-edit-header-text">
+                        <h2 class="devtool-edit-header-text-title">Vehicle Dirt System</h2>
+                        <p class="devtool-edit-header-text-subtitle" id="name"></p>
+                    </div>
+                </div>
+                <div class="devtool-edit-content">
+                    <div class="devtool-edit-content-section">
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <p class="devtools-edit-content-section-title">Price</p>
+                            <span style="
+                                padding: 4px 9px;
+                                background: rgb(255 26 53 / 15%);
+                                color: #FF1A35;
+                                border-radius: 500px;
+                                font-size: 8px;
+                                font-weight: 600;
+                                letter-spacing: 0.3px;
+                            ">Required</span>
+                        </div>
+                        <div class="devtools-edit-content-section-group">
+                            <div class="devtools-edit-content-section-group-icon">
+                                <i data-lucide="circle-dollar-sign" style="width: 14px; height: 14px;"></i>
+                            </div>
+                            <input type="number" min="0" data-field="price" id="price"
+                                class="devtools-edit-content-section-group-input" placeholder="Enter price...">
+                        </div>
+                    </div>
+                    <div class="devtool-edit-content-section">
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <p class="devtools-edit-content-section-title">Job</p>
+                            <span style="
+                                padding: 4px 9px;
+                                background: rgba(122, 126, 150, 0.15);
+                                color: #7A7E96;
+                                border-radius: 500px;
+                                font-size: 8px;
+                                font-weight: 600;
+                                letter-spacing: 0.3px;
+                            ">Optional</span>
+                        </div>
+                        <div class="devtools-edit-content-section-group">
+                            <div class="devtools-edit-content-section-group-icon">
+                                <i data-lucide="briefcase-business" style="width: 14px; height: 14px;"></i>
+                            </div>
+                            <input type="text" data-field="requiredJob" id="job"
+                                class="devtools-edit-content-section-group-input" placeholder="Enter job name...">
+                        </div>
+                    </div>
+                    <div class="devtool-edit-content-section" style="margin-top: 10px;">
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <p class="devtools-edit-content-section-title">Cable length</p>
+                            <span style="
+                                    padding: 4px 9px;
+                                    background: rgba(122, 126, 150, 0.15);
+                                    color: #7A7E96;
+                                    border-radius: 500px;
+                                    font-size: 8px;
+                                    font-weight: 600;
+                                    letter-spacing: 0.3px;
+                                ">Optional</span>
+                        </div>
+                        <div class="devtools-edit-content-section-group">
+                            <div class="devtools-edit-content-section-group-icon">
+                                <i data-lucide="circle-dollar-sign" style="width: 14px; height: 14px;"></i>
+                            </div>
+                            <input type="number" min="1" data-field="cableLength" id="cableLength"
+                                class="devtools-edit-content-section-group-input" placeholder="Enter cable length...">
+                        </div>
+                    </div>
+                    <div class="devtool-edit-items">
+                        <div class="devtool-edit-items-item">
+                            <div class="devtool-edit-items-item-icon">
+                                <svg width="14" height="14" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.77783 1V17" stroke="#000" strokeWidth="2" strokeLinecap="round"
+                                        strokeLinejoin="round" />
+                                    <path
+                                        d="M2.77783 2.33337H9.00005L12.1112 3.66671H15.2223C15.458 3.66671 15.6841 3.76036 15.8508 3.92706C16.0175 4.09376 16.1112 4.31985 16.1112 4.5556V12.1112C16.1112 12.3469 16.0175 12.573 15.8508 12.7397C15.6841 12.9064 15.458 13 15.2223 13H12.1112L9.00005 11.6667H2.77783V2.33337Z"
+                                        stroke="#000" strokeWidth="2" strokeLinejoin="round" />
+                                    <path d="M1 17H4.55556" stroke="#000" strokeWidth="2" strokeLinecap="round"
+                                        strokeLinejoin="round" />
+                                </svg>
+                            </div>
+                            <div style="display:flex; flex-direction: column; justify-items: center;">
+                                <h3 class="devtool-edit-items-item-title">Interface Position</h3>
+                                <p id="interfaceError" style="color:red; display: none; font-size: 12px;">Interface Position must be set</p>
+                            </div>
+                            <div class="devtool-edit-items-item-buttons">
+                                <button class="devtool-edit-items-item-buttons-button" id="interface">
+                                    <i data-lucide="square-pen" style="width: 12px; height: 12px;"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="devtool-edit-items-item">
+                            <div class="devtool-edit-items-item-icon">
+                                <i data-lucide="bubbles" style="width: 14px; height: 14px; stroke: #000"></i>
+                            </div>
+                             <div style="display:flex; flex-direction: column; justify-items: center;">
+                                <h3 class="devtool-edit-items-item-title">Nozzle Position</h3>
+                                <p id="nozzleError" style="color:red; display: none; font-size: 12px;">Nozzle Position must be set</p>
+                            </div>
+                            <div class="devtool-edit-items-item-buttons">
+                                <button class="devtool-edit-items-item-buttons-button" id="nozzle">
+                                    <i data-lucide="square-pen" style="width: 12px; height: 12px;"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="devtool-edit-items-item">
+                            <div class="devtool-edit-items-item-icon">
+                                <i data-lucide="cable" style="width: 14px; height: 14px; stroke: #000"></i>
+                            </div>
+                             <div style="display:flex; flex-direction: column; justify-items: center;">
+                                <h3 class="devtool-edit-items-item-title">Cable Position</h3>
+                                <p id="cableError" style="color:red; display: none; font-size: 12px;">Cable Position must be set</p>
+                            </div>
+                            <div class="devtool-edit-items-item-buttons">
+                                <button class="devtool-edit-items-item-buttons-button" id="cable">
+                                    <i data-lucide="square-pen" style="width: 12px; height: 12px;"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="devtool-action-buttons">
+                    <button id="actionButtonCancel" class="devtool-action-buttons-button">
+                        Cancel
+                    </button>
+                    <button id="actionButtonSave" class="devtool-action-buttons-button">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="assets/scripts/money.js"></script>
+        <script src="assets/scripts/app.js"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+</body>
+
+</html>
