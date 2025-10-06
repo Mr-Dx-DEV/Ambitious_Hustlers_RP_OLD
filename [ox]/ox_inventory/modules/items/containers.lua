@@ -51,8 +51,6 @@ local function setContainerProperties(itemName, properties)
 	}
 end
 
-exports('setContainerProperties', setContainerProperties)
-
 setContainerProperties('paperbag', {
 	slots = 5,
 	maxWeight = 1000,
@@ -63,11 +61,6 @@ setContainerProperties('pizzabox', {
 	slots = 5,
 	maxWeight = 1000,
 	whitelist = { 'pizza' }
-})
-
-setContainerProperties('murderbag', {
-	slots = 5,
-	maxWeight = 1000,
 })
 
 return containers

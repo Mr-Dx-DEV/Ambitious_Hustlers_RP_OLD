@@ -303,6 +303,7 @@ local function openEvidence()
     client.openInventory('policeevidence')
 end
 
+local markerColour = { 30, 30, 150 }
 local textPrompts = {
     evidence = {
         options = { icon = 'fa-box-archive' },
@@ -345,7 +346,7 @@ Inventory.Evidence = setmetatable(lib.load('data.evidence'), {
                         coords = evidence.coords,
                         distance = 16,
                         inv = 'policeevidence',
-                        marker = client.evidencemarker,
+                        marker = markerColour,
                         prompt = textPrompts.evidence,
                         nearby = Utils.nearbyMarker
                     })
@@ -389,7 +390,7 @@ Inventory.Stashes = setmetatable(lib.load('data.stashes'), {
                         distance = 16,
                         inv = 'stash',
                         invId = stash.name,
-                        marker = client.evidencemarker,
+                        marker = markerColour,
                         prompt = textPrompts.stash,
                         nearby = Utils.nearbyMarker
                     })
