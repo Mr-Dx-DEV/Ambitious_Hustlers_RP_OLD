@@ -1,14 +1,10 @@
-local enable = GetConvar('qbx:enableVehiclePersistence', 'false') == 'true'
-local full = GetConvar('qbx:vehiclePersistenceType', 'semi') == 'full'
-
-if not enable then return end
+if GetConvar('qbx:enableVehiclePersistence', 'false') == 'false' then return end
 
 local cachedProps
 local netId
 local vehicle
 local seat
 
-local zones = {}
 local watchedKeys = {
     'bodyHealth',
     'engineHealth',
@@ -47,35 +43,15 @@ end
 
 local function sendPropsDiff()
     if not Entity(vehicle).state.persisted then return end
-
-    if full then TriggerServerEvent('qbx_core:server:vehiclePositionChanged', netId) end
-
     local newProps = lib.getVehicleProperties(vehicle)
     if not cachedProps then
         cachedProps = newProps
         return
     end
-
     local diff, hasChanged = calculateDiff(cachedProps, newProps)
     cachedProps = newProps
     if not hasChanged then return end
-
     TriggerServerEvent('qbx_core:server:vehiclePropsChanged', netId, diff)
-end
-
----@param vehicles table
-local function createVehicleZones(vehicles)
-    for id, coords in pairs(vehicles) do
-        if not zones[id] then
-            zones[id] = lib.points.new({
-                distance = 75.0,
-                coords = coords,
-                onEnter = function()
-                    TriggerServerEvent('qbx_core:server:spawnVehicle', id, coords)
-                end
-            })
-        end
-    end
 end
 
 lib.onCache('seat', function(newSeat)
@@ -95,18 +71,4 @@ lib.onCache('seat', function(newSeat)
         vehicle = nil
         netId = nil
     end
-end)
-
-AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
-    local vehicles = lib.callback.await('qbx_core:server:getVehiclesToSpawn', 2500)
-    if not vehicles then return end
-
-    createVehicleZones(vehicles)
-end)
-
-RegisterNetEvent('qbx_core:client:removeVehZone', function(id)
-    if not zones[id] then return end
-
-    zones[id]:remove()
-    zones[id] = nil
 end)

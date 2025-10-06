@@ -41,6 +41,7 @@
 ---@field jobs table<string, integer>
 ---@field gangs table<string, integer>
 ---@field source? Source present if player is online
+---@field optin? boolean present if player is online
 
 ---@class PlayerFunctions
 ---@field UpdatePlayerData fun()
@@ -161,7 +162,6 @@
 ---@field card number
 
 ---@class PlayerMetadata
----@field optin? boolean If opted in for admin duty
 ---@field health number
 ---@field armor number
 ---@field hunger number
@@ -246,7 +246,6 @@
 ---@field model string
 ---@field price number
 ---@field category string
----@field type string
 ---@field hash string | integer actually just an integer but string is required for types to align when using `asbo` for example
 
 ---@class Weapon
