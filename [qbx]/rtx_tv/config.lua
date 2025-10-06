@@ -42,7 +42,7 @@ Config.TelevisionPresets = false -- enable this feature if you want to have, for
 
 Config.VehicleTelevisionOffSetsCreator = false --enable this only on dev server, you can open offset menu via /tvcreator command
 
-Config.VehicleTelevision = true -- this will enable vehicle television system
+Config.VehicleTelevision = false -- this will enable vehicle television system
 
 Config.VehicleTelevisionForEveryVehicle = true -- if you enable this, television will work on every vehicles, if its disabled, it will work only in vehicles which is writed in Config.TelevisonVehicles. 
 
