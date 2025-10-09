@@ -41,14 +41,4 @@ escrow_ignore {
     "locale/*.**",
 }
 
-files {
-    'stream/**/*.ybn',
-    'stream/**/*.ytyp',
-    'stream/**/*.ydr',
-    'stream/**/*.ytd',
-    'stream/**/*.ymap',
-}
-data_file 'DLC_ITYP_REQUEST' 'stream/mlo_name.ytyp'
-
-
 dependency '/assetpacks'

@@ -1,4 +1,4 @@
-Citizen.CreateThread(function()
+CreateThread(function()
     -- ====================================================================
     -- =--------------------- [GTA V: Single player] ---------------------=
     -- ====================================================================
@@ -34,6 +34,7 @@ Citizen.CreateThread(function()
     Ammunations.LoadDefault()
     LesterFactory.LoadDefault()
     StripClub.LoadDefault()
+    CargoShip.LoadDefault()
 
     Graffitis.Enable(true)
 
@@ -142,6 +143,16 @@ Citizen.CreateThread(function()
     if GetGameBuildNumber() >= 2060 then
         DiamondCasino.LoadDefault() -- 1100.000, 220.000, -50.000
         DiamondPenthouse.LoadDefault() -- 976.636, 70.295, 115.164
+        DiamondArcade.LoadDefault() -- 2732.000, -380.000, -50.000
+        DiamondArcadeBasement.LoadDefault() -- 2710.0, -360.780, -56.0
+    end
+
+    -- ====================================================================
+    -- =-------------------- [DLC: Cayo Perico Heist] --------------------=
+    -- ====================================================================
+    if GetGameBuildNumber() >= 2189 then
+        CayoPericoNightclub.LoadDefault() -- 1550.0, 250.0, -50.0
+        CayoPericoSubmarine.LoadDefault() -- 1560.0, 400.0, -50.0
     end
 
     -- ====================================================================
@@ -174,5 +185,60 @@ Citizen.CreateThread(function()
         CriminalEnterpriseSmeonFix.LoadDefault() -- -50.2248, -1098.8325, 26.049742
         CriminalEnterpriseVehicleWarehouse.LoadDefault() -- 800.13696, -3001.4297, -65.14074
         CriminalEnterpriseWarehouse.LoadDefault() -- 849.1047, -3000.209, -45.974354
+    end
+
+    -- ====================================================================
+    -- =------------------- [DLC: Los Santos Drug Wars] ------------------=
+    -- ====================================================================
+    if GetGameBuildNumber() >= 2802 then
+        DrugWarsFreakshop.LoadDefault() -- 570.9713, -420.0727, -70.000
+        DrugWarsGarage.LoadDefault() -- 519.2477, -2618.788, -50.000
+        DrugWarsLab.LoadDefault() -- 483.4252, -2625.071, -50.000
+    end
+
+    -- ====================================================================
+    -- =------------------- [DLC: San Andreas Mercenaries] ---------------=
+    -- ====================================================================
+    if GetGameBuildNumber() >= 2944 then
+        MercenariesClub.LoadDefault() -- 1202.407, -3251.251, -50.000
+        MercenariesLab.LoadDefault() -- -1916.119, 3749.719, -100.000
+        MercenariesFixes.LoadDefault()
+    end
+
+    -- ====================================================================
+    -- =------------------- [DLC: The Chop Shop] -------------------------=
+    -- ====================================================================
+    if GetGameBuildNumber() >= 3095 then
+        ChopShopCargoShip.LoadDefault() -- -344.4349, -4062.832, 17.000
+        ChopShopCartelGarage.LoadDefault() -- 1220.133, -2277.844, -50.000
+        ChopShopLifeguard.LoadDefault() -- -1488.153, -1021.166, 5.000
+        ChopShopSalvage.LoadDefault() -- 1077.276, -2274.876, -50.000
+    end
+
+    -- ====================================================================
+    -- =------------------ [DLC: Bottom Dollar Bounties] -----------------=
+    -- ====================================================================
+    if GetGameBuildNumber() >= 3258 then
+        SummerCarrier.LoadDefault() -- -3208.03, 3954.54, 14.0
+        SummerOffice.LoadDefault() -- 565.886, -2688.761, -50.0
+    end
+
+    -- ====================================================================
+    -- =-------------------- [DLC: Agents of Sabotage] -------------------=
+    -- ====================================================================
+    if GetGameBuildNumber() >= 3407 then
+        AgentsFactory.LoadDefault() -- 752.31, -997.24, -47.0
+        AgentsOffice.LoadDefault() -- 2149.71, 4787.76, -47.0
+        AgentsAirstrip.LoadDefault() -- -2106.98, 1468.31, 282.0
+        AgentsHangarDoor.LoadDefault() -- -2632.43, 2963.23, 8.5
+    end
+
+    -- ====================================================================
+    -- =----------------------- [DLC: Money Fronts] ----------------------=
+    -- ====================================================================
+    if GetGameBuildNumber() >= 3570 then
+        MoneyCarwash.LoadDefault() -- 26.074, -1398.979, -75.0
+        MoneyOffice.LoadDefault() -- -1160.493, -1538.932, -50.0
+        MoneyConstruction.LoadDefault()
     end
 end)

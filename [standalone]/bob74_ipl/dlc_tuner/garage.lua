@@ -6,7 +6,7 @@ TunerGarage = {
     InteriorId = 285953,
 
     Ipl = {
-        Interior = {
+        Exterior = {
             ipl = {
                 'tr_tuner_shop_burton',
                 'tr_tuner_shop_mesa',
@@ -17,10 +17,10 @@ TunerGarage = {
         },
 
         Load = function()
-            EnableIpl(TunerGarage.Ipl.Interior.ipl, true)
+            EnableIpl(TunerGarage.Ipl.Exterior.ipl, true)
         end,
         Remove = function()
-            EnableIpl(TunerGarage.Ipl.Interior.ipl, false)
+            EnableIpl(TunerGarage.Ipl.Exterior.ipl, false)
         end,
     },
     Entities = {
@@ -73,6 +73,8 @@ TunerGarage = {
             for entity, state in pairs(TunerGarage.Entities) do
                 if type(entity) == 'string' and state then
                     ActivateInteriorEntitySet(TunerGarage.InteriorId, entity)
+                elseif type(entity) == 'string' and not state then
+                    DeactivateInteriorEntitySet(TunerGarage.InteriorId, entity)
                 end
             end
         end,
@@ -89,6 +91,6 @@ TunerGarage = {
         TunerGarage.Ipl.Load()
         TunerGarage.Entities.Load()
 
-        RefreshInterior(TunerGarage.interiorId)
+        RefreshInterior(TunerGarage.InteriorId)
     end
 }

@@ -1,3 +1,4 @@
+-- Garage: -1071.83, -77.96, -95.0
 exports('GetMpSecurityGarageObject', function()
     return MpSecurityGarage
 end)
@@ -52,6 +53,8 @@ MpSecurityGarage = {
             for entity, state in pairs(MpSecurityGarage.Entities) do
                 if type(entity) == 'string' and state then
                     ActivateInteriorEntitySet(MpSecurityGarage.InteriorId, entity)
+                elseif type(entity) == 'string' and not state then
+                    DeactivateInteriorEntitySet(MpSecurityGarage.InteriorId, entity)
                 end
             end
         end,
@@ -68,6 +71,6 @@ MpSecurityGarage = {
         MpSecurityGarage.Ipl.Load()
         MpSecurityGarage.Entities.Load()
 
-        RefreshInterior(MpSecurityGarage.interiorId)
+        RefreshInterior(MpSecurityGarage.InteriorId)
     end
 }

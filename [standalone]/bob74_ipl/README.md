@@ -1,4 +1,4 @@
-# Fix holes and customize the map (Updated to The Criminal Enterprises DLC)
+# Fix holes and customize the map (Updated to Money Fronts DLC)
 
 The purpose of this script is to fix the holes in the map by loading zones that aren’t loaded by default. I’ve added quite a lot of places to load, based on [Mikeeh’s script](https://forum.fivem.net/t/release-load-unloaded-ipls/5911). If you just want to fix the holes in the map, then use this resource as provided.
 
@@ -30,6 +30,68 @@ This resource has been completely rewritten from scratch since v2.0. You can cus
 (DD/MM/YYYY)
 
 ---
+18/06/2025 - 2.5.0
+- Added "Money Fronts" support
+- Added arcade interior
+
+18/04/2025 - 2.4.2
+- Fix calling interior natives with invalid types
+
+25/02/2025 - 2.4.1
+- Add hangar door
+- Rename "Bottom Dollar Bounties" folder to a more clear name
+
+27/12/2024 - 2.4.0
+- Added "Agents of Sabotage" support
+- Fixed Eclipse Boulevard Garage tint colors (@DevSekai)
+
+28/08/2024 - 2.3.3
+- Fixed door on cargo ship (@NeenGame)
+- Fixed Franklin interior (@NeenGame)
+
+24/08/2024 - 2.3.2
+- Added Kosatka and "The Music Locker" interiors
+- Removed `Citizen` prefix from code
+
+10/08/2024 - 2.3.1
+- Fix world not rendering when inside security offices
+- Fix typos in "Los Santos Tuners" files
+
+02/07/2024 - 2.3.0
+- Added "Bottom Dollar Bounties" support
+
+14/04/2024 - 2.2.1
+- Allow disabling San Andreas Mercenaries fixes
+- Allow setting base game cargo ship as sunk
+- Rename `ChopShopSalvage.Ipl.Load()` to `ChopShopSalvage.Ipl.Exterior.Load()`
+- Rename `DrugWarsFreakshop.Ipl.Load()` to `DrugWarsFreakshop.Ipl.Exterior.Load()`
+- Rename `DrugWarsGarage.Ipl.Load()` to `DrugWarsGarage.Ipl.Exterior.Load()`
+
+06/04/2024 - 2.2.0
+- Added "Los Santos Drug Wars" support
+- Added "San Andreas Mercenaries" support
+- Added "The Chop Shop" support
+- Added missing base IPLs
+
+27/03/2024 - 2.1.4
+- North Yankton improvements (https://github.com/Bob74/bob74_ipl/pull/131 @TheIndra55)
+
+05/12/2023 - 2.1.3
+- Added missing train track near Davis Quartz (https://github.com/Bob74/bob74_ipl/pull/129 @TheIndra55)
+
+10/01/2023 - 2.1.2
+- Fix native and update native names (@NeenGame)
+
+24/10/2022 - 2.1.1
+- Fix vespucci beach wall hole
+- Fix Boat House Door in Sandy Shores
+- Fix GTA 5 24/7 Roof in Sandy Shores
+- Fix Industrial Building near Lesters Warehouse
+- Fix Collision Holes near Lost MC compound
+
+11/10/2022 - 2.1.0a
+- Make Doomsday Facility Objects non network
+
 03/08/2022 - 2.1.0
 - Added "The Criminal Enterprises" support
 
@@ -117,8 +179,8 @@ This resource has been completely rewritten from scratch since v2.0. You can cus
 - Fixed gang members names using an old format
 - Disabled the Mod shop from CEO garage 3 (ImportCEOGarage3) because it is overlapping with CEO office 3 (FinanceOffice3)
 
-- 08/11/2018 - 2.0.3
-Added biker gang’s name, missions, and members pictures
+08/11/2018 - 2.0.3
+- Added biker gang’s name, missions, and members pictures
 - Added CEO office organization’s name
 
 05/11/2018 - 2.0.1
@@ -150,3 +212,9 @@ Added biker gang’s name, missions, and members pictures
 14/06/2017
 - Original release
 </details>
+
+## Contributors
+
+<a href="https://github.com/Bob74/bob74_ipl/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=Bob74/bob74_ipl" />
+</a>
