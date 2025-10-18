@@ -3,7 +3,7 @@ lua54 'yes'
 game 'gta5'
 name 'lation_diving'
 author 'iamlation'
-version '2.0.6'
+version '2.1.0'
 description 'An advanced scuba diving resource for FiveM'
 
 client_scripts {

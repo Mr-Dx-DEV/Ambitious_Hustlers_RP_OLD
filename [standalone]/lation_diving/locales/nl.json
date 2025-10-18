@@ -109,7 +109,8 @@
         "add-member-desc": "Voeg een lid toe aan uw duikgroep",
         "remove-member-desc": "Klik om het lid uit de groep te verwijderen",
         "leave-group-title": "Groep verlaten",
-        "leave-group-desc": "Heeft je duikgroep verlaten"
+        "leave-group-desc": "Heeft je duikgroep verlaten",
+        "hideNames": "Spelers"
     },
     "leaderboard-menu": {
         "main-title": "Ranglijsten",

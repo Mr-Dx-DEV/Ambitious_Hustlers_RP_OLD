@@ -37,6 +37,13 @@ local function InitializePhone()
     end
 end
 
+-- Empty function for crate collected event
+--- @param source number Player ID
+--- @param quantity number Quantity of crates collected
+function CrateCollected(source, quantity)
+    -- print('x%s crate(s) collected by player ID: %s':format(quantity, source))
+end
+
 -- Send an email
 --- @param message string
 function SendEmail(source, message)

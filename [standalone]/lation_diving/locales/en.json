@@ -109,7 +109,8 @@
         "add-member-desc": "Add a member to your diving group",
         "remove-member-desc": "Click to remove member from group",
         "leave-group-title": "Leave Group",
-        "leave-group-desc": "Leave your diving group"
+        "leave-group-desc": "Leave your diving group",
+        "hideNames": "Player"
     },
     "leaderboard-menu": {
         "main-title": "Leaderboards",

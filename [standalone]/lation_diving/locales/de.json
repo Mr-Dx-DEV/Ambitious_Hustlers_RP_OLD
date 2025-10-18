@@ -109,7 +109,8 @@
         "add-member-desc": "Füge ein Mitglied zu deiner Tauchgruppe hinzu",
         "remove-member-desc": "Klicke, um ein Mitglied aus der Gruppe zu entfernen",
         "leave-group-title": "Gruppe verlassen",
-        "leave-group-desc": "Verlasse deine Tauchgruppe"
+        "leave-group-desc": "Verlasse deine Tauchgruppe",
+        "hideNames": "Spieler"
     },
     "leaderboard-menu": {
         "main-title": "Bestenliste",

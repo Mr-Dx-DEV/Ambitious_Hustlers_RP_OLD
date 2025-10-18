@@ -34,6 +34,10 @@ return {
         -- Set your alert & input dialog system below
         -- Available options are: 'lation_ui', 'ox_lib' & 'custom'
         dialogs = 'ox_lib',
+        -- Do you want to hide player names in the group menu?
+        -- If true, names will instead be replaced with their Player IDs
+        -- If false it will display their character names as normal
+        hideNames = false,
         -- Do you want to be notified via server console if an update is available?
         -- True if yes, false if no
         version = true,
@@ -71,7 +75,10 @@ return {
         hours = { min = 0, max = 24 },
         -- When a group owner selects "Start Diving", this is how long it takes
         -- (in seconds) to receive an assigned location on the map.
-        cooldown = { min = 15, max = 30 }
+        cooldown = { min = 15, max = 30 },
+        -- When a diving job is completed, do you want to display the "Continue Diving?"
+        -- Dialog to the group owner? True if yes, false if no
+        continue = true,
     },
 
     ----------------------------------------------
@@ -281,7 +288,7 @@ return {
             -- enable: true/false - enable or disable highlighting when nearby
             -- distance: how close the player must be for the highlight to be visible
             -- color: the color of the highlight (https://rgbacolorpicker.com/) 
-            highlight = { enable = true, distance = 60, color = { r = 106, g = 226, b = 119 } },
+            highlight = { enable = true, distance = 30, color = { r = 106, g = 226, b = 119 } },
             -- How many crates can be spawned in this zone?
             crates = { min = 2, max = 6 },
             -- How much XP is rewarded for crates found in this zone?
