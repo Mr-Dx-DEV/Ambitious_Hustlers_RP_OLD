@@ -39,7 +39,7 @@ Config.Setup = {
     -- Available options: cd_dispatch, ps-dispatch, qs-dispatch, core_dispatch,
     -- rcore_dispatch, aty_dispatch, op-dispatch, origen_police, emergencydispatch & 'custom'
     -- 'custom' needs to be added manually to client/functions.lua
-    dispatch = 'none',
+    dispatch = 'lb-tablet',
     -- Do you want to be notified via server console if an update is available?
     -- True if yes, false if no
     version = true,
