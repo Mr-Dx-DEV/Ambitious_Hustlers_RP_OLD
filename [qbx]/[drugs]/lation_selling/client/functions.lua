@@ -149,6 +149,32 @@ function PoliceDispatch(data)
                 radius = 0,
             }
         })
+        elseif Config.Setup.dispatch == 'lb-tablet' then
+        -- Fallbacks if caller didn't provide both fields
+        local coords = data and data.coords or GetEntityCoords(cache.ped)
+        local street = (data and data.street) or GetStreetNameFromHashKey(GetStreetNameAtCoord(coords.x, coords.y, coords.z))
+
+        local dispatchData = {
+            code = '10-420',
+            priority = 'medium',                 -- 'low' | 'medium' | 'high' (adjust if your tablet expects different values)
+            title = 'Drug Sale',
+            time = 30 * 1000,                    -- ms
+            job = 'police',
+            description = ('A citizen has reported a potential drug sale on %s'):format(street),
+            image = nil,                         -- or set a URL preview image if you want
+            location = {
+                label = ('Near %s'):format(street),
+                coords = vec2(coords.x, coords.y)
+            }
+        }
+
+        local dispatchId = exports['lb-tablet']:AddDispatch(dispatchData)
+        if dispatchId then
+            print(('[lb-tablet] Dispatch created (id: %s)'):format(dispatchId))
+        else
+            print('[lb-tablet] Failed to create dispatch')
+        end
+    
     elseif Config.Setup.dispatch == 'ps-dispatch' then
         local alert = {
             coords = data.coords,
