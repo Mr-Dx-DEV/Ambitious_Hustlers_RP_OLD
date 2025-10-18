@@ -443,6 +443,36 @@ function PoliceDispatch(data)
                 radius = data.blip.radius or nil,
             }
         })
+        elseif Config.Setup.dispatch == 'lb-tablet' then
+        -- Fallbacks if street/coords weren't provided
+        local coords = data.coords or GetEntityCoords(cache.ped)
+        local street = data.street
+        if not street then
+            local _, cross = GetStreetNameAtCoord(coords.x, coords.y, coords.z)
+            street = GetStreetNameFromHashKey(_)
+        end
+
+        local dispatchData = {
+            code = data.code,                                  -- e.g. '10-420'
+            priority = 'medium',                               -- 'low' | 'medium' | 'high'
+            title = data.title,                                -- e.g. 'Drug Sale'
+            time = 30 * 1000,                                  -- ms
+            job = 'police',                                    -- lb-tablet expects a single job string
+            description = data.message:format(street),         -- same text you use elsewhere
+            image = nil,                                       -- set a URL if you want a preview image
+            location = {
+                label = ('Near %s'):format(street),
+                coords = vec2(coords.x, coords.y)              -- lb-tablet example uses vec2
+            }
+        }
+
+        local dispatchId = exports['lb-tablet']:AddDispatch(dispatchData)
+        if dispatchId then
+            print(('[lb-tablet] Dispatch created (id: %s)'):format(dispatchId))
+        else
+            print('[lb-tablet] Failed to create dispatch')
+        end
+    
     elseif Config.Setup.dispatch == 'ps-dispatch' then
         local alert = {
             coords = data.coords,
