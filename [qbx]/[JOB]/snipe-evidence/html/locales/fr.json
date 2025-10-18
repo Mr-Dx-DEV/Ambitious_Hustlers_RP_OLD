@@ -1,0 +1,73 @@
+{
+    "app_title": "Evidence System",
+
+    "confirm_btn": "confirm",
+    "cancel_btn": "cancel",
+    "no_data_found": "no data found",
+    "search": "search",
+
+    "create_crime_scene_btn": {
+        "small": "create",
+        "big": "crime scene"
+    },
+
+    "adding_crime_scene": "adding crime scene",
+    "title": "title",
+    "description": "description",
+
+    "back": "back",
+    "evidences": "evidences",
+    "all": "all",
+    "add_evidence_btn": {
+        "small": "add",
+        "big": "evidence"
+    },
+    "recreate_crime_scene_btn": {
+        "small": "recreate",
+        "big": "crime scene"
+    },
+    "no_evidences_found": "no evidences found",
+
+    "evidence_details": "evidence details",
+    "related_scenes": "related scenes",
+    "no_related_scenes_found": "no related scenes found",
+    "evidence_not_found": "Not in system",
+    "evidence_found": "evidence found for",
+
+    "gallery_add_custom_img": {
+        "small": "add",
+        "big": "custom image"
+    },
+    "no_images_msg": "No images found",
+    "custom_img_url_label": "Image URL",
+    "invalid_img_url": "Image URL is not valid",
+    "img_name_label": "Image name",
+
+    "are_you_sure": "are you sure",
+    "you_want_to_remove": "You want to remove",
+
+    "showCameraTextUi": [
+        "[E] to leave"
+    ],
+
+    "showCameraHelperTextUi": [
+        "Camera Helper",
+        "Press [E] to take picture",
+        "Press [G] to toggle evidence",
+        "Press [ESC / Right Click] to Exit"
+    ],
+
+    "image_link_copied_message": "Link copied.",
+    "copy_button": "Copy Link",
+
+    "recreate_helper_title": "Recreate Scene Helper",
+    "recreate_helper_search": "Search by ID",
+    "recreate_helper_label": "Label",
+    "recreate_helper_id": "ID",
+    "recreate_helper_info_message": "Press Alt key to toggle focus",
+
+    "bac_loading_text": "Analyzing",
+    "bac_heading": "bac tracker",
+    "bac_closer_text": "Escape to close",
+    "remove_focus_btn": "Remove focus"
+}
