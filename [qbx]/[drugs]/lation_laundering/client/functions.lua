@@ -260,6 +260,54 @@ PoliceDispatch = function(dispatch)
                 radius = 0,
             }
         })
+        elseif Config.Police.dispatchSystem == 'lb-tablet' then
+        -- Coords/street fallbacks
+        local coords = dispatch.coords or GetEntityCoords(cache.ped)
+        local street = dispatch.street
+        if not street then
+            local s1, s2 = GetStreetNameAtCoord(coords.x, coords.y, coords.z)
+            street = GetStreetNameFromHashKey(s1)
+            if s2 and s2 ~= 0 then
+                street = street .. ' / ' .. GetStreetNameFromHashKey(s2)
+            end
+        end
+
+        -- lb-tablet expects a single job string; derive one from your config
+        local job = 'police'
+        if type(Config.Police.jobs) == 'string' then
+            job = Config.Police.jobs
+        elseif type(Config.Police.jobs) == 'table' then
+            if #Config.Police.jobs > 0 then
+                job = Config.Police.jobs[1]
+            else
+                for k, v in pairs(Config.Police.jobs) do
+                    job = (type(v) == 'string' and v) or k
+                    break
+                end
+            end
+        end
+
+        local data = {
+            code = '10-911',
+            priority = 'medium',                                   -- 'low' | 'medium' | 'high'
+            title = 'Suspicious Activity',
+            time = 30 * 1000,                                      -- ms
+            job = job,
+            description = ('A citizen has reported suspicious activity on %s'):format(street),
+            image = nil,                                           -- optional: set a URL preview image
+            location = {
+                label = ('Near %s'):format(street),
+                coords = vec2(coords.x, coords.y)                  -- lb-tablet example uses vec2
+            }
+        }
+
+        local dispatchId = exports['lb-tablet']:AddDispatch(data)
+        if dispatchId then
+            print(('[lb-tablet] Dispatch created (id: %s)'):format(dispatchId))
+        else
+            print('[lb-tablet] Failed to create dispatch')
+        end
+    
     elseif Config.Police.dispatchSystem == 'ps-dispatch' then
         exports["ps-dispatch"]:CustomAlert({
             coords = dispatch.coords,
