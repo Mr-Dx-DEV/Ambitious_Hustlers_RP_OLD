@@ -5,7 +5,7 @@ lua54 'yes'
 name 'lation_laundering'
 author 'iamlation'
 description 'The most powerful & high quality money laundering script for FiveM!'
-version '2.2.2'
+version '2.2.3'
 
 server_scripts {
     '@oxmysql/lib/MySQL.lua',
