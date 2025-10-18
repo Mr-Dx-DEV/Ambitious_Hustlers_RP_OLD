@@ -111,6 +111,20 @@ return {
 		-- 	id = 110, colour = 84, scale = 0.8
 		-- },
 		inventory = {
+			{ name = 'collected_evidence_bag',              price = 5, },
+			{ name = 'evidence_camera',              price = 5, },
+			{ name = 'evidence_pouch',              price = 5, },
+			{ name = 'dna_swab_kit',              price = 5, },
+			{ name = 'accesstool',              price = 5, },
+			{ name = 'bleach',              price = 5, },
+			{ name = 'evidence_tweezers',              price = 5, },
+			{ name = 'bactester',              price = 5, },
+			{ name = 'gsrkit',              price = 5, },
+
+
+
+
+
 			{ name = 'handcuffs',              price = 5, },
 			{ name = 'tracking_bracelet',              price = 5, },
 			{ name = 'tablet',              price = 5, },
