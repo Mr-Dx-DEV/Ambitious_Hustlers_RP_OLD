@@ -4,7 +4,7 @@ lua54 'yes'
 
 name 'lation_selling'
 author 'iamlation'
-version '2.1.9'
+version '2.1.10'
 description 'An advanced drug selling resource for FiveM'
 
 client_scripts {

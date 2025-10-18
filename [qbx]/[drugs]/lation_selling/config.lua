@@ -25,7 +25,7 @@ Config.Setup = {
     -- Available options: cd_dispatch, ps-dispatch, qs-dispatch, core_dispatch,
     -- rcore_dispatch, aty_dispatch, op-dispatch, origen_police, emergencydispatch & 'custom'
     -- 'custom' needs to be added manually to client/functions.lua
-    dispatch = 'custom',
+    dispatch = 'lb-tablet',
     -- Do you want to be notified via server console if an update is available?
     -- True if yes, false if no
     versionCheck = true,
@@ -38,7 +38,7 @@ Config.Setup = {
     requestWait = 10000,
     -- If you want to disable specific jobs from selling drugs
     -- Then put the job name(s) below
-    blacklistJobs = { 'police', 'ambulance' },
+    blacklistJobs = { 'police', 'ambulance', 'bcso', 'sahp', 'rangers', 'marshals', 'sadoc' },
     -- Do you want to enable a dymanic inventory check that verifies the player
     -- Has at least one of the drugs in their inventory before applying interactions?
     -- If false, interactions will always be available, even if the player doesn't have
@@ -52,14 +52,14 @@ Config.Setup = {
 
 Config.Police = {
     -- Add your police job(s) below
-    jobs = { 'police', 'sheriff' },
+    jobs = { 'police', 'bcso', 'sahp', 'rangers', 'marshals', 'sadoc' },
     -- "Risk" is a feature you can enable that will increase the price of
     -- Drugs based on the number of police online! Do you want to enable this feature?
-    risk = false,
+    risk = true,
     -- If risk = true, "percent" is how much the price of drugs increase
     -- In percentage for EVERY cop online. If percent = 10 and there are
     -- 3 police online, the price of each drug will increase 30%
-    percent = 1
+    percent = 5
 }
 
 ----------------------------------------------
@@ -264,9 +264,9 @@ Config.Zones = {
             -- If you don't know, then keep it set to true
             metadata = true,
             -- Do you want to require police be online to allow selling here?
-            requirePolice = true,
+            requirePolice = false,
             -- If requirePolice = true, how many must be online?
-            count = 0,
+            count = 1,
             -- Do you want to allow players to get robbed by customers?
             enableRobbery = true,
             -- If enableRobbery = true, what is the percentage chance they get robbed?
@@ -451,8 +451,8 @@ Config.Zones = {
             daytime = false,
             money = 'black_money',
             metadata = true,
-            requirePolice = true,
-            count = 0,
+            requirePolice = false,
+            count = 3,
             enableRobbery = true,
             chance = 25,
             anonymousCalls = true,
@@ -605,12 +605,12 @@ Config.Zones = {
             money = 'black_money',
             metadata = true,
             requirePolice = true,
-            count = 0,
+            count = 3,
             enableRobbery = true,
             chance = 5,
             anonymousCalls = true,
             callChance = 10,
-            cooldown = false,
+            cooldown = true,
             duration = 25000,
             limit = true,
             cap = 50
@@ -757,8 +757,8 @@ Config.Zones = {
             daytime = true,
             money = 'black_money',
             metadata = true,
-            requirePolice = true,
-            count = 0,
+            requirePolice = false,
+            count = 3,
             enableRobbery = true,
             chance = 10,
             anonymousCalls = true,
@@ -911,7 +911,7 @@ Config.Zones = {
             money = 'black_money',
             metadata = true,
             requirePolice = true,
-            count = 0,
+            count = 3,
             enableRobbery = true,
             chance = 5,
             anonymousCalls = true,
@@ -1064,7 +1064,7 @@ Config.Zones = {
             money = 'black_money',
             metadata = true,
             requirePolice = false,
-            count = 0,
+            count = 3,
             enableRobbery = false,
             chance = 5,
             anonymousCalls = true,

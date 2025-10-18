@@ -9,7 +9,8 @@ local fmsdk = GetResourceState('fmsdk') == 'started'
 --- @param item string Drug/item name
 --- @param quantity number Quantity sold
 --- @param value number Total money paid to player
-function DrugSold(source, zoneId, item, quantity, value)
+--- @param xpAdded number Amount of XP added to player
+function DrugSold(source, zoneId, item, quantity, value, xpAdded)
     -- Below is an example implementation of how you could use this function
     -- In this example, we'll check if the player is a gang member and if so
     -- Add reputation/notoriety to their gang upon a drug sale
