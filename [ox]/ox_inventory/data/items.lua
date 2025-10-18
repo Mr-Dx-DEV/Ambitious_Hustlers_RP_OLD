@@ -1,4 +1,116 @@
 return {
+	    ["collected_evidence_bag"] = {
+		label = "Evidence Bag",
+		weight = 200,
+		stack = false,
+		close = false,
+		description = "A filled evidence bag",
+	},
+
+	["evidence_camera"] = {
+		label = "Evidence Camera",
+		weight = 200,
+		stack = false,
+		close = true,
+		description = "Camera to take pictures of evidence",
+		client = {
+			image = "evidence_camera.png",
+		},
+		server = {
+			export = "snipe-evidence.useCam"
+		},
+		consume = 0,
+	},
+
+	["evidence_pouch"] = {
+		label = "Evidence Pouch",
+		weight = 200,
+		stack = false,
+		close = false,
+		server = {
+			export = 'snipe-evidence.usePouch'
+		},
+		client = {
+			image = "evidence_pouch.png",
+		},
+		description = "Pouch to hold all your evidences",
+		consume = 0,
+		allowArmed = true,
+	},
+
+	["dna_swab_kit"] = {
+		label = "DNA Swab Kit",
+		weight = 200,
+		stack = true,
+		close = true,
+		description = "A kit to take DNA samples",
+		client = {
+			image = "dna_swab_kit.png",
+		},
+		server = {
+			export = "snipe-evidence.swabDNA"
+		},
+		consume = 0,
+	},
+
+	["accesstool"] = {
+		label = "Access Tool",
+		weight = 200,
+		stack = true,
+		close = true,
+		description = "Tool to get into locked cars",
+		client = {
+			image = "accesstool.png",
+		},
+		server = {
+			export = "snipe-evidence.useAccessTool"
+		},
+		consume = 0,
+	},
+
+	["bleach"] = {
+		label = "Bleach",
+		weight = 200,
+		stack = false,
+		close = false,
+		description = "Clean up all the blood stains with this",
+	},
+
+	["evidence_tweezers"] = {
+		label = "Tweezers",
+		weight = 200,
+		stack = false,
+		close = false,
+		description = "You can pick up small items with this",
+	},
+
+	["bactester"] = {
+		label = "Bac Tester",
+		weight = 200,
+		stack = true,
+		close = true,
+		description = "Tool to get check BAC levels",
+		client = {
+			image = "bactester.png",
+            export = "snipe-evidence.UseBacItem"
+		},
+		consume = 0,
+	},
+
+	["gsrkit"] = {
+		label = "GSR Kit",
+		weight = 200,
+		stack = true,
+		close = true,
+		description = "Tool to get check GSR",
+		client = {
+			image = "gsrkit.png",
+            export = "snipe-evidence.CheckGSR"
+		},
+		consume = 0,
+	},
+
+
 	["car_door"] = {label = "car door",weight = 100,stack = true,close = false,description = "",client = {	image = "car_door.png",}
 	},
     ["car_wheel"] = {label = "car wheel",weight = 100,stack = true,close = false,description = " :D",client = {	image = "car_wheel.png",}
@@ -195,7 +307,7 @@ return {
 },
 
 
-	['fishingrod1'] = { label = 'Fishingrod Level 1', weight = 1000, stack = true, allowArmed = false },
+['fishingrod1'] = { label = 'Fishingrod Level 1', weight = 1000, stack = true, allowArmed = false },
 ['fishingrod2'] = { label = 'Fishingrod Level 2', weight = 1000, stack = true, allowArmed = false },
 ['fishingrod3'] = { label = 'Fishingrod Level 3', weight = 1000, stack = true, allowArmed = false },
 ['fishingrod4'] = { label = 'Fishingrod Level 4', weight = 1000, stack = true, allowArmed = false },
@@ -10443,14 +10555,7 @@ return {
 		server = { export = 'r14-evidence.fingerprintreader' },
 	},
 
-	['accesstool'] = {
-		consume = 0.0,
-		label = 'Access Tool',
-		weight = 200,
-		stack = false,
-		description = 'Snap into an access tool.',
-		server = { export = 'r14-evidence.accesstool' },
-	},
+
 
 	['fingerprintkit'] = {
 		consume = 0.0,
