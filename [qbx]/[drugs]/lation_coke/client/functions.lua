@@ -16,6 +16,8 @@ local textui = 'ox_lib'
 local function InitializeDispatch()
     if GetResourceState('ps-dispatch') == 'started' then
         Dispatch = 'ps-dispatch'
+    elseif GetResourceState('lb-tablet') == 'started' then
+        Dispatch = 'lb-tablet'
     elseif GetResourceState('cd_dispatch') == 'started' then
         Dispatch = 'cd_dispatch'
     elseif GetResourceState('qs-dispatch') == 'started' then
@@ -398,6 +400,53 @@ function SendDispatch(data)
             description = data.code .. ' | ' .. data.title,
             alert = { sprite = data.blip.sprite, color = data.blip.color, scale = data.blip.scale, length = 5, radius = data.blip.radius }
         })
+        elseif Dispatch == 'lb-tablet' then
+        -- Safe fallbacks
+        local coords = data.coords or GetEntityCoords(cache.ped)
+        local street = data.street
+        if not street then
+            local s1, s2 = GetStreetNameAtCoord(coords.x, coords.y, coords.z)
+            street = GetStreetNameFromHashKey(s1)
+            if s2 and s2 ~= 0 then
+                street = street .. ' / ' .. GetStreetNameFromHashKey(s2)
+            end
+        end
+
+        -- lb-tablet expects a single job string
+        local job = 'police'
+        local cfgJobs = shared.setup.police
+        if type(cfgJobs) == 'string' then
+            job = cfgJobs
+        elseif type(cfgJobs) == 'table' then
+            if #cfgJobs > 0 then
+                job = cfgJobs[1]
+            else
+                for k, v in pairs(cfgJobs) do
+                    job = (type(v) == 'string' and v) or k
+                    break
+                end
+            end
+        end
+
+        local payload = {
+            code = data.code,                                  -- e.g. '10-420'
+            priority = data.priority or 'medium',              -- 'low'|'medium'|'high'
+            title = data.title,                                -- e.g. 'Drug Sale'
+            time = data.time or (5 * 60000),                   -- ms
+            job = job,
+            description = (data.message and data.message:format(street)) or (data.code .. ' | ' .. data.title),
+            image = data.image or nil,                         -- optional preview image URL
+            location = {
+                label = ('Near %s'):format(street),
+                coords = vec2(coords.x, coords.y)              -- lb-tablet uses vec2 in examples
+            }
+        }
+
+        local dispatchId = exports['lb-tablet']:AddDispatch(payload)
+        if not dispatchId then
+            print('[lb-tablet] Failed to create dispatch')
+        end
+    
     elseif Dispatch == 'cd_dispatch' then
         local cd_data = exports[Dispatch]:GetPlayerInfo()
         if not cd_data then return end
