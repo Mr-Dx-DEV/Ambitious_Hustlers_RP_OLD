@@ -165,6 +165,8 @@ Config.CCTVCameras = { -- CCTV Cameras
         bcso = 0,
         sahp = 0,
         rangers = 0,
+        sadoc = 0,
+        marshals = 0,
         --        sheriff = 2,    -- Job 'sheriff' with minimum rank 2
     },
     destoryable = true, -- Can players destroy CCTV Cameras?
@@ -309,6 +311,8 @@ Config.RadarPosts = {           -- Radar posts for speed detection
         bcso = 0,
         sahp = 0,
         rangers = 0,
+        sadoc = 0,
+        marshals = 0,
 
        -- sheriff = 2,            -- Job 'sheriff' with minimum rank 2
     },
@@ -434,7 +438,9 @@ Config.policeJobs = { -- Police jobs
     'police',
     'bcso',
     'sahp',
-    'rangers'
+    'rangers',
+    'sadoc',
+    'marshals'
     --    'sheriff'
    -- 'reporter'
 }
@@ -486,6 +492,8 @@ Config.Props = { -- What props are avaliable in the "Place Objects" section of t
             ['bcso'] = 0,
             ['sahp'] = 0,
             ['rangers'] = 0,
+            ['sadoc'] = 0,
+            ['marshals'] = 0,
             
             --            ['sheriff'] = 0,
         }
@@ -500,6 +508,8 @@ Config.Props = { -- What props are avaliable in the "Place Objects" section of t
             ['bcso'] = 0,
             ['sahp'] = 0,
             ['rangers'] = 0,
+            ['sadoc'] = 0,
+            ['marshals'] = 0,
             --            ['sheriff'] = 0,
         }
     },
@@ -513,6 +523,8 @@ Config.Props = { -- What props are avaliable in the "Place Objects" section of t
             ['bcso'] = 0,
             ['sahp'] = 0,
             ['rangers'] = 0,
+            ['sadoc'] = 0,
+            ['marshals'] = 0,
             --            ['sheriff'] = 0,
         }
     },
@@ -526,6 +538,8 @@ Config.Props = { -- What props are avaliable in the "Place Objects" section of t
             ['bcso'] = 0,
             ['sahp'] = 0,
             ['rangers'] = 0,
+            ['sadoc'] = 0,
+            ['marshals'] = 0,
             --            ['sheriff'] = 0,
         }
     },
