@@ -36,6 +36,15 @@ return {
                 payment = 125
             },
             [4] = {
+                name = 'Captain',
+                payment = 125
+            },
+            [5] = {
+                name = 'Assistant Chief',
+                isboss = true,
+                payment = 125
+            },
+            [6] = {
                 name = 'Chief',
                 isboss = true,
                 bankAuth = true,
@@ -54,18 +63,27 @@ return {
                 payment = 50
             },
             [1] = {
-                name = 'Officer',
+                name = 'Trooper',
                 payment = 75
             },
             [2] = {
-                name = 'Sergeant',
+                name = 'Corporal',
                 payment = 100
             },
             [3] = {
-                name = 'Lieutenant',
+                name = 'Sergeant',
                 payment = 125
             },
             [4] = {
+                name = 'Lieutenant',
+                payment = 125
+            },
+            [5] = {
+                name = 'Lieutenant Colonel',
+                isboss = true,
+                payment = 125
+            },
+            [6] = {
                 name = 'Chief',
                 isboss = true,
                 bankAuth = true,
@@ -84,19 +102,28 @@ return {
                 payment = 50
             },
             [1] = {
-                name = 'Officer',
+                name = 'Deputy',
                 payment = 75
             },
             [2] = {
-                name = 'Sergeant',
+                name = 'Corporal',
                 payment = 100
             },
             [3] = {
-                name = 'Lieutenant',
+                name = 'Sergeant',
                 payment = 125
             },
             [4] = {
-                name = 'Chief',
+                name = 'Lieutenant',
+                payment = 125
+            },
+            [5] = {
+                name = 'Undersheriff',
+                isboss = true,
+                payment = 125
+            },
+            [6] = {
+                name = 'Sheriff',
                 isboss = true,
                 bankAuth = true,
                 payment = 150
@@ -114,7 +141,85 @@ return {
                 payment = 50
             },
             [1] = {
-                name = 'Officer',
+                name = 'Ranger',
+                payment = 75
+            },
+            [2] = {
+                name = 'Lead Ranger',
+                payment = 100
+            },
+            [3] = {
+                name = 'Sub-District Ranger',
+                payment = 125
+            },
+            [4] = {
+                name = 'District Ranger',
+                payment = 125
+            },
+            [5] = {
+                name = 'Deputy Chief Ranger',
+                isboss = true,
+                payment = 125
+            },
+            [6] = {
+                name = 'Chief Ranger',
+                isboss = true,
+                bankAuth = true,
+                payment = 150
+            },
+        },
+    },
+        ['marshals'] = {
+        label = 'Marshal',
+        type = 'leo',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = {
+                name = 'Recruit',
+                payment = 50
+            },
+            [1] = {
+                name = 'Inspector',
+                payment = 75
+            },
+            [2] = {
+                name = 'Deputy Director',
+                payment = 100
+            },
+            [3] = {
+                name = 'Director',
+                payment = 125
+            },
+            [4] = {
+                name = 'U.S. Marshal',
+                payment = 125
+            },
+            [5] = {
+                name = 'Deputy Commissioner',
+                isboss = true,
+                payment = 125
+            },
+            [6] = {
+                name = 'Commissioner',
+                isboss = true,
+                bankAuth = true,
+                payment = 150
+            },
+        },
+    },
+        ['sadoc'] = {
+        label = 'DOC',
+        type = 'leo',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = {
+                name = 'Recruit',
+                payment = 50
+            },
+            [1] = {
+                name = 'Correctional Officer',
                 payment = 75
             },
             [2] = {
@@ -126,7 +231,16 @@ return {
                 payment = 125
             },
             [4] = {
-                name = 'Chief',
+                name = 'Captain',
+                payment = 125
+            },
+            [5] = {
+                name = 'Deputy Warden',
+                isboss = true,
+                payment = 125
+            },
+            [6] = {
+                name = 'Warden',
                 isboss = true,
                 bankAuth = true,
                 payment = 150
