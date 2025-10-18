@@ -181,6 +181,8 @@ Config.BaseDispatch.Actions = {
         bcso = true,
         sahp = true,
         rangers = true,
+        sadoc = true,
+        marshals = true,
         ambulance = false,
         cooldown = 0,
         serverCooldown = 0,
@@ -194,6 +196,8 @@ Config.BaseDispatch.Actions = {
         bcso = true,
         sahp = true,
         rangers = true,
+        sadoc = true,
+        marshals = true,
         ambulance = false,
         cooldown = 0,
         serverCooldown = 0,
@@ -222,6 +226,8 @@ Config.BaseDispatch.Actions = {
         bcso = true,
         sahp = true,
         rangers = true,
+        sadoc = true,
+        marshals = true,
         ambulance = true,
         cooldown = 60,
         serverCooldown = 0,
@@ -248,6 +254,8 @@ Config.BaseDispatch.Actions = {
         bcso = true,
         sahp = true,
         rangers = true,
+        sadoc = true,
+        marshals = true,
         ambulance = false,
         cooldown = 120,
         serverCooldown = 0,
@@ -282,6 +290,8 @@ Config.AllowExternal = { -- allow people to upload external images? (note: this 
     bcso = true,
     sahp = true,
     rangers = true,
+    sadoc = true,
+    marshals = true,
     Ambulance = true,
     Registration = true,
     Gallery = true,
@@ -904,6 +914,220 @@ Config.Police.Permissions = {
         }
     },
     ["rangers"] = {
+        home = {
+            view = 0,
+        },
+        dispatch = {
+            view = 0,
+            delete = 3,
+        },
+        unit = {
+            view = 0,
+            edit = 3,
+            create = 3,
+            delete = 3,
+        },
+        profile = {
+            edit = 3,
+            view = 0,
+        },
+        vehicle = {
+            edit = 3,
+            view = 0
+        },
+        property = {
+            edit = 3,
+            view = 0,
+        },
+        weapon = {
+            create = 3,
+            delete = 3,
+            edit = 3,
+            view = 0,
+        },
+        report = {
+            create = 3,
+            edit = 3,
+            delete = 3,
+            view = 0
+        },
+        case = {
+            create = 3,
+            edit = 3,
+            delete = 3,
+            view = 0,
+            fine = 1,
+        },
+        warrant = {
+            create = 3,
+            edit = 3,
+            delete = 3,
+            view = 0
+        },
+        offence = {
+            create = 3,
+            edit = 3,
+            delete = 3,
+            view = 0
+        },
+        employee = {
+            view = 0,
+        },
+        chat = {
+            -- The creator is always able to edit, kick and invite
+            create = 3,
+            edit = 3,
+            kick = 3,
+            invite = 3,
+            view = 0
+        },
+        jail = {
+            create = 3,
+            edit = 3,
+            unjail = 3,
+            view = 0
+        },
+        phone = {
+            view = 0,
+            triangulate = 2,
+            unlock = 2,
+            createWiretap = 2,
+            removeWiretap = 3, -- you can always remove your own wiretaps
+            listenWiretap = 1,
+            callHistory = 1,
+        },
+        logs = {
+            view = 3,
+        },
+
+        tag = {
+            create = 3,
+            delete = 3,
+        },
+        license = {
+            revoke = 3,
+            add = 3,
+            view = 0
+        },
+        bulletin = {
+            create = 3,
+            pin = 3,
+            delete = 3, -- you are always able to delete your own bulletins
+            edit = 3, -- you can always edit your own bulletins
+            view = 0
+        },
+        stash = {
+            view = 2,
+        }
+    },
+        ["sadoc"] = {
+        home = {
+            view = 0,
+        },
+        dispatch = {
+            view = 0,
+            delete = 3,
+        },
+        unit = {
+            view = 0,
+            edit = 3,
+            create = 3,
+            delete = 3,
+        },
+        profile = {
+            edit = 3,
+            view = 0,
+        },
+        vehicle = {
+            edit = 3,
+            view = 0
+        },
+        property = {
+            edit = 3,
+            view = 0,
+        },
+        weapon = {
+            create = 3,
+            delete = 3,
+            edit = 3,
+            view = 0,
+        },
+        report = {
+            create = 3,
+            edit = 3,
+            delete = 3,
+            view = 0
+        },
+        case = {
+            create = 3,
+            edit = 3,
+            delete = 3,
+            view = 0,
+            fine = 1,
+        },
+        warrant = {
+            create = 3,
+            edit = 3,
+            delete = 3,
+            view = 0
+        },
+        offence = {
+            create = 3,
+            edit = 3,
+            delete = 3,
+            view = 0
+        },
+        employee = {
+            view = 0,
+        },
+        chat = {
+            -- The creator is always able to edit, kick and invite
+            create = 3,
+            edit = 3,
+            kick = 3,
+            invite = 3,
+            view = 0
+        },
+        jail = {
+            create = 3,
+            edit = 3,
+            unjail = 3,
+            view = 0
+        },
+        phone = {
+            view = 0,
+            triangulate = 2,
+            unlock = 2,
+            createWiretap = 2,
+            removeWiretap = 3, -- you can always remove your own wiretaps
+            listenWiretap = 1,
+            callHistory = 1,
+        },
+        logs = {
+            view = 3,
+        },
+
+        tag = {
+            create = 3,
+            delete = 3,
+        },
+        license = {
+            revoke = 3,
+            add = 3,
+            view = 0
+        },
+        bulletin = {
+            create = 3,
+            pin = 3,
+            delete = 3, -- you are always able to delete your own bulletins
+            edit = 3, -- you can always edit your own bulletins
+            view = 0
+        },
+        stash = {
+            view = 2,
+        }
+    },
+        ["marshals"] = {
         home = {
             view = 0,
         },
