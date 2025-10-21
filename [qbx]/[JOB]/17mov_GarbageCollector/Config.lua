@@ -1,54 +1,48 @@
 Config = {}
 
-Config.Lang = "en"                                  -- Here you can set language from locales directory
-Config.UseModernUI = true                           -- In March 2023 the jobs have passed huge rework, and the UI has been changed. Set it to false, to use OLD no longer supported UI.
-Config.SplitReward = false                          -- This option work's only when useModernUI is false. If this option is true, the payout is: (Config.OnePercentWorth * Progress ) / PartyCount, if false then: (Config.OnePercentWorth * Progress)
+Config.Lang = "en" -- Here you can set language from locales directory
+Config.UseModernUI = true               -- In March 2023 the jobs have passed huge rework, and the UI has been changed. Set it to false, to use OLD no longer supported UI.
+Config.SplitReward = false          -- This option work's only when useModernUI is false. If this option is true, the payout is: (Config.OnePercentWorth * Progress ) / PartyCount, if false then: (Config.OnePercentWorth * Progress)
 
-Config.VersionCheck = {
-    Enabled = true,                                 -- Is version check enabled
-    DisplayAsciiArt = true,                         -- Set to false if you don't want to display ascii art in console
-    DisplayChangelog = true,                        -- Should display changelog in console?
-    DisplayFiles = true,                            -- Should display files that you need update in console?
-}
-
-Config.UseBuiltInNotifications = true               -- Set to false if you want to use ur framework notification style. Otherwise, the built in modern notifications will be used.=
-Config.LetBossSplitReward = true                    -- If it's true, then boss can manage whole party rewards percent in menu. If you'll set it to false, then everybody will get same amount.
-Config.MultiplyRewardWhileWorkingInGroup = true     -- If it's false, then reward will stay by default. For example $1000 for completing whole job. If you'll set it to true, then the payout will depend on how many players is there in the group. For example, if for full job there's $1000, then if     player will work in 4 member group, the reward will be $4000. (baseReward * partyCount)
-Config.Price = 2                                    -- Price per one bag inside trashmaster. 100 is maximum so full trash = 200$ / partyCount
-Config.UseTarget = true                            -- Change it to true if you want to use a target system. All setings about the target system are under target.lua file.
-Config.RequiredJob = "none"                         -- Set to "none" if you dont want using jobs. If you are using target, you have to set "job" parameter inside every export in target.lua
-Config.RequireJobAlsoForFriends = true              -- If it's false, then only host needs to have the job, if it's true then everybody from group needs to have the Config.RequiredJob
-Config.RequireOneFriendMinimum = false              -- Set to true if you want to force players to create teams
-Config.EnableGamePoolDeleting = true                -- Set to false only when using old versions of FXServer. May cause bag removal errors
+Config.UseBuiltInNotifications = false   -- Set to false if you want to use ur framework notification style. Otherwise, the built in modern notifications will be used.=
+Config.LetBossSplitReward = false                    -- If it's true, then boss can manage whole party rewards percent in menu. If you'll set it to false, then everybody will get same amount.
+Config.MultiplyRewardWhileWorkingInGroup = false     -- If it's false, then reward will stay by default. For example $1000 for completing whole job. If you'll set it to true, then the payout will depend on how many players is there in the group. For example, if for full job there's $1000, then if player will work in 4 member group, the reward will be $4000. (baseReward * partyCount)
+Config.Price = 40            -- Price per one bag inside trashmaster. 100 is maximum so full trash = 200$ / partyCount
+Config.UseTarget = true                 -- Change it to true if you want to use a target system. All setings about the target system are under target.lua file.
+Config.RequiredJob = "none"             -- Set to "none" if you dont want using jobs. If you are using target, you have to set "job" parameter inside every export in target.lua
+Config.RequireJobAlsoForFriends = true          -- If it's false, then only host needs to have the job, if it's true then everybody from group needs to have the Config.RequiredJob
+Config.RequireOneFriendMinimum = false  -- Set to true if you want to force players to create teams
+Config.EnableGamePoolDeleting = true    -- Set to false only when using old versions of FXServer. May cause bag removal errors
 
 Config.BlockBagsRespawning = true
 Config.BagRespawnTime = 10 * 60 * 1000
 
-Config.JobVehicleModel = "trash"                    -- Model of the company car
-Config.VehicleBackBone = "seat_dside_r1"            -- Bone used only when Config.UseTarget = true. 3D text is displayed on the coordinates of this bone telling us to put the bag in the trunk
-Config.VehicleBackBoneCenter = "brakelight_l"       -- Bone used only when Config.UseTarget = true. On the cords of this bone, a player walks up to throw the bag
-Config.PenaltyAmount = 500                          -- Penalty that is levied when a player finishes work without a company vehicle
-Config.DeleteVehicleWithPenalty = false             -- Delete Vehicle even if its not company veh
-Config.DontPayRewardWithoutVehicle = false          -- Set to true if you want to dont pay reward to players who want's to end without company vehicle (accepting the penalty)
-Config.EnableVehicleTeleporting = true              -- If its true, then the script will teleport the host to the company vehicle. If its false, then the company vehicle will apeear, but the whole squad need to go enter the car manually
+Config.JobVehicleModel = "trash"                -- Model of the company car
+Config.VehicleBackBone = "seat_dside_r1"        -- Bone used only when Config.UseTarget = true. 3D text is displayed on the coordinates of this bone telling us to put the bag in the trunk
+Config.VehicleBackBoneCenter = "brakelight_l"   -- Bone used only when Config.UseTarget = true. On the cords of this bone, a player walks up to throw the bag
+Config.PenaltyAmount = 200                      -- Penalty that is levied when a player finishes work without a company vehicle
+Config.DeleteVehicleWithPenalty = false         -- Delete Vehicle even if its not company veh
+Config.DontPayRewardWithoutVehicle = false      -- Set to true if you want to dont pay reward to players who want's to end without company vehicle (accepting the penalty)
+Config.EnableVehicleTeleporting = true          -- If its true, then the script will teleport the host to the company vehicle. If its false, then the company vehicle will apeear, but the whole squad need to go enter the car manually
 Config.EnableVehicleCrewMembersTeleporting = true   -- If its true, then the script will teleport all crew members to the company vehicle.
-Config.JobCooldown = 0 * 60 -- 10 * 60              -- 0 minutes cooldown between making jobs (in brackets there's example for 10 minutes)
-Config.GiveKeysToAllLobby = true                    -- Set to false if you want to give keys only for group creator while starting job
+Config.JobCooldown = 0 * 60 -- 10 * 60            -- 0 minutes cooldown between making jobs (in brackets there's example for 10 minutes)
+Config.GiveKeysToAllLobby = true                -- Set to false if you want to give keys only for group creator while starting job
 Config.ProgressBarOffset = "25px"                   -- Value in px of counter offset on screen
-Config.ProgressBarAlign = "bottom-right"            -- Align of the progressbar. Options: top-left, top-center, top-right, bottom-left, bottom-center, bottom-right
+Config.ProgressBarAlign = "bottom-right"            -- Align of the progressbar
+-- ^ Options: top-left, top-center, top-right, bottom-left, bottom-center, bottom-right
 
-Config.EnableBins = true                            -- If set to false, user's want be able to pick trash from trashbins
-Config.FixBinsPosition = true                       -- Experimental, fixing bins rotation. Has an impact on the resources performance - if you have performace issues set to false.
-Config.HighlightOnTutorial = true                   -- If set to true, all objects that users can pick will be highlighted on tutorial
-Config.EnableUnloadStage = true                     -- If set to true, after ending job, user will have to unload vehicle
-Config.BagsCountToFullUnload = 15                   -- How many bags will be created with 100% progress to unload
-Config.BinsRestartingDelay = {                      -- How many seconds will it take for bin to restart taken trash bag
+Config.EnableBins = true                        -- if set to false, user's want be able to pick trash from trashbins
+Config.FixBinsPosition = true                   -- experimental, fixing bins rotation
+Config.HighlightOnTutorial = true               -- if set to true, all objects that users can pick will be highlighted on tutorial
+Config.EnableUnloadStage = true                 -- if set to true, after ending job, user will have to unload vehicle
+Config.BagsCountToFullUnload = 15               -- how many bags will be created with 100% progress to unload
+Config.BinsRestartingDelay = {
     min = 10 * 60,
     max = 15 * 60
-}
+}                 -- how many seconds will it take for bin to restart taken trash bag
 
 Config.UnloadZone = {
-    coords = vec3(-351.819092, -1541.140869, 27.428465),
+    coords = vec3(-317.313, -1539.569, 27.379),
     rotation = vec3(0.339711, -0.048754, -0.072852)
 }
 
@@ -67,11 +61,11 @@ Config.KeybindSettings = {
 }
 
 Config.RewardItemsToGive = {
-    -- {
-    --     item_name = "water",
-    --     chance = 100,
-    --     amountPerBag = 1,
-    -- },
+    {
+        item_name = "plastic",
+        chance = 100,
+        amountPerBag = 3,
+    },
 }
 
 Config.RequiredItem = "none"                        -- Set it to anything you want, to require players to have some item in their inventory before they start the job
@@ -109,14 +103,14 @@ Config.MarkerSettings = {   -- used only when Config.UseTarget = true. Colors of
 
 Config.TargetPedOptions = {
     model = 'a_m_y_genstreet_01',
-    coords = vector3(-329.47, -1538.23, 31.43),
-    heading = 90.0,
+    coords = vector3(-321.596, -1546.011, 31.22),
+    heading = 351.982,
 }
 
 Config.Locations = {       -- Here u can change all of the base job locations.
     DutyToggle = {
         Coords = {
-            vector3(-329.47, -1538.23, 31.43),
+            vector3(-322.248, -1545.79, 31.02),
         },
         CurrentAction = 'open_dutyToggle',
         CurrentActionMsg = _L("Job.Markers.DutyToggle"),

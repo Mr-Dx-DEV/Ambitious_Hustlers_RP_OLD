@@ -1,8 +1,9 @@
+
 fx_version "cerulean"
 game "gta5"
 author "Malizniak - 17Movement"
 lua54 "yes"
-version "4.0.8"
+version "4.0.5"
 this_is_a_map 'yes'
 
 shared_scripts {
@@ -16,7 +17,6 @@ server_scripts {
     "server/core.lua",
     "server/functions.lua",
     "server/server.lua",
-    "server/version.lua",
 }
 
 client_scripts {
@@ -41,4 +41,8 @@ escrow_ignore {
     "locale/*.**",
 }
 
+data_file 'DLC_ITYP_REQUEST' 'stream/ytyp/17mov_garbage_job_ytyp.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/ytyp/17mov_garbage_interior_ytyp.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/ytyp/v_bins.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/ytyp/v_rubbish.ytyp'
 dependency '/assetpacks'
