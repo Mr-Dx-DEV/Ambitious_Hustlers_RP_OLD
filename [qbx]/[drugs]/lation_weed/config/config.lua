@@ -65,7 +65,7 @@ Config.Setup = {
 
 Config.Police = {
     -- List all your police jobs below
-    jobs = { 'police', 'sheriff' },
+    jobs = { 'police',  'bcso', 'sahp', 'rangers', 'sadoc', 'marshals' },
     -- Do you want to require police be online to plant seeds?
     require = false,
     -- If require = true, how many should be online?
