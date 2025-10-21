@@ -21,8 +21,6 @@ TunerMethLab = {
             for entity, state in pairs(TunerMethLab.Entities) do
                 if type(entity) == 'string' and state then
                     ActivateInteriorEntitySet(TunerMethLab.InteriorId, entity)
-                elseif type(entity) == 'string' and not state then
-                    DeactivateInteriorEntitySet(TunerMethLab.InteriorId, entity)
                 end
             end
         end,
@@ -38,7 +36,7 @@ TunerMethLab = {
     LoadDefault = function()
         TunerMethLab.Entities.Load()
 
-        SetInteriorEntitySetColor(TunerMethLab.InteriorId, TunerMethLab.Entities.tintable_walls, 3)
-        RefreshInterior(TunerMethLab.InteriorId)
+        SetInteriorEntitySetColor(TunerMethLab.interiorId, TunerMethLab.Entities.tintable_walls, 3)
+        RefreshInterior(TunerMethLab.interiorId)
     end
 }
