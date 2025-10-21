@@ -41,7 +41,7 @@ return {
         -- (outside this number/distance the props are deleted until needed again)
         render = 100,
         -- Input all your police jobs below for things like dispatch notifications & more
-        police = { 'police', 'sheriff' }
+        police = { 'police', 'bcso', 'sahp', 'rangers', 'sadoc', 'marshals' }
     },
 
     ----------------------------------------------
