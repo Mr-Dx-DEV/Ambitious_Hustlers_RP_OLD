@@ -494,7 +494,7 @@ Config.WarehouseSettings = {
 
 Config.Police = {
     -- List all your police jobs below
-    jobs = { 'police', 'sheriff' },
+    jobs = { 'police', 'bcso', 'sahp', 'rangers', 'sadoc', 'marshals' },
     -- Do you want to require police be online to place/use meth tables?
     require = false,
     -- If require = true above, how many must be online?
