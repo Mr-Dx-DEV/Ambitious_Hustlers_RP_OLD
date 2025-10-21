@@ -16,7 +16,7 @@ Config.Menu = 'ox_lib'
 -- Target system - options are: 'ox_target', 'qb-target', 'qtarget', 'custom' & 'none'
 -- 'custom' needs to be added to client/functions.lua
 -- If 'none' then TextUI is used instead of targeting
-Config.Target = 'none'
+Config.Target = 'ox_target'
 
 -- Set your progress bar system below
 -- Available options are: 'lation_ui', 'ox_lib', 'qbcore' & 'custom'
@@ -77,7 +77,7 @@ Config.Start = {
 -- Customize your police related settings below
 Config.Police = {
     -- List your police jobs below
-    jobs = { 'police', 'sheriff' },
+    jobs = { 'police', 'bcso', 'sahp', 'rangers', 'sadoc', 'marshals' },
     -- Do you want to require police be online to start laundering?
     -- If true, this only applies to ped contracts, not the warehouse
     require = false,
@@ -223,7 +223,7 @@ Config.Warehouse = {
     account = 'cash',
     -- When a player unlocks use of the warehouse, do you want to create a
     -- Blip showing the location to enter the warehouse?
-    showBlip = false,
+    showBlip = true,
     -- Below is the location at which the players are able to enter the warehouse
     -- This is also the same location the blip will be displayed if enabled
     enterAt = vec4(1142.6859, -986.6674, 45.9059, 96.6889),
@@ -400,7 +400,7 @@ Config.AllowNegotiations = true
 -- Customize how you wants your blips to display
 Config.Blips = {
     start = { -- The ped location(s) to start cleaning money
-        enabled = true, -- Do you want blip(s) showing where to start money laundering?
+        enabled = false, -- Do you want blip(s) showing where to start money laundering?
         sprite = 47, -- Sprite ID: https://docs.fivem.net/docs/game-references/blips/
         color = 0, -- Color: https://docs.fivem.net/docs/game-references/blips/#blip-colors
         scale = 0.8, -- Size of the blip on the map
