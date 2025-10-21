@@ -13,7 +13,7 @@ if Config.SharedEmotesEnabled then
             local target, distance = GetClosestPlayer()
             if (distance ~= -1 and distance < 3) then
                 local emote = EmoteData[emotename]
-                if emote ~= nil and emote.category == Category.SHARED then
+                if emote ~= nil and emote.emoteType == EmoteType.SHARED then
                     TriggerServerEvent("rpemotes:server:requestEmote", GetPlayerServerId(target), emotename)
                     SimpleNotify(Translate('sentrequestto') ..
                         GetPlayerName(target) .. " ~w~(~g~" .. emote.label .. "~w~)")
@@ -139,7 +139,7 @@ function CancelSharedEmote()
     end
 end
 
-RegisterNetEvent("rpemotes:client:requestEmote", function(emotename, etype, target)
+RegisterNetEvent("rpemotes:client:requestEmote", function(emotename, target)
     isRequestAnim = true
 
     local emote = EmoteData[emotename]

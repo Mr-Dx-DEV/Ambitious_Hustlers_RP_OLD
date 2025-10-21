@@ -4,6 +4,8 @@ CurrentAnimationName = nil
 CurrentTextureVariation = nil
 InHandsup = false
 CONVERTED = false
+LastEmoteName = nil
+local lastEmoteTime = 0
 
 ---@type ScenarioType
 local ChosenScenarioType
@@ -249,29 +251,20 @@ local function checkAnimalAndOnEmotePlay(name)
     end
 end
 
-function EmoteMenuStart(name, category, textureVariation)
+function EmoteMenuStart(name, textureVariation)
     local emote = EmoteData[name]
 
     if not emote then
         return
     end
 
-    if emote.category ~= category then
-        DebugPrint("Emote category mismatch : " .. emote.category .. " vs " .. category)
-        return
-    end
-
-    if category == Category.EXPRESSIONS then
+    if emote.emoteType == EmoteType.EXPRESSIONS then
         SetPlayerPedExpression(name, true)
-        return
-    end
-
-    if emote.category == Category.ANIMAL_EMOTES then
+    elseif emote.emoteType == EmoteType.ANIMAL_EMOTES then
         checkAnimalAndOnEmotePlay(name)
-        return
+    else
+        OnEmotePlay(name, textureVariation)
     end
-
-    OnEmotePlay(name, textureVariation)
 end
 
 local function checkGender()
@@ -388,6 +381,8 @@ local function onEmotePlayClone(name)
     local emoteData = EmoteData[name]
     local animOption = emoteData.AnimationOptions
 
+    LastEmoteName = name
+
     if animOption and animOption.Prop then
         DestroyAllProps(true)
     end
@@ -427,7 +422,7 @@ local function onEmotePlayClone(name)
     addProps(animOption, nil, true)
 end
 
-function EmoteMenuStartClone(name, category)
+function EmoteMenuStartClone(name)
     if not Config.PreviewPed then return end
     if not DoesEntityExist(ClonedPed) then return end
 
@@ -437,12 +432,7 @@ function EmoteMenuStartClone(name, category)
         return
     end
 
-    if emote.category ~= category then
-        DebugPrint("Emote category mismatch : " .. emote.category .. " vs " .. category)
-        return
-    end
-
-    if category == Category.EXPRESSIONS then
+    if emote.emoteType == EmoteType.EXPRESSIONS then
         SetFacialIdleAnimOverride(ClonedPed, emote[1], true)
         return
     end
@@ -484,7 +474,7 @@ function EmoteCommandStart(args)
         return
     end
 
-    if emote.category == Category.ANIMAL_EMOTES then
+    if emote.emoteType == EmoteType.ANIMAL_EMOTES then
         if Config.AnimalEmotesEnabled then
             checkAnimalAndOnEmotePlay(name)
         else
@@ -493,7 +483,7 @@ function EmoteCommandStart(args)
         return
     end
 
-    if emote.category == Category.PROP_EMOTES
+    if emote.emoteType == EmoteType.PROP_EMOTES
         and emote.AnimationOptions.PropTextureVariations
     then
         local textureVariation = tonumber(args[2])
@@ -632,8 +622,23 @@ function OnEmotePlay(name, textureVariation)
         return EmoteChatMessage(Translate('adultemotedisabled'))
     end
 
+    if Config.AbusableEmotesDisabled and emoteData.abusable then
+        return EmoteChatMessage(Translate('abusableemotedisabled'))
+    end
+
     if InExitEmote then
         return false
+    end
+
+    if Config.EmoteCooldownMs then
+        local timeSinceLastEmote = GetGameTimer() - lastEmoteTime
+        
+        if timeSinceLastEmote < Config.EmoteCooldownMs then
+            EmoteChatMessage(Translate('emotecooldown'))
+            return
+        else
+            lastEmoteTime = GetGameTimer()
+        end
     end
 
     if Config.CancelPreviousEmote

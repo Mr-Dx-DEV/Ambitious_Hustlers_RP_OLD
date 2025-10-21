@@ -10,27 +10,39 @@ Interested in joining our community? You can find our Discord [here](https://dis
 
 # Features 🛠️
 
-- Emote Preview - View emotes before you use them
+- Emote Preview & Placement - View and place emotes before using them!
 
-- Changeable Banner Font
+- Customizable Banner (Change the image, text, and text color)
 
-- Changeable Banner Colour
+- Emote Search Function 🔎
 
-- Multiple Translations 🌏
+- Community contributed custom animations 🕺
 
-- Search Function 🔎
+- Group emotes: Dance, salute, and more with 2 or more people
 
-- Custom Animations with **permission from the community** 🏃
+- Exit Emotes: Exit out of emotes with smooth transitions
 
-- Persistent Facial Expressions via client KVP 🤪
+- Persistent Facial Expressions and Walkstyles via client KVP 
+
+- Easily convert Menyoo to RPEmotes 🔄
+
+- Hide Adult Emotes 🔞
+
+- Hide Animal Emotes ⛔
 
 - Animal Emotes 🐩
 
-- Shared Dances 🕺💃
+- Shared Particle Effects: emotes with smoke effects, fire, and more 💨
 
-- Persistent Walkstyles via client KVP 🚶‍♂️ - Standalone, QB-Core and ESX support!
+- QB-Core Framework & KVP Keybinding Support ⚙️
+
+- Support for shared and couple poses/animations 👫
 
 - Persistent Disabling Of Idle Camera via KVP 🎥
+
+- Easy To Understand Configuration File ⚙️
+
+- Props Extractor for anti-cheat scripts 💾
 
 - Crouching 🐞
 
@@ -42,27 +54,10 @@ Interested in joining our community? You can find our Discord [here](https://dis
 
 - Hands up 🙌
 
-- Shared Particle Effects 💨
-
-- QB-Core Framework & KVP Keybinding Support ⚙️
-
-- Further support for shared and couple poses/animations 👫
-
-- Easily convert Menyoo to RPEmotes 🔄
-
-- Hide Adult Emotes 🔞
-
-- Hide Animal Emotes ⛔
-
-- Easy To Understand Configuration File ⚙️
-
-- Exit Emotes 😎
-
 - Working Binoculars 👀
 
 - News Camera 🎤📹
 
-- Props Extractor for anti-cheat scripts 💾
 
 **Available in the following languages:**
 
@@ -74,16 +69,6 @@ All languages were translated or contributed by the FiveM community, with the od
 
 If you find any incorrect translations or would like to add more languages, please make a pull request with the corrections.
 
-# Header
-
-To edit the header, find the image in the main directory of rpemotes-reborn and edit the image in your program of choice. The image dimensions are 512 x 128.
-
-Do not change the name of the image file.
-
-Example Banner:
-![image](https://github.com/user-attachments/assets/dac5b7e5-4b63-4d10-8d59-3e8502d9913c)
-
-**Note for users of older versions of rpemotes:** Previously, the banner was hosted through a web link on an image hosting website. Due to various image hosting sites dealing with large amounts of traffic from FiveM, they cut off access to FiveM.
 
 # Exports and Documentation
 
@@ -149,7 +134,18 @@ Alternatively, you can use the keybind command that comes with FiveM without hav
 
 `bind keyboard "Yourbutton" "e youremote"`. To remove the keybind, type `"unbind keyboard "Yourbutton"`.
 
-# Menu Customization
+# Menu Customization: Header
+
+To edit the header, find the image in the main directory of rpemotes-reborn and edit the image in your program of choice. The image dimensions are 512 x 128.
+
+Do not change the name of the image file.
+
+Example Banner:
+![image](https://github.com/user-attachments/assets/dac5b7e5-4b63-4d10-8d59-3e8502d9913c)
+
+**Note for users of older versions of rpemotes:** Previously, the banner was hosted through a web link on an image hosting website. Due to various image hosting sites dealing with large amounts of traffic from FiveM, they cut off access to FiveM.
+
+# Menu Customization: Title
 
 In the`config.lua` file, server owners can set the MenuTitle or simply leave it blank. Ideally, this should be 11 characters or less without any spaces.
 You can also set the font and decide whether or not you want an outline and MenuPosition. The available fonts are as follows:
@@ -515,3 +511,4 @@ All animation creators have **_specifically_** asked that their content remain f
 - [41anims](https://www.gta5-mods.com/users/41anims)
 - [corbs](https://www.gta5-mods.com/users/corbs)
 - [jaysigx](https://www.gta5-mods.com/misc/improved-umbrella)
+- [Payzee](https://pazeee.tebex.io/)

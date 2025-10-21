@@ -42,6 +42,7 @@ Config = {
     PersistentWalk = true,
     SharedEmotesEnabled = true,
     AdultEmotesDisabled = false,
+    AbusableEmotesDisabled = false,
     AnimalEmotesEnabled = true,
 
     -- Hands Up
@@ -55,7 +56,7 @@ Config = {
     -- Pointing
     PointingEnabled = true,
     PointingKeybindEnabled = true,
-    PointingKeybind = 'B', 
+    PointingKeybind = 'B',
     PointingInCar = false,
     ReplayEmoteAfterPointing = true,
 
@@ -85,7 +86,30 @@ Config = {
 
     CheckForUpdates = true,
     DebugDisplay = false,
+
+    -- Emote Cooldown in milliseconds. Prevents switching emotes too quickly. If nil, no cooldown is enforced
+    EmoteCooldownMs = nil,
 }
+
+-- Custom Categories: Define custom categories to organize emotes in the menu
+-- Each category is an array that can contain:
+-- 1. EmoteType values (e.g., EmoteType.EMOTES) to include all emotes of that type
+-- 2. Specific emote names (e.g., "salute", "wave") to include individual emotes
+-- 3. Mix of both in the same category
+-- Note: An emote can appear in multiple categories
+-- Example: Add custom categories mixing EmoteTypes and specific emotes
+-- Config.CustomCategories["Fun Stuff"] = {EmoteType.DANCES, "salute", "wave"}
+-- Config.CustomCategories["Sports"] = {"basketball", "yoga", "pushup"}
+---@type table<string, (EmoteType | string)[]>
+Config.CustomCategories = {}
+Config.CustomCategories[Translate('danceemotes')] = {EmoteType.DANCES}
+Config.CustomCategories[Translate('propemotes')] = {EmoteType.PROP_EMOTES}
+if Config.SharedEmotesEnabled then
+    Config.CustomCategories[Translate('shareemotes')] = {EmoteType.SHARED}
+end
+if Config.AnimalEmotesEnabled then
+    Config.CustomCategories[Translate('animalemotes')] = {EmoteType.ANIMAL_EMOTES}
+end
 
 Config.KeybindKeys = {
     'NUMPAD4',
