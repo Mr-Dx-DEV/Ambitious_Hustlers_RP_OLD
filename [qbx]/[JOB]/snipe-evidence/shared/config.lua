@@ -50,10 +50,20 @@ Config.Timer = {
 
 Config.Jobs = {
     ["police"] = true,
+    ['bcso'] = true,
+    ['sahp'] = true,
+    ['rangers'] = true,
+    ['sadoc'] = true,
+    ['marshals'] = true,
 }
 
 Config.EditPerms = {
-    ["police"] = 2 -- police grade 2 and above can edit the crime scene
+    ["police"] = 0, -- police grade 2 and above can edit the crime scene
+    ['bcso'] = 0,
+    ['sahp'] = 0,
+    ['rangers'] = 0,
+    ['sadoc'] = 0,
+    ['marshals'] = 0
 }
 
 Config.InteractType = "target" -- 3dtext || drawtext || target || interact (to use interact, you need https://github.com/darktrovx/interact)
