@@ -133,8 +133,8 @@ function SetVehicle(_vehicle)
         exports["cdn-fuel"]:SetFuel(vehicle, 100.0)
     end
 
-    if GetResourceState("lc_fuel") == "started" then
-        exports["lc_fuel"]:SetFuel(vehicle, 100.0)
+    if GetResourceState("ps-fuel") == "started" then
+        exports["ps-fuel"]:SetFuel(vehicle, 100.0)
     end
 
     Entity(vehicle).state.fuel = 100.0
@@ -151,7 +151,7 @@ function PrepeareVehicle()
     -- Before Vehicle spawn
 end
 
-function DrawText3Ds(x, y, z, text)
+function DrawText3Ds(x, y, z, text, entityId)
     local onScreen, _x, _y=World3dToScreen2d(x, y, z)
     SetTextScale(0.32, 0.32)
     SetTextFont(4)
@@ -169,6 +169,10 @@ function ShowHelpNotification(msg)
     BeginTextCommandDisplayHelp('STRING')
     AddTextComponentSubstringPlayerName(msg)
     EndTextCommandDisplayHelp(0, false, true, -1)
+end
+
+function IsDead(ped)
+    return GetEntityHealth(ped) == 0
 end
 
 function ChangeClothes(type)
