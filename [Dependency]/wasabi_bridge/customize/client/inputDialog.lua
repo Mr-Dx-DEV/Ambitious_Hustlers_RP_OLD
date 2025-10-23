@@ -1,6 +1,8 @@
 -----------------For support, scripts, and more----------------
 --------------- https://discord.gg/wasabiscripts  -------------
 ---------------------------------------------------------------
+local wasabi_uikit, uikitFound = GetResourceState('wasabi_uikit'), false
+if wasabi_uikit == 'started' or wasabi_uikit == 'starting' then uikitFound = true end
 
 -- Modify this with whatever input dialog system you want
 
@@ -59,6 +61,9 @@ function WSB.inputDialog(heading, rows, color)
 
     -- Remove under this to use your own input dialog --
     if not color then color = Config.DefaultColor end
+    if uikitFound then
+        return exports.wasabi_uikit:InputDialog(heading, rows, color)
+    end
     return InputDialog(heading, rows, color)
     -- Remove above this to use your own input dialog --
 

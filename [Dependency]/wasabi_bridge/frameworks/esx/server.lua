@@ -35,9 +35,9 @@ function WSB.getPlayers()
 end
 
 function WSB.getAllJobs()
-    local jobs = ESX and ESX.Jobs or nil
+    local jobs = ESX.GetJobs()
     local returnTb = {}
-    if not jobs or #jobs < 1 then return end
+    if not jobs or not next(jobs) then return end
     for k, v in pairs(jobs) do
         returnTb[k] = { label = v.label }
         for a, b in pairs(v.grades) do

@@ -2,6 +2,12 @@
 --------------- https://discord.gg/wasabiscripts  -------------
 ---------------------------------------------------------------
 
+-- Checking for if Complete UI Kit is running
+-- Get it here: https://wasabiscripts.com/product/7037645
+local wasabi_uikit, uikitFound = GetResourceState('wasabi_uikit'), false
+if wasabi_uikit == 'started' or wasabi_uikit == 'starting' then uikitFound = true end
+
+
 -- Modify this to for what menu / context menus you would like to utilize by default
 
 --- Context menu
@@ -25,7 +31,21 @@ function WSB.showContextMenu(data)
     -- (Basically follow the same as ox_lib menu system and transfer the options to your own menu system)]
 
     -- Remove below this if you are using your own menu system
+
     if not data.color then data.color = Config.DefaultColor end
+    if uikitFound then
+
+        local uiKitData = {
+            id = data.id,
+            title = data.title,
+            enableWalk = false,
+            options = data.options
+        }
+
+        exports.wasabi_uikit:RegisterContextMenu(uiKitData)
+        exports.wasabi_uikit:OpenContextMenu(data.id)
+        return
+    end
 
     return ShowContextMenu(data)
     -- Remove above this if you are using your own menu system
@@ -58,6 +78,19 @@ function WSB.showMenu(data)
 
     -- Remove below this if you are using your own menu system / want to use ox_lib
     if not data.color then data.color = Config.DefaultColor end
+    if uikitFound then
+
+        local uiKitData = {
+            id = data.id,
+            title = data.title,
+            enableWalk = true,
+            options = data.options
+        }
+
+        exports.wasabi_uikit:RegisterContextMenu(uiKitData)
+        exports.wasabi_uikit:OpenContextMenu(data.id)
+        return
+    end
 
     return ShowMenu(data)
     -- Remove above this if you are using your own menu system / want to use ox_lib

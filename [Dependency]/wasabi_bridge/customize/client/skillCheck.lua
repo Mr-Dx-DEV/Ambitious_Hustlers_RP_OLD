@@ -2,6 +2,12 @@
 --------------- https://discord.gg/wasabiscripts  -------------
 ---------------------------------------------------------------
 
+-- Checking for if Complete UI Kit is running
+-- Get it here: https://wasabiscripts.com/product/7037645
+local wasabi_uikit, uikitFound = GetResourceState('wasabi_uikit'), false
+if wasabi_uikit == 'started' or wasabi_uikit == 'starting' then uikitFound = true end
+
+
 --- Skill Check
 ---@param data table Same/similiar data to the ox_lib skillCheck function. Subject to change.
 ---@return boolean
@@ -32,6 +38,11 @@ function WSB.skillCheck(data)
     end
     if not data.color then data.color = Config.DefaultColor end
     if not data.keys then data.keys = 'e' end
+
+    if uikitFound then
+        return exports.wasabi_uikit:SkillCheck(data.difficulty, type(data.keys) == 'table' and data.keys or {data.keys}) or false
+    end
+
     return SkillCheck(data.difficulty, data.keys, data.color) or false
     -- Remove above this to use your own skill check --
 

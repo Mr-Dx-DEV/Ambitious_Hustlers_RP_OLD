@@ -2,6 +2,11 @@
 --------------- https://discord.gg/wasabiscripts  -------------
 ---------------------------------------------------------------
 
+-- Checking for if Complete UI Kit is running
+-- Get it here: https://wasabiscripts.com/product/7037645
+local wasabi_uikit, uikitFound = GetResourceState('wasabi_uikit'), false
+if wasabi_uikit == 'started' or wasabi_uikit == 'starting' then uikitFound = true end
+
 --- Alert Dialog
 ---@param data table
 function WSB.alertDialog(data)
@@ -27,6 +32,9 @@ function WSB.alertDialog(data)
 
     -- Remove below this if you are using your own menu system / want to use ox_lib
     if not data.color then data.color = Config.DefaultColor end
+    if uikitFound then
+        return not exports.wasabi_uikit:alertDialog(data.header, data.content, false, not data.cancel, nil, nil)
+    end
 
     return AlertDialog(data)
     -- Remove above this to use your own alert dialog or ox_lib

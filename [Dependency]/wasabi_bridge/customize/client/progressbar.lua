@@ -2,16 +2,26 @@
 --------------- https://discord.gg/wasabiscripts  -------------
 ---------------------------------------------------------------
 
+-- Checking for if Complete UI Kit is running
+-- Get it here: https://wasabiscripts.com/product/7037645
+local wasabi_uikit, uikitFound = GetResourceState('wasabi_uikit'), false
+if wasabi_uikit == 'started' or wasabi_uikit == 'starting' then uikitFound = true end
+
+
 -- Modify this with whatever progress bar/circle/both you want
 
 ---Displays a running progress based on its type.
----@param type "progressBar" | "progressCircle"
+---@param type "progressBar" | "progressCircle" | string
 ---@param data table Same data as used in ox_lib progress bar/circle. Subject to change.
 ---@return boolean
 function WSB.progressUI(data, type)
 
     -- Remove under this line to use your own progress bar/circle system or ox_lib
     if not data.color then data.color = Config.DefaultColor end
+    if uikitFound then
+        type = type == 'progressCircle' and 'circle' or 'bar'
+        return exports.wasabi_uikit:ProgressBar(data, type) or false
+    end
     return ProgressUI(data, type) or false
     -- Remove above this line if you are using your own progress bar/circle system or ox_lib
 
