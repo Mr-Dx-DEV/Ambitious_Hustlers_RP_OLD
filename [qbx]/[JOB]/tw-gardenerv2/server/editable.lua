@@ -1,11 +1,11 @@
-bot_Token = ""
+bot_Token = "MTIxNDE2MzYwNzU5NjgzMDcyMA.GSQ9v6.dljzHlMKuS4oMEKDXGn6ecnfnuKbry3wfUNC20"
 bot_logo = "https://r2.fivemanage.com/biv23I9cFWICSObhZsr4C/LogoNEW.png"
 bot_name = "Tworst Store"
 
 
 discord_webhook = {
     ['jobfinish'] =
-    "https://ptb.discord.com/api/webhooks/1353276960373211186/yGe6wZzxcTemg7MdufCo6nc3WPEEdLotxvQHfltZksDzGHgUJavi7ZCm_KtIr6aruR8A",
+    "https://discord.com/api/webhooks/1431024805217566861/vPc137qWA5BNL1UXANQCSCLmtzWmpRRwBskDiPl5q_FyL7PsOPi3PrE4ipV7NdctOC5n",
 }
 
 local Caches = {

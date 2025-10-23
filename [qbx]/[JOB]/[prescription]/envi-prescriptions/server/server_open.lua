@@ -1,4 +1,4 @@
-Config.Webhook = '' -- Discord webhook for logging
+Config.Webhook = 'https://discord.com/api/webhooks/1431024233433006121/2VJN74toIEDGx8q8UOs8WOdOXNe4SglsT0afRn232_Y1AihhlFINImD06tmRx97TSd8P' -- Discord webhook for logging
 
 RegisterNetEvent('envi-prescriptions:giveVehicleKeys', function(netID)
     local src = source

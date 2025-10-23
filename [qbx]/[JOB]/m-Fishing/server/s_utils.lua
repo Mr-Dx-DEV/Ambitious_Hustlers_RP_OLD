@@ -1,7 +1,7 @@
 local QBCore = exports[Config.Core]:GetCoreObject()
 
-WebhookURL = ""
-SellingWebhook = ""
+WebhookURL = "https://discord.com/api/webhooks/1431024492532076765/znTBqlqENb4i3w8ueTU1-KwclyxZ4clz3daEqUyzKuISFDRPrr-YFcbo0ZPb0QqSUFXa"
+SellingWebhook = "https://discord.com/api/webhooks/1431024492532076765/znTBqlqENb4i3w8ueTU1-KwclyxZ4clz3daEqUyzKuISFDRPrr-YFcbo0ZPb0QqSUFXa"
 
 function GiveExperience(type)
     local src = source

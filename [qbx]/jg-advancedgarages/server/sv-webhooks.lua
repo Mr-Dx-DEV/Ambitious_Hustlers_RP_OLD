@@ -2,11 +2,11 @@
 -- Discord Webhooks
 --
 Webhooks = {}
-Webhooks.VehicleTakeOutAndInsert = ""
-Webhooks.VehiclePlayerTransfer = ""
-Webhooks.VehicleGarageTransfer = ""
-Webhooks.Impound = ""
-Webhooks.PrivateGarages = ""
+Webhooks.VehicleTakeOutAndInsert = "https://discord.com/api/webhooks/1431026311140347995/IJF2T-f9y9Ri2mKaEi_-d1bXCCnIvSAY65fZ_H568uf7FbqtLmMz34hffVsMRqM7jCEy"
+Webhooks.VehiclePlayerTransfer = "https://discord.com/api/webhooks/1431026311140347995/IJF2T-f9y9Ri2mKaEi_-d1bXCCnIvSAY65fZ_H568uf7FbqtLmMz34hffVsMRqM7jCEy"
+Webhooks.VehicleGarageTransfer = "https://discord.com/api/webhooks/1431026311140347995/IJF2T-f9y9Ri2mKaEi_-d1bXCCnIvSAY65fZ_H568uf7FbqtLmMz34hffVsMRqM7jCEy"
+Webhooks.Impound = "https://discord.com/api/webhooks/1431026311140347995/IJF2T-f9y9Ri2mKaEi_-d1bXCCnIvSAY65fZ_H568uf7FbqtLmMz34hffVsMRqM7jCEy"
+Webhooks.PrivateGarages = "https://discord.com/api/webhooks/1431026311140347995/IJF2T-f9y9Ri2mKaEi_-d1bXCCnIvSAY65fZ_H568uf7FbqtLmMz34hffVsMRqM7jCEy"
 
 --[[
   EXAMPLE WEBHOOK CALL

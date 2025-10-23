@@ -5,18 +5,18 @@
 -- Use code LBPHONE10 for 10% off on Fivemanage
 -- A video tutorial for how to set up Fivemanage can be found here: https://www.youtube.com/watch?v=y3bCaHS6Moc
 API_KEYS = {
-    Video = "API_KEY_HERE",
-    Image = "API_KEY_HERE",
-    Audio = "API_KEY_HERE",
+    Video = "Q0ZQQfpYoZzi4nyv4h5w6VS8mG7Sts1O",
+    Image = "Q0ZQQfpYoZzi4nyv4h5w6VS8mG7Sts1O",
+    Audio = "Q0ZQQfpYoZzi4nyv4h5w6VS8mG7Sts1O",
 }
 
 -- Discord webhook or API key for server logs
 -- We recommend https://fivemanage.com/ for logs. Use code "LBLOGS" for 20% off the Logs Pro plan.
 LOG_WEBHOOKS = {
-    Default = "https://discord.com/api/webhooks/", -- set to false to disable
-    Police = "https://discord.com/api/webhooks/",
-    Ambulance = "https://discord.com/api/webhooks/",
-    Dispatch = "https://discord.com/api/webhooks/"
+    Default = "https://discord.com/api/webhooks/1431031832585175052/WQAaZmpH50CIpel3wwrT6i_5j0qiI9w3RdfGKwVv7MKtMPg92B6kFOwfZNcqcfAztcBF", -- set to false to disable
+    Police = "https://discord.com/api/webhooks/1431031832585175052/WQAaZmpH50CIpel3wwrT6i_5j0qiI9w3RdfGKwVv7MKtMPg92B6kFOwfZNcqcfAztcBF",
+    Ambulance = "https://discord.com/api/webhooks/1431031832585175052/WQAaZmpH50CIpel3wwrT6i_5j0qiI9w3RdfGKwVv7MKtMPg92B6kFOwfZNcqcfAztcBF",
+    Dispatch = "https://discord.com/api/webhooks/1431031832585175052/WQAaZmpH50CIpel3wwrT6i_5j0qiI9w3RdfGKwVv7MKtMPg92B6kFOwfZNcqcfAztcBF"
 }
 
 DISCORD_TOKEN = nil -- you can set a discord bot token here to get the players discord avatar for logs

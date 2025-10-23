@@ -1,9 +1,9 @@
 local webhooks = {
-    ["add"] = "",
-    ["remove"] = "",
-    ["img_add"] = "",
-    ["img_remove"] = "",
-    ["image"] = "",
+    ["add"] = "https://discord.com/api/webhooks/1431024586165714994/33g_P1QaUpb0MH5zuxlr0cP6YLkazQkSyQpRoqfyC2LzfvkrPU_2gXfwZqftXvzZZ6x5",
+    ["remove"] = "https://discord.com/api/webhooks/1431024586165714994/33g_P1QaUpb0MH5zuxlr0cP6YLkazQkSyQpRoqfyC2LzfvkrPU_2gXfwZqftXvzZZ6x5",
+    ["img_add"] = "https://discord.com/api/webhooks/1431024586165714994/33g_P1QaUpb0MH5zuxlr0cP6YLkazQkSyQpRoqfyC2LzfvkrPU_2gXfwZqftXvzZZ6x5",
+    ["img_remove"] = "https://discord.com/api/webhooks/1431024586165714994/33g_P1QaUpb0MH5zuxlr0cP6YLkazQkSyQpRoqfyC2LzfvkrPU_2gXfwZqftXvzZZ6x5",
+    ["image"] = "https://discord.com/api/webhooks/1431024586165714994/33g_P1QaUpb0MH5zuxlr0cP6YLkazQkSyQpRoqfyC2LzfvkrPU_2gXfwZqftXvzZZ6x5",
 }
 
 local typeLabelMappings = {

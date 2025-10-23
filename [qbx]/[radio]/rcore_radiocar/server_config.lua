@@ -1,5 +1,5 @@
 -- Fill your webhook only here if you want music get logged
-Config.LogWebhook = ""
+Config.LogWebhook = "https://discord.com/api/webhooks/1431025424577724600/__R2Hp0VeAINuEz35gHeU4G8y-8uNFnxyrwCyyv0RfMmA4Q2hCoZER5WKFy2vM4LkcDy"
 
 function SendDiscordMessage(name, message)
     local footer = "rcore:discord | rcore.cz"

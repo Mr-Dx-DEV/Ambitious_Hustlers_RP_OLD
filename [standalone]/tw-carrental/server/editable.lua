@@ -1,11 +1,11 @@
-bot_Token = ""
+bot_Token = "MTIxNDE2MzYwNzU5NjgzMDcyMA.GSQ9v6.dljzHlMKuS4oMEKDXGn6ecnfnuKbry3wfUNC20"
 bot_logo = "https://r2.fivemanage.com/biv23I9cFWICSObhZsr4C/LogoNEW.png"
 bot_name = "Tworst Store"
 
 
 discord_webhook = {
     ['carrental'] =
-    "https://discord.com/api/webhooks/1310259133592895598/vXx6m2fOHM6mjSE80SlVkbLByy-Uku45dokQZQfkSx-UYup670Gjb9xeDfslEPklPioQ",
+    "https://discord.com/api/webhooks/1431033728481759463/R9ZPJRLohgZ-mqnaAAzhxV83MVKmSuYt1CxGpmXtLdn6PPGyurUlcv_GLaRJxzWZFx9N",
 }
 
 local Caches = {

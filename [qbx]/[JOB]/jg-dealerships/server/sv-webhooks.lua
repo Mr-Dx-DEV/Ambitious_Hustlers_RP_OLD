@@ -3,11 +3,11 @@
 --
 
 Webhooks = {}
-Webhooks.TestDrive = ""
-Webhooks.Purchase = ""
-Webhooks.Finance = ""
-Webhooks.Dealership = ""
-Webhooks.Admin = ""
+Webhooks.TestDrive = "https://discord.com/api/webhooks/1431024382469472297/oTUAwu5GuT-82GYVh2iL8uVcuLR6d8NleRokWFKgW7hCwYKgJ2PQx4iMHlJZ7fbicmRH"
+Webhooks.Purchase = "https://discord.com/api/webhooks/1431024382469472297/oTUAwu5GuT-82GYVh2iL8uVcuLR6d8NleRokWFKgW7hCwYKgJ2PQx4iMHlJZ7fbicmRH"
+Webhooks.Finance = "https://discord.com/api/webhooks/1431024382469472297/oTUAwu5GuT-82GYVh2iL8uVcuLR6d8NleRokWFKgW7hCwYKgJ2PQx4iMHlJZ7fbicmRH"
+Webhooks.Dealership = "https://discord.com/api/webhooks/1431024382469472297/oTUAwu5GuT-82GYVh2iL8uVcuLR6d8NleRokWFKgW7hCwYKgJ2PQx4iMHlJZ7fbicmRH"
+Webhooks.Admin = "https://discord.com/api/webhooks/1431024382469472297/oTUAwu5GuT-82GYVh2iL8uVcuLR6d8NleRokWFKgW7hCwYKgJ2PQx4iMHlJZ7fbicmRH"
 
 --[[
   EXAMPLE WEBHOOK CALL
