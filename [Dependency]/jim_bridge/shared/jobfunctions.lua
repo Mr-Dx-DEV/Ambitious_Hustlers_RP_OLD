@@ -9,6 +9,73 @@
         and teleporting via doors.
 ]]
 
+
+local bossMenuFunc = {
+    {   name = "qb-management",
+        openBossMenu = function(isGang, group)
+            if isGang then
+                TriggerEvent("qb-gangmenu:client:OpenMenu")
+            else
+                TriggerEvent("qb-bossmenu:client:OpenMenu")
+            end
+        end,
+    },
+
+    {   name = "qbx_management",
+        openBossMenu = function(isGang, group)
+            if isGang then
+                exports["qbx_management"]:OpenBossMenu("gang")
+            else
+                exports["qbx_management"]:OpenBossMenu("job")
+            end
+        end,
+    },
+
+    {   name = "esx_society",
+        openBossMenu = function(isGang, group)
+            TriggerServerEvent(getScript()..":registerESXSociety", isGang, group)
+            TriggerEvent('esx_society:openBossMenu', group, function() end, { wash = false })
+        end,
+    },
+
+    {   name = "tss-bossmenu",
+        openBossMenu = function(isGang, group)
+            TriggerEvent("tss-bossmenu:client:OpenMenu")
+        end,
+    },
+
+    {   name = "okokBossMenu",
+        openBossMenu = function(isGang, group)
+            ExecuteCommand('openbossmenu')
+        end,
+    },
+}
+
+function openBossMenu(isGang, group)
+    for i = 1, #bossMenuFunc do
+        local bossmenu = bossMenuFunc[i]
+        if isStarted(bossmenu.name) then
+            bossmenu.openBossMenu(isGang, group)
+            return
+        end
+    end
+end
+
+-- Register ESX Society account in the server
+RegisterNetEvent(getScript()..":registerESXSociety", function(group)
+    local checkExist = exports.esx_society:GetSociety(group)
+    if checkExist == nil then
+        exports.esx_society:registerSociety(
+            group,
+            Gangs[group] and Gangs[group].label or Jobs[group] and Jobs[group].label,
+            group,
+            group,
+            group,
+            {type = "public"}
+        )
+    end
+end)
+
 -------------------------------------------------------------
 -- Global Duty Status
 -------------------------------------------------------------
@@ -100,35 +167,57 @@ end
 --- toggleDuty()  -- Player receives a notification of their new duty status.
 --- ```
 function toggleDuty()
-    if isStarted(QBExport) or isStarted(QBXExport) then
-        TriggerServerEvent("QBCore:ToggleDuty")
-        Wait(100)
-        onDuty = getPlayer().onDuty
+    local dutyFunc = {
+        {   framework = QBExport,
+            func = function()
+                TriggerServerEvent("QBCore:ToggleDuty")
+                Wait(100)
+                onDuty = getPlayer().onDuty
+            end
+        },
+        {   framework = QBXExport,
+            func = function()
+                TriggerServerEvent("QBCore:ToggleDuty")
+                Wait(100)
+                onDuty = getPlayer().onDuty
+            end
+        },
+        {   framework = RSGExport,
+            func = function()
+                TriggerServerEvent("RSGCore:ToggleDuty")
+                Wait(100)
+                onDuty = getPlayer().onDuty
+            end
+        },
+        {   framework = ESXExport,
+            func = function()
+                local tempJob = ESX.GetPlayerData().job
+                tempJob.onDuty = not onDuty
+                ESX.SetPlayerData("job", tempJob)
+                onDuty = getPlayer().onDuty
+                if onDuty then
+                    triggerNotify(nil, "Now on duty", "success")
+                else
+                    triggerNotify(nil, "Now off duty", "success")
+                end
+            end
+        },
+    }
 
-    elseif isStarted(RSGExport) then
-        TriggerServerEvent("RSGCore:ToggleDuty")
-        Wait(100)
-        onDuty = getPlayer().onDuty
-
-    elseif isStarted(ESXExport) then
-        local tempJob = ESX.GetPlayerData().job
-        tempJob.onDuty = not onDuty
-        ESX.SetPlayerData("job", tempJob)
-        onDuty = getPlayer().onDuty
-        if onDuty then
-            triggerNotify(nil, "Now on duty", "success")
-        else
-            triggerNotify(nil, "Now off duty", "success")
+    for i = 1, #dutyFunc do
+        local framework = dutyFunc[i]
+        if isStarted(framework.framework) then
+            framework.func()
+            return
         end
+    end
 
+    -- fallback
+    onDuty = not onDuty
+    if onDuty then
+        triggerNotify(nil, "Now on duty", "success")
     else
-        onDuty = not onDuty
-        if onDuty then
-            triggerNotify(nil, "Now on duty", "success")
-        else
-            triggerNotify(nil, "Now off duty", "success")
-        end
-
+        triggerNotify(nil, "Now off duty", "success")
     end
 end
 
@@ -245,20 +334,4 @@ function useDoor(data)
     SetEntityHeading(PlayerPedId(), data.telecoords.w)
     DoScreenFadeIn(1000)
     Wait(100)
-end
-
-
-function openBossMenu(isGang, group)
-    if isStarted("qb-management") then
-        if isGang then
-            TriggerEvent("qb-gangmenu:client:OpenMenu")
-        else
-            TriggerEvent("qb-bossmenu:client:OpenMenu")
-        end
-    elseif isStarted("qbx_management") then
-        exports["qbx_management"]:OpenBossMenu(isGang and "gang" or "job")
-
-    elseif isStarted("esx_society") then
-        TriggerEvent('esx_society:openBossMenu', group, function() end, { wash = false })
-    end
 end

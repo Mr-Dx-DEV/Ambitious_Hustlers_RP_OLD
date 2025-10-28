@@ -1,5 +1,6 @@
 --- A table to keep track of all created Peds.
 local Peds = {}
+local distPeds = {}
 
 --- Creates a distance-based Ped (pedestrian) that spawns when the player enters a specified area.
 --
@@ -18,18 +19,20 @@ local Peds = {}
 -- ```lua
 -- makeDistPed(pedData, pedCoords, true, false, 'WORLD_HUMAN_STAND_IMPATIENT', nil, true)
 -- ```
-function makeDistPed(data, coords, freeze, collision, scenario, anim, synced)
+function makeDistPed(data, coords, freeze, collision, scenario, anim, synced, func)
     local zoneCoords = type(data) == "table" and data.coords or coords
     local randName = keyGen()..keyGen()
-    createCirclePoly({
+    distPeds[#distPeds+1] = createCirclePoly({
         name = randName,
         coords = vec3(zoneCoords.x, zoneCoords.y, zoneCoords.z - 1.03),
         radius = 50.0,
         onEnter = function()
             Peds[randName] = makePed(data, coords, freeze, collision, scenario, anim, synced)
+            if func then func(Peds[randName]) end
         end,
         onExit = function()
             DeletePed(Peds[randName])
+            Peds[randName] = nil
         end,
         debug = debugMode,
     })
@@ -62,7 +65,6 @@ function makePed(data, coords, freeze, collision, scenario, anim, synced, fade)
         model = data.model
         loadModel(data.model)
         ped = CreatePed(0, model, coords.x, coords.y, coords.z - 1.03, coords.w, synced and synced or false, false)
-        SetEntityAlpha(ped, 0, false)
         -- Inheritance
         SetPedHeadBlendData(ped, data.custom.faceFather, data.custom.faceMother, data.custom.raceShape, data.custom.skinFather, data.custom.skinMother, data.custom.raceSkin, data.custom.faceMix or 0, data.custom.skinMix or 0, data.custom.raceMix or 0, false)
 
@@ -142,7 +144,8 @@ function makePed(data, coords, freeze, collision, scenario, anim, synced, fade)
     end
     unloadModel(model)
     Peds[keyGen()..keyGen()] = ped
-    if fade ~= false then
+    if fade ~= false and gameName ~= "rdr3" then
+        SetEntityAlpha(ped, 0, false)
         CreateThread(function()
             fadeInEnt(ped)
         end)
@@ -243,6 +246,16 @@ function GenerateRandomPedData(data)
     end
     return newTable
 end
+
+onPlayerUnload(function()
+    for k in pairs(Peds) do
+        DeletePed(Peds[k])
+    end
+    for i = 1, #distPeds do
+        removeZoneTarget(distPeds[i])
+    end
+    distPeds = {}
+end)
 
 --- Cleans up all created Peds when the resource stops.
 onResourceStop(function()

@@ -1,4 +1,5 @@
 local Props = {}
+local distProps = {}
 
 --- Creates a prop (object) in the game world at specified coordinates.
 ---
@@ -23,14 +24,14 @@ local Props = {}
 function makeProp(data, freeze, synced, fade)
     loadModel(data.prop)
     local prop = CreateObject(data.prop, data.coords.x, data.coords.y, data.coords.z-1.03, synced and synced or false, synced and synced or false, false)
-    SetEntityAlpha(veh, 0, false)
     SetEntityHeading(prop, (data.coords.w or 0) + 180.0)
     FreezeEntityPosition(prop, freeze or false)
 
     debugPrint("^6Bridge^7: ^1Prop ^2Created^7: '^6"..prop.."^7' | ^2Hash^7: ^7'^6"..data.prop.."^7' | ^2Coord^7: "..formatCoord(data.coords))
     SetModelAsNoLongerNeeded(data.prop)
     Props[keyGen()..keyGen()] = prop
-    if fade ~= false then
+    if fade ~= false and gameName ~= "rdr3" then
+        SetEntityAlpha(prop, 0, false)
         CreateThread(function()
             fadeInEnt(prop)
         end)
@@ -57,17 +58,21 @@ end
 --- }
 --- makeDistProp(propData, true, false)
 --- ```
-function makeDistProp(data, freeze, synced, range)
+function makeDistProp(data, freeze, synced, range, func)
     local name = keyGen()..keyGen()
-    createCirclePoly({
+    distProps[#distProps + 1] = createCirclePoly({
         name = name,
         coords = vec3(data.coords.x, data.coords.y, data.coords.z - 1.03),
         radius = range or 50.0,
         onEnter = function()
             Props[name] = makeProp(data, freeze, synced)
+            if func then
+                func(Props[name])
+            end
         end,
         onExit = function()
             destroyProp(Props[name])
+            Props[name] = nil
         end,
         debug = debugMode,
     })
@@ -91,6 +96,16 @@ function destroyProp(entity)
         DeleteObject(entity)
     end
 end
+
+onPlayerUnload(function()
+    for k in pairs(Props) do
+        DeleteObject(Props[k])
+    end
+    for i = 1, #distProps do
+        removeZoneTarget(distProps[i])
+    end
+    distProps = {}
+end)
 
 --- Cleans up all created props when the resource stops.
 onResourceStop(function()

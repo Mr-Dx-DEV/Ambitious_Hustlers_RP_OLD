@@ -7,6 +7,152 @@
       • Wait for the player to be logged in before proceeding.
 ]]
 
+local onLoadLast = {} -- keyed by tostring(func)
+
+local function _debouncedRun(func)
+    local key  = tostring(func)
+    local now  = GetGameTimer()
+    local last = onLoadLast[key] or -1e12
+
+    if (now - last) < 5000 then
+        debugPrint(("^6Bridge^7 ^3onPlayerLoaded^7 skipped — cooldown %dms remaining"):format(5000 - (now - last)))
+        return
+    end
+
+    onLoadLast[key] = now
+    CreateThread(function()
+        Wait(2000) -- keep your small delay
+        debugPrint("^6Bridge^7: ^2Executing onPlayerLoaded callback")
+        func()
+    end)
+end
+
+local frameworkLoadFunc = {
+    {   framework = Exports.QBXExport,
+        onPlayerLoaded =
+            function(func)
+                RegisterNetEvent('QBCore:Client:OnPlayerLoaded', func)
+            end,
+        onPlayerUnload =
+            function(func)
+                RegisterNetEvent('QBCore:Client:OnPlayerUnload', func)
+            end,
+        waitforLogin =
+            function(timeout)
+                local startTime = GetGameTimer()
+                while not LocalPlayer.state.isLoggedIn and (GetGameTimer() - startTime) < timeout do
+                    Wait(100)
+                end
+                return LocalPlayer.state.isLoggedIn
+            end,
+    },
+
+    {   framework = Exports.QBExport,
+        onPlayerLoaded =
+            function(func)
+                RegisterNetEvent('QBCore:Client:OnPlayerLoaded', func)
+            end,
+        onPlayerUnload =
+            function(func)
+                RegisterNetEvent('QBCore:Client:OnPlayerUnload', func)
+            end,
+        waitforLogin =
+            function(timeout)
+                local startTime = GetGameTimer()
+                while not LocalPlayer.state.isLoggedIn and (GetGameTimer() - startTime) < timeout do
+                    Wait(100)
+                end
+                return LocalPlayer.state.isLoggedIn
+            end,
+    },
+
+    {   framework = Exports.ESXExport,
+        onPlayerLoaded =
+            function(func)
+                RegisterNetEvent("esx:playerLoaded", function()
+                    -- make sure shared has loaded (because sql)
+                    if waitForSharedLoad() then func() end
+                end)
+            end,
+        onPlayerUnload =
+            function(func)
+                RegisterNetEvent("esx:onPlayerLogout", func)
+            end,
+        waitforLogin =
+            function(timeout)
+                local startTime = GetGameTimer()
+                while (GetGameTimer() - startTime) < timeout do
+                    local playerData = ESX.GetPlayerData()
+                    if playerData and playerData.job then
+                        return true
+                    end
+                    Wait(100)
+                end
+            end,
+    },
+
+    {   framework = Exports.OXCoreExport,
+        onPlayerLoaded =
+            function(func)
+                RegisterNetEvent('ox:playerLoaded', func)
+            end,
+        onPlayerUnload =
+            function(func)
+                RegisterNetEvent('ox:playerLogout', func)
+            end,
+        waitforLogin =
+            function(timeout)
+                if OxPlayer["stateId"] then
+                    return true
+                end
+                while not OxPlayer["stateId"] do
+                    Wait(1000)
+                    if OxPlayer.get["stateId"] then
+                        return true
+                    end
+                end
+            end,
+    },
+
+    {   framework = Exports.RSGExport,
+        onPlayerLoaded =
+            function(func)
+                RegisterNetEvent('RSGCore:Client:OnPlayerLoaded', func)
+            end,
+        onPlayerUnload =
+            function(func)
+                RegisterNetEvent('RSGCore:Client:OnPlayerUnload', func)
+            end,
+        waitforLogin =
+            function(timeout)
+                local startTime = GetGameTimer()
+                while not LocalPlayer.state.isLoggedIn and (GetGameTimer() - startTime) < timeout do
+                    Wait(100)
+                end
+                return LocalPlayer.state.isLoggedIn
+            end,
+    },
+
+    {   framework = Exports.VorpExport,
+        onPlayerLoaded =
+            function(func)
+                RegisterNetEvent('vorp_core:Client:OnPlayerSpawned', func)
+            end,
+        onPlayerUnload =
+            function(func)
+                --??
+            end,
+        waitforLogin =
+            function(timeout)
+                local startTime = GetGameTimer()
+                while not LocalPlayer.state.IsInSession and (GetGameTimer() - startTime) < timeout do
+                    Wait(100)
+                end
+                return LocalPlayer.state.IsInSession
+            end,
+    },
+}
+
 -------------------------------------------------------------
 -- Player Loaded and Unloaded Events
 -------------------------------------------------------------
@@ -24,52 +170,28 @@
 --- end, true)
 --- ```
 function onPlayerLoaded(func, onStart)
-    local onPlayerFramework = ""
-    local loaded = false
-
     if onStart then
         onResourceStart(function()
             if not waitForLogin() then return end
-
-            loaded = true
-            debugPrint("^6Bridge^7: ^3onResourceStart^7()^2 executed through ^3onPlayerLoaded^7()")
-            Wait(2000)
-            func()
+            debugPrint("^6Bridge^7: ^3onResourceStart^7()^2 routed through ^3onPlayerLoaded^7()")
+            _debouncedRun(func)
         end, true)
     end
 
-    if not loaded then
-        local tempFunc = function()
-            Wait(2000)
-            debugPrint("^6Bridge^7: ^2Executing onPlayerLoaded")
-            func()
-        end
+    local handler = function()
+        _debouncedRun(func)
+    end
 
-        if isStarted(QBExport) or isStarted(QBXExport) then
-            onPlayerFramework = QBExport
-            RegisterNetEvent('QBCore:Client:OnPlayerLoaded', tempFunc)
-        elseif isStarted(ESXExport) then
-            onPlayerFramework = ESXExport
-            RegisterNetEvent('esx:playerLoaded', function()
-                if waitForSharedLoad() then
-                    tempFunc()
-                end
-            end
-        )
-        elseif isStarted(OXCoreExport) then
-            onPlayerFramework = OXCoreExport
-            RegisterNetEvent('ox:playerLoaded', tempFunc)
-        elseif isStarted(RSGExport) then
-            onPlayerFramework = RSGExport
-            RegisterNetEvent('RSGCore:Client:OnPlayerLoaded', tempFunc)
-        end
-
-        if onPlayerFramework ~= "" then
-            debugPrint("^6Bridge^7: ^2Registering ^3onPlayerLoaded^7()^2 with ^3" .. onPlayerFramework.."^7")
-        else
-            print("^4ERROR^7: No supported core detected for onPlayerLoaded - Check starter.lua")
+    for i = 1, #frameworkLoadFunc do
+        local data = frameworkLoadFunc[i]
+        jsonPrint(data)
+        if isStarted(data.framework) then
+            debugPrint("^6Bridge^7: ^2Registering ^3"..data.framework.." ^5onPlayerLoaded^7()")
+            data.onPlayerLoaded(handler)
+            return
         end
     end
+    print("^1ERROR^7: ^1No supported core detected for onPlayerLoaded - Check starter.lua^7")
 end
 
 --- Executes a function when the player character is unloaded.
@@ -82,15 +204,15 @@ end
 --- end)
 --- ```
 function onPlayerUnload(func)
-    debugPrint("^6Bridge^7: ^2Registering ^3onPlayerUnload^7()")
-    RegisterNetEvent('QBCore:Client:OnPlayerUnload', function() func() end)
-
-    RegisterNetEvent('ox:playerLogout', function() func() end)
-
-    RegisterNetEvent('RSGCore:Client:OnPlayerUnload', function() func() end)
-
-    RegisterNetEvent('esx:onPlayerLogout', function() func() end)
-
+    for i = 1, #frameworkLoadFunc do
+        local data = frameworkLoadFunc[i]
+        if isStarted(data.framework) then
+            debugPrint("^6Bridge^7: ^2Registering ^3"..data.framework.." ^5onPlayerUnload^7()")
+            data.onPlayerUnload(func)
+            return
+        end
+    end
+    print("^1ERROR^7: ^1No supported core detected for onPlayerUnload - Check starter.lua^7")
 end
 
 -------------------------------------------------------------
@@ -149,45 +271,18 @@ end
 --- @usage
 --- waitForLogin()
 function waitForLogin()
-    local timeout = 10000  -- 10 seconds in milliseconds
-    local startTime = GetGameTimer()
-    local loggedIn = false
-
-    if isStarted(ESXExport) then
-        while (GetGameTimer() - startTime) < timeout do
-            local playerData = ESX.GetPlayerData()
-            if playerData and playerData.job then
-                loggedIn = true
-                break
+    for i = 1, #frameworkLoadFunc do
+        local data = frameworkLoadFunc[i]
+        if isStarted(data.framework) then
+            debugPrint("^6Bridge^7: ^2Waiting for ^3"..data.framework.."^2 player login^7.")
+            local result = data.waitforLogin(10000)
+            if result == true then
+                debugPrint("^6Bridge^7: ^3"..data.framework.."^2 Player Login Detected^7.")
+            else
+                print("^4Error^7: ^2Timeout reached while waiting for player login^7.")
             end
-            Wait(100)
+            return result
         end
-    elseif isStarted(OXCoreExport) then
-        if OxPlayer["stateId"] then
-            loggedIn = true
-        end
-        while not OxPlayer["stateId"] do
-            Wait(1000)
-            debugPrint("Waiting for stateId to class as logged in")
-            if OxPlayer.get["stateId"] then
-                loggedIn = true
-                break
-            end
-        end
-    else
-        -- For other frameworks, use LocalPlayer.state.isLoggedIn.
-        while not LocalPlayer.state.isLoggedIn and (GetGameTimer() - startTime) < timeout do
-            Wait(100)
-        end
-        loggedIn = LocalPlayer.state.isLoggedIn
-    end
-
-    if not loggedIn then
-        print("^4Error^7: ^2Timeout reached while waiting for player login^7.")
-        return false
-    else
-        debugPrint("^6Bridge^7: ^2Player Login Detected^7.")
-        return true
     end
 end
 

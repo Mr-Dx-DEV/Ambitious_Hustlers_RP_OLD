@@ -1,9 +1,17 @@
 -------------------------------------------------------------
 -- Exploit Auth System
 -------------------------------------------------------------
+
+forceDisableExplotProtection = false -- dangerous, this allows exploits
 AuthEvent = nil
 currentToken = nil
 if isServer() then
+
+    local excludeRes = {
+        [Exports.QBExport] = true,
+        [Exports.ESXExport] = true,
+        [Exports.VorpExport] = true,
+    }
 
     local AuthEvent = getScript()..":"..keyGen()..keyGen()..keyGen()..keyGen()..":"..keyGen()..keyGen()..keyGen()..keyGen()
     validTokens = validTokens or {}
@@ -11,8 +19,10 @@ if isServer() then
     createCallback(AuthEvent, function(source)
         local src = source
         local token = keyGen()..keyGen()..keyGen()..keyGen()  -- Use a secure random generator here
-        --debugPrint(GetInvokingResource())
-        if GetInvokingResource() and GetInvokingResource() ~= getScript() and GetInvokingResource() ~= "qb-core" then
+        local invokingRes = GetInvokingResource()
+
+        debugPrint(invokingRes)
+        if invokingRes and invokingRes ~= getScript() and not excludeRes[invokingRes] then
             debugPrint("^1Error^7: ^1Possible exploit^7, ^1vital function was called from an external resource^7")
             return  ""
         end
@@ -45,8 +55,9 @@ if isServer() then
 
     createCallback(getScript()..":callback:GetAuthEvent", function(source)
         local src = source
+        local invokingRes = GetInvokingResource()
 
-        if GetInvokingResource() and GetInvokingResource() ~= getScript() and GetInvokingResource() ~= "qb-core" then
+        if invokingRes and invokingRes ~= getScript() and not excludeRes[invokingRes] then
             debugPrint("^1Error^7: ^1Possible exploit^7, ^1vital callback was called from an external resource^7")
             return ""
         end
@@ -80,6 +91,8 @@ if isServer() then
 
     -- Multiuse function to check if the generated client token is valid
     function checkToken(src, token, genType, name)
+        if forceDisableExplotProtection == true then return true end
+
         if token == nil then
             debugPrint("^1Auth^7: ^1No token recieved^7")
             if genType == "stash" then
@@ -115,4 +128,30 @@ else
         debugPrint("^1Auth^7: ^2Clearing Auth Event^7")
         TriggerServerEvent(getScript()..":clearAuthEventRequest")
     end, true)
+end
+
+function distExploitCheck(table, src)
+    if forceDisableExplotProtection == true then return true end
+    if not table then
+        print("^1Error^7: ^1This wasn^7'^1t reigstered correctly or this is an exploit attempt^1")
+        return false
+    end
+
+    local ped = src and GetPlayerPed(src) or PlayerPedId()
+    local srcCoords = GetEntityCoords(ped)
+    local allow = false
+
+    for i = 1, #table do
+        if #(table[i].xy  - srcCoords.xy) <= 10 then
+            return true
+        else
+            allow = false
+        end
+    end
+
+    if not allow then
+        print(src and ("^1Src ^3"..src.." ") or "", "^1Tried to open a registered shop/stash from over the distance limit^7")
+        return false
+    end
+
 end

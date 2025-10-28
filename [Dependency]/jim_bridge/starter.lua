@@ -9,7 +9,6 @@ Exports = {
     OXInv = "ox_inventory",
     QBInv = "qb-inventory",
     PSInv = "ps-inventory",
-    QSInv = "qs-inventory",
     CoreInv = "core_inventory",
     CodeMInv = "codem-inventory",
     OrigenInv = "origen_inventory",
@@ -25,19 +24,60 @@ Exports = {
 
     -- REDM
     RSGExport = "rsg-core",
-    RSGInv = "rsg-inventory"
+    RSGInv = "rsg-inventory",
+
+    VorpExport = "vorp_core",
+    VorpInv = "vorp_inventory",
+    VorpMenu = "vorp_menu",
+
 }
 
 -- Required variables
-debugMode = Config.System.Debug
+debugMode = false
 
 QBInvNew = true
 
 InventoryWeight = 120000
 
+-- Corruptted transfer file Checks -- Not Ready Yet ⚠️
+
+--CreateThread(function()
+--    local res = GetCurrentResourceName()
+--    local ok, val = pcall(function()
+--        return exports[res]:ping_encrypted()
+--    end)
+--
+--    if not ok or val ~= "ok" then
+--        print("\n^6===============================================================================")
+--        print(("\n^1Corruption Warning^7: ^1[^7%s^1] Encrypted files failed to initialize.^7\n"):format(res))
+--        print("^3Common causes^7:")
+--        print("  • Possible corrupt files")
+--        print("  • Damaged or partial upload (FTP/zip/unzip issue).")
+--        print("  • Outdated artifact version\n")
+--        print("^2How To Fix^7:")
+--        print("  • Update your server artifact version")
+--        print("  • Re-download asset from Keymaster")
+--        print("  • Use WinSCP to upload")
+--        print("  • Avoid editing any encrypted files")
+--        print("  • Restart the server")
+--        print("\n^6===============================================================================^7\n")
+--    end
+--end)
+
+-- Missing/Broken Config file check
+if not Config or not Config.System then
+    print("\n^6=================================================================================")
+    print("^6=================================================================================\n")
+    print("  ^1ERROR^7: jim_bridge ^1can't find the ^7Config^1 table in ^7"..GetCurrentResourceName())
+    print("  ^1It is either missing, or there is an error inside it stopping it from loading^7\n")
+    print("^6=================================================================================")
+    print("^6=================================================================================^7\n")
+end
+
 -- [[ Server.Cfg Convar Check ]]--
 -- Check server convars for hard set defaults, otherwise it uses per script configurations
 if Config and Config.System then
+    debugMode = Config.System.Debug
     if Config.System.Debug then
         if GetConvar("jim_DisableDebug", "false") == "true" then
             debugMode = false
@@ -46,7 +86,6 @@ if Config and Config.System then
             Config.System.EventDebug = false
         end
     end
-
     Config.System.Menu = GetConvar("jim_menuScript", Config.System.Menu)
     Config.System.Notify = GetConvar("jim_notifyScript", Config.System.Notify or "gta")
     Config.System.ProgressBar = GetConvar("jim_progressBarScript", Config.System.ProgressBar or "gta")
@@ -149,7 +188,6 @@ for _, v in pairs({ -- This is a specific load order
 
     'wrapperfunctions.lua',
     'polyZone.lua',
-    'inventories.lua',
     'itemcontrol.lua',
     'playerfunctions.lua',
     'metaHandlers.lua',
@@ -167,14 +205,13 @@ for _, v in pairs({ -- This is a specific load order
 
     -- Crafting / Shops / Stashes
     'crafting.lua',
-    'shops.lua',
-    'stashcontrol.lua',
 
     -- Kind of "other"
     'isAnimal.lua',
     'scaleEntity.lua',
     'vehicles.lua',
     'effects.lua',
+    'make/ropeControl.lua',
 
     --'warmenu.lua',
     '_authToken.lua',
