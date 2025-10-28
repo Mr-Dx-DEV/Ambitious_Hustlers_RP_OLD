@@ -100,19 +100,19 @@ Config.DealershipLocations = {
   ["pdm"] = {
     type = "self-service", -- or "owned", "self-service"
     openShowroom = {
-      coords = vector3(-55.99, -1096.59, 26.42),
+      coords = vector3(-33.09, -1098.29, 27.27),
       size = 5
     },
     openManagement = {
-      coords = vector3(-30.43, -1106.84, 26.42),
+      coords = vector3(-25.58, -1104.60, 27.27),
       size = 5
     },
     sellVehicle = {
       coords = vector3(-27.89, -1082.1, 26.64),
       size = 5
     },
-    purchaseSpawn = vector4(-13.68, -1092.31, 26.67, 159.82),
-    testDriveSpawn = vector4(-49.77, -1110.83, 26.44, 75.94),
+    purchaseSpawn = vector4(-15.22, -1093.20, 27.03, 155.69),
+    testDriveSpawn = vector4(-15.22, -1093.20, 27.03, 155.69),
     camera = {
       name = "Car",
       coords = vector4(-146.6166, -596.6301, 166.0, 270.0),
