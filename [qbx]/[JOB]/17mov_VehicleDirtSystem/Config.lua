@@ -8,8 +8,8 @@ Config.WashPaymentType = "cash" -- "cash" or "bank"
 
 -- Settings for the installer.lua file.
 Config.Installer = {
-    AutoAddItems = true,
-    AutoAddInventoryImages = true,
+    AutoAddItems = false,
+    AutoAddInventoryImages = false,
     AutoDisableOldCarWashScript = true,
     AutoSearchForStreamConflict = true,
 }
