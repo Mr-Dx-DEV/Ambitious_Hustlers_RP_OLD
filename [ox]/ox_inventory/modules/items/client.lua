@@ -88,16 +88,16 @@ local ox_inventory = exports[shared.resource]
 -- Clientside item use functions
 -----------------------------------------------------------------------------------------------
 
--- Item('bandage', function(data, slot)
--- 	local maxHealth = GetEntityMaxHealth(cache.ped)
--- 	local health = GetEntityHealth(cache.ped)
--- 	ox_inventory:useItem(data, function(data)
--- 		if data then
--- 			SetEntityHealth(cache.ped, math.min(maxHealth, math.floor(health + maxHealth / 16)))
--- 			lib.notify({ description = 'You feel better already' })
--- 		end
--- 	end)
--- end)
+Item('bandage', function(data, slot)
+	local maxHealth = GetEntityMaxHealth(cache.ped)
+	local health = GetEntityHealth(cache.ped)
+	ox_inventory:useItem(data, function(data)
+		if data then
+			SetEntityHealth(cache.ped, math.min(maxHealth, math.floor(health + maxHealth / 16)))
+			lib.notify({ description = 'You feel better already' })
+		end
+	end)
+end)
 
 Item('armour', function(data, slot)
 	if GetPedArmour(cache.ped) < 100 then
@@ -185,7 +185,6 @@ Item('clothing', function(data, slot)
 		end
 	end)
 end)
-
 --- AP COURT STUFF ------
 Item('lawyerid', function(data, slot)
   ox_inventory:useItem(data, function(data)
@@ -194,7 +193,6 @@ Item('lawyerid', function(data, slot)
     end
   end)
 end)
-
 -----------------------------------------------------------------------------------------------
 
 exports('Items', function(item) return getItem(nil, item) end)
