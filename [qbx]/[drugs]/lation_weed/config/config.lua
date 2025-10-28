@@ -446,7 +446,7 @@ Config.Shop = {
     -- If you want it available 24/7, set min to 1 and max to 24
     hour = { min = 6, max = 21 },
     -- Use cash or bank when purchasing here?
-    account = 'cash',
+    account = 'bank',
     -- Customize the items available here
     items = {
         -- item: item spawn name

@@ -297,9 +297,317 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
     markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
     vehiclesType = "owned", -- Use owned vehicles that can anyone in this society can access - more details: https://docs.jgscripts.com/advanced-garages/job-and-gang-garages
   },
-  ["Police"] = {
-    coords = vector3(434.48, -1016.97, 28.83),
-    spawn = vector4(434.55, -1014.54, 28.49, 91.56),
+    ["SAHP"] = {
+    coords = vector3(2793.184, 4726.93, 46.566),
+    spawn = vector4(2793.184, 4726.93, 46.566, 10.247),
+    distance = 15,
+    job = {"sahp"},
+    type = "car",
+    hideBlip = false,
+    blip = {
+      id = 357,
+      color = 0,
+      scale = 0.5
+    },
+    hideMarkers = true,
+    markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
+    vehiclesType = "spawner", -- Spawn a basic vehicle from a list
+    showLiveriesExtrasMenu = true, -- Allow player to select a livery and extras before pulling vehicle out 
+    vehicles = {
+      [1] = {
+        model = "NF1", -- spawn code for vehicle
+        plate = "SAHP", -- set as false for a random plate; do not use a plate already in use in the DB!
+        minJobGrade = 0, -- only available to players with set minimum grade
+        livery = 1,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [2] = {
+        model = "NF2",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 1,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [3] = {
+        model = "NF3",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [4] = {
+        model = "NF4",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [5] = {
+        model = "NF5",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [6] = {
+        model = "NF6",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [7] = {
+        model = "NF7",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [8] = {
+        model = "NF8",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [9] = {
+        model = "NF9",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [10] = {
+        model = "NF10",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      }
+    }
+  },
+      ["SAHP2"] = {
+    coords = vector3(-3170.273, 1391.477, 20.624),
+    spawn = vector4(-3170.273, 1391.477, 20.624, 316.573),
+    distance = 15,
+    job = {"sahp"},
+    type = "car",
+    hideBlip = false,
+    blip = {
+      id = 357,
+      color = 0,
+      scale = 0.5
+    },
+    hideMarkers = true,
+    markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
+    vehiclesType = "spawner", -- Spawn a basic vehicle from a list
+    showLiveriesExtrasMenu = true, -- Allow player to select a livery and extras before pulling vehicle out 
+    vehicles = {
+      [1] = {
+        model = "NF1", -- spawn code for vehicle
+        plate = "SAHP", -- set as false for a random plate; do not use a plate already in use in the DB!
+        minJobGrade = 0, -- only available to players with set minimum grade
+        livery = 1,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [2] = {
+        model = "NF2",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 1,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [3] = {
+        model = "NF3",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [4] = {
+        model = "NF4",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [5] = {
+        model = "NF5",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [6] = {
+        model = "NF6",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [7] = {
+        model = "NF7",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [8] = {
+        model = "NF8",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [9] = {
+        model = "NF9",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [10] = {
+        model = "NF10",
+        plate = "SAHP",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      }
+    }
+  },
+    ["Rangers"] = {
+    coords = vector3(-793.143, 5410.487, 34.234),
+    spawn = vector4(-793.143, 5410.487, 34.234, 22.559),
+    distance = 15,
+    job = {"rangers"},
+    type = "car",
+    hideBlip = false,
+    blip = {
+      id = 357,
+      color = 0,
+      scale = 0.5
+    },
+    hideMarkers = true,
+    markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
+    vehiclesType = "spawner", -- Spawn a basic vehicle from a list
+    showLiveriesExtrasMenu = true, -- Allow player to select a livery and extras before pulling vehicle out 
+    vehicles = {
+      [1] = {
+        model = "pranger1", -- spawn code for vehicle
+        plate = "Ranger", -- set as false for a random plate; do not use a plate already in use in the DB!
+        minJobGrade = 0, -- only available to players with set minimum grade
+        livery = 1,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [2] = {
+        model = "pranger2",
+        plate = "Ranger",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [3] = {
+        model = "pranger3",
+        plate = "Ranger",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [4] = {
+        model = "pranger4",
+        plate = "Ranger",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      }
+    }
+  },
+    ["Blane County"] = {
+    coords = vector3(1851.283, 3686.979, 33.993),
+    spawn = vector4(1851.283, 3686.979, 33.993, 207.166),
+    distance = 15,
+    job = {"bcso"},
+    type = "car",
+    hideBlip = false,
+    blip = {
+      id = 357,
+      color = 0,
+      scale = 0.5
+    },
+    hideMarkers = true,
+    markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
+    vehiclesType = "spawner", -- Spawn a basic vehicle from a list
+    showLiveriesExtrasMenu = true, -- Allow player to select a livery and extras before pulling vehicle out 
+    vehicles = {
+      [1] = {
+        model = "bcso1", -- spawn code for vehicle
+        plate = "BCSO", -- set as false for a random plate; do not use a plate already in use in the DB!
+        minJobGrade = 0, -- only available to players with set minimum grade
+        livery = 1,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [2] = {
+        model = "bcso2",
+        plate = "BCSO",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [3] = {
+        model = "bcso3",
+        plate = "BCSO",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [4] = {
+        model = "bcso4",
+        plate = "BCSO",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [5] = {
+        model = "bcso5",
+        plate = "BCSO",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      }
+    }
+  },
+  ["LSPD"] = {
+    coords = vector3(442.63, -988.378, 25.71),
+    spawn = vector4(442.63, -988.378, 25.71, 86.661),
     distance = 15,
     job = {"police"},
     type = "car",
@@ -315,21 +623,60 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
     showLiveriesExtrasMenu = true, -- Allow player to select a livery and extras before pulling vehicle out 
     vehicles = {
       [1] = {
-        model = "police", -- spawn code for vehicle
-        plate = "PD", -- set as false for a random plate; do not use a plate already in use in the DB!
+        model = "11CVPI", -- spawn code for vehicle
+        plate = "LSPD", -- set as false for a random plate; do not use a plate already in use in the DB!
         minJobGrade = 0, -- only available to players with set minimum grade
-        nickname = "Police car", -- Show a custom name instead of the vehicle's real name
         livery = 1,
         extras = {1, 2},
-        maxMods = true
+        maxMods = false
       },
       [2] = {
-        model = "police2",
-        plate = false,
-        minJobGrade = 3,
+        model = "14CHGR",
+        plate = "LSPD",
+        minJobGrade = 0,
         livery = 2,
-        extras = {},
-        maxMods = true
+        extras = {1, 2},
+        maxMods = false
+      },
+      [3] = {
+        model = "14HOE",
+        plate = "LSPD",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [4] = {
+        model = "17F150",
+        plate = "LSPD",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [5] = {
+        model = "17SILV",
+        plate = "LSPD",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [6] = {
+        model = "18CHGR",
+        plate = "LSPD",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
+      },
+      [7] = {
+        model = "20HOE",
+        plate = "LSPD",
+        minJobGrade = 0,
+        livery = 2,
+        extras = {1, 2},
+        maxMods = false
       }
     }
   }
@@ -364,7 +711,7 @@ Config.GangGarageLocations = { -- IMPORTANT - Every garage name must be unique
 
 -- Impound
 Config.ImpoundCommand = "iv"
-Config.ImpoundFeesSocietyFund = {"police", "sahp", "rangers", "bcso"} -- Job name of society fund to pay impound fees into (optional)
+Config.ImpoundFeesSocietyFund = {"police", "sahp", "rangers", "bcso","sadoc", "marshals"} -- Job name of society fund to pay impound fees into (optional)
 Config.ImpoundShowBlips = true
 Config.ImpoundUniqueBlips = false
 Config.ImpoundTimeOptions = {0, 1, 4, 12, 24, 72, 168} -- in hours
@@ -374,7 +721,7 @@ Config.ImpoundLocations = { -- IMPORTANT - Every impound name must be unique
     spawn = vector4(408.44, -1630.88, 29.29, 136.88),
     distance = 15,
     type = "car",
-    job = {"police"},
+    job = {"police", "bcso", "sahp", "rangers", "sadoc", "marshals"},
     hideBlip = false,
     blip = {
       id = 68,
@@ -389,7 +736,7 @@ Config.ImpoundLocations = { -- IMPORTANT - Every impound name must be unique
     spawn = vector4(1643.66, 3798.36, 34.49, 216.16),
     distance = 15,
     type = "car",
-    job = {"police"},
+    job = {"police", "bcso", "sahp", "rangers", "sadoc", "marshals"},
     hideBlip = false,
     blip = {
       id = 68,

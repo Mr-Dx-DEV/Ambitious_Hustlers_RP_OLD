@@ -22,7 +22,7 @@ Config.Commands = { -- All of this commands are open code on server/s_commands.l
         [4] = { command = "myinsurances", description = "Check your insurances", enable = true }, -- This is a general command for all users
     },
     ["police"] = {
-        [1] = { command = "checkvehicle", description = "Check vehicle information with plate", enable = true, jobs = {"police"} }, -- This is a command for police check informations about a vehicle
+        [1] = { command = "checkvehicle", description = "Check vehicle information with plate", enable = true, jobs = {"police", "bcso", "sahp", "rangers", "sadoc", "marshals"} }, -- This is a command for police check informations about a vehicle
     },
 }
 -- Commands -- 
@@ -31,22 +31,22 @@ Config.Commands = { -- All of this commands are open code on server/s_commands.l
 -- Car Insurance Settings --
 Config.carInsurance = { -- This is the settings for the car insurance and registration
     needJob = false, -- If you want to use this script with a job, set it to true. If you want to use it without a job, set it to false
-    menuZone = vector3(-37.27, -231.46, 45.83), -- This is the settings for the insurance menu if you use needJob = true
-    blipSettings = { enable = true, sprite = 225, color = 1, scale = 0.7, name = "Car Insurance" }, -- This is the settings for the blip
+    menuZone = vector3(-64.722, -1102.219, 26.161), -- This is the settings for the insurance menu if you use needJob = true
+    blipSettings = { enable = false, sprite = 225, color = 1, scale = 0.3, name = "Car Insurance" }, -- This is the settings for the blip
     job = "insurance", -- If you want to use this script with a job, add the job name here
     society = { 
         enable = false, -- If you want to use this script with a job, set it to true
         name = "society_insurance", -- If you want to use this script with a job, add the society name here
     },
-    pedSettings = { pedModel = "s_m_y_dealer_01", pedCoords = vector4(-37.15, -232.1, 45.83, 69.09) }, -- Only spawn if you use without job
+    pedSettings = { pedModel = "s_m_y_dealer_01", pedCoords = vector4(-64.722, -1102.219, 26.161, 156.949) }, -- Only spawn if you use without job
     stash = { weight = 25000, slots = 20, name = "Car Insurance" },
     recoverDocumentation = { -- This is the settings for the recover documentation
         registration = 500, -- This is the price for the registration documentation
         insurance = 500, -- This is the price for the insurance documentation
     },
     insuranceTypes = { -- This is the settings for the insurance types
-        [1] = { type = "registration", price = 500, days = { 30, 60, 90 } },
-        [2] = { type = "insurance", price = 1000, days = { 30, 60, 90 } },
+        [1] = { type = "registration", price = 10, days = { 30, 60, 90 } },
+        [2] = { type = "insurance", price = 10, days = { 30, 60, 90 } },
     },
     vehicleClassPrices = { -- https://docs.fivem.net/natives/?_0x29439776AAA00A62
         enable = true, -- If you want to use this feature, set it to true
@@ -89,14 +89,14 @@ Config.BlacklistVehicles = { -- This is the blacklist for the vehicles
 -- Health Insurance Settings --
 Config.healthInsurance = { -- This is the settings for the health insurance
     needJob = false, -- If you want to use this script with a job, set it to true. If you want to use it without a job, set it to false
-    menuZone = vector3(311.47, -594.05, 43.28), -- This is the settings for the insurance menu if you use needJob = true
-    blipSettings = { enable = true, sprite = 153, color = 1, scale = 0.7, name = "Health Insurance" }, -- This is the settings for the blip
+    menuZone = vector3(-439.534, -324.109, 34.911), -- This is the settings for the insurance menu if you use needJob = true
+    blipSettings = { enable = false, sprite = 153, color = 1, scale = 0.3, name = "Health Insurance" }, -- This is the settings for the blip
     job = "ambulance", -- If you want to use this script with a job, add the job name here
     society = {
         enable = false, -- If you want to use this script with a job, set it to true
         name = "society_ambulance", -- If you want to use this script with a job, add the society name here
     },
-    pedSettings = { pedModel = "s_m_y_dealer_01", pedCoords = vector4(311.47, -594.05, 43.28, 341.52) }, -- Only spawn if you use without job
+    pedSettings = { pedModel = "s_m_y_dealer_01", pedCoords = vector4(-439.534, -324.109, 34.911, 166.731) }, -- Only spawn if you use without job
     stash = { weight = 25000, slots = 20, name = "Health Insurance" },
     recoverDocumentation = { -- This is the settings for the recover documentation
         insurance = 500, -- This is the price for the insurance documentation
@@ -111,14 +111,14 @@ Config.healthInsurance = { -- This is the settings for the health insurance
 -- Home Insurance Settings --
 Config.homeInsurance = {
     needJob = false, -- If you want to use this script with a job, set it to true. If you want to use it without a job, set it to false
-    menuZone = vector3(-168.09, 6331.38, 31.63), -- This is the settings for the insurance menu if you use needJob = true
-    blipSettings = { enable = true, sprite = 350, color = 1, scale = 0.7, name = "Home Insurance" }, -- This is the settings for the blip
+    menuZone = vector3(-701.031, 267.625, 83.147), -- This is the settings for the insurance menu if you use needJob = true
+    blipSettings = { enable = false, sprite = 350, color = 1, scale = 0.3, name = "Home Insurance" }, -- This is the settings for the blip
     job = "realestate", -- If you want to use this script with a job, add the job name here
     society = {
         enable = false, -- If you want to use this script with a job, set it to true
         name = "society_realestate", -- If you want to use this script with a job, add the society name here
     },
-    pedSettings = { pedModel = "s_m_y_dealer_01", pedCoords = vector4(-168.09, 6331.38, 31.63, 317.6) }, -- Only spawn if you use without job
+    pedSettings = { pedModel = "s_m_y_dealer_01", pedCoords = vector4(-701.031, 267.625, 83.147, 344.292) }, -- Only spawn if you use without job
     stash = { weight = 25000, slots = 20, name = "Home Insurance" },
     recoverDocumentation = { -- This is the settings for the recover documentation
         insurance = 500, -- This is the price for the insurance documentation

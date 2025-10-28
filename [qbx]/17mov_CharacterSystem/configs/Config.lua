@@ -79,7 +79,7 @@ Config.Stores = {
     [20] = {price = 15, shopType = 'barber', coords = vector4(1212.87, -472.89, 65.21, 61.65), ped = `s_f_m_fembarber`, radius = 3.0, hideBlip = false },
     [21] = {price = 15, shopType = 'barber', coords = vector4(-32.97, -152.33, 56.08, 343.66), ped = `s_f_m_fembarber`, radius = 3.0, hideBlip = false },
     [22] = {price = 15, shopType = 'barber', coords = vector4(-278.02, 6228.53, 30.7, 55.18), ped = `s_f_m_fembarber`, radius = 3.0, hideBlip = false },
-    [23] = {price = 3000, shopType = 'surgeon', coords = vector4(299.8, -578.75, 42.26, 91.1), ped = `s_m_m_doctor_01`, radius = 3.0, hideBlip = false },
+    [23] = {price = 3000, shopType = 'surgeon', coords = vector4(-460.146, -298.629, 34.911, 201.722), ped = `s_m_m_doctor_01`, radius = 3.0, hideBlip = true },
     [24] = {price = 1500, shopType = 'tattoo', coords = vector4(1321.65, -1654.16, 51.28, 340.9), ped = `u_m_y_tattoo_01`, radius = 3.0, hideBlip = false },
     [25] = {price = 1500, shopType = 'tattoo', coords = vector4(324.66, 180.56, 102.59, 103.23), ped = `u_m_y_tattoo_01`, radius = 3.0, hideBlip = false },
     [26] = {price = 1500, shopType = 'tattoo', coords = vector4(-3169.8, 1077.75, 19.83, 198.68), ped = `u_m_y_tattoo_01`, radius = 3.0, hideBlip = false },

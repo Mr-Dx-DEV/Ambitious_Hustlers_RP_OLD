@@ -1094,7 +1094,7 @@ Config.market_categories = {
 				['img'] = 'camera.png',
 			},
 			]]
-			['transponder'] = {
+			--[[['transponder'] = {
 				['name'] = "ransponder",
 				['price_to_customer'] = 10000,
 				['price_to_customer_min'] = 175,
@@ -1104,7 +1104,8 @@ Config.market_categories = {
 				['amount_to_owner'] = 2,
 				['amount_to_delivery'] = 2,
 				['img'] = 'transponder.png',
-			}, 
+			},
+			]]
 			['boombox'] = {
 				['name'] = "Boombox",
 				['price_to_customer'] = 5000,
@@ -1116,7 +1117,7 @@ Config.market_categories = {
 				['amount_to_delivery'] = 2,
 				['img'] = 'boombox.png',
 			},
-			['laptop'] = {
+			--[[ ['laptop'] = {
 				['name'] = "Laptop",
 				['price_to_customer'] = 80000,
 				['price_to_customer_min'] = 75000,
@@ -1127,6 +1128,7 @@ Config.market_categories = {
 				['amount_to_delivery'] = 2,
 				['img'] = 'laptop.png',
 			},
+			]]
 			
 			
 			
@@ -2464,7 +2466,7 @@ Config.market_categories = {
 				['amount_to_delivery'] = 2,
 				['img'] = 'armor.png',
 			},
-			['microfibercloth'] = {
+			--[[['microfibercloth'] = {
 				['name'] = "Microfiber Cloth",
 				['price_to_customer'] = 100,
 				['price_to_customer_min'] = 50,
@@ -2485,7 +2487,7 @@ Config.market_categories = {
 				['amount_to_owner'] = 2,
 				['amount_to_delivery'] = 2,
 				['img'] = 'blox.png',
-			}
+			}]]
 		}
 	},
 }

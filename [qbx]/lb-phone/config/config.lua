@@ -522,7 +522,7 @@ Config.CityName = "Ambitious Hustlers RP" -- The name that's being used in the w
 Config.RealTime = true -- if true, the time will use real life time depending on where the user lives, if false, the time will be the ingame time.
 Config.CustomTime = false -- NOTE: disable Config.RealTime if using this. you can set this to a function that returns custom time, as a table: { hour = 0-24, minute = 0-60 }
 
-Config.EmailDomain = "ambitious.hustlers"
+Config.EmailDomain = "ambitious.hustlerz"
 Config.AutoCreateEmail = true -- should the phone automatically create an email for the player when they set up the phone?
 Config.DeleteMail = true -- allow players to delete mails in the mail app?
 Config.ConvertMailToMarkdown = false -- convert mails from html to markdown?

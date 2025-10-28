@@ -41282,4 +41282,39 @@ return {
           image = "can.png",
         }
     },
+	burnerphone = {
+        name = "Burner Phone",
+        label = "Oxy Burner Phone",
+		description = "A Burner Phone Used To Sell Oxy",
+        weight = 10,
+        client = {
+          image = "burnerphone.png",
+        }
+    },
+	suspiciouspackage = {
+        name = "Suspicious Package",
+        label = "A Suspicious Package",
+		description = "A Suspicious Package",
+        weight = 10,
+        client = {
+          image = "suspiciouspackage.png",
+        }
+    },
+	oxy = {
+        name = "Oxy",
+        label = "Prescription Oxy",
+		description = "The Label Has Been Ripped Off",
+        weight = 10,
+        client = {
+          image = "oxy.png",
+        }
+    },
+	    ['lawyerid'] = {
+        label = 'Bar License ID Card.',
+        weight = 1,
+        consume = 0,
+        stack = false,
+        close = true,
+        description = nil
+    },
 }

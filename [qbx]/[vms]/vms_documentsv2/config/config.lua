@@ -101,22 +101,12 @@ Config.CheckDocumentBySerial = {
     requiredJob = {
         ['clerk'] = true, -- All grades
         ['police'] = true, -- All grades
-        ['sheriff'] = true, -- All grades
+        ['bcso'] = true, -- All grades
         ['ambulance'] = true, -- All grades
         ['sadoc'] = true,
-        ['ss'] = true,
-        ['dhs'] = true,
-        ['usms'] = true,
-        ['doj'] = true,
-        ['safw'] = true,
-        ['bcso'] = true,
-        ['salsa'] = true,
-        ['fbi'] = true,
-        ['lsso'] = true,
-        ['lspd'] = true,
+        ['rangers'] = true,
         ['sahp'] = true,
-        ['ambulance'] = true,
-        ['ambulance'] = true,
+        ['marshals'] = true,
         ['ems'] = {1, 2, 3, 4},
     }
 }
@@ -236,6 +226,11 @@ Config.Documents = {
             'firstName',
             'lastName',
         },
+
+        needAnyLicenseToGetDocument = true,
+        licenses = {
+            'weapon',
+        },
     },
    --[[ ['weapon_license3"'] = { -- Do not change this name
         type = 'document',
@@ -339,6 +334,11 @@ Config.Documents = {
         data = {
             'firstName',
             'lastName',
+        },
+
+        needAnyLicenseToGetDocument = true,
+        licenses = {
+            'hunting',
         },
 
     },

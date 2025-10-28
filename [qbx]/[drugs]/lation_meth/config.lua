@@ -698,7 +698,7 @@ Config.Cooking = {
             start = { item = 'ls_liquid_meth', quantity = 1 },
             -- Duration is how long this step takes to complete
             -- The duration here is in minutes
-            duration = 60,
+            duration = 10,
             -- Temperature is the specific temperature range the mixture should be heated to
             -- Any deviation from this range will result in negative impacts to the
             -- Purity level of the ls_liquid_meth base created above. If a player achieved
@@ -720,7 +720,7 @@ Config.Cooking = {
         [5] = {
             -- Duration is how long this step takes to complete
             -- The duration here is in miutes
-            duration = 90
+            duration = 10
         },
         -- Step 6 is the break down stage, breaking the cooled sheet into finer crystals
         [6] = {

@@ -186,6 +186,15 @@ Item('clothing', function(data, slot)
 	end)
 end)
 
+--- AP COURT STUFF ------
+Item('lawyerid', function(data, slot)
+  ox_inventory:useItem(data, function(data)
+    if data ~= nil then
+      TriggerServerEvent('ap-court:server:usingLawyerCard', data)
+    end
+  end)
+end)
+
 -----------------------------------------------------------------------------------------------
 
 exports('Items', function(item) return getItem(nil, item) end)

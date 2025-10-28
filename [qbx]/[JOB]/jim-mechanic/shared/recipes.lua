@@ -141,108 +141,108 @@ Stores = {
 	NosItems = {
 		label = locale("storeMenu", "nosItems"),
 		items = {
-			{ name = "nos", 			price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "noscolour", 		price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "radiocar", 		price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "radiocar_blue", 		price = 0, amount = 50, info = {}, type = "item", },
+			{ name = "nos", 			price = 250000, amount = 50, info = {}, type = "item", },
+			{ name = "noscolour", 		price = 1000, amount = 50, info = {}, type = "item", },
 		},
 	},
 	RepairItems = {
 		label = locale("storeMenu", "repairItems"),
 		items = {
-			{ name = "mechanic_tools", 	price = 0, amount = 10, info = {}, type = "item", },
-			{ name = "sparetire", 		price = 0, amount = 100, info = {}, type = "item", },
-			{ name = "axleparts", 		price = 0, amount = 1000, info = {}, type = "item", },
-			{ name = "carbattery", 		price = 0, amount = 1000, info = {}, type = "item", },
-			{ name = "sparkplugs", 		price = 0, amount = 1000, info = {}, type = "item", },
-			{ name = "newoil", 			price = 0, amount = 1000, info = {}, type = "item", },
+			{ name = "mechanic_tools", 	price = 500, amount = 10, info = {}, type = "item", },
+			{ name = "sparetire", 		price = 250, amount = 100, info = {}, type = "item", },
+			{ name = "axleparts", 		price = 1500, amount = 1000, info = {}, type = "item", },
+			{ name = "carbattery", 		price = 500, amount = 1000, info = {}, type = "item", },
+			{ name = "sparkplugs", 		price = 800, amount = 1000, info = {}, type = "item", },
+			{ name = "newoil", 			price = 250, amount = 1000, info = {}, type = "item", },
 		},
 	},
 	ToolItems = {
 		label = locale("storeMenu", "mechanicTools"),
 		items = {
-			{ name = "toolbox", 		price = 0, amount = 10, info = {}, type = "item", },
-			{ name = "ducttape", 		price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "paintcan", 		price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "tint_supplies", 	price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "underglow_controller", price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "cleaningkit", 	price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "newplate", 		price = 0, amount = 50, info = {}, type = "item", },
+			{ name = "toolbox", 		price = 500, amount = 10, info = {}, type = "item", },
+			{ name = "ducttape", 		price = 150, amount = 50, info = {}, type = "item", },
+			{ name = "paintcan", 		price = 500, amount = 50, info = {}, type = "item", },
+			{ name = "tint_supplies", 	price = 2000, amount = 50, info = {}, type = "item", },
+			{ name = "underglow_controller", price = 3000, amount = 50, info = {}, type = "item", },
+			{ name = "cleaningkit", 	price = 200, amount = 50, info = {}, type = "item", },
+			{ name = "newplate", 		price = 250, amount = 50, info = {}, type = "item", },
+			{ name = "radiocar", 		price = 500, amount = 50, info = {}, type = "item", },
+			{ name = "radiocar_blue", 		price = 600, amount = 50, info = {}, type = "item", },
 		},
 	},
 	PerformItems = {
 		label = locale("storeMenu", "performanceItems"),
 		items = {
-			{ name = "turbo", 			price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "car_armor", 		price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "bprooftires", 	price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "drifttires", 		price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "harness", 		price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "antilag", 		price = 0, amount = 50, info = {}, type = "item", },
+			{ name = "turbo", 			price = 15000, amount = 50, info = {}, type = "item", },
+			{ name = "car_armor", 		price = 8000, amount = 50, info = {}, type = "item", },
+			{ name = "bprooftires", 	price = 100000, amount = 50, info = {}, type = "item", },
+			{ name = "drifttires", 		price = 1500, amount = 50, info = {}, type = "item", },
+			{ name = "harness", 		price = 50000, amount = 50, info = {}, type = "item", },
+			{ name = "antilag", 		price = 10000, amount = 50, info = {}, type = "item", },
 
-			{ name = "engine1", 		price = 0, amount = 50, info = {}, type = "item", }, -- Basic
-			{ name = "engine2", 		price = 0, amount = 50, info = {}, type = "item", }, -- Standard
-			{ name = "engine3", 		price = 0, amount = 50, info = {}, type = "item", }, -- Enhanced
-			{ name = "engine4", 		price = 0, amount = 50, info = {}, type = "item", }, -- Performance
-			{ name = "engine5", 		price = 0, amount = 50, info = {}, type = "item", }, -- Elite
+			{ name = "engine1", 		price = 8500, amount = 50, info = {}, type = "item", }, -- Basic
+			{ name = "engine2", 		price = 11500, amount = 50, info = {}, type = "item", }, -- Standard
+			{ name = "engine3", 		price = 14500, amount = 50, info = {}, type = "item", }, -- Enhanced
+			{ name = "engine4", 		price = 18500, amount = 50, info = {}, type = "item", }, -- Performance
+			{ name = "engine5", 		price = 21000, amount = 50, info = {}, type = "item", }, -- Elite
 
-			{ name = "transmission1", 	price = 0, amount = 50, info = {}, type = "item", }, -- Basic
-			{ name = "transmission2", 	price = 0, amount = 50, info = {}, type = "item", }, -- Standard
-			{ name = "transmission3", 	price = 0, amount = 50, info = {}, type = "item", }, -- Enhanced
-			{ name = "transmission4", 	price = 0, amount = 50, info = {}, type = "item", }, -- Performance
+			{ name = "transmission1", 	price = 8000, amount = 50, info = {}, type = "item", }, -- Basic
+			{ name = "transmission2", 	price = 10000, amount = 50, info = {}, type = "item", }, -- Standard
+			{ name = "transmission3", 	price = 12000, amount = 50, info = {}, type = "item", }, -- Enhanced
+			{ name = "transmission4", 	price = 14000, amount = 50, info = {}, type = "item", }, -- Performance
 
-			{ name = "brakes1", 		price = 0, amount = 50, info = {}, type = "item", }, -- Basic
-			{ name = "brakes2", 		price = 0, amount = 50, info = {}, type = "item", }, -- Standard
-			{ name = "brakes3", 		price = 0, amount = 50, info = {}, type = "item", }, -- Enhanced
+			{ name = "brakes1", 		price = 8000, amount = 50, info = {}, type = "item", }, -- Basic
+			{ name = "brakes2", 		price = 10000, amount = 50, info = {}, type = "item", }, -- Standard
+			{ name = "brakes3", 		price = 12000, amount = 50, info = {}, type = "item", }, -- Enhanced
 
-			{ name = "suspension1", 	price = 0, amount = 50, info = {}, type = "item", }, -- Basic
-			{ name = "suspension2", 	price = 0, amount = 50, info = {}, type = "item", }, -- Standard
-			{ name = "suspension3", 	price = 0, amount = 50, info = {}, type = "item", }, -- Enhanced
-			{ name = "suspension4", 	price = 0, amount = 50, info = {}, type = "item", }, -- Performance
-			{ name = "suspension5", 	price = 0, amount = 50, info = {}, type = "item", }, -- Elite
+			{ name = "suspension1", 	price = 8000, amount = 50, info = {}, type = "item", }, -- Basic
+			{ name = "suspension2", 	price = 10000, amount = 50, info = {}, type = "item", }, -- Standard
+			{ name = "suspension3", 	price = 12000, amount = 50, info = {}, type = "item", }, -- Enhanced
+			{ name = "suspension4", 	price = 14000, amount = 50, info = {}, type = "item", }, -- Performance
+			{ name = "suspension5", 	price = 16000, amount = 50, info = {}, type = "item", }, -- Elite
 
-			{ name = "oilp1", 			price = 0, amount = 50, info = {}, type = "item", }, -- Basic
-			{ name = "oilp2", 			price = 0, amount = 50, info = {}, type = "item", }, -- Standard
-			{ name = "oilp3", 			price = 0, amount = 50, info = {}, type = "item", }, -- Enhanced
+			{ name = "oilp1", 			price = 8000, amount = 50, info = {}, type = "item", }, -- Basic
+			{ name = "oilp2", 			price = 10000, amount = 50, info = {}, type = "item", }, -- Standard
+			{ name = "oilp3", 			price = 12000, amount = 50, info = {}, type = "item", }, -- Enhanced
 
-			{ name = "drives1", 		price = 0, amount = 50, info = {}, type = "item", }, -- Basic
-			{ name = "drives2", 		price = 0, amount = 50, info = {}, type = "item", }, -- Standard
-			{ name = "drives3", 		price = 0, amount = 50, info = {}, type = "item", }, -- Enhanced
+			{ name = "drives1", 		price = 8000, amount = 50, info = {}, type = "item", }, -- Basic
+			{ name = "drives2", 		price = 10000, amount = 50, info = {}, type = "item", }, -- Standard
+			{ name = "drives3", 		price = 12000, amount = 50, info = {}, type = "item", }, -- Enhanced
 
-			{ name = "cylind1", 		price = 0, amount = 50, info = {}, type = "item", }, -- Basic
-			{ name = "cylind2", 		price = 0, amount = 50, info = {}, type = "item", }, -- Standard
-			{ name = "cylind3", 		price = 0, amount = 50, info = {}, type = "item", }, -- Enhanced
+			{ name = "cylind1", 		price = 8000, amount = 50, info = {}, type = "item", }, -- Basic
+			{ name = "cylind2", 		price = 10000, amount = 50, info = {}, type = "item", }, -- Standard
+			{ name = "cylind3", 		price = 12000, amount = 50, info = {}, type = "item", }, -- Enhanced
 
-			{ name = "cables1", 		price = 0, amount = 50, info = {}, type = "item", }, -- Basic
-			{ name = "cables2", 		price = 0, amount = 50, info = {}, type = "item", }, -- Standard
-			{ name = "cables3", 		price = 0, amount = 50, info = {}, type = "item", }, -- Enhanced
+			{ name = "cables1", 		price = 8000, amount = 50, info = {}, type = "item", }, -- Basic
+			{ name = "cables2", 		price = 10000, amount = 50, info = {}, type = "item", }, -- Standard
+			{ name = "cables3", 		price = 12000, amount = 50, info = {}, type = "item", }, -- Enhanced
 
-			{ name = "fueltank1", 		price = 0, amount = 50, info = {}, type = "item", }, -- Basic
-			{ name = "fueltank2", 		price = 0, amount = 50, info = {}, type = "item", }, -- Standard
-			{ name = "fueltank3", 		price = 0, amount = 50, info = {}, type = "item", }, -- Enhanced
+			{ name = "fueltank1", 		price = 8000, amount = 50, info = {}, type = "item", }, -- Basic
+			{ name = "fueltank2", 		price = 10000, amount = 50, info = {}, type = "item", }, -- Standard
+			{ name = "fueltank3", 		price = 12000, amount = 50, info = {}, type = "item", }, -- Enhanced
 		},
 	},
 	CosmeticItems = {
 		label = locale("storeMenu", "cosmeticItems"),
 		items = {
-			{ name = "hood", 			price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "roof", 			price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "spoiler", 		price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "bumper", 			price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "skirts", 			price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "exhaust", 		price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "seat", 			price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "livery", 			price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "tires", 			price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "horn", 			price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "internals", 		price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "externals", 		price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "customplate", 	price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "headlights", 		price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "rims", 			price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "rollcage", 		price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "underglow", 		price = 0, amount = 50, info = {}, type = "item", },
-			{ name = "stancerkit", 		price = 0, amount = 50, info = {}, type = "item", },
+			{ name = "hood", 			price = 2500, amount = 50, info = {}, type = "item", },
+			{ name = "roof", 			price = 2500, amount = 50, info = {}, type = "item", },
+			{ name = "spoiler", 		price = 1500, amount = 50, info = {}, type = "item", },
+			{ name = "bumper", 			price = 2000, amount = 50, info = {}, type = "item", },
+			{ name = "skirts", 			price = 1500, amount = 50, info = {}, type = "item", },
+			{ name = "exhaust", 		price = 1000, amount = 50, info = {}, type = "item", },
+			{ name = "seat", 			price = 3000, amount = 50, info = {}, type = "item", },
+			{ name = "livery", 			price = 1000, amount = 50, info = {}, type = "item", },
+			{ name = "tires", 			price = 750, amount = 50, info = {}, type = "item", },
+			{ name = "horn", 			price = 500, amount = 50, info = {}, type = "item", },
+			{ name = "internals", 		price = 750, amount = 50, info = {}, type = "item", },
+			{ name = "externals", 		price = 1000, amount = 50, info = {}, type = "item", },
+			{ name = "customplate", 	price = 250, amount = 50, info = {}, type = "item", },
+			{ name = "headlights", 		price = 500, amount = 50, info = {}, type = "item", },
+			{ name = "rims", 			price = 2500, amount = 50, info = {}, type = "item", },
+			{ name = "rollcage", 		price = 5000, amount = 50, info = {}, type = "item", },
+			{ name = "underglow", 		price = 5000, amount = 50, info = {}, type = "item", },
+			{ name = "stancerkit", 		price = 2500, amount = 50, info = {}, type = "item", },
 		},
 	},
 }

@@ -1,0 +1,117 @@
+/*
+$$\   $$\                                $$\     
+$$ | $$  |                               $$ |    
+$$ |$$  /  $$$$$$\  $$\   $$\  $$$$$$\ $$$$$$\   
+$$$$$  /  $$  __$$\ $$ |  $$ |$$  __$$\\_$$  _|  
+$$  $$<   $$ |  \__|$$ |  $$ |$$ /  $$ | $$ |    
+$$ |\$$\  $$ |      $$ |  $$ |$$ |  $$ | $$ |$$\ 
+$$ | \$$\ $$ |      \$$$$$$$ |$$$$$$$  | \$$$$  |
+\__|  \__|\__|       \____$$ |$$  ____/   \____/ 
+                    $$\   $$ |$$ |               
+                    \$$$$$$  |$$ |               
+                     \______/ \__|               
+
+ $$$$$$\                      $$\            $$\               
+$$  __$$\                     \__|           $$ |              
+$$ /  \__| $$$$$$$\  $$$$$$\  $$\  $$$$$$\ $$$$$$\    $$$$$$$\ 
+\$$$$$$\  $$  _____|$$  __$$\ $$ |$$  __$$\\_$$  _|  $$  _____|
+ \____$$\ $$ /      $$ |  \__|$$ |$$ /  $$ | $$ |    \$$$$$$\  
+$$\   $$ |$$ |      $$ |      $$ |$$ |  $$ | $$ |$$\  \____$$\ 
+\$$$$$$  |\$$$$$$$\ $$ |      $$ |$$$$$$$  | \$$$$  |$$$$$$$  |
+ \______/  \_______|\__|      \__|$$  ____/   \____/ \_______/ 
+                                  $$ |                         
+                                  $$ |                         
+                                  \__|                         
+
+Thank you for downloading.
+For support, view the documentation or join our discord.
+
+Discord: https://discord.gg/ZwFX57r2K7
+Documentation: https://krypt-scripts.gitbook.io/krypt-scripts/
+*/
+
+html {
+	overflow: hidden;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+#watermark {
+	position: absolute;
+	top: 2vh;
+	bottom: 100%;
+	left: 1%; /*25*/
+	width: 193px;
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+}
+
+header {
+	width: 193px;
+	height: 300px;
+	/*background-color: #a519ea;*/
+	opacity: 0.8;
+	border-top-left-radius: 200px;
+	border-top-right-radius: 40px;
+
+}
+
+header img {
+	width: 193px;
+	height: 300px;
+	border-top-left-radius: 200px;
+	border-top-right-radius: 40px;
+}
+
+/* Firefox old*/
+@-moz-keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+} 
+
+@-webkit-keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+/* IE */
+@-ms-keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+} 
+/* Opera and prob css3 final iteration */
+@keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}

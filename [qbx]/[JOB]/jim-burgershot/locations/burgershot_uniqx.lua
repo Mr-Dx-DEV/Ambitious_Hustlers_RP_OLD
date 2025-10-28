@@ -1,7 +1,7 @@
 Locations = Locations or {}
 
 Locations["bs_uniqx"] = {
-    enable = false,
+    enable = true,
     job = "burgershot",
     label = "Burgershot",
     autoClock = { enter = false, exit = true, },

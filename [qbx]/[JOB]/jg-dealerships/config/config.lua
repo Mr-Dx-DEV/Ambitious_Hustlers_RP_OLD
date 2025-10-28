@@ -92,7 +92,8 @@ Config.Categories = {
   suvs = "SUVs",
   commercial = "Commercial",
   cycles = "Cycles",
-  industrial = "Industrial"
+  industrial = "Industrial",
+  customs = "Customs"
 }
 
 Config.DealershipLocations = {
@@ -117,7 +118,7 @@ Config.DealershipLocations = {
       coords = vector4(-146.6166, -596.6301, 166.0, 270.0),
       positions = {5.0, 8.0, 12.0, 8.0}
     },
-    categories = {"sedans", "compacts", "motorcycles", "offroad", "coupes", "muscle", "suvs", "sportsclassics", "super", "sports", "vans", "commercial", "industrial"},
+    categories = {"sedans", "compacts", "motorcycles", "offroad", "coupes", "muscle", "suvs", "sportsclassics", "super", "sports", "vans", "commercial", "industrial", "customs"},
     enableTestDrive = true,
     hideBlip = false,
     blip = {
@@ -138,7 +139,7 @@ Config.DealershipLocations = {
     job = "cardealer", -- Owned dealerships only
     directSaleDistance = 50,
   },
-  ["luxury"] = {
+  --[[ ["luxury"] = {
     type = "self-service", -- or "owned", "self-service"
     openShowroom = {
       coords = vector3(-1257.4, -369.12, 36.98),
@@ -176,7 +177,7 @@ Config.DealershipLocations = {
     showroomGangWhitelist = {},
     societyPurchaseJobWhitelist = {},
     societyPurchaseGangWhitelist = {},
-  },
+  }, ]]
   -- ["boats"] = {
   --   type = "self-service", -- or "owned", "self-service"
   --   openShowroom = {

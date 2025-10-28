@@ -10,24 +10,24 @@ Config.UseTaxes = true
 ---@class Taxes: 
 Config.Taxes = {
     ['gains'] = { -- Private taxes
-        vehicleexcise = 7, -- Buying a car from another player (by agreement)
+        vehicleexcise = 0, -- Buying a car from another player (by agreement)
     },
 
-    ['tuning'] = 5, --  Business tax (vms_tuning v2.0.6+)
+    ['tuning'] = 0, --  Business tax (vms_tuning v2.0.6+)
     
     ['vehicles'] = { -- Business tax (vms_vehicleshopV2 v1.0.4+)
-        mechanical = 18,
-        electric = 9,
-        bikes = 5,
+        mechanical = 0,
+        electric = 0,
+        bikes = 0,
     },
 
     ['products'] = { -- Business tax (vms_stores v1.0.7+)
-        electronics = 21,
-        alcohol = 23,
-        food = 33,
-        drinks = 30,
-        other = 23,
-        fuel = 20,
+        electronics = 0,
+        alcohol = 0,
+        food = 0,
+        drinks = 0,
+        other = 0,
+        fuel = 0,
     },
 
     ['tattoos'] = 18, -- Business tax (vms_tattooshop v2.0.0+)

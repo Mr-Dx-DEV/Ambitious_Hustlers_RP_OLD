@@ -6,7 +6,7 @@ Config = {
 		Menu = "ox",			-- "qb", "ox", "gta"
 		ProgressBar = "ox",	-- "qb", "ox", "gta"
 		Notify = "ox",			-- "qb", "ox", "gta"
-		drawText = "ox"			-- "qb", "ox", "gta"
+		drawText = "qb"			-- "qb", "ox", "gta"
 
 	},
 	General = {
@@ -24,6 +24,8 @@ Config = {
 								-- Add's target option to the store ped at the mine shaft
 
 		requiredJob = nil,
+
+		crackingRequiresDrillbit = true,	-- Toggle for if cracking stone requires a drillbit
 
 	},
 	Crafting = {

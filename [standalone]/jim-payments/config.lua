@@ -23,7 +23,7 @@ Config = {
 	},
 
 	General = {
-		ApGov = true, 			-- Toggle support for AP-Goverment Tax
+		ApGov = false, 			-- Toggle support for AP-Goverment Tax
 
 		lookAtCharge = false,	-- "true" to use the "look at charge" feature
 		List = true, 			-- "true" to use nearby player list feature in the cash registers, "false" for manual id entry
@@ -148,6 +148,11 @@ Config = {
 		-- No tickets for these, it's just commission (0.25 = 25%)
 		FineJobs = {
 			['police'] = { Commission = 0.25, },
+			['bcso'] = { Commission = 0.25, },
+			['sahp'] = { Commission = 0.25, },
+			['rangers'] = { Commission = 0.25, },
+			['sadoc'] = { Commission = 0.25, },
+			['marshals'] = { Commission = 0.25, },
 			['ambulance'] = { Commission = 0.25, },
 		},
 		FineJobConfirmation = false, --"true" makes it so fines need confirmation, "false" skips this ands just removes the money

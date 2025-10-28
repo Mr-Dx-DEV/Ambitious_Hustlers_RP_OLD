@@ -70,7 +70,12 @@ Config.InteractType = "target" -- 3dtext || drawtext || target || interact (to u
 
 -- locations from where evidence ui can be opened
 Config.LocationsToAccessCrimeScenes = {
-    vector3(441.41, -995.99, 30.69), 
+    vector3(465.567, -970.188, 26.026),
+    vector3(2801.165, 4749.958, 44.395),
+    vector3(-3148.652, 1392.237, 17.495),
+    vector3(-833.131, 5398.692, 37.052),
+    vector3(1824.497, 3658.521, 30.315),
+
 }
 
 --[[

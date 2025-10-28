@@ -264,7 +264,7 @@ Config = {
     ReduceSentenceType = SentenceTypes.ONLINE,  -- [OFFLINE - Prisoners are not required to be on server for sentence reduce, ONLINE - Prisoners are required to be on server for sentence reducing!]
     RenderJailTime = true,                      -- This is used for rendering jail time on the screen
 
-    RenderNPCBlips = true,                      -- This is used for rendering blips on map
+    RenderNPCBlips = false,                      -- This is used for rendering blips on map
     RenderBlipsForEverybody = true,            -- This allows to render blips for all players, not only for prisoners.
 
     DisplayPrisonMapForEverybody = false,       -- This allows to render prison map for every player [When disabled it render only for prisoners]
@@ -285,7 +285,7 @@ Config = {
 
     Escape = {
         RequiredPolice = 3,                               -- How many police officers are need to be online?
-        PoliceCheck = false,                              -- This is used for enabling checking if there is enough Police officers to start Prison break
+        PoliceCheck = true,                              -- This is used for enabling checking if there is enough Police officers to start Prison break
         Enable = true,                                    -- This is used for enabling prison break system
         MarkerColor = { r = 255, g = 0, b = 0, a = 100 }, -- This is the color of the marker
         ViewCone = 160,
@@ -303,7 +303,7 @@ Config = {
         EnableAutomaticReset = true,                      -- This is used for enabling automatic reset of the escape
         NeedItem = true,                                  -- This is used for needing item to escape from the prison
         ItemName = 'wire_cutter',                         -- This is the item name for escaping from the prison
-        NotifyJobs = { 'police', 'leo' },                 -- This is the list of the jobs which are going to be notified when prisoner is escaping using supported dispatch system
+        NotifyJobs = { 'police', 'leo', 'bcso', 'rangers', 'sahp', 'sadoc', 'marshals' },                 -- This is the list of the jobs which are going to be notified when prisoner is escaping using supported dispatch system
 
         DisablePatrollingGuards = true,
 
@@ -395,6 +395,9 @@ Config = {
         ['sheriff'] = true, -- This is the job which is allowed to jail/unjail players
         ['bsco'] = true, -- This is the job which is allowed to jail/unjail players
         ['sahp'] = true, -- This is the job which is allowed to jail/unjail players
+        ['sadoc'] = true, -- This is the job which is allowed to jail/unjail players
+        ['rangers'] = true, -- This is the job which is allowed to jail/unjail players
+        ['marshals'] = true, -- This is the job which is allowed to jail/unjail players
     },
 
 

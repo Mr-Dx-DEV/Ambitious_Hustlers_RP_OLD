@@ -132,7 +132,7 @@ Config.JobToCheckAmountOnline = 1 -- If there is this amount of people online wi
 Config.PaymentType = 'bank'   -- 'cash' / 'bank'
 
 Config.ReviveCostSuccessfulSkillCheck  = 3000      -- How much it costs to be revived if you spawn back in the hospital (if AlwaysTakeToHosptial is set to true and you pass the minigame)
-Config.ReviveCostFailedSkillCheck  = 5000      -- How much it costs to be revived if you spawn back in the hospital (if you fail the minigame)  -- will default to this if you do not use skillcheck or if AlwaysTakeToHosptial is set to false
+Config.ReviveCostFailedSkillCheck  = 2500      -- How much it costs to be revived if you spawn back in the hospital (if you fail the minigame)  -- will default to this if you do not use skillcheck or if AlwaysTakeToHosptial is set to false
 
 
 Config.CinematicMode = true -- Set to true if you want the camera to go into cinematic mode when you are being revived
@@ -173,7 +173,7 @@ Config.FreezeOnRevive = true -- Set to true if you want to freeze the player whe
 -- NEW IN 1.7.0 -- 
 Config.CallAnimDisabled = true -- Set to true if you want to disable the call animation
 
-Config.HideOnRevive = true -- Set to true if you want to hide the player when they are being revived - this was added to 'fix' some onesync syncronised anim issues that were introudced into FiveM recently
+Config.HideOnRevive = false -- Set to true if you want to hide the player when they are being revived - this was added to 'fix' some onesync syncronised anim issues that were introudced into FiveM recently
 
 function AddSocietyFunds(amount)
   -- this will work for qbcore-management, qbx-management, renewed-banking, and esx_society by default -- edit here for others

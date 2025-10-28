@@ -198,7 +198,7 @@ Config.ChopShops = { -- Add as many as you need
         -- Management Settings
         Ownable = true,
         ManagementLocation = vector3(2041.43, 3187.44, 45.18),
-        Price = 75000,
+        Price = 250000,
         Percentage = 10,   -- Owner will recieve 10% of the total chop value into management fund
         CanSell = true,    -- Can sell the business to get back % of the original price
         SellPercentage = 50, -- % of the original price you get back when selling the business
@@ -261,7 +261,7 @@ Config.ChopShops = { -- Add as many as you need
 
 Config.TargetDistance = 1.2 -- Distance to show the target options
 
-Config.HardcoreMode = false -- Set to true to enable PLAYER OWNED VEHICLE CHOPPING
+Config.HardcoreMode = true -- Set to true to enable PLAYER OWNED VEHICLE CHOPPING
 -- [IMPORTANT - PLEASE READ] -- 
 -- [IF NOT USING QB/QBOX OR ESX THIS WILL REQUIRE YOU TO CODE YOUR OWN LOGIC IN THE SERVER_EDIT.LUA FILE FOR CHECKING OWNERSHIP AND IF YOU WANT TO DELETE, OR RETURN THE VEHICLE TO THE IMPOUND ETC ]
 -- EDIT envi-chopshop:isVehOwned AND HardcoreChopComplete()
@@ -288,32 +288,32 @@ end
 
 -- Rewards 
 Config.ClassMultipliers = {  -- Reward Multiplier for each vehicle class
-    [0] = 1.0, -- Compacts
-    [1] = 1.1, -- Sedans
-    [2] = 1.2, -- SUVs
-    [3] = 1.3, -- Coupes
-    [4] = 1.4, -- Muscle
-    [5] = 1.5, -- Sports Classics
-    [6] = 1.6, -- Sports
-    [7] = 1.8, -- Super
-    [8] = 0.6, -- Motorcycles
-    [9] = 1.2, -- Off-road
-    [10] = 1.0, -- Industrial
-    [11] = 1.0, -- Utility
-    [12] = 1.1, -- Vans
-    [13] = 0.4, -- Cycles
-    [14] = 1.0, -- Boats
-    [15] = 0.0, -- Helicopters
-    [16] = 0.0, -- Planes
-    [17] = 0.5, -- Service
-    [18] = 0.5, -- Emergency
-    [19] = 1.0, -- Military
-    [20] = 1.0  -- Commercial
+    [0] = 0.8, -- Compacts
+    [1] = 0.8, -- Sedans
+    [2] = 0.8, -- SUVs
+    [3] = 0.8, -- Coupes
+    [4] = 0.8, -- Muscle
+    [5] = 0.8, -- Sports Classics
+    [6] = 0.8, -- Sports
+    [7] = 0.8, -- Super
+    [8] = 0.8, -- Motorcycles
+    [9] = 0.8, -- Off-road
+    [10] = 0.8, -- Industrial
+    [11] = 0.8, -- Utility
+    [12] = 0.8, -- Vans
+    [13] = 0.8, -- Cycles
+    [14] = 0.8, -- Boats
+    [15] = 0.8, -- Helicopters
+    [16] = 0.8, -- Planes
+    [17] = 0.8, -- Service
+    [18] = 0.8, -- Emergency
+    [19] = 0.8, -- Military
+    [20] = 0.8  -- Commercial
 }
 
 
 Config.RewardsAccount = 'cash' -- [QB] - 'cash' or 'bank' or 'crypto' // [ESX] - 'cash' or 'bank' or 'black_money'   -- Go to Server/server_edit.lua to edit the reward functions to your liking if you want to use something else.
-Config.Rewards = 99999 -- Base reward for each vehicle - (please keep above 10 for the multiplier to work)
+Config.Rewards = 30000 -- Base reward for each vehicle - (please keep above 10 for the multiplier to work)
 Config.AdditionalRewardsItem = 'cryptostick' -- Item to receive when using item rewards, set to false to disable
 Config.AdditionalRewardsAmount = math.random(1,3) -- Amount of item to receive when using item rewards
 

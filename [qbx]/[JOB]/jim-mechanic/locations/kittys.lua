@@ -26,14 +26,22 @@ Locations["kittys"] = {
 	},
 	Stash = {
 		{   coords = vec4(-209.2, -1176.95, 23.03, 90.0), width = 0.6, depth = 3.6,
-			label = "Mech Stash: ", icon = "fas fa-cogs",
+			label = "Mech Stash: 1", icon = "fas fa-cogs",
+			slots = 50, maxWeight = 4000000,
+		},
+		{   coords = vec4(-195.679, -1176.159, 23.034, 359.462), width = 0.6, depth = 3.6,
+			label = "Mech Stash: 2", icon = "fas fa-cogs",
+			slots = 50, maxWeight = 4000000,
+		},
+		{   coords = vec4(-181.756, -1176.26, 23.034, 5.236), width = 0.6, depth = 3.6,
+			label = "Mech Stash: 3", icon = "fas fa-cogs",
 			slots = 50, maxWeight = 4000000,
 		},
        
         
 	},
     PersonalStash = {
-        {   prop = { model = "bkr_prop_biker_garage_locker_01", coords = vec4(-182.19, -1176.62, 23.03, 90.0), },
+        {   prop = { model = "bkr_prop_biker_garage_locker_01", coords = vec4(-178.807, -1176.384, 30.23, 1.283), },
             label = "Personal Stash",
             icon = "fas fa-box-open",
             stashName = "EastLSCustoms_Personal_",
@@ -58,7 +66,7 @@ Locations["kittys"] = {
 	},
 	Clockin = { coords = vec4(-210.33, -1162.56, 23.03, 0.0), prop = false },
     BossMenus = {
-		{   prop = { model = "prop_laptop_01a", coords = vec4(-215.20, -1162.38, 23.14, 179.93), },
+		{   prop = { model = "prop_laptop_01a", coords = vec4(-173.041, -1174.753, 31.108, 100.5913), },
             label = "Open Bossmenu", icon = "fas fa-list",
         },
     },
@@ -69,14 +77,14 @@ Locations["kittys"] = {
             slots = 100, maxWeight = 2000000,
         },
     },
-	manualRepair = {
+	--[[manualRepair = {
 		{ 	prop = { model = "xm3_prop_xm3_tool_draw_01d", coords = vec4(-171.99, -1159.58, 23.03, 270.0), },
 			label = "Manual Repair", icon = "fas fa-cogs",
 		},
-	},
+	},]]
 	nosRefill = { },
 	Payments = {
-		{   prop = { model = "prop_till_01", coords = vec4(-214.68, -1162.9, 23.03, 0.0), },
+		{   prop = { model = "prop_till_01", coords = vec4(-214.68, -1162.5, 23.86, 0.0), },
             label = "Charge", icon = "fas fa-credit-card",
         },
 	},

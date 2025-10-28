@@ -12,7 +12,7 @@ Shared.MaxFrequency = 500.00 -- Max Limit of Radio Channel
 Shared.Jammer = {
     state = false, -- to use jammer system or not 
     model = 'sm_prop_smug_jammer', -- prop to spawn for jammer
-    permission = {"police"}, -- permission how can setup jammer (job/gang)
+    permission = {"police", "bcso", "sahp", "rangers", "sadoc", "marshals"}, -- permission how can setup jammer (job/gang)
     default = {}, -- default jammer setup location 
     range = {
         min = 10.0,
@@ -72,39 +72,39 @@ Shared.RadioNames = {
 Shared.RestrictedChannels = {
     [1] = { -- channel id
         type = 'job', -- job/gang
-        name = {"police", "ambulance"}
+        name = {"police", "ambulance","bcso", "sahp", "rangers", "sadoc", "marshals"}
     },
     [2] = { -- channel id
         type = 'job', -- job/gang
-        name = {"police", "ambulance"}
+        name = {"police", "ambulance", "bcso", "sahp", "rangers", "sadoc", "marshals"}
     },
     [3] = { -- channel id
         type = 'job', -- job/gang
-        name = {"police", "ambulance"}
+        name = {"police", "ambulance", "bcso", "sahp", "rangers", "sadoc", "marshals"}
     },
     [4] = { -- channel id
         type = 'job', -- job/gang
-        name = {"police", "ambulance"}
+        name = {"police", "ambulance", "bcso", "sahp", "rangers", "sadoc", "marshals"}
     },
     [5] = { -- channel id
         type = 'job', -- job/gang
-        name = {"police", "ambulance"}
+        name = {"police", "ambulance", "bcso", "sahp", "rangers", "sadoc", "marshals"}
     },
     [6] = { -- channel id
         type = 'job', -- job/gang
-        name = {"police", "ambulance"}
+        name = {"police", "ambulance", "bcso", "sahp", "rangers", "sadoc", "marshals"}
     },
     [7] = { -- channel id
         type = 'job', -- job/gang
-        name = {"police", "ambulance"}
+        name = {"police", "ambulance", "bcso", "sahp", "rangers", "sadoc", "marshals"}
     },
     [8] = { -- channel id
         type = 'job', -- job/gang
-        name = {"police", "ambulance"}
+        name = {"police", "ambulance", "bcso", "sahp", "rangers", "sadoc", "marshals"}
     },
     [9] = { -- channel id
         type = 'job', -- job/gang
-        name = {"police", "ambulance"}
+        name = {"police", "ambulance", "bcso", "sahp", "rangers", "sadoc", "marshals"}
     },
     [10] = { -- channel id
         type = 'job', -- job/gang

@@ -2,13 +2,16 @@ Selector = {}
 
 Selector.Enable = true                                         -- Is Character Selector enabled?
 Selector.Relog = true                                          -- Should allow to use /relog command?
-Selector.EnableDeleting = true                                 -- Does player is allowed to delete characters?
-Selector.MaxCharacters = 5                                     -- Base number of max characters per player
+Selector.EnableDeleting = false                                 -- Does player is allowed to delete characters?
+Selector.MaxCharacters = 3                                     -- Base number of max characters per player
 Selector.IdentifierDatabaseColumns = { "identifier", "owner" } -- Being using on ESX and indicates names of columns with player identifier that should be deleted when deleting character
 
 -- Here you can configure custom number of characters per specified player (based on identifier)
 Selector.PlayerMaxCharacters = {
-    ["license:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"] = 5,
+    ["license2:83698be1f861284c6614f8d89130f8b6ea0ca95d"] = 5,
+    ["license2:3588634a5bf8693cc225a6515fbd20936019a06e"] = 5,
+    ["license2:29881f5fc9e3deec0e9a78ec6cc93929ab03dbb0"] = 5,
+    ["license2:d47f47a37486d58162f35ca588a7584b37d0b8f2"] = 5,
 }
 
 Selector.InteriorCoords = vector3(-827.42388916016, -730.15417480469, 108.13386535645) -- This is something that you shouldn't touch (used to load interior)

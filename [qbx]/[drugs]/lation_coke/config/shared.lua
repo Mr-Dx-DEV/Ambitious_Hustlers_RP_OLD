@@ -1012,7 +1012,7 @@ return {
                 iconColor = '',
                 -- How long does this step take to complete?
                 -- This duration is in minutes
-                duration = 30,
+                duration = 10,
                 required = {
                     { item = 'ls_cocaine_brick', quantity = 1, remove = true, metatype = 'purity' },
                     { item = 'ls_baking_soda', quantity = 1, remove = true }

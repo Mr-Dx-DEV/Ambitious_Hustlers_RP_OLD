@@ -169,7 +169,7 @@ return {
             },
         },
     },
-        ['marshals'] = {
+    ['marshals'] = {
         label = 'Marshal',
         type = 'leo',
         defaultDuty = true,
@@ -208,7 +208,7 @@ return {
             },
         },
     },
-        ['sadoc'] = {
+    ['sadoc'] = {
         label = 'DOC',
         type = 'leo',
         defaultDuty = true,
@@ -308,37 +308,37 @@ return {
         },
     },
     ['clerk'] = {
-	label = 'Clerk',
-	defaultDuty = true,
-	offDutyPay = false,
-	grades = {
-        ['0'] = {
-            name = 'Trainee',
-            payment = 150
-        },
-        ['1'] = {
-            name = 'Clerk',
-            payment = 300
-        },
-        ['2'] = {
-            name = 'Senior Clerk',
-            payment = 450,
-        },
-        ['3'] = {
-            name = 'Department Head',
-            payment = 500,
-        },
-        ['4'] = {
-            name = 'Director',
-            payment = 550,
-        },
-        ['5'] = {
-            name = 'Chief Executive Officer',
-            isboss = true,
-            payment = 600,
+        label = 'Clerk',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            ['0'] = {
+                name = 'Trainee',
+                payment = 150
+            },
+            ['1'] = {
+                name = 'Clerk',
+                payment = 300
+            },
+            ['2'] = {
+                name = 'Senior Clerk',
+                payment = 450,
+            },
+            ['3'] = {
+                name = 'Department Head',
+                payment = 500,
+            },
+            ['4'] = {
+                name = 'Director',
+                payment = 550,
+            },
+            ['5'] = {
+                name = 'Chief Executive Officer',
+                isboss = true,
+                payment = 600,
+            },
         },
     },
-},
     ['taxi'] = {
         label = 'Taxi',
         defaultDuty = true,
@@ -470,84 +470,86 @@ return {
         },
     },
     ['insurance'] = {
-	label = 'Insurance',
-	defaultDuty = true,
-	offDutyPay = false,
-	grades = {
-		[0] = {
-			name = 'Employee',
-			payment = 50
-		},
-	},
-},
-["burgershot"] = {
+        label = 'Insurance',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = {
+                name = 'Employee',
+                payment = 50
+            },
+        },
+    },
+    ["burgershot"] = {
         label = "BurgerShot",
         defaultDuty = true,
         offDutyPay = false,
         grades = {
-            ["2"] = {
-                name = "Experienced",
-                payment = 100,
+            [0] = {
+                name = 'Recruit',
+                payment = 50
             },
-            ["1"] = {
-                name = "Novice",
-                payment = 75,
+            [1] = {
+                name = 'Novice',
+                payment = 75
             },
-            ["4"] = {
-                name = "Manager",
-                payment = 150,
+            [2] = {
+                name = 'Experienced',
+                payment = 100
+            },
+            [3] = {
+                name = 'Advanced',
+                payment = 125
+            },
+            [4] = {
+                name = 'Manager',
                 isboss = true,
+                bankAuth = true,
+                payment = 150
             },
-            ["3"] = {
-                name = "Advanced",
-                payment = 125,
-            },
-            ["0"] = {
-                name = "Recruit",
-                payment = 50,
-            },
-        }
+        },
     },
     ["catcafe"] = {
         label = "Cat Cafe",
         defaultDuty = true,
         offDutyPay = nil,
         grades = {
-            ["2"] = {
-                name = "Experienced",
-                payment = 100,
+            [0] = {
+                name = 'Recruit',
+                payment = 50
             },
-            ["1"] = {
-                name = "Novice",
-                payment = 75,
+            [1] = {
+                name = 'Novice',
+                payment = 75
             },
-            ["4"] = {
-                name = "Manager",
-                payment = 150,
+            [2] = {
+                name = 'Experienced',
+                payment = 100
+            },
+            [3] = {
+                name = 'Advanced',
+                payment = 125
+            },
+            [4] = {
+                name = 'Manager',
                 isboss = true,
+                bankAuth = true,
+                payment = 150
             },
-            ["3"] = {
-                name = "Advanced",
-                payment = 125,
-            },
-            ["0"] = {
-                name = "Recruit",
-                payment = 50,
-            },
-        }
+        },
     },
 
-['home_insurance'] = {
-	label = 'Insurance',
-	defaultDuty = true,
-	offDutyPay = false,
-	grades = {
-		[0] = {
-			name = 'Employee',
-			payment = 50
-		},
-	},
-},
+    ['home_insurance'] = {
+        label = 'Insurance',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = {
+                name = 'Employee',
+                payment = 50
+            },
+        },
+    },
     ['judge'] = {
         label = 'Honorary',
         defaultDuty = true,

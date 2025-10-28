@@ -440,7 +440,7 @@ Config.StandaloneCheckIns = {
 }
 
 Config.Locations = {
-    Pillbox = {
+    Mountzonah = {
         RespawnPoint = { -- When player dies and bleeds out; they will revive at nearest hospital; Define the coords of this hospital here.
            coords = vec3(-466.59481811523, -282.77166748047, 35.835079193115),
             heading = 203.40788269043,
@@ -454,8 +454,8 @@ Config.Locations = {
             Coords = vec3(-448.384, -340.206, 34.502),
             Sprite = 61,
             Color = 2,
-            Scale = 0.5,
-            String = 'Pillbox Hospital'
+            Scale = 0.8,
+            String = 'Mount Zonah Hospital'
         },
 
         clockInAndOut = {
