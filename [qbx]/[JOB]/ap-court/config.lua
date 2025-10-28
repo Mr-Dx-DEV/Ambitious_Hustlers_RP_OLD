@@ -14,8 +14,8 @@ Config = {
 	lawyerID = 'lawyerpass', -- Set this to the item players need in order to show there ID Card.
 	Phone = {GKSPhone = false, QBPhone = false, QuasarPhone = false, HighPhone = false, RoadPhone = false, LBPhone = true, Yseries = false, Custom = false}, -- Set to the phone you use to true, if you do not have one of these phones then set Custom to true and edit the function in webhooks.lua.
 	Interactions = {qbTarget = false, qTarget = false, ox_target = true, drawText = false},
-	Context = {QB = false, OX = false, AP = true}, -- Set this to to "QB", More added soon.
-	Dialog = {QB = false, OX = false, AP = true}, -- Set this to to "QB", More added soon.
+	Context = {QB = false, OX = true, AP = false}, -- Set this to to "QB", More added soon.
+	Dialog = {QB = false, OX = true, AP = false}, -- Set this to to "QB", More added soon.
 	useID_UI = true, -- Set to true if you want too use the UI Lawyer ID Card or false to use Advanced Notification.
 	CriminalRecordArchives = true, -- Set this too true if you want to use the intergrated criminal record archives.
     ExportNames = {
