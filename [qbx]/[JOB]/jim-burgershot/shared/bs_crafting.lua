@@ -3,7 +3,10 @@ Crafting = Crafting or {}
 Crafting.BurgerShotChopBoard = {
     Header = locale("menu", "food"),
 	Anims = CraftingEmotes.Typing,
-    progressBar = { label = locale("progressbar", "progress_make"), time = 5000, },
+    progressBar = {
+		label = locale("progressbar", "progress_make"),
+		time = 5000,
+	},
     Recipes = {
 		{ slicedonion = { onion = 1, }, amount = 3 },
 		{ slicedpotato = { potato = 1, }, amount = 3 },
@@ -14,7 +17,10 @@ Crafting.BurgerShotChopBoard = {
 Crafting.BurgerShotFryer = {
     Header = locale("menu", "fryer"),
 	Anims = CraftingEmotes.Grill,
-    progressBar = { label = locale("progressbar", "progress_make"), time = 5000, },
+    progressBar = {
+		label = locale("progressbar", "progress_make"),
+		time = 5000,
+	},
     Recipes = {
 		{ shotfries = { slicedpotato = 1, } },
 		{ shotrings = { slicedonion = 1, } },
@@ -24,7 +30,10 @@ Crafting.BurgerShotFryer = {
 Crafting.BurgerShotGrill = {
     Header = locale("menu", "grill"),
 	Anims = CraftingEmotes.Grill,
-    progressBar = { label = locale("progressbar", "progress_make"), time = 5000, },
+    progressBar = {
+		label = locale("progressbar", "progress_make"),
+		time = 5000,
+	},
     Recipes = {
 		{ burgermeat = { burgerpatty = 1, } },
     },
@@ -32,7 +41,10 @@ Crafting.BurgerShotGrill = {
 Crafting.BurgerShotPrepare = {
     Header = locale("menu", "food"),
 	Anims = CraftingEmotes.Typing,
-    progressBar = { label = locale("progressbar", "progress_make"), time = 12500, },
+    progressBar = {
+		label = locale("progressbar", "progress_make"),
+		time = 12500,
+	},
     Recipes = {
 		{
             heartstopper = {
@@ -83,7 +95,10 @@ Crafting.BurgerShotPrepare = {
 Crafting.BurgerShotDrink = {
     Header = locale("menu", "drinks_dispenser"),
 	Anims = CraftingEmotes.Pour,
-    progressBar = { label = locale("progressbar", "progress_pour"), time = 3500, },
+    progressBar = {
+		label = locale("progressbar", "progress_pour"),
+		time = 3500,
+	},
     Recipes = {
 		{ water_bottle = { } },
 		{ bscoke = { } },
@@ -94,7 +109,10 @@ Crafting.BurgerShotDrink = {
 Crafting.BurgerShotDonut = {
     Header = locale("menu", "food_cabinet"),
 	Anims = CraftingEmotes.Typing,
-    progressBar = { label = locale("progressbar", "progress_make"), time = 3500, },
+    progressBar = {
+		label = locale("progressbar", "progress_make"),
+		time = 3500,
+	},
     Recipes = {
 		{ ["rimjob"] = {} },
 		{ ["creampie"] = {} },

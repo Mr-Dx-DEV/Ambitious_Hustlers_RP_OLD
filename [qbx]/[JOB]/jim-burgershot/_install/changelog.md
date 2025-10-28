@@ -8,6 +8,71 @@ https://discord.gg/9pCDHmjYwd
 
 # Changelog
 
+## 3.0.12
+
+- Tidy up and add to all location files
+- Use new `jim_bridge` createPropTarget() function
+- Adjust auto minZ and maxZ generation
+- Support embedded shop recipes
+- Support `jim_bridge` alcohol syncing export for built in consume
+  - Alcohol consumtion should now be synced between my scripts
+- Fix pack items not giving items
+- Fix Trash Stashes not being created
+- Allow "Bag" items to have custom slots and weight (itemcontrol.lua)
+- Fixes for upcoming new features soon
+
+Files to replace:
+
+- locations/burgershot_rz.lua
+- locations/burgershot_uniqx.lua
+- locations/burgershot_gabz.lua
+- locations/burgershot_gnmods.lua
+- locations/burgershot_gnmodsmirror.lua
+- locations/burgershot_np.lua
+- locations/burgershot_smallo.lua
+- locales/en.lua
+- client/client.lua
+- client/encclient.lua
+- client/functions.lua
+- server/encserver.lua
+- server/itemcontrol.lua
+
+## 3.0.11
+
+- Support stress in built-in consume event
+- Fix registering personal stashes if tied to a prop
+- Start working on future features
+
+Files to replace:
+- client/client.lua
+- client/functions.lua
+- server/itemcontrol.lua
+- server/encserver.lua
+
+## 3.0.10
+
+- Fix built-in comsume event not working with ox_inv
+- Add SingleProgress config option for crafting (place items + one big progressbar)
+
+Files to replace:
+  - client/functions.lua
+  - server/itemcontrol.lua
+  - config.lua (optional)
+
+
+## 3.0.09
+
+- Overhaul script secuity
+  - Moved as much code as possible to server to reduce chance of exploits
+- Use new jim_bridge openClothing() function
+- Update to jim_bridge 2.1.0+
+
+Files to replace:
+  - client/encclient.lua
+  - client/functions.lua
+  - server/encserver.lua
+  - server/itemcontrol.lua
+
 ## 3.0.08
 
 - Fix cabinet location for kingmaps mlo

@@ -32,7 +32,7 @@ https://jixelpatterns.gitbook.io/docs/
 - If using `ox_inventory` add the `ox_items.txt` to your `ox_inventory > data > items.lua`
 - If using `qb-inventory` or similar, add the lines from `qb_items.txt` to your `qb-core > shared > items.lua`
 
-- If using `ox_inventory`, o make use of the `murderbag` you need to add this code to `ox_inventory/modules/items/containers.lua`
+- If using `ox_inventory`, to make use of the `murderbag` you need to add this code to `ox_inventory/modules/items/containers.lua`
 - Right above `return containers` at the bottom of the file add:
 
 ```lua
