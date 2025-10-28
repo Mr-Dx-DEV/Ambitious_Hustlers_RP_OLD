@@ -265,9 +265,21 @@ Config.Tasks = {
     -- PL: Wróć do szkoły jazdy
 }
 
+local menuAutoFind = function()
+    if GetResourceState('esx_context') == 'started' then
+        return "esx_context"
+    elseif GetResourceState('esx_menu_default') == 'started' then
+        return "esx_menu_default"
+    elseif GetResourceState('qb-menu') == 'started' then
+        return "qb-menu"
+    elseif GetResourceState('ox_lib') == 'started' then
+        return "ox_lib"
+    end
+end
+
 Config.Zones = {
     ["menu"] = {
-        menuType = "qb-menu", -- "esx_menu_default" / "esx_context" / "qb-menu" / "ox_lib"
+        menuType = menuAutoFind(), -- "esx_menu_default" / "esx_context" / "qb-menu" / "ox_lib"
         menuPosition = 'left', -- only for esx_menu_default and esx_context
         coords = vector3(240.87, -1379.16, 33.74),
         marker = {

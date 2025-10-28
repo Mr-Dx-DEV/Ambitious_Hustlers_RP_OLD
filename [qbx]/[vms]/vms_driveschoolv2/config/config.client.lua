@@ -7,6 +7,18 @@ Config.BeforeOpeningMenu = function()
     return true -- If none of the above options happen, the menu will be allowed to open
 end
 
+Config.SpawnVehicle = function(type, cb)
+    if Config.Core == "ESX" then
+        ESX.Game.SpawnVehicle(Config.Practical.Vehicles[type], vec(Config.Practical.SpawnPoint.x, Config.Practical.SpawnPoint.y, Config.Practical.SpawnPoint.z), Config.Practical.SpawnPoint.w, function(vehicle)
+            cb(vehicle)
+        end)
+    elseif Config.Core == "QB-Core" then
+        QBCore.Functions.SpawnVehicle(Config.Practical.Vehicles[type], function(vehicle)
+            cb(vehicle)
+        end, vec(Config.Practical.SpawnPoint.x, Config.Practical.SpawnPoint.y, Config.Practical.SpawnPoint.z), true)
+    end
+end
+
 Config.OnVehicleSpawn = function(vehicle, plate)
     TaskWarpPedIntoVehicle(PlayerPedId(), vehicle, -1)
     SetVehicleEngineOn(vehicle, false, false, true)
