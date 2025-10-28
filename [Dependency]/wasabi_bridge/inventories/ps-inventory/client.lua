@@ -33,16 +33,10 @@ end
 
 function WSB.inventory.openShop(data)
     --[[
-data = {
-    identifier = 'shop_identifier',
-    name = 'Shop Name',
-    inventory = {
-        { name = 'item_name', price = 100 },
-    },
-    locations = {
-        vec3(0, 0, 0),
-    }
-]]
+        For security, you need to register shops on the server side
+        using server only event 'wasabi_bridge:registerShop'
+        see server.lua of this inventory for more information
+    ]]
     local shopData = WSB.awaitServerCallback('wasabi_bridge:getShopDetails', data)
 
     TriggerServerEvent(inventoryPrefix .. ":server:OpenInventory", "shop", data.identifier, shopData)

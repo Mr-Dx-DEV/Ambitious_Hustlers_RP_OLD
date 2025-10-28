@@ -143,38 +143,35 @@ function WSB.hasPermission(source, group)
 end
 
 function WSB.hasGroup(source, filter)
-    local groups = { 'job', 'gang' }
     local player = WSB.getPlayer(source)
-    if not player then return end
+    if not player or not player.PlayerData then return end
+    local groups = { 'job', 'gang' }
     local type = type(filter)
 
     if type == 'string' then
         for i = 1, #groups do
             local data = player.PlayerData[groups[i]]
-
             if data and data.name == filter then
                 return data.name, data.grade.level
             end
         end
-    else
+    elseif type == 'table' then
         local tabletype = table.type(filter)
-
         if tabletype == 'hash' then
             for i = 1, #groups do
                 local data = player.PlayerData[groups[i]]
-                local grade = filter[data.name]
-
-                if data and grade and grade <= data.grade.level then
-                    return data.name, data.grade.level
+                if data then
+                    local grade = filter[data.name]
+                    if grade and grade <= data.grade.level then
+                        return data.name, data.grade.level
+                    end
                 end
             end
         elseif tabletype == 'array' then
             for i = 1, #filter do
                 local group = filter[i]
-
                 for j = 1, #groups do
                     local data = player.PlayerData[groups[j]]
-
                     if data and data.name == group then
                         return data.name, data.grade.level
                     end

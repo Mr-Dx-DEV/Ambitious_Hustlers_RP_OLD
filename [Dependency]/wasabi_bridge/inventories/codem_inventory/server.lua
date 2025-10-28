@@ -8,6 +8,11 @@ if found ~= 'started' and found ~= 'starting' then return end
 
 WSB.inventory = {}
 WSB.inventorySystem = 'codem-inventory'
+local registeredShops = {}
+
+WSB.registerCallback('wasabi_bridge:getShopDetails', function(_source, cb, data)
+    return registeredShops[data.identifier] or false
+end)
 
 function WSB.inventory.getItemSlot(source, itemName)
     return GetItemSlot(source, itemName) or false
@@ -54,3 +59,19 @@ function WSB.inventory.clearInventory(source, identifier, keepItems)
 
     exports['codem-inventory']:SaveInventory(source, false)
 end
+
+AddEventHandler('wasabi_bridge:registerShop', function(data)
+        --[[
+        data = {
+            identifier = 'shop_identifier',
+            name = 'Shop Name',
+            inventory = {
+                { name = 'item_name', price = 100 },
+            },
+            locations = {
+                vec3(0, 0, 0),
+            }
+    ]]
+    if source ~= '' or not GetInvokingResource() then return end
+    registeredShops[data.identifier] = ConvertShopData(data, 'codem-inventory')
+end)

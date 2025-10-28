@@ -96,24 +96,23 @@ function WSB.registerCallback(name, fn)
  end
 
 function WSB.hasGroup(filter)
+    if not WSB.playerData or not WSB.playerData.job then return end
     local type = type(filter)
 
     if type == 'string' then
-        if WSB.playerData and WSB.playerData.job and WSB.playerData.job.name == filter then
+        if WSB.playerData.job.name == filter then
             return WSB.playerData.job.name, WSB.playerData.job.grade
         end
-    else
+    elseif type == 'table' then
         local tabletype = table.type(filter)
-
         if tabletype == 'hash' then
-            local grade
-            if WSB.playerData and WSB.playerData.job then grade = filter[WSB.playerData.job.name] end
+            local grade = filter[WSB.playerData.job.name]
             if grade and grade <= WSB.playerData.job.grade then
                 return WSB.playerData.job.name, WSB.playerData.job.grade
             end
         elseif tabletype == 'array' then
             for i = 1, #filter do
-                if WSB.playerData and WSB.playerData.job and WSB.playerData.job.name == filter[i] then
+                if WSB.playerData.job.name == filter[i] then
                     return WSB.playerData.job.name, WSB.playerData.job.grade
                 end
             end

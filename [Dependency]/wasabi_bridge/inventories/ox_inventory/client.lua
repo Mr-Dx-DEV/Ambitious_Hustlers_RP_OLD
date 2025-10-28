@@ -21,13 +21,9 @@ end
 
 function WSB.inventory.openShop(data)
     --[[
-data = {
-    identifier = 'shop_identifier',
-    name = 'Shop Name',
-    inventory = {
-        { name = 'item_name', price = 100 },
-    }
-}
-]]
+        For security, you need to register shops on the server side
+        using server only event 'wasabi_bridge:registerShop'
+        see server.lua of this inventory for more information
+    ]]
     exports.ox_inventory:openInventory('shop', { type = data.identifier, id = 1 })
 end

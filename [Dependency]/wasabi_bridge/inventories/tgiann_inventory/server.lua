@@ -10,6 +10,15 @@ WSB.inventory = {}
 
 local registeredShops = {}
 AddEventHandler('wasabi_bridge:registerShop', function(data)
+    --[[
+    data = {
+        identifier = 'shop_identifier',
+        name = 'Shop Name',
+        inventory = {
+            { name = 'item_name', price = 100 },
+        }
+    }
+    ]]
     local invokingResource = GetInvokingResource()
     if not invokingResource then return end
     if invokingResource:sub(1, 7) ~= 'wasabi_' then return end

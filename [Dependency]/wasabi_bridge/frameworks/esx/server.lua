@@ -98,19 +98,17 @@ end
 
 function WSB.hasGroup(source, filter)
     local player = WSB.getPlayer(source)
-    if not player then return end
+    if not player or not player.job then return end
     local type = type(filter)
 
     if type == 'string' then
         if player.job.name == filter then
             return player.job.name, player.job.grade
         end
-    else
+    elseif type == 'table' then
         local tabletype = table.type(filter)
-
         if tabletype == 'hash' then
             local grade = filter[player.job.name]
-
             if grade and grade <= player.job.grade then
                 return player.job.name, player.job.grade
             end
