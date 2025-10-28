@@ -78,8 +78,8 @@ Config.Consumables = {
 		["rexbleeder"] = {	emote = "burger", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(55,65), }},
 		["rexrimjob"] = { emote = "donut", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(55,65)}},
 		["rexcreampie"] = { emote = "donut", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(55,65)}},
-		["rexcheesewrap"] = { emote = "sandwich", canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(55,65), }},
-		["rexchickenwrap"] = {	emote = "sandwich", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(55,65), }},
+		--["rexcheesewrap"] = { emote = "sandwich", canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(55,65), }},
+		--["rexchickenwrap"] = {	emote = "sandwich", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(55,65), }},
 		["rexbscoffee"] = { emote = "bscoffee", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(55,65), }},
 		["rexmilkshake"] = { emote = "drink", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(55,65), }},
 		["rexbscoke"] = { emote = "bscoke", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(55,65), }},
@@ -126,17 +126,17 @@ Config.Consumables = {
 		["vodka_shot"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20,40), screen = "focus", widepupils = true, canOD = true }},
 		["beer_pint"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20,40), screen = "focus", widepupils = true, canOD = true }},
 		
-		["bahamama"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20,40), screen = "focus", widepupils = true, canOD = true }},
-		["planterlunch"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20,40), screen = "focus", widepupils = true, canOD = true }},
-		["mudslide"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20,40), screen = "focus", widepupils = true, canOD = true }},
-		["darkstormy"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20,40), screen = "focus", widepupils = true, canOD = true }},
-		["blueislandcocktail"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20,40), screen = "focus", widepupils = true, canOD = true }},
+	--	["bahamama"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20,40), screen = "focus", widepupils = true, canOD = true }},
+	--	["planterlunch"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20,40), screen = "focus", widepupils = true, canOD = true }},
+		--["mudslide"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20,40), screen = "focus", widepupils = true, canOD = true }},
+		--["darkstormy"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20,40), screen = "focus", widepupils = true, canOD = true }},
+		--["blueislandcocktail"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20,40), screen = "focus", widepupils = true, canOD = true }},
 		["mojito"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20,40), screen = "focus", widepupils = true, canOD = true }},
-		["barracuda"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20,40), screen = "focus", widepupils = true, canOD = true }},
-		["coconutwater"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(55,65), }},
-		["cononutshrimp"] = 			{ emote = "foodbowl", canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(15, 20) }},
-		["chickenkabobs"] = 			{ emote = "foodbowl", canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(15, 20) }},
-		["fishfritters"] = 			{ emote = "foodbowl", canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(15, 20) }},
+		--["barracuda"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20,40), screen = "focus", widepupils = true, canOD = true }},
+		---["coconutwater"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(55,65), }},
+	--	["cononutshrimp"] = 			{ emote = "foodbowl", canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(15, 20) }},
+		--["chickenkabobs"] = 			{ emote = "foodbowl", canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(15, 20) }},
+		--["fishfritters"] = 			{ emote = "foodbowl", canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(15, 20) }},
 		
 		--UWU
 		--test
@@ -517,10 +517,10 @@ Config.Consumables = {
 		},
 
 		-- Tequilala
-		["teq_hot_wings"] = { emote = "sandwich", canRun = false, time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(20, 35), }},
-		["teq_loaded_fries"] = { emote = "bsfries", canRun = false, time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(20, 35), }},
-		["teq_mozz_sticks"] = { emote = "sandwich", canRun = false, time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(20, 35), }},
-		["teq_pizzalogs"] = { emote = "sandwich", canRun = false, time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(20, 35), }},
+		-- ["teq_hot_wings"] = { emote = "sandwich", canRun = false, time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(20, 35), }},
+		-- ["teq_loaded_fries"] = { emote = "bsfries", canRun = false, time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(20, 35), }},
+		-- ["teq_mozz_sticks"] = { emote = "sandwich", canRun = false, time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(20, 35), }},
+		-- ["teq_pizzalogs"] = { emote = "sandwich", canRun = false, time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(20, 35), }},
 
 
 		--- HenHouse
