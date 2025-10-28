@@ -9,7 +9,7 @@ Config = {}
 -- TO MODIFY NOTIFICATIONS TO YOUR OWN CUSTOM NOTIFICATIONS:-------
 ------ Navigate to wasabi_bridge/customize/cl_customize.lua -------
 -------------------------------------------------------------------
-Config.CheckForUpdates = true -- Check for updates? Who would not want to know updates!?
+Config.CheckForUpdates = false -- Check for updates? Who would not want to know updates!?
 
 -- Language Options are
 -- 'en' (English)
