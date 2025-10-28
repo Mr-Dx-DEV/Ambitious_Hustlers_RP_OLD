@@ -307,7 +307,7 @@ end
 lib.addKeybind({
     name = 'ox_lib-radial',
     description = locale('open_radial_menu'),
-    defaultKey = 'f1',
+    defaultKey = 'z',
     onPressed = function()
         if isDisabled then return end
 

@@ -1,3 +1,11 @@
+--[[
+    https://github.com/overextended/ox_lib
+
+    This file is licensed under LGPL-3.0 or higher <https://www.gnu.org/licenses/lgpl-3.0.en.html>
+
+    Copyright © 2025 Linden <https://github.com/thelindat>
+]]
+
 local progress
 local DisableControlAction = DisableControlAction
 local DisablePlayerFiring = DisablePlayerFiring
@@ -30,7 +38,8 @@ local function createProp(ped, prop)
     local coords = GetEntityCoords(ped)
     local object = CreateObject(prop.model, coords.x, coords.y, coords.z, false, false, false)
 
-    AttachEntityToEntity(object, ped, GetPedBoneIndex(ped, prop.bone or 60309), prop.pos.x, prop.pos.y, prop.pos.z, prop.rot.x, prop.rot.y, prop.rot.z, true, true, false, true, prop.rotOrder or 0, true)
+    AttachEntityToEntity(object, ped, GetPedBoneIndex(ped, prop.bone or 60309), prop.pos.x, prop.pos.y, prop.pos.z, prop.rot.x, prop.rot.y, prop.rot.z, true,
+        true, false, true, prop.rotOrder or 0, true)
     SetModelAsNoLongerNeeded(prop.model)
 
     return object
@@ -62,6 +71,7 @@ local controls = {
     INPUT_VEH_MOUSE_CONTROL_OVERRIDE = isFivem and 106 or 0x39CCABD5
 }
 
+---@param data ProgressProps
 local function startProgress(data)
     playerState.invBusy = true
     progress = data
@@ -71,10 +81,11 @@ local function startProgress(data)
         if anim.dict then
             lib.requestAnimDict(anim.dict)
 
-            TaskPlayAnim(cache.ped, anim.dict, anim.clip, anim.blendIn or 3.0, anim.blendOut or 1.0, anim.duration or -1, anim.flag or 49, anim.playbackRate or 0, anim.lockX, anim.lockY, anim.lockZ)
+            TaskPlayAnim(cache.ped, anim.dict, anim.clip, anim.blendIn or 3.0, anim.blendOut or 1.0, anim.duration or -1, anim.flag or 49, anim.playbackRate or 0,
+                anim.lockX, anim.lockY, anim.lockZ)
             RemoveAnimDict(anim.dict)
         elseif anim.scenario then
-            TaskStartScenarioInPlace(cache.ped, anim.scenario, 0, anim.playEnter ~= nil and anim.playEnter or true)
+            TaskStartScenarioInPlace(cache.ped, anim.scenario, 0, anim.playEnter == nil or anim.playEnter --[[@as boolean]])
         end
     end
 
@@ -83,6 +94,7 @@ local function startProgress(data)
     end
 
     local disable = data.disable
+    local startTime = GetGameTimer()
 
     while progress do
         if disable then
@@ -138,8 +150,9 @@ local function startProgress(data)
     end
 
     playerState.invBusy = false
+    local duration = progress ~= false and GetGameTimer() - startTime + 100 -- give slight leeway
 
-    if progress == false then
+    if progress == false or duration <= data.duration then
         SendNUIMessage({ action = 'progressCancel' })
         return false
     end
@@ -153,83 +166,15 @@ function lib.progressBar(data)
     while progress ~= nil do Wait(0) end
 
     if not interruptProgress(data) then
-        if GetResourceState("17mov_Hud") == "started" then
-            local prop = {}
-            local propTwo = {}
-
-            if data.prop then
-                if data.prop[1] then
-                    prop.model = data.prop[1].model
-                    prop.bone = data.prop[1].bone
-                    prop.coords = data.prop[1].pos
-                    prop.rotation = data.prop[1].rot
-
-                    if data.prop[2] then
-                        propTwo.model = data.prop[2].model
-                        propTwo.bone = data.prop[2].bone
-                        propTwo.coords = data.prop[2].pos
-                        propTwo.rotation = data.prop[2].rot
-                    end
-                else
-                    prop.model = data.prop.model
-                    prop.bone = data.prop.bone
-                    prop.coords = data.prop.pos
-                    prop.rotation = data.prop.rot
-                end
-            end
-
-            local action = {
-                duration = data.duration,
+        SendNUIMessage({
+            action = 'progress',
+            data = {
                 label = data.label,
-                useWhileDead = data.useWhileDead,
-                canCancel = data.canCancel,
-                controlDisables = {
-                    disableMovement = data.disable?.move,
-                    disableCarMovement = data.disable?.car,
-                    disableMouse = data.disable?.mouse,
-                    disableCombat = data.disable?.combat,
-                },
-                animation = {
-                    animDict = data.anim?.dict,
-                    anim = data.anim?.clip,
-                    flags = data.anim?.flag,
-                    task = data.anim?.scenario,
-                },
-                prop = prop,
-                propTwo = propTwo,
+                duration = data.duration
             }
+        })
 
-            local success = nil
-            progress = action
-            playerState.invBusy = true
-
-            exports["17mov_Hud"]:StartProgress(action, nil, nil, function(wasCanceled)
-                success = not wasCanceled
-                progress = nil
-                playerState.invBusy = false
-            end)
-
-            while progress do
-                Wait(0)
-            end
-
-            if progress == false then
-                success = false
-                exports["17mov_Hud"]:StopProgress()
-            end
-
-            return success
-        else
-            SendNUIMessage({
-                action = 'progress',
-                data = {
-                    label = data.label,
-                    duration = data.duration
-                }
-            })
-
-            return startProgress(data)
-        end
+        return startProgress(data)
     end
 end
 
@@ -255,10 +200,6 @@ end
 function lib.cancelProgress()
     if not progress then
         error('No progress bar is active')
-    end
-
-    if GetResourceState("17mov_Hud") == "started" then
-        exports["17mov_Hud"]:StopProgress()
     end
 
     progress = false
@@ -315,13 +256,13 @@ AddStateBagChangeHandler('lib:progressProps', nil, function(bagName, key, value,
     local playerProps = createdProps[serverId]
 
     if value.model then
-        playerProps[#playerProps+1] = createProp(ped, value)
+        playerProps[#playerProps + 1] = createProp(ped, value)
     else
         for i = 1, #value do
             local prop = value[i]
 
             if prop then
-                playerProps[#playerProps+1] = createProp(ped, prop)
+                playerProps[#playerProps + 1] = createProp(ped, prop)
             end
         end
     end
