@@ -263,7 +263,7 @@ Selector.CharacterChoosen = function(src, isNew)
 end
 
 if Selector.Relog then
-    RegisterCommand("relog", function(src)
+    RegisterCommand("logout", function(src)
         if Config.Framework == "QBCore" then
             Core.Player.Logout(src)
         elseif Config.Framework == "ESX" then
