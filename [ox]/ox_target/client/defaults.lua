@@ -139,5 +139,73 @@ api.addGlobalVehicle({
         onSelect = function(data)
             onSelectDoor(data, 5)
         end
+    },
+    {
+        name = 'ox_target:inVehiclePlayer',
+        icon = 'fa-solid fa-car-rear',
+        label = 'Put In Vehicle',
+        distance = 2,
+        canInteract = function(entity, distance, coords, name)
+            return canInteractWithDoor(entity, coords, 5, true)
+        end,
+        onSelect = function(data)
+             TriggerEvent('wasabi_police:inVehiclePlayer')
+        end
+    },
+    {
+        name = 'ox_target:outVehiclePlayer',
+        icon = 'fa-solid fa-car-rear',
+        label = 'Take Out of Vehcile',
+        distance = 2,
+        canInteract = function(entity, distance, coords, name)
+            return canInteractWithDoor(entity, coords, 5, true)
+        end,
+        onSelect = function(data)
+             TriggerEvent('wasabi_police:outVehiclePlayer')
+        end
+    }
+})
+
+api.addGlobalPlayer({
+    {
+        name = 'ox_target:escortPlayer',
+        icon = 'fa-solid fa-hand-holding-hand',
+        label = 'Escort Player',
+        distance = 2,
+        canInteract = function(entity, distance, coords, name)
+            local playerData = QBCore.Functions.GetPlayerData()
+            if playerData and playerData.job and playerData.job.name == 'police' then
+                return false -- police can't see "Rob Player"
+            end
+            return true 
+        end,
+        onSelect = function(data)
+            TriggerEvent('wasabi_police:escortPlayer')
+        end
+    },
+    {
+        name = 'ox_target:escortOrRobPlayer',
+        icon = 'fa-solid fa-hand-holding-hand',
+        label = 'Rob Player',
+        distance = 2.0,
+        canInteract = function(entity, distance, coords, name)
+            local playerData = QBCore.Functions.GetPlayerData()
+            if playerData and playerData.job and playerData.job.name == 'police' then
+                return false -- police can't see "Rob Player"
+            end
+            if not IsPedAPlayer(entity) then return false end
+
+            local targetPlayer = NetworkGetPlayerIndexFromPed(entity)
+            if not targetPlayer then return false end
+
+            local serverId = GetPlayerServerId(targetPlayer)
+            local isDead = exports.wasabi_ambulance:isPlayerDead(serverId)
+            local isHandsUp = IsEntityPlayingAnim(entity, "random@mugging3", "handsup_standing_base", 3)
+
+            return isDead or isHandsUp
+        end,
+        onSelect = function(data)
+            TriggerEvent('police:client:RobPlayer')
+        end
     }
 })
