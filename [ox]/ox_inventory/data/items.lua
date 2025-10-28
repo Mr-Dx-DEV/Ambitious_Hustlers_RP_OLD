@@ -561,576 +561,228 @@ return {
 	},
 
 
-
-
-
 	--JIM-CATCAFE
-	["bmochi"] = {
-		label = "Blue Mochi",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "mochiblue.png", event = "jim-catcafe:client:Consume", }
-	},
-	["pmochi"] = {
-		label = "Pink Mochi",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "mochipink.png", event = "jim-catcafe:client:Consume", }
-	},
-	["gmochi"] = {
-		label = "Green Mochi",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "mochigreen.png", event = "jim-catcafe:client:Consume", }
-	},
-	["omochi"] = {
-		label = "Orange Mochi",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "mochiorange.png", event = "jim-catcafe:client:Consume", }
-	},
+["bmochi"] = { label = "Blue Mochi", weight = 200, stack = true, close = true, description = "",
+    client = { image = "mochiblue.png",  event = "jim-catcafe:client:Consume", }
+},
+["pmochi"] = { label = "Pink Mochi", weight = 200, stack = true, close = true, description = "",
+    client = { image = "mochipink.png",  event = "jim-catcafe:client:Consume", }
+},
+["gmochi"] = { label = "Green Mochi", weight = 200, stack = true, close = true, description = "",
+    client = { image = "mochigreen.png",  event = "jim-catcafe:client:Consume", }
+},
+["omochi"] = { label = "Orange Mochi", weight = 200, stack = true, close = true, description = "",
+    client = { image = "mochiorange.png",  event = "jim-catcafe:client:Consume", }
+},
 
-	["bobatea"] = {
-		label = "Boba Teai",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "bubbletea.png", event = "jim-catcafe:client:Consume", }
-	},
-	["bbobatea"] = {
-		label = "Blue Boba Tea",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "bubbleteablue.png", event = "jim-catcafe:client:Consume", }
-	},
-	["gbobatea"] = {
-		label = "Green Boba Tea",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "bubbleteagreen.png", event = "jim-catcafe:client:Consume", }
-	},
-	["pbobatea"] = {
-		label = "Pink Boba Tea",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "bubbleteapink.png", event = "jim-catcafe:client:Consume", }
-	},
-	["obobatea"] = {
-		label = "Orange Boba Tea",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "bubbleteaorange.png", event = "jim-catcafe:client:Consume", }
-	},
+["bobatea"] = { label = "Boba Teai", weight = 200, stack = true, close = true, description = "",
+    client = { image = "bubbletea.png",  event = "jim-catcafe:client:Consume", }
+},
+["bbobatea"] = { label = "Blue Boba Tea", weight = 200, stack = true, close = true, description = "",
+    client = { image = "bubbleteablue.png",  event = "jim-catcafe:client:Consume", }
+},
+["gbobatea"] = { label = "Green Boba Tea", weight = 200, stack = true, close = true, description = "",
+    client = { image = "bubbleteagreen.png",  event = "jim-catcafe:client:Consume", }
+},
+["pbobatea"] = { label = "Pink Boba Tea", weight = 200, stack = true, close = true, description = "",
+    client = { image = "bubbleteapink.png",  event = "jim-catcafe:client:Consume", }
+},
+["obobatea"] = { label = "Orange Boba Tea", weight = 200, stack = true, close = true, description = "",
+    client = { image = "bubbleteaorange.png",  event = "jim-catcafe:client:Consume", }
+},
 
-	["nekolatte"] = {
-		label = "Neko Latte",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "latte.png", event = "jim-catcafe:client:Consume", }
-	},
-	["voodoo"] = {
-		label = "Cat Coffee",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "catcoffee.png", event = "jim-catcafe:client:Consume", }
-	},
 
-	["nekolatte"] = {
-		label = "Neko Latte",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "latte.png", event = "jim-catcafe:client:Consume", }
-	},
-	["catcoffee"] = {
-		label = "Cat Coffee",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "catcoffee.png", event = "jim-catcafe:client:Consume", }
-	},
+["voodoo"] = { label = "Cat Coffee", weight = 200, stack = true, close = true, description = "",
+    client = { image = "catcoffee.png",  event = "jim-catcafe:client:Consume", }
+},
 
-	["sake"] = {
-		label = "Sake",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "sake.png", event = "jim-catcafe:client:Consume", }
-	},
+["nekolatte"] = { label = "Neko Latte", weight = 200, stack = true, close = true, description = "",
+    client = { image = "latte.png",  event = "jim-catcafe:client:Consume", }
+},
+["catcoffee"] = { label = "Cat Coffee", weight = 200, stack = true, close = true, description = "",
+    client = { image = "catcoffee.png",  event = "jim-catcafe:client:Consume", }
+},
 
-	["miso"] = {
-		label = "Miso Soup",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "miso.png", event = "jim-catcafe:client:Consume", }
-	},
-	["cake"] = {
-		label = "Strawberry Cake",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "cake.png", event = "jim-catcafe:client:Consume", }
-	},
-	["bento"] = {
-		label = "Bento Box",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "bento.png", event = "jim-catcafe:client:Consume", }
-	},
+["sake"] = { label = "Sake", weight = 200, stack = true, close = true, description = "",
+    client = { image = "sake.png",  event = "jim-catcafe:client:Consume", }
+},
 
-	["riceball"] = {
-		label = "Neko Onigiri",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "catrice.png", event = "jim-catcafe:client:Consume", }
-	},
+["miso"] = { label = "Miso Soup", weight = 200, stack = true, close = true, description = "",
+    client = { image = "miso.png",  event = "jim-catcafe:client:Consume", }
+},
+["cake"] = { label = "Strawberry Cake", weight = 200, stack = true, close = true, description = "",
+    client = { image = "cake.png",  event = "jim-catcafe:client:Consume", }
+},
+["bento"] = { label = "Bento Box", weight = 200, stack = true, close = true, description = "",
+    client = { image = "bento.png",  event = "jim-catcafe:client:Consume", }
+},
 
-	["nekocookie"] = {
-		label = "Neko Cookie",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "catcookie.png", event = "jim-catcafe:client:Consume", }
-	},
-	["nekodonut"] = {
-		label = "Neko Donut",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "catdonut.png", event = "jim-catcafe:client:Consume", }
-	},
+["riceball"] = { label = "Neko Onigiri", weight = 200, stack = true, close = true, description = "",
+    client = { image = "catrice.png",  event = "jim-catcafe:client:Consume", }
+},
 
-	["boba"] = {
-		label = "Boba",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "boba.png", event = "jim-catcafe:client:Consume", }
-	},
-	["flour"] = {
-		label = "Flour",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "flour.png", event = "jim-catcafe:client:Consume", }
-	},
-	["rice"] = {
-		label = "Bowl of Rice",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "rice.png", event = "jim-catcafe:client:Consume", }
-	},
-	["sugar"] = {
-		label = "Sugar",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "sugar.png", event = "jim-catcafe:client:Consume", }
-	},
-	["nori"] = {
-		label = "Nori",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "nori.png", }
-	},
-	["blueberry"] = {
-		label = "Blueberry",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "blueberry.png", event = "jim-catcafe:client:Consume", }
-	},
-	["strawberry"] = {
-		label = "Strawberry",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "strawberry.png", event = "jim-catcafe:client:Consume", }
-	},
-	["orange"] = {
-		label = "Orange",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "orange.png", }
-	},
-	["mint"] = {
-		label = "Matcha",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "matcha.png", }
-	},
-	["tofu"] = {
-		label = "Tofu",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "tofu.png", event = "jim-catcafe:client:Consume", }
-	},
+["nekocookie"] = { label = "Neko Cookie", weight = 200, stack = true, close = true, description = "",
+    client = { image = "catcookie.png",  event = "jim-catcafe:client:Consume", }
+},
+["nekodonut"] = { label = "Neko Donut", weight = 200, stack = true, close = true, description = "",
+    client = { image = "catdonut.png",  event = "jim-catcafe:client:Consume", }
+},
 
-	["mocha"] = {
-		label = "Mocha Meow",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "mochameow.png", event = "jim-catcafe:client:Consume", }
-	},
+["boba"] = { label = "Boba", weight = 200, stack = true, close = true, description = "",
+    client = { image = "boba.png",  event = "jim-catcafe:client:Consume", }
+},
+["flour"] = { label = "Flour", weight = 200, stack = true, close = true, description = "",
+    client = { image = "flour.png",  event = "jim-catcafe:client:Consume", }
+},
+["rice"] = { label = "Bowl of Rice", weight = 200, stack = true, close = true, description = "",
+    client = { image = "rice.png",  event = "jim-catcafe:client:Consume", }
+},
+["sugar"] = { label = "Sugar", weight = 200, stack = true, close = true, description = "",
+    client = { image = "sugar.png",  event = "jim-catcafe:client:Consume", }
+},
+["nori"] = { label = "Nori", weight = 200, stack = true, close = true, description = "",
+    client = { image = "nori.png", }
+},
+["blueberry"] = { label = "Blueberry", weight = 200, stack = true, close = true, description = "",
+    client = { image = "blueberry.png",  event = "jim-catcafe:client:Consume", }
+},
+["strawberry"] = { label = "Strawberry", weight = 200, stack = true, close = true, description = "",
+    client = { image = "strawberry.png",  event = "jim-catcafe:client:Consume", }
+},
+["orange"] = { label = "Orange", weight = 200, stack = true, close = true, description = "",
+    client = { image = "orange.png", }
+},
+["mint"] = { label = "Matcha", weight = 200, stack = true, close = true, description = "",
+    client = { image = "matcha.png", }
+},
+["tofu"] = { label = "Tofu", weight = 200, stack = true, close = true, description = "",
+    client = { image = "tofu.png",  event = "jim-catcafe:client:Consume", }
+},
 
-	["cakepop"] = {
-		label = "Cat Cake-Pop",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "cakepop.png", event = "jim-catcafe:client:Consume", }
-	},
-	["pancake"] = {
-		label = "PawCake",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "pawcakes.png", event = "jim-catcafe:client:Consume", }
-	},
-	["pizza"] = {
-		label = "Kitty Pizza",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "catpizza.png", event = "jim-catcafe:client:Consume", }
-	},
-	["purrito"] = {
-		label = "Purrito",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "purrito.png", event = "jim-catcafe:client:Consume", }
-	},
+["mocha"] = { label = "Mocha Meow", weight = 200, stack = true, close = true, description = "",
+    client = { image = "mochameow.png",  event = "jim-catcafe:client:Consume", }
+},
 
-	["noodlebowl"] = {
-		label = "Bowl of Noodles",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "noodlebowl.png", event = "jim-catcafe:client:Consume", }
-	},
-	["noodles"] = {
-		label = "Instant Noodles",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "noodles.png", }
-	},
-	["ramen"] = {
-		label = "owl of Ramen",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "ramen.png", event = "jim-catcafe:client:Consume", }
-	},
+["cakepop"] = { label = "Cat Cake-Pop", weight = 200, stack = true, close = true, description = "",
+    client = { image = "cakepop.png",  event = "jim-catcafe:client:Consume", }
+},
+["pancake"] = { label = "PawCake", weight = 200, stack = true, close = true, description = "",
+    client = { image = "pawcakes.png",  event = "jim-catcafe:client:Consume", }
+},
+["pizza"] = { label = "Kitty Pizza", weight = 200, stack = true, close = true, description = "",
+    client = { image = "catpizza.png", event = "jim-catcafe:client:Consume", }
+},
+["purrito"] = { label = "Purrito", weight = 200, stack = true, close = true, description = "",
+    client = { image = "purrito.png", event = "jim-catcafe:client:Consume", }
+},
 
-	["milk"] = {
-		label = "Milk",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "burger-milk.png", event = "jim-catcafe:client:Consume", }
-	},
-	["onion"] = {
-		label = "Onion",
-		weight = 200,
-		stack = true,
-		close = true,
-		description = "",
-		client = { image = "burger-onion.png", }
-	},
+["noodlebowl"] = { label = "Bowl of Noodles", weight = 200, stack = true, close = true, description = "",
+    client = { image = "noodlebowl.png", event = "jim-catcafe:client:Consume", }
+},
+["noodles"] = { label = "Instant Noodles", weight = 200, stack = true, close = true, description = "",
+    client = { image = "noodles.png", }
+},
+["ramen"] = { label = "owl of Ramen", weight = 200, stack = true, close = true, description = "",
+    client = { image = "ramen.png", event = "jim-catcafe:client:Consume", }
+},
 
-	-- JIM-BURGERSHOT --
-	potato = {
-		label = 'Potatoes',
-		weight = 500,
-		stack = true,
-		close = false,
-		description = 'Bag of potatoes.',
-		client = { image = 'potatoes.png', event = "jim-burgershot:client:Consume", }
-	},
-	onion = {
-		label = 'Onion',
-		weight = 500,
-		stack = true,
-		close = false,
-		description = 'A whole raw onion.',
-		client = { image = 'burger-onion.png', event = "jim-burgershot:client:Consume", }
-	},
-	lettuce = {
-		label = 'Lettuce',
-		weight = 100,
-		stack = true,
-		close = false,
-		description = 'Fresh leafy lettuce.',
-		client = { image = 'lettuce.png', event = "jim-burgershot:client:Consume", }
-	},
-	milk = {
-		label = 'Milk',
-		weight = 500,
-		stack = true,
-		close = true,
-		description = 'Carton of fresh milk.',
-		client = { image = 'burger-milk.png', event = "jim-burgershot:client:Consume", }
-	},
-	-- Prepared Ingredients
-	slicedpotato = {
-		label = 'Sliced Potatoes',
-		weight = 500,
-		stack = true,
-		close = false,
-		description = 'Sliced fresh potatoes.',
-		client = { image = 'burger-slicedpotato.png', event = "jim-burgershot:client:Consume", }
-	},
-	slicedonion = {
-		label = 'Sliced Onions',
-		weight = 500,
-		stack = true,
-		close = false,
-		description = 'Crispy onion slices.',
-		client = { image = 'burger-slicedonion.png', event = "jim-burgershot:client:Consume", }
-	},
-	cheddar = {
-		label = 'Cheddar Slice',
-		weight = 500,
-		stack = true,
-		close = false,
-		description = 'A single slice of cheddar cheese.',
-		client = { image = 'cheddar.png', event = "jim-burgershot:client:Consume", }
-	},
-	burgerbun = {
-		label = 'Burger Bun',
-		weight = 100,
-		stack = true,
-		close = false,
-		description = 'Soft bun for burgers.',
-		client = { image = 'burgerbun.png', event = "jim-burgershot:client:Consume", }
-	},
-	burgerpatty = {
-		label = 'Burger Patty',
-		weight = 500,
-		stack = true,
-		close = false,
-		description = 'Raw beef patty for grilling.',
-		client = { image = 'burgerpatty.png', event = "jim-burgershot:client:Consume", }
-	},
-	burgermeat = {
-		label = 'Burger Meat',
-		weight = 500,
-		stack = true,
-		close = false,
-		description = 'Cooked burger meat patty.',
-		client = { image = 'burgermeat.png', event = "jim-burgershot:client:Consume", }
-	},
-	frozennugget = {
-		label = 'Frozen Nuggets',
-		weight = 500,
-		stack = true,
-		close = false,
-		description = 'Bag of frozen chicken nuggets.',
-		client = { image = 'burger-frozennugget.png', event = "jim-burgershot:client:Consume", }
-	},
-	-- Menu: Burgers
-	heartstopper = {
-		label = 'HeartStopper',
-		weight = 200,
-		stack = true,
-		close = true,
-		description = 'Massive heart-stopping burger.',
-		client = { image = 'burger-heartstopper.png', event = "jim-burgershot:client:Consume", }
-	},
-	moneyshot = {
-		label = 'Money Shot',
-		weight = 200,
-		stack = true,
-		close = true,
-		description = 'BurgerShot’s signature burger.',
-		client = { image = 'burger-moneyshot.png', event = "jim-burgershot:client:Consume", }
-	},
-	meatfree = {
-		label = 'Meat Free',
-		weight = 200,
-		stack = true,
-		close = true,
-		description = 'Plant-based burger option.',
-		client = { image = 'burger-meatfree.png', event = "jim-burgershot:client:Consume", }
-	},
-	bleeder = {
-		label = 'The Bleeder',
-		weight = 200,
-		stack = true,
-		close = true,
-		description = 'Spicy burger with a kick.',
-		client = { image = 'burger-bleeder.png', event = "jim-burgershot:client:Consume", }
-	},
-	torpedo = {
-		label = 'Torpedo',
-		weight = 200,
-		stack = true,
-		close = true,
-		description = 'Long sub-style burger.',
-		client = { image = 'burger-torpedo.png', event = "jim-burgershot:client:Consume", }
-	},
-	-- Sides
-	shotnuggets = {
-		label = 'Shot Nuggets',
-		weight = 200,
-		stack = true,
-		close = true,
-		description = 'BurgerShot chicken nuggets.',
-		client = { image = 'burger-shotnuggets.png', event = "jim-burgershot:client:Consume", }
-	},
-	shotrings = {
-		label = 'Ring Shots',
-		weight = 200,
-		stack = true,
-		close = true,
-		description = 'BurgerShot onion rings.',
-		client = { image = 'burger-shotrings.png', event = "jim-burgershot:client:Consume", }
-	},
-	shotfries = {
-		label = 'Shot Fries',
-		weight = 200,
-		stack = true,
-		close = true,
-		description = 'Golden BurgerShot fries.',
-		client = { image = 'burger-fries.png', event = "jim-burgershot:client:Consume", }
-	},
-	-- Wraps
-	cheesewrap = {
-		label = 'BS Cheese Wrap',
-		weight = 150,
-		stack = true,
-		close = true,
-		description = 'Cheesy chicken wrap.',
-		client = { image = 'burger-chickenwrap.png', event = "jim-burgershot:client:Consume", }
-	},
-	chickenwrap = {
-		label = 'BS Goat Cheese Wrap',
-		weight = 150,
-		stack = true,
-		close = true,
-		description = 'Wrap filled with goat cheese.',
-		client = { image = 'burger-goatwrap.png', event = "jim-burgershot:client:Consume", }
-	},
-	-- Drinks
-	bscoffee = {
-		label = 'BurgerShot Coffee',
-		weight = 200,
-		stack = true,
-		close = true,
-		description = 'Hot BurgerShot coffee.',
-		client = { image = 'burger-coffee.png', event = "jim-burgershot:client:Consume", }
-	},
-	bscoke = {
-		label = 'BurgerShot Coke',
-		weight = 200,
-		stack = true,
-		close = true,
-		description = 'Chilled cola beverage.',
-		client = { image = 'burger-softdrink.png', event = "jim-burgershot:client:Consume", }
-	},
-	milkshake = {
-		label = 'Milkshake',
-		weight = 500,
-		stack = true,
-		close = true,
-		description = 'Thick and sweet milkshake.',
-		client = { image = 'burger-milkshake.png', event = "jim-burgershot:client:Consume", }
-	},
-	-- Desserts
-	rimjob = {
-		label = 'Rim Job',
-		weight = 200,
-		stack = true,
-		close = true,
-		description = 'BurgerShot donut treat.',
-		client = { image = 'burger-rimjob.png', event = "jim-burgershot:client:Consume", }
-	},
-	creampie = {
-		label = 'Creampie',
-		weight = 200,
-		stack = true,
-		close = true,
-		description = 'Classic apple pie dessert.',
-		client = { image = 'burger-creampie.png', event = "jim-burgershot:client:Consume", }
-	},
-	icecream = {
-		label = 'Ice Cream',
-		weight = 500,
-		stack = true,
-		close = false,
-		description = 'Chilled and creamy dessert.',
-		client = { image = 'burger-icecream.png', event = "jim-burgershot:client:Consume", }
-	},
+["milk"] = { label = "Milk", weight = 200, stack = true, close = true, description = "",
+    client = { image = "burger-milk.png", event = "jim-catcafe:client:Consume", }
+},
 
-	-- Specials
-	murderbag = {
-		label = 'Murder Bag',
-		weight = 0,
-		stack = false,
-		close = true,
-		description = 'A surprise bag full of burgers.',
-		client = { image = 'burgerbag.png', }
-	},
+-- JIM-BURGERSHOT --
+potato = { label = 'Potatoes', weight = 500, stack = true, close = false, description = 'Bag of potatoes.',
+    client = { image = 'potatoes.png', event = "jim-burgershot:client:Consume", }
+},
+onion = { label = 'Onion', weight = 500, stack = true, close = false, description = 'A whole raw onion.',
+    client = { image = 'burger-onion.png', event = "jim-burgershot:client:Consume", }
+},
+lettuce = { label = 'Lettuce', weight = 100, stack = true, close = false, description = 'Fresh leafy lettuce.',
+    client = { image = 'lettuce.png', event = "jim-burgershot:client:Consume", }
+},
+milk = { label = 'Milk', weight = 500, stack = true, close = true, description = 'Carton of fresh milk.',
+    client = { image = 'burger-milk.png', event = "jim-burgershot:client:Consume", }
+},
+-- Prepared Ingredients
+slicedpotato = { label = 'Sliced Potatoes', weight = 500, stack = true, close = false, description = 'Sliced fresh potatoes.',
+    client = { image = 'burger-slicedpotato.png', event = "jim-burgershot:client:Consume", }
+},
+slicedonion = { label = 'Sliced Onions', weight = 500, stack = true, close = false, description = 'Crispy onion slices.',
+    client = { image = 'burger-slicedonion.png', event = "jim-burgershot:client:Consume", }
+},
+cheddar = { label = 'Cheddar Slice', weight = 500, stack = true, close = false, description = 'A single slice of cheddar cheese.',
+    client = { image = 'cheddar.png', event = "jim-burgershot:client:Consume", }
+},
+burgerbun = { label = 'Burger Bun', weight = 100, stack = true, close = false, description = 'Soft bun for burgers.',
+    client = { image = 'burgerbun.png', event = "jim-burgershot:client:Consume", }
+},
+burgerpatty = { label = 'Burger Patty', weight = 500, stack = true, close = false, description = 'Raw beef patty for grilling.',
+    client = { image = 'burgerpatty.png', event = "jim-burgershot:client:Consume", }
+},
+burgermeat = { label = 'Burger Meat', weight = 500, stack = true, close = false, description = 'Cooked burger meat patty.',
+    client = { image = 'burgermeat.png', event = "jim-burgershot:client:Consume", }
+},
+frozennugget = { label = 'Frozen Nuggets', weight = 500, stack = true, close = false, description = 'Bag of frozen chicken nuggets.',
+    client = { image = 'burger-frozennugget.png', event = "jim-burgershot:client:Consume", }
+},
+-- Menu: Burgers
+heartstopper = { label = 'HeartStopper', weight = 200, stack = true, close = true, description = 'Massive heart-stopping burger.',
+    client = { image = 'burger-heartstopper.png', event = "jim-burgershot:client:Consume", }
+},
+moneyshot = { label = 'Money Shot', weight = 200, stack = true, close = true, description = 'BurgerShot’s signature burger.',
+    client = { image = 'burger-moneyshot.png', event = "jim-burgershot:client:Consume", }
+},
+meatfree = { label = 'Meat Free', weight = 200, stack = true, close = true, description = 'Plant-based burger option.',
+    client = { image = 'burger-meatfree.png', event = "jim-burgershot:client:Consume", }
+},
+bleeder = { label = 'The Bleeder', weight = 200, stack = true, close = true, description = 'Spicy burger with a kick.',
+    client = { image = 'burger-bleeder.png', event = "jim-burgershot:client:Consume", }
+},
+torpedo = { label = 'Torpedo', weight = 200, stack = true, close = true, description = 'Long sub-style burger.',
+    client = { image = 'burger-torpedo.png', event = "jim-burgershot:client:Consume", }
+},
+-- Sides
+shotnuggets = { label = 'Shot Nuggets', weight = 200, stack = true, close = true, description = 'BurgerShot chicken nuggets.',
+    client = { image = 'burger-shotnuggets.png', event = "jim-burgershot:client:Consume", }
+},
+shotrings = { label = 'Ring Shots', weight = 200, stack = true, close = true, description = 'BurgerShot onion rings.',
+    client = { image = 'burger-shotrings.png', event = "jim-burgershot:client:Consume", }
+},
+shotfries = { label = 'Shot Fries', weight = 200, stack = true, close = true, description = 'Golden BurgerShot fries.',
+    client = { image = 'burger-fries.png', event = "jim-burgershot:client:Consume", }
+},
+-- Wraps
+cheesewrap = { label = 'BS Cheese Wrap', weight = 150, stack = true, close = true, description = 'Cheesy chicken wrap.',
+    client = { image = 'burger-chickenwrap.png', event = "jim-burgershot:client:Consume", }
+},
+chickenwrap = { label = 'BS Goat Cheese Wrap', weight = 150, stack = true, close = true, description = 'Wrap filled with goat cheese.',
+    client = { image = 'burger-goatwrap.png', event = "jim-burgershot:client:Consume", }
+},
+-- Drinks
+bscoffee = { label = 'BurgerShot Coffee', weight = 200, stack = true, close = true, description = 'Hot BurgerShot coffee.',
+    client = { image = 'burger-coffee.png', event = "jim-burgershot:client:Consume", }
+},
+bscoke = { label = 'BurgerShot Coke', weight = 200, stack = true, close = true, description = 'Chilled cola beverage.',
+    client = { image = 'burger-softdrink.png', event = "jim-burgershot:client:Consume", }
+},
+milkshake = { label = 'Milkshake', weight = 500, stack = true, close = true, description = 'Thick and sweet milkshake.',
+    client = { image = 'burger-milkshake.png', event = "jim-burgershot:client:Consume", }
+},
+-- Desserts
+rimjob = { label = 'Rim Job', weight = 200, stack = true, close = true, description = 'BurgerShot donut treat.',
+    client = { image = 'burger-rimjob.png', event = "jim-burgershot:client:Consume", }
+},
+creampie = { label = 'Creampie', weight = 200, stack = true, close = true, description = 'Classic apple pie dessert.',
+    client = { image = 'burger-creampie.png', event = "jim-burgershot:client:Consume", }
+},
+icecream = { label = 'Ice Cream', weight = 500, stack = true, close = false, description = 'Chilled and creamy dessert.',
+    client = { image = 'burger-icecream.png', event = "jim-burgershot:client:Consume", }
+},
+
+-- Specials
+murderbag = { label = 'Murder Bag', weight = 0, stack = false, close = true, description = 'A surprise bag full of burgers.',
+    client = { image = 'burgerbag.png', }
+},
 
 
 
@@ -7207,16 +6859,7 @@ return {
 			image = 'apple.png'
 		}
 	},
-	['orange'] = {
-		label = 'Orange',
-		weight = 100,
-		stack = true,
-		close = false,
-		description = 'A fresh orange!',
-		client = {
-			image = 'orange.png'
-		}
-	},
+	
 	['tomato'] = {
 		label = 'Tomato',
 		weight = 100,
@@ -11579,43 +11222,8 @@ return {
 		}
 	},
 
-	--BurgerShot
 
-	["slicedpotato"] = {
-		label = "Sliced Potatoes",
-		weight = 500,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "Sliced Potato",
-		client = {
-			image = "potatoes.png",
-		}
-	},
-
-	["slicedonion"] = {
-		label = "Sliced Onions",
-		weight = 500,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "Sliced Onion",
-		client = {
-			image = "burger-slicedonion.png",
-		}
-	},
-
-	["icecream"] = {
-		label = "Ice Cream",
-		weight = 500,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "Ice Cream",
-		client = {
-			image = "burger-icecream.png",
-		}
-	},
+	
 
 	["milk"] = {
 		label = "Milk",
@@ -11629,17 +11237,7 @@ return {
 		}
 	},
 
-	["lettuce"] = {
-		label = "Lettuce",
-		weight = 500,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "Some big taco brother",
-		client = {
-			image = "lettuce.png",
-		}
-	},
+	
 	["sauce"] = {
 		label = "sauce",
 		weight = 500,
@@ -11664,41 +11262,7 @@ return {
 		}
 	},
 
-	["cheddar"] = {
-		label = "Cheddar Slice",
-		weight = 500,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "Slice of Cheese",
-		client = {
-			image = "cheddar.png",
-		}
-	},
 
-	["burgerbun"] = {
-		label = "Burger Bun",
-		weight = 100,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "Some big burger brother",
-		client = {
-			image = "burgerbun.png",
-		}
-	},
-
-	["burgerpatty"] = {
-		label = "Burger Patty",
-		weight = 500,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "Raw Patty",
-		client = {
-			image = "burgerpatty.png",
-		}
-	},
 
 	["burgermeat"] = {
 		label = "Burger Meat",
@@ -11727,41 +11291,7 @@ return {
 		}
 	},
 
-	["flour"] = {
-		label = "Flour",
-		weight = 100,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "flour.png",
-		}
-	},
 
-	["rice"] = {
-		label = "Bowl of Rice",
-		weight = 100,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "rice.png",
-		}
-	},
-
-	["sugar"] = {
-		label = "Sugar",
-		weight = 100,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "sugar.png",
-		}
-	},
 
 	["nori"] = {
 		label = "Nori",
@@ -11775,161 +11305,7 @@ return {
 		}
 	},
 
-	["blueberry"] = {
-		label = "Blueberry",
-		weight = 100,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "blueberry.png",
-		}
-	},
 
-	["strawberry"] = {
-		label = "Strawberry",
-		weight = 100,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "strawberry.png",
-		}
-	},
-
-	["orange"] = {
-		label = "Orange",
-		weight = 100,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "orange.png",
-		}
-	},
-
-	["mint"] = {
-		label = "Matcha",
-		weight = 100,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "matcha.png",
-		}
-	},
-
-	["tofu"] = {
-		label = "Tofu",
-		weight = 100,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "tofu.png",
-		}
-	},
-
-	["mocha"] = {
-		label = "Mocha Meow",
-		weight = 100,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "mochameow.png",
-		}
-	},
-
-	["cakepop"] = {
-		label = "Cat Cake-Pop",
-		weight = 100,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "cakepop.png",
-		}
-	},
-
-	["pancake"] = {
-		label = "PawCake",
-		weight = 100,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "pawcakes.png",
-		}
-	},
-
-	["pizza"] = {
-		label = "Kitty Pizza",
-		weight = 100,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "catpizza.png",
-		}
-	},
-
-	["purrito"] = {
-		label = "Purrito",
-		weight = 100,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "purrito.png",
-		}
-	},
-
-	["noodlebowl"] = {
-		label = "Bowl of Noodles",
-		weight = 100,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "noodlebowl.png",
-		}
-	},
-
-	["noodles"] = {
-		label = "Instant Noodles",
-		weight = 100,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "noodles.png",
-		}
-	},
-
-	["ramen"] = {
-		label = "Bowl of Ramen",
-		weight = 100,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "ramen.png",
-		}
-	},
 
 	["nightvision"] = {
 		label = "Night Vision Goggles",
@@ -14866,66 +14242,7 @@ return {
 		}
 	},
 
-	["cake"] = {
-		label = "Strawberry Cake",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "cake.png",
-		}
-	},
-
-	["bleeder"] = {
-		label = "The Bleeder",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "The Bleeder",
-		client = {
-			image = "burger-bleeder.png",
-		}
-	},
-
-	["heartstopper"] = {
-		label = "HeartStopper",
-		weight = 500,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "Heartstopper",
-		client = {
-			image = "burger-heartstopper.png",
-		}
-	},
-
-	["cheesewrap"] = {
-		label = "BS Cheese Wrap",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "BurgerShot Cheese Wrap",
-		client = {
-			image = "burger-chickenwrap.png",
-		}
-	},
-
-	["miso"] = {
-		label = "Miso Soup",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "miso.png",
-		}
-	},
-
+	
 	["uncut_diamond"] = {
 		label = "Uncut Diamond",
 		weight = 100,
@@ -14962,17 +14279,6 @@ return {
 		}
 	},
 
-	["sake"] = {
-		label = "Sake",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "sake.png",
-		}
-	},
 
 	["vegshawarma"] = {
 		label = "Veg Shawarma",
@@ -15000,41 +14306,9 @@ return {
 		}
 	},
 
-	["murderbag"] = {
-		label = "Murder Bag",
-		weight = 200,
-		stack = false,
-		allowArmed = true,
-		close = true,
-		description = "Grab a Murder Bag of Burgers",
-		client = {
-			image = "burgerbag.png",
-		}
-	},
+	
 
-	["milkshake"] = {
-		label = "Milkshake",
-		weight = 500,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "BurgerShot Milkshake",
-		client = {
-			image = "burger-milkshake.png",
-		}
-	},
 
-	["creampie"] = {
-		label = "Creampie",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "BurgerShot Apple Pie",
-		client = {
-			image = "burger-creampie.png",
-		}
-	},
 
 	["soyasauce"] = {
 		label = "Soya Sauce",
@@ -15048,29 +14322,7 @@ return {
 		}
 	},
 
-	["omochi"] = {
-		label = "Orange Mochi",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "mochiorange.png",
-		}
-	},
 
-	["bento"] = {
-		label = "Bento Box",
-		weight = 500,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "bento.png",
-		}
-	},
 
 	["diamond_earring"] = {
 		label = "Diamond Earrings",
@@ -15081,18 +14333,6 @@ return {
 		description = "",
 		client = {
 			image = "diamond_earring.png",
-		}
-	},
-
-	["shotnuggets"] = {
-		label = "Shot Nuggets",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "Burgershot Nuggets",
-		client = {
-			image = "burger-shotnuggets.png",
 		}
 	},
 
@@ -15144,42 +14384,6 @@ return {
 		}
 	},
 
-	["potato"] = {
-		label = "Potatoes",
-		weight = 500,
-		stack = true,
-		allowArmed = true,
-		close = false,
-		description = "Bag of Potatos",
-		client = {
-			image = "potatoes.png",
-		}
-	},
-
-	["bobatea"] = {
-		label = "Boba Tea",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "bubbletea.png",
-		}
-	},
-
-	["onion"] = {
-		label = "Onion",
-		weight = 500,
-		stack = true,
-		allowArmed = true,
-		close = false,
-		description = "An onion",
-		client = {
-			image = "burger-onion.png",
-		}
-	},
-
 	["shawarmaehabibi"] = {
 		label = "Shawarma-e Habibi",
 		weight = 500,
@@ -15216,78 +14420,9 @@ return {
 		}
 	},
 
-	["torpedo"] = {
-		label = "Torpedo",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "BurgerShot Torpedo",
-		client = {
-			image = "burger-torpedo.png",
-		}
-	},
 
-	["moneyshot"] = {
-		label = "Money Shot",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "Money Shot",
-		client = {
-			image = "burger-moneyshot.png",
-		}
-	},
 
-	["gmochi"] = {
-		label = "Green Mochi",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "mochigreen.png",
-		}
-	},
-
-	["bscoke"] = {
-		label = "BurgerShot Coke",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "BurgerShot Cola",
-		client = {
-			image = "burger-softdrink.png",
-		}
-	},
-
-	["bmochi"] = {
-		label = "Blue Mochi",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "mochiblue.png",
-		}
-	},
-
-	["catcoffee"] = {
-		label = "Cat Coffee",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "catcoffee.png",
-		}
-	},
-
+	
 	["bscoffee"] = {
 		label = "BurgerShot Coffee",
 		weight = 200,
@@ -15300,29 +14435,8 @@ return {
 		}
 	},
 
-	["chickenwrap"] = {
-		label = "BS Goat Cheese Wrap",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "BurgerShot Goat Cheese Wrap",
-		client = {
-			image = "burger-goatwrap.png",
-		}
-	},
 
-	["pmochi"] = {
-		label = "Pink Mochi",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "mochipink.png",
-		}
-	},
+
 
 	["friedbeef"] = {
 		label = "Fried Beef",
@@ -15336,53 +14450,8 @@ return {
 		}
 	},
 
-	["rimjob"] = {
-		label = "Rim Job",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "BurgerShot Donut",
-		client = {
-			image = "burger-rimjob.png",
-		}
-	},
 
-	["meatfree"] = {
-		label = "Meat Free",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "Meat Free",
-		client = {
-			image = "burger-meatfree.png",
-		}
-	},
-
-	["shotrings"] = {
-		label = "Ring Shots",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "Burgershot Onion Rings",
-		client = {
-			image = "burger-shotrings.png",
-		}
-	},
-
-	["nekolatte"] = {
-		label = "Neko Latte",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "",
-		client = {
-			image = "latte.png",
-		}
-	},
+	
 
 	["nekocookie"] = {
 		label = "Neko Cookie",
@@ -31338,17 +30407,6 @@ return {
 		}
 	},
 
-	["voodoo"] = {
-		label = "Voodoo",
-		weight = 200,
-		stack = true,
-		allowArmed = true,
-		close = true,
-		description = "Voodoo Cocktail",
-		client = {
-			image = "voodoo.png",
-		}
-	},
 
 	["methcontainer"] = {
 		label = "Meth Container",
