@@ -8,11 +8,11 @@ Config = {
 		Debug = false,				-- This enables debug zones and messages to help work out issues
 		EventDebug = false,			-- This enables advanced debug messages to see what variables are being sent though events
 
-		Menu = "ox",				-- "qb", "ox", "gta"
-		Notify = "ox",				-- "qb", "ox", "esx, "okok", "gta"
-		drawText = "ox",			-- "qb", "ox", "esx, "okok", "gta"
-		ProgressBar = "ox", 		-- "qb", "ox", "gta"
-		Billing = "jim",			-- "jim", "okok"
+		Menu = "ox",				-- "qb", "ox", "lation", "gta"
+		Notify = "ox",				-- "qb", "ox", "esx", "lation", "okok", "gta"
+		drawText = "ox",			-- "qb", "ox", "esx", "lation", "gta"
+		ProgressBar = "ox", 		-- "qb", "ox", "esx", "lation", "17mov", "gta"
+		Billing = "jim",			-- "jim", "okok", "codem"
 
 	},
 
@@ -32,6 +32,8 @@ Config = {
 		craftCam = false,			-- This enables custom camera angle while crafting
 		MultiCraft = false,			-- This enables mutlicraft, so users can craft multiples at once instead of one at a time
 		showItemBox = true,			-- Some inventories need this, shows an item box when any item event happens
+
+		SingleProgress = false,		-- Set to true so when crafting multiple items at once, only "place" items one, then one big progressbar to craft all items at once
 	},
 
 	General = {

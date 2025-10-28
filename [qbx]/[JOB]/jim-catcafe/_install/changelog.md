@@ -8,6 +8,68 @@ https://discord.gg/9pCDHmjYwd
 
 # Changelog
 
+## 2.1.12
+
+- Tidy up `uwucafe.lua`
+  - Add Personal stash location
+- Use new `jim_bridge` createPropTarget() function
+- Adjust auto minZ and maxZ generation
+- Support embedded shop recipes
+- Support `jim_bridge` alcohol syncing export for built in consume
+  - Alcohol consumtion should now be synced between my scripts
+- Fix pack items not giving items
+- Fix Trash Stashes not being created
+- Allow "Bag" items to have custom slots and weight (itemcontrol.lua)
+- Fixes for upcoming new features soon
+
+Files to replace:
+
+- locations/uwucafe.lua
+- locales/en.lua
+- client/client.lua
+- client/encclient.lua
+- client/functions.lua
+- server/encserver.lua
+- server/itemcontrol.lua
+
+## 2.1.11
+
+- Support stress in built-in consume event
+- Fix registering personal stashes if tied to a prop
+- Start working on future features
+- Add esx stress update trigger for cat pat
+
+Files to replace:
+- client/cats.lua
+- client/client.lua
+- client/functions.lua
+- server/itemcontrol.lua
+- server/encserver.lua
+
+## 2.1.10
+
+- Fix built-in comsume event not working with ox_inv
+- Add SingleProgress config option for crafting (place items + one big progressbar)
+
+Files to replace:
+  - client/functions.lua
+  - server/itemcontrol.lua
+  - config.lua (optional)
+
+
+## 2.1.09
+
+- Overhaul script secuity
+  - Moved as much code as possible to server to reduce chance of exploits
+- Use new jim_bridge openClothing() function
+- Update to jim_bridge 2.1.0+
+
+Files to replace:
+  - client/encclient.lua
+  - client/functions.lua
+  - server/encserver.lua
+  - server/itemcontrol.lua
+
 ## 2.1.08
 
 - Tidy items in _install a bit

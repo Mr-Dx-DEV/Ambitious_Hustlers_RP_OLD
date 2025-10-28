@@ -21,8 +21,8 @@ function SitChair(data)
 
 	if canSit then
 		if not IsPedHeadingTowardsPosition(ped, data.loc.xyz, 20.0) then TaskTurnPedToFaceCoord(ped, data.loc.xyz, 1500) Wait(1500)	end
-		if #(data.loc.xyz - GetEntityCoords(PlayerPedId())) > 1.5 then TaskGoStraightToCoord(ped, data.loc.xyz, 0.5, 1000, 0.0, 0) Wait(1100) end
-		TaskStartScenarioAtPosition(PlayerPedId(), "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER", data.loc.x, data.loc.y, data.loc.z-0.5, data.loc[4], 0, 1, true)
+		if #(data.loc.xyz - GetEntityCoords(ped)) > 1.5 then TaskGoStraightToCoord(ped, data.loc.xyz, 0.5, 1000, 0.0, 0) Wait(1100) end
+		TaskStartScenarioAtPosition(ped, "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER", data.loc.x, data.loc.y, data.loc.z-0.5, data.loc[4], 0, 1, true)
 		seat = data.stand and vec4(data.stand.x, data.stand.y, data.stand.z - 0.5, data.stand.w or data.loc[4]) or nil
 		sitting = true
 	end
@@ -40,13 +40,17 @@ function SitChair(data)
 				seat = nil
 			end
 		end
-		Wait(0) if not IsPedUsingScenario(ped, "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER") then
+		Wait(0)
+		if not IsPedUsingScenario(ped, "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER") then
 			sitting = false
 		end
 	end
 end
 
 function GrabBox(data)
+	if not localDistCheck("Box") then
+		return
+	end
 	if progressBar({
 		label = data.prog,
 		time = 2000,
@@ -54,11 +58,8 @@ function GrabBox(data)
 		dict = "anim@heists@prison_heiststation@cop_reactions",
 		anim = "cop_b_idle",
 		flag = 32,
-		request = true,
 	}) then
-		addItem(data.item, 1, {
-			id = data.item.."_"..keyGen()..keyGen()..keyGen()..keyGen(),
-		})
+		TriggerServerEvent(getScript()..":server:requestBoxItem", data.item)
 	else
 		triggerNotify(nil, "Cancelled")
 	end
@@ -253,19 +254,55 @@ RegisterNetEvent(getScript()..":client:StashPropHandle", function(target, data, 
 end)
 
 -- Beer Tap + Keg features
-function beerTapMenu(data)
+function dispenserMenu(data)
 	CreateThread(function() lookEnt(data.coords) end)
+	if not localDistCheck("Dispenser") then
+		return
+	end
+
 	local tempTable = {}
-	--local result = triggerCallback(getScript()..':server:GetStashItems', data.stash) or {}
-	local result = {}		-- force to allow people to use without limits for now (remove when kegs items are in place)
+	local result = {}
 	local Menu = {}
-	for _, v in pairs(data.menu) do
-		--tempTable[v] = { metadata = { durability = 0 }, slot = 0, }
-		tempTable[v] = { metadata = { durability = 100 }, slot = 0, }		-- force to allow people to use without limits for now (remove when kegs are in place)
-		for _, b in pairs(result) do
-			if b.name == v then
-				tempTable[v] = { metadata = { durability = b.metadata and b.metadata.durability or 100}, slot = b.slot, }
+	if Config.General.DispenserSystem then
+		result = triggerCallback(getScript()..':server:GetStashItems', data.stash) or {}
+		jsonPrint(result)
+	end
+	local stashContents = {}
+	for i = 1, #result do
+		stashContents[result[i].name] = {
+			meta = result[i].metadata or result[i].info or {},
+			slot = result[i].slot,
+		}
+	end
+	for k, v in pairs(data.menu) do
+		if Config.General.DispenserSystem then
+			if v.requiredItem then
+				if stashContents[v.requiredItem] then
+					tempTable[k] = {
+						metadata = {
+							durability = stashContents[v.requiredItem].meta and stashContents[v.requiredItem].meta.durability or 0
+						},
+						slot = stashContents[v.requiredItem].slot,
+						requiredItem = v.requiredItem
+					}
+				else
+					tempTable[k] = {
+						metadata = { durability = 0 },
+						slot = 0,
+						requiredItem = nil,
+					}
+				end
+			else
+				tempTable[k] = {
+					metadata = { durability = 100 },
+					slot = 0,
+				}
 			end
+		else
+			tempTable[k] = {
+				metadata = { durability = 100 },
+				slot = 0,
+			}
 		end
 	end
 
@@ -275,24 +312,30 @@ function beerTapMenu(data)
 			isMenuHeader = prog <= 0,
 			arrow = prog > 0,
 			icon = invImg(k),
+			image = invImg(k),
 			header = getItemLabel(k),
-			txt = prog <= 0 and "Keg Needs Replacing" or "Keg Level: "..prog.."%",
-			progress = prog > 1 and prog or nil,
-			colorScheme = prog <= 25 and "red" or (prog <= 50 and "yellow" or "green"),
+			txt = Config.General.DispenserSystem and (prog <= 0 and locale("menu", "needReplace") or locale("menu", "level")..prog.."%") or nil,
+			progress = Config.General.DispenserSystem and (prog > 1 and prog or nil) or nil,
+			colorScheme = Config.General.DispenserSystem and (prog <= 25 and "red" or (prog <= 50 and "yellow" or "green")) or nil,
 			onSelect = function()
-				--beerTapPour({ item = k, metadata = v.metadata, slot = v.slot, stash = data.stash, amount = 1, })
-				beerTapMulti({ item = k, metadata = v.metadata, slot = v.slot, stash = data.stash, amount = 1, })
+				dispenserMulti({
+					item = k,
+					metadata = v.metadata,
+					slot = v.slot,
+					stash = data.stash,
+					amount = 1,
+				})
 			end,
 		}
 	end
-	openMenu(Menu, { header = "Beer Tap", })
+	openMenu(Menu, { header = data.label, })
 end
 
 -- i hate multicraft -- checks how many it can craft, then checks if you can hold them
-function beerTapMulti(data)
+function dispenserMulti(data)
 	local input = lib.inputDialog('Beer Tap', {
 		{ 	type = 'slider',
-			label = 'How Many to Pour?',
+			label = locale("menu", "how_many"),
 			required = true,
 			default = 1,
 			min = 1,
@@ -304,22 +347,23 @@ function beerTapMulti(data)
 		local canCarryTable = triggerCallback(getScript()..':server:canCarry', tempTable)
 		if canCarryTable[data.item] then
 			data.amount = input[1]
-			beerTapPour(data)
+			dispenserPour(data)
 		else
 			triggerNotify(nil, "You can't hold that many", "error")
-			return beerTapMulti(data)
+			return dispenserMulti(data)
 		end
 	else
 		return
 	end
 end
 
-function beerTapPour(data)
+function dispenserPour(data)
 	for i = 1, data.amount do
-		--local randomRemove = math.random(5, 10) / 100		-- 0.05 to 0.10
-		local randomRemove = 0.5							-- hard set to 0.5 so you get 200 pints in a keg.
 		local metaUpdate = data.metadata
-		metaUpdate.durability -= randomRemove
+		if data.requiredItem then
+			local randomRemove = 0.5							-- hard set to 0.5 so you get 200 pints in a keg.
+			metaUpdate.durability -= randomRemove
+		end
 		if progressBar({
 			label = "Pouring "..getItemLabel(data.item),
 			time = math.random(4000, 5000),
@@ -327,10 +371,11 @@ function beerTapPour(data)
 			dict = CraftingEmotes.Pour.animDict,
 			anim = CraftingEmotes.Pour.anim,
 			flag = 49,
-			request = true,
 		}) then
-			TriggerServerEvent(getScript()..":server:setStashMetaData", { stash = data.stash, slot = data.slot, metadata = metaUpdate })
-			addItem(data.item, 1)
+			if data.requiredItem then
+				TriggerServerEvent(getScript()..":server:setStashMetaData", { stash = data.stash, slot = data.slot, metadata = metaUpdate })
+			end
+			TriggerServerEvent(getScript()..":server:requestDispenserItem", data.item)
 		else
 			break
 		end
@@ -340,9 +385,12 @@ end
 RegisterNetEvent(getScript()..':client:Consume', function(data)
 	local name = data.name or data.client.item
 
-	if isStarted("jim-consumables") or isStarted("jim-consumables-main") then -- if jim-consumables is found, reroute to that script
+	if isStarted("jim-consumables") then -- if jim-consumables is found, reroute to that script
+		TriggerServerEvent("jim-consumables:RegisterConsuming", name)	-- trigger server side that consuming is happening
 		TriggerEvent("jim-consumables:Consume", name)
+
 	else -- if you dont have jim-consumables, use the simplified consume event
+		TriggerServerEvent(getScript()..":RegisterConsuming", name)	-- trigger server side that consuming is happening
 		local consumable = Consumables[name]
 		if not consumable then
 			return print("^1Error^7: ^2Consuamble^7[^5"..name.."^7]^2 info not found check ^7/^2consumables^7")
@@ -363,19 +411,33 @@ RegisterNetEvent(getScript()..':client:Consume', function(data)
 			cancel = true,
 			icon = name
 		}) then
-			-- must be a pack
-			if not consumable.stats then
-				removeItem(name, 1)
-				currentToken = triggerCallback(AuthEvent)
-				addItem(consumable.pack.item, consumable.pack.amount)
-			else
-				local hunger = consumable.stats.hunger or nil
-				local thirst = consumable.stats.thirst or nil
-				if hunger then hunger = GetRandomTiming(hunger) end
-				if thirst then thirst = GetRandomTiming(thirst) end
-				ConsumeSuccess(name, consumable.type, { hunger = hunger, thirst = thirst })
+
+			local hunger = consumable.stats.hunger or nil
+			local thirst = consumable.stats.thirst or nil
+			local stress = consumable.stress or nil
+			if hunger then hunger = GetRandomTiming(hunger) end
+			if thirst then thirst = GetRandomTiming(thirst) end
+			if stress then stress = GetRandomTiming(stress) end
+
+			TriggerServerEvent(getScript()..":server:finishConsume", { thirst = thirst or 0, hunger = hunger or 0, stress = stress or 0 })
+
+			if type == "alcohol" then
+				if checkExportExists("jim_bridge", "addAlcoholCount") then
+					exports.jim_bridge:addAlcoholCount(1, stats.canOD)
+				else
+					alcoholCount = (alcoholCount or 0) + 1
+					if alcoholCount > 1 and alcoholCount < 4 then
+						TriggerEvent("evidence:client:SetStatus", "alcohol", 200)
+					elseif alcoholCount >= 4 then
+						TriggerEvent("evidence:client:SetStatus", "heavyalcohol", 200)
+						CreateThread(function()
+							AlienEffect()
+						end)
+					end
+				end
 			end
 		else
+			TriggerServerEvent(getScript()..":server:stopConsume")
 		end
 		if emote then
 			stopEmote(emote[1], emote[2])

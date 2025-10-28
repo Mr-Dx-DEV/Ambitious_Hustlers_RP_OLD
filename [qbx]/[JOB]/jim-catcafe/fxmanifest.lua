@@ -1,6 +1,6 @@
 name "Jim-CatCafe"
 author "Jimathy"
-version "5.1.08"
+version "2.1.12"
 description "CatCafe Job Script - Props by idRP - ZenKat"
 fx_version "cerulean"
 game "gta5"

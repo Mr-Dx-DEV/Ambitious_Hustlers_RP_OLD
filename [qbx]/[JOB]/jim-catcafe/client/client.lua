@@ -1,10 +1,8 @@
+local personalStashRegistered = {}
 function createTarget(type, targets, id, loc, bossroles, stashCraft)
 	if not targets or not targets[1] then return end
 	for i, target in ipairs(targets) do
 		local name = getScript()..":"..id..":"..type.."["..i.."]"
-		if target.prop then -- If spawning a prop, make entity target instead (ignores depth and width stuff)
-			makeDistProp({ prop = target.prop.model, coords = target.prop.coords }, true, false)
-		end
 		if type == "Poles" then
 			local prop = makeProp({
 				prop = "prop_strip_pole_01",
@@ -21,7 +19,6 @@ function createTarget(type, targets, id, loc, bossroles, stashCraft)
 			makePed("CSB_Stripper_0"..randped, target.coords, true, true, nil, { "mini@strip_club@private_dance@part"..rand, "priv_dance_p"..rand })
 			target.coords -= vec4(0,0, 1.0, 0)
 		end
-
 
 		local coords = target.prop and target.prop.coords or target.coords
 
@@ -47,13 +44,14 @@ function createTarget(type, targets, id, loc, bossroles, stashCraft)
 						coords = coords.xyz
 					})
 
-				elseif type == "BeerTap" then
-					beerTapMenu({
+				elseif type == "Dispenser" then
+					dispenserMenu({
 						job = loc.job,
 						gang = loc.gang,
-						menu = target.Menu,
+						menu = target.Menu or target.menu,
 						coords = coords.xyz,
-						stash = target.stash
+						stash = target.stash,
+						label = target.label
 					})
 
 				elseif type == "Crafting" then
@@ -95,6 +93,15 @@ function createTarget(type, targets, id, loc, bossroles, stashCraft)
 
 						end
 					end
+
+				elseif type == "TrashStash" then
+					openStash({
+						stash = target.stashName,
+						label = target.stashLabel,
+						coords = coords.xyz,
+						maxWeight = target.maxWeight or 400000,
+						slots = target.slots or 10
+					})
 
 				elseif type == "BossStash" then
 					openStash({
@@ -144,20 +151,20 @@ function createTarget(type, targets, id, loc, bossroles, stashCraft)
 				elseif type == "PersonalStash" then
 					local citizenId = getPlayer().citizenId
 
-					if isStarted(OXInv) then
+					if not personalStashRegistered[target.stashName..citizenId] then
 						currentToken = triggerCallback(AuthEvent)
 						Wait(100)
-
 						TriggerServerEvent(getScript()..":server:makeOXStash",
 							target.stashName .. citizenId,
 							"Personal Storage ("..target.stashName .. citizenId..")",
 							target.slots or 10,
 							target.maxWeight or 400000,
 							citizenId,
-							target.coords,
+							target.prop and target.prop.coords.xyz or target.coords,
 							currentToken
 						)
 						currentToken = nil
+						personalStashRegistered[target.stashName..citizenId] = true
 					end
 					openStash({
 						stash = target.stashName..citizenId,
@@ -168,7 +175,7 @@ function createTarget(type, targets, id, loc, bossroles, stashCraft)
 					})
 
 				elseif type == "Outfit" then
-					TriggerEvent("qb-clothing:client:openOutfitMenu")
+					openClothing()
 
 				elseif type == "Chairs" then
 					SitChair({
@@ -252,7 +259,7 @@ function createTarget(type, targets, id, loc, bossroles, stashCraft)
         elseif type == "PersonalStash" then
             options[#options+1] = {
 				action = function()
-					TriggerEvent("qb-clothing:client:openOutfitMenu")
+					openClothing()
 				end,
 				job = loc.job,
 				gang = loc.gang,
@@ -304,21 +311,12 @@ function createTarget(type, targets, id, loc, bossroles, stashCraft)
 		end
 		-- create target
 		if target.prop then -- If spawning a prop, make entity target instead (ignores depth and width stuff)
-			local width, depth, height = GetPropDimensions(target.prop.model)
-			local coordAdjustment = target.prop.coords - vec4(0, 0, 1.03, 0)
-			createBoxTarget({
+			createPropTarget({
 				name,
-				vec3(coordAdjustment.x, coordAdjustment.y, coordAdjustment.z),
-				width + 0.1,
-				depth + 0.1,
-				{
-					name = name,
-					heading = coords.w - 90.0,
-					debugPoly = debugMode,
-					minZ = coordAdjustment.z - ((height + 0.1) / 2),
-					maxZ = coordAdjustment.z + ((height + 0.1) / 2),
-				}
+				target.prop.coords,
+				target.prop.model,
 			}, options, 2.0)
+
 		else
 			createBoxTarget({
 				name,
@@ -329,8 +327,8 @@ function createTarget(type, targets, id, loc, bossroles, stashCraft)
 					name = name,
 					heading = coords.w,
 					debugPoly = debugMode,
-					minZ = target.minZ or (coords.z - ((type == "Chairs" or type == "Poles") and 1.03 or 0.5)),
-					maxZ = target.maxZ or ((coords.z - ((type == "Chairs" or type == "Poles") and 1.03 or 0.0)) + 1)
+					minZ = target.minZ or (coords.z - ((type == "Chairs" or type == "Poles") and 1.04 or 0.5)),
+					maxZ = target.maxZ or ((coords.z - ((type == "Chairs" or type == "Poles") and 1.04 or 0.0)) + 1)
 				}}, options, 2.0)
 		end
 	end

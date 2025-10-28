@@ -3,7 +3,10 @@ Crafting = Crafting or {}
 Crafting.ChoppingBoard = {
     Header = locale("menu", "food"),
     Anims = CraftingEmotes.Typing,
-    progressBar = { label = locale("progressbar", "progress_make"), time = 5000, },
+    progressBar = {
+        label = locale("progressbar", "progress_make"),
+        time = 5000,
+    },
     Recipes = {
         { bmochi = { sugar = 1, flour = 1, blueberry = 1, },
             ["amount"] = 1,
@@ -32,7 +35,10 @@ Crafting.ChoppingBoard = {
 Crafting.Oven = {
     Header = locale("menu", "oven"),
     Anims = CraftingEmotes.Oven,
-    progressBar = { label = locale("progressbar", "progress_make"), time = 5000, },
+    progressBar = {
+        label = locale("progressbar", "progress_make"),
+        time = 5000,
+    },
     Recipes = {
         { nekocookie = { flour = 1, milk = 1, },
             ["amount"] = 1,
@@ -58,7 +64,10 @@ Crafting.Oven = {
 Crafting.Coffee = {
     Header = locale("menu", "coffee"),
     Anims = CraftingEmotes.Pour,
-    progressBar = { label = locale("progressbar", "progress_pour"), time = 5000, },
+    progressBar = {
+        label = locale("progressbar", "progress_pour"),
+        time = 5000,
+    },
     Recipes = {
         { catcoffee = { },
             ["amount"] = 1,
@@ -90,7 +99,10 @@ Crafting.Coffee = {
 Crafting.Hob = {
     Header = locale("menu", "hob"),
     Anims = CraftingEmotes.Grill,
-    progressBar = { label = locale("progressbar", "progress_make"), time = 5000, },
+    progressBar = {
+        label = locale("progressbar", "progress_make"),
+        time = 5000,
+    },
     Recipes = {
         { miso = { nori = 1, tofu = 1, onion = 1, },
             ["amount"] = 1,

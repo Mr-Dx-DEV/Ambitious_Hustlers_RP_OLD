@@ -54,7 +54,9 @@ Loc["en"] = {
         ["duiAdd"] = "Add Image",
         ["duiReset"] = "Reset Image",
         ["duiClear"] = "Clear Image",
-        ["showMenu"] = "View Menu"
+        ["showMenu"] = "View Menu",
+        ["kegStorage"] = "Keg Storage",
+        ["syrupStorage"] = "Syrup Storage",
     },
     menu = {
         ["close"] = "Close",
@@ -69,6 +71,9 @@ Loc["en"] = {
         ["grill"] = "Grill Menu",
         ["food_cabinet"] = "Food Cabinet",
         ["drinks_dispenser"] = "Drinks Dispenser",
+        ["how_many"] = "How many to pour?",
+        ["needReplace"] = "Needs Replacing",
+        ["level"] = "Level: ",
     },
     progressbar = {
         ["progress_washing"] = "Washing hands",
