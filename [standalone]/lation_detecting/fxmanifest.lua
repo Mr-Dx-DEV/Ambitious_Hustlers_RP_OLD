@@ -5,7 +5,7 @@ lua54 'yes'
 name 'lation_detecting'
 author 'iamlation'
 description 'An advanced metal detecting resource for FiveM'
-version '4.0.6'
+version '2.0.7'
 
 server_scripts {
     '@oxmysql/lib/MySQL.lua',
