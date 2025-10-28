@@ -36,8 +36,8 @@ Config.ShowRadarIfHidden = true -- If radar is hidden and you set Config.BigRada
 
 -- Stress system
 Config.EnableStress = true           -- Use build-in stress system
-Config.AddStressWhileShooting = false -- Should add stress while shooting?
-Config.StressingSpeed = 100          -- Speed above which you start to get stressed
+Config.AddStressWhileShooting = true -- Should add stress while shooting?
+Config.StressingSpeed = 280          -- Speed above which you start to get stressed
 Config.MinimumStressForEffects = 50  -- Minimum Stress amount to start effects
 Config.WhtielistedWeapons = {        -- Here you can add some weapon models that "bypassing" stress system (not adding stress while shooting)
     -- Just add weapons models like bellow:
