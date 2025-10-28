@@ -60,7 +60,6 @@ Config.Main = { -- Main variables
 	JobRoles = { 				-- These are the job roles who can use items if RequiresJob is enabled.
 		"mechanic",
 		"kittys",
-		"bennys",
 	},
 
 	-- Add your extra job roles here or just leave as "mechanic"

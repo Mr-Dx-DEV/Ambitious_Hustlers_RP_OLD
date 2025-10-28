@@ -1,5 +1,8 @@
 ----- CRAFTING STUFF -------
 function mechCraftingMenu(data)
+
+    if not Helper.canWorkHere() then return end
+
     local Menu = {}
     local restrictionTable = {}
 
@@ -24,7 +27,7 @@ function mechCraftingMenu(data)
                     gang      = data.gang,
                     craftable = Crafting.Tools,
                     coords    = data.coords.xyz,
-                    stashName = data.stashName,
+                    stashName = Config.Crafting.StashCraft and repairStashName or "",
                     onBack    = function()
                         mechCraftingMenu(data)
                     end,
@@ -47,7 +50,7 @@ function mechCraftingMenu(data)
                     gang      = data.gang,
                     craftable = Crafting.Repairs,
                     coords    = data.coords.xyz,
-                    stashName = data.stashName,
+                    stashName = Config.Crafting.StashCraft and repairStashName or "",
                     onBack    = function()
                         mechCraftingMenu(data)
                     end,
@@ -70,7 +73,7 @@ function mechCraftingMenu(data)
                     gang      = data.gang,
                     craftable = Crafting.Perform,
                     coords    = data.coords.xyz,
-                    stashName = data.stashName,
+                    stashName = Config.Crafting.StashCraft and repairStashName or "",
                     onBack    = function()
                         mechCraftingMenu(data)
                     end,
@@ -87,7 +90,7 @@ function mechCraftingMenu(data)
                     gang      = data.gang,
                     craftable = Crafting.Extras,
                     coords    = data.coords.xyz,
-                    stashName = data.stashName,
+                    stashName = Config.Crafting.StashCraft and repairStashName or "",
                     onBack    = function()
                         mechCraftingMenu(data)
                     end,
@@ -110,7 +113,7 @@ function mechCraftingMenu(data)
                     gang      = data.gang,
                     craftable = Crafting.Cosmetic,
                     coords    = data.coords.xyz,
-                    stashName = data.stashName,
+                    stashName = Config.Crafting.StashCraft and repairStashName or "",
                     onBack    = function()
                         mechCraftingMenu(data)
                     end,
@@ -133,7 +136,7 @@ function mechCraftingMenu(data)
                     gang      = data.gang,
                     craftable = Crafting.Nos,
                     coords    = data.coords.xyz,
-                    stashName = data.stashName,
+                    stashName = Config.Crafting.StashCraft and repairStashName or "",
                     onBack    = function()
                         mechCraftingMenu(data)
                     end,

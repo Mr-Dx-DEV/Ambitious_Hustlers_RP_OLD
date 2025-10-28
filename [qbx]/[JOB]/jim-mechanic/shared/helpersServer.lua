@@ -295,24 +295,53 @@ if isServer() then
 		for locKey, location in pairs(Locations) do
 			if location.Enabled then
 				if isJobRole(location.job or location.gang) then
-					for index, _ in pairs(location.Stash) do
-						local info = Locations[locKey].Stash[index]
-						local name = (location.job or location.gang).."_Safe"
-						if not Config.Main.Stash.sharedStash then
-							name = name.."_"..locKey
-						end
 
-						if Config.Main.Stash.uniqueStash then
-							name = name.."_"..index
-						end
+					if location.Stash and #location.Stash > 0 then
+						for i = 1, #location.Stash do
+							local info = location.Stash[i]
+							local name = (location.job or location.gang).."_Safe"
+							if not Config.Main.Stash.sharedStash then
+								name = name.."_"..locKey
+							end
 
-						registerStash(name, (location.blip and location.blip.label or "").." "..(info.stashLabel or "Mech Stash").." ".."("..index..")"..(debugMode and " - ["..name.."]" or ""), info.slots or 50, info.maxWeight or 4000000)
-						if not Config.Main.Stash.uniqueStash then break end
+							if Config.Main.Stash.uniqueStash then
+								name = name.."_"..i
+							end
+							local coords = info.prop and info.prop.coords.xyz or info.coords.xyz
+							registerStash(name,
+								(location.blip and location.blip.label or "").." "..(info.stashLabel or "Mech Stash").." ".."("..i..")"..(debugMode and " - ["..name.."]" or ""),
+								info.slots or 50,
+								info.maxWeight or 4000000,
+								nil,
+								coords
+							)
+							if not Config.Main.Stash.uniqueStash then break end
+						end
 					end
-					if location.BossStash then
-						for index, _ in pairs(location.BossStash) do
-							local info = Locations[locKey].BossStash[index]
-							registerStash(info.stashName, info.stashLabel..(debugMode and " ["..info.stashName.."]" or ""), info.slots, info.maxWeight)
+					if location.BossStash and #location.BossStash > 0 then
+						for i = 1, #location.BossStash do
+							local info = location.BossStash[i]
+
+							local coords = info.prop and info.prop.coords.xyz or info.coords.xyz
+							registerStash(info.stashName,
+								info.stashLabel..(debugMode and " ["..info.stashName.."]" or ""),
+								info.slots or 50,
+								info.maxWeight or 4000000,
+								nil,
+								coords
+							)
+						end
+					end
+					if location.Shop and #location.Shop > 0 then
+						for i = 1, #location.Shop do
+							local info = location.Shop[i]
+
+							local coords = info.prop and info.prop.coords.xyz or info.coords.xyz
+							registerShop("nosShop", locale("storeMenu", "nosItems"), Stores.NosItems.items, location.job or location.gang, coords)
+							registerShop("toolShop", locale("storeMenu", "mechanicTools"), Stores.ToolItems.items, location.job or location.gang, coords)
+							registerShop("repairShop", locale("storeMenu", "repairItems"), Stores.RepairItems.items, location.job or location.gang, coords)
+							registerShop("performShop", locale("storeMenu", "performanceItems"), Stores.PerformItems.items, location.job or location.gang, coords)
+							registerShop("cosmeticShop", locale("storeMenu", "cosmeticItems"), Stores.CosmeticItems.items, location.job or location.gang, coords)
 						end
 					end
 				else
@@ -320,11 +349,6 @@ if isServer() then
 				end
 			end
 		end
-		registerShop("nosShop", locale("storeMenu", "nosItems"), Stores.NosItems.items, nil)
-		registerShop("toolShop", locale("storeMenu", "mechanicTools"), Stores.ToolItems.items, nil)
-		registerShop("repairShop", locale("storeMenu", "repairItems"), Stores.RepairItems.items, nil)
-		registerShop("performShop", locale("storeMenu", "performanceItems"), Stores.PerformItems.items, nil)
-		registerShop("cosmeticShop", locale("storeMenu", "cosmeticItems"), Stores.CosmeticItems.items, nil)
 	end, true)
 end
 

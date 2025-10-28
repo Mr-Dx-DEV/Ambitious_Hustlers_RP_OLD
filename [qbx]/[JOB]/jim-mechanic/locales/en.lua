@@ -41,6 +41,10 @@ Loc["en"] = {
         needDriver             	= "You need to be the driver to do this...",
 
         dutyMessage             = "Please contact a Mechanic!",
+
+        maxPerformance          = "Max Performance",
+        maxComplete             = "Vehicle mods upgraded to max",
+
     },
 
 	stancer = {
@@ -365,6 +369,7 @@ Loc["en"] = {
         antilagLabel           	= "Antilag",
         harnessLabel           	= "Harness",
         nitrousLabel           	= "Nitrous",
+        lightBarLabel           = "LightBars",
 
         oilPumpLabel            = "Oil Pump",
         driveShaftLabel         = "Drive Shaft",
@@ -445,7 +450,7 @@ Loc["en"] = {
         flippingVehicle        	= "Flipping vehicle",
         vehicleFlipped         	= "Success! Vehicle flipped",
         flipFailed             	= "Vehicle flip failed!",
-        --noSeatEntered          	= "No seat number entered",
+        noSeatEntered          	= "No seat number entered",
         moveSeat               	= "You move to seat ",
         seatFastWarning        	= "This vehicle is going too fast...",
         seatUnavailable        	= "This seat isn't available...",
@@ -504,6 +509,16 @@ Loc["en"] = {
         cannotChange = "Cannot change this plate",
         blacklisted = "Found blacklisted phrase",
         notOnline = "Owner isn't online"
+    },
+
+    vehSeats = {
+        hold                    = "Enter Seat (Hold)",
+        pickSeat                = "Pick a seat",
+        parked                  = "Vehicle is hard parked",
+        drivers                 = "Drivers Seat",
+        passenger               = "Passenger Seat",
+        rearLeft                = "Rear Left Seat",
+        rearRight               = "Rear Right Seat",
     },
 
     -- Vehicle Window Options (Array of options)

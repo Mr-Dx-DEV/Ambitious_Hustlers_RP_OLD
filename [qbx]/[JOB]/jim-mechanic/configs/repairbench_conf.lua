@@ -62,6 +62,7 @@ Config.Emergency = {
         ["Speakers"] = true,
         ["WindowTints"] = true,
         ["Rims"] = true,
+        ["Lightbar"] = true,
     },
 
     PreformaceTable = {

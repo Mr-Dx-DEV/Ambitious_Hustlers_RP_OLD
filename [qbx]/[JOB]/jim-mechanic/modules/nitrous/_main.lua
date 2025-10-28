@@ -54,7 +54,8 @@ if Config.NOS.enable then
                 Helper.updateHudNitrous(
                     VehicleNitrous[newValue.plate] and VehicleNitrous[newValue.plate].level or 0,
                     VehicleNitrous[newValue.plate] and VehicleNitrous[newValue.plate].hasnitro or false,
-                    false
+                    false,
+                    CPlate
                 )
             end
         end
@@ -166,7 +167,7 @@ if Config.NOS.enable then
                and not IsEntityInAir(CurrentVehicle))
                and GetPedInVehicleSeat(CurrentVehicle, -1) == Ped
             then
-                Helper.updateHudNitrous(VehicleNitrous[Plate].level, VehicleNitrous[Plate].hasnitro, false)
+                Helper.updateHudNitrous(VehicleNitrous[Plate].level, VehicleNitrous[Plate].hasnitro, false, Plate)
 
                 -- Purge
                 if purgemode then
@@ -232,7 +233,7 @@ if Config.NOS.enable then
                                         nitrousUseRate = nitrousUseRate + (Config.NOS.NitrousUseRate / 2)
                                     end
                                     Nitrous.localupdateLevel(Plate, (VehicleNitrous[Plate].level - nitrousUseRate))
-                                    Helper.updateHudNitrous(VehicleNitrous[Plate].level, VehicleNitrous[Plate].hasnitro, true)
+                                    Helper.updateHudNitrous(VehicleNitrous[Plate].level, VehicleNitrous[Plate].hasnitro, true, Plate)
 
                                 elseif VehicleNitrous[Plate].level - 1 <= 0 then
                                     TriggerServerEvent(getScript()..":server:setNitrous", VehToNet(CurrentVehicle), { unloadNitrous = true })
@@ -353,7 +354,7 @@ if Config.NOS.enable then
                 TriggerServerEvent(getScript()..":server:SyncFlame", VehToNet(CurrentVehicle), false, nil, nil)
             end
 
-            Helper.updateHudNitrous(VehicleNitrous[Plate].level, VehicleNitrous[Plate].hasnitro, false)
+            Helper.updateHudNitrous(VehicleNitrous[Plate].level, VehicleNitrous[Plate].hasnitro, false, Plate)
 
             NitrousActivated = false
             --boosting = false
@@ -436,9 +437,9 @@ if Config.NOS.enable then
             local plate = Helper.getTrimmedPlate(veh)
             if VehicleNitrous[plate] then
                 TriggerServerEvent(getScript()..":server:setNitrous", VehToNet(veh), { updateNitrous = true, level = VehicleNitrous[plate].level })
-                Helper.updateHudNitrous(VehicleNitrous[Plate].level, VehicleNitrous[Plate].hasnitro, false)
+                Helper.updateHudNitrous(VehicleNitrous[Plate].level, VehicleNitrous[Plate].hasnitro, false, Plate)
             else
-                Helper.updateHudNitrous()
+                Helper.updateHudNitrous(nil, nil, nil, plate)
             end
 
             if Config.NOS.HandlingChange and CurrentVehicle then

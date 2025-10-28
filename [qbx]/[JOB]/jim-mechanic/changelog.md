@@ -8,6 +8,71 @@ https://discord.gg/9pCDHmjYwd
 
 # Changelog
 
+## 3.6.15
+
+- Rewrite the GetVehicleProperties and SetVehicleProperties functions
+  - Now they are exactly the same on qb-core and ox_lib, REPLACE BOTH IF YOU HAVE BOTH
+- Add `vehicle_props_validator.lua` that warns users if they haven't replaced the functions
+  - (Can't wait for the anticheat tickets)
+- Fix Crafting and Repairs always using stashes (made the new functions TOO certain)
+- Fix Personal Stash creation (fixes not registered function)
+- Refactor Server Side stash creation, this should fix things like boss stashes not changing slots
+
+Files to replace:
+- client/makeLocs.lua
+- shared/helpersServer.lua
+- modules/crafting.lua
+- server/vehicle_props_validator.lua
+- _install/ox_properties.txt
+- _install/qb_properties.txt
+
+## 3.6.14
+
+- Now uses updated shop creation from jim_bridge
+- Now uses updated stash creation from jim_bridge
+- Add missing config option for triggering external player huds changes
+- Now passes the plate to `updateHudNitrous` for huds that need it
+- Add extra checks when deleting models to shut fivem warnings up
+- Re-work audio code to have hard limits on nearby sounds
+- Add support for vmt_lightbar (ONX police vehicles)
+  - Accessible in Emergency Repair Benches/"externals" item and adminCustoms Menu
+- Add maxPerformance option for adminCustoms
+  - Automatically maxes out engine/suspension/transmission/brakes
+- Add toggle for disabling seatbelt
+- Add locale table for vehicle seat picker
+- Make repair updates instantaneous for local player, instead of waiting for statebag
+- Fix harnessEjection config variable not being called correctly
+- Fix possible issue with auto clocking in when entering a location
+- Fix possible issue with /door and /seat not working on ox_lib
+- Refactor repairStashName selection to be more "certain"
+  - This *should* help with the job stashes not being picked when crafting/repairing
+- Refactor `VehicleStatus` handling
+  - I realised it was sending huge amounts of data WAY too often to clients instead of caching it
+  - This should help server performance alot
+
+Files to replace:
+
+- locales/en.lua (new variables)
+- client/consts.lua
+- client/makelocs.lua
+- configs/modifiers_config.lua (new variable)
+- configs/repairbench_conf.lua (new variable)
+- html/index.html
+- html/sound.js
+- modules/crafting.lua
+- moudules/extra/customDamages.lua
+- moudules/extra/inCarLogic.lua
+- moudules/ntirous/_main.lua
+- shared/audio.lua
+- shared/pushvehicle.lua
+- shared/adminCustoms.lua
+- shared/helpersServer.lua
+- shared/helpers.lua
+- shared/vehseats.lua
+- shared/encShared.lua
+- server/vehicleStatus.lua
+- server/commands.lua
+
 ## 3.6.13
 
 - Add support for `JG-Hud`

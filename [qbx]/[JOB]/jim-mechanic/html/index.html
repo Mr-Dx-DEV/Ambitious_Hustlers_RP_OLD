@@ -255,12 +255,13 @@
             updateHUD: () => updateHUD(data),
             updateSpeedometer: () => updateSpeedometer(data),
             playSound: () =>
-            play3DSound(
-                data.soundfile,
-                data.soundvolume || 0.35,  // default volume if not provided
-                data.audioCoord || { x:0, y:0, z:0 },  // default coordinates
-                data.audioRot || { x:0, y:0, z:0 }     // default orientation
-            ),
+                play3DSound(
+                    data.soundfile,
+                    data.soundvolume || 0.35,
+                    data.audioCoord || { x:0, y:0, z:0 },
+                    data.audioRot   || { x:0, y:0, z:0 },
+                    Number(data.maxDistance) || 30.0   // ensure a number
+                ),
             updateListener: () => updateListenerPosition(
                 data.pedCoord,
                 data.pedRot,

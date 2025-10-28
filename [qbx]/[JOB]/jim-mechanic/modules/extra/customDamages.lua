@@ -1,10 +1,10 @@
 onPlayerLoaded(function()
-    CreateThread(function()
-        while not GlobalState.VehicleStatus do Wait(100) end
-        debugPrint("^5Statebag^7: ^2Recieving ^4VehicleStatus: ^7'^6"..countTable(GlobalState.VehicleStatus).." ^2Entries^7'")
-        VehicleStatus = GlobalState.VehicleStatus
-    end)
+    TriggerServerEvent(getScript()..":server:RequestFullStatusList")
 end, true)
+
+RegisterNetEvent(getScript()..":client:ReceiveFullStatusList", function(data)
+    VehicleStatus = data or {}
+end)
 
 --==========================================================
 -- Get/Set Vehicle Status
@@ -37,6 +37,10 @@ end
 
 ExtraDamageComponents.setVehicleStatus = function(vehicle, part, level)
     debugPrint("^5Debug^7: ^2Updating ^4VehicleStatus ^2with server^7", part, level)
+    local plate = Helper.getTrimmedPlate(vehicle)
+    if VehicleStatus[plate] then
+        VehicleStatus[plate][part] = level
+    end
     TriggerServerEvent(getScript()..":server:updateVehicleStatus", VehToNet(vehicle), part, level)
 end
 

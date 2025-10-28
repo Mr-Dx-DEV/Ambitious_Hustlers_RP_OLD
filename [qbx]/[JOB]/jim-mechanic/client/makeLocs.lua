@@ -1,4 +1,5 @@
 local excludeKeys = { Enabled = true, job = true, gang = true, label = true, autoClock = true, logo = true, blip = true, zones = true, garage = true, booth = true, StashCraft = true }
+local personalStashRegistered = {}
 
 local makeLocs = false
 function makeLoc()
@@ -16,6 +17,23 @@ function makeLoc()
 		if loc.Enabled then
 			Locations[k].designatedName = "MechZone-"..k.."-"..(loc.job or loc.gang)
 
+			-- Preset repair/craftingTable stashes in location data
+			Locations[k].repairStashName = {}
+			for index = 1, #loc.Stash do
+				local name = (loc.job or loc.gang).."_Safe"
+				if not Config.Main.Stash.sharedStash then
+					name = name.."_"..k
+				end
+
+				if Config.Main.Stash.uniqueStash then
+					name = name .."_".. index
+					Locations[k].repairStashName[index] = name
+				else
+					Locations[k].repairStashName = name
+					break
+				end
+			end
+			--
 			local totalTargets = 0
 			for key, value in pairs(loc) do
 				if not excludeKeys[key] and type(value) == "table" then
@@ -39,26 +57,11 @@ function makeLoc()
 				points = loc.zones,
 				name = Locations[k].designatedName,
 				onEnter = function()
-					repairStashName = {}
-					if hasJob(loc.job or loc.gang) then
-						for index, _ in pairs(loc.Stash) do
-							local name = (loc.job or loc.gang).."_Safe"
-							if not Config.Main.Stash.sharedStash then
-								name = name.."_"..k
-							end
 
-							if Config.Main.Stash.uniqueStash then
-								name = name .."_".. index
-								repairStashName[index] = name
-							else
-								repairStashName = name
-								break
-							end
-							debugPrint("Has Job, setting stash name")
-						end
-					end
-					if loc.job ~= nil and hasJob(loc.job) then
-						if loc.autoClock and loc.autoClock.exit and not getPlayer().onDuty then
+					Helper.canWorkHere()
+
+					if loc.job and hasJob(loc.job) then
+						if loc.autoClock and loc.autoClock.enter and not getPlayer().onDuty then
 							toggleDuty()
 						end
 					end
@@ -141,7 +144,6 @@ function makeLoc()
 				end,
 				debug = debugMode,
 			})
-
 
 			if Config.Main.LocationBlips then
 				local blip = loc.blip or loc.Blip
@@ -270,7 +272,7 @@ function createTarget(targetType, targets, id, loc, bossroles, stashCraft)
 						gang = loc.gang,
 						coords = coords.xyz,
 						restrict = restrict,
-						stashName = Config.Crafting.StashCraft and repairStashName
+						stashName = Config.Crafting.StashCraft and repairStashName or ""
 					})
 
 
@@ -304,8 +306,7 @@ function createTarget(targetType, targets, id, loc, bossroles, stashCraft)
 					local citizenId = getPlayer().citizenId
 					local stashName = (loc.job or loc.gang)..citizenId
 
-					-- lock OX stash check behind script check
-					if isStarted(OXInv) then
+					if not personalStashRegistered[target.stashName..citizenId] then
 						currentToken = triggerCallback(AuthEvent)
 						Wait(100)
 
@@ -315,10 +316,11 @@ function createTarget(targetType, targets, id, loc, bossroles, stashCraft)
 							target.slots or 10,
 							target.maxWeight or 400000,
 							citizenId,
-							target.coords,
+							target.prop and target.prop.coords or target.coords,
 							currentToken
 						)
 						currentToken = nil
+						personalStashRegistered[target.stashName..citizenId] = true
 					end
 					openStash({
 						stash = stashName,
@@ -329,7 +331,7 @@ function createTarget(targetType, targets, id, loc, bossroles, stashCraft)
 					})
 
 				elseif targetType == "Outfit" then
-					TriggerEvent("qb-clothing:client:openOutfitMenu")
+					openClothing()
 
 				elseif targetType == "NosRefill" then
 					Nitrous.NosCanFill({ coords = coords.xyz, tank = type(data) == "table" and data.entity or data, society = loc.job or loc.gang })
@@ -368,7 +370,7 @@ function createTarget(targetType, targets, id, loc, bossroles, stashCraft)
 		elseif targetType == "PersonalStash" then
             options[#options+1] = {
 				action = function()
-					TriggerEvent("qb-clothing:client:openOutfitMenu")
+					openClothing()
 				end,
 				job = loc.job,
 				gang = loc.gang,

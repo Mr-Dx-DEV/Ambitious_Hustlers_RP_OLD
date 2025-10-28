@@ -33,7 +33,8 @@ onResourceStart(function()
 			end
 		end
 	end
-		-- Check if theres a missing item/mistake in the repair materials
+
+	-- Check if theres a missing item/mistake in the repair materials
 	if not Config.Repairs.FreeRepair then
 		local repairTable = { "engine", "body", "oil", "axle", "spark", "battery", "fuel", }
 		for _, v in pairs(repairTable) do

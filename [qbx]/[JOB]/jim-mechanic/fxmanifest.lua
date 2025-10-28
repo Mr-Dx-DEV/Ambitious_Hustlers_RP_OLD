@@ -1,6 +1,6 @@
 name "Jim-Mechanic"
 author "Jimathy"
-version "5.6.13"
+version "3.6.15"
 description "Advanced Mechanic Script"
 fx_version "cerulean"
 game "gta5"
@@ -47,16 +47,19 @@ escrow_ignore {
 	'locales/*.lua',
 	'modules/*.lua',
 	'modules/**/**.lua',
-	'server/adminCustoms.lua',
-	'server/functionserver.lua',
-    'server/main.lua',
+
     'server/commands.lua',
+    'server/main.lua',
     'server/usableItems.lua',
+    'server/vehicleStatus.lua',
+
     'shared/helpers.lua',
+    'shared/adminCustoms.lua',
     'shared/helpersServer.lua',
     'shared/recipes.lua',
     'shared/platechange.lua',
-	'html/*.lua',
+
+    'html/*.lua',
     'html/*.css',
     'html/*.html',
     'html/*.js',

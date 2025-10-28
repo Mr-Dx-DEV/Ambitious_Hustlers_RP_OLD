@@ -241,7 +241,7 @@ RegisterNetEvent(getScript()..":Client:EnteredVehicle", function()
 
                     if Config.Harness.AltEjection then
                         -- If crash ejection is globally disabled OR harness is worn and ejection is not allowed
-                        if Config.Harness.disableCrashEjection or (HasHarness() and not Config.harnessEjection) then
+                        if Config.Harness.disableCrashEjection or (HasHarness() and not Config.Harness.harnessEjection) then
                             -- Set insane values so GTA never ejects
                             SetFlyThroughWindscreenParams(10000.0, 10000.0, 17.0, 500.0)
                         else
@@ -290,7 +290,7 @@ RegisterNetEvent(getScript()..":Client:EnteredVehicle", function()
             nos = { VehicleNitrous[plate].hasnitro, VehicleNitrous[plate].level }
         end
         -- update hud with nos if needed
-        Helper.updateHudNitrous(nos[2] or 0, nos[1] or false, false)
+        Helper.updateHudNitrous(nos[2] or 0, nos[1] or false, false, plate)
 
         -- grab milage data from server
         dist = triggerCallback(getScript()..":callback:distGrab", plate)
@@ -392,13 +392,13 @@ AddEventHandler('entityDamaged', function (entity, _, weapon, _)
         if not Config.Harness.AltEjection and not Config.Harness.disableCrashEjection and not Helper.isBike(model) then
 
             -- Block ejection if wearing harness and it's supposed to prevent ejection
-            if HasHarness() and not Config.harnessEjection then goto skip end
+            if HasHarness() and not Config.Harness.harnessEjection then goto skip end
 
             local speed = currentVehCache.thisSpeed
             local speedDivisor = Config.System.distkph and 3.6 or 2.237
             local minSpeed
 
-            if HasHarness() and Config.harnessEjection then
+            if HasHarness() and Config.Harness.harnessEjection then
                 minSpeed = Config.Harness.minimumSeatBeltSpeed * speedDivisor
             elseif seatBeltOn() then
                 minSpeed = Config.Harness.minimumSeatBeltSpeed * speedDivisor
@@ -638,7 +638,7 @@ if Config.Harness.HarnessControl == true then
                     local shouldToggleHarness = false
 
                     if VehicleStatus[plate].harness == 1 then
-                        if not harnessOn then
+                        if Config.Harness.seatbeltSounds and not harnessOn then
 
                             TriggerServerEvent(getScript()..":server:playSound", "rapell", VehToNet(veh), nil, 0.75)
 
@@ -678,9 +678,9 @@ if Config.Harness.HarnessControl == true then
                         if seatbeltOn then SeatBeltLoop() end
 
                         Helper.externalSeatbeltToggle(seatbeltOn)
-
-                        TriggerServerEvent(getScript()..":server:playSound", (seatbeltOn and "seatbelt" or "seatbeltoff"), VehToNet(veh), nil, 0.35)
-
+                        if Config.Harness.seatbeltSounds then
+                            TriggerServerEvent(getScript()..":server:playSound", (seatbeltOn and "seatbelt" or "seatbeltoff"), VehToNet(veh), nil, 0.35)
+                        end
                         if Config.Harness.seatbeltNotify then
                             triggerNotify(nil, seatbeltOn and locale("extraOptions", "seatbeltOnMsg") or locale("extraOptions", "seatbeltOffMsg"), "success")
                         end

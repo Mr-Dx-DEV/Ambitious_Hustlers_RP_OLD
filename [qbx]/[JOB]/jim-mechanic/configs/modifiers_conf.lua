@@ -25,11 +25,13 @@ Config.PlateChange = {
 
     ItemRequiresJob = true,         -- Only allow set jobs to change plates
     ItemJobRestrictions = {         -- List of job roles that can change plates (if enabled)
-        "mechanic", "kittys",
+        "mechanic",
+        "kittys",
     },
     CommandRequiresJob = true,      -- Only allow set jobs to change plates with a command
     CommandJobRestrictions = {      -- List of job roles that can change plates (if enabled)
-        "mechanic", "kittys",
+        "mechanic",
+        "kittys",
     },
     UseCommand = true,              -- Set "true" if you want to use "/" commands.
     Command = "setplate",           -- the command to be used (if enabled)
@@ -71,13 +73,15 @@ Config.Harness = {
     minimumDamage = 15.0, 			-- Minimum body damage for ejecting a player (default 15 = .15%)
 
     harnessEjection = false,        -- Set this to true to allow ejection with a harness on
-    harnessSpeed = 67.5,           -- Minimum speed to eject with harness on Default: 200.0 (150 mph)
+    harnessSpeed = 67.5,            -- Minimum speed to eject with harness on Default: 200.0 (150 mph)
 
     crashKill = false,				-- Set to true if you want ejecting when crashing to kill/injure
 
     AltEjection = true,			    -- Enabling this may make some varibles above not be used
                                     -- Attempts to use in game engine logic for crashes and its more optimizied
                                     -- If any issues just disable this
+
+    seatbeltSounds = true,          -- Disable seatbelt and harness sounds
 
 }
 
@@ -170,7 +174,7 @@ Config.Repairs = {	--Repair Related
 
 Config.Previews = {
     PreviewPhone = false, 		-- Enable this is preview menu generates an email, False if you want to give an item
-    PreviewJob = false, 			-- Enable this if you want /preview to require a Job Role
+    PreviewJob = true, 			-- Enable this if you want /preview to require a Job Role
     PreviewLocation = true, 	-- Enable this if you want to lock /preview to a job location (ignored if LocationRequired is false)
 
     PhoneItems = {
@@ -218,6 +222,8 @@ Config.NOS = {
 
     useExternalHud = false,     -- If this is true it will use a helper function to show nos on other huds
                                 -- If false, you only need to use the built in speedometer
+
+    useExternalHudForNos = true,    -- Enables nos showing in external huds (add the functions for yours in Helper.updateHudNitrous)
 
     NitrousUseRate = 0.4, 		-- How fast the nitrous drains (halved for level1, doubled for level3)
                                 -- 0.4 seems reasonable for a standard setting

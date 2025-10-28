@@ -210,7 +210,7 @@ Helper.disableManualGears = function(veh, plate)
 	TriggerEvent("vlad_gears:entered_listener")
 end
 
-Helper.updateHudNitrous = function(level, hasNitro, toggle)
+Helper.updateHudNitrous = function(level, hasNitro, toggle, plate)
 	if Config.NOS.useExternalHudForNos then
 		if isStarted("qb-hud") then
 			TriggerEvent("hud:client:UpdateNitrous", level or 0, toggle)
@@ -320,7 +320,7 @@ local updateTimers = {}
 Helper.addCarToUpdateLoop = function(vehicle)
     if DoesEntityExist(vehicle) and vehicle ~= 0 and vehicle ~= nil then
         local newProps = getVehicleProperties(vehicle)
-        setVehicleProperties(vehicle, newProps)
+        --setVehicleProperties(vehicle, newProps)
 		local plate = Helper.getTrimmedPlate(vehicle)
         if updateTimers[vehicle] then
             debugPrint("^5Debug^7: ^2Vehicle ^7'^4"..plate.."^7' ^2already scheduled^7. ^2Cancelling old timer and updating properties^7.")
@@ -369,7 +369,7 @@ Helper.ReceiveCarUpdateSync = function(netId, props, src)
         local vehicle = ensureNetToVeh(netId)
         if vehicle ~= 0 and DoesEntityExist(vehicle) then
             debugPrint("^5Debug^7: ^2Updating properties for vehicle ^7'^4" .. props.plate .. "^7'.")
-            setVehicleProperties(vehicle, props)
+            --setVehicleProperties(vehicle, props)
         else
             debugPrint("^1Error^7: ^2Vehicle ^7'^4"..props.plate.."^7' ^2does not exist or has an invalid netId.")
         end
@@ -384,6 +384,14 @@ end)
 
 -- Job Helpers
 Helper.canWorkHere = function()
+	if inLocation ~= "" then
+		for _, v in pairs(Locations) do
+			if inLocation == v.designatedName and hasJob(((v.job and v.job) or (v.gang and v.gang)) or "") then
+				repairStashName = v.repairStashName
+				break
+			end
+		end
+	end
 	if Config.Main.JobLocationRequired then
 		local check = false
 		if inLocation ~= "" then
