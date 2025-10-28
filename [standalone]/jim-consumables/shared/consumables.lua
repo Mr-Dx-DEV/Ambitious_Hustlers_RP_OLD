@@ -1,24 +1,33 @@
 Config = Config or {}
 
 Config.Consumables = {
+	vodka = { 			        emote = "vodkab", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(10, 20), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20, 40), screen = "focus", widepupils = true, canOD = true } },
+    beer = { 			        emote = "beer", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(10, 20), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20, 40), screen = "focus", widepupils = true, canOD = true } },
+    whiskey = { 		        emote = "whiskey", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(10, 20), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20, 40), screen = "focus", widepupils = true, canOD = true } },
+    wine = { 		        emote = "whiskey", canRun = false, disableWalk = false, time = math.random(5000, 6000), stress = math.random(10, 20), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(20, 40), screen = "focus", widepupils = true, canOD = true } },
+    
+	sandwich = {                emote = "sandwich", 	canRun = false, 	time = math.random(5000, 6000), stress = 0, heal = 0, armor = 0, type = "food", stats = { hunger = 20, }},
 
+    twerks_candy = {            emote = "egobar", 		canRun = true, 		time = math.random(5000, 6000), stress = 0, heal = 0, armor = 0, type = "food", stats = { hunger = math.random(10,15), }},
+    snikkel_candy = {           emote = "egobar", 		canRun = true, 		time = math.random(5000, 6000), stress = 0, heal = 0, armor = 0, type = "food", stats = { hunger = math.random(10,15), }},
+
+    coffee = {                  emote = "coffee", 		canRun = false, 	time = math.random(5000, 6000), stress = 0, heal = 0, armor = 0, type = "drink", stats = { time = 10000, thirst = math.random(10,15), }},
+    water_bottle = {            emote = "drink", 		canRun = false, 	time = math.random(5000, 6000), stress = 0, heal = 0, armor = 0, type = "drink", stats = { thirst = 20, }},
+    tosti = {                   emote = "sandwich", 	canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(10,15), }},
+
+    kurkakola = { 		        emote = "ecola", 		canRun = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(10,20), }},
+
+   
 
 
     --Effects can be applied here, like stamina on coffee for example
-		["vodka"] = { 			emote = "vodkab", 		canRun = false, 	time = math.random(5000, 6000), stress = 0, heal = 0, armor = 0, type = "alcohol", stats = { effect = "heal", time = 5000, amount = 2, thirst = math.random(10,20), canOD = true }},
-		["beer"] = { 			emote = "beer", 		canRun = false, 	time = math.random(5000, 6000), stress = 0, heal = 0, armor = 0, type = "alcohol", stats = { effect = "heal", time = 5000, amount = 2, thirst = math.random(10,20), canOD = true }},
-		["whiskey"] = { 			emote = "whiskey", 		canRun = false, 	time = math.random(5000, 6000), stress = 0, heal = 0, armor = 0, type = "alcohol", stats = { effect = "heal", time = 5000, amount = 2, thirst = math.random(10,20), canOD = true }},
-	
+		
 
 	--	["vodka"] = { 			emote = "vodkab", 		canRun = false,  disableWalk = false, 	time = math.random(5000, 6000), stress = 0, heal = 0, armor = 0, type = "alcohol", stats = { effect = "stress", time = 5000, amount = 2, thirst = math.random(20,30), canOD = true }},
 	--	["beer"] = { 			emote = "beer", 		canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(10,20), canOD = true }},
 	--	["whiskey"] = { 		emote = "whiskey",  	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(10,20), canOD = true }},
-		["grapejuice"] = { 		emote = "drink",  		canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(10,20), canOD = true }},
-		["sandwich"] = { 		emote = "sandwich", 	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(10,20), }},
-
-		["twerks_candy"] = { 	emote = "egobar", 		canRun = true, 		time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(10,20), }},
-		["snikkel_candy"] = { 	emote = "egobar", 		canRun = true, 		time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(10,20), }},
-		["tosti"] = { 			emote = "sandwich", 	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(10,20), }},
+		grapejuice = { 		emote = "drink",  		canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "alcohol", stats = { thirst = math.random(10,20), canOD = true }},
+		
 		["casino_burger"] = { 	emote = "burger", 	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(10,20), }},
 		["casino_psqs"] = { 	emote = "candybox", 	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(10,20), }},
 		["casino_ego_chaser"] = { 	emote = "sandwich", 	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(10,20), }},
@@ -26,9 +35,6 @@ Config.Consumables = {
 		["casino_donut"] = { 		emote = "donut", 	canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "food", stats = { hunger = math.random(10,20), }},
 
 
-		["coffee"] = { 			emote = "coffee", 		canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(10,20), }},
-		["water_bottle"] = { 	emote = "drink", 		canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(10,20), }},
-		["kurkakola"] = { 		emote = "ecola", 		canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(10,20), }},
 		["casino_beer"] = { 		emote = "beer", 		canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(10,20), }},
 		["casino_coke"] = { 		emote = "ecola", 		canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(10,20), }},
 		["casino_sprite"] = { 		emote = "ecola", 		canRun = false, disableWalk = false, 	time = math.random(5000, 6000), stress = math.random(2, 4), heal = 0, armor = 0, type = "drink", stats = { thirst = math.random(10,20), }},
