@@ -1,6 +1,12 @@
 Config = Config or {}
 
 Config.Emotes = {
+  meat = { "move_crouch_proto", "idle", "Meat On A Stick", AnimationOptions = { Prop = "bzzz_camp_stick_kebab", PropBone = 64080, PropPlacement = { 0.0600, 0.0500, -0.1600, 17.0651, -30.9089, 60.0374 }, EmoteLoop = true, EmoteMoving = true }},
+sipshakec = { "smo@milkshake_idle", "milkshake_idle_clip", "Sip Milkshake - Chocolate", AnimationOptions = { Prop = "brum_cherryshake_chocolate", PropBone = 28422, PropPlacement = { 0.0850, 0.0670, -0.0350, -115.0862, -165.7841, 24.1318 }, EmoteLoop = true, EmoteMoving = true }},
+sipshakeh = { "smo@milkshake_idle", "milkshake_idle_clip", "Sip Milkshake - Mint", AnimationOptions = { Prop = "brum_cherryshake_mint", PropBone = 28422, PropPlacement = { 0.0850, 0.0670, -0.0350, -115.0862, -165.7841, 24.1318 }, EmoteLoop = true, EmoteMoving = true }},
+sipshakei = { "smo@milkshake_idle", "milkshake_idle_clip", "Sip Milkshake - Strawberry", AnimationOptions = { Prop = "brum_cherryshake_strawberry", PropBone = 28422, PropPlacement = { 0.0850, 0.0670, -0.0350, -115.0862, -165.7841, 24.1318 }, EmoteLoop = true, EmoteMoving = true }},
+meat2 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Meat On A Fork", AnimationOptions = { Prop = "bzzz_camp_food_kebab", PropBone = 18905, PropPlacement = { 0.14, 0.02, 0.01, -24.0, -80.0, 9.0 }, EmoteLoop = true, EmoteMoving = true }},
+
     drink = { "mp_player_intdrink", "loop_bottle", "Drink",                                     AnimationOptions = { Prop = "prop_ld_flow_bottle",      PropBone = 18905, PropPlacement = {0.12, 0.008, 0.03, 240.0, -60.0}, EmoteMoving = true, EmoteLoop = true, }},
     milk = {"mp_player_intdrink", "loop_bottle", "Glass of milk",                               AnimationOptions = { Prop = 'bzzz_farmprops_milk_a',    PropBone = 18905, PropPlacement = {-0.02, -0.04, 0.1, 34.0, 140.0, 224.0}, EmoteLoop = true, EmoteMoving = true, }},
     coffee = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Coffee",                AnimationOptions = { Prop = 'p_amb_coffeecup_01',       PropBone = 28422, PropPlacement = {0.0,0.0,0.0,0.0,0.0,0.0}, EmoteLoop = true, EmoteMoving = true }},
@@ -86,4 +92,134 @@ Config.Emotes = {
     smoke2 = { "amb@world_human_aa_smoke@male@idle_a", "idle_c", "Smoke 2",                     AnimationOptions = { Prop = 'prop_cs_ciggy_01', PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }, EmoteLoop = true, EmoteMoving = true }},
     smokecigar = { "amb@world_human_aa_smoke@male@idle_a", "idle_c", "Smoke Cigar",             AnimationOptions = { Prop = 'prop_cigar_01', PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.0, 0.0, 0.0, 180.0 }, EmoteLoop = true, EmoteMoving = true }},
     uncuff = { "mp_arresting", "a_uncuff", "Uncuff",                                            AnimationOptions = { EmoteLoop = true, EmoteMoving = true }},
+
+
+
+
+-- Galaxy
+browncup = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Brown Cup", AnimationOptions = { Prop = 'v_serv_bs_mug', PropBone = 28422, PropPlacement = { 0.03, -0.02, 0.0, 0.0, 0.0, 0.0 }, EmoteLoop = true, EmoteMoving = true }},
+whiskeyb = { "mp_player_intdrink", "loop_bottle", "(Don't Use) Whiskey Bottle", AnimationOptions = { Prop = "prop_cs_whiskey_bottle", PropBone = 60309, PropPlacement = { 0.0, 0.0, 0.0, 0.0, 0.0 }, EmoteMoving = true, EmoteLoop = true }},
+rumb = { "mp_player_intdrink", "loop_bottle", "(Don't Use) Rum Bottle", AnimationOptions = { Prop = "prop_rum_bottle", PropBone = 18905, PropPlacement = { 0.03, -0.18, 0.10, 240.0, -60.0 }, EmoteMoving = true, EmoteLoop = true }},
+icream = { "mp_player_intdrink", "loop_bottle", "Irish Cream Bottle", AnimationOptions = { Prop = "prop_bottle_brandy", PropBone = 18905, PropPlacement = { 0.00, -0.26, 0.10, 240.0, -60.0 }, EmoteMoving = true, EmoteLoop = true }},
+ginb = { "mp_player_intdrink", "loop_bottle", "(Don't Use) Gin Bottle", AnimationOptions = { Prop = "prop_tequila_bottle", PropBone = 18905, PropPlacement = { 0.00, -0.26, 0.10, 240.0, -60.0 }, EmoteMoving = true, EmoteLoop = true }},
+
+-- Pizzeria
+redwine = { "mp_player_intdrink", "loop_bottle", "Red Wine Bottle", AnimationOptions = { Prop = "prop_wine_rose", PropBone = 18905, PropPlacement = { 0.00, -0.26, 0.10, 240.0, -60.0 }, EmoteMoving = true, EmoteLoop = true }},
+whitewine = { "mp_player_intdrink", "loop_bottle", "White Wine Bottle", AnimationOptions = { Prop = "prop_wine_white", PropBone = 18905, PropPlacement = { 0.00, -0.26, 0.10, 240.0, -60.0 }, EmoteMoving = true, EmoteLoop = true }},
+beer1 = { "mp_player_intdrink", "loop_bottle", "Dusche", AnimationOptions = { Prop = "prop_beerdusche", PropBone = 18905, PropPlacement = { 0.04, -0.14, 0.10, 240.0, -60.0 }, EmoteMoving = true, EmoteLoop = true }},
+beer2 = { "mp_player_intdrink", "loop_bottle", "Logger", AnimationOptions = { Prop = "prop_beer_logopen", PropBone = 18905, PropPlacement = { 0.03, -0.18, 0.10, 240.0, -60.0 }, EmoteMoving = true, EmoteLoop = true }},
+beer3 = { "mp_player_intdrink", "loop_bottle", "AM Beer", AnimationOptions = { Prop = "prop_beer_amopen", PropBone = 18905, PropPlacement = { 0.03, -0.18, 0.10, 240.0, -60.0 }, EmoteMoving = true, EmoteLoop = true }},
+beer4 = { "mp_player_intdrink", "loop_bottle", "Pisswasser1", AnimationOptions = { Prop = "prop_beer_pissh", PropBone = 18905, PropPlacement = { 0.03, -0.18, 0.10, 240.0, -60.0 }, EmoteMoving = true, EmoteLoop = true }},
+beer5 = { "mp_player_intdrink", "loop_bottle", "Pisswasser2", AnimationOptions = { Prop = "prop_amb_beer_bottle", PropBone = 18905, PropPlacement = { 0.12, 0.008, 0.03, 240.0, -60.0 }, EmoteMoving = true, EmoteLoop = true }},
+beer6 = { "mp_player_intdrink", "loop_bottle", "Pisswasser3", AnimationOptions = { Prop = "prop_cs_beer_bot_02", PropBone = 18905, PropPlacement = { 0.12, 0.008, 0.03, 240.0, -60.0 }, EmoteMoving = true, EmoteLoop = true }},
+pizza = { "mp_player_inteat@burger", "mp_player_int_eat_burger_fp", "Pizza", AnimationOptions = { Prop = "v_res_tt_pizzaplate", PropBone = 18905, PropPlacement = { 0.20, 0.038, 0.051, 15.0, 155.0 }, EmoteMoving = true, EmoteLoop = true }},
+bowl = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Bowl", AnimationOptions = { Prop = "h4_prop_h4_coke_plasticbowl_01", PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }, EmoteMoving = true, EmoteLoop = true }},
+pineapple = { "mp_player_inteat@burger", "mp_player_int_eat_burger_fp", "Pineapple", AnimationOptions = { Prop = "prop_pineapple", PropBone = 18905, PropPlacement = { 0.10, 0.038, 0.03, 15.0, 50.0 }, EmoteMoving = true, EmoteLoop = true }},
+foodbowl = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Food Bowl", AnimationOptions = { Prop = "prop_cs_bowl_01", PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.050, 0.0, 0.0, 0.0 }, EmoteMoving = true, EmoteLoop = true }},
+donut = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Donut", AnimationOptions = { Prop = 'prop_amb_donut', PropBone = 18905, PropPlacement = { 0.13, 0.05, 0.02, -50.0, 16.0, 60.0 }, EmoteMoving = true }},
+candybox = { "mp_player_inteat@pnq", "loop", "Candy", AnimationOptions = { Prop = 'ng_proc_candy01a', PropBone = 60309, PropPlacement = { -0.0300, 0.0180, 0.0, 180.0, 180.0, -88.099 }, EmoteMoving = true }},
+
+-- UwU Cafe
+uwu1 = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "UwU Drink S", AnimationOptions = { Prop = 'uwu_sml_drink', PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.0, 0.0, 0.0, 130.0 }, EmoteLoop = true, EmoteMoving = true }},
+uwu2 = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "UwU Drink L", AnimationOptions = { Prop = 'uwu_lrg_drink', PropBone = 28422, PropPlacement = { 0.03, 0.0, -0.08, 0.0, 0.0, 130.0 }, EmoteLoop = true, EmoteMoving = true }},
+uwu3 = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "UwU Cup Straw", AnimationOptions = { Prop = 'uwu_cup_straw', PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.0, 0.0, 0.0, 130.0 }, EmoteLoop = true, EmoteMoving = true }},
+uwu4 = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "UwU Mug", AnimationOptions = { Prop = 'uwu_mug', PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.0, 0.0, 0.0, 130.0 }, EmoteLoop = true, EmoteMoving = true }},
+uwu5 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "UwU Pastry", AnimationOptions = { Prop = 'uwu_pastry', PropBone = 18905, PropPlacement = { 0.16, 0.06, -0.03, -50.0, 16.0, 60.0 }, EmoteMoving = true }},
+uwu6 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "UwU Cookie", AnimationOptions = { Prop = 'uwu_cookie', PropBone = 18905, PropPlacement = { 0.16, 0.08, -0.01, -225.0, 20.0, 60.0 }, EmoteMoving = true }},
+uwu7 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "UwU Sushi", AnimationOptions = { Prop = 'uwu_sushi', PropBone = 18905, PropPlacement = { 0.18, 0.03, 0.02, -50.0, 16.0, 60.0 }, EmoteMoving = true }},
+uwu8 = { "amb@world_human_seat_wall_eating@male@both_hands@idle_a", "idle_c", "UwU Egg Roll", AnimationOptions = { Prop = 'uwu_eggroll', PropBone = 60309, PropPlacement = { 0.10, 0.03, 0.08, -95.0, 60.0, 0.0 }, EmoteMoving = true }},
+uwu9 = { "anim@scripted@island@special_peds@pavel@hs4_pavel_ig5_caviar_p1", "base_idle", "UwU Salad Bowl", AnimationOptions = { Prop = "uwu_salad_bowl", PropBone = 60309, PropPlacement = { 0.0, 0.0300, 0.0100, 0.0, 0.0, 0.0 }, SecondProp = 'uwu_salad_spoon', SecondPropBone = 28422, SecondPropPlacement = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }, EmoteLoop = true, EmoteMoving = true }},
+uwu10 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "UwU Sandy", AnimationOptions = { Prop = 'uwu_sandy', PropBone = 18905, PropPlacement = { 0.16, 0.08, 0.05, -225.0, 20.0, 60.0 }, EmoteMoving = true }},
+uwu11 = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "UwU Cupcake", AnimationOptions = { Prop = 'uwu_cupcake', PropBone = 28422, PropPlacement = { 0.0, 0.0, -0.03, 0.0, 0.0, 130.0 }, EmoteLoop = true, EmoteMoving = true }},
+uwu12 = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "UwU Boba Tea", AnimationOptions = { Prop = 'uwu_btea', PropBone = 28422, PropPlacement = { 0.02, 0.0, -0.05, 0.0, 0.0, 130.0 }, EmoteLoop = true, EmoteMoving = true }},
+uwu13 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "UwU Gdasik", AnimationOptions = { Prop = 'uwu_gdasik', PropBone = 18905, PropPlacement = { 0.16, 0.08, 0.02, -225.0, 20.0, 60.0 }, EmoteMoving = true }},
+
+-- Koi
+koiramune = { "mp_player_intdrink", "loop_bottle", "Koi Ramune", AnimationOptions = { Prop = "prop_cs_script_bottle", PropBone = 18905, PropPlacement = { 0.12, 0.008, 0.03, 240.0, -60.0 }, EmoteMoving = true, EmoteLoop = true }},
+
+-- Up-n-Atom
+atomstriplecheeseburger = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Atoms Triple Cheese Burger", AnimationOptions = { Prop = 'gn_upnatom_vw_the_triple_cheesy_bacon_burger', PropBone = 18905, PropPlacement = { 0.13, 0.05, 0.02, -50.0, 16.0, 60.0 }, EmoteMoving = true }},
+atomstripleburger = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Atoms Triple Burger", AnimationOptions = { Prop = 'gn_upnatom_vw_the_triple_burger', PropBone = 18905, PropPlacement = { 0.13, 0.05, 0.02, -50.0, 16.0, 60.0 }, EmoteMoving = true }},
+atomsbeacontriplecheeseburger = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Atoms Bacon Triple Cheese Burger", AnimationOptions = { Prop = 'gn_upnatom_vw_the_10_slice_of_bacon_triple_cheese_melt', PropBone = 18905, PropPlacement = { 0.13, 0.08, 0.03, -100.0, 0.0, 10.0 }, EmoteMoving = true }},
+atomorangotang = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Orangotang", AnimationOptions = { Prop = 'gn_upnatom_vw_tray_orangotang', PropBone = 18905, PropPlacement = { 0.13, 0.08, 0.03, -100.0, 0.0, 10.0 }, EmoteMoving = true }},
+atommeteorite = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Meteorite", AnimationOptions = { Prop = 'gn_upnatom_vw_tray_meteorite', PropBone = 18905, PropPlacement = { 0.13, 0.08, 0.03, -100.0, 0.0, 10.0 }, EmoteMoving = true }},
+atomsoda = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Atom Soda", AnimationOptions = { Prop = 'gn_upnatom_vw_soda_cup', PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.1, 0.0, 0.0, -50.0 }, EmoteLoop = true, EmoteMoving = true }},
+atommilk = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Atom Milk Bottle", AnimationOptions = { Prop = 'gn_upnatom_vw_milk', PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.02, 0.0, 0.0, -50.0 }, EmoteLoop = true, EmoteMoving = true }},
+atommilkshake = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Atom Milkshake", AnimationOptions = { Prop = 'gn_upnatom_vw_jumbo_shake', PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.02, 0.0, 0.0, -50.0 }, EmoteLoop = true, EmoteMoving = true }},
+atomfries = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Atom Fries", AnimationOptions = { Prop = 'gn_upnatom_vw_fries', PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.02, 0.0, 0.0, -50.0 }, EmoteLoop = true, EmoteMoving = true }},
+atomchilidog = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Atom Chili Dog", AnimationOptions = { Prop = 'gn_upnatom_vw_footlong_chili_dog', PropBone = 60309, PropPlacement = { -0.0300, 0.0100, -0.02, 95.1071, 94.7001, -66.9179 }, EmoteMoving = true }},
+atomcoffee = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Atom Coffee", AnimationOptions = { Prop = 'gn_upnatom_vw_coffee', PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.1, 0.0, 0.0, -50.0 }, EmoteLoop = true, EmoteMoving = true }},
+
+
+
+ramen = { "anim@scripted@island@special_peds@pavel@hs4_pavel_ig5_caviar_p1", "base_idle", "Ramen", AnimationOptions = { Prop = "h4_prop_h4_caviar_tin_01a", PropBone = 60309, PropPlacement = { 0.0, 0.0300, 0.0100, 0.0, 0.0, 0.0 }, SecondProp = "h4_prop_h4_caviar_spoon_01a", SecondPropBone = 28422, SecondPropPlacement = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }, EmoteLoop = true, EmoteMoving = true }},
+wrap = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Wrap", AnimationOptions = { Prop = "prop_wrap_chickpepper", PropBone = 18905, PropPlacement = { 0.14, 0.02, 0.06, 232.0, -45.0, 13.0 }, EmoteMoving = true, EmoteLoop = true }},
+panini = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Panini", AnimationOptions = { Prop = "prop_panini", PropBone = 18905, PropPlacement = { 0.15, 0.07, 0.01, 114.0, 393.0, 81.0 }, EmoteMoving = true, EmoteLoop = true }},
+icecreamcup = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Vanilla Icecream Cup", AnimationOptions = { Prop = "prop_vanillacup", PropBone = 18905, PropPlacement = { 0.14, 0.03, 0.01, 85.0, 70.0, -203.0 }, EmoteMoving = true, EmoteLoop = true }},
+cheesecake = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Taiyaki", AnimationOptions = { Prop = "prop_cheese_cake", PropBone = 18905, PropPlacement = { 0.14, 0.03, 0.01, 85.0, 70.0, -203.0 }, EmoteMoving = true, EmoteLoop = true }},
+rabbitcookie = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Rabbit Cookie", AnimationOptions = { Prop = "fractal_food_cookie1", PropBone = 18905, PropPlacement = { 0.13, 0.05, 0.02, -51.0, -220.0, -6.0 }, EmoteMoving = true, EmoteLoop = true }},
+rabbitcookie2 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Rabbit Cookie 2", AnimationOptions = { Prop = "fractal_food_cookie2", PropBone = 18905, PropPlacement = { 0.13, 0.05, 0.02, -51.0, -220.0, -6.0 }, EmoteMoving = true, EmoteLoop = true }},
+taiyaki = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Taiyaki", AnimationOptions = { Prop = "fractal_food_taiyaki", PropBone = 18905, PropPlacement = { 0.14, 0.03, 0.01, 85.0, 70.0, -203.0 }, EmoteMoving = true, EmoteLoop = true }},
+
+icecream1 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Vanilla Ice Cream", AnimationOptions = { Prop = "bzzz_icecream_cherry", PropBone = 18905, PropPlacement = { 0.14, 0.03, 0.01, 85.0, 70.0, -203.0 }, EmoteMoving = true, EmoteLoop = true }},
+icecream2 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Chocolate Ice Cream", AnimationOptions = { Prop = "bzzz_icecream_chocolate", PropBone = 18905, PropPlacement = { 0.14, 0.03, 0.01, 85.0, 70.0, -203.0 }, EmoteMoving = true, EmoteLoop = true }},
+icecream3 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Strawberry Ice Cream", AnimationOptions = { Prop = "bzzz_icecream_cherry", PropBone = 18905, PropPlacement = { 0.14, 0.03, 0.01, 85.0, 70.0, -203.0 }, EmoteMoving = true, EmoteLoop = true }},
+icecream4 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Mint Ice Cream", AnimationOptions = { Prop = "bzzz_icecream_cherry", PropBone = 18905, PropPlacement = { 0.14, 0.03, 0.01, 85.0, 70.0, -203.0 }, EmoteMoving = true, EmoteLoop = true }},
+icecream5 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Pistachio Ice Cream", AnimationOptions = { Prop = "bzzz_icecream_chocolate", PropBone = 18905, PropPlacement = { 0.14, 0.03, 0.01, 85.0, 70.0, -203.0 }, EmoteMoving = true, EmoteLoop = true }},
+icecream6 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Butterscotch Ice Cream", AnimationOptions = { Prop = "bzzz_icecream_lemon", PropBone = 18905, PropPlacement = { 0.14, 0.03, 0.01, 85.0, 70.0, -203.0 }, EmoteMoving = true, EmoteLoop = true }},
+icecream7 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Salted Caramel Ice Cream", AnimationOptions = { Prop = "bzzz_icecream_cherry", PropBone = 18905, PropPlacement = { 0.14, 0.03, 0.01, 85.0, 70.0, -203.0 }, EmoteMoving = true, EmoteLoop = true }},
+icecream8 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Bubblegum Ice Cream", AnimationOptions = { Prop = "bzzz_icecream_lemon", PropBone = 18905, PropPlacement = { 0.14, 0.03, 0.01, 85.0, 70.0, -203.0 }, EmoteMoving = true, EmoteLoop = true }},
+icecream9 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Toffee Ice Cream", AnimationOptions = { Prop = "bzzz_icecream_cherry", PropBone = 18905, PropPlacement = { 0.14, 0.03, 0.01, 85.0, 70.0, -203.0 }, EmoteMoving = true, EmoteLoop = true }},
+icecream10 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Cookie Dough Ice Cream", AnimationOptions = { Prop = "bzzz_icecream_chocolate", PropBone = 18905, PropPlacement = { 0.14, 0.03, 0.01, 85.0, 70.0, -203.0 }, EmoteMoving = true, EmoteLoop = true }},
+
+smoothie1 = { "mp_player_intdrink", "loop_bottle", "Vanilla Smoothie", AnimationOptions = { Prop = "beanmachine_cup3", PropBone = 18905, PropPlacement = { 0.0, -0.11, 0.07, -118.0, -121.0, 37.0 }, EmoteMoving = true, EmoteLoop = true }},
+smoothie2 = { "mp_player_intdrink", "loop_bottle", "Chocolate Smoothie", AnimationOptions = { Prop = "beanmachine_cup3", PropBone = 18905, PropPlacement = { 0.0, -0.11, 0.07, -118.0, -121.0, 37.0 }, EmoteMoving = true, EmoteLoop = true }},
+smoothie3 = { "mp_player_intdrink", "loop_bottle", "Strawberry Smoothie", AnimationOptions = { Prop = "beanmachine_cup3", PropBone = 18905, PropPlacement = { 0.0, -0.11, 0.07, -118.0, -121.0, 37.0 }, EmoteMoving = true, EmoteLoop = true }},
+smoothie4 = { "mp_player_intdrink", "loop_bottle", "Mint Smoothie", AnimationOptions = { Prop = "beanmachine_cup3", PropBone = 18905, PropPlacement = { 0.0, -0.11, 0.07, -118.0, -121.0, 37.0 }, EmoteMoving = true, EmoteLoop = true }},
+smoothie5 = { "mp_player_intdrink", "loop_bottle", "Pistachio Smoothie", AnimationOptions = { Prop = "beanmachine_cup3", PropBone = 18905, PropPlacement = { 0.0, -0.11, 0.07, -118.0, -121.0, 37.0 }, EmoteMoving = true, EmoteLoop = true }},
+smoothie6 = { "mp_player_intdrink", "loop_bottle", "Butterscotch Smoothie", AnimationOptions = { Prop = "beanmachine_cup3", PropBone = 18905, PropPlacement = { 0.0, -0.11, 0.07, -118.0, -121.0, 37.0 }, EmoteMoving = true, EmoteLoop = true }},
+smoothie7 = { "mp_player_intdrink", "loop_bottle", "Salted Caramel Smoothie", AnimationOptions = { Prop = "beanmachine_cup3", PropBone = 18905, PropPlacement = { 0.0, -0.11, 0.07, -118.0, -121.0, 37.0 }, EmoteMoving = true, EmoteLoop = true }},
+smoothie8 = { "mp_player_intdrink", "loop_bottle", "Bubblegum Smoothie", AnimationOptions = { Prop = "beanmachine_cup3", PropBone = 18905, PropPlacement = { 0.0, -0.11, 0.07, -118.0, -121.0, 37.0 }, EmoteMoving = true, EmoteLoop = true }},
+smoothie9 = { "mp_player_intdrink", "loop_bottle", "Toffee Smoothie", AnimationOptions = { Prop = "beanmachine_cup3", PropBone = 18905, PropPlacement = { 0.0, -0.11, 0.07, -118.0, -121.0, 37.0 }, EmoteMoving = true, EmoteLoop = true }},
+smoothie10 = { "mp_player_intdrink", "loop_bottle", "Cookie Dough Smoothie", AnimationOptions = { Prop = "beanmachine_cup3", PropBone = 18905, PropPlacement = { 0.0, -0.11, 0.07, -118.0, -121.0, 37.0 }, EmoteMoving = true, EmoteLoop = true }},
+
+cupcake1 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Vanilla Cupcake", AnimationOptions = { Prop = "pata_christmasfood6", PropBone = 60309, PropPlacement = { 0.0100, 0.0200, -0.0100, -170.1788, 87.6716, 30.0540 }, EmoteMoving = true, EmoteLoop = true }},
+cupcake2 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Chocolate Cupcake", AnimationOptions = { Prop = "pata_christmasfood6", PropBone = 60309, PropPlacement = { 0.0100, 0.0200, -0.0100, -170.1788, 87.6716, 30.0540 }, EmoteMoving = true, EmoteLoop = true }},
+chocbar = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Chocolate Bar", AnimationOptions = { Prop = "prop_choc_ego", PropBone = 60309, PropPlacement = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }, EmoteMoving = true, EmoteLoop = true }},
+doughnut1 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Jam Dougnut", AnimationOptions = { Prop = "prop_amb_donut", PropBone = 18905, PropPlacement = { 0.13, 0.05, 0.02, -50.0, 16.0, 60.0 }, EmoteMoving = true, EmoteLoop = true }},
+doughnut2 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Sugar Dougnut", AnimationOptions = { Prop = "prop_amb_donut", PropBone = 18905, PropPlacement = { 0.13, 0.05, 0.02, -50.0, 16.0, 60.0 }, EmoteMoving = true, EmoteLoop = true }},
+doughnut3 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Custard Dougnut", AnimationOptions = { Prop = "prop_amb_donut", PropBone = 18905, PropPlacement = { 0.13, 0.05, 0.02, -50.0, 16.0, 60.0 }, EmoteMoving = true, EmoteLoop = true }},
+doughnut4 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Chocolate Dougnut", AnimationOptions = { Prop = "bzzz_foodpack_donut002", PropBone = 60309, PropPlacement = { 0.0000, -0.0300, -0.0100, 10.0000, 0.0000, -1.0000 }, EmoteMoving = true, EmoteLoop = true }},
+
+drink1 = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Tea", AnimationOptions = { Prop = "p_amb_coffeecup_01", PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }, EmoteMoving = true, EmoteLoop = true }},
+drink2 = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Coffee", AnimationOptions = { Prop = "p_amb_coffeecup_01", PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }, EmoteMoving = true, EmoteLoop = true }},
+drink3 = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Hot Chocolate", AnimationOptions = { Prop = "p_amb_coffeecup_01", PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }, EmoteMoving = true, EmoteLoop = true }},
+drink4 = { "smo@milkshake_idle", "milkshake_idle_clip", "Cola", AnimationOptions = { Prop = "prop_rpemotes_soda04", PropBone = 28422, PropPlacement = { 0.0470, 0.0040, -0.0600, -88.0263, -25.0367, -27.3898 }, EmoteMoving = true, EmoteLoop = true }},
+drink5 = { "smo@milkshake_idle", "milkshake_idle_clip", "Lemonade", AnimationOptions = { Prop = "prop_rpemotes_soda04", PropBone = 28422, PropPlacement = { 0.0470, 0.0040, -0.0600, -88.0263, -25.0367, -27.3898 }, EmoteMoving = true, EmoteLoop = true }},
+drink6 = { "smo@milkshake_idle", "milkshake_idle_clip", "Orange Soda", AnimationOptions = { Prop = "prop_rpemotes_soda04", PropBone = 28422, PropPlacement = { 0.0470, 0.0040, -0.0600, -88.0263, -25.0367, -27.3898 }, EmoteMoving = true, EmoteLoop = true }},
+
+atomdrink = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Atom Drink", AnimationOptions = { Prop = "ng_proc_sodacup_01c", PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.0, 0.0, 0.0, 130.0 }, EmoteLoop = true, EmoteMoving = true }},
+atomhotdog = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Atom Hotdog", AnimationOptions = { Prop = "prop_food_bs_burger2", PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.0, 0.0, 0.0, 130.0 }, EmoteLoop = true, EmoteMoving = true }},
+breadslice = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Bread Slice", AnimationOptions = { Prop = "v_res_fa_bread03", PropBone = 18905, PropPlacement = { 0.16, 0.08, -0.01, -225.0, -10.0, 0.0 }, EmoteLoop = true, EmoteMoving = true }},
+bmcoffee1 = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Coffee2", AnimationOptions = { Prop = "prop_fib_coffee", PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }, EmoteLoop = true, EmoteMoving = true }},
+bmcoffee = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Coffee2", AnimationOptions = { Prop = "prop_fib_coffee", PropBone = 28422, PropPlacement = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }, EmoteLoop = true, EmoteMoving = true }},
+bmcoffee2 = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Coffee3", AnimationOptions = { Prop = "ng_proc_coffee_01a", PropBone = 28422, PropPlacement = { 0.0, 0.0, -0.06, 0.0, 0.0, 0.0 }, EmoteLoop = true, EmoteMoving = true }},
+bmcoffee3 = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Coffee3", AnimationOptions = { Prop = "v_club_vu_coffeecup", PropBone = 28422, PropPlacement = { 0.0, 0.0, -0.06, 0.0, 0.0, 0.0 }, EmoteLoop = true, EmoteMoving = true }},
+
+milk = { "mp_player_intdrink", "loop_bottle", "Milk", AnimationOptions = { Prop = "v_res_tt_milk", PropBone = 18905, PropPlacement = { 0.10, 0.008, 0.07, 240.0, -60.0, 0.0 }, EmoteMoving = true, EmoteLoop = true }},
+bscoke = { "mp_player_intdrink", "loop_bottle", "BS Coke", AnimationOptions = { Prop = "prop_food_bs_juice01", PropBone = 18905, PropPlacement = { 0.04, -0.10, 0.10, 240.0, -60.0, 0.0 }, EmoteMoving = true, EmoteLoop = true }},
+bscoffee = { "mp_player_intdrink", "loop_bottle", "BS Coffee", AnimationOptions = { Prop = "prop_food_bs_coffee", PropBone = 18905, PropPlacement = { 0.08, -0.10, 0.10, 240.0, -60.0, 0.0 }, EmoteMoving = true, EmoteLoop = true }},
+glass = { "amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Tall Glass", AnimationOptions = { Prop = "prop_wheat_grass_glass", PropBone = 28422, PropPlacement = { 0.0, 0.0, -0.1, 0.0, 0.0, 0.0 }, EmoteLoop = true, EmoteMoving = true }},
+torpedo = { "mp_player_inteat@burger", "mp_player_int_eat_burger_fp", "Torpedo", AnimationOptions = { Prop = "prop_food_bs_burger2", PropBone = 18905, PropPlacement = { 0.10, -0.07, 0.091, 15.0, 135.0, 0.0 }, EmoteMoving = true, EmoteLoop = true }},
+bsfries = { "mp_player_inteat@burger", "mp_player_int_eat_burger_fp", "Fries", AnimationOptions = { Prop = "prop_food_bs_chips", PropBone = 18905, PropPlacement = { 0.09, -0.06, 0.05, 300.0, 150.0, 0.0 }, EmoteMoving = true, EmoteLoop = true }},
+donut2 = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Donut2", AnimationOptions = { Prop = "prop_donut_02", PropBone = 18905, PropPlacement = { 0.13, 0.05, 0.02, -50.0, 100.0, 270.0 }, EmoteMoving = true, EmoteLoop = true }},
+
+xmasic = { "anim@scripted@island@special_peds@pavel@hs4_pavel_ig5_caviar_p1", "base_idle", "Xmas Ice Cream", AnimationOptions = { Prop = "pata_christmasfood7", PropBone = 60309, PropPlacement = { -0.0460, 0.0000, -0.0300, 0.0, 0.0, -50.0000 }, SecondProp = "h4_prop_h4_coke_spoon_01", SecondPropBone = 28422, SecondPropPlacement = { 0.0, 0.0, 0.0, 0.0, 20.0, 0.0 }, EmoteLoop = true, EmoteMoving = true }},
+
+pizzas = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Pizza Slice - Jalapeño And Peperoni", AnimationOptions = { Prop = "knjgh_pizzaslice1", PropBone = 60309, PropPlacement = { 0.0500, -0.0200, -0.0200, 73.6928, -66.7427, 68.3677 }, EmoteMoving = true, EmoteLoop = true }},
+xmascc = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Xmas Cupcake", AnimationOptions = { Prop = "pata_christmasfood6", PropBone = 60309, PropPlacement = { 0.0100, 0.0200, -0.0100, -170.1788, 87.6716, 30.0540 }, EmoteMoving = true }},
+croissant = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Croissant", AnimationOptions = { Prop = "bzzz_foodpack_croissant001", PropBone = 60309, PropPlacement = { 0.0000, 0.0000, -0.0100, 0.0000, 0.0000, 90.0000 }, EmoteMoving = true }},
+taco = { "mp_player_inteat@burger", "mp_player_int_eat_burger", "Taco", AnimationOptions = { Prop = "prop_taco_01", PropBone = 60309, PropPlacement = { -0.0170, 0.0070, -0.0210, 107.9846, -105.0251, 55.7779 }, EmoteMoving = true, EmoteLoop = true }},
+
+
 }
