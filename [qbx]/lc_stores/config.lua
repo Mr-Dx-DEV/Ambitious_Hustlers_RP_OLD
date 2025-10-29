@@ -2061,6 +2061,17 @@ Config.market_categories = {
 				['amount_to_delivery'] = 1,
 				['img'] = 'kq_winch.png',
 			},
+			['contract'] = {
+				['name'] = "Contract",
+				['price_to_customer'] = 550,
+				['price_to_customer_min'] = 45,
+				['price_to_customer_max'] = 90,
+				['price_to_export'] = 42,
+				['price_to_owner'] = 40,
+				['amount_to_owner'] = 1,
+				['amount_to_delivery'] = 1,
+				['img'] = 'contract.png',
+			},
 			
 			
 
