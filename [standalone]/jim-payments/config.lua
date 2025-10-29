@@ -1,6 +1,6 @@
 -- If you need support I now have a discord available, it helps me keep track of issues and give better support.
 
--- https://discord.gg/9pCDHmjYwd
+-- https://discord.gg/xKgQZ6wZvS
 
 Config = {
 	Lan = "en",
@@ -148,12 +148,12 @@ Config = {
 		-- No tickets for these, it's just commission (0.25 = 25%)
 		FineJobs = {
 			['police'] = { Commission = 0.25, },
+			['ambulance'] = { Commission = 0.25, },
 			['bcso'] = { Commission = 0.25, },
 			['sahp'] = { Commission = 0.25, },
 			['rangers'] = { Commission = 0.25, },
 			['sadoc'] = { Commission = 0.25, },
 			['marshals'] = { Commission = 0.25, },
-			['ambulance'] = { Commission = 0.25, },
 		},
 		FineJobConfirmation = false, --"true" makes it so fines need confirmation, "false" skips this ands just removes the money
 		FineJobList = false, -- "true" to use nearby player list feature in the cash registers, "false" for manual id entry
