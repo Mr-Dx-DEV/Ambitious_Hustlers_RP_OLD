@@ -27,7 +27,7 @@ Logs.Discord = {
     -- The name of the webhook
     name = 'Drug Selling Logs',
     -- The webhook link
-    link = 'https://discord.com/api/webhooks/1431023759820718100/A_V-JLRlCGR4rTJJVprJjf5T2US10BsYpIvBDMN0y4Z_bPIPyTdcZygJ0JWOVbQmk5D_',
+    link = 'YOUR_DISCORD_WEBHOOK_URL',
     -- The webhook profile image
     image = 'https://i.imgur.com/ILTkWBh.png',
     -- The webhook footer image

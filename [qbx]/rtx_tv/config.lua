@@ -77,9 +77,9 @@ Config.EnableControlPermissions = false -- enable this function if you want to m
 Config.TelevisionControlSettings = {
 	acepermissionsforusecontrolmenu = {enable = false, permission = "rtxtv.managment"}, -- enable this if you want to use ace permissions
 	jobpermissionsforusecontrolmenu = {enable = false, jobname = "cinema"},  -- enable this if you want to use job permissions (you need create job with name cinema or change the job title to something else)
-	identifierspermissionsforcontrolmenu = true, -- enable this if you want to use identifiers permissions
+	identifierspermissionsforcontrolmenu = false, -- enable this if you want to use identifiers permissions
 	permissionsviaidentifiers = { -- permisisontypes - license, steam, xbox, live, discord, ip
-		{permissiontype = "license", permisisondata = "license:59cda6cea2cba2d00a2866476b76a12cf58be27a"}, -- this is example line
+		-- {permissiontype = "license", permisisondata = "license:YOUR_LICENSE_IDENTIFIER"},
 	},
 }
 

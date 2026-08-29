@@ -27,26 +27,6 @@ Config.GodRoles = {
 
 -- Original Permissions table for information on all possible available options
 Config.Permissions = {
-    ["discord:811436286006657025"] = "god",     -- dx
-    ["discord:677439579585773589"] = "god",     -- demon
-    ["discord:835917888069435423"] = "god",       -- mrs demon
-    ["discord:694971494001934337"] = "god",      -- toolitmafia
-    ["discord:368376078894628866"] = "god",      -- toxic
-
-
-
-    -- ["license:6d3b6254a50416697dcaa91878e2eb03d9112302"] = "god", -- the role god, admin or mod should be the key from Config.GodRoles which means the values that are added in square brackets.
-    -- ["fivem:1234"] = "god",
-    -- ["steam:1234"] = "god",
-    -- ["124584938326312"] = "god", -- discord roles (copy the role id and paste it here) (If you want to use the discord roles, you need to add the bot token and server id in sv_perms.lua at the top)
-    -- ["XY123456"] = "god", -- citizenid for qbcore
-    -- ["char1:12334"] = "god", -- charid for ESX
-
-    -- ["license:6d3b6254a50416697dcaa91878e2eb03d9112302"] = {"mod", "admin"}, -- the role god, admin or mod should be the key from Config.GodRoles which means the values that are added in square brackets.
-    -- ["license:1234"] = "admin",
-    -- ["license:1234"] = "mod",
-    -- ["license:1234"] = "new_role1",
-    -- ["license:1234"] = "new_role2",
-    -- ["license:1234"] = "new_role3",
+    -- ["discord:YOUR_DISCORD_ID"] = "god",
 }
 

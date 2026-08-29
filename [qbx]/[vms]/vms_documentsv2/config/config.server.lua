@@ -1,8 +1,8 @@
 SV = {}
 
 SV.Webhooks = {
-    ['GET_DOCUMENT'] = "https://discord.com/api/webhooks/1431026012493189211/-7N6hgnyCXr_YgRmMGBNXuIbsXmn-seXt4Z2Jxu8xBMQvPBOyoiZItNnACIJtfkvQ748",
-    ['INVALIDATION_DOCUMENT'] = "https://discord.com/api/webhooks/1431026012493189211/-7N6hgnyCXr_YgRmMGBNXuIbsXmn-seXt4Z2Jxu8xBMQvPBOyoiZItNnACIJtfkvQ748",
+    ['GET_DOCUMENT'] = "YOUR_DISCORD_WEBHOOK_URL",
+    ['INVALIDATION_DOCUMENT'] = "YOUR_DISCORD_WEBHOOK_URL",
 }
 
 SV.WebhookText = {

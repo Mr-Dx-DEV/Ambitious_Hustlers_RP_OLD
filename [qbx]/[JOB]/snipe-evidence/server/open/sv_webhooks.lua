@@ -1,9 +1,9 @@
 local webhooks = {
-    ["add"] = "https://discord.com/api/webhooks/1431024586165714994/33g_P1QaUpb0MH5zuxlr0cP6YLkazQkSyQpRoqfyC2LzfvkrPU_2gXfwZqftXvzZZ6x5",
-    ["remove"] = "https://discord.com/api/webhooks/1431024586165714994/33g_P1QaUpb0MH5zuxlr0cP6YLkazQkSyQpRoqfyC2LzfvkrPU_2gXfwZqftXvzZZ6x5",
-    ["img_add"] = "https://discord.com/api/webhooks/1431024586165714994/33g_P1QaUpb0MH5zuxlr0cP6YLkazQkSyQpRoqfyC2LzfvkrPU_2gXfwZqftXvzZZ6x5",
-    ["img_remove"] = "https://discord.com/api/webhooks/1431024586165714994/33g_P1QaUpb0MH5zuxlr0cP6YLkazQkSyQpRoqfyC2LzfvkrPU_2gXfwZqftXvzZZ6x5",
-    ["image"] = "https://discord.com/api/webhooks/1431024586165714994/33g_P1QaUpb0MH5zuxlr0cP6YLkazQkSyQpRoqfyC2LzfvkrPU_2gXfwZqftXvzZZ6x5",
+    ["add"] = "YOUR_DISCORD_WEBHOOK_URL",
+    ["remove"] = "YOUR_DISCORD_WEBHOOK_URL",
+    ["img_add"] = "YOUR_DISCORD_WEBHOOK_URL",
+    ["img_remove"] = "YOUR_DISCORD_WEBHOOK_URL",
+    ["image"] = "YOUR_DISCORD_WEBHOOK_URL",
 }
 
 local typeLabelMappings = {

@@ -104,9 +104,9 @@ return {
         webhook = {
             ['default'] = nil, -- default
             ['joinleave'] = nil, -- default
-            ['ooc'] = 'https://discord.com/api/webhooks/1431032843974217779/KlbcVUDAuZnG6agn_H0gPw6gyFp2KGJGSPzrvbjRwDjPD0RtdElQ8dEtc1wQ2qhPhdx0', -- default
+            ['ooc'] = 'YOUR_DISCORD_WEBHOOK_URL', -- default
             ['anticheat'] = nil, -- default
-            ['playermoney'] = 'https://discord.com/api/webhooks/1431032757236269349/j7EyFfSjSdXneOMdOTBm4hoL7_hxQkS4EtmWj49oG1n6zBJ7ud4GMVspTHBust2zb3LL', -- default
+            ['playermoney'] = 'YOUR_DISCORD_WEBHOOK_URL', -- default
         },
         role = {} -- Role to tag for high priority logs. Roles use <@%roleid> and users/channels are <@userid/channelid>
     },

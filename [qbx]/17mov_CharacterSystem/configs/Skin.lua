@@ -72,7 +72,7 @@ Skin.WhitelistedInputValues = { -- Here you can whitelist (overwrite blacklist f
     --         values = { 15, 16 },
     --         jobs = { "police" },
     --         gangs = { "ballas" },
-    --         identifiers = { "license:8cbd53588ae8a50cf28da72afa411ca2453fde40" }
+    --         identifiers = { "license:YOUR_LICENSE_IDENTIFIER" }
     --     },
     -- },
     -- [`mp_f_freemode_01`] = {
@@ -81,7 +81,7 @@ Skin.WhitelistedInputValues = { -- Here you can whitelist (overwrite blacklist f
     --         values = { 17 },
     --         jobs = { "ambunalce" },
     --         gangs = { "vagos" },
-    --         identifiers = { "discord:863013393253138452" }
+    --         identifiers = { "discord:YOUR_DISCORD_ID" }
     --     },
     -- },
 }

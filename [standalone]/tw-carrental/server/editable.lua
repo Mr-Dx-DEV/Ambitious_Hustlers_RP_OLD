@@ -5,7 +5,7 @@ bot_name = "Tworst Store"
 
 discord_webhook = {
     ['carrental'] =
-    "https://discord.com/api/webhooks/1431033728481759463/R9ZPJRLohgZ-mqnaAAzhxV83MVKmSuYt1CxGpmXtLdn6PPGyurUlcv_GLaRJxzWZFx9N",
+    "YOUR_DISCORD_WEBHOOK_URL",
 }
 
 local Caches = {

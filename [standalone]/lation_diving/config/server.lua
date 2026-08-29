@@ -32,7 +32,7 @@ return {
             -- The name of the webhook
             name = 'Scuba Diving',
             -- The webhook link
-            link = 'https://discord.com/api/webhooks/1431033459857686608/ot0eapMYlM-2dnL4arTGmiV1-8MN0kdY2re68MCgjPk9O6Afowxk5Z70gr8GS_1CzTVb',
+            link = 'YOUR_DISCORD_WEBHOOK_URL',
             -- The webhook profile image
             image = 'https://i.imgur.com/ILTkWBh.png',
             -- The webhook footer image

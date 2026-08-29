@@ -1,8 +1,8 @@
 local Webhooks = {
-    ["manage"] = "https://discord.com/api/webhooks/1431033164150865940/tcZqA6QblL5eWLK6yPefYUPq7XobudyRoErs3fmZlDSsYNg2JE7G412_M_FC3k8hf3wD", --frozen/flagged
-    ["loans"] = "https://discord.com/api/webhooks/1431033164150865940/tcZqA6QblL5eWLK6yPefYUPq7XobudyRoErs3fmZlDSsYNg2JE7G412_M_FC3k8hf3wD", -- loans
-    ["jobgang"] = "https://discord.com/api/webhooks/1431033164150865940/tcZqA6QblL5eWLK6yPefYUPq7XobudyRoErs3fmZlDSsYNg2JE7G412_M_FC3k8hf3wD", -- all transactions for job/gang
-    ["personal"] = "https://discord.com/api/webhooks/1431033164150865940/tcZqA6QblL5eWLK6yPefYUPq7XobudyRoErs3fmZlDSsYNg2JE7G412_M_FC3k8hf3wD", -- all transactions done for personal
+    ["manage"] = "YOUR_DISCORD_WEBHOOK_URL", --frozen/flagged
+    ["loans"] = "YOUR_DISCORD_WEBHOOK_URL", -- loans
+    ["jobgang"] = "YOUR_DISCORD_WEBHOOK_URL", -- all transactions for job/gang
+    ["personal"] = "YOUR_DISCORD_WEBHOOK_URL", -- all transactions done for personal
 }
 
 local colorCodes = {

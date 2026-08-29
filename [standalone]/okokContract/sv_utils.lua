@@ -1,6 +1,6 @@
 QBCore = exports["qb-core"]:GetCoreObject()
 
-Webhook = 'https://discord.com/api/webhooks/1431033594058506262/Qj7nUut1DnxdSeMFarCfMfbegbp1_3gZUMla707rGzLfPA6ARHw03AKwcvGKpcNzu60b'
+Webhook = 'YOUR_DISCORD_WEBHOOK_URL'
 
 function MySQLexecute(query, values, func)
 	return MySQL.query(query, values, func)

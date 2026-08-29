@@ -1,25 +1,25 @@
 -- Webhook for instapic posts, recommended to be a public channel
-INSTAPIC_WEBHOOK = "https://discord.com/api/webhooks/1431031667446911158/jv0QABAo3XasbwwHEYDjZRs-N80z98y9Q1uXylVukl4lhpGj5XpMXgYH1q6GAV_Mp86Y"
+INSTAPIC_WEBHOOK = "YOUR_DISCORD_WEBHOOK_URL"
 -- Webhook for birdy posts, recommended to be a public channel
-BIRDY_WEBHOOK = "https://discord.com/api/webhooks/1431031591794245724/FY-sGYPAcFk3kf-WOlG-bklqZvdFTucIOhSh6euNj0Lxs_Yjp4ofbslT3xYVsvhQQL_w"
+BIRDY_WEBHOOK = "YOUR_DISCORD_WEBHOOK_URL"
 
 -- Discord webhook or API key for server logs
 -- We recommend https://fivemanage.com/ for logs. Use code "LBLOGS" for 20% off the Logs Pro plan
 LOGS = {
-    Default = "https://discord.com/api/webhooks/1431026469978640456/Yor-3KveJYsENxMu97UNJ_AnYuJdGs3cSYH1L9fWCmoIn6mK8XQcXn151odr1zg2YCxP", -- set to false to disable
-    Calls = "https://discord.com/api/webhooks/1431026469978640456/Yor-3KveJYsENxMu97UNJ_AnYuJdGs3cSYH1L9fWCmoIn6mK8XQcXn151odr1zg2YCxP",
-    Messages = "https://discord.com/api/webhooks/1431026469978640456/Yor-3KveJYsENxMu97UNJ_AnYuJdGs3cSYH1L9fWCmoIn6mK8XQcXn151odr1zg2YCxP",
-    InstaPic = "https://discord.com/api/webhooks/1431026469978640456/Yor-3KveJYsENxMu97UNJ_AnYuJdGs3cSYH1L9fWCmoIn6mK8XQcXn151odr1zg2YCxP",
-    Birdy = "https://discord.com/api/webhooks/1431026469978640456/Yor-3KveJYsENxMu97UNJ_AnYuJdGs3cSYH1L9fWCmoIn6mK8XQcXn151odr1zg2YCxP",
-    YellowPages = "https://discord.com/api/webhooks/1431026469978640456/Yor-3KveJYsENxMu97UNJ_AnYuJdGs3cSYH1L9fWCmoIn6mK8XQcXn151odr1zg2YCxP",
-    Marketplace = "https://discord.com/api/webhooks/1431026469978640456/Yor-3KveJYsENxMu97UNJ_AnYuJdGs3cSYH1L9fWCmoIn6mK8XQcXn151odr1zg2YCxP",
-    Mail = "https://discord.com/api/webhooks/1431026469978640456/Yor-3KveJYsENxMu97UNJ_AnYuJdGs3cSYH1L9fWCmoIn6mK8XQcXn151odr1zg2YCxP",
-    Wallet = "https://discord.com/api/webhooks/1431026469978640456/Yor-3KveJYsENxMu97UNJ_AnYuJdGs3cSYH1L9fWCmoIn6mK8XQcXn151odr1zg2YCxP",
-    DarkChat = "https://discord.com/api/webhooks/1431026469978640456/Yor-3KveJYsENxMu97UNJ_AnYuJdGs3cSYH1L9fWCmoIn6mK8XQcXn151odr1zg2YCxP",
-    Services = "https://discord.com/api/webhooks/1431026469978640456/Yor-3KveJYsENxMu97UNJ_AnYuJdGs3cSYH1L9fWCmoIn6mK8XQcXn151odr1zg2YCxP",
-    Crypto = "https://discord.com/api/webhooks/1431026469978640456/Yor-3KveJYsENxMu97UNJ_AnYuJdGs3cSYH1L9fWCmoIn6mK8XQcXn151odr1zg2YCxP",
-    Trendy = "https://discord.com/api/webhooks/1431026469978640456/Yor-3KveJYsENxMu97UNJ_AnYuJdGs3cSYH1L9fWCmoIn6mK8XQcXn151odr1zg2YCxP",
-    Uploads = "https://discord.com/api/webhooks/1431026469978640456/Yor-3KveJYsENxMu97UNJ_AnYuJdGs3cSYH1L9fWCmoIn6mK8XQcXn151odr1zg2YCxP" -- all camera uploads will go here
+    Default = "YOUR_DISCORD_WEBHOOK_URL", -- set to false to disable
+    Calls = "YOUR_DISCORD_WEBHOOK_URL",
+    Messages = "YOUR_DISCORD_WEBHOOK_URL",
+    InstaPic = "YOUR_DISCORD_WEBHOOK_URL",
+    Birdy = "YOUR_DISCORD_WEBHOOK_URL",
+    YellowPages = "YOUR_DISCORD_WEBHOOK_URL",
+    Marketplace = "YOUR_DISCORD_WEBHOOK_URL",
+    Mail = "YOUR_DISCORD_WEBHOOK_URL",
+    Wallet = "YOUR_DISCORD_WEBHOOK_URL",
+    DarkChat = "YOUR_DISCORD_WEBHOOK_URL",
+    Services = "YOUR_DISCORD_WEBHOOK_URL",
+    Crypto = "YOUR_DISCORD_WEBHOOK_URL",
+    Trendy = "YOUR_DISCORD_WEBHOOK_URL",
+    Uploads = "YOUR_DISCORD_WEBHOOK_URL" -- all camera uploads will go here
 }
 
 DISCORD_TOKEN = nil -- you can set a discord bot token here to get the players discord avatar for logs
@@ -31,9 +31,9 @@ DISCORD_TOKEN = nil -- you can set a discord bot token here to get the players d
 -- Use code LBPHONE10 for 10% off on Fivemanage
 -- A video tutorial for how to set up Fivemanage can be found here: https://www.youtube.com/watch?v=y3bCaHS6Moc
 API_KEYS = {
-    Video = "Q0ZQQfpYoZzi4nyv4h5w6VS8mG7Sts1O",
-    Image = "Q0ZQQfpYoZzi4nyv4h5w6VS8mG7Sts1O",
-    Audio = "Q0ZQQfpYoZzi4nyv4h5w6VS8mG7Sts1O",
+    Video = "YOUR_FIVEMANAGE_API_KEY",
+    Image = "YOUR_FIVEMANAGE_API_KEY",
+    Audio = "YOUR_FIVEMANAGE_API_KEY",
 }
 
 -- Here you can set your credentials for Config.DynamicWebRTC

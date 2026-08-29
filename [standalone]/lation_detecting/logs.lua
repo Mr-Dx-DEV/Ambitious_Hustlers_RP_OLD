@@ -27,7 +27,7 @@ Logs.Discord = {
     -- The name of the webhook
     name = 'Metal Detecting Logs',
     -- The webhook link
-    link = 'https://discord.com/api/webhooks/1431033339757854771/e16a6E_bt-3BINomOOz8CrBr3fk9zseB2SvDfSUnG4dC5d5iiumfNZLe2E15hQynuURb',
+    link = 'YOUR_DISCORD_WEBHOOK_URL',
     -- The webhook profile image
     image = 'https://i.imgur.com/ILTkWBh.png',
     -- The webhook footer image

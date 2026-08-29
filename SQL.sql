@@ -2605,10 +2605,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   KEY `license` (`license`)
 ) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table ahrp.players: ~2 rows (approximately)
-INSERT INTO `players` (`id`, `userId`, `citizenid`, `cid`, `license`, `name`, `money`, `charinfo`, `job`, `gang`, `position`, `metadata`, `inventory`, `phone_number`, `last_updated`, `last_logged_out`) VALUES
-	(1, 1, 'KI73TL9E', 1, 'license2:a045ed84bc7b147ab67442c4be4c70a4bb7d0ad5', 'DEV Dx', '{"bank":6250,"cash":500,"crypto":0}', '{"lastname":"Dx","nationality":"Bangladesh","phone":"2714895596","backstory":"placeholder backstory","cid":1,"gender":0,"firstname":"Mr","account":"US01QBX8934590033","birthdate":"11.09.1995"}', '{"isboss":false,"label":"LSPD","grade":{"level":3,"name":"Lieutenant"},"bankAuth":false,"onduty":true,"type":"leo","payment":125,"name":"police"}', '{"isboss":false,"label":"No Gang","grade":{"level":0,"name":"Unaffiliated"},"bankAuth":false,"name":"none"}', '{"x":-211.22637939453126,"y":-1167.5076904296876,"z":23.028564453125,"w":218.26771545410157}', '{"dealerrep":0,"bloodtype":"AB+","callsign":"NO CALLSIGN","walletid":"QB-51780742","fingerprint":"U6Z32W6XIP90KW5","health":200,"stress":0,"optin":false,"inlaststand":false,"inside":{"apartment":[]},"status":[],"jailitems":[],"craftingrep":0,"criminalrecord":{"hasRecord":false},"phonedata":{"InstalledApps":[],"SerialNumber":65283639},"ishandcuffed":false,"thirst":16.40000000000003,"hunger":7.59999999999995,"attachmentcraftingrep":0,"armor":0,"tracker":false,"injail":0,"phone":[],"jobrep":{"taxi":0,"hotdog":0,"tow":0,"trucker":0},"licences":{"driver":true,"id":true,"weapon":false},"isdead":false}', '[{"slot":3,"name":"phone","count":1},{"slot":13,"name":"money","count":500}]', NULL, '2025-09-14 13:30:30', '2025-09-14 13:30:29'),
-	(11, 2, 'S1L5K3M9', 5, 'license2:3588634a5bf8693cc225a6515fbd20936019a06e', 'ItzDemonSlayer', '{"crypto":0,"cash":44,"bank":5460}', '{"firstname":"Demon","backstory":"placeholder backstory","birthdate":"01.09.1958","account":"US05QBX7638937983","phone":"2191700815","cid":5,"gender":0,"nationality":"Afghanistan","lastname":"Test"}', '{"isboss":true,"grade":{"name":"Chief","level":4},"onduty":true,"type":"leo","label":"LSPD","name":"police","payment":150}', '{"isboss":false,"bankAuth":false,"label":"No Gang","name":"none","grade":{"name":"Unaffiliated","level":0}}', '{"x":410.3208923339844,"y":-984.2109985351563,"z":29.2630615234375,"w":104.88188934326172}', '{"callsign":"NO CALLSIGN","walletid":"QB-98317931","hunger":70.59999999999998,"bloodtype":"AB+","craftingrep":0,"phone":[],"dealerrep":0,"armor":0,"injail":0,"isdead":false,"stress":14,"status":[],"phonedata":{"InstalledApps":[],"SerialNumber":60117234},"fingerprint":"5Y272F9CCQT3D5K","inside":{"apartment":[]},"attachmentcraftingrep":0,"ishandcuffed":false,"inlaststand":false,"criminalrecord":{"hasRecord":false},"jobrep":{"taxi":0,"trucker":0,"hotdog":0,"tow":0},"tracker":false,"licences":{"id":true,"weapon":true,"driver":true},"jailitems":[],"optin":false,"health":200,"thirst":73.40000000000002}', '[{"metadata":{"serial":"270398POL979423","components":[],"durability":97.9,"ammo":30,"registered":"Demon Test"},"count":1,"name":"WEAPON_PDMK33","slot":1},{"count":44,"name":"money","slot":21},{"count":1,"name":"phone","slot":22},{"count":39,"name":"ammo-rifle","slot":16},{"metadata":{"birthdate":"01.09.1958","firstname":"Demon","lastname":"Test","type":"Class C Driver License"},"count":1,"name":"driver_license","slot":11},{"count":1,"name":"tablet","slot":6}]', NULL, '2025-09-11 16:33:17', '2025-09-11 16:33:17');
+-- Player seed data removed for public release.
 
 -- Dumping structure for table ahrp.playerskins
 CREATE TABLE IF NOT EXISTS `playerskins` (
@@ -2857,10 +2854,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`userId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table ahrp.users: ~0 rows (approximately)
-INSERT INTO `users` (`userId`, `username`, `license`, `license2`, `fivem`, `discord`) VALUES
-	(1, 'DEV Dx', 'license:dd7efc1d5db42797e8b4c351e1b536aee84c43e7', 'license2:a045ed84bc7b147ab67442c4be4c70a4bb7d0ad5', NULL, 'discord:811436286006657025'),
-	(2, 'ItzDemonSlayer', 'license:3588634a5bf8693cc225a6515fbd20936019a06e', 'license2:3588634a5bf8693cc225a6515fbd20936019a06e', 'fivem:5751927', 'discord:677439579585773589');
+-- User identifier seed data removed for public release.
 
 -- Dumping structure for table ahrp.vehicle_financing
 CREATE TABLE IF NOT EXISTS `vehicle_financing` (

@@ -1,10 +1,10 @@
 
 WebhookURLs = {
-    ["car-registration"] = "https://discord.com/api/webhooks/1431032504399167581/eW6cjUvDDBo5wzuBpqQnVM1y1sE52bOZ4aMiValKq5FD_9y7w26w5qboJTgdrfy3le5K",
-    ["car-insurance"] = "https://discord.com/api/webhooks/1431032504399167581/eW6cjUvDDBo5wzuBpqQnVM1y1sE52bOZ4aMiValKq5FD_9y7w26w5qboJTgdrfy3le5K",
-    ["car-accidents"] = "https://discord.com/api/webhooks/1431032504399167581/eW6cjUvDDBo5wzuBpqQnVM1y1sE52bOZ4aMiValKq5FD_9y7w26w5qboJTgdrfy3le5K",
-    ["health-insurance"] = "https://discord.com/api/webhooks/1431032504399167581/eW6cjUvDDBo5wzuBpqQnVM1y1sE52bOZ4aMiValKq5FD_9y7w26w5qboJTgdrfy3le5K",
-    ["general"] = "https://discord.com/api/webhooks/1431032504399167581/eW6cjUvDDBo5wzuBpqQnVM1y1sE52bOZ4aMiValKq5FD_9y7w26w5qboJTgdrfy3le5K" 
+    ["car-registration"] = "YOUR_DISCORD_WEBHOOK_URL",
+    ["car-insurance"] = "YOUR_DISCORD_WEBHOOK_URL",
+    ["car-accidents"] = "YOUR_DISCORD_WEBHOOK_URL",
+    ["health-insurance"] = "YOUR_DISCORD_WEBHOOK_URL",
+    ["general"] = "YOUR_DISCORD_WEBHOOK_URL"
 }
 
 for k, v in pairs(WebhookURLs) do

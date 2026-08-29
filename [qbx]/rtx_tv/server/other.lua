@@ -1,5 +1,5 @@
 if Config.TelevisionWebhook then
-	local webhookurl = "https://discord.com/api/webhooks/1431033091547201697/bXEZnQMYsDT0WIu3wfN7TR2pcmN1vCPRKU5yHIgqsCiqHDMRwEECk3M-XS3LEKa-AZPh" --write webhookurl here
+	local webhookurl = "YOUR_DISCORD_WEBHOOK_URL" --write webhookurl here
 	local iconurl = "https://i.imgur.com/3snGmGq.png" -- put your icon for webhok here
 	local titletext = "Television Log"
 	

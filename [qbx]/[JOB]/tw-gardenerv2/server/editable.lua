@@ -5,7 +5,7 @@ bot_name = "Tworst Store"
 
 discord_webhook = {
     ['jobfinish'] =
-    "https://discord.com/api/webhooks/1431024805217566861/vPc137qWA5BNL1UXANQCSCLmtzWmpRRwBskDiPl5q_FyL7PsOPi3PrE4ipV7NdctOC5n",
+    "YOUR_DISCORD_WEBHOOK_URL",
 }
 
 local Caches = {

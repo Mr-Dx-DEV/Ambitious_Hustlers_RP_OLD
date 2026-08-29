@@ -1,5 +1,5 @@
 if not rawget(_G, "lib") then include('ox_lib', 'init') end
-WEBHOOK = 'https://discord.com/api/webhooks/1431026180357754920/Mi8zXKapLQrnQvll5CzCgB9jq1UWXxu6V8yuEHZI_cKpI7-Iiw6kiyLLLRz4nsnN9id7' -- REPLACE WITH YOUR WEBHOOK
+WEBHOOK = 'YOUR_DISCORD_WEBHOOK_URL' -- REPLACE WITH YOUR WEBHOOK
 --- EDIT HERE FOR CHECKING IF VEHICLE IS OWNED AND HARDCORE MODE COMPLETION
 --- 
 local savedPlates = {}

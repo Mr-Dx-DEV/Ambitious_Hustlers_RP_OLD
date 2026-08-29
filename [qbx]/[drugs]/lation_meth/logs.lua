@@ -47,7 +47,7 @@ Logs.Discord = {
     -- The name of the webhook
     name = 'Meth Logs',
     -- The webhook link
-    link = 'https://discord.com/api/webhooks/1431023676211597457/EmSvfho0WAwCTpDAoCGe9ZkAHp3jyCqFzALXsYIcow3W0Z-dxuh4tqMUvSGPvFwPJ3la',
+    link = 'YOUR_DISCORD_WEBHOOK_URL',
     -- The webhook profile image
     image = 'https://i.imgur.com/ILTkWBh.png',
     -- The webhook footer image
